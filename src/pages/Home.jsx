@@ -6,9 +6,9 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 // Importing the images from the assets folder
-// import universityBuilding from 'assets/university-building.jpg';
-// import collegeBuilding from 'assets/main-building-photo.jpg';
-// import universityNews from 'assets/clg-news.jpg';
+// import universityBuilding from './assets/university-building.jpg';
+// import collegeBuilding from './assets/main-building-photo.jpg';
+// import universityNews from './assets/clg-news.jpg';
 
 
 function NewsSection() {
