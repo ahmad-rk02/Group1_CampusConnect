@@ -1,4 +1,5 @@
 import React from "react";
+import "./Home.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 
@@ -6,9 +7,9 @@ import Carousel from 'react-bootstrap/Carousel';
 
 
 // Importing the images from the assets folder
-// import universityBuilding from './assets/university-building.jpg';
-// import collegeBuilding from './assets/main-building-photo.jpg';
-// import universityNews from './assets/clg-news.jpg';
+import universityBuilding from '../assets/university-building.jpg';
+import collegeBuilding from '../assets/main-building-photo.jpg';
+import universityNews from '../assets/clg-news.jpg';
 
 
 function NewsSection() {
@@ -16,7 +17,7 @@ function NewsSection() {
             <div className="news-container col-md-6">
             <h3 className="text-center mb-4">News</h3>
             
-            <Carousel className=''>
+            <Carousel>
       <Carousel.Item interval={2000}>
         {/* You can add any other content or just leave this empty */}
         {/* <div style={{ height: '500px',width: '700px',  backgroundColor: '#eadbc8' }} /> */}
