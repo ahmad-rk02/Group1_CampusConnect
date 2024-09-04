@@ -34,7 +34,7 @@ function Footerend() {
 
   return (
     <footer className="text-light" style={{ margin: '0', backgroundColor: '#102C57', width: '100vw' }}>
-      <div className="container">
+      <div className="container1">
         <div className="row">
           {/* College Info Compartment */}
           <div className="col-md-4 text-center mt-3">

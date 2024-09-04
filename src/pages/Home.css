@@ -1,6 +1,6 @@
 
 .container {
-    max-width: 1300px;
+    max-width: 100vh;
 }
 
 .card{
@@ -48,4 +48,8 @@ h3 {
 
 .news-container {
     width: 100vw;
+}
+
+.CarouselPage {
+    height: 100vh;
 }
