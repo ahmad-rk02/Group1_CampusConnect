@@ -12,7 +12,7 @@ import CarouselPage from "../components/CarouselPage";
 
 function NewsSection() {
     return (
-        <div className="col-md-5 ">
+        <div className="col-md-5">
             <h3 className="text-center mb-4">News</h3>
             <Carousel>
                 <Carousel.Item interval={2000}>
@@ -96,15 +96,6 @@ function EventsSection() {
 function Home() {
     return (
         <>
-        {/* <div className=" d-flex" >
-            <div className="row justify-content-center"> */}
-                    {/* <CarouselPage className="CarouselPage"/> */}
-                    {/* <NewsSection className="mtz-30" />
-                    <EventsSection className="mt=1000" /> */}
-                {/* </div>
-            </div>
-            <Footer /> */}
-         
          <div className="">
             <div className="">
             <CarouselPage className="CarouselPage"/>

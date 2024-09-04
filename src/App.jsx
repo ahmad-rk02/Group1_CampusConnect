@@ -1,6 +1,6 @@
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import imagePath from "./assets/Gec.jpg"; // Correct import path
+import imagePath from "./assets/Gec.png"; // Correct import path
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import Navbar from "./components/Navbar";

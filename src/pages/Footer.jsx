@@ -3,29 +3,29 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import "./Footer.css";
-import Gec from '../assets/Gec.jpg';
+import Gec from '../assets/Gec.png';
 
 const noUnderlineStyle = {
   textDecoration: 'none',
 };
 
 function Footerend() {
-  const [weatherData, setWeatherData] = useState(null); // State to store the fetched data
-  const [error, setError] = useState(null); // State to store error messages, if any
+  const [weatherData, setWeatherData] = useState(null); 
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const fetchWeatherData = async () => {
       const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=19.96&longitude=79.29&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m';
 
       try {
-        const response = await fetch(apiUrl); // Fetch the API data
+        const response = await fetch(apiUrl);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setWeatherData(data.current); // Update state with the fetched data
+        setWeatherData(data.current); 
       } catch (error) {
-        setError(error.message); // Update state with error message
+        setError(error.message); 
       }
     };
 
@@ -38,11 +38,10 @@ function Footerend() {
         <div className="row">
           {/* College Info Compartment */}
           <div className="col-md-4 text-center mt-3">
-            <img src={Gec} alt="College Logo" width="85" height="100" />
+            <img src={Gec} alt="College Logo" width="85" height="110" />
             <br />
             <br />
-            <h6 style={{ color: 'white' }}>Government College of Engineering</h6>
-            <p>Chandrapur</p>
+            <h6 style={{ color: 'white' }}>Government College of Engineering Chandrapur</h6>
             <br />
             <p className="mb-1">Ballarpur Bypass Road, Babupeth, Chandrapur</p>
             <p className="mb-1 text-white">Phone: <a href="tel:07172-22734" className='text-white text-decoration-none'>07172-227334</a></p>
