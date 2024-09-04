@@ -1,6 +1,4 @@
-*{
-    background-color: #fefaf6;
-}
+
 .container {
     max-width: 1300px;
 }
@@ -13,10 +11,6 @@
     max-height: 70%;
 }
 
-.btn{
-    background-color: #102C57;
-    border-width: 0;
-}
 
 .card-img-top {
     height: 200px;
@@ -49,6 +43,9 @@
 }
 
 h3 {
-    color: #102C57; /* Muted title color */
+    color: #102C57;
 }
 
+.news-container {
+    width: 100vw;
+}
