@@ -118,8 +118,12 @@ function Home() {
             <Footer /> */}
          
          <div className="">
-
-           
+         <div className="">
+            <CarouselPage className="CarouselPage"/>
+            </div>
+            <div className="">
+            <Topcards className=""/>
+            </div>
             <div className="CIIT">
             <CIIT />
             </div>
