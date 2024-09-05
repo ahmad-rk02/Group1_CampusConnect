@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
 const WeatherData = () => {
-  const [weatherData, setWeatherData] = useState(null); // State to store the fetched data
-  const [error, setError] = useState(null); // State to store error messages, if any
+  const [weatherData, setWeatherData] = useState(null); 
+  const [error, setError] = useState(null); 
 
   useEffect(() => {
     const apiUrl = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m';
@@ -16,12 +16,12 @@ const WeatherData = () => {
         return response.json();
       })
       .then(data => {
-        setWeatherData(data.current); // Update state with the fetched data
+        setWeatherData(data.current);
       })
       .catch(error => {
-        setError(error.message); // Update state with error message
+        setError(error.message); 
       });
-  }, []); // Empty dependency array ensures useEffect runs once after component mounts
+  }, []); 
 
   return (
     <div>
@@ -30,10 +30,6 @@ const WeatherData = () => {
         <p>Error: {error}</p>
       ) : weatherData ? (
         <div>
-          {/* <p>Temperature: {weatherData.temperature_2m}°C</p>
-          <p>Humidity: {weatherData.relative_humidity_2m}%</p>
-          <p>Weather Code: {weatherData.weather_code}</p>
-          <p>Wind Speed: {weatherData.wind_speed_10m} m/s</p> */}
 
           <div className="col-md-4 d-flex flex-column justify-content-center text-center">
             <div>

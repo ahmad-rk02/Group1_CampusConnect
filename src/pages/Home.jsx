@@ -104,7 +104,14 @@ function EventsSection() {
 function Home() {
     return (
         <>
-        
+        {/* <div className=" d-flex" >
+            <div className="row justify-content-center"> */}
+                    {/* <CarouselPage className="CarouselPage"/> */}
+                    {/* <NewsSection className="mtz-30" />
+                    <EventsSection className="mt=1000" /> */}
+                {/* </div>
+            </div>
+            <Footer /> */}
          
          <div className="">
             <div className="">
