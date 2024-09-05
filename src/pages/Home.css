@@ -53,3 +53,20 @@ h3 {
 .CarouselPage {
     height: 100vh;
 }
+
+.event-links{
+    text-decoration: none;
+    color: #102C57;
+}
+
+.event-links:hover{
+    text-decoration: underline;
+}
+
+.list-group{
+    text-align: right;
+}
+
+.event-cont li{
+    background-color: #eadbc8;
+}

@@ -3,6 +3,12 @@ import "./Home.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Footer from './Footer'
+import Research from './Research'
+import CIIT from './CIIT'
+
+
+
+
 // Events and News from here ----------
 import universityBuilding from '../assets/university-building.jpg';
 import collegeBuilding from '../assets/main-building-photo.jpg';
@@ -12,8 +18,9 @@ import CarouselPage from "../components/CarouselPage";
 
 function NewsSection() {
     return (
-        <div className="col-md-5 ">
-            <h3 className="text-center mb-4">News</h3>
+        <div className="col-md-5">
+           <div className="text-center mb-4" style={{ fontSize: '1.75rem', fontWeight: 'bold' }}>News</div>
+
             <Carousel>
                 <Carousel.Item interval={2000}>
                     <div className="card shadow">
@@ -66,19 +73,20 @@ function NewsSection() {
 
 function EventsSection() {
     const events = [
-        "Girls Hostel Direct Second Year Allotment Round I 2023-24",
-        "Boys Hostel Direct Second Year Allotment Round I 2023-24",
-        "Direct Second Year Girls Hostel Provisional Allotment Merit List 2023-24",
-        "Direct Second Year Boys Hostel Provisional Allotment Merit List 2023-24",
-        "First Year Girls Quarter Allotment Round I 2023-24",
-        "Girls Hostel First year Allotment Round II, III 2023-24",
-        "Boys Hostel Allotment Round III 2023-24",
-        "Fee Structure Institute Round 2023-24"
+        <a className="event-links" href='#'>Girls Hostel Direct Second Year Allotment Round I 2023-24</a>,
+        <a className="event-links" href='#'>Boys Hostel Direct Second Year Allotment Round I 2023-24</a>,
+        <a className="event-links" href='#'>Direct Second Year Girls Hostel Provisional Allotment Merit List 2023-24</a>,
+        <a className="event-links" href='#'>Direct Second Year Boys Hostel Provisional Allotment Merit List 2023-24</a>,
+        <a className="event-links" href='#'>First Year Girls Quarter Allotment Round I 2023-24</a>,
+        <a className="event-links" href='#'>Girls Hostel First year Allotment Round II, III 2023-24</a>,
+        <a className="event-links" href='#'>Boys Hostel Allotment Round III 2023-24</a>,
+        <a className="event-links" href='#'>Fee Structure Institute Round 2023-24</a>
     ];
 
     return (
-        <div className="col-md-5">
-            <h3 className="text-center mb-4">Events</h3>
+        <div className=" event-cont col-md-5">
+            <div className="text-center mb-4" style={{ fontSize: '1.75rem', fontWeight: 'bold' }}>Events</div>
+
             <ul className="list-group">
                 {events.map((event, index) => (
                     <li className="list-group-item d-flex justify-content-between align-items-center" key={index}>
@@ -96,22 +104,21 @@ function EventsSection() {
 function Home() {
     return (
         <>
-        {/* <div className=" d-flex" >
-            <div className="row justify-content-center"> */}
-                    {/* <CarouselPage className="CarouselPage"/> */}
-                    {/* <NewsSection className="mtz-30" />
-                    <EventsSection className="mt=1000" /> */}
-                {/* </div>
-            </div>
-            <Footer /> */}
+        
          
          <div className="">
             <div className="">
             <CarouselPage className="CarouselPage"/>
             </div>
+            <div className="CIIT">
+            <CIIT />
+            </div>
             <div className="d-flex justify-content-around" style={{ width: "100vw", padding: "40px" }} >
             <NewsSection className="" />
             <EventsSection className="" />
+            </div>
+            <div>
+                <Research/>
             </div>
             <div>
             <Footer /> 
