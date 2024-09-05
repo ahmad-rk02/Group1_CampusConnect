@@ -1,5 +1,5 @@
-// import React from 'react';
-// import './Home.css';
+import React from 'react';
+import './Home.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import Carousel from 'react-bootstrap/Carousel';
 // import Footer from './Footer'
@@ -18,6 +18,8 @@ import collegeBuilding from '../assets/main-building-photo.jpg';
 import universityNews from '../assets/clg-news.jpg';
 import CarouselPage from "../components/CarouselPage";
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Carousel from 'react-bootstrap/Carousel';
 import Research from './Research'
 import CIIT from './CIIT'
 
