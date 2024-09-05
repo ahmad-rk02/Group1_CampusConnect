@@ -1,0 +1,43 @@
+.card-container2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 0 auto;
+}
+
+.container2{
+    justify-content: center;
+    display: flex;
+    width: 100%;
+}
+
+.custom-topcards {
+    max-width: 22rem; 
+    min-width: 16rem; 
+    border: 2px solid #003366; 
+    border-radius: 8px;
+    background-color: #ffffff;
+    transition: box-shadow 0.2s ease-in-out;
+    text-align: center; 
+}
+
+.custom-topcards:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+    font-size: 2.5rem;
+    color: #003366;
+}
+
+.topcards-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003366;
+}
+
+.topcards-text {
+    font-size: 0.9rem;
+    color: #555;
+}
