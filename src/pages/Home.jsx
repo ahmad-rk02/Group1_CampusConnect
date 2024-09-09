@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Research from './Research'
+import Counter from './Counter'
 import CIIT from './CIIT'
 
 
@@ -134,6 +135,9 @@ function Home() {
                 <div className="d-flex justify-content-around" style={{ width: "100vw", padding: "40px" }} >
                     <NewsSection className="" />
                     <EventsSection className="" />
+                </div>
+                <div>
+                    <Counter />
                 </div>
                 <div>
                     <Research />
