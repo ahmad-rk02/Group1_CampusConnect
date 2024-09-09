@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import './AboutVM.css';
+import './AboutInstitute.css';
 
 const AboutVM = () => {
   return (
