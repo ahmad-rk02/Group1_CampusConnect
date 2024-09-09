@@ -1,11 +1,11 @@
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import imagePath from "./assets/Gec.png"; // Correct import path
+import imagePath from "./assets/Gec.png"; 
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import About from "./pages/About";
+import AboutVM from './pages/AboutVM';
 import Contact from "./pages/Contact";
 import Departments from './pages/Departments';
 import Administration from './pages/Administration';
@@ -58,7 +58,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/aboutvm" element={<AboutVM />} /> */}
           <Route path="/departments" element={<Departments />} />
           <Route path="/administration" element={<Administration />} />
           <Route path="/payments" element={<Payments />} />
