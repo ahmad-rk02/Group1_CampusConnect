@@ -1,0 +1,23 @@
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .card-header h4 {
+    font-weight: bold;
+  }
+  
+  .bg-white ul {
+    padding-left: 20px;
+  }
+  
+  .bg-white ul li {
+    margin-bottom: 10px;
+  }
+  
+  .bg-white img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }

@@ -28,6 +28,16 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const renderSubLinks = (subLinks) => {
     return subLinks.map((subLink, subIndex) => {
+      if (subLink === "Vision and Mission") {
+        return (
+          <li key={subIndex}>
+            <Link to="/aboutvm" className="dropdown-item">
+              Vision and Mission
+            </Link>
+          </li>
+        );
+      }
+
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>

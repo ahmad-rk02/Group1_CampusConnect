@@ -58,7 +58,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} />
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
-          {/* <Route path="/aboutvm" element={<AboutVM />} /> */}
+          <Route path="/aboutvm" element={<AboutVM />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/administration" element={<Administration />} />
           <Route path="/payments" element={<Payments />} />
