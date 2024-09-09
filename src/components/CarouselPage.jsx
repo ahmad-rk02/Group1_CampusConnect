@@ -8,7 +8,7 @@ import './CarouselPage.css';
 
 function CarouselPage() {
   return (
-    <div className='Carousel-container'>
+    <div className='Carousel-container-4'>
       <Carousel>
         <Carousel.Item>
           <img
@@ -18,7 +18,7 @@ function CarouselPage() {
             alt="First slide"
           />
           <div className="carousel-caption">
-            <h3>Government College Of Engineering, Chandrapur</h3>
+            <h2>Government College Of Engineering, Chandrapur</h2>
             <button className="more-button">More</button>
           </div>
         </Carousel.Item>
@@ -31,7 +31,7 @@ function CarouselPage() {
             alt="Second slide"
           />
           <div className="carousel-caption">
-            <h3>Engineering Degree Programmes</h3>
+            <h2>Engineering Degree Programmes</h2>
             <p>Under Graduate & Post Graduate</p>
             <button className="more-button">More</button>
           </div>
@@ -45,7 +45,7 @@ function CarouselPage() {
             alt="Third slide"
           />
           <div className="carousel-caption">
-            <h3>Programmes & Events </h3>
+            <h2>Programmes & Events </h2>
             <p>Cultural & Curricular Activities</p>
             <button className="more-button">More</button>
           </div>
@@ -59,7 +59,7 @@ function CarouselPage() {
             alt="Fourth slide"
           />
           <div className="carousel-caption">
-            <h3>GCOEC</h3>
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
             <button className="more-button">More</button>
           </div>
         </Carousel.Item>

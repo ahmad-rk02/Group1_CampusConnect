@@ -1,4 +1,4 @@
-.Carousel-container {
+.Carousel-container-4 {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -9,16 +9,15 @@
   position: absolute;
   bottom: 0px;
   left: 30px;
-  width: 25%;
-  background-color: rgba(16, 44, 87, 0.6);
+  width: 28%;
+  height: auto;
+  background-color: rgba(16, 44, 87, 0.669);
   padding: 10px 20px;
   color: white;
   border-radius: 5px;
-  font-size: 15px;
 }
-.carousel-caption h3{
+.carousel-caption h2{
   color: white;
-  font-size: 20px;
 }
 .more-button {
   background-color: white;

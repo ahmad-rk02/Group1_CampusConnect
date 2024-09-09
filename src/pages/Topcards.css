@@ -4,7 +4,10 @@
     justify-content: center;
     gap: 30px;
     margin: 0 auto;
+    padding-top: 90px;
+   padding-left: 120px;
 }
+
 
 .container2{
     justify-content: center;

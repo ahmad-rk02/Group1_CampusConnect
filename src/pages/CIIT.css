@@ -1,9 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
 .container{
   /* align-self: center; */
   /* padding: 50px; */
   padding-top: 30px;
   padding-bottom: 10px;
-  
+  max-width: 100%;
 }
 
 .container h3{
@@ -29,8 +33,27 @@
     height: 200px;
     
   }
+
+  .small-section{
+    text-align: center;
+    position: absolute;
+    height: 12%;
+    max-width: 20%;
+    background-color: #102c57ea;
+    color: white;
+    left: 0;
+    bottom: 0;
+    transition: opacity 0.3s ease;
+  }
+  .small-section h5{
+    padding-bottom: 3px;
+    padding-right: 5px;
+  }
   
   .overlay {
+    font-size:smaller; 
+   text-align: justify;
+   text-wrap: wrap;
     background-color: #102c57cc;
     position: absolute;
     top: 0;
@@ -44,6 +67,11 @@
     align-items: center; 
     justify-content: center;
     text-align: center;
+  }
+
+  .overlay .text{
+    padding-left: 10px;
+    padding-right: 10px;
   }
   
   .image-container:hover .overlay {

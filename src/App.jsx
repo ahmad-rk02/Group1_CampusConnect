@@ -11,6 +11,7 @@ import Departments from './pages/Departments';
 import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 function App() {
   const navItems = [
@@ -52,7 +53,7 @@ function App() {
         imageSrcPath={imagePath}  
         navItems={navItems}
       />
-      <div className="container m-0 p-0">
+      <div className="container-fluid container m-0 p-0">
         <Routes>
         <Route path="*" element={<Navigate to="/" />} />
           <Route path="/" element={<Home />} />
