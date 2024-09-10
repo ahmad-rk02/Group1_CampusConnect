@@ -8,7 +8,7 @@ import research03 from '../assets/research-img-03.jpg';
 const CIIT = () => {
   return (
     <div className="container col m-5 ">
-        <h3 className="text-center mb-6">CIIT,GCOEC</h3>
+        <h3 className="text-center mb-6">CIIIT,GCOEC</h3>
       <div className="container-in row m-4">
         <div className="container-in-in col-md-4">
           <div className="image-container">
