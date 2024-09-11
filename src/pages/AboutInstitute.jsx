@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import './AboutInstitute.css';
 
-const AboutVM = () => {
+const AboutInstitute = () => {
   return (
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
@@ -26,50 +26,22 @@ const AboutVM = () => {
 
         {/* Right Content Section */}
         <Col md={9} className="mt-4">
-          {/* Institute Vision */}
+          {/* About Institute */}
           <Card className="mb-4 w-100"> {/* Full width Card */}
             <Card.Header className="bg-golden"> {/* Custom class for golden background */}
-              <h4>Institute Vision</h4>
+              <h4>About Institute</h4>
             </Card.Header>
             <Card.Body className="bg-white"> {/* Custom class for white background */}
               <Row>
                 <Col md={9}>
                   <p>
-                    To excel in technical education having focus on innovative design, 
-                    entrepreneurship development, enhancing employability rate, and 
-                    developing environment-friendly society.
+                  Government College of Engineering Chandrapur is established in 1996 This is the only Government Institute under Gondwana University, Gadchiroli. This Government institute is completely funded by Government of Maharashtra. The Institute is under Director of Technical Education, M.S., Mumbai and is administered through its Regional office at Nagpur. Now a days, due to globalization there is stiff competition at the national & International level as well phenomenal growth in the technology. For this, competent technocrats & engineers are in great demand and to serve this requirement, Government College of Engineering,Chandrapur is taking efforts to produce high quality technocrats. 
                   </p>
                 </Col>
                 <Col md={3}>
                   <img
-                    src="AboutVission.jpg"
+                    src="about institute.jpg"
                     alt="Vision"
-                    style={{ width: '100%' }}
-                  />
-                </Col>
-              </Row>
-            </Card.Body>
-          </Card>
-
-          {/* Institute Mission */}
-          <Card className="w-100"> {/* Full width Card */}
-            <Card.Header className="bg-golden"> {/* Custom class for golden background */}
-              <h4>Institute Mission</h4>
-            </Card.Header>
-            <Card.Body className="bg-white"> {/* Custom class for white background */}
-              <Row>
-                <Col md={9}>
-                  <ul>
-                    <li>To educate and train undergraduate and research students for practicing professionalism, ethical approach, leadership, and entrepreneurship ability.</li>
-                    <li>To nurture a conducive environment for learning.</li>
-                    <li>To develop proficient technocrats catering to the needs of industry, society, and the environment.</li>
-                    <li>To enhance rapport with distinguished institutes, industries, and alumni for excellence in education, research, and consultancy.</li>
-                  </ul>
-                </Col>
-                <Col md={3}>
-                  <img
-                    src="AboutMission.jpg"
-                    alt="Mission"
                     style={{ width: '100%' }}
                   />
                 </Col>
@@ -82,4 +54,4 @@ const AboutVM = () => {
   );
 };
 
-export default AboutVM;
+export default AboutInstitute;

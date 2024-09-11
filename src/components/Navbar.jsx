@@ -28,6 +28,16 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const renderSubLinks = (subLinks) => {
     return subLinks.map((subLink, subIndex) => {
+      // Check for subLink names and render accordingly
+      if (subLink === "About Institute") {
+        return (
+          <li key={subIndex}>
+            <Link to="/aboutinstitute" className="dropdown-item">
+              About Institute
+            </Link>
+          </li>
+        );
+      }
       if (subLink === "Vision and Mission") {
         return (
           <li key={subIndex}>
@@ -37,7 +47,7 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
-
+      // For other simple string links
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>
@@ -46,7 +56,9 @@ function Navbar({ imageSrcPath, navItems }) {
             </Link>
           </li>
         );
-      } else if (typeof subLink === "object" && subLink.subLinks) {
+      } 
+      // Handle subLink as an object for nested dropdowns
+      else if (typeof subLink === "object" && subLink.subLinks) {
         return (
           <li key={subIndex} className="dropdown-submenu">
             <a
@@ -99,7 +111,7 @@ function Navbar({ imageSrcPath, navItems }) {
                 {item.subLinks ? (
                   <div className="nav-item dropdown">
                     <Link
-                      to={`/${item.name.toLowerCase()}`}
+                      to="#"
                       className="nav-link dropdown-toggle"
                       id={`navbarDropdown${index}`}
                       role="button"
