@@ -55,6 +55,15 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
+      if (subLink === "UG (B.Tech)") {
+        return (
+          <li key={subIndex}>
+            <Link to="/ug" className="dropdown-item">
+            UG (B.Tech)
+            </Link>
+          </li>
+        );
+      }
 
       if (typeof subLink === "string") {
         return (
