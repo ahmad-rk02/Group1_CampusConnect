@@ -26,7 +26,7 @@ function NewsSection() {
 
             <Carousel>
                 <Carousel.Item interval={2000}>
-                    <div className="card shadow">
+                    <div className="card1 shadow">
                         <img src={collegeBuilding} className="card-img-top" alt="College Building" />
                         <div className="card-body">
                             <h5 className="card-title">
@@ -41,7 +41,7 @@ function NewsSection() {
                 </Carousel.Item>
 
                 <Carousel.Item interval={2000}>
-                    <div className="card shadow">
+                    <div className="card1 shadow">
                         <img src={universityBuilding} className="card-img-top" alt="University Building" />
                         <div className="card-body">
                             <h5 className="card-title">
@@ -56,7 +56,7 @@ function NewsSection() {
                 </Carousel.Item>
 
                 <Carousel.Item interval={2000}>
-                    <div className="card shadow">
+                    <div className="card1 shadow">
                         <img src={universityNews} className="card-img-top" alt="University Building" />
                         <div className="card-body">
                             <h5 className="card-title">
