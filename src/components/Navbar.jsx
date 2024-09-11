@@ -27,22 +27,7 @@ function Navbar({ imageSrcPath, navItems }) {
   }, []);
 
   const renderSubLinks = (subLinks) => {
-
     return subLinks.map((subLink, subIndex) => {
-<<<<<<< HEAD
-      // Check for subLink names and render accordingly
-      if (subLink === "About Institute") {
-        return (
-          <li key={subIndex}>
-            <Link to="/aboutinstitute" className="dropdown-item">
-              About Institute
-            </Link>
-          </li>
-        );
-      }
-=======
-
->>>>>>> 8ffbb6d8d60cf6bacd94ed0145639bd41e942ca3
       if (subLink === "Vision and Mission") {
         return (
           <li key={subIndex}>
@@ -52,21 +37,25 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
-<<<<<<< HEAD
-      // For other simple string links
-=======
-
-      if (subLink === "UG (B.Tech)") {
+      if (subLink === "About Institute") {
         return (
           <li key={subIndex}>
-            <Link to="/ug" className="dropdown-item">
-              UG (B.Tech)
+            <Link to="/aboutinstitute" className="dropdown-item">
+              About Institute
+            </Link>
+          </li>
+        );
+      }
+      if (subLink === "Principal's Desk") {
+        return (
+          <li key={subIndex}>
+            <Link to="/principaldesk" className="dropdown-item">
+              Principal's Desk
             </Link>
           </li>
         );
       }
 
->>>>>>> 8ffbb6d8d60cf6bacd94ed0145639bd41e942ca3
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>
@@ -75,9 +64,7 @@ function Navbar({ imageSrcPath, navItems }) {
             </Link>
           </li>
         );
-      } 
-      // Handle subLink as an object for nested dropdowns
-      else if (typeof subLink === "object" && subLink.subLinks) {
+      } else if (typeof subLink === "object" && subLink.subLinks) {
         return (
           <li key={subIndex} className="dropdown-submenu">
             <a
@@ -123,14 +110,14 @@ function Navbar({ imageSrcPath, navItems }) {
           <ul className="navbar-nav me-auto mb-2 mb-md-1 justify-content-center w-100">
             {navItems.map((item, index) => (
               <li
-                key={item.name}
+                key={index}
                 className="nav-item"
                 onClick={() => setSelectedIndex(index)}
               >
                 {item.subLinks ? (
                   <div className="nav-item dropdown">
                     <Link
-                      to="#"
+                      to={`/${item.name.toLowerCase()}`}
                       className="nav-link dropdown-toggle"
                       id={`navbarDropdown${index}`}
                       role="button"

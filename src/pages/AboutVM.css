@@ -1,29 +1,73 @@
-
 h1 {
-    font-size: 2.5rem;
-    font-weight: bold;
-  }
-  
-  .card-header h4 {
-    font-weight: bold;
-  }
-  
-  .bg-white ul {
-    padding-left: 20px;
-  }
-  
-  .bg-white ul li {
-    margin-bottom: 10px;
-  }
-  
-  .bg-white img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-.left-index{
-  margin-left: 60px;
-  margin-right: 60px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.card-header h4 {
+  font-weight: bold;
 }
 
+.bg-white{
+  background-color: white;
+}
 
+.bg-white ul {
+  padding-left: 20px;
+}
+
+.bg-white ul li {
+  margin-bottom: 10px;
+  list-style: none;
+}
+
+.bg-white img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.left-index{
+margin-left: 60px;
+margin-right: 60px;
+}
+.bg-golden{
+background-color: #EADBC8;
+}
+
+.header-design{
+background-color:#102C57
+}
+
+.header-align{
+margin-left: 130px;
+}
+.card-content{
+border: none;
+border-radius: none;
+}
+.left-sidebar {
+position: relative;
+top: -20px;
+z-index: 2;
+width: 250px;
+margin-left: 40px; 
+}
+
+.left-sidebar .card {
+text-align: center;
+}
+
+.left-sidebar .list-group-item {
+font-size: 1.2rem; 
+text-align: center;
+}
+.footer-spacing{
+margin-top: 80px;
+}
+.active-link {
+font-weight: bold;
+color: #007bff;
+}
+
+.left-sidebar a {
+text-decoration: none;
+color: black;
+}

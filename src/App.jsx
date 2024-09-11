@@ -1,9 +1,11 @@
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import imagePath from "./assets/Gec.png"; 
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate} from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutVM from './pages/AboutVM';
-import AboutInstitute from './pages/AboutInstitute';
 import Contact from "./pages/Contact";
 import Departments from './pages/Departments';
 import Administration from './pages/Administration';
@@ -12,8 +14,8 @@ import Programmes from './pages/Programmes';
 import UG from './pages/UG';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
-import imagePath from "./assets/Gec.png"; // Add your image path here
-
+import AboutInstitute from './pages/AboutInstitute';
+import PrincipalDesk from './pages/PrincipalDesk';
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -40,7 +42,7 @@ function App() {
         "Committees",
         "Training & Placements",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
-        "Alumni",
+        "Alumini",
         "Resources",
         { name: "Hostel", subLinks: ["Boy's Hostel", "Girl's Hostel"] }
       ]
@@ -50,13 +52,18 @@ function App() {
 
   return (
     <Router>
-      <Navbar imageSrcPath={imagePath} navItems={navItems} />
+      <Navbar
+        imageSrcPath={imagePath}  
+        navItems={navItems}
+      />
       <div className="container-fluid container m-0 p-0">
         <Routes>
-          <Route path="*" element={<Navigate to="/" />} />
+        <Route path="*" element={<Navigate to="/" />} />
           <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/aboutvm" element={<AboutVM />} />
           <Route path="/aboutinstitute" element={<AboutInstitute />} />
+          <Route path="/principaldesk" element={<PrincipalDesk />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/administration" element={<Administration />} />
           <Route path="/payments" element={<Payments />} />
