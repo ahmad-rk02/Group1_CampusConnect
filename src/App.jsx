@@ -9,6 +9,7 @@ import Departments from './pages/Departments';
 import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
+import UG from './pages/UG';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import imagePath from "./assets/Gec.png"; // Add your image path here
@@ -60,6 +61,7 @@ function App() {
           <Route path="/administration" element={<Administration />} />
           <Route path="/payments" element={<Payments />} />
           <Route path="/programmes" element={<Programmes />} />
+          <Route path="/ug" element={<UG />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>

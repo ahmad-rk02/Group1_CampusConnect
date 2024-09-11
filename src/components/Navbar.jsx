@@ -27,7 +27,9 @@ function Navbar({ imageSrcPath, navItems }) {
   }, []);
 
   const renderSubLinks = (subLinks) => {
+
     return subLinks.map((subLink, subIndex) => {
+<<<<<<< HEAD
       // Check for subLink names and render accordingly
       if (subLink === "About Institute") {
         return (
@@ -38,6 +40,9 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
+=======
+
+>>>>>>> 8ffbb6d8d60cf6bacd94ed0145639bd41e942ca3
       if (subLink === "Vision and Mission") {
         return (
           <li key={subIndex}>
@@ -47,7 +52,21 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
+<<<<<<< HEAD
       // For other simple string links
+=======
+
+      if (subLink === "UG (B.Tech)") {
+        return (
+          <li key={subIndex}>
+            <Link to="/ug" className="dropdown-item">
+              UG (B.Tech)
+            </Link>
+          </li>
+        );
+      }
+
+>>>>>>> 8ffbb6d8d60cf6bacd94ed0145639bd41e942ca3
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>

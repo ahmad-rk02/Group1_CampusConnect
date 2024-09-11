@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
+import 'bootstrap-icons/font/bootstrap-icons.css';
 import { BsBorderWidth } from "react-icons/bs";
 import { MdBorderColor, MdHeight } from "react-icons/md";
 import VisibilitySensor from "react-visibility-sensor";
 import "./Counter.css"
 
 const Counter = () => {
+
+
     const [dataItems, setDataItems] = useState([
-        { icon: "bi bi-mortarboard", value: "300", text: "Students" },
-        { icon: "bi bi-person-workspace", value: "200", text: "Faculty" },
-        { icon: "bi bi-people-fill", value: "150", text: "Staff" },
-        { icon: "bi bi-person-plus-fill", value: "400", text: "Visitors" },
+        { icon: "bi bi-mortarboard", value: "1000", text: "Students" },
+        { icon: "bi bi-easel-fill", value: "100", text: "Faculty" },
+        { icon: "bi bi-people", value: "150", text: "Staff" },
+        { icon: "bi bi-people-fill", value: "400", text: "Visitors" },
     ]);
 
     const interval = 2;
@@ -19,7 +22,7 @@ const Counter = () => {
         Height: '220px',
         boxSizing: "border-box",
         textAlign: "center",
-        borderRadius: '50%', 
+        borderRadius: '50%',
         borderWidth: '2px',
         borderColor: '#102C57',
         borderStyle: 'solid',
@@ -64,7 +67,7 @@ const Counter = () => {
                     setDataItems((prevDataItems) =>
                         prevDataItems.map((prevItem) =>
                             prevItem.text === item.text
-                                ? { ...prevItem, value: startValue.toString() }
+                                ? { ...prevItem, value: startValue.toString() + (startValue === endValue ? "+" : "")}
                                 : prevItem
                         )
                     );
@@ -87,13 +90,13 @@ const Counter = () => {
     };
 
     return (
-        <div className="wrapper" style={{ display: "flex", flexDirection:"row", justifyContent: "center", width:"100%",gap:"40px", paddingBottom: "4em" }}>
+        <div className="wrapper" style={{ display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", gap: "40px", paddingBottom: "4em" }}>
             {dataItems.map((item, index) => (
                 <VisibilitySensor class="one-box-counter"
                     key={index}
                     onChange={(isVisible) => handleVisibilityChange(isVisible)}
                 >
-                    <div  style={containerStyles}>
+                    <div style={containerStyles}>
                         <i className={item.icon} style={iconStyles}></i>
                         <span className="num" id={item.text} style={numStyles}>
                             {item.value}
