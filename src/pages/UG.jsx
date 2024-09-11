@@ -54,7 +54,7 @@ const UG = () => {
             </p>
 
             <Table class='ug-table' className='ug-table' striped bordered hover>
-              <thead class="table-header-ug" className='table-header'>
+              <thead class="table-header-ug" className='table-header-ug'>
                 <tr>
                   <th>Sr. No.</th>
                   <th>Name of Programme</th>
