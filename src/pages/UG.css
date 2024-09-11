@@ -48,18 +48,25 @@ padding-left: 170px;
     border-radius: 10px;
 }
 
-.table-header th{
+.table-header-ug th{
     background-color: #102c57;
     color: white;
+    text-align: center;
 }
 
-.table-header th:first-child {
+.table-header-ug th:first-child {
     border-top-left-radius: 10px; 
   }
   
-  .table-header th:last-child {
+  .table-header-ug th:last-child {
     border-top-right-radius: 10px; 
   }
 
+.table-body-ug tr{
+    text-align: center;
+  }
 
+.name-ug-prog{
+    text-align: left;
+}
 

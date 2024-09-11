@@ -2,6 +2,8 @@ import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 import './UG.css';
+import Footer from './Footer';
+
 
 const UG = () => {
 
@@ -16,6 +18,7 @@ const UG = () => {
 
 
   return (
+    <>
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
       <Row class="head-box-ug" className='head-box-ug'>
@@ -51,7 +54,7 @@ const UG = () => {
             </p>
 
             <Table class='ug-table' className='ug-table' striped bordered hover>
-              <thead class="table-header" className='table-header'>
+              <thead class="table-header-ug" className='table-header'>
                 <tr>
                   <th>Sr. No.</th>
                   <th>Name of Programme</th>
@@ -60,7 +63,7 @@ const UG = () => {
                   <th>Intake Capacity</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="table-body-ug">
                 {UgTable.map((prog) => (
                   <tr key={prog.id}>
                     <td>{prog.id}</td>
@@ -78,6 +81,12 @@ const UG = () => {
 
       </Row>
     </Container>
+    
+    <div className='footer-spacing'>
+        <Footer />
+      </div>
+      
+</>
   );
 };
 
