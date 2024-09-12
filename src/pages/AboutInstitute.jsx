@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './AboutVM.css';
 import AboutInstituteImage from '../assets/AboutInstitute.jpg'; // Renamed import
-import Footer from './Footer';
+
 
 const AboutInstitute = () => {
   const location = useLocation(); // Get the current route
@@ -88,9 +88,6 @@ const AboutInstitute = () => {
           </Col>
         </Row>
       </Container>
-      <div className='footer-spacing'>
-        <Footer />
-      </div>
     </>
   );
 };

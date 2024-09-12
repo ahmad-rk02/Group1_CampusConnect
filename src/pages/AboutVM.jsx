@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './AboutVM.css';
-import Footer from './Footer';
 import AboutMission from '../assets/AboutMission.jpg';
 import AboutVission from '../assets/AboutVission.jpg';
 
@@ -108,9 +107,6 @@ const AboutVM = () => {
           </Col>
         </Row>
       </Container>
-      <div className='footer-spacing'>
-        <Footer />
-      </div>
     </>
   );
 };
