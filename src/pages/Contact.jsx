@@ -65,9 +65,6 @@ const Contact = () => {
 
         </Row>
       </Container>
-      <div className='footer-spacing'>
-        <Footer />
-      </div>
     </>
   );
 };

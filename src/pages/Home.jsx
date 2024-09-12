@@ -142,9 +142,6 @@ function Home() {
                 <div>
                     <Research />
                 </div>
-                <div>
-                    <Footer />
-                </div>
             </div>
 
 
