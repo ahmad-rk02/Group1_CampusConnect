@@ -12,6 +12,7 @@ import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
 import UG from './pages/UG';
+import PG from './pages/PG';
 import PhD from './pages/PhD';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
@@ -54,35 +55,36 @@ function App() {
   ];
 
   return (
-    <>
-      <Router>
-        <Navbar
-          imageSrcPath={imagePath}
-          navItems={navItems}
-        />
-        <div className="container-fluid container m-0 p-0">
-          <Routes>
-            <Route path="*" element={<Navigate to="/" />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/aboutvm" element={<AboutVM />} />
-            <Route path="/aboutinstitute" element={<AboutInstitute />} />
-            <Route path="/principaldesk" element={<PrincipalDesk />} />
-            <Route path="/departments" element={<Departments />} />
-            <Route path="/administration" element={<Administration />} />
-            <Route path="/payments" element={<Payments />} />
-            <Route path="/programmes" element={<Programmes />} />
-            <Route path="/ug" element={<UG />} />
-            <Route path="/phd" element={<PhD />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
-      <div className='footer-spacing'>
-        <Footer />
-      </div>
-    </>
-  );
+          <>
+            <Router>
+              <Navbar
+                imageSrcPath={imagePath}
+                navItems={navItems}
+              />
+              <div className="container-fluid container m-0 p-0">
+                <Routes>
+                  <Route path="*" element={<Navigate to="/" />} />
+                  <Route path="/" element={<Home />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/aboutvm" element={<AboutVM />} />
+                  <Route path="/aboutinstitute" element={<AboutInstitute />} />
+                  <Route path="/principaldesk" element={<PrincipalDesk />} />
+                  <Route path="/departments" element={<Departments />} />
+                  <Route path="/administration" element={<Administration />} />
+                  <Route path="/payments" element={<Payments />} />
+                  <Route path="/programmes" element={<Programmes />} />
+                  <Route path="/ug" element={<UG />} />
+                  <Route path="/phd" element={<PhD />} />
+                  <Route path="/pg" element={<PG />} />
+                  <Route path="/contact" element={<Contact />} />
+                </Routes>
+              </div>
+            </Router>
+            <div className='footer-spacing'>
+              <Footer />
+            </div>
+          </>
+          );
 }
 
-export default App;
+          export default App;

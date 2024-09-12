@@ -74,6 +74,16 @@ function Navbar({ imageSrcPath, navItems }) {
         );
       }
 
+      if (subLink === "PG (M.Tech)") {
+        return (
+          <li key={subIndex}>
+            <Link to="/pg" className="dropdown-item">
+            PG (M.Tech)
+            </Link>
+          </li>
+        );
+      }
+
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>
