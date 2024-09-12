@@ -12,6 +12,7 @@ import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
 import UG from './pages/UG';
+import PG from './pages/PG';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import AboutInstitute from './pages/AboutInstitute';
@@ -69,6 +70,7 @@ function App() {
           <Route path="/payments" element={<Payments />} />
           <Route path="/programmes" element={<Programmes />} />
           <Route path="/ug" element={<UG />} />
+          <Route path="/pg" element={<PG />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </div>
