@@ -69,7 +69,7 @@ const AboutVM = () => {
                   </Col>
 
                   <Col md={9}>
-                    <p>
+                    <p style={{fontSize: "medium"}}>
                       To excel in technical education having focus on innovative design,
                       entrepreneurship development, enhancing employability rate, and
                       developing environment-friendly society.

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './UG.css';
 import Footer from './Footer';
 
@@ -32,9 +33,30 @@ const UG = () => {
         <Col md={2} className='left-sidebar' class="left-sidebar">
           <Card className="left-nav-ug" class='left-nav-ug'>
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-01">UG (B.Tech)</ListGroup.Item>
-              <ListGroup.Item className="left-nav-row">PG (M.Tech)</ListGroup.Item>
-              <ListGroup.Item className="left-nav-row">Ph.D</ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-01">
+              <Link
+                    to="/ug"
+                    className={location.pathname === "/ug" ? "active-link" : ""}
+                  >
+                    UG (B.Tech)
+                    </Link>
+                    </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row">
+              <Link
+                    to="/pg"
+                    className={location.pathname === "/pg" ? "active-link" : ""}
+                  >
+                PG (M.Tech)
+                </Link>
+                </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row">
+              <Link
+                    to="/phd"
+                    className={location.pathname === "/phd" ? "active-link" : ""}
+                  >
+                Ph.D
+                </Link>
+                </ListGroup.Item>
             </ListGroup>
           </Card>
         </Col>
