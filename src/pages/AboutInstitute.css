@@ -33,7 +33,13 @@ background-color: #EADBC8;
 }
 
 .header-design{
-background-color:#102C57
+background-color:#102C57;
+height: 130px;
+}
+
+.header-design h1{
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 .header-align{
@@ -98,3 +104,16 @@ color: black;
   padding-bottom: 0;
   text-align: center;
 } */
+
+
+.left-nav-row{
+  height: 65px;
+}
+
+.left-nav-ai{
+  background-color: white;
+  border-radius: 0;
+  height: 200px;
+  width: 300px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}

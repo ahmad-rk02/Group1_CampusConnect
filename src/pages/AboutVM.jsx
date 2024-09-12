@@ -21,9 +21,9 @@ const AboutVM = () => {
         <Row className="flex-nowrap left-index">
           {/* Left Sidebar */}
           <Col md={3} className="left-sidebar"> 
-            <Card>
+            <Card className="left-nav-vm">
               <ListGroup variant="flush">
-                <ListGroup.Item>
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/aboutinstitute"
                     className={location.pathname === "/aboutinstitute" ? "active-link" : ""}
@@ -31,7 +31,7 @@ const AboutVM = () => {
                     About Institute
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
@@ -39,7 +39,7 @@ const AboutVM = () => {
                     Principal's Desk
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/aboutvm"
                     className={location.pathname === "/aboutvm" ? "active-link" : ""}

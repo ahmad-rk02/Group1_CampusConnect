@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
-import './AboutVM.css';
+import './AboutInstitute.css';
 import AboutInstituteImage from '../assets/AboutInstitute.jpg'; // Renamed import
 
 
@@ -12,7 +12,7 @@ const AboutInstitute = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className="header-design text-white py-3">
+        <Row className="header-design text-white py-4">
           <Col className="header-align">
             <h1 className="text-left ">ABOUT US</h1>
           </Col>
@@ -21,17 +21,17 @@ const AboutInstitute = () => {
         <Row className="flex-nowrap left-index">
           {/* Left Sidebar */}
           <Col md={3}  className="left-sidebar ">
-            <Card>
+            <Card className="left-nav-ai">
               <ListGroup variant="flush">
-                <ListGroup.Item>
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/aboutinstitute"
                     className={location.pathname === "/aboutinstitute" ? "active-link" : ""}
                   >
                     About Institute
                   </Link>
-                </ListGroup.Item>
-                <ListGroup.Item>
+                </ListGroup.Item >
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
@@ -39,7 +39,7 @@ const AboutInstitute = () => {
                     Principal's Desk
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item>
+                <ListGroup.Item className="left-nav-row">
                   <Link
                     to="/aboutvm"
                     className={location.pathname === "/aboutvm" ? "active-link" : ""}

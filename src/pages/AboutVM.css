@@ -71,3 +71,19 @@ color: #007bff;
 text-decoration: none;
 color: black;
 }
+
+.left-nav-row{
+  height: 65px;
+}
+
+.left-nav-vm{
+  background-color: white;
+    border-radius: 0;
+    height: 200px;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.content-card{
+  padding-left: 170px;
+}
