@@ -1,0 +1,40 @@
+.card2 {
+    background-color: #fff;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    margin-left: 100px;
+}
+.card3 {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    margin-right: 50px;
+}
+.card2 p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.card2 strong {
+    font-weight: 600;
+    color: #000;
+}
+
+.card2 a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card2 a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.card2 a:visited {
+    color: #6610f2;
+}
