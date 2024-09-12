@@ -64,6 +64,15 @@ function Navbar({ imageSrcPath, navItems }) {
           </li>
         );
       }
+      if (subLink === "Ph.D") {
+        return (
+          <li key={subIndex}>
+            <Link to="/phd" className="dropdown-item">
+            Ph.D
+            </Link>
+          </li>
+        );
+      }
 
       if (typeof subLink === "string") {
         return (

@@ -12,6 +12,7 @@ import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
 import UG from './pages/UG';
+import PhD from './pages/PhD';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import AboutInstitute from './pages/AboutInstitute';
@@ -53,6 +54,7 @@ function App() {
   ];
 
   return (
+<<<<<<< HEAD
     <>
       <Router>
         <Navbar
@@ -78,6 +80,29 @@ function App() {
       </Router>
       <div>
         <Footer />
+=======
+    <Router>
+      <Navbar
+        imageSrcPath={imagePath}  
+        navItems={navItems}
+      />
+      <div className="container-fluid container m-0 p-0">
+        <Routes>
+        <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/aboutvm" element={<AboutVM />} />
+          <Route path="/aboutinstitute" element={<AboutInstitute />} />
+          <Route path="/principaldesk" element={<PrincipalDesk />} />
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/administration" element={<Administration />} />
+          <Route path="/payments" element={<Payments />} />
+          <Route path="/programmes" element={<Programmes />} />
+          <Route path="/ug" element={<UG />} />
+          <Route path="/phd" element={<PhD />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+>>>>>>> 46f7d8e8881c671d25fc634ef7e20ac4b2d52989
       </div>
     </>
   );
