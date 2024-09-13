@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 import './Contact.css'
-import Footer from './Footer'
+
 const Contact = () => {
   return (
     <>

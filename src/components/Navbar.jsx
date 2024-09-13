@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../App.css";
 
 function Navbar({ imageSrcPath, navItems }) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -59,7 +58,7 @@ function Navbar({ imageSrcPath, navItems }) {
         return (
           <li key={subIndex}>
             <Link to="/ug" className="dropdown-item">
-            UG (B.Tech)
+              UG (B.Tech)
             </Link>
           </li>
         );
@@ -68,7 +67,7 @@ function Navbar({ imageSrcPath, navItems }) {
         return (
           <li key={subIndex}>
             <Link to="/phd" className="dropdown-item">
-            Ph.D
+              Ph.D
             </Link>
           </li>
         );
@@ -78,7 +77,7 @@ function Navbar({ imageSrcPath, navItems }) {
         return (
           <li key={subIndex}>
             <Link to="/pg" className="dropdown-item">
-            PG (M.Tech)
+              PG (M.Tech)
             </Link>
           </li>
         );
@@ -112,7 +111,7 @@ function Navbar({ imageSrcPath, navItems }) {
   };
 
   return (
-    <nav className="navbar navbar-expand-md navbar-light bg-white shadow">
+    <nav className="navbar navbar-expand-md ">
       <div className="container-fluid ms-4">
         <a className="navbar-brand" href="#">
           <img

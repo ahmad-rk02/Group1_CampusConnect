@@ -93,17 +93,16 @@ color: black;
 }
 
 .content-card p {
-  margin-top: 20px;  /* Add space between heading and paragraph */
+  margin-top: 20px;  
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: justify;
 }
 
-/* .side-heading-bottom {
-  padding-top: 0px;
-  padding-bottom: 0;
-  text-align: center;
-} */
+.side-heading-bottom {
+ margin-top: 18em;;
+ margin-left: 10em;
+}
 
 
 .left-nav-row{

@@ -3,7 +3,6 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './PG.css';
-import Footer from './Footer';
 
 
 const PG = () => {
@@ -95,11 +94,6 @@ const PG = () => {
 
       </Row>
     </Container>
-    
-    <div className='footer-spacing'>
-        <Footer />
-      </div>
-      
 </>
   );
 };

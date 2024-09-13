@@ -5,19 +5,19 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import AboutVM from './pages/AboutVM';
+import AboutVM from './About/AboutVM';
 import Contact from "./pages/Contact";
 import Departments from './pages/Departments';
 import Administration from './pages/Administration';
 import Payments from './pages/Payments';
 import Programmes from './pages/Programmes';
-import UG from './pages/UG';
-import PG from './pages/PG';
-import PhD from './pages/PhD';
+import UG from './Programmes/UG';
+import PG from './Programmes/PG';
+import PhD from './Programmes/PhD';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
-import AboutInstitute from './pages/AboutInstitute';
-import PrincipalDesk from './pages/PrincipalDesk';
+import AboutInstitute from './About/AboutInstitute';
+import PrincipalDesk from './About/PrincipalDesk';
 import Footer from './pages/Footer'
 
 function App() {

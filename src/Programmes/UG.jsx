@@ -2,15 +2,19 @@ import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
-import './PhD.css';
-import Footer from './Footer';
+import './UG.css';
 
 
-const PhD = () => {
 
-  const PhDTable = [
-    { id: 1, name: 'Mechanical Engineering', year: 2020, duration: "2 to 5", capacity: 10 },
-    { id: 2, name: 'Electrical Engineering', year: 2014, duration: "2 to 5", capacity: 10 },
+const UG = () => {
+
+  const UgTable = [
+    { id: 1, name: 'Mechanical Engg. [NBA]', year: 1996, duration: 4, capacity: 60 },
+    { id: 2, name: 'Electrical Engg. [NBA]', year: 1996, duration: 4, capacity: 60 },
+    { id: 3, name: 'Instrumentation Engg. [NBA]', year: 1996, duration: 4, capacity: 30 },
+    { id: 4, name: 'Computer Sci. & Engg.', year: 2007, duration: 4, capacity: 60 },
+    { id: 5, name: 'Electronics & Tele. Engg.', year: 2010, duration: 4, capacity: 60 },
+    { id: 6, name: 'Civil Engg.', year: 2010, duration: 4, capacity: 60 }
   ];
 
 
@@ -18,7 +22,7 @@ const PhD = () => {
     <>
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
-      <Row class="head-box-phd" className='head-box-phd'>
+      <Row class="head-box-ug" className='head-box-ug'>
         <Col>
           <h1 className="text-left">PROGRAMMES</h1>
         </Col>
@@ -27,9 +31,9 @@ const PhD = () => {
       <Row noGutters className="flex-nowrap left-index just" >
         {/* Left Sidebar */}
         <Col md={2} className='left-sidebar' class="left-sidebar">
-          <Card className="left-nav-phd" class='left-nav-phd'>
-          <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row">
+          <Card className="left-nav-ug" class='left-nav-ug'>
+            <ListGroup variant="flush">
+              <ListGroup.Item className="left-nav-row-01">
               <Link
                     to="/ug"
                     className={location.pathname === "/ug" ? "active-link" : ""}
@@ -45,7 +49,7 @@ const PhD = () => {
                 PG (M.Tech)
                 </Link>
                 </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-01">
+              <ListGroup.Item className="left-nav-row">
               <Link
                     to="/phd"
                     className={location.pathname === "/phd" ? "active-link" : ""}
@@ -63,12 +67,16 @@ const PhD = () => {
             <div class='head-table-top' className='head-table-top'>
             <h3 style={{ color: '#102C57' }} >UG (B.Tech) Programmes</h3></div>
 
-            <p style={{paddingBottom: "15px", paddingTop: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
-            PhD program will have qualities of life-long learning, team work with effective communication for successful implementation of Civil Engineering projects.  
+            <p style={{paddingTop: "50px", paddingBottom: "0px", fontSize: "large", fontWeight: "700", width: "70%", wordWrap: "break-word" }}>
+             (B.Tech degree will be awarded instead of B.E. from A.Y. 2022-23 by Gondwana University)
+            </p >
+
+            <p style={{paddingBottom: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
+            Graduates of the program will have technical expertise, leadership, and ethical qualities to design and execute Civil Engineering projects.
             </p>
 
-            <Table class='phd-table' className='phd-table' striped bordered hover>
-              <thead class="table-header-phd" className='table-header-phd'>
+            <Table class='ug-table' className='ug-table' striped bordered hover>
+              <thead class="table-header-ug" className='table-header-ug'>
                 <tr>
                   <th>Sr. No.</th>
                   <th>Name of Programme</th>
@@ -77,11 +85,11 @@ const PhD = () => {
                   <th>Intake Capacity</th>
                 </tr>
               </thead>
-              <tbody class="table-body-phd">
-                {PhDTable.map((prog) => (
+              <tbody class="table-body-ug">
+                {UgTable.map((prog) => (
                   <tr key={prog.id}>
                     <td>{prog.id}</td>
-                    <td class='name-phd-prog'>{prog.name}</td>
+                    <td class='name-ug-prog'>{prog.name}</td>
                     <td>{prog.year}</td>
                     <td>{prog.duration}</td>
                     <td>{prog.capacity}</td>
@@ -95,8 +103,9 @@ const PhD = () => {
 
       </Row>
     </Container>
+      
 </>
   );
 };
 
-export default PhD;
+export default UG;

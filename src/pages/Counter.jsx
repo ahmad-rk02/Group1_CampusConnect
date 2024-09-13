@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { BsBorderWidth } from "react-icons/bs";
-import { MdBorderColor, MdHeight } from "react-icons/md";
 import VisibilitySensor from "react-visibility-sensor";
 import "./Counter.css"
 

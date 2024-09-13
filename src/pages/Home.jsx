@@ -1,6 +1,5 @@
 import React from 'react';
 import './Home.css';
-import Footer from './Footer';
 import Topcards from './Topcards'; // Now we will use this component
 import universityBuilding from '../assets/university-building.jpg';
 import collegeBuilding from '../assets/main-building-photo.jpg';

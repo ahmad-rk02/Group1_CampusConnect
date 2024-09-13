@@ -1,12 +1,12 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
+import { Link, useLocation } from 'react-router-dom'; 
 import './AboutInstitute.css';
-import AboutInstituteImage from '../assets/AboutInstitute.jpg'; // Renamed import
+import AboutInstituteImage from '../assets/AboutInstitute.jpg'; 
 
 
 const AboutInstitute = () => {
-  const location = useLocation(); // Get the current route
+  const location = useLocation(); 
 
   return (
     <>
@@ -50,7 +50,7 @@ const AboutInstitute = () => {
               </ListGroup>
             </Card>
 
-            <div class='side-heading-bottom py-5'>
+            <div class='side-heading-bottom'>
             <div className="fs-4 fw-bold gcoec-text " style={{ color: '#EADBC8'}}>GCOEC</div>
             <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '1.5' }}>
                      Delivering Wisdom Engineers</h2>
