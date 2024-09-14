@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import './Navbar.css'
 
 function Navbar({ imageSrcPath, navItems }) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -78,6 +79,16 @@ function Navbar({ imageSrcPath, navItems }) {
           <li key={subIndex}>
             <Link to="/pg" className="dropdown-item">
               PG (M.Tech)
+            </Link>
+          </li>
+        );
+      }
+
+      if (subLink === "Computer Science & Engineering") {
+        return (
+          <li key={subIndex}>
+            <Link to="/cse" className="dropdown-item">
+            Computer Science & Engineering
             </Link>
           </li>
         );

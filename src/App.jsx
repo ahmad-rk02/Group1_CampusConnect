@@ -17,6 +17,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
+import CSE from './pages/Departments/Cse/CSE';
 import Footer from './pages/Footer'
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
                   <Route path="/ug" element={<UG />} />
                   <Route path="/phd" element={<PhD />} />
                   <Route path="/pg" element={<PG />} />
+                  <Route path="/cse" element={<CSE />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
               </div>
