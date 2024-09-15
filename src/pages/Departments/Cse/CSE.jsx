@@ -4,6 +4,8 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './CSE.css'
 import CSEvm from './CSEvm';
+import CodeUnnati from './CodeUnnati';
+
 
 const CSE = () => {
   return (
@@ -79,8 +81,12 @@ const CSE = () => {
 
             <Col className='right-content-cse'>
                    {/* render components here in this Col tag - vinni and vaishnavi */}
-                   
-                   <CSEvm className='cse-intro-vm'/>
+                   <div className='cse-intro-vm'>
+                   <CSEvm />
+                   </div>
+                   <div className='code-unnati'>
+                   <CodeUnnati />
+                   </div>
                   
 
             </Col>
