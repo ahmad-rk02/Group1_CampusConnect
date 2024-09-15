@@ -1,15 +1,32 @@
+ /* Research.css */
+
+/* Desktop view */
 .main-research {
-   padding: 25px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-bottom: 70px;
-    object-fit: cover;
-}
-
-.main-research h3 {
-    padding-bottom: 60px;
     margin: 0 auto;
-}
-
-
+    padding: 20px;
+  }
+  
+  h3 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #333;
+  }
+  
+  .carousel-image {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .carousel-image img {
+    width: 30%;
+    height: auto;
+  }
+  
+  /* Mobile view */
+  @media (max-width: 768px) {
+    .main-research {
+      display: none; /* Hide the Research section on mobile */
+    }
+  }
+  

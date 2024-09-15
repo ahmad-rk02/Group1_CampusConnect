@@ -1,3 +1,4 @@
+ 
 .card-container2 {
     display: flex;
     flex-wrap: wrap;
@@ -7,8 +8,7 @@
     padding-top: 90px;
 }
 
-
-.container2{
+.container2 {
     justify-content: center;
     display: flex;
     width: 100%;
@@ -42,4 +42,58 @@
 .topcards-text {
     font-size: 0.9rem;
     color: #555;
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .card-container2 {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 20px;  
+    }
+
+    .custom-topcards {
+        max-width: 100%;
+        min-width: 100%;
+        border: 1px solid #003366; 
+        margin-bottom: 20px;
+    }
+
+    .icon {
+        font-size: 2rem;  
+    }
+
+    .topcards-title {
+        font-size: 1rem;
+    }
+
+    .topcards-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .card-container2 {
+        padding: 15px 10px;
+        gap: 15px; 
+    }
+
+    .custom-topcards {
+        max-width: 100%;
+        min-width: 100%;
+        border: 1px solid #003366;
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 1.8rem; 
+    }
+
+    .topcards-title {
+        font-size: 0.9rem;
+    }
+
+    .topcards-text {
+        font-size: 0.75rem;
+    }
 }
