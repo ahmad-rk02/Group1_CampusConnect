@@ -128,7 +128,7 @@
     opacity: 0;  
     transition: opacity 0.3s ease; /* Transition effect */
   }
-
+ 
   .image-container:hover .overlay {
     opacity: 1;  
   }
@@ -149,6 +149,6 @@
   }
 
   .overlay .text {
-    font-size: 0.75rem;
+    font-size: 0.70rem;
   }
 }
