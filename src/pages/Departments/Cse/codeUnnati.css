@@ -1,9 +1,51 @@
-.code-unnati-heading{
+.cse-code-unnati{
     background-color: #eadbc8;
     width: 70%;
     height: 50px;
+    position: relative;
 }
 
-.cse-intro-heading h3{
+.cse-code-unnati h3{
     text-align: left;
-}
+}.cse-code-unnati {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #002e5d; /* The dark blue background color */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px; /* Adjust the width as per your layout */
+    margin: auto;
+  }
+  
+  .code-unnati-logo {
+    background-color: #ffd700; /* Yellow background for the logo */
+    border-radius: 10px;
+    padding: 10px;
+    display: inline-block;
+  }
+  
+  .code-unnati-img {
+    width: 100px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  
+  .code-unnati-text {
+    color: white; /* Text color white */
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .code-unnati-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .code-unnati-text p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
