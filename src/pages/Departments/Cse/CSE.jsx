@@ -9,13 +9,11 @@ import CodeUnnati from './CodeUnnati';
 
 const CSE = () => {
   return (
-    <div className='cse-page-div'>
-      <Container fluid className="p-0 w-100">
+    <div className='cse-page-div d-flex flex-column'>
+      <Container fluid className="p-0 w-100 flex-grow-1">
 
         <Row className='head-box-cse'>
-          
             <h1 className="text-left">DEPARTMENTS</h1>
-          
         </Row>
 
         <Row>
@@ -79,7 +77,9 @@ const CSE = () => {
               </Card>
             </Col>
 
-            <Col className='right-content-cse'>
+
+          </Row>
+          <Col className='right-content-cse'>
                    {/* render components here in this Col tag - vinni and vaishnavi */}
                    <div className='cse-intro-vm'>
                    <CSEvm />
@@ -88,15 +88,15 @@ const CSE = () => {
                    <CodeUnnati />
                    </div>
                   
-
             </Col>
-
-          </Row>
 
         </Row>
 
       </Container>
+      
     </div>
+
+
   )
 }
 

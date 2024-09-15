@@ -4,7 +4,7 @@ import Topcards from './Topcards'; // Now we will use this component
 import universityBuilding from '../assets/university-building.jpg';
 import collegeBuilding from '../assets/main-building-photo.jpg';
 import universityNews from '../assets/clg-news.jpg';
-import CarouselPage from "../components/CarouselPage";
+import CarouselPage from "./CarouselPage";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from 'react-bootstrap/Carousel';
@@ -112,16 +112,7 @@ function Home() {
     return (
         <>
 
-            {/* <div className=" d-flex" >
-            <div className="row justify-content-center"> */}
-            {/* <CarouselPage className="CarouselPage"/> */}
-            {/* <NewsSection className="mtz-30" />
-                    <EventsSection className="mt=1000" /> */}
-            {/* </div>
-            </div>
-            <Footer /> */}
-
-            <div className="">
+            <div style={{ overflowX: 'hidden' }}>
                 <div className="">
                     <CarouselPage className="CarouselPage" />
                 </div>
@@ -131,7 +122,7 @@ function Home() {
                 <div className="CIIT">
                     <CIIT />
                 </div>
-                <div className="d-flex justify-content-around" style={{ width: "100vw", padding: "40px" }} >
+                <div className="d-flex justify-content-around" style={{ width: "100vw"}} >
                     <NewsSection className="" />
                     <EventsSection className="" />
                 </div>
