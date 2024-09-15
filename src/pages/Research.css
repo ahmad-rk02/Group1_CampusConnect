@@ -2,31 +2,30 @@
 
 /* Desktop view */
 .main-research {
-    margin: 0 auto;
-    padding: 20px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h3 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #333;
+}
+
+.carousel-image {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.carousel-image img {
+  width: 30%;
+  height: auto;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .main-research {
+    display: none; /* Hide the Research section on mobile */
   }
-  
-  h3 {
-    margin-bottom: 30px;
-    font-size: 2rem;
-    color: #333;
-  }
-  
-  .carousel-image {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-  }
-  
-  .carousel-image img {
-    width: 30%;
-    height: auto;
-  }
-  
-  /* Mobile view */
-  @media (max-width: 768px) {
-    .main-research {
-      display: none; /* Hide the Research section on mobile */
-    }
-  }
-  
+}
