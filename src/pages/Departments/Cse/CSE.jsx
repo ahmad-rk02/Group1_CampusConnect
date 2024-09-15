@@ -2,28 +2,30 @@ import React from 'react'
 import CSECarousel from './CSECarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
+import './CSE.css'
+import CSEvm from './CSEvm';
 
 const CSE = () => {
   return (
-    <div>
+    <div className='cse-page-div'>
       <Container fluid className="p-0 w-100">
 
         <Row className='head-box-cse'>
-          <Col>
+          
             <h1 className="text-left">DEPARTMENTS</h1>
-          </Col>
+          
         </Row>
 
         <Row>
 
           <CSECarousel />
 
-          <Row noGutters className="flex-nowrap left-index just overlay-row" >
+          <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
-            <Col md={2} className='left-sidebar' class="left-sidebar">
-              <Card className="left-nav-cse" class='left-nav-cse'>
+            <Col md={2} className='left-sidebar overlay-col'>
+              <Card className="left-nav-cse">
                 <ListGroup variant="flush">
-                  <ListGroup.Item className="left-nav-row-01">
+                  <ListGroup.Item className="left-nav-row-cse-01">
                     <Link
                       to="/ug"
                       className={location.pathname === "/cse" ? "active-link" : ""}
@@ -76,7 +78,10 @@ const CSE = () => {
             </Col>
 
             <Col className='right-content-cse'>
-
+                   {/* render components here in this Col tag - vinni and vaishnavi */}
+                   
+                   <CSEvm className='cse-intro-vm'/>
+                  
 
             </Col>
 

@@ -1,4 +1,9 @@
-  .head-box-cse{
+body {
+    overflow-x: hidden;
+  }
+ 
+ .head-box-cse{
+    padding: 0;
     background-color: #102c57;
     height: 130px;
   }
@@ -10,11 +15,8 @@
   }
 
   .right-content-cse{
-    margin-top: 200px;
-  }
-
-  .cse-carousel{
-    position: relative;
+    margin-top: 300px;
+    margin-left: 300px;
   }
 
   .overlay-row{
@@ -22,7 +24,8 @@
   }
 
   .left-nav-cse{
-    width: 380px;
+    width: 350px;
     border-radius: 0;
-    margin-left: 0px;
+    margin-left: 50px;
   }
+

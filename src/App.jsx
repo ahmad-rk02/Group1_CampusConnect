@@ -17,7 +17,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
-import CSE from './pages/Departments/Cse/CSE';
+import CSE from './pages/Departments/Cse/cse';
 import Footer from './pages/Footer'
 
 function App() {

@@ -20,11 +20,11 @@ function CSECarousel() {
   return (
     <div>
 
-       <Carousel interval={2000} className='cse-carousel'>
+       <Carousel interval={2000} className='cse-carousel w-100'>
             <Carousel.Item>
               <img
                 style={{ height: '80vh', paddingBlock: '0vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel01}
                 alt="First slide"
               />
@@ -33,7 +33,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel02}
                 alt="Second slide"
               />
@@ -42,7 +42,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel03}
                 alt="Third slide"
               />
@@ -51,7 +51,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel04}
                 alt="Fourth slide"
               />
@@ -60,7 +60,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel05}
                 alt="Fourth slide"
               />
@@ -69,7 +69,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel05}
                 alt="Fourth slide"
               />
@@ -78,7 +78,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel06}
                 alt="Fourth slide"
               />
@@ -87,7 +87,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel06}
                 alt="Fourth slide"
               />
@@ -96,7 +96,7 @@ function CSECarousel() {
             <Carousel.Item>
               <img
                 style={{ height: '80vh' }}
-                className="d-block w-100"
+                className="d-block "
                 src={cseCarousel07}
                 alt="Fourth slide"
               />
