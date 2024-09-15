@@ -19,7 +19,7 @@ const Research = () => {
             <Carousel interval={1000} pause="hover">
       {/* First Slide */}
       <Carousel.Item>
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around carousel-image">
           <img
             className="d-block"
             src={research01}
@@ -43,7 +43,7 @@ const Research = () => {
 
       {/* Second Slide */}
       <Carousel.Item>
-        <div className="d-flex justify-content-around">
+        <div className="d-flex justify-content-around carousel-image">
           <img
             className="d-block"
             src={research04}

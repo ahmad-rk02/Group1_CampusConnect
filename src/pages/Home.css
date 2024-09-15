@@ -1,14 +1,13 @@
-
-
-.card1{
-    border-radius: 25px ;
+/* Desktop View */
+.card1 {
+    border-radius: 25px;
     margin-bottom: 20px;
     background-color: #eadbc8;
     min-height: 20%;
     max-height: 54%;
 }
 
-.news-btn{
+.news-btn {
     background-color: #102C57;
     color: white;
     border: none;
@@ -23,18 +22,18 @@
     border-radius: 25px;
 }
 
-.card-title{
+.card-title {
     border-radius: 20px;
     text-align: center;
     color: #102C57;
 }
 
-.card-body{
+.card-body {
     border-radius: 0px 0px 25px 25px;
     background-color: #eadbc8;
 }
 
-.card-text{
+.card-text {
     background-color: #eadbc8; 
     color: #102C57;
 }
@@ -60,43 +59,45 @@ h3 {
     height: 100vh;
 }
 
-.event-box{
+.event-box {
     background-color: #FEFAF6;
     height: 45px;
     padding: 10px;
-    font-size:medium;
+    font-size: medium;
     border-radius: 20px;
     width: 530px;
 }
 
-.event-cont{
+.event-cont {
     width: 650px;
 }
 
-.event-links{
+.event-links {
     width: 450px;
     text-decoration: none;
     color: #102C57;
 }
 
-.event-links:hover{
+.event-links:hover {
     text-decoration: underline;
 }
 
-.list-group{
+.list-group {
     text-align: left;
     border-radius: 25px;
 }
 
-.event-cont li{
+.event-cont li {
     background-color: #eadbc8;
 }
 
-.new-blink-01, .new-blink-02{
+.new-blink-01, .new-blink-02 {
     background-color: #102C57;
     width: 50px;
     height: 35px;
-    display: flex; justify-content: center; align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-left: 8px;
 }
 
@@ -105,16 +106,16 @@ h3 {
     background-color: #102C57;
     color: #FEFAF6;
     animation: blink1 0.2s infinite alternate;
-  }
+}
 
-  /* Animation for Div 2 */
+/* Animation for Div 2 */
 .new-blink-02 {
     background-color: #FEFAF6;
     color: #102C57;
     animation: blink2 0.2s infinite alternate;
-  }
+}
 
-  /* Keyframes for blinking Div 1 */
+/* Keyframes for blinking Div 1 */
 @keyframes blink1 {
     0% {
         background-color: #102C57;
@@ -124,4 +125,94 @@ h3 {
         background-color: #FEFAF6;
         color: #102C57;
     }
-  }
+}
+
+/* Keyframes for blinking Div 2 */
+@keyframes blink2 {
+    0% {
+        background-color: #FEFAF6;
+        color: #102C57;
+    }
+    100% {
+        background-color: #102C57;
+        color: #FEFAF6;
+    }
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+    .d-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .news-section, .events-section {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .event-box {
+        width: 100%;  
+        box-sizing: border-box;
+        font-size: small; 
+        margin-bottom: 1rem;
+    }
+
+    .event-links {
+        width: 100% ;
+        display: block;
+        text-align: center;
+    }
+
+    .news-btn {
+        width: 100%; 
+        height: 50px;  
+        border-radius: 10px;  
+        text-align: center;
+    }
+
+    .card-img-top {
+        height: 150px; 
+    }
+
+    .card-body {
+        border-radius: 0px;
+    }
+
+    .card-text {
+        height: auto; 
+    }
+
+    .list-group-item {
+        font-size: 14px;  
+    }
+
+    .new-blink-01, .new-blink-02 {
+        width: 40px;
+        height: 30px;
+    }
+
+    .num {
+        font-size: 1.5em;
+    }
+
+    .text {
+        font-size: 0.8em;
+    }
+
+ 
+    .card1 {
+        width: 100%;  
+    }
+
+    .event-cont {
+        width: 100%;  
+        padding: 10px;
+    }
+
+    .event-box {
+        border-radius: 15px;  
+        padding: 8px;
+    }
+}

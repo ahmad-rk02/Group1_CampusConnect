@@ -7,9 +7,6 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutVM from './About/AboutVM';
 import Contact from "./pages/Contact";
-import Administration from './pages/Administration';
-import Payments from './pages/Payments';
-import Programmes from './pages/Programmes';
 import UG from './Programmes/UG';
 import PG from './Programmes/PG';
 import PhD from './Programmes/PhD';
@@ -69,9 +66,6 @@ function App() {
                   <Route path="/aboutvm" element={<AboutVM />} />
                   <Route path="/aboutinstitute" element={<AboutInstitute />} />
                   <Route path="/principaldesk" element={<PrincipalDesk />} />
-                  <Route path="/administration" element={<Administration />} />
-                  <Route path="/payments" element={<Payments />} />
-                  <Route path="/programmes" element={<Programmes />} />
                   <Route path="/ug" element={<UG />} />
                   <Route path="/phd" element={<PhD />} />
                   <Route path="/pg" element={<PG />} />

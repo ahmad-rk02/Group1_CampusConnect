@@ -2,6 +2,7 @@
     background-color: #102c57;
     height: 130px;
 }
+ 
 
 .head-box-ug h1{
    color: white;
@@ -41,6 +42,7 @@
 .table-n-head{
 padding-top: 30px;
 padding-left: 170px;
+width: max-content;
 }
 
 .ug-table{
