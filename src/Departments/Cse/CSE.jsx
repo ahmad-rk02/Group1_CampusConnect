@@ -1,11 +1,11 @@
 import React from 'react'
-import CSECarousel from './CSECarousel'
+import CSECarousel from '../../Departments/Cse/CSECarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './CSE.css'
-import CSEvm from './CSEvm';
-import CodeUnnati from './CodeUnnati';
-
+import CSEvm from '../../Departments/Cse/CSEvm';
+import CodeUnnati from '../../Departments/CodeUnnati';
+// import Footer from './pages/Footer.jsx'
 
 const CSE = () => {
   return (
