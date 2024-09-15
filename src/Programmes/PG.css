@@ -28,7 +28,6 @@
 
 .head-table-top{
     background-color: #eadbc8;
-    width: 70%;
     height: 50px;
 }
 
@@ -41,6 +40,7 @@
 .table-n-head{
 padding-top: 30px;
 padding-left: 170px;
+padding-right: 0px;
 }
 
 .PG-table{
