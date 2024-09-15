@@ -4,16 +4,15 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './CSE.css'
 import CSEvm from './CSEvm';
+// import Footer from './pages/Footer.jsx'
 
 const CSE = () => {
   return (
-    <div className='cse-page-div'>
-      <Container fluid className="p-0 w-100">
+    <div className='cse-page-div d-flex flex-column'>
+      <Container fluid className="p-0 w-100 flex-grow-1">
 
         <Row className='head-box-cse'>
-          
             <h1 className="text-left">DEPARTMENTS</h1>
-          
         </Row>
 
         <Row>
@@ -77,20 +76,22 @@ const CSE = () => {
               </Card>
             </Col>
 
-            <Col className='right-content-cse'>
+
+          </Row>
+          <Col className='right-content-cse'>
                    {/* render components here in this Col tag - vinni and vaishnavi */}
                    
                    <CSEvm className='cse-intro-vm'/>
                   
-
             </Col>
-
-          </Row>
 
         </Row>
 
       </Container>
+      {/* <Footer /> */}
     </div>
+
+
   )
 }
 
