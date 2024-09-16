@@ -4,7 +4,8 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './CSE.css'
 import CSEvm from '../../Departments/Cse/CSEvm';
-import CodeUnnati from '../../Departments/CodeUnnati';
+import CodeUnnati from './CodeUnnati';
+import CommitteesClubsCSE from './CommitteesClubsCSE';
 // import Footer from './pages/Footer.jsx'
 
 const CSE = () => {
@@ -86,6 +87,9 @@ const CSE = () => {
                    </div>
                    <div className='code-unnati'>
                    <CodeUnnati />
+                   </div>
+                   <div className='committeesclubs'>
+                   <CommitteesClubsCSE />
                    </div>
                   
             </Col>

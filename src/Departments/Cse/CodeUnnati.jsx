@@ -1,6 +1,6 @@
 import React from 'react'
 import './codeUnnati.css'
-import codeunnatilogo from '../../../assets/code-unnati-logo.jpg';
+import codeunnatilogo from '../../assets/code-unnati-logo.jpg';
 
 const CodeUnnati = () => {
   return (

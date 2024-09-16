@@ -1,0 +1,44 @@
+/* Container for the entire section */
+.bg-golden {
+  background-color: #eadbc8;
+}
+
+.card-header h4 {
+  font-weight: bold;
+}
+
+.acses-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  /* Light background for the section */
+  border-radius: 8px;
+}
+
+/* Card that holds the logo */
+.AcsesLogo-card {
+  background-color: #003366;
+  /* Dark blue background for logo card */
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Styling the ACSES logo */
+.AcsesLogo {
+  width: 80%;
+  /* Adjust width as per your design */
+  border-radius: 8px;
+}
+
+/* Right column text */
+.acses-text {
+  color: #333;
+  /* Darker text for readability */
+  line-height: 1.6;
+}
+
+/* Title of the section */
+.acses-title {
+  color: #003366;
+  /* Dark blue to match the branding */
+  font-weight: bold;
+}
