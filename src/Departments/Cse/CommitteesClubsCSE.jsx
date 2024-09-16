@@ -13,8 +13,6 @@ const CommitteesClubsCSE = () => {
                 </Card.Header>
                 <Col md={6} className="text-center">
                     <Card className=" AcsesLogo-card">
-
-                        
                             <img
                                 src={AcsesLogo}
                                 alt="ACSES Logo"

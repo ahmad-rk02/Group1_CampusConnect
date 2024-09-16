@@ -1,10 +1,18 @@
 /* Container for the entire section */
 .bg-golden {
   background-color: #eadbc8;
+  width: 70%;
+  height: 50px;
+  position: relative;
+  margin-right: 50px;
 }
 
 .card-header h4 {
   font-weight: bold;
+  text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
 }
 
 .acses-section {
@@ -18,13 +26,14 @@
 .AcsesLogo-card {
   background-color: #003366;
   /* Dark blue background for logo card */
+  width: 200px;
   border-radius: 10px;
   padding: 20px;
 }
 
 /* Styling the ACSES logo */
 .AcsesLogo {
-  width: 80%;
+  width: 40%;
   /* Adjust width as per your design */
   border-radius: 8px;
 }
