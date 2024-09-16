@@ -5,7 +5,7 @@ import AcsesLogo from '../../assets/AcsesLogo.jpg';
 import BitsnBytes from '../../assets/BitsnBytes.jpg';
 import CLangBootCamp from '../../assets/CLangBootCamp.jpg';
 
-const CommitteesClubsCSE = () => {
+const CommitteesClubsCSE = ({ className }) => {
     return (
         <div className="CCCSE">
             <Card.Header className="bg-golden">
