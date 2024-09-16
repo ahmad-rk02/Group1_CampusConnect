@@ -1,4 +1,7 @@
 /* Container for the entire section */
+.bada-row{
+  width:70%;
+}
 .bg-golden {
   background-color: #eadbc8;
   width: 70%;
@@ -13,6 +16,7 @@
     padding-left: 20px;
     padding-top: 10px;
     color: #102C57;
+    width: 50%;
 }
 
 .acses-section {
@@ -24,30 +28,61 @@
 
 /* Card that holds the logo */
 .AcsesLogo-card {
-  background-color: #003366;
+  background-color: #102C57;
   /* Dark blue background for logo card */
-  width: 200px;
+  width: 450px;
   border-radius: 10px;
   padding: 20px;
+  margin-top: 30px;
+  margin-left: -10px;
+
 }
 
 /* Styling the ACSES logo */
-.AcsesLogo {
-  width: 40%;
+.acses-logo {
+ 
   /* Adjust width as per your design */
   border-radius: 8px;
+  width: 80%;
+  margin-top: 160px;
+
+}
+
+.logo-ka-box{
+  width: 20%;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 622px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
 
 /* Right column text */
-.acses-text {
-  color: #333;
+.acses-text{
+  
+  color: #000000;
   /* Darker text for readability */
   line-height: 1.6;
+  width: 50%;
+  margin-top: 30px;
+  margin-right: -10px;
+  margin-left: -10px;
+  text-align: justify;
+  font-size: 16px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
 }
 
 /* Title of the section */
 .acses-title {
-  color: #003366;
+  color: #102C57;
   /* Dark blue to match the branding */
   font-weight: bold;
+  text-align: center;
+  margin-top: 30px;
+  
 }
