@@ -82,13 +82,15 @@ const CSE = () => {
           </Row>
           <Col md={8} className='right-content-cse' >
                    {/* render components here in this Col tag - vinni and vaishnavi */}
-                   <div className='cse-intro-vm'>
+                   <div className='  right-content-cse'>
                    <CSEvm />
                    </div>
-                   <div className='code-unnati'>
+
+                   <div className='  right-content-cse'>
                    <CodeUnnati />
                    </div>
-                   <div className='committeesclubs'>
+
+                   <div className='  right-content-cse'>
                    <CommitteesClubsCSE />
                    </div>
                   

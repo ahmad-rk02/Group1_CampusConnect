@@ -4,7 +4,7 @@ import codeunnatilogo from '../../assets/code-unnati-logo.jpg';
 
 const CodeUnnati = () => {
   return (
-    <div>
+    <div >
       <div className='cse-code-unnati'>
       <h3 style={{ color: '#102C57' }} >Code Unnati</h3></div>
       <div className="code-unnati-wrapper">
