@@ -22,7 +22,7 @@ const UG = () => {
     <>
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
-      <Row class="head-box-ug" className='head-box-ug'>
+      <Row className='head-box-ug'>
         <Col>
           <h1 className="text-left">PROGRAMMES</h1>
         </Col>
@@ -62,21 +62,21 @@ const UG = () => {
         </Col>
 
         <Col>
-          <div className="container mt-5 table-n-head" class='table-n-head'>
+          <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }}>
 
-            <div class='head-table-top' className='head-table-top'>
+            <div  className='head-table-top' style={{width: "80%", backgroundColor: "#eadbc8"}}>
             <h3 style={{ color: '#102C57' }} >UG (B.Tech) Programmes</h3></div>
 
-            <p style={{paddingTop: "50px", paddingBottom: "0px", fontSize: "large", fontWeight: "700", width: "70%", wordWrap: "break-word" }}>
+            <p style={{paddingTop: "50px", paddingBottom: "0px", fontSize: "large", fontWeight: "700", width: "80%", wordWrap: "break-word" }}>
              (B.Tech degree will be awarded instead of B.E. from A.Y. 2022-23 by Gondwana University)
             </p >
 
-            <p style={{paddingBottom: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
+            <p style={{paddingBottom: "15px", fontSize: "medium", fontWeight: "500", width: "80%", wordWrap: "break-word" }}>
             Graduates of the program will have technical expertise, leadership, and ethical qualities to design and execute Civil Engineering projects.
             </p>
 
-            <Table class='ug-table' className='ug-table' striped bordered hover>
-              <thead class="table-header-ug" className='table-header-ug'>
+            <Table  className='ug-table' style={{width: "80%"}} striped bordered hover>
+              <thead className='table-header-ug'>
                 <tr>
                   <th>Sr. No.</th>
                   <th>Name of Programme</th>
@@ -85,11 +85,11 @@ const UG = () => {
                   <th>Intake Capacity</th>
                 </tr>
               </thead>
-              <tbody class="table-body-ug">
+              <tbody className="table-body-ug">
                 {UgTable.map((prog) => (
                   <tr key={prog.id}>
                     <td>{prog.id}</td>
-                    <td class='name-ug-prog'>{prog.name}</td>
+                    <td className='name-ug-prog'>{prog.name}</td>
                     <td>{prog.year}</td>
                     <td>{prog.duration}</td>
                     <td>{prog.capacity}</td>

@@ -26,10 +26,6 @@
     font-weight: 700;
 }
 
-.head-table-top{
-    background-color: #eadbc8;
-    height: 50px;
-}
 
 .head-table-top h3{
    text-align: left;
@@ -37,11 +33,7 @@
    padding-top: 6px;
 }
 
-.table-n-head{
-padding-top: 30px;
-padding-left: 170px;
-padding-right: 0px;
-}
+
 
 .PG-table{
     width: 70%;

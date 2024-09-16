@@ -2,7 +2,6 @@
     background-color: #102c57;
     height: 130px;
 }
- 
 
 .head-box-ug h1{
    color: white;
@@ -27,11 +26,6 @@
     font-weight: 700;
 }
 
-.head-table-top{
-    background-color: #eadbc8;
-    width: 70%;
-    height: 50px;
-}
 
 .head-table-top h3{
    text-align: left;
@@ -39,11 +33,6 @@
    padding-top: 6px;
 }
 
-.table-n-head{
-padding-top: 30px;
-padding-left: 170px;
-width: max-content;
-}
 
 .ug-table{
     width: 70%;

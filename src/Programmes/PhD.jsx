@@ -18,7 +18,7 @@ const PhD = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row class="head-box-phd" className='head-box-phd'>
+        <Row  className='head-box-phd'>
           <Col>
             <h1 className="text-left">PROGRAMMES</h1>
           </Col>
@@ -26,8 +26,8 @@ const PhD = () => {
 
         <Row noGutters className="flex-nowrap left-index just" >
           {/* Left Sidebar */}
-          <Col md={2} className='left-sidebar' class="left-sidebar">
-            <Card className="left-nav-phd" class='left-nav-phd'>
+          <Col md={2} className='left-sidebar'>
+            <Card className="left-nav-phd" >
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row">
                   <Link
@@ -58,17 +58,17 @@ const PhD = () => {
           </Col>
 
           <Col>
-            <div className="container mt-5 table-n-head" class='table-n-head'>
+            <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }}>
 
-              <div class='head-table-top' className='head-table-top'>
+              <div  className='head-table-top'>
                 <h3 style={{ color: '#102C57' }} > Ph.D</h3></div>
 
               <p style={{ paddingBottom: "15px", paddingTop: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
                 PhD program will have qualities of life-long learning, team work with effective communication for successful implementation of Civil Engineering projects.
               </p>
 
-              <Table class='phd-table' className='phd-table' striped bordered hover>
-                <thead class="table-header-phd" className='table-header-phd'>
+              <Table  className='phd-table' striped bordered hover>
+                <thead  className='table-header-phd'>
                   <tr>
                     <th>Sr. No.</th>
                     <th>Name of Programme</th>
@@ -77,11 +77,11 @@ const PhD = () => {
                     <th>Intake Capacity</th>
                   </tr>
                 </thead>
-                <tbody class="table-body-phd">
+                <tbody className="table-body-phd">
                   {PhDTable.map((prog) => (
                     <tr key={prog.id}>
                       <td>{prog.id}</td>
-                      <td class='name-phd-prog'>{prog.name}</td>
+                      <td className='name-phd-prog'>{prog.name}</td>
                       <td>{prog.year}</td>
                       <td>{prog.duration}</td>
                       <td>{prog.capacity}</td>
