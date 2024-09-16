@@ -3,9 +3,9 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import './CommitteesClubsCSE.css';  // Import the CSS file for styling
 import AcsesLogo from '../../assets/AcsesLogo.jpg';
 
-const CommitteesClubsCSE = () => {
+const CommitteesClubsCSE = ({ className }) => {
     return (
-        <div>
+        <div className={className}>
             <Row className="align-items-center">
                 {/* Left Column: Logo */}
                 <Card.Header className="bg-golden">

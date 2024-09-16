@@ -1,9 +1,9 @@
 import React from 'react'
 import './CSEvm.css'
 
-const CSEvm = () => {
+const CSEvm = ({ className }) => {
   return (
-    <div>
+    <div className={className}>
         <div className='cse-intro-heading'>
         <h3>Computer Science & Engineering</h3></div>
     </div>

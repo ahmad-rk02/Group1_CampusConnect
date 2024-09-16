@@ -2,9 +2,9 @@ import React from 'react'
 import './codeUnnati.css'
 import codeunnatilogo from '../../assets/code-unnati-logo.jpg';
 
-const CodeUnnati = () => {
+const CodeUnnati = ({ className }) => {
   return (
-    <div >
+    <div className={className}>
       <div className='cse-code-unnati'>
       <h3 style={{ color: '#102C57' }} >Code Unnati</h3></div>
       <div className="code-unnati-wrapper">

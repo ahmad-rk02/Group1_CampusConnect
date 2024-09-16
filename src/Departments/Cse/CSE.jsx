@@ -8,6 +8,13 @@ import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
 // import Footer from './pages/Footer.jsx'
 
+const styles = {
+ sticky: {
+    position: 'sticky',
+    top: 0
+  }
+}
+
 const CSE = () => {
   return (
     <div className='cse-page-div d-flex flex-column'>
@@ -23,12 +30,12 @@ const CSE = () => {
 
           <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
-            <Col md={4} className='left-sidebar overlay-col position-fixed'>
-              <Card className="left-nav-cse">
+            <Col md={4} className='left-sidebar overlay-col ' >
+              <Card className="left-nav-cse" style={styles.sticky}>
                 <ListGroup variant="flush">
                   <ListGroup.Item className="left-nav-row-cse-01">
                     <Link
-                      to="/ug"
+                      to="/cse"
                       className={location.pathname === "/cse" ? "active-link" : ""}
                     >
                       Computer Science & Engineering
@@ -36,8 +43,8 @@ const CSE = () => {
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/pg"
-                      className={location.pathname === "/pg" ? "active-link" : ""}
+                      to="/ug"
+                      className={location.pathname === "/ug" ? "active-link" : ""}
                     >
                       Electronics & Telecommunication Engineering
                     </Link>
@@ -82,16 +89,16 @@ const CSE = () => {
           </Row>
           <Col md={8} className='right-content-cse' >
                    {/* render components here in this Col tag - vinni and vaishnavi */}
-                   <div className='  right-content-cse'>
-                   <CSEvm />
+                   <div >
+                   <CSEvm className='  right-content-cse'/>
                    </div>
 
-                   <div className='  right-content-cse'>
-                   <CodeUnnati />
+                   <div >
+                   <CodeUnnati className='  right-content-cse'/>
                    </div>
 
-                   <div className='  right-content-cse'>
-                   <CommitteesClubsCSE />
+                   <div >
+                   <CommitteesClubsCSE className='  right-content-cse'/>
                    </div>
                   
             </Col>
