@@ -30,8 +30,29 @@ const CodeUnnati = ({ className }) => {
       </div>
       </div>
     </div>
+    <div className="course-objective-container">
+      <div className="course-objective-text">
+        <h2>COURSE OBJECTIVES</h2>
+        <p>
+        Enable Student to adopt Industry 4.0 Technologies such as:
+<li>Machine Learning</li>
+<li>Internet of Things</li> 
+<li>Deep Learning </li>
+<li>Computer Vision</li>
+<li>SAP Modules</li>
+Student should leverage the center of excellence to learn IR4.0 technologies to enhance exponential career growth.
+        </p>
+        <p>
+        Prerequisites:
+<li>Basic knowledge of using internet and computer system.</li>
+<li>Basic understanding of problem solving. </li>
+<li>Introductory understanding of programming.</li>
+<li>Elementary concepts of probability theory, statistics & continuous variable calculus.</li>
+        </p>
+       
+      </div>
     </div>
+  </div>
   );
 };
 export default CodeUnnati
-

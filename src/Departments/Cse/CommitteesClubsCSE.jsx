@@ -5,28 +5,27 @@ import AcsesLogo from '../../assets/AcsesLogo.jpg';
 
 const CommitteesClubsCSE = ({ className }) => {
     return (
-        <div className={className}>
-            <Row className="align-items-center">
-                {/* Left Column: Logo */}
-                <Card.Header className="bg-golden">
+        <div className="CCCSE">
+            <Card.Header className="bg-golden">
                     <h4>Committees & Clubs</h4>
                 </Card.Header>
-                <Col md={6} className="text-center">
-                    <Card className=" AcsesLogo-card">
-
-                        
+            <Row className="align-items-center bada-row" >
+                {/* Left Column: Logo */}
+                
+                <Col  className="text-center  logo-ka-box"  style={{backgroundColor: "#102C57"}}>
+                      <div>
                             <img
                                 src={AcsesLogo}
                                 alt="ACSES Logo"
                                 className="acses-logo"
                             />
-                        
-                    </Card>
+                        </div>
+                    
                 </Col>
 
                 {/* Right Column: Text */}
-                <Col md={6} className="acses-text" style={{ backgroundColor: "#eadbc8" }}>
-                    <h2 className="mb-4 acses-title">ACSES Committee</h2>
+                <Col className="acses-text" style={{ backgroundColor: "#eadbc8" }}>
+                    <h4 className="mb-4 acses-title">ACSES Committee</h4>
                     <p>
                         The Association of Computer Science and Engineering Students (ACSES) is a key group in the computer science and engineering department. It consists of dedicated students who organize the department's annual seminars and workshops, promoting both academic and extracurricular activities.
                     </p>
