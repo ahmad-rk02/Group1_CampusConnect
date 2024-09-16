@@ -1,7 +1,8 @@
 /* Container for the entire section */
-.bada-row{
-  width:70%;
+.bada-row {
+  width: 70%;
 }
+
 .bg-golden {
   background-color: #eadbc8;
   width: 70%;
@@ -13,10 +14,10 @@
 .card-header h4 {
   font-weight: bold;
   text-align: left;
-    padding-left: 20px;
-    padding-top: 10px;
-    color: #102C57;
-    width: 50%;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: #102C57;
+  width: 50%;
 }
 
 .acses-section {
@@ -40,7 +41,7 @@
 
 /* Styling the ACSES logo */
 .acses-logo {
- 
+
   /* Adjust width as per your design */
   border-radius: 8px;
   width: 80%;
@@ -48,7 +49,7 @@
 
 }
 
-.logo-ka-box{
+.logo-ka-box {
   width: 20%;
   margin-top: 30px;
   margin-left: 10px;
@@ -59,8 +60,8 @@
 }
 
 /* Right column text */
-.acses-text{
-  
+.acses-text {
+
   color: #000000;
   /* Darker text for readability */
   line-height: 1.6;
@@ -84,5 +85,108 @@
   font-weight: bold;
   text-align: center;
   margin-top: 30px;
-  
+
+}
+
+.bitsnbytes-title {
+  color: #102C57;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.bitsnbytes-text {
+  margin-top: 2px;
+  margin-right: 710px;
+  margin-left: 1px;
+  text-align: justify;
+  font-size: 16px;
+}
+
+.acses-logo-ka-box1 {
+  margin-top: -225px;
+  margin-left: 580px;
+  margin-right: 385px;
+  height: 280px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+}
+
+.acses-logo-ka-box2 {
+  margin-top: -260px;
+  margin-left: 605px;
+  margin-right: 410px;
+  height: 240px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.bitsnbytes-logo {
+  margin-top: 25px;
+  width: 90%
+}
+
+.bg-golden2{
+  background-color: #eadbc8;
+  width: 70%;
+  height: 50px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: 60px;
+
+}
+
+.cncevents-title{
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  margin-top: -170px;
+  margin-bottom: 20px;
+}
+
+.cncevents-box1{
+  margin-top: 30px;
+  margin-left: 11px;
+  margin-right: 385px;
+  height: 350px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.cncevents-box2{
+  margin-top: -290px;
+  margin-left: 40px;
+  margin-right: 970px;
+  height: 240px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.cncevents-text{
+  margin-top: -130px;
+  margin-left: 300px;
+  margin-right: 405px;
+  text-align: justify;
+  font-size: 16px;
+
+}
+
+.clangbootcamp-image{
+  width: 100%;
+  margin-top: 11px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
 }
