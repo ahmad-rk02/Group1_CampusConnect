@@ -4,6 +4,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './CSE.css'
 import CSEvm from '../../Departments/Cse/CSEvm';
+import CodeUnnati from './CodeUnnati';
 // import Footer from './pages/Footer.jsx'
 
 const CSE = () => {
@@ -80,15 +81,19 @@ const CSE = () => {
           </Row>
           <Col md={8} className='right-content-cse'>
                    {/* render components here in this Col tag - vinni and vaishnavi */}
-                   
-                   <CSEvm className='cse-intro-vm'/>
+                   <div className='cse-intro-vm'>
+                   <CSEvm />
+                   </div>
+                   <div className='code-unnati'>
+                   <CodeUnnati />
+                   </div>
                   
             </Col>
 
         </Row>
 
       </Container>
-      {/* <Footer /> */}
+      
     </div>
 
 
