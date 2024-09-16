@@ -17,16 +17,16 @@ const PG = () => {
     <>
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
-      <Row class="head-box-PG" className='head-box-PG'>
+      <Row  className='head-box-PG' >
         <Col>
           <h1 className="text-left">PROGRAMMES</h1>
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index just" >
+      <Row  className="flex-nowrap left-index just" >
         {/* Left Sidebar */}
-        <Col md={2} className='left-sidebar' class="left-sidebar">
-          <Card className="left-nav-PG" class='left-nav-PG'>
+        <Col md={2} className='left-sidebar' >
+          <Card className="left-nav-PG" >
           <ListGroup variant="flush">
               <ListGroup.Item className="left-nav-row">
               <Link
@@ -57,17 +57,18 @@ const PG = () => {
         </Col>
 
         <Col>
-          <div className="container mt-5 table-n-head" class='table-n-head'>
+          <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }} >
 
-            <div class='head-table-top' className='head-table-top'>
-            <h3 style={{ color: '#102C57' }} >PG (M.Tech) Programmes</h3></div>
+            <div className='head-table-top'>
+            <h3 style={{ color: '#102C57' }} >PG (M.Tech) Programmes</h3>
+            </div>
 
             <p style={{paddingTop: "15px", paddingBottom: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
             Graduates of the program will develop the sensitivity towards environment and society for sustainable development and effective disaster management.
             </p>
 
-            <Table class='PG-table' className='PG-table' striped bordered hover>
-              <thead class="table-header-PG" className='table-header-PG'>
+            <Table className='PG-table' striped bordered hover>
+              <thead  className='table-header-PG'>
                 <tr>
                   <th>Sr. No.</th>
                   <th>Name of Programme</th>
@@ -76,11 +77,11 @@ const PG = () => {
                   <th>Intake Capacity</th>
                 </tr>
               </thead>
-              <tbody class="table-body-PG">
+              <tbody className="table-body-PG">
                 {PGTable.map((prog) => (
                   <tr key={prog.id}>
                     <td>{prog.id}</td>
-                    <td class='name-PG-prog'>{prog.name}</td>
+                    <td className='name-PG-prog'>{prog.name}</td>
                     <td>{prog.year}</td>
                     <td>{prog.duration}</td>
                     <td>{prog.capacity}</td>

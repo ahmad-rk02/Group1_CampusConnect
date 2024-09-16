@@ -21,7 +21,7 @@ const CSE = () => {
 
           <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
-            <Col md={2} className='left-sidebar overlay-col'>
+            <Col md={4} className='left-sidebar overlay-col position-fixed'>
               <Card className="left-nav-cse">
                 <ListGroup variant="flush">
                   <ListGroup.Item className="left-nav-row-cse-01">
@@ -78,7 +78,7 @@ const CSE = () => {
 
 
           </Row>
-          <Col className='right-content-cse'>
+          <Col md={8} className='right-content-cse'>
                    {/* render components here in this Col tag - vinni and vaishnavi */}
                    
                    <CSEvm className='cse-intro-vm'/>
