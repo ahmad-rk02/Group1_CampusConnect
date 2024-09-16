@@ -1,3 +1,7 @@
+.cse-intro{
+    margin-bottom: 50px;
+}
+
 .cse-intro-heading{
     width: 80%;
     background-color: #eadbc8;
@@ -7,6 +11,131 @@
 
 .cse-intro-heading h3{
     text-align: left;
-    padding-left: 50px;
+    padding-left: 20px;
+    padding-top: 5px;
     color: #102C57;
+}
+
+.cse-intro-box{
+    position: relative;
+    background-color: #eadbc8;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #102C57;
+    border-style: solid;
+    margin-top: 30px;
+    width: 70%;
+    align-content: center;
+    margin-left: 60px;
+    padding-bottom: 20px;
+}
+
+.cse-intro-box .first-para-small{
+    text-align: center;
+    width: 90%;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    padding-left: 90px;
+    text-wrap: wrap;
+    font-weight: 500;
+}
+
+.cse-intro-box .small-intro-heading{
+    
+    color: #102C57;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.cse-intro-box .small-intro-heading h6{
+    font-weight: 700;
+}
+
+.cse-intro-box .second-para-large{
+    text-align: left;
+    width: 90%;
+    height: fit-content;
+    padding-bottom: 40px;
+    padding-left: 90px;
+    text-wrap: wrap;
+    font-weight: 500;
+}
+
+.cse-intro-box:hover  .second-para-large{
+    visibility: hidden;
+}
+
+.cse-intro-box:hover  .first-para-small{
+    visibility: hidden;
+}
+
+.cse-intro-box:hover  .small-intro-heading{
+    visibility: hidden;
+}
+
+.cse-intro-box:hover{
+    background-color: #102C57;
+}
+
+.cse-intro-box:hover::after{
+    content: "Code the Future, Ignite the Spark CSE, We Leave our Mark!";
+    font-size: 40px;
+    color: #eadbc8;
+    transition: 0.3s ease;
+    text-align: center;
+    padding-top: 0%;
+    padding-left: 10;
+    width: 80%;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);  
+    padding: 10px; 
+    box-sizing: border-box; 
+    word-wrap: break-word;
+}
+
+.cse-vision-heading{
+    width: 80%;
+    background-color: #eadbc8;
+    height: 50px;
+    position: relative;
+}
+
+.cse-vision-heading h3{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: #102C57;
+}
+
+.vision-content{
+    margin-top: 30px;
+    text-align: left;
+    width: 80%;
+}
+
+.cse-mission{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.cse-mission-heading{
+    width: 80%;
+    background-color: #eadbc8;
+    height: 50px;
+    position: relative;
+}
+
+.cse-mission-heading h3{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: #102C57;
+}
+
+.mission-content{
+    margin-top: 30px;
+    text-align: left;
+    width: 80%;
 }

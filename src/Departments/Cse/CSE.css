@@ -17,8 +17,7 @@ body {
   .right-content-cse{
     margin-top: 30px;
     margin-left: 250px;
-   
-    width: 82%;
+    width: 85%;
   }
   
 
@@ -27,16 +26,19 @@ body {
   }
 
   .left-nav-cse{
+    position: sticky;
+    top: 0;
     width: 350px;
     border-radius: 0;
     margin-left: 50px;
+    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
   }
 
   .left-nav-row-cse{
-    height: 70px;
+    text-align: center;
   }
-  
-.left-nav-row-cse-01{
-  height: 70px;
-}
+
+  .left-nav-row-cse-01{
+    text-align: center;
+  }
 
