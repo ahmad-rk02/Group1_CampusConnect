@@ -10,8 +10,8 @@ const noUnderlineStyle = {
 };
 
 function Footerend() {
-  const [weatherData, setWeatherData] = useState(null); 
-  const [error, setError] = useState(null); 
+  const [weatherData, setWeatherData] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -23,9 +23,9 @@ function Footerend() {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        setWeatherData(data.current); 
+        setWeatherData(data.current);
       } catch (error) {
-        setError(error.message); 
+        setError(error.message);
       }
     };
 
@@ -37,7 +37,7 @@ function Footerend() {
       <div className="container1">
         <div className="row">
           {/* College Info Compartment */}
-          <div className="col-md-4 text-center mt-3">
+          <div className="col-md-4 text-center mt-3 mb-3">
             <img src={Gec} alt="College Logo" width="85" height="110" />
             <br />
             <br />
@@ -102,6 +102,10 @@ function Footerend() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="copyright">
+        <p>Developed by: Team 'The Acquirers'</p>
+        <p>Copyright © 2024 Government College Of Engineering Chandrapur. All Rights Reserved.</p>
       </div>
     </footer>
   );

@@ -8,7 +8,7 @@ import CLangBootCamp from '../../assets/CLangBootCamp.jpg';
 const CommitteesClubsCSE = ({ className }) => {
     return (
         <div className="CCCSE">
-            <Card.Header className="bg-golden">
+            <Card.Header className="bg-golden1">
                 <h4>Committees & Clubs</h4>
             </Card.Header>
             <Row className="align-items-center bada-row" >

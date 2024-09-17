@@ -1,6 +1,6 @@
 .cse-code-unnati{
     background-color: #eadbc8;
-    width: 80%;
+    width: 900px;
     height: 50px;
     position: relative;
 }
@@ -24,7 +24,7 @@
   margin: auto;
   margin-top: -10px; /* Adjust the positioning to have the logo sit on top */
   z-index: 0;
-  margin-left:30px;
+  margin-left:80px;
   }
   
   .code-unnati-logo {
@@ -35,7 +35,7 @@
     display: inline-block;
     margin-bottom:-450px; /* Moves the logo slightly overlapping the blue box */
     z-index: 1;
-    margin-left: 90px;
+    margin-left: 130px;
   }
   
   .code-unnati-img {
@@ -73,7 +73,7 @@
     max-width: 800px; /* Adjust the width as per your layout */
     margin: auto;
     margin-top: 40px; /* Adjust the margin based on your design */
-    margin-left:30px;
+    margin-left:100px;
     margin-right:30px;
     width: 800px;
     height: 450px;
@@ -101,4 +101,102 @@
     margin-right: 30px;
   }
   
- 
+  
+ /* CourseOutlineV2.css */
+
+.course-outline-container {
+  font-family: Arial, sans-serif;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color:#ffff;
+  margin-left:30px;
+  margin-right:137px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.light-bg {
+  background-color: #eadbc8;
+}
+
+.dark-bg {
+  background-color:#002e5d ;
+  color: #eadbc8;
+  
+}
+
+.year-header {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #eadbc8;
+  margin-bottom: 10px;
+  width: 140px;
+  height: 50px;
+  background-color: #002e5d;
+margin-left: 715px;
+  
+}
+.year-header2{font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #002e5d;
+  margin-bottom: 10px;
+  width: 140px;
+  height: 50px;
+  background-color: #eadbc8;
+margin-left: 715px;
+
+}
+
+.year-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.course-block, .capstone-block {
+  flex: 1;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #eadbc8;
+}
+h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #002e5d;
+  text-align: center;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.course-block h4 {
+  margin-top: 10px;
+  font-size: 18px;
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+}
+
+.year-section.dark-bg ul {
+  color: #eadbc8;
+}
+.lower-wave{
+  background-color: #002e5d;
+}
+.upper-wave{
+  background-color: #002e5d;
+}
