@@ -70,24 +70,6 @@ function CSECarousel() {
               <img
                 style={{ height: '80vh' }}
                 className="d-block "
-                src={cseCarousel05}
-                alt="Fourth slide"
-              />
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <img
-                style={{ height: '80vh' }}
-                className="d-block "
-                src={cseCarousel06}
-                alt="Fourth slide"
-              />
-            </Carousel.Item>
-
-            <Carousel.Item>
-              <img
-                style={{ height: '80vh' }}
-                className="d-block "
                 src={cseCarousel06}
                 alt="Fourth slide"
               />

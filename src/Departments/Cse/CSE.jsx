@@ -8,12 +8,6 @@ import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
 // import Footer from './pages/Footer.jsx'
 
-const styles = {
- sticky: {
-    position: 'sticky',
-    top: 0
-  }
-}
 
 const CSE = () => {
   return (
@@ -31,7 +25,7 @@ const CSE = () => {
           <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
             <Col md={4} className='left-sidebar overlay-col ' >
-              <Card className="left-nav-cse" style={styles.sticky}>
+              <Card className="left-nav-cse">
                 <ListGroup variant="flush">
                   <ListGroup.Item className="left-nav-row-cse-01">
                     <Link
