@@ -12,18 +12,18 @@ const AboutInstitute = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className="header-design text-white py-4">
-          <Col className="header-align">
+        <Row className="header-design-ai text-white">
+          <Col className="header-align-ai">
             <h1 className="text-left ">ABOUT US</h1>
           </Col>
         </Row>
 
-        <Row className="flex-nowrap left-index">
+        <Row className="flex-nowrap left-index-ai">
           {/* Left Sidebar */}
-          <Col md={3}  className="left-sidebar ">
+          <Col md={3}  className="left-sidebar-ai ">
             <Card className="left-nav-ai">
               <ListGroup variant="flush">
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-ai">
                   <Link
                     to="/aboutinstitute"
                     className={location.pathname === "/aboutinstitute" ? "active-link" : ""}
@@ -31,7 +31,7 @@ const AboutInstitute = () => {
                     About Institute
                   </Link>
                 </ListGroup.Item >
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-ai">
                   <Link
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
@@ -39,7 +39,7 @@ const AboutInstitute = () => {
                     Principal's Desk
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-ai">
                   <Link
                     to="/aboutvm"
                     className={location.pathname === "/aboutvm" ? "active-link" : ""}
@@ -50,7 +50,7 @@ const AboutInstitute = () => {
               </ListGroup>
             </Card>
 
-            <div class='side-heading-bottom'>
+            <div class='side-heading-bottom-ai'>
             <div className="fs-4 fw-bold gcoec-text " style={{ color: '#EADBC8'}}>GCOEC</div>
             <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '1.5' }}>
                      Delivering Wisdom Engineers</h2>
@@ -60,10 +60,10 @@ const AboutInstitute = () => {
           </Col>
 
           {/* Right Content Section */}
-          <Col md={9} className="mt-4 content-card">
+          <Col md={9} className="mt-4 content-card-ai">
             {/* About Institute */}
-            <Card className="mb-4 w-100 card-content">
-              <Card.Body className="bg-white">
+            <Card className="mb-4 w-100 card-content-ai">
+              <Card.Body className="bg-white-ai">
                 <Row>
                   <Col md={12} className=" p-0 text-center mb-3">
                     <img
@@ -72,7 +72,7 @@ const AboutInstitute = () => {
                       className="about-image"
                     />
                   </Col>
-                  <Card.Header className="bg-golden">
+                  <Card.Header className="bg-golden-ai w-100">
                     <h4>About Institute</h4>  
                   </Card.Header>
 

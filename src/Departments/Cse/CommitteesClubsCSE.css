@@ -3,7 +3,7 @@
   width: 70%;
 }
 
-.bg-golden {
+.bg-golden1 {
   background-color: #eadbc8;
   width: 70%;
   height: 50px;
@@ -11,7 +11,7 @@
   margin-right: 50px;
 }
 
-.card-header h4 {
+.bg-golden1 h4 {
   font-weight: bold;
   text-align: left;
   padding-left: 20px;
