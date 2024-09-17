@@ -9,6 +9,9 @@
   height: 50px;
   position: relative;
   margin-right: 50px;
+  margin-top: 50px;
+  margin-left: 246px;
+  
 }
 
 .card-header h4 {
@@ -46,14 +49,16 @@
   border-radius: 8px;
   width: 80%;
   margin-top: 160px;
+  margin-left: -10px;
 
 }
 
 .logo-ka-box {
   width: 20%;
-  margin-top: 30px;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-top: 40px;
+  margin-left: 260px;
+  margin-right: 60px;
+  margin-bottom: 1px;
   height: 622px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -66,9 +71,9 @@
   /* Darker text for readability */
   line-height: 1.6;
   width: 50%;
-  margin-top: 30px;
-  margin-right: -10px;
-  margin-left: -10px;
+  margin-top: 40px;
+  margin-right: -260px;
+  margin-left: -60px;
   text-align: justify;
   font-size: 16px;
   border-top-right-radius: 10px;
@@ -97,17 +102,17 @@
 
 .bitsnbytes-text {
   margin-top: 2px;
-  margin-right: 710px;
-  margin-left: 1px;
+  margin-right: 480px;
+  margin-left: 250px;
   text-align: justify;
   font-size: 16px;
 }
 
-.acses-logo-ka-box1 {
+.bitsnbytes-logo-ka-box1 {
   margin-top: -225px;
-  margin-left: 580px;
-  margin-right: 385px;
-  height: 280px;
+  margin-left: 830px;
+  margin-right: 140px;
+  height: 290px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -115,11 +120,11 @@
 
 }
 
-.acses-logo-ka-box2 {
-  margin-top: -260px;
-  margin-left: 605px;
-  margin-right: 410px;
-  height: 240px;
+.bitsnbytes-logo-ka-box2 {
+  margin-top: -270px;
+  margin-left: 850px;
+  margin-right: 160px;
+  height: 250px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -127,7 +132,7 @@
 }
 
 .bitsnbytes-logo {
-  margin-top: 25px;
+  margin-top: 22px;
   width: 90%
 }
 
@@ -137,7 +142,8 @@
   height: 50px;
   position: relative;
   margin-right: 50px;
-  margin-top: 60px;
+  margin-top: 50px;
+  margin-left: 246px;
 
 }
 
@@ -151,8 +157,8 @@
 
 .cncevents-box1{
   margin-top: 30px;
-  margin-left: 11px;
-  margin-right: 385px;
+  margin-left: 257px;
+  margin-right: 140px;
   height: 350px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
@@ -161,10 +167,10 @@
 }
 
 .cncevents-box2{
-  margin-top: -290px;
-  margin-left: 40px;
-  margin-right: 970px;
-  height: 240px;
+  margin-top: -300px;
+  margin-left: 300px;
+  margin-right: 715px;
+  height: 250px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -174,8 +180,8 @@
 
 .cncevents-text{
   margin-top: -130px;
-  margin-left: 300px;
-  margin-right: 405px;
+  margin-left: 570px;
+  margin-right: 170px;
   text-align: justify;
   font-size: 16px;
 
@@ -183,10 +189,33 @@
 
 .clangbootcamp-image{
   width: 100%;
-  margin-top: 11px;
+  margin-top: 12px;
+  margin-left: 1px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 
+}
+
+.cncevents-box3{
+  margin-top: 30px;
+  margin-left: 257px;
+  margin-right: 140px;
+  height: 350px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.cncevents-box4{
+  margin-top: -300px;
+  margin-left: 300px;
+  margin-right: 715px;
+  height: 250px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
