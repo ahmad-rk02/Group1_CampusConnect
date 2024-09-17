@@ -102,7 +102,7 @@
   }
   
   
- /* CourseOutlineV2.css */
+ 
 
 .course-outline-container {
   font-family: Arial, sans-serif;
@@ -114,7 +114,7 @@
   margin-right:137px;
 }
 
-h1 {
+.headline h1 {
   text-align: center;
   margin-bottom: 30px;
   margin-top: 30px;
@@ -122,6 +122,7 @@ h1 {
 
 .light-bg {
   background-color: #eadbc8;
+  
 }
 
 .dark-bg {
@@ -135,7 +136,6 @@ h1 {
   font-weight: bold;
   text-align: center;
   color: #eadbc8;
-  margin-bottom: 10px;
   width: 140px;
   height: 50px;
   background-color: #002e5d;
@@ -164,34 +164,34 @@ margin-left: 715px;
   flex: 1;
 }
 
-h3 {
+ .head3 h3 {
   font-size: 24px;
   margin-bottom: 10px;
   color: #eadbc8;
 }
-h2{
+ .head2 h2{
   font-size: 24px;
   margin-bottom: 10px;
   color: #002e5d;
   text-align: center;
 }
 
-ul {
+.year-section-dark-bg,.year-section-light-bg ul{
   list-style-type: disc;
   margin-left: 20px;
 }
 
-h4 {
+ .head4 h4 {
   margin-top: 10px;
   font-size: 18px;
   text-align: center;
 }
 
-p {
+ .capstone-block p {
   font-size: 16px;
 }
 
-.year-section.dark-bg ul {
+.year-section-dark-bg  ul {
   color: #eadbc8;
 }
 .lower-wave{
