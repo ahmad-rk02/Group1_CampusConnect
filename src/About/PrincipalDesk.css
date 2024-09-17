@@ -14,7 +14,9 @@
   color: #102C57;
   font-size: x-large;
  }
-
+.principal-name-pd h4{
+  text-align: left;
+}
  .bg-golden-pd h4 {
    font-weight: bold;
    text-align: left;
