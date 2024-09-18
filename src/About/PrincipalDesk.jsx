@@ -11,18 +11,18 @@ const PrincipalDesk = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className="header-design text-white py-4">
-          <Col className="header-align">
+        <Row className="header-design-pd text-white">
+          <Col className="header-align-pd">
             <h1 className="text-left ">ABOUT US</h1>
           </Col>
         </Row>
 
-        <Row className="flex-nowrap left-index">
+        <Row className="flex-nowrap left-index-pd">
           {/* Left Sidebar */}
-          <Col md={3} className="left-sidebar ">
-            <Card className="left-nav-ai">
+          <Col md={3} className="left-sidebar-pd">
+            <Card className="left-nav-pd">
               <ListGroup variant="flush">
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-pd">
                   <Link
                     to="/aboutinstitute"
                     className={
@@ -34,7 +34,7 @@ const PrincipalDesk = () => {
                     About Institute
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-pd">
                   <Link
                     to="/principaldesk"
                     className={
@@ -46,7 +46,7 @@ const PrincipalDesk = () => {
                     Principal's Desk
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-pd">
                   <Link
                     to="/aboutvm"
                     className={
@@ -61,26 +61,26 @@ const PrincipalDesk = () => {
           </Col>
 
           {/* Right Content Section */}
-          <Col md={9} className="mt-4 content-card">
+          <Col md={9} className="mt-4 content-card-pd">
             {/* About Institute */}
-            <Card className="mb-4 w-100 card-content">
-            <Card.Header className="bg-golden"> 
+            <Card className="mb-4 w-100 card-content-pd">
+            <Card.Header className="bg-golden-pd"> 
                 <h4>About Principal</h4>
               </Card.Header>
-              <Card.Body className="bg-white">
+              <Card.Body className="bg-white-pd">
                 <Row>
                   <Col md={12} className=" p-0 text-center mb-3">
                     <img
                       src={principaldesk}
                       alt="PrincipalDesk"
-                      className="about-image"
+                      className="about-image-pd"
                     />
                   </Col>
 
 
                   <Col md={12}>
                   <p style={{ marginTop: "20px" }}>
-                    <h4 className="principal-name" style={{ marginRight: "100px" }}>Dr. Prashant V. Washimkar</h4>
+                    <h4 className="principal-name-pd" style={{ marginRight: "100px" }}>Dr. Prashant V. Washimkar</h4>
                     
                       <p>Principal of Government College of Engineering Chandrapur.<pre>Email : principal.gcoechandrapur@dtemaharashtra.gov.in</pre></p>
                       <p>Warm greetings from Government College of Engineering

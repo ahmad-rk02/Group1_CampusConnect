@@ -28,12 +28,12 @@ const UG = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index just" >
+      <Row noGutters className="flex-nowrap left-index-ug just" >
         {/* Left Sidebar */}
-        <Col md={2} className='left-sidebar' class="left-sidebar">
+        <Col md={2} className='left-sidebar-ug' class="left-sidebar-ug">
           <Card className="left-nav-ug" class='left-nav-ug'>
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-01">
+              <ListGroup.Item className="left-nav-row-ug">
               <Link
                     to="/ug"
                     className={location.pathname === "/ug" ? "active-link" : ""}
@@ -41,7 +41,7 @@ const UG = () => {
                     UG (B.Tech)
                     </Link>
                     </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row">
+              <ListGroup.Item className="left-nav-row-ug">
               <Link
                     to="/pg"
                     className={location.pathname === "/pg" ? "active-link" : ""}
@@ -49,7 +49,7 @@ const UG = () => {
                 PG (M.Tech)
                 </Link>
                 </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row">
+              <ListGroup.Item className="left-nav-row-ug">
               <Link
                     to="/phd"
                     className={location.pathname === "/phd" ? "active-link" : ""}

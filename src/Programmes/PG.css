@@ -1,64 +1,95 @@
-.head-box-PG{
+.head-box-PG {
     background-color: #102c57;
-    height: 130px;
+    height: 110px;
 }
 
-.head-box-PG h1{
-   color: white;
-   padding-top: 40px;
-   padding-left: 120px;
+.head-box-PG h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 130px;
+    color: white;
 }
 
-.left-nav-PG{ 
-    background-color: white;
-    border-radius: 0;
-    height: 200px;
-    width: 300px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+.left-index-PG {
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-.left-nav-row{
-    height: 65px;
+.left-sidebar-PG {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
 }
 
-.left-nav-row-01{
-    height: 65px;
-    font-weight: 700;
+.left-sidebar-PG .card {
+    text-align: center;
+}
+
+.left-sidebar-PG .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-PG a {
+    text-decoration: none;
+    color: black;
 }
 
 
-.head-table-top h3{
-   text-align: left;
-   padding-left: 15px;
-   padding-top: 6px;
+.head-table-top h3 {
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 6px;
 }
 
 
 
-.PG-table{
+.PG-table {
     width: 70%;
     border-radius: 10px;
 }
 
-.table-header-PG th{
+.table-header-PG th {
     background-color: #102c57;
     color: white;
     text-align: center;
 }
 
 .table-header-PG th:first-child {
-    border-top-left-radius: 10px; 
-  }
-  
-  .table-header-PG th:last-child {
-    border-top-right-radius: 10px; 
-  }
+    border-top-left-radius: 10px;
+}
 
-.table-body-PG tr{
+.table-header-PG th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.table-body-PG tr {
     text-align: center;
-  }
+}
 
-.name-PG-prog{
+.name-PG-prog {
     text-align: left;
 }
 
+.left-nav-PG {
+    background-color: white;
+    border-radius: 0;
+    height: 200px;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-PG{
+    height: 65px;
+  }

@@ -8,7 +8,7 @@ const CodeUnnati = ({ className }) => {
   return (
     <div className={className}>
       <div className='cse-code-unnati'>
-      <h3 style={{ color: '#102C57' }} >Code Unnati</h3></div>
+      <h4 style={{ color: '#102C57' }} >Code Unnati</h4></div>
       <div className="code-unnati-wrapper">
       <div className="code-unnati-logo">
         <img

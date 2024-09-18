@@ -8,7 +8,7 @@ import CLangBootCamp from '../../assets/CLangBootCamp.jpg';
 const CommitteesClubsCSE = ({ className }) => {
     return (
         <div className="CCCSE">
-            <Card.Header className="bg-golden">
+            <Card.Header className="bg-golden1">
                 <h4>Committees & Clubs</h4>
             </Card.Header>
             <Row className="align-items-center bada-row" >
@@ -45,8 +45,8 @@ const CommitteesClubsCSE = ({ className }) => {
                     <p>
                         Welcome to the Bits and Bytes Club of our CSE department! Our vibrant community is dedicated to enhancing your technical skills through a variety of engaging activities, including C programming bootcamps, placement talks, and much more. Whether you're looking to sharpen your coding abilities or prepare for your future career, our club offers the perfect platform to learn, compete, and grow together.  </p>
                 </Col>
-                <Col className="text-center  acses-logo-ka-box1" style={{ backgroundColor: "#eadbc8" }}></Col>
-                <Col className="text-center  acses-logo-ka-box2" style={{ backgroundColor: "#102c57" }}>
+                <Col className="text-center  bitsnbytes-logo-ka-box1" style={{ backgroundColor: "#eadbc8" }}></Col>
+                <Col className="text-center  bitsnbytes-logo-ka-box2" style={{ backgroundColor: "#102c57" }}>
                     <div>
                         <img
                             src={BitsnBytes}
@@ -62,8 +62,8 @@ const CommitteesClubsCSE = ({ className }) => {
             </Card.Header>
 
             <Row className="cncevents">
-            <Col className=" cncevents-box1" style={{ backgroundColor: "#eadbc8" }}></Col>
-                    <Col className="cncevents-box2" style={{ backgroundColor: "#102c57" }}>
+                <Col className=" cncevents-box1" style={{ backgroundColor: "#eadbc8" }}></Col>
+                <Col className="cncevents-box2" style={{ backgroundColor: "#102c57" }}>
                     <div>
                         <img
                             src={CLangBootCamp}
@@ -71,18 +71,39 @@ const CommitteesClubsCSE = ({ className }) => {
                             className="clangbootcamp-image"
                         />
                     </div></Col>
-                    <Col className="cncevents-text">
-                        <h5 className="cncevents-title">C Language Bootcamp </h5>
-                        <ol>
-                            <li>   Evaluate the knowledge and skills acquired by participants during the boot camp.</li>
-                            <li> Provide a formal assessment required for the certification process.</li>
-                            <li> Encourage students to apply their learning to practical problems.</li>
-                        </ol>
-                        <p>
-                            The final assessment test successfully fulfilled its objective of evaluating the participants' proficiency in C programming. The Bits n Bytes Club is proud of the participants' performance and looks forward to organizing more such educational events in the future.
-                        </p>
-                    </Col>
-                
+                <Col className="cncevents-text">
+                    <h5 className="cncevents-title">C Language Bootcamp </h5>
+                    <ol>
+                        <li>   Evaluate the knowledge and skills acquired by participants during the boot camp.</li>
+                        <li> Provide a formal assessment required for the certification process.</li>
+                        <li> Encourage students to apply their learning to practical problems.</li>
+                    </ol>
+                    <p>
+                        The final assessment test successfully fulfilled its objective of evaluating the participants' proficiency in C programming. The Bits n Bytes Club is proud of the participants' performance and looks forward to organizing more such educational events in the future.
+                    </p>
+                </Col>
+
+                <Col className=" cncevents-box3" style={{ backgroundColor: "#eadbc8" }}></Col>
+                <Col className="cncevents-box4" style={{ backgroundColor: "#102c57" }}>
+                    <div>
+                        <img
+                            src={CLangBootCamp}
+                            alt="C Language Bootcamp"
+                            className="clangbootcamp-image"
+                        />
+                    </div>
+                </Col>
+                <Col className="cncevents-text">
+                    <h5 className="cncevents-title">C Language Bootcamp </h5>
+                    <ol>
+                        <li>   Evaluate the knowledge and skills acquired by participants during the boot camp.</li>
+                        <li> Provide a formal assessment required for the certification process.</li>
+                        <li> Encourage students to apply their learning to practical problems.</li>
+                    </ol>
+                    <p>
+                        The final assessment test successfully fulfilled its objective of evaluating the participants' proficiency in C programming. The Bits n Bytes Club is proud of the participants' performance and looks forward to organizing more such educational events in the future.
+                    </p>
+                </Col>
             </Row>
         </div>
 

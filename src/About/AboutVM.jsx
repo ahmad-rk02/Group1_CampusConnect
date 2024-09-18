@@ -12,18 +12,18 @@ const AboutVM = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className="header-design text-white py-3">
-          <Col className="header-align">
+        <Row className="header-design-vm text-white">
+          <Col className="header-align-vm">
             <h1 className="text-left ">ABOUT US</h1>
           </Col>
         </Row>
 
-        <Row className="flex-nowrap left-index">
+        <Row className="flex-nowrap left-index-vm">
           {/* Left Sidebar */}
-          <Col md={3} className="left-sidebar"> 
+          <Col md={3} className="left-sidebar-vm"> 
             <Card className="left-nav-vm">
               <ListGroup variant="flush">
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-vm">
                   <Link
                     to="/aboutinstitute"
                     className={location.pathname === "/aboutinstitute" ? "active-link" : ""}
@@ -31,7 +31,7 @@ const AboutVM = () => {
                     About Institute
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-vm">
                   <Link
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
@@ -39,7 +39,7 @@ const AboutVM = () => {
                     Principal's Desk
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row">
+                <ListGroup.Item className="left-nav-row-vm">
                   <Link
                     to="/aboutvm"
                     className={location.pathname === "/aboutvm" ? "active-link" : ""}
@@ -52,13 +52,13 @@ const AboutVM = () => {
           </Col>
 
           {/* Right Content Section */}
-          <Col md={9} className="mt-4 content-card">
+          <Col md={9} className="mt-4 content-card-vm">
             {/* Institute Vision */}
-            <Card className="mb-4 w-100 card-content"> 
-              <Card.Header className="bg-golden"> 
+            <Card className="mb-4 w-100 card-content-vm"> 
+              <Card.Header className="bg-golden-vm"> 
                 <h4>Institute Vision</h4>
               </Card.Header>
-              <Card.Body className="bg-white"> 
+              <Card.Body className="bg-white-vm"> 
                 <Row>
                   <Col md={3}>
                     <img
@@ -80,11 +80,11 @@ const AboutVM = () => {
             </Card>
 
             {/* Institute Mission */}
-            <Card className="w-100 card-content"> 
-              <Card.Header className="bg-golden"> 
+            <Card className="w-100 card-content-vm"> 
+              <Card.Header className="bg-golden-vm"> 
                 <h4>Institute Mission</h4>
               </Card.Header>
-              <Card.Body className="bg-white">
+              <Card.Body className="bg-white-vm">
                 <Row>
                   <Col md={9}>
                     <ul>

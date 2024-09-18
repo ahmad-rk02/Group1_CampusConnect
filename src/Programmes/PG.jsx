@@ -23,12 +23,12 @@ const PG = () => {
         </Col>
       </Row>
 
-      <Row  className="flex-nowrap left-index just" >
+      <Row  className="flex-nowrap left-index-PG just" >
         {/* Left Sidebar */}
-        <Col md={2} className='left-sidebar' >
+        <Col md={2} className='left-sidebar-PG' >
           <Card className="left-nav-PG" >
           <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row">
+              <ListGroup.Item className="left-nav-row-PG">
               <Link
                     to="/ug"
                     className={location.pathname === "/ug" ? "active-link" : ""}
@@ -36,7 +36,7 @@ const PG = () => {
                     UG (B.Tech)
                     </Link>
                     </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-01">
+              <ListGroup.Item className="left-nav-row-PG">
               <Link
                     to="/pg"
                     className={location.pathname === "/pg" ? "active-link" : ""}
@@ -44,7 +44,7 @@ const PG = () => {
                 PG (M.Tech)
                 </Link>
                 </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row">
+              <ListGroup.Item className="left-nav-row-PG">
               <Link
                     to="/phd"
                     className={location.pathname === "/phd" ? "active-link" : ""}
