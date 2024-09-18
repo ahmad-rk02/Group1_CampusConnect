@@ -1,30 +1,63 @@
-.head-box-ug{
+.head-box-ug {
     background-color: #102c57;
-    height: 130px;
+    height: 110px;
 }
 
-.head-box-ug h1{
-   color: white;
-   padding-top: 40px;
-   padding-left: 120px;
+.head-box-ug h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-left: 130px;
+    color: white;
 }
 
-.left-nav-ug{ 
+.left-index-ug {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-ug {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-ug .card {
+    text-align: center;
+}
+
+.left-sidebar-ug .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-ug a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-ug {
     background-color: white;
     border-radius: 0;
     height: 200px;
     width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-
-.left-nav-row{
+.left-nav-row-ug{
     height: 65px;
-}
-
-.left-nav-row-01{
-    height: 65px;
-    font-weight: 700;
-}
+  }
 
 
 .head-table-top h3{
@@ -60,4 +93,5 @@
 .name-ug-prog{
     text-align: left;
 }
+
 

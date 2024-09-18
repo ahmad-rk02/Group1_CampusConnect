@@ -1,49 +1,55 @@
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-.card-header h4 {
-  font-weight: bold;
-}
-
-.bg-white{
+ 
+.bg-white-vm{
   background-color: white;
 }
 
-.bg-white ul {
+.bg-white-vm ul {
   padding-left: 20px;
 }
 
-.bg-white ul li {
+.bg-white-vm ul li {
   margin-bottom: 10px;
   list-style: none;
 }
 
-.bg-white img {
+.bg-white-vm img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-.left-index{
+.left-index-vm{
 margin-left: 60px;
 margin-right: 60px;
 }
-.bg-golden{
+.bg-golden-vm{
 background-color: #EADBC8;
+padding: 0px;
+}
+  
+.bg-golden-vm h4 {
+  font-weight: bold;
+  text-align: left;
+  font-size: 28px;
+  margin-left: 20px;
 }
 
-.header-design{
+.header-design-vm{
 background-color:#102C57
 }
 
-.header-align{
+.header-align-vm{
 margin-left: 130px;
 }
-.card-content{
+.header-align-vm h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+.card-content-vm{
 border: none;
 border-radius: none;
 }
-.left-sidebar {
+.left-sidebar-vm {
 position: relative;
 top: -20px;
 z-index: 2;
@@ -51,11 +57,11 @@ width: 250px;
 margin-left: 40px; 
 }
 
-.left-sidebar .card {
+.left-sidebar-vm .card {
 text-align: center;
 }
 
-.left-sidebar .list-group-item {
+.left-sidebar-vm .list-group-item {
 font-size: 1.2rem; 
 text-align: center;
 }
@@ -67,12 +73,12 @@ font-weight: bold;
 color: #007bff;
 }
 
-.left-sidebar a {
+.left-sidebar-vm a {
 text-decoration: none;
 color: black;
 }
 
-.left-nav-row{
+.left-nav-row-vm{
   height: 65px;
 }
 
@@ -84,7 +90,7 @@ color: black;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-.content-card{
+.content-card-vm{
   padding-left: 170px;
 }
 

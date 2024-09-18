@@ -1,14 +1,14 @@
 import React from 'react'
 import './codeUnnati.css'
 import codeunnatilogo from '../../assets/code-unnati-logo.jpg';
-import backgroundImage from '../../assets/code-unnati-logo.jpg'; // Replace with your image path
+import background from '../../assets/code-unnati-logo.jpg'; // Replace with your image path
 
 
 const CodeUnnati = ({ className }) => {
   return (
     <div className={className}>
       <div className='cse-code-unnati'>
-      <h3 style={{ color: '#102C57' }} >Code Unnati</h3></div>
+      <h4 style={{ color: '#102C57' }} >Code Unnati</h4></div>
       <div className="code-unnati-wrapper">
       <div className="code-unnati-logo">
         <img
@@ -33,7 +33,7 @@ const CodeUnnati = ({ className }) => {
       </div>
     </div>
 
-<h1>Course Outline</h1>
+<div className="headline"><h1>Course Outline</h1></div>
     <div className="course-outline-container">
       
       
@@ -42,7 +42,7 @@ const CodeUnnati = ({ className }) => {
         <div className="year-header">2nd Year</div>
         <div className="year-content">
           <div className="course-block">
-            <h2>Foundational Skills for I.R.4.0</h2>
+           <div className="head2"> <h2 >Foundational Skills for I.R.4.0</h2></div>
             <ul>
               <li>Python Basic</li>
               <li>Python Advance</li>
@@ -52,9 +52,9 @@ const CodeUnnati = ({ className }) => {
             </ul>
           </div>
           <div className="capstone-block">
-            <h2>Capstone Project</h2>
+            <div className='head2'><h2 >Capstone Project</h2></div>
             <p><li>Creating prototypes to solve real-life problems. </li><li>Design thinking with creative solutions.</li></p>
-            <h4>Duration:</h4>
+            <div className="head4"><h4>Duration:</h4></div>
             <ul>
               <li>Core Deep Tech Offerings: 40hrs</li>
               <li>Industry Specific Module Offering: 10hrs</li>
@@ -71,23 +71,23 @@ const CodeUnnati = ({ className }) => {
         <div className="year-header2">3rd Year</div>
         <div className="year-content">
           <div className="course-block">
-            <h3>Advance Course</h3>
+            <div className="head3"><h3>Advance Course</h3></div>
             <ul>
               <li>Machine Learning</li>
               <li>Internet of Things - IoT</li>
               <li>Deep Learning and Computer Vision with OpenVino Toolkit</li>
             </ul>
-            <h4>SAP Analytical Cloud</h4>
+            <div className="head4"><h4>SAP Analytical Cloud</h4></div>
             <ul><li>SAP Essential</li>
                 <li>SAP BTP ABAP Environment</li>
                 <li>ABAP on Business Technology Platform</li>
                 <li>Hands-on ABAP</li></ul>
           </div>
           <div className="capstone-block">
-            <h3>Capstone Project</h3>
+            <div className="head3"><h3>Capstone Project</h3></div>
             <p><li>Creating Prototypes to solve Real-life problems</li>
             <li>Design Thinking - way to solve problems with creative thinking.</li></p>
-            <h4>Duration:</h4>
+            <div className="head4"><h4>Duration:</h4></div>
             <ul>
               <li>Core Deep Tech Offerings  -  55hrs</li>
               <li>Industry Specific Module Offering   -  15hrs</li>
@@ -96,7 +96,7 @@ const CodeUnnati = ({ className }) => {
             </ul>
           </div>
         </div><div className="lower-wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#eadbc8" fill-opacity="1" d="M0,192L40,181.3C80,171,160,149,240,170.7C320,192,400,256,480,261.3C560,267,640,213,720,186.7C800,160,880,160,960,170.7C1040,181,1120,203,1200,197.3C1280,192,1360,160,1400,144L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -1 1440 320"><path fill="#eadbc8" fill-opacity="1" d="M0,192L40,181.3C80,171,160,149,240,170.7C320,192,400,256,480,261.3C560,267,640,213,720,186.7C800,160,880,160,960,170.7C1040,181,1120,203,1200,197.3C1280,192,1360,160,1400,144L1440,128L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
       </div></div>
         
 
@@ -105,24 +105,24 @@ const CodeUnnati = ({ className }) => {
        <div className="year-header">4th Year</div>
         <div className="year-content">
           <div className="course-block">
-            <h2>Cyber Security in IoT</h2>
+            <div className="head2"><h2 >Cyber Security in IoT</h2></div>
             <ul>
               <li>Introduction to IoT security</li>
               <li>Tools and methods</li>
               <li>Attacks, risks and countermeasures</li>
               <li>Cryptography and applications</li>
             </ul>
-            <h4>SAP Analytical Cloud</h4>
+            <div className="head4"><h4>SAP Analytical Cloud</h4></div>
             <ul><li>Introduction to SAC</li>
                 <li>Tools and methods</li>
                 <li>Introduction to charts and styling </li>
                 <li>chart visualizations and interactions</li></ul>
           </div>
-          <div className="capstone-block">
-            <h2>Capstone Project</h2>
+          <div className="capstone-block"><div className="head2">
+            <h2>Capstone Project</h2></div>
             <p><li>Creating prototypes to solve Real-life problems</li>
             <li> Design Thinking- Way to solve problems with creative thinking.</li></p>
-            <h4>Duration:</h4>
+            <div className="head2"><h4>Duration:</h4></div>
             <ul>
             <li>Core Deep Tech Offerings  -  20hrs</li>
             <li>Industry Specific Module Offering   -  20hrs</li>

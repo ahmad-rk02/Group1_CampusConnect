@@ -1,55 +1,47 @@
-h1 {
-  font-size: 2.5rem;
+  
+.bg-golden-ai h4 {
   font-weight: bold;
-}
-.card-header h4 {
-  font-weight: bold;
+  text-align: left;
+  font-size: 28px;
+  margin-left: 20px;
 }
 
-.bg-white{
+.bg-white-ai{
   background-color: white;
 }
 
-.bg-white ul {
-  padding-left: 20px;
-}
-
-.bg-white ul li {
-  margin-bottom: 10px;
-  list-style: none;
-}
-
-.bg-white img {
+.bg-white-ai img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-.left-index{
-margin-left: 60px;
-margin-right: 60px;
-}
-.bg-golden{
+
+.bg-golden-ai{
 background-color: #EADBC8;
+padding: 0px;
 }
 
-.header-design{
+.header-design-ai{
 background-color:#102C57;
-height: 130px;
 }
 
-.header-design h1{
-  padding-top: 20px;
-  padding-left: 20px;
+.header-align-ai h1{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 130px;
 }
 
-.header-align{
-margin-left: 130px;
-}
-.card-content{
+.card-content-ai{
 border: none;
 border-radius: none;
+padding-left: 170px;
 }
-.left-sidebar {
+.left-index-ai{
+  margin-left: 60px;
+  margin-right: 60px;
+  }
+.left-sidebar-ai {
 position: relative;
 top: -20px;
 z-index: 2;
@@ -57,11 +49,11 @@ width: 250px;
 margin-left: 40px; 
 }
 
-.left-sidebar .card {
+.left-sidebar-ai .card {
 text-align: center;
 }
 
-.left-sidebar .list-group-item {
+.left-sidebar-ai .list-group-item {
 font-size: 1.2rem; 
 text-align: center;
 }
@@ -73,12 +65,12 @@ font-weight: bold;
 color: #007bff;
 }
 
-.left-sidebar a {
+.left-sidebar-ai a {
 text-decoration: none;
 color: black;
 }
 
-.about-image {
+.about-image-ai {
   max-width: 100%; 
   display: block;
   margin: 0 auto; 
@@ -86,26 +78,20 @@ color: black;
   padding-top: 25px; 
 }
 
-.content-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;  
-  text-align: justify; 
-}
-
-.content-card p {
+.content-card-ai p {
   margin-top: 20px;  
   font-size: 1.1rem;
   line-height: 1.6;
   text-align: justify;
 }
 
-.side-heading-bottom {
+.side-heading-bottom-ai {
  margin-top: 18em;;
  margin-left: 10em;
 }
 
 
-.left-nav-row{
+.left-nav-row-ai{
   height: 65px;
 }
 
