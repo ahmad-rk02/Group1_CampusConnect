@@ -87,3 +87,15 @@ color: black;
 .content-card{
   padding-left: 170px;
 }
+
+/* Mobile View Adjustments */
+@media (max-width: 768px){
+  
+  .d-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+}

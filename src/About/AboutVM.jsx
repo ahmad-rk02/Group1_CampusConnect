@@ -55,7 +55,7 @@ const AboutVM = () => {
           <Col md={9} className="mt-4 content-card">
             {/* Institute Vision */}
             <Card className="mb-4 w-100 card-content"> 
-              <Card.Header className="bg-golden"> 
+              <Card.Header className="bg-golden "> 
                 <h4>Institute Vision</h4>
               </Card.Header>
               <Card.Body className="bg-white"> 
