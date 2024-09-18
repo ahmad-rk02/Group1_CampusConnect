@@ -108,8 +108,8 @@
   font-family: Arial, sans-serif;
   margin: 20px auto;
   max-width: 1200px;
-  padding: 20px;
-  background-color:#ffff;
+  padding-top: 10px;
+  background-color: #eadbc8;
   margin-left:30px;
   margin-right:137px;
 }
@@ -120,15 +120,15 @@
   margin-top: 30px;
 }
 
-.light-bg {
-  background-color: #eadbc8;
-  
-}
 
 .dark-bg {
-  background-color:#002e5d ;
+  background-image:url('../../assets/Vector2.png') ;
   color: #eadbc8;
-  
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  height: 31vw;
+  padding-top: 35px;
 }
 
 .year-header {
@@ -139,8 +139,9 @@
   width: 140px;
   height: 50px;
   background-color: #002e5d;
-margin-left: 715px;
-  
+  margin-left: 755px;
+  border-radius: 10px 0px 0px 10px;
+  padding-top: 10px;
 }
 .year-header2{font-size: 24px;
   font-weight: bold;
@@ -150,7 +151,9 @@ margin-left: 715px;
   width: 140px;
   height: 50px;
   background-color: #eadbc8;
-margin-left: 715px;
+margin-left: 755px;
+padding-top: 10px;
+border-radius: 10px 0px 0px 10px;
 
 }
 
@@ -176,9 +179,12 @@ margin-left: 715px;
   text-align: center;
 }
 
-.year-section-dark-bg,.year-section-light-bg ul{
+
+
+.year-section-light-bg ul{
   list-style-type: disc;
   margin-left: 20px;
+  
 }
 
  .head4 h4 {
