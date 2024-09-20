@@ -1,3 +1,7 @@
+.cse-page-div{
+  position: relative;
+}
+
 body {
     overflow-x: hidden;
   }
@@ -26,19 +30,33 @@ body {
   }
 
   .left-nav-cse{
-    position: sticky;
-    top: 0;
     width: 350px;
-    border-radius: 0;
-    margin-left: 50px;
-    box-shadow: 5px 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 0;
+  margin-left: 85px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
+  position: sticky; /* Make the sidebar sticky */
+  top: 10px; /* Stick to 10px from the top when scrolling */
+  z-index: 100; /* Ensure it stays on top of other content */
+  background-color: white;
   }
 
   .left-nav-row-cse{
     text-align: center;
+    font-size: 1.2rem;
   }
 
   .left-nav-row-cse-01{
     text-align: center;
+    font-size: 1.2rem;
   }
 
+  .left-sidebar-cse a{
+    text-decoration: none;
+    color: black;
+   
+  }
+
+  .left-sidebar-cse{
+    position: sticky;
+    top: 10px; 
+  }

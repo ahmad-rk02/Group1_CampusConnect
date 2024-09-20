@@ -1,4 +1,3 @@
- 
 .bg-white-vm{
   background-color: white;
 }
@@ -34,16 +33,17 @@ padding: 0px;
 }
 
 .header-design-vm{
-background-color:#102C57
+background-color:#102C57;
+height: 130px;
 }
 
-.header-align-vm{
-margin-left: 130px;
-}
+
 .header-align-vm h1{
   font-size: 2.5rem;
   font-weight: bold;
   text-align: left;
+  margin-top: 50px;
+  margin-left: 160px;
 }
 .card-content-vm{
 border: none;
@@ -92,16 +92,4 @@ color: black;
 
 .content-card-vm{
   padding-left: 170px;
-}
-
-/* Mobile View Adjustments */
-@media (max-width: 768px){
-  
-  .d-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
 }

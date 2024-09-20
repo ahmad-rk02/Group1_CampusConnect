@@ -24,7 +24,7 @@ const CSE = () => {
 
           <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
-            <Col md={4} className='left-sidebar overlay-col ' >
+            <Col md={4} className='left-sidebar-cse overlay-col ' >
               <Card className="left-nav-cse">
                 <ListGroup variant="flush">
                   <ListGroup.Item className="left-nav-row-cse-01">

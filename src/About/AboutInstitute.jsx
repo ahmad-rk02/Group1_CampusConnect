@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Button  } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; 
 import './AboutInstitute.css';
 import AboutInstituteImage from '../assets/AboutInstitute.jpg'; 
@@ -7,6 +7,11 @@ import AboutInstituteImage from '../assets/AboutInstitute.jpg';
 
 const AboutInstitute = () => {
   const location = useLocation(); 
+const [showSidebar, setShowSidebar] = useState(true); 
+
+  const toggleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
 
   return (
     <>
@@ -19,6 +24,18 @@ const AboutInstitute = () => {
         </Row>
 
         <Row className="flex-nowrap left-index-ai">
+
+               {/* Toggle Button for Sidebar */}
+          <Button
+            className="d-md-none mb-2"
+            variant="primary"
+            onClick={toggleSidebar}
+          >
+            {showSidebar ? 'Hide Menu' : 'Show Menu'}
+          </Button>
+
+         
+
           {/* Left Sidebar */}
           <Col md={3}  className="left-sidebar-ai ">
             <Card className="left-nav-ai">
@@ -58,6 +75,8 @@ const AboutInstitute = () => {
             </div>
 
           </Col>
+
+         
 
           {/* Right Content Section */}
           <Col md={9} className="mt-4 content-card-ai">

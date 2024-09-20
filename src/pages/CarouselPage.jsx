@@ -1,9 +1,17 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import carousel1 from '../assets/carousel1.jpg';
-import carousel2 from '../assets/carousel2.jpg';
-import carousel3 from '../assets/carousel3.jpg';
+import carousel1 from '../assets/mainGate.jpg';
+import carousel2 from '../assets/mainBuilding.jpg';
+import carousel3 from '../assets/Library.jpg';
 import carousel4 from '../assets/carousel4.jpg';
+// import carousel5 from '../assets/Library.jpg';
+// import carousel6 from '../assets/mainBuilding.jpg';
+// import carousel7 from '../assets/mainGate.jpg';
+import carousel8 from '../assets/mechanicalDept.jpg'
+import carousel9 from '../assets/civilDept.jpg';
+import carousel10 from '../assets/electricDept.jpg';
+
+
 import './CarouselPage.css';
 
 function CarouselPage() {
@@ -62,6 +70,83 @@ function CarouselPage() {
             <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
             <button className="more-button">More</button>
           </div>
+        </Carousel.Item>
+
+        {/* <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel5}
+            alt="Fifth slide"
+          />
+          <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel6}
+            alt="Fifth slide"
+          />
+          <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div>
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel7}
+            alt="Fifth slide"
+          />
+          <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div>
+        </Carousel.Item> */}
+
+        <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel8}
+            alt="Fifth slide"
+          />
+          {/* <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div> */}
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel9}
+            alt="Fifth slide"
+          />
+          {/* <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div> */}
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            style={{ height: '80vh' }}
+            className="d-block w-100"
+            src={carousel10}
+            alt="Fifth slide"
+          />
+          {/* <div className="carousel-caption">
+            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+            <button className="more-button">More</button>
+          </div> */}
         </Carousel.Item>
       </Carousel>
     </div>
