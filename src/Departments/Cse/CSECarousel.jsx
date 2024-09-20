@@ -62,7 +62,7 @@ function CSECarousel() {
                 style={{ height: '80vh' }}
                 className="d-block "
                 src={cseCarousel05}
-                alt="Fourth slide"
+                alt="Fifth slide"
               />
             </Carousel.Item>
 
@@ -71,7 +71,7 @@ function CSECarousel() {
                 style={{ height: '80vh' }}
                 className="d-block "
                 src={cseCarousel06}
-                alt="Fourth slide"
+                alt="Sixth slide"
               />
             </Carousel.Item>
 
@@ -80,7 +80,7 @@ function CSECarousel() {
                 style={{ height: '80vh' }}
                 className="d-block "
                 src={cseCarousel07}
-                alt="Fourth slide"
+                alt="Seventh slide"
               />
             </Carousel.Item>
           </Carousel>

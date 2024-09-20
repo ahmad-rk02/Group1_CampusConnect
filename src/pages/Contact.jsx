@@ -7,8 +7,8 @@ const Contact = () => {
     <>
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className="header-design text-white py-3 mb-2">
-          <Col className="header-align">
+        <Row className="header-design-contact text-white py-3 mb-2">
+          <Col className="header-align-contact">
             <h1 className="text-left ">CONTACT US</h1>
           </Col>
         </Row>

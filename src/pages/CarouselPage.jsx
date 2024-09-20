@@ -7,6 +7,7 @@ import carousel4 from '../assets/carousel4.jpg';
 // import carousel5 from '../assets/Library.jpg';
 // import carousel6 from '../assets/mainBuilding.jpg';
 // import carousel7 from '../assets/mainGate.jpg';
+import carousel5 from '../assets/cse-carousel-01.jpg'
 import carousel8 from '../assets/mechanicalDept.jpg'
 import carousel9 from '../assets/civilDept.jpg';
 import carousel10 from '../assets/electricDept.jpg';
@@ -72,20 +73,20 @@ function CarouselPage() {
           </div>
         </Carousel.Item>
 
-        {/* <Carousel.Item>
+        <Carousel.Item>
           <img
             style={{ height: '80vh' }}
             className="d-block w-100"
             src={carousel5}
             alt="Fifth slide"
           />
-          <div className="carousel-caption">
+          {/* <div className="carousel-caption">
             <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
             <button className="more-button">More</button>
-          </div>
+          </div> */}
         </Carousel.Item>
 
-        <Carousel.Item>
+        {/* <Carousel.Item>
           <img
             style={{ height: '80vh' }}
             className="d-block w-100"
