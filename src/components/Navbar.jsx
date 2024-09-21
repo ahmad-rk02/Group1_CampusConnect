@@ -1,9 +1,40 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import './Navbar.css'
+import { useNavigate } from 'react-router-dom';
+
 
 function Navbar({ imageSrcPath, navItems }) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = (x) => {
+    x.preventDefault();
+    
+    // Simple logic for search
+    if (query.toLowerCase() === 'home') {
+      navigate('/home');
+    } else if (query.toLowerCase() === 'about') {
+      navigate('/aboutinstitute');
+    } else if (query.toLowerCase() === 'principal') {
+      navigate('/principaldesk');
+    } else if (query.toLowerCase() === 'courses') {
+      navigate('/ug');
+    } else if (query.toLowerCase() === 'ug') {
+      navigate('/ug');
+    } else if (query.toLowerCase() === 'pg') {
+      navigate('/pg');
+    } else if (query.toLowerCase() === 'phd') {
+      navigate('/phd');
+    } else if (query.toLowerCase() === 'cse') {
+      navigate('/cse');
+    } else if (query.toLowerCase() === 'contact') {
+      navigate('/contact');
+    } else {
+      alert('OOps.. You search somethng that is not made by the Aquirers');
+    }
+  };
 
   useEffect(() => {
     const dropdowns = document.querySelectorAll('.dropdown-submenu .dropdown-toggle');
@@ -186,12 +217,14 @@ function Navbar({ imageSrcPath, navItems }) {
               </li>
             ))}
           </ul>
-          <form className="d-flex me-3">
+          <form className="d-flex me-3" onSubmit={handleSearch}>
             <input
               className="form-control me-2"
               type="search"
               placeholder="Search"
               aria-label="Search"
+              value={query}
+              onChange={(x) => setQuery(x.target.value)}
             />
             <button className="btn btn-outline-success" type="submit">
               Search
