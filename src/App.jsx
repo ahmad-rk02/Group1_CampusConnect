@@ -15,8 +15,9 @@ import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
-import Footer from './pages/Footer'
-
+import Footer from './pages/Footer';
+import Girlshostel from './hostel/Girlshostel';
+import Boyshostel from './hostel/Boyshostel';
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -71,6 +72,8 @@ function App() {
                   <Route path="/pg" element={<PG />} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/girlshostel" element={<Girlshostel/>} />
+                  <Route path="/boyshostel" element={<Boyshostel/>} />
                 </Routes>
               </div>
             </Router>

@@ -31,7 +31,11 @@ function Navbar({ imageSrcPath, navItems }) {
       navigate('/cse');
     } else if (query.toLowerCase() === 'contact') {
       navigate('/contact');
-    } else {
+    }  else if (query.toLowerCase() === 'girls') {
+      navigate('/girlshostel');
+    }else if (query.toLowerCase() === 'boys') {
+      navigate('/boyshostel');
+    }else {
       alert('OOps.. You search somethng that is not made by the Aquirers');
     }
   };
@@ -120,6 +124,24 @@ function Navbar({ imageSrcPath, navItems }) {
           <li key={subIndex}>
             <Link to="/cse" className="dropdown-item">
             Computer Science & Engineering
+            </Link>
+          </li>
+        );
+      }
+      if (subLink === "Girl's Hostel") {
+        return (
+          <li key={subIndex}>
+            <Link to="/girlshostel" className="dropdown-item">
+            Girl's Hostel
+            </Link>
+          </li>
+        );
+      }
+      if (subLink === "Boy's Hostel") {
+        return (
+          <li key={subIndex}>
+            <Link to="/boyshostel" className="dropdown-item">
+            Boy's Hostel
             </Link>
           </li>
         );
