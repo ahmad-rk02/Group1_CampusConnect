@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import './Navbar.css'
-import { useNavigate } from 'react-router-dom';
-
+import { Link, useNavigate } from "react-router-dom";
+import './Navbar.css';
 
 function Navbar({ imageSrcPath, navItems }) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -12,27 +10,24 @@ function Navbar({ imageSrcPath, navItems }) {
   const handleSearch = (x) => {
     x.preventDefault();
     
-    // Simple logic for search
-    if (query.toLowerCase() === 'home') {
-      navigate('/home');
-    } else if (query.toLowerCase() === 'about') {
-      navigate('/aboutinstitute');
-    } else if (query.toLowerCase() === 'principal') {
-      navigate('/principaldesk');
-    } else if (query.toLowerCase() === 'courses') {
-      navigate('/ug');
-    } else if (query.toLowerCase() === 'ug') {
-      navigate('/ug');
-    } else if (query.toLowerCase() === 'pg') {
-      navigate('/pg');
-    } else if (query.toLowerCase() === 'phd') {
-      navigate('/phd');
-    } else if (query.toLowerCase() === 'cse') {
-      navigate('/cse');
-    } else if (query.toLowerCase() === 'contact') {
-      navigate('/contact');
+    // Simple search logic
+    const lowerQuery = query.toLowerCase();
+    const routes = {
+      home: '/home',
+      about: '/aboutinstitute',
+      principal: '/principaldesk',
+      courses: '/ug',
+      ug: '/ug',
+      pg: '/pg',
+      phd: '/phd',
+      cse: '/cse',
+      contact: '/contact',
+    };
+
+    if (routes[lowerQuery]) {
+      navigate(routes[lowerQuery]);
     } else {
-      alert('OOps.. You searched somethng that is not made by the Aquirers');
+      alert('Oops.. You searched something that is not available.');
     }
   };
 
@@ -44,14 +39,9 @@ function Navbar({ imageSrcPath, navItems }) {
         e.preventDefault();
         e.stopPropagation();
 
-        const parentDropdown = this.closest('.dropdown-menu');
-        parentDropdown.classList.toggle('show');
-        parentDropdown.classList.toggle('dropdown-submenu-show');
-
         const subMenu = this.nextElementSibling;
         if (subMenu) {
           subMenu.classList.toggle('show');
-          subMenu.classList.toggle('dropdown-submenu-show');
         }
       });
     });
@@ -59,86 +49,21 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const renderSubLinks = (subLinks) => {
     return subLinks.map((subLink, subIndex) => {
-      if (subLink === "Vision and Mission") {
-        return (
-          <li key={subIndex}>
-            <Link to="/aboutvm" className="dropdown-item">
-              Vision and Mission
-            </Link>
-          </li>
-        );
-      }
-      if (subLink === "About Institute") {
-        return (
-          <li key={subIndex}>
-            <Link to="/aboutinstitute" className="dropdown-item">
-              About Institute
-            </Link>
-          </li>
-        );
-      }
-      if (subLink === "Principal's Desk") {
-        return (
-          <li key={subIndex}>
-            <Link to="/principaldesk" className="dropdown-item">
-              Principal's Desk
-            </Link>
-          </li>
-        );
-      }
-      if (subLink === "UG (B.Tech)") {
-        return (
-          <li key={subIndex}>
-            <Link to="/ug" className="dropdown-item">
-              UG (B.Tech)
-            </Link>
-          </li>
-        );
-      }
-      if (subLink === "Ph.D") {
-        return (
-          <li key={subIndex}>
-            <Link to="/phd" className="dropdown-item">
-              Ph.D
-            </Link>
-          </li>
-        );
-      }
-
-      if (subLink === "PG (M.Tech)") {
-        return (
-          <li key={subIndex}>
-            <Link to="/pg" className="dropdown-item">
-              PG (M.Tech)
-            </Link>
-          </li>
-        );
-      }
-
-      if (subLink === "Computer Science & Engineering") {
-        return (
-          <li key={subIndex}>
-            <Link to="/cse" className="dropdown-item">
-            Computer Science & Engineering
-            </Link>
-          </li>
-        );
-      }
-
-      if (subLink === "Grievance Form") {
-        return (
-          <li key={subIndex}>
-            <Link to="/grievanceform" className="dropdown-item">
-            Grievance Form
-            </Link>
-          </li>
-        );
-      }
+      const routeMap = {
+        "Vision and Mission": "/aboutvm",
+        "About Institute": "/aboutinstitute",
+        "Principal's Desk": "/principaldesk",
+        "UG (B.Tech)": "/ug",
+        "Ph.D": "/phd",
+        "PG (M.Tech)": "/pg",
+        "Computer Science & Engineering": "/cse",
+        "Grievance Form": "/loginform",
+      };
 
       if (typeof subLink === "string") {
         return (
           <li key={subIndex}>
-            <Link to={`/${subLink.toLowerCase().replace(/ /g, '-')}`} className="dropdown-item">
+            <Link to={routeMap[subLink] || `/${subLink.toLowerCase().replace(/ /g, '-')}`} className="dropdown-item">
               {subLink}
             </Link>
           </li>
@@ -215,11 +140,7 @@ function Navbar({ imageSrcPath, navItems }) {
                 ) : (
                   <Link
                     to={`/${item.name.toLowerCase()}`}
-                    className={
-                      selectedIndex === index
-                        ? "nav-link active fw-bold"
-                        : "nav-link"
-                    }
+                    className={selectedIndex === index ? "nav-link active fw-bold" : "nav-link"}
                   >
                     {item.name}
                   </Link>

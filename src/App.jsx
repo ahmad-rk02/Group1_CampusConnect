@@ -17,6 +17,7 @@ import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
 import Footer from './pages/Footer'
+import LoginForm from './Administration/LoginForm';
 
 function App() {
   const navItems = [
@@ -72,6 +73,7 @@ function App() {
                   <Route path="/pg" element={<PG />} />
                   <Route path="/grievanceform" element={<GrievanceForm />} />
                   <Route path="/cse" element={<CSE />} />
+                  <Route path="/loginform" element={<LoginForm />} />
                   <Route path="/contact" element={<Contact />} />
                 </Routes>
               </div>
