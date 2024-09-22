@@ -37,6 +37,7 @@ function Navbar({ imageSrcPath, navItems }) {
       navigate('/boyshostel');
     }else {
       alert('OOps.. You search somethng that is not made by the Aquirers');
+
     }
   };
 
@@ -142,6 +143,16 @@ function Navbar({ imageSrcPath, navItems }) {
           <li key={subIndex}>
             <Link to="/boyshostel" className="dropdown-item">
             Boy's Hostel
+            </Link>
+          </li>
+        );
+      }
+
+      if (subLink === "Grievance Form") {
+        return (
+          <li key={subIndex}>
+            <Link to="/grievanceform" className="dropdown-item">
+            Grievance Form
             </Link>
           </li>
         );

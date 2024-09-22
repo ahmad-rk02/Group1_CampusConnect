@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Table } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
+import { Link } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './UG.css';
 
 
@@ -30,8 +30,8 @@ const UG = () => {
 
       <Row noGutters className="flex-nowrap left-index-ug just" >
         {/* Left Sidebar */}
-        <Col md={2} className='left-sidebar-ug' class="left-sidebar-ug">
-          <Card className="left-nav-ug" class='left-nav-ug'>
+        <Col md={2} className='left-sidebar-ug' >
+          <Card className="left-nav-ug" >
             <ListGroup variant="flush">
               <ListGroup.Item className="left-nav-row-ug">
               <Link
