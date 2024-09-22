@@ -75,6 +75,8 @@ function App() {
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/loginform" element={<LoginForm />} />
                   <Route path="/contact" element={<Contact />} />
+                  <Route path="/girlshostel" element={<Girlshostel/>} />
+                  <Route path="/boyshostel" element={<Boyshostel/>} />
                 </Routes>
               </div>
             </Router>
