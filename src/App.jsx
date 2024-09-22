@@ -18,6 +18,8 @@ import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
 import Footer from './pages/Footer'
 import LoginForm from './Administration/LoginForm';
+import Boyshostel from './hostel/Boyshostel';
+import Girlshostel from './hostel/Girlshostel';
 
 function App() {
   const navItems = [
