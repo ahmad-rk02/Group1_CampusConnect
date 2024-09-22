@@ -80,10 +80,10 @@ function CarouselPage() {
             src={carousel5}
             alt="Fifth slide"
           />
-          {/* <div className="carousel-caption">
-            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+          <div className="carousel-caption">
+            <h2>COMPUTER SCIENCE AND ENGINEERING</h2>
             <button className="more-button">More</button>
-          </div> */}
+          </div>
         </Carousel.Item>
 
         {/* <Carousel.Item>
@@ -119,10 +119,10 @@ function CarouselPage() {
             src={carousel8}
             alt="Fifth slide"
           />
-          {/* <div className="carousel-caption">
-            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+          <div className="carousel-caption">
+            <h2>MECHANICAL ENGINEERING</h2>
             <button className="more-button">More</button>
-          </div> */}
+          </div>
         </Carousel.Item>
 
         <Carousel.Item>
@@ -132,10 +132,10 @@ function CarouselPage() {
             src={carousel9}
             alt="Fifth slide"
           />
-          {/* <div className="carousel-caption">
-            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+          <div className="carousel-caption">
+            <h2>CIVIL ENGINEERING</h2>
             <button className="more-button">More</button>
-          </div> */}
+          </div>
         </Carousel.Item>
         <Carousel.Item>
           <img
@@ -144,10 +144,10 @@ function CarouselPage() {
             src={carousel10}
             alt="Fifth slide"
           />
-          {/* <div className="carousel-caption">
-            <h2>GOVT. COLLEGE OF ENGINEERING, CHANDRAPUR</h2>
+          <div className="carousel-caption">
+            <h2>ELECTRICAL ENGINEERING</h2>
             <button className="more-button">More</button>
-          </div> */}
+          </div>
         </Carousel.Item>
       </Carousel>
     </div>

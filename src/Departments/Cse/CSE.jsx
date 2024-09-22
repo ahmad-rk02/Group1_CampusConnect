@@ -37,40 +37,40 @@ const CSE = () => {
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/ug"
-                      className={location.pathname === "/ug" ? "active-link" : ""}
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
                     >
                       Electronics & Telecommunication Engineering
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/phd"
-                      className={location.pathname === "/phd" ? "active-link" : ""}
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
                     >
                       Instrumentation Engineering
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/phd"
-                      className={location.pathname === "/phd" ? "active-link" : ""}
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
                     >
                       Electrical Engineering
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/phd"
-                      className={location.pathname === "/phd" ? "active-link" : ""}
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
                     >
                       Mechanical Engineering
                     </Link>
                   </ListGroup.Item>
                   <ListGroup.Item className="left-nav-row-cse">
                     <Link
-                      to="/phd"
-                      className={location.pathname === "/phd" ? "active-link" : ""}
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
                     >
                       Civil Engineering
                     </Link>

@@ -32,7 +32,7 @@ function Navbar({ imageSrcPath, navItems }) {
     } else if (query.toLowerCase() === 'contact') {
       navigate('/contact');
     } else {
-      alert('OOps.. You search somethng that is not made by the Aquirers');
+      alert('OOps.. You searched somethng that is not made by the Aquirers');
     }
   };
 
@@ -120,6 +120,16 @@ function Navbar({ imageSrcPath, navItems }) {
           <li key={subIndex}>
             <Link to="/cse" className="dropdown-item">
             Computer Science & Engineering
+            </Link>
+          </li>
+        );
+      }
+
+      if (subLink === "Grievance Form") {
+        return (
+          <li key={subIndex}>
+            <Link to="/grievanceform" className="dropdown-item">
+            Grievance Form
             </Link>
           </li>
         );
