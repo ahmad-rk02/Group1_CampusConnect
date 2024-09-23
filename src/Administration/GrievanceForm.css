@@ -79,4 +79,38 @@
 
 .message-box {
     height: 100px;
+    background-color: #102c572d;
+    width: 95%;
+}
+
+.field-name-grivnce{
+    font-weight: 500;
+}
+
+.input-box-grivnce{
+    background-color: #102c572d;
+    width: 95%;
+    height: 45px;
+}
+
+.whole-field-grivnce{
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.sem-dd{
+    width: 250px;
+    background-color: #102c5718;
+}
+
+.sub-btn-grivnce{
+    margin-left: 300px;
+    margin-top: 30px;
+    width: 90px;
+    font-weight: 500;
+    background-color: #102c57;
+}
+
+.whole-form-grivnce{
+    /* position: relative; */
 }
