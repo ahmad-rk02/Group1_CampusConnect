@@ -1,4 +1,4 @@
-.head-box-gh {
+.head-box-gh{
     background-color: #102c57;
     height: 130px;
 }
@@ -25,11 +25,11 @@
     margin-left: 40px;
 }
 
-.left-sidebar-gh.card {
+.left-sidebar-gh .card {
     text-align: center;
 }
 
-.left-sidebar-gh.list-group-item {
+.left-sidebar-gh .list-group-item {
     font-size: 1.2rem;
     text-align: center;
 }
@@ -46,15 +46,6 @@
 .left-sidebar-gh a {
     text-decoration: none;
     color: black;
-}
-
-
-.left-nav-gh {
-    background-color: white;
-    border-radius: 0;
-    height: 130px;
-    width: 300px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
   
 
