@@ -63,3 +63,180 @@
   .left-nav-row-gh-01{
     font-weight: 700;
   }
+  .gh-goldenn-1 {
+    background-color: #eadbc8;
+    width: 60%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: -80px;
+    margin-left: 480px;
+    
+  }
+  
+  .gh-goldenn-1 h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+  }
+  .girlshostel-text1 {
+    color: #000000;
+    line-height: 1.6;
+    width: 60%;
+    margin-top: 20px;
+    margin-right: -120px;
+    margin-left: 480px;
+    text-align: justify;
+    font-size: 16px;
+
+  }
+
+  .gh-goldenn-2 {
+    background-color: #eadbc8;
+    width: 60%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-left: 480px;
+    
+  }
+  
+  .gh-goldenn-2 h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+  }
+
+  .girlshostel-text2{
+    margin-top: 20px;
+    margin-left: 480px;
+    margin-right: 185px;
+    text-align: justify;
+    font-size: 16px;
+  
+  }
+
+  .gh-goldenn-3 {
+    background-color: #eadbc8;
+    width: 60%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-left: 480px;
+    
+  }
+  
+  .gh-goldenn-3 h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+  }
+
+  .girlshostel-text3 {
+    color: #000000;
+    line-height: 1.6;
+    width: 25%;
+    margin-top: 20px;
+    margin-right: -120px;
+    margin-left: 480px;
+    text-align: justify;
+    font-size: 16px;
+
+  }
+  .about-image-gh{
+    max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: 870px;
+  margin-top: -290px;
+  }
+  .apply-button{
+    width: 120px;
+    background-color: #102C57;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px; 
+    margin-left: 500px;
+margin-top: 70px;
+
+  }
+  .EN-button{
+    width: 150px;
+    background-color: #102C57;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px; 
+    margin-left: 50px;
+margin-top: 70px;
+  }
+  .HOSTEL-button{
+    width: 250px;
+    background-color: #102C57;
+    color: white;
+    border-radius: 50px;
+    font-size: 18px; 
+    margin-left: 50px;
+margin-top: 70px;
+  }
+  .hostel-info-table {
+    width: 60%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    margin-left: 480px;
+  }
+  
+  .hostel-info-table th, .hostel-info-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .hostel-info-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  .committee-table-gh{
+    width: 60%;
+    border-radius: 10px;
+    margin-top: 40px;
+    margin-left: 480px;
+}
+
+.committee-table-gh th {
+    background-color: #102c57;
+    color: white;
+    text-align: center;
+}
+
+.committee-table-gh th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.committee-table-gh th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.committee-table-gh tr {
+    text-align: center;
+}
+.committee-table-gh th,
+.committee-table-gh td {
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+
+
+  
