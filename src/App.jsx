@@ -50,7 +50,7 @@ function App() {
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
         "Alumini",
         "Resources",
-        { name: "Hostel", subLinks: ["Boy's Hostel", "Girl's Hostel"] }
+        { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
       ]
     },
     { name: "CONTACT" }

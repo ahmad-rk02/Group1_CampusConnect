@@ -1,1 +1,19 @@
-
+.bg-goldenn {
+    background-color: #eadbc8;
+    width: 70%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-left: 246px;
+    
+  }
+  
+  .bg-goldenn h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+  }

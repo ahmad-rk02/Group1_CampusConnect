@@ -12,6 +12,7 @@ const Girlshostel = () => {
       <Row  className='head-box-gh' >
         <Col>
           <h1 className="text-left-gh">HOSTEL</h1>
+          <h1 className="text-left-gh">HOSTEL</h1>
         </Col>
       </Row>
 
