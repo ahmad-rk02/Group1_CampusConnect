@@ -2,3 +2,15 @@
     background-color: #102C57;
     color: white;
 }
+
+
+.dropdown-submenu {
+    position: relative;
+  }
+  
+  .dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%; /* This ensures the submenu appears to the right */
+    margin-top: -1px; /* Aligns it with the parent item */
+    display: none; /* Hide initially */
+  }
