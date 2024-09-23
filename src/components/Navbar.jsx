@@ -16,12 +16,13 @@ function Navbar({ imageSrcPath, navItems }) {
       home: '/home',
       about: '/aboutinstitute',
       principal: '/principaldesk',
-      courses: '/ug',
+      vission: '/aboutvm',
       ug: '/ug',
       pg: '/pg',
       phd: '/phd',
       cse: '/cse',
       contact: '/contact',
+      Grievance:'/login'
     };
 
     if (routes[lowerQuery]) {
@@ -57,7 +58,7 @@ function Navbar({ imageSrcPath, navItems }) {
         "Ph.D": "/phd",
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
-        "Grievance Form": "/loginform",
+        "Grievance Form": "/login",
       };
 
       if (typeof subLink === "string") {

@@ -17,9 +17,10 @@ import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
 import Footer from './pages/Footer'
-import LoginForm from './Administration/LoginForm';
+import StudentForm from './Administration/StudentForm';
 import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
+import Login from './Administration/Login';
 
 function App() {
   const navItems = [
@@ -75,7 +76,8 @@ function App() {
                   <Route path="/pg" element={<PG />} />
                   <Route path="/grievanceform" element={<GrievanceForm />} />
                   <Route path="/cse" element={<CSE />} />
-                  <Route path="/loginform" element={<LoginForm />} />
+                  <Route path="/studentform" element={<StudentForm />} />
+                  <Route path="/login" element={<Login />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />
                   <Route path="/boyshostel" element={<Boyshostel/>} />

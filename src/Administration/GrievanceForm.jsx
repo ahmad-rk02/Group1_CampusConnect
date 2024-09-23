@@ -84,8 +84,8 @@ const GrievanceForm = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce-01">
               <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/login"
+                    className={location.pathname === "/login" ? "active-link" : ""}
                   >
                 Grievance Form
                 </Link>
@@ -141,7 +141,7 @@ const GrievanceForm = () => {
           />
         </Form.Group>
 
-        <Button variant="primary" type="submit">
+        <Button type="submit">
           Submit
         </Button>
       </Form>

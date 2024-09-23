@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import './LoginForm.css';
+import './StudentForm.css';
 import Gec from '../assets/Gec.png';
 
 const LoginForm = () => {
@@ -11,7 +11,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    adminDTE: '',
+    PRN: '',
     password: '',
   });
   const [error, setError] = useState('');
@@ -20,12 +20,12 @@ const LoginForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validate Admin DTE input
-    if (name === 'adminDTE' && /[^0-9]/.test(value)) {
-      setError('Admin DTE should contain only numbers.');
+    // Validate PRN input
+    if (name === 'PRN' && /[^0-9]/.test(value)) {
+      setError('PRN should contain only numbers.');
       return;
     } else {
-      setError(''); // Clear error if input is valid
+      setError('');
     }
 
     setFormData((prevState) => ({
@@ -34,46 +34,45 @@ const LoginForm = () => {
     }));
   };
 
+  // Mock credentials for testing
   const mockCredentials = {
-    adminDTE: '123456',
+    PRN: '2021033700996804',
     password: 'Password@123',
   };
 
   const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/;
+    // Regex to check for at least one uppercase letter, one number, one special character, and at least 8 characters in total
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return passwordRegex.test(password);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.adminDTE) {
-      setError('Admin DTE is required.');
+    if (!formData.PRN) {
+      setError('PRN is required.');
       return;
     }
 
-    if (isNaN(formData.adminDTE)) {
-      setError('Admin DTE should contain only numbers.');
+    if (isNaN(formData.PRN)) {
+      setError('PRN should contain only numbers.');
       return;
     }
 
     if (!validatePassword(formData.password)) {
-      setError('Password must contain at least one letter, one number, and one special character.');
+      setError('Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.');
       return;
     }
 
-    if (
-      formData.adminDTE === mockCredentials.adminDTE &&
-      formData.password === mockCredentials.password
-    ) {
+    if (formData.PRN === mockCredentials.PRN && formData.password === mockCredentials.password) {
       navigate('/grievanceform');
     } else {
-      setError('Invalid Admin DTE number or password. Please try again.');
+      setError('Invalid PRN or password. Please try again.');
     }
   };
 
   const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev); // Toggle visibility state
+    setShowPassword((prev) => !prev);
   };
 
   return (
@@ -115,7 +114,7 @@ const LoginForm = () => {
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-login-01">
-                <Link to="/loginform" className={location.pathname === "/loginform" ? "active-link" : ""}>
+                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
                   Grievance Form
                 </Link>
               </ListGroup.Item>
@@ -125,7 +124,7 @@ const LoginForm = () => {
 
         <Col>
           <div className='head-right-top-login' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-            <h3 style={{ color: '#102C57' }}>Admin Login</h3>
+            <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 
           <div className="login-section">
@@ -137,21 +136,21 @@ const LoginForm = () => {
               {error && <Alert variant="danger">{error}</Alert>}
 
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="adminDTE" className="mb-3">
+                <Form.Group controlId="PRN" className="mb-3">
                   <Form.Control
                     type="text"
-                    name="adminDTE"
-                    value={formData.adminDTE}
+                    name="PRN"
+                    value={formData.PRN}
                     onChange={handleChange}
-                    placeholder="Admin DTE Number"
+                    placeholder="PRN number"
                     className="login-input"
-                    pattern="[0-9]*" // Restrict input to numbers only
+                    pattern="[0-9]*"
                   />
                 </Form.Group>
 
                 <Form.Group controlId="password" className="mb-3 position-relative">
                   <Form.Control
-                    type={showPassword ? "text" : "password"} // Toggle input type based on visibility
+                    type={showPassword ? "text" : "password"} 
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
