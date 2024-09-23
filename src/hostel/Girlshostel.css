@@ -1,4 +1,4 @@
-.head-box-gh{
+.head-box-gh {
     background-color: #102c57;
     height: 130px;
 }
@@ -8,7 +8,7 @@
     text-align: left;
     font-size: 40px;
     margin-top: 50px;
-    margin-left: 120px;
+    margin-left: 190px;
     color: white;
 }
 
@@ -32,6 +32,13 @@
 .left-sidebar-gh .list-group-item {
     font-size: 1.2rem;
     text-align: center;
+    padding-top: 20px;
+}
+
+.left-sidebar-gh a {
+    text-decoration: none;
+    color: black;
+    
 }
 
 .footer-spacing {
@@ -43,12 +50,19 @@
     color: #007bff;
 }
 
-.left-sidebar-gh a {
-    text-decoration: none;
-    color: black;
+.left-nav-gh {
+    background-color: white;
+    border-radius: 0;
+    height: 140px;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-  
-
+.left-nav-row-gh{
+    height: 65px;
+  }
+  .left-nav-row-gh-01{
+    font-weight: 700;
+  }
 
 
 

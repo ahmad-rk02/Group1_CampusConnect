@@ -34,6 +34,11 @@
     text-align: center;
 }
 
+.left-sidebar-PG a {
+    text-decoration: none;
+    color: black;
+}
+
 .footer-spacing {
     margin-top: 80px;
 }
@@ -42,12 +47,6 @@
     font-weight: bold;
     color: #007bff;
 }
-
-.left-sidebar-PG a {
-    text-decoration: none;
-    color: black;
-}
-
 
 .head-table-top h3 {
     text-align: left;
