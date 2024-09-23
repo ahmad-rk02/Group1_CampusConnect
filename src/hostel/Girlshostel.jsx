@@ -11,7 +11,7 @@ const Girlshostel = () => {
       {/* Header Section */}
       <Row  className='head-box-gh' >
         <Col>
-          <h1 className="text-left-gh">PROGRAMMES</h1>
+          <h1 className="text-left-gh">HOSTEL</h1>
         </Col>
       </Row>
 
@@ -20,22 +20,23 @@ const Girlshostel = () => {
         <Col md={2} className='left-sidebar-gh' >
           <Card className="left-nav-gh" >
           <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-gh">
-              <Link
-                    to="/Girlshostel"
-                    className={location.pathname === "/Girlshostel" ? "active-link" : ""}
-                  >
-                    Girl's Hostel
-                    </Link>
-                    </ListGroup.Item>
+             
               <ListGroup.Item className="left-nav-row-gh">
               <Link
                     to="/boyshostel"
-                    className={location.pathname === "/boyshostel" ? "active-link" : ""}
+                    className={location.pathname === "/boyshostel" ? "active-link-gh" : ""}
                   >
                 Boy's Hostel
                 </Link>
                 </ListGroup.Item>
+                 <ListGroup.Item className="left-nav-row-gh-01">
+              <Link
+                    to="/Girlshostel"
+                    className={location.pathname === "/Girlshostel" ? "active-link-gh" : ""}
+                  >
+                    Girl's Hostel
+                    </Link>
+                    </ListGroup.Item>
               
             </ListGroup>
           </Card>
