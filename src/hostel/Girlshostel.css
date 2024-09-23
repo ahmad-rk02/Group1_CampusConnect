@@ -57,8 +57,9 @@
     width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-  
-
-
-
-
+.left-nav-row-gh{
+    height: 65px;
+  }
+  .left-nav-row-gh-01{
+    font-weight: 700;
+  }
