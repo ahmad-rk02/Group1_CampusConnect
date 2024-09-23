@@ -22,8 +22,8 @@ const Girlshostel = () => {
           <ListGroup variant="flush">
               <ListGroup.Item className="left-nav-row-gh">
               <Link
-                    to="/Boyshostel"
-                    className={location.pathname === "/Boyshostel" ? "active-link" : ""}
+                    to="/boyshostel"
+                    className={location.pathname === "/boyshostel" ? "active-link" : ""}
                   >
                     Boys Hostel
                     </Link>
