@@ -1,19 +1,158 @@
-.bg-goldenn {
+.bg-goldenn-1 {
+  background-color: #eadbc8;
+  width: 60%;
+  height: 50px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: -80px;
+  margin-left: 480px;
+  
+}
+
+.bg-goldenn-1 h4 {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: #102C57;
+  width: 50%;
+}
+
+  .head-box-bh {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-bh h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 190px;
+    color: white;
+}
+
+.left-index-bh {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-bh {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-bh .card {
+    text-align: center;
+}
+
+.left-sidebar-bh .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 20px;
+}
+
+.left-sidebar-bh a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-nav-bh {
+    background-color: white;
+    border-radius: 0;
+    height: 140px;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-bh{
+    height: 65px;
+  }
+  .left-nav-row-bh-01{
+    font-weight: 700;
+  }
+
+  .boyshostel-text1 {
+    color: #000000;
+    line-height: 1.6;
+    width: 60%;
+    margin-top: 20px;
+    margin-right: -120px;
+    margin-left: 480px;
+    text-align: justify;
+    font-size: 16px;
+
+  }
+
+  .bg-goldenn-2 {
     background-color: #eadbc8;
-    width: 70%;
+    width: 60%;
     height: 50px;
     position: relative;
     margin-right: 50px;
-    margin-top: 50px;
-    margin-left: 246px;
+    margin-top: 25px;
+    margin-left: 480px;
     
   }
   
-  .bg-goldenn h4 {
+  .bg-goldenn-2 h4 {
     font-weight: bold;
     text-align: left;
     padding-left: 20px;
     padding-top: 10px;
     color: #102C57;
     width: 50%;
+  }
+
+  .boyshostel-text2{
+    margin-top: 20px;
+    margin-left: 480px;
+    margin-right: 185px;
+    text-align: justify;
+    font-size: 16px;
+  
+  }
+
+  .bg-goldenn-3 {
+    background-color: #eadbc8;
+    width: 60%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 25px;
+    margin-left: 480px;
+    
+  }
+  
+  .bg-goldenn-3 h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+  }
+
+  .boyshostel-text3 {
+    color: #000000;
+    line-height: 1.6;
+    width: 25%;
+    margin-top: 20px;
+    margin-right: -120px;
+    margin-left: 480px;
+    text-align: justify;
+    font-size: 16px;
+
   }
