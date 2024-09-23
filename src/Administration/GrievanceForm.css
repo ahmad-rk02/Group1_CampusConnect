@@ -50,30 +50,33 @@
     width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.left-nav-row-grivnce{
-    height: 56px;
-  }
 
-.left-nav-row-grivnce-01{
+.left-nav-row-grivnce {
+    height: 56px;
+}
+
+.left-nav-row-grivnce-01 {
     font-weight: 700;
 }
 
-.head-right-top-grivnce{
+.head-right-top-grivnce {
     margin-top: 50px;
     margin-left: 200px;
     height: 50px;
 }
 
-.head-right-top-grivnce h3{
+.head-right-top-grivnce h3 {
     text-align: left;
-   padding-left: 15px;
-   padding-top: 5px;
+    padding-left: 15px;
+    padding-top: 5px;
 }
 
-.form-section-grivnce{
+.form-section-grivnce {
     width: 65%;
     margin-top: 50px;
-    margin-left: 200px; 
+    margin-left: 200px;
 }
 
-
+.message-box {
+    height: 100px;
+}
