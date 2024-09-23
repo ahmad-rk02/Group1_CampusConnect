@@ -112,57 +112,62 @@ const GrievanceForm = () => {
 
 
             <div className='form-section-grivnce'>
-              <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="formFullName" className="mb-3">
-                  <Form.Label>Full Name</Form.Label>
+              <Form onSubmit={handleSubmit} className='whole-form-grivnce'>
+                <Form.Group controlId="formFullName" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Full Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="fullname"
                     value={formData.fullname}
                     onChange={handleChange}
                     placeholder="Enter your Full name"
+                    className='input-box-grivnce'
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formEmail" className="mb-3">
-                  <Form.Label>E-Mail</Form.Label>
+                <Form.Group controlId="formEmail" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>E-Mail</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter email"
+                    className='input-box-grivnce'
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formPhoneNumber" className="mb-3">
-                  <Form.Label>Phone Number</Form.Label>
+                <Form.Group controlId="formPhoneNumber" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Phone Number</Form.Label>
                   <Form.Control
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="Enter phone number"
+                    className='input-box-grivnce'
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formUniversityNumber" className="mb-3">
-                  <Form.Label>University Number</Form.Label>
+                <Form.Group controlId="formUniversityNumber" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>University Number</Form.Label>
                   <Form.Control
                     type="number"
                     name="universityNumber"
                     value={formData.universityNumber}
                     onChange={handleChange}
                     placeholder="Enter university number"
+                    className='input-box-grivnce'
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formSemester" className="mb-3">
-                  <Form.Label>Semester</Form.Label>
+                <Form.Group controlId="formSemester" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Semester</Form.Label>
                   <Form.Select
                     name="semester"
                     value={formData.semester}
-                    onChange={handleChange} // Handler to update form data
+                    onChange={handleChange} 
+                    className='input-box-grivnce sem-dd'
                   >
                     <option value="">Select Semester</option>
                     <option value="1">Semester 1</option>
@@ -176,19 +181,20 @@ const GrievanceForm = () => {
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group controlId="formGrievanceType" className="mb-3">
-                  <Form.Label>Grievance Type</Form.Label>
+                <Form.Group controlId="formGrievanceType" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Grievance Type</Form.Label>
                   <Form.Control
                     type="text"
                     name="grievanceType"
                     value={formData.grievanceType}
                     onChange={handleChange}
                     placeholder="Enter grievance type"
+                    className='input-box-grivnce'
                   />
                 </Form.Group>
 
-                <Form.Group controlId="formMessage" className="mb-3">
-                  <Form.Label>Message</Form.Label>
+                <Form.Group controlId="formMessage" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Message</Form.Label>
                   <Form.Control
                     type="text"
                     name="message"
@@ -197,7 +203,7 @@ const GrievanceForm = () => {
                     className='message-box' />
                 </Form.Group>
 
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="submit" className='sub-btn-grivnce'>
                   Submit
                 </Button>
               </Form>
