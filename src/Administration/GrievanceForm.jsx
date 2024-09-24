@@ -110,7 +110,6 @@ const GrievanceForm = () => {
                   Register Here</h3></div>
             </div>
 
-
             <div className='form-section-grivnce'>
               <Form onSubmit={handleSubmit} className='whole-form-grivnce'>
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-grivnce">
