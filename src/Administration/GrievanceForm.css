@@ -57,6 +57,7 @@
 
 .left-nav-row-grivnce-01 {
     font-weight: 700;
+    height: 56px;
 }
 
 .head-right-top-grivnce {
@@ -79,8 +80,12 @@
 
 .message-box {
     height: 100px;
-    background-color: #102c572d;
+    background-color: white;
     width: 95%;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
 }
 
 .field-name-grivnce{
@@ -88,9 +93,13 @@
 }
 
 .input-box-grivnce{
-    background-color: #102c572d;
+    background-color: white;
     width: 95%;
     height: 45px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
 }
 
 .whole-field-grivnce{
@@ -100,17 +109,25 @@
 
 .sem-dd{
     width: 250px;
-    background-color: #102c5718;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
 }
 
 .sub-btn-grivnce{
     margin-left: 300px;
     margin-top: 30px;
+    margin-bottom: 30px;
     width: 90px;
     font-weight: 500;
     background-color: #102c57;
 }
 
 .whole-form-grivnce{
-    /* position: relative; */
+    border-style: solid;
+    border-width: 2px;
+    border-color: #102c57;
+    border-radius: 20px;
 }

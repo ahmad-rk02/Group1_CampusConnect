@@ -62,14 +62,14 @@ const Login = () => {
                             <Card.Body>
                                 <Card.Title className="mb-3">Login as Student</Card.Title>
                                 <Card.Text>To Access the grievance form for registering complaints.</Card.Text>
-                                <Button onClick={handleStudentLogin}>Student Login</Button>
+                                <Button onClick={handleStudentLogin}  className='stu-login-btn'>Student Login</Button>
                             </Card.Body>
                         </Card>
                         <Card className="login-card mx-3">
                             <Card.Body>
                                 <Card.Title className="mb-3">Login as Admin</Card.Title>
                                 <Card.Text>Access grievance made by students for particular issues.</Card.Text>
-                                <Button>Admin Login</Button>
+                                <Button className='adm-login-btn'>Admin Login</Button>
                             </Card.Body>
                         </Card>
                     </div>

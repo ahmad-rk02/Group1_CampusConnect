@@ -21,6 +21,8 @@ import StudentForm from './Administration/StudentForm';
 import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
 import Login from './Administration/Login';
+import Tenders from './Administration/Tenders';
+import Committees from './Administration/Committees';
 
 function App() {
   const navItems = [
@@ -75,6 +77,8 @@ function App() {
                   <Route path="/phd" element={<PhD />} />
                   <Route path="/pg" element={<PG />} />
                   <Route path="/grievanceform" element={<GrievanceForm />} />
+                  <Route path="/tenders" element={<Tenders/>} />
+                  <Route path="/committees" element={<Committees/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
                   <Route path="/login" element={<Login />} />

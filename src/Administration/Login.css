@@ -72,3 +72,24 @@
     transform: scale(1.05);  
   }
   
+.stu-login-btn{
+  background-color: #102c57 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.adm-login-btn{
+  background-color: #102c57 !important;
+  border: none !important;
+  color: white !important;
+}
+
+.stu-login-btn:hover {
+  background-color: #0056b3 !important;
+  color: white !important;
+}
+
+.adm-login-btn:hover {
+  background-color: #0056b3 !important;
+  color: white !important;
+}
