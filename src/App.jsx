@@ -22,6 +22,8 @@ import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
 import Login from './Administration/Login';
 import AdminForm from './Administration/AdminForm'
+import Tenders from './Administration/Tenders';
+import Committees from './Administration/Committees';
 
 function App() {
   const navItems = [

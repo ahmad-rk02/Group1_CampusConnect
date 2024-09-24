@@ -96,12 +96,12 @@ const LoginForm = () => {
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
                   Committees
                 </Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
                   Tenders
                 </Link>
               </ListGroup.Item>

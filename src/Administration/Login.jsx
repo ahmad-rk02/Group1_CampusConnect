@@ -40,12 +40,12 @@ const Login = () => {
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item className="left-nav-row-loginP">
-                                <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
+                                <Link to="/committees" className={useLocation().pathname === "/committees" ? "active-link" : ""}>
                                     Committees
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item className="left-nav-row-loginP">
-                                <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
+                                <Link to="/tenders" className={useLocation().pathname === "/tenders" ? "active-link" : ""}>
                                     Tenders
                                 </Link>
                             </ListGroup.Item>
