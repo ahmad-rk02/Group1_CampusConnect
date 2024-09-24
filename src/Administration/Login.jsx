@@ -70,7 +70,7 @@ const Login = () => {
                             <Card.Body>
                                 <Card.Title className="mb-3">Login as Student</Card.Title>
                                 <Card.Text>To Access the grievance form for registering complaints.</Card.Text>
-                                <Button onClick={handleStudentLogin}>Student Login</Button>
+                                <Button onClick={handleStudentLogin}  className='stu-login-btn'>Student Login</Button>
                             </Card.Body>
                         </Card>
 

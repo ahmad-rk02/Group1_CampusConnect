@@ -51,7 +51,7 @@ function App() {
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
         "Alumini",
         "Resources",
-        { name: "Hostel", subLinks: ["Boy's Hostel", "Girl's Hostel"] }
+        { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
       ]
     },
     { name: "CONTACT" }
@@ -76,6 +76,8 @@ function App() {
                   <Route path="/phd" element={<PhD />} />
                   <Route path="/pg" element={<PG />} />
                   <Route path="/grievanceform" element={<GrievanceForm />} />
+                  <Route path="/tenders" element={<Tenders/>} />
+                  <Route path="/committees" element={<Committees/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
                   <Route path="/login" element={<Login />} />

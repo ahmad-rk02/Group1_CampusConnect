@@ -59,8 +59,10 @@ function Navbar({ imageSrcPath, navItems }) {
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
         "Grievance Form": "/login",
-        "Girl's Hostel": "/girlshostel",
-        "Boy's Hostel": "/boyshostel"
+        "Tenders" : "/tenders",
+        "Girls Hostel": "/girlshostel",
+        "Boys Hostel": "/boyshostel",
+        "Committees": "/committees",
       };
 
       if (typeof subLink === "string") {
