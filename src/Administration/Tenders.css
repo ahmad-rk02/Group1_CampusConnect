@@ -103,3 +103,11 @@
   .table-row-tender{
     height: 40px;
   }
+
+  .table-row-tender a{
+    text-decoration: none;
+  }
+
+  .table-row-tender a:hover{
+    text-decoration: underline;
+  }

@@ -104,3 +104,11 @@
 .name-of-committees{
     text-align: left;
 }
+
+.table-row-committee-clg a{
+    text-decoration: none;
+  }
+
+  .table-row-committee-clg a:hover{
+    text-decoration: underline;
+  }
