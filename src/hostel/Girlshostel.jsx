@@ -7,42 +7,42 @@ import girlshostel from "../assets/girlshostel-img.jpg";
 
 const Girlshostel = () => {
   return (
-    
+
     <Container fluid className="p-0 w-100">
       {/* Header Section */}
-      <Row  className='head-box-gh' >
+      <Row className='head-box-gh' >
         <Col>
           <h1 className="text-left-gh">HOSTEL</h1>
         </Col>
       </Row>
 
-      <Row  className="flex-nowrap left-index-gh just" >
+      <Row className="flex-nowrap left-index-gh just" >
         {/* Left Sidebar */}
         <Col md={2} className='left-sidebar-gh' >
           <Card className="left-nav-gh" >
-          <ListGroup variant="flush">
+            <ListGroup variant="flush">
               <ListGroup.Item className="left-nav-row-gh">
-              <Link
-                    to="/boyshostel"
-                    className={location.pathname === "/boyshostel" ? "active-link" : ""}
-                  >
-                    Boys Hostel
-                    </Link>
-                    </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-gh-01">
-              <Link
-                    to="/Girlshostel"
-                    className={location.pathname === "/Girlshostel" ? "active-link" : ""}
-                  >
-                Girls Hostel
+                <Link
+                  to="/boyshostel"
+                  className={location.pathname === "/boyshostel" ? "active-link" : ""}
+                >
+                  Boys Hostel
                 </Link>
-                </ListGroup.Item>
-              
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-gh-01">
+                <Link
+                  to="/Girlshostel"
+                  className={location.pathname === "/Girlshostel" ? "active-link" : ""}
+                >
+                  Girls Hostel
+                </Link>
+              </ListGroup.Item>
+
             </ListGroup>
           </Card>
-        </Col>      
-        </Row> 
-        <Card.Header className="gh-goldenn-1">
+        </Col>
+      </Row>
+      <Card.Header className="gh-goldenn-1">
         <h4>Hostel Facilities</h4>
       </Card.Header>
       <Col className="girlshostel-text1">
@@ -84,87 +84,87 @@ const Girlshostel = () => {
         <p>Welcome to the heart of GCOEC hostel life, where comfort meets community amidst the serene greenery of our residential zone. Our hostels, both for boys and girls, are designed to support your academic journey while offering a vibrant, student-centered environment. Hostel admissions are granted based on merit and reservation rules as per government norms, with priority given to higher merit students for room allocation. The process follows the CAP round of engineering admissions, ensuring fairness and transparency.
         </p>
       </Col>
-      
-                    <img
-                      src={girlshostel}
-                      alt="girlshostel"
-                      className="about-image-gh"
-                      style={{ width: '34%' }}
-                    />
-                    <Button type="submit" className="apply-button">
-                  Apply Now
-                </Button>
-                <Button type="submit" className="EN-button">
-                Enquire Now
-                </Button>
-                <Button type="submit" className="HOSTEL-button">
-                Hostel Rules & Regulations
-                </Button>
-                <Col>
-          
+
+      <img
+        src={girlshostel}
+        alt="girlshostel"
+        className="about-image-gh"
+        style={{ width: '34%' }}
+      />
+      <Button type="submit" className="apply-button">
+        Apply Now
+      </Button>
+      <Button type="submit" className="EN-button">
+        Enquire Now
+      </Button>
+      <Button type="submit" className="HOSTEL-button">
+        Hostel Rules & Regulations
+      </Button>
+      <Col>
 
 
-      {/* Hostel Information Table */}
-      <table className="hostel-info-table">
-        <tbody>
-          <tr>
-            <th>Total Area</th>
-            <td>2936 Sq.m</td>
-          </tr>
-          <tr>
-            <th>No. of Rooms</th>
-            <td>80</td>
-          </tr>
-          <tr>
-            <th>Intake</th>
-            <td>156</td>
-          </tr>
-          <tr>
-            <th>Facilities</th>
-            <td>
-              Mess, Common Room, Badminton Court, RO-water purifier, News paper, Magazine, 24 hr Security, Sweepers
-            </td>
-          </tr>
-        </tbody>
-      </table>
+
+        {/* Hostel Information Table */}
+        <table className="hostel-info-table">
+          <tbody>
+            <tr>
+              <th>Total Area</th>
+              <td>2936 Sq.m</td>
+            </tr>
+            <tr>
+              <th>No. of Rooms</th>
+              <td>80</td>
+            </tr>
+            <tr>
+              <th>Intake</th>
+              <td>156</td>
+            </tr>
+            <tr>
+              <th>Facilities</th>
+              <td>
+                Mess, Common Room, Badminton Court, RO-water purifier, News paper, Magazine, 24 hr Security, Sweepers
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
 
-  
-      <Card.Header className="gh-goldenn-3">
-        <h4>Hostel Committee Members</h4>
-      </Card.Header>
-      <table className="committee-table-gh">
-        <thead>
-          <tr>
-            <th>Sr. No.</th>
-            <th>Name of Faculty/ Staff</th>
-            <th>Responsibility</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Dr. D. K. Maghade</td>
-            <td>Rector</td>
-          </tr>
-           
-          <tr>
-            <td>2</td>
-            <td>-</td>
-            <td>Warden (Girl's Hostel)</td>
-          </tr>
-          
-          <tr>
-            <td>3</td>
-            <td>Smt. Kanchan Khobragade</td>
-            <td>Assistant</td>
-          </tr>
-        </tbody>
-      </table>
 
-        </Col>
-                 
-        </Container>
+        <Card.Header className="gh-goldenn-3">
+          <h4>Hostel Committee Members</h4>
+        </Card.Header>
+        <table className="committee-table-gh">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Name of Faculty/ Staff</th>
+              <th>Responsibility</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Dr. D. K. Maghade</td>
+              <td>Rector</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td>-</td>
+              <td>Warden (Girl's Hostel)</td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Smt. Kanchan Khobragade</td>
+              <td>Assistant</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </Col>
+
+    </Container>
   );
 };
 

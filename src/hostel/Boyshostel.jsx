@@ -1,8 +1,9 @@
 import React from 'react'
-import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import { Table } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Boyshostel.css';
+import { Table } from 'react-bootstrap';
+import BoysHostel from "../assets/BoysHostel.jpg";
 
 const Boyshostel = () => {
   return (
@@ -85,8 +86,93 @@ const Boyshostel = () => {
         <h4>Boys Hostel</h4>
       </Card.Header>
       <Col className="boyshostel-text3">
-        <p>Welcome to the heart of GCOEC hostel life, where comfort meets community amidst the serene greenery of our residential zone. Our hostels, both for boys and girls, are designed to support your academic journey while offering a vibrant, student-centered environment. Hostel admissions are granted based on merit and reservation rules as per government norms, with priority given to higher merit students for room allocation. The process follows the CAP round of engineering admissions, ensuring fairness and transparency.
+        <p>The Boys' Hostel at GCOEC is a dynamic and secure residence tailored to the unique needs of male students. Located within the vibrant campus, it provides modern amenities, comfortable rooms, and round-the-clock security. More than just a place to stay, the hostel fosters a strong sense of brotherhood, encouraging deep connections and supporting the overall personal and academic development of its residents.
         </p>
+      </Col>
+      <img
+        src={BoysHostel}
+        alt="Boys Hostel"
+        className="about-image-bh"
+        style={{ width: '34%' }}
+      />
+      <Button type="submit" className="apply-button-bh">
+        Apply Now
+      </Button>
+      <Button type="submit" className="EN-button-bh">
+        Enquire Now
+      </Button>
+      <Button type="submit" className="HOSTEL-button-bh">
+        Hostel Rules & Regulations
+      </Button>
+      <Col>
+
+
+
+        {/* Hostel Information Table */}
+        <table className="hostel-info-table-bh">
+          <tbody>
+            <tr>
+              <th>Total Area</th>
+              <td>3132 Sq.m</td>
+            </tr>
+            <tr>
+              <th>No. of Rooms</th>
+              <td>88</td>
+            </tr>
+            <tr>
+              <th>Intake</th>
+              <td>176</td>
+            </tr>
+            <tr>
+              <th>Facilities</th>
+              <td>
+                Mess, Common Room, Badminton Court, Gym, Guest room, RO-Water Purifier, News paper, Magazine, 24 hr Security, Sweepers
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+        <Card.Header className="bg-goldenn-4">
+        <h4>Hostel Committee Members</h4>
+      </Card.Header>
+        <Col>
+          <table className="committee-table-bh">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Name of Faculty/ Staff</th>
+                <th>Responsibility</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Dr. D. K. Maghade</td>
+                <td>Rector</td>
+              </tr>
+
+              <tr>
+                <td>2</td>
+                <td>Prof. L. P. Nikhade</td>
+                <td>Warden (Boy's Hostel)</td>
+              </tr>
+
+              <tr>
+                <td>3</td>
+                <td>Mr. Prem Banjara</td>
+                <td>Assistant</td>
+              </tr>
+
+              <tr>
+                <td>4</td>
+                <td>Smt. Kanchan Khobragade</td>
+                <td>Assistant</td>
+              </tr>
+            </tbody>
+          </table>
+        </Col>
       </Col>
     </Container>
   );
