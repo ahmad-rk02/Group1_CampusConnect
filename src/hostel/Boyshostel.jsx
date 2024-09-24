@@ -164,12 +164,6 @@ const Boyshostel = () => {
                 <td>Mr. Prem Banjara</td>
                 <td>Assistant</td>
               </tr>
-
-              <tr>
-                <td>4</td>
-                <td>Smt. Kanchan Khobragade</td>
-                <td>Assistant</td>
-              </tr>
             </tbody>
           </table>
         </Col>

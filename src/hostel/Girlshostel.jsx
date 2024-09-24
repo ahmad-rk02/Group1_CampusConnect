@@ -91,13 +91,13 @@ const Girlshostel = () => {
         className="about-image-gh"
         style={{ width: '34%' }}
       />
-      <Button type="submit" className="apply-button">
+      <Button type="submit" className="apply-button-gh">
         Apply Now
       </Button>
-      <Button type="submit" className="EN-button">
+      <Button type="submit" className="EN-button-gh">
         Enquire Now
       </Button>
-      <Button type="submit" className="HOSTEL-button">
+      <Button type="submit" className="HOSTEL-button-gh">
         Hostel Rules & Regulations
       </Button>
       <Col>
