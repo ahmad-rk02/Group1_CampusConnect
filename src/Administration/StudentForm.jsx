@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -16,11 +16,12 @@ const LoginForm = () => {
   });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false); // State for password visibility
+  const [showModal, setShowModal] = useState(false); // State to control the modal visibility
+  const [email, setEmail] = useState(''); // State for the email input in the forgot password modal
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    // Validate PRN input
     if (name === 'PRN' && /[^0-9]/.test(value)) {
       setError('PRN should contain only numbers.');
       return;
@@ -34,14 +35,7 @@ const LoginForm = () => {
     }));
   };
 
-  // Mock credentials for testing
-  const mockCredentials = {
-    PRN: '2021033700996804',
-    password: 'Password@123',
-  };
-
   const validatePassword = (password) => {
-    // Regex to check for at least one uppercase letter, one number, one special character, and at least 8 characters in total
     const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
     return passwordRegex.test(password);
   };
@@ -64,7 +58,8 @@ const LoginForm = () => {
       return;
     }
 
-    if (formData.PRN === mockCredentials.PRN && formData.password === mockCredentials.password) {
+    // Mock credentials for testing
+    if (formData.PRN === '2021033700996804' && formData.password === 'Password@123') {
       navigate('/grievanceform');
     } else {
       setError('Invalid PRN or password. Please try again.');
@@ -75,55 +70,62 @@ const LoginForm = () => {
     setShowPassword((prev) => !prev);
   };
 
+  const handleForgotPasswordSubmit = (e) => {
+    e.preventDefault();
+    // Handle the email submission (e.g., send a password reset email)
+    alert(`A password reset link has been sent to ${email}.`);
+    setShowModal(false); // Close the modal after submission
+  };
+
   return (
     <Container fluid className="p-0 w-100">
-      <Row className='head-box-login'>
-        <Col>
-          <h1 className="text-left">ADMINISTRATION</h1>
-        </Col>
-      </Row>
+<Row className='head-box-login'>
+  <Col>
+    <h1 className="text-left">ADMINISTRATION</h1>
+  </Col>
+</Row>
 
-      <Row noGutters className="flex-nowrap left-index-login just">
-        <Col md={2} className='left-sidebar-login'>
-          <Card className="left-nav-login">
-            <ListGroup variant="flush">
-              {/* Sidebar Links */}
-              <ListGroup.Item className="left-nav-row-login">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Principal and HOD
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Student Section
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Office
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Committees
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Tenders
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login-01">
-                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
-                  Grievance Form
-                </Link>
-              </ListGroup.Item>
-            </ListGroup>
-          </Card>
-        </Col>
+<Row noGutters className="flex-nowrap left-index-login just">
+  <Col md={2} className='left-sidebar-login'>
+    <Card className="left-nav-login">
+      <ListGroup variant="flush">
+        {/* Sidebar Links */}
+        <ListGroup.Item className="left-nav-row-login">
+          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+            Principal and HOD
+          </Link>
+        </ListGroup.Item>
+        <ListGroup.Item className="left-nav-row-login">
+          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+            Student Section
+          </Link>
+        </ListGroup.Item>
+        <ListGroup.Item className="left-nav-row-login">
+          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+            Office
+          </Link>
+        </ListGroup.Item>
+        <ListGroup.Item className="left-nav-row-login">
+          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+            Committees
+          </Link>
+        </ListGroup.Item>
+        <ListGroup.Item className="left-nav-row-login">
+          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+            Tenders
+          </Link>
+        </ListGroup.Item>
+        <ListGroup.Item className="left-nav-row-login-01">
+          <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
+            Grievance Form
+          </Link>
+        </ListGroup.Item>
+      </ListGroup>
+    </Card>
+  </Col>
 
         <Col>
-          <div className='head-right-top-login' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+          <div className="head-right-top-login" style={{ width: '70%', backgroundColor: '#eadbc8' }}>
             <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 
@@ -150,7 +152,7 @@ const LoginForm = () => {
 
                 <Form.Group controlId="password" className="mb-3 position-relative">
                   <Form.Control
-                    type={showPassword ? "text" : "password"} 
+                    type={showPassword ? 'text' : 'password'}
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
@@ -176,14 +178,43 @@ const LoginForm = () => {
                 </Button>
 
                 <div className="login-links">
-                  <Link to="/signup" className="login-link">Sign Up</Link>
-                  <Link to="/forgot-password" className="login-link">Forgot password?</Link>
+                  <Link to="/signup" className="login-link">
+                    Sign Up
+                  </Link>
+                  {/* Trigger the modal when clicking "Forgot password?" */}
+                  <Link to="#" className="login-link" onClick={() => setShowModal(true)}>
+                    Forgot password?
+                  </Link>
                 </div>
               </Form>
             </div>
           </div>
         </Col>
       </Row>
+  {/* Forgot Password Modal */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered >
+    
+        <Modal.Header closeButton>
+          <Modal.Title>Forgot Password</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className='forgetpassword'>
+          <Form onSubmit={handleForgotPasswordSubmit}>
+            <Form.Group controlId="email" className="mb-3">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                required
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit" className="w-100">
+              Send Reset Link
+            </Button>
+          </Form>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };

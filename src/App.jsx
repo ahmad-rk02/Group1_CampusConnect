@@ -24,6 +24,8 @@ import Login from './Administration/Login';
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 
+
+
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -57,7 +59,7 @@ function App() {
     },
     { name: "CONTACT" }
   ];
-
+  
   return (
           <>
             <Router>
@@ -79,6 +81,7 @@ function App() {
                   <Route path="/grievanceform" element={<GrievanceForm />} />
                   <Route path="/tenders" element={<Tenders/>} />
                   <Route path="/committees" element={<Committees/>} />
+                  
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
                   <Route path="/login" element={<Login />} />
@@ -90,9 +93,15 @@ function App() {
             </Router>
             <div className='footer-spacing'>
               <Footer />
-            </div>
+    </div>
           </>
           );
 }
 
-          export default App;
+        
+
+
+  
+
+
+export default App;
