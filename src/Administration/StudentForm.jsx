@@ -43,18 +43,18 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.PRN) {
+    if (!formData.PRN && !formData.password) {
+      setError('PRN number and password is required.');
+      return;
+    }
+
+    if (formData.PRN=='') {
       setError('PRN is required.');
       return;
     }
 
-    if (isNaN(formData.PRN)) {
-      setError('PRN should contain only numbers.');
-      return;
-    }
-
-    if (!validatePassword(formData.password)) {
-      setError('Password must be at least 8 characters long, contain at least one uppercase letter, one number, and one special character.');
+    if (formData.password=='') {
+      setError('Password is required.');
       return;
     }
 

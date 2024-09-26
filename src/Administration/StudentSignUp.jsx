@@ -2,19 +2,18 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './GrievanceForm.css';
+import './StudentSignUp.css';
 
-const GrievanceForm = () => {
+const StudentSignUp = () => {
 
 
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
     phone: '',
-    universityNumber: '',
+    prnNumber: '',
     semester: '',
-    grievanceType: '',
-    message: '',
+    branch: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -97,10 +96,9 @@ const GrievanceForm = () => {
         fullname: '',
         email: '',
         phone: '',
-        universityNumber: '',
+        prnNumber: '',
         semester: '',
-        grievanceType: '',
-        message: '',
+        branch: '',
       });
       setErrors({});
     } else {
@@ -187,6 +185,7 @@ const GrievanceForm = () => {
 
                   Register Here</h3></div>
             </div>
+
 
             <div className='form-section-grivnce'>
               <Form onSubmit={handleSubmit} className='whole-form-grivnce'>
@@ -309,4 +308,4 @@ const GrievanceForm = () => {
   )
 }
 
-export default GrievanceForm
+export default StudentSignUp
