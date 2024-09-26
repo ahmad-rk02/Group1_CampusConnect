@@ -21,6 +21,7 @@ import StudentForm from './Administration/StudentForm';
 import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
 import Login from './Administration/Login';
+import AdminForm from './Administration/AdminForm'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 
@@ -85,6 +86,7 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />
                   <Route path="/boyshostel" element={<Boyshostel/>} />
+                  <Route path="/adminform" element={<AdminForm/>} />
                 </Routes>
               </div>
             </Router>

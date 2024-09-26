@@ -188,7 +188,6 @@ const GrievanceForm = () => {
                   Register Here</h3></div>
             </div>
 
-
             <div className='form-section-grivnce'>
               <Form onSubmit={handleSubmit} className='whole-form-grivnce'>
 
