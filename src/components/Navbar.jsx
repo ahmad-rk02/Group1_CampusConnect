@@ -60,8 +60,8 @@ function Navbar({ imageSrcPath, navItems }) {
         "Computer Science & Engineering": "/cse",
         "Grievance Form": "/login",
         "Tenders" : "/tenders",
-        "Girl's Hostel": "/girlshostel",
-        "Boy's Hostel": "/boyshostel",
+        "Girls Hostel": "/girlshostel",
+        "Boys Hostel": "/boyshostel",
         "Committees": "/committees",
       };
 

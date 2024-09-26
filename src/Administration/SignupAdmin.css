@@ -1,9 +1,11 @@
-.head-box-grivnce {
+.head-box-Admin-signup
+ {
     background-color: #102c57;
     height: 130px;
 }
 
-.head-box-grivnce h1 {
+.head-box-Admin-signup
+ h1 {
     font-weight: bold;
     text-align: left;
     font-size: 40px;
@@ -12,12 +14,14 @@
     color: white;
 }
 
-.left-index-grivnce {
+.left-index-Admin-signup
+ {
     margin-left: 60px;
     margin-right: 60px;
 }
 
-.left-sidebar-grivnce {
+.left-sidebar-Admin-signup
+ {
     position: relative;
     top: -20px;
     z-index: 2;
@@ -25,11 +29,13 @@
     margin-left: 40px;
 }
 
-.left-sidebar-grivnce .card {
+.left-sidebar-Admin-signup
+ .card {
     text-align: center;
 }
 
-.left-sidebar-grivnce .list-group-item {
+.left-sidebar-Admin-signup
+ .list-group-item {
     font-size: 1.2rem;
     text-align: center;
 }
@@ -38,41 +44,47 @@
     margin-top: 80px;
 }
 
-.left-sidebar-grivnce a {
+.left-sidebar-Admin-signup
+ a {
     text-decoration: none;
     color: black;
 }
 
 
-.left-nav-grivnce {
+.left-nav-Admin-signup
+ {
     background-color: white;
     border-radius: 0;
     width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
-.left-nav-row-grivnce {
+.left-nav-row-Admin-signup
+ {
     height: 56px;
 }
 
-.left-nav-row-grivnce-01 {
+.left-nav-row-Admin-signup-01 {
     font-weight: 700;
     height: 56px;
 }
 
-.head-right-top-grivnce {
+.head-right-top-Admin-signup
+ {
     margin-top: 50px;
     margin-left: 200px;
     height: 50px;
 }
 
-.head-right-top-grivnce h3 {
+.head-right-top-Admin-signup
+ h3 {
     text-align: left;
     padding-left: 15px;
     padding-top: 5px;
 }
 
-.form-section-grivnce {
+.form-section-Admin-signup
+ {
     width: 65%;
     margin-top: 50px;
     margin-left: 200px;
@@ -88,11 +100,13 @@
     border-color: #102c57;
 }
 
-.field-name-grivnce{
+.field-name-Admin-signup
+{
     font-weight: 500;
 }
 
-.input-box-grivnce{
+.input-box-Admin-signup
+{
     background-color: white;
     width: 95%;
     height: 45px;
@@ -102,7 +116,8 @@
     border-color: #102c57;
 }
 
-.whole-field-grivnce{
+.whole-field-Admin-signup
+{
     margin-left: 40px;
     margin-top: 30px;
 }
@@ -116,7 +131,8 @@
     border-color: #102c57;
 }
 
-.sub-btn-grivnce{
+.sub-btn-Admin-signup
+{
     margin-left: 300px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -125,7 +141,8 @@
     background-color: #102c57;
 }
 
-.whole-form-grivnce{
+.whole-form-Admin-signup
+{
     border-style: solid;
     border-width: 2px;
     border-color: #102c57;
