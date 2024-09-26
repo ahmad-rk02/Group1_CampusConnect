@@ -161,34 +161,71 @@
   margin-left: 870px;
   margin-top: -290px;
   }
-  .apply-button{
-    width: 120px;
+  .apply-button-gh {
+    width: 140px;
+    height: 45px;
     background-color: #102C57;
     color: white;
     border-radius: 50px;
-    font-size: 18px; 
-    margin-left: 500px;
-margin-top: 70px;
-
+    font-size: 16px;
+    margin-left: 480px;
+    margin-top: 70px;
+  
   }
-  .EN-button{
-    width: 150px;
+  
+  .apply-button-gh:hover{
+    background-color: #eadbc8;
+    border-color: #102C57;
+    border-width: 2px;
+    color: #102C57;
+    font-size: 16px;
+    font-weight: 500;
+  
+  }
+  
+  .EN-button-gh {
+    width: 140px;
+    height: 45px;
     background-color: #102C57;
     color: white;
     border-radius: 50px;
-    font-size: 18px; 
-    margin-left: 50px;
-margin-top: 70px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 70px;
   }
-  .HOSTEL-button{
-    width: 250px;
+  
+  .EN-button-gh:hover{
+    background-color: #eadbc8;
+    border-color: #102C57;
+    border-width: 2px;
+    color: #102C57;
+    font-size: 16px;
+    font-weight: 500;
+  
+  }
+  
+  .HOSTEL-button-gh {
+    width: 240px;
+    height: 45px;
     background-color: #102C57;
     color: white;
     border-radius: 50px;
-    font-size: 18px; 
-    margin-left: 50px;
-margin-top: 70px;
+    font-size: 16px;
+    margin-left: 20px;
+    margin-top: 70px;
+  
   }
+  
+  .HOSTEL-button-gh:hover{
+    background-color: #eadbc8;
+    border-color: #102C57;
+    border-width: 2px;
+    color: #102C57;
+    font-size: 16px;
+    font-weight: 500;
+  
+  }
+  
   .hostel-info-table {
     width: 60%;
     border-collapse: collapse;
