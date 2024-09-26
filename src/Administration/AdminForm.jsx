@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import './StudentForm.css';
+import './AdminForm.css';
 import Gec from '../assets/Gec.png';
 
 const LoginForm = () => {
@@ -11,7 +11,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    PRN: '',
+    adminDTE: '',
     password: '',
   });
   const [error, setError] = useState('');
@@ -20,8 +20,8 @@ const LoginForm = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === 'PRN' && /[^0-9]/.test(value)) {
-      setError('PRN should contain only numbers.');
+    if (name === 'adminDTE' && /[^0-9]/.test(value)) {
+      setError('DTE Number should contain only numbers.');
       return;
     } else {
       setError('');
@@ -35,19 +35,19 @@ const LoginForm = () => {
 
   // Mock credentials for testing
   const mockCredentials = {
-    PRN: '2021033700996804',
+    adminDTE: '2021033700996804',
     password: 'Password@123',
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.PRN && !formData.password) {
-      setError('PRN number and password is required.');
+    if (!formData.adminDTE && !formData.password) {
+      setError('DTE number and password is required.');
       return;
     }
 
-    if (formData.PRN=='') {
+    if (formData.adminDTE=='') {
       setError('PRN is required.');
       return;
     }
@@ -57,10 +57,10 @@ const LoginForm = () => {
       return;
     }
 
-    if (formData.PRN === mockCredentials.PRN && formData.password === mockCredentials.password) {
-      navigate('/grievanceform');
+    if (formData.adminDTE === mockCredentials.adminDTE && formData.password === mockCredentials.password) {
+      navigate('/home');
     } else {
-      setError('Invalid PRN or password. Please try again.');
+      setError('Invalid DTE number or password. Please try again.');
     }
   };
 
@@ -70,42 +70,42 @@ const LoginForm = () => {
 
   return (
     <Container fluid className="p-0 w-100">
-      <Row className='head-box-login'>
+      <Row className='head-box-loginA'>
         <Col>
           <h1 className="text-left">ADMINISTRATION</h1>
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-login just">
-        <Col md={2} className='left-sidebar-login'>
-          <Card className="left-nav-login">
+      <Row noGutters className="flex-nowrap left-index-loginA just">
+        <Col md={2} className='left-sidebar-loginA'>
+          <Card className="left-nav-loginA">
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-login">
+              <ListGroup.Item className="left-nav-row-loginA">
                 <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                   Principal and HOD
                 </Link>
               </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
+              <ListGroup.Item className="left-nav-row-loginA">
                 <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                   Student Section
                 </Link>
               </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
+              <ListGroup.Item className="left-nav-row-loginA">
                 <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                   Office
                 </Link>
               </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
+              <ListGroup.Item className="left-nav-row-loginA">
                 <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
                   Committees
                 </Link>
               </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login">
+              <ListGroup.Item className="left-nav-row-loginA">
                 <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
                   Tenders
                 </Link>
               </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-login-01">
+              <ListGroup.Item className="left-nav-row-loginA-01">
                 <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
                   Grievance Form
                 </Link>
@@ -115,26 +115,26 @@ const LoginForm = () => {
         </Col>
 
         <Col>
-          <div className='head-right-top-login' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-            <h3 style={{ color: '#102C57' }}>Student Login</h3>
+          <div className='head-right-top-loginA' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+            <h3 style={{ color: '#102C57' }}>Admin Login</h3>
           </div>
 
-          <div className="login-section">
-            <div className="login-logo-container">
+          <div className="loginA-section">
+            <div className="loginA-logo-container">
               <img src={Gec} alt="Logo" className="login-logo" />
             </div>
 
-            <div className="login-form-container">
+            <div className="loginA-form-container">
               {error && <Alert variant="danger">{error}</Alert>}
 
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="PRN" className="mb-3">
+                <Form.Group controlId="AadminDTE" className="mb-3">
                   <Form.Control
                     type="text"
-                    name="PRN"
-                    value={formData.PRN}
+                    name="adminDTE"
+                    value={formData.adminDTE}
                     onChange={handleChange}
-                    placeholder="PRN number"
+                    placeholder="DTE number"
                     className="login-input"
                     pattern="[0-9]*"
                   />
@@ -163,11 +163,11 @@ const LoginForm = () => {
                   </span>
                 </Form.Group>
 
-                <Button type="submit" className="login-button">
+                <Button type="submit" className="loginA-button">
                   LOGIN
                 </Button>
 
-                <div className="login-links">
+                <div className="loginA-links">
                   <Link to="/signup" className="login-link">Sign Up</Link>
                   <Link to="/forgot-password" className="login-link">Forgot password?</Link>
                 </div>
