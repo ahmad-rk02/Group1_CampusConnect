@@ -27,7 +27,7 @@ import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
-
+import Forgotpassword from './Administration/Forgotpassword';
 
 function App() {
   const navItems = [
@@ -93,6 +93,7 @@ function App() {
                   <Route path="/girlshostel" element={<Girlshostel/>} />
                   <Route path="/boyshostel" element={<Boyshostel/>} />
                   <Route path="/adminform" element={<AdminForm/>} />
+                  <Route path="/forgotpassword" element={<Forgotpassword/>} />
                 </Routes>
               </div>
             </Router>

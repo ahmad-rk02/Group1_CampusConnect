@@ -181,13 +181,9 @@ const LoginForm = () => {
                 </Button>
 
                 <div className="login-links">
-                  <Link to="/studentsignup" className="login-link">
-                    Sign Up
-                  </Link>
-                  {/* Trigger the modal when clicking "Forgot password?" */}
-                  <Link to="#" className="login-link" onClick={() => setShowModal(true)}>
-                    Forgot password?
-                  </Link>
+                  <Link to="/signup" className="login-link">Sign Up</Link>
+                  <Link to="/forgotpassword" className="login-link">Forgot password?</Link>
+                   
                 </div>
               </Form>
             </div>
@@ -195,5 +191,7 @@ const LoginForm = () => {
         </Col>
       </Row>
     </Container>
-  );
-};export default LoginForm;
+  );     
+};
+
+export default LoginForm;
