@@ -1,0 +1,203 @@
+.bg-goldeeen {
+    background-color: #eadbc8;
+    width: 70%;
+    height: 50px;
+    position: relative;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-left: 200px;
+
+}
+
+.bg-goldeeen h4 {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 10px;
+    color: #102C57;
+    width: 50%;
+}
+
+/* Container for the logo */
+.gec-logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+/* Styling the logo */
+.form-clg-logo {
+    width: 120px; /* Adjust the size of the logo */
+    height: auto;
+    width:25%
+}
+
+.head-box-grivnce {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-grivnce h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 85px;
+    color: white;
+}
+
+.left-index-grivnce {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-grivnce {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-grivnce .card {
+    text-align: center;
+}
+
+.left-sidebar-grivnce .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.left-sidebar-grivnce a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-grivnce {
+    background-color: white;
+    border-radius: 0;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.left-nav-row-grivnce {
+    height: 56px;
+}
+
+.left-nav-row-grivnce-01 {
+    font-weight: 700;
+    height: 56px;
+}
+
+.head-right-top-grivncee {
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 50px;
+}
+
+.head-right-top-grivncee h3 {
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 5px;
+}
+
+.form-section-grivncee {
+    width: 70%;
+    margin-top: 50px;
+    margin-left: 200px;
+    background-color: white;
+    border-radius: 20px;
+    
+
+}
+
+.message-box {
+    height: 100px;
+    background-color: white;
+    width: 95%;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
+}
+
+.field-name-grivnce {
+    font-weight: 500;
+}
+
+.input-box-grivncee {
+    background-color: white;
+    width: 95%;
+    height: 45px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
+}
+
+.whole-field-grivncee {
+    margin-left: 80px;
+    margin-top: 30px;
+    margin-right: 60px;
+}
+
+.sem-ddd {
+    width: 250px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
+}
+
+.sub-btn-grivncee {
+    margin-left: 330px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90px;
+    font-weight: 500;
+    background-color: #102c57;
+}
+
+.whole-form-grivncee {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #102c57;
+    border-radius: 20px;
+}
+
+.input-box-grivnce-2 {
+    background-color: white;
+    width: 95%;
+    height: 45px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
+}
+
+.branch-dd-2 {
+    width: 290px;
+    background-color: white;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    border-color: #102c57;
+}
+
+/* Add a background image for the entire container */
+.p-0 .w-1000 {
+    background: linear-gradient(rgba(255, 255, 255, 0.601), rgba(255, 255, 255, 0.601)),
+        url('..\assets\mainBuilding.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 210vh;
+    margin: 0;
+    padding-top: 500px;
+    margin-bottom: -80px;
+}

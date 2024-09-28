@@ -1,7 +1,8 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import imagePath from "./assets/Gec.png";
-import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -25,6 +26,8 @@ import AdminForm from './Administration/AdminForm'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
+import StudentSignUp from './Administration/StudentSignUp';
+
 
 function App() {
   const navItems = [
@@ -59,7 +62,7 @@ function App() {
     },
     { name: "CONTACT" }
   ];
-
+  
   return (
           <>
             <Router>
@@ -81,6 +84,7 @@ function App() {
                   <Route path="/grievanceform" element={<GrievanceForm />} />
                   <Route path="/tenders" element={<Tenders/>} />
                   <Route path="/committees" element={<Committees/>} />
+                  <Route path="/studentsignup" element={<StudentSignUp/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
                   <Route path="/signupadmin" element={<SignupAdmin />} />
@@ -94,9 +98,15 @@ function App() {
             </Router>
             <div className='footer-spacing'>
               <Footer />
-            </div>
+    </div>
           </>
           );
 }
 
-          export default App;
+        
+
+
+  
+
+
+export default App;
