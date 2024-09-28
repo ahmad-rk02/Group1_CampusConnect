@@ -178,7 +178,7 @@ const LoginForm = () => {
                 </Button>
 
                 <div className="login-links">
-                  <Link to="/signup" className="login-link">
+                  <Link to="/studentsignup" className="login-link">
                     Sign Up
                   </Link>
                   {/* Trigger the modal when clicking "Forgot password?" */}

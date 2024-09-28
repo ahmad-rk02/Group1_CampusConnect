@@ -1,7 +1,8 @@
+// eslint-disable-next-line no-unused-vars
+import React from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import imagePath from "./assets/Gec.png";
-import React from "react";
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
@@ -24,7 +25,7 @@ import Login from './Administration/Login';
 import AdminForm from './Administration/AdminForm'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
-
+import StudentSignUp from './Administration/StudentSignUp';
 
 
 function App() {
@@ -82,7 +83,7 @@ function App() {
                   <Route path="/grievanceform" element={<GrievanceForm />} />
                   <Route path="/tenders" element={<Tenders/>} />
                   <Route path="/committees" element={<Committees/>} />
-                  
+                  <Route path="/studentsignup" element={<StudentSignUp/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
                   <Route path="/login" element={<Login />} />
