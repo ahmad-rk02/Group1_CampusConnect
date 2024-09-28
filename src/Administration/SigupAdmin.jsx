@@ -3,18 +3,17 @@ import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootst
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './SignupAdmin.css';
+import Gec from '../assets/Gec.png';
 
-const GrievanceForm = () => {
+const SignupAdmin = () => {
 
 
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
-    phone: '',
-    universityNumber: '',
-    semester: '',
-    grievanceType: '',
-    message: '',
+    dte: '',
+    committee: '',
+    password: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -53,23 +52,10 @@ const GrievanceForm = () => {
       formErrors.email = "A valid email is required";
     }
 
-    // Phone validation
-    const phonePattern = /^[0-9]{10}$/;
-    if (!formData.phone || !phonePattern.test(formData.phone)) {
-      valid = false;
-      formErrors.phone = "A valid 10-digit phone number is required";
-    }
-
-    // University Number validation
-    if (!formData.universityNumber) {
-      valid = false;
-      formErrors.universityNumber = "University number is required";
-    }
-
     // Semester validation
-    if (!formData.semester) {
+    if (!formData.committee) {
       valid = false;
-      formErrors.semester = "Please select your semester";
+      formErrors.committee = "Please select committee";
     }
 
     // Grievance Type validation
@@ -184,11 +170,11 @@ const GrievanceForm = () => {
 
             <div>
               <div className='head-right-top-Admin-signup' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-                <h3 style={{ color: '#102C57' }} >Student Login
+                <h3 style={{ color: '#102C57' }} >Sign Up
 
                   <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="35px" viewBox="0 0 20 20" width="40px" fill="#102C57"><g><g><rect fill="none" height="20" width="20" /></g></g><g><polygon points="4.59,16.59 6,18 14,10 6,2 4.59,3.41 11.17,10" /></g></svg>
 
-                  Register Here</h3></div>
+                  Admin Registration</h3></div>
             </div>
 
 
@@ -197,9 +183,13 @@ const GrievanceForm = () => {
 
               {submitted && (
                   <Alert variant="success" className='mb-3'>
-                    Grievance form submitted successfully!
+                   Signed Up Successfully!
                   </Alert>
                 )}
+
+<div className="Admin-signup-logo-container">
+              <img src={Gec} alt="Logo" className="Admin-signup-logo" />
+            </div>
 
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Full Name</Form.Label>
@@ -227,80 +217,42 @@ const GrievanceForm = () => {
                   {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formPhoneNumber" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Phone Number</Form.Label>
-                  <Form.Control
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Enter Phone Number"
-                    className={`input-box-Admin-signup ${errors.phone && 'is-invalid'}`}
-                  />
-                  {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
-                </Form.Group>
-
-                <Form.Group controlId="formUniversityNumber" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>University Number</Form.Label>
+                <Form.Group controlId="formdteNumber" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
                   <Form.Control
                     type="number"
-                    name="universityNumber"
-                    value={formData.universityNumber}
+                    name="dte"
+                    value={formData.phone}
                     onChange={handleChange}
-                    placeholder="Enter University Number"
-                    className={`input-box-Admin-signup ${errors.universityNumber && 'is-invalid'}`}
+                    placeholder="Enter DTE Number"
+                    className={`input-box-Admin-signup ${errors.phone && 'is-invalid'}`}
                   />
-                   {errors.universityNumber && <div className="invalid-feedback">{errors.universityNumber}</div>}
+                  {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formSemester" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Semester</Form.Label>
+
+                <Form.Group controlId="formcommittee" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>committee</Form.Label>
                   <Form.Select
-                    name="semester"
-                    value={formData.semester}
+                    name="committee"
+                    value={formData.committee}
                     onChange={handleChange} 
                     className={`input-box-Admin-signup sem-dd ${errors.semester && 'is-invalid'}`}
                   >
-                    <option value="">Select Semester</option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
+                    <option value="1">Select committee</option>
+                    <option value="1">Committee 1</option>
+                    <option value="2">Committee 2</option>
+                    <option value="3">Committee 3</option>
+                    <option value="4">Committee 4</option>
+                    <option value="5">Committee 5</option>
                   </Form.Select>
-                  {errors.semester && <div className="invalid-feedback">{errors.semester}</div>}
+                  {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formGrievanceType" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Grievance Type</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="grievanceType"
-                    value={formData.grievanceType}
-                    onChange={handleChange}
-                    placeholder="Enter Grievance Type"
-                    className={`input-box-Admin-signup ${errors.grievanceType && 'is-invalid'}`}
-                  />
-                   {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
-                </Form.Group>
-
-                <Form.Group controlId="formMessage" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Message</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className={`message-box ${errors.message && 'is-invalid'}`}
- />
-                    {errors.message && <div className="invalid-feedback">{errors.message}</div>}
-                </Form.Group>
+      
 
                 <Button variant="primary" type="submit" className='sub-btn-Admin-signup'>
-                  Submit
+                  Sign Up
                 </Button>
               </Form>
             </div>
@@ -313,4 +265,4 @@ const GrievanceForm = () => {
   )
 }
 
-export default GrievanceForm
+export default SignupAdmin

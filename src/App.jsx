@@ -24,6 +24,7 @@ import Login from './Administration/Login';
 import AdminForm from './Administration/AdminForm'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
+import SignupAdmin from './Administration/SigupAdmin';
 
 function App() {
   const navItems = [
@@ -82,6 +83,7 @@ function App() {
                   <Route path="/committees" element={<Committees/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
+                  <Route path="/signupadmin" element={<SignupAdmin />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />
