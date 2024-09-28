@@ -168,7 +168,7 @@ const LoginForm = () => {
                 </Button>
 
                 <div className="loginA-links">
-                  <Link to="/signup" className="login-link">Sign Up</Link>
+                  <Link to="/signupadmin" className="login-link">Sign Up</Link>
                   <Link to="/forgot-password" className="login-link">Forgot password?</Link>
                 </div>
               </Form>
