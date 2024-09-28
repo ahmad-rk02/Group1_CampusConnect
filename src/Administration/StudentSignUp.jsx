@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -188,6 +189,7 @@ const StudentSignUp = () => {
               <Form onSubmit={handleSubmit} className='whole-form-grivncee'>
 
                 {submitted && (
+                  // eslint-disable-next-line react/jsx-no-undef
                   <Alert variant="success" className='mb-3'>
                     Registered Successfully!
                   </Alert>
