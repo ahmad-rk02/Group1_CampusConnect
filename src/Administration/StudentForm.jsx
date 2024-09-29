@@ -141,27 +141,35 @@ const LoginForm = () => {
               {error && <Alert variant="danger">{error}</Alert>}
 
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="PRN" className="mb-3">
+                <Form.Group controlId="PRN" className="mb-3" hasValidation>
                   <Form.Control
                     type="text"
+                    required isInvalid
                     name="PRN"
                     value={formData.PRN}
                     onChange={handleChange}
                     placeholder="PRN number"
-                    className={`login-input ${errors.PRN && 'is-invalid'}`}
+                    className="login-input"
                     pattern="[0-9]*"
                   />
+                  <Form.Control.Feedback type="invalid">
+        Please enter PRN
+      </Form.Control.Feedback>
                 </Form.Group>
 
-                <Form.Group controlId="password" className="mb-3 position-relative">
+                <Form.Group controlId="password" className="mb-3 position-relative" hasValidation>
                   <Form.Control
                     type={showPassword ? "text" : "password"} 
+                    required isInvalid
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Password"
                     className="login-input"
                   />
+                  <Form.Control.Feedback type="invalid">
+        Please enter password
+      </Form.Control.Feedback>
                   <span
                     onClick={togglePasswordVisibility}
                     style={{
