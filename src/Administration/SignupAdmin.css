@@ -122,8 +122,8 @@
     margin-top: 30px;
 }
 
-.sem-dd{
-    width: 250px;
+.commmittee-dd{
+    width: 360px;
     background-color: white;
     border-style: solid;
     border-width: 0.5px;
@@ -148,7 +148,7 @@
     border-width: 2px;
     border-color: #000000;
     border-radius: 20px;
-    width: 70%;
+    width: 75%;
     margin-left: 130px;
 }
 
@@ -167,4 +167,18 @@
     width: 100px;
     height: auto;
   }
-  
+ 
+.to-admin-login{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+  .text-Admin-signup{
+    margin-left: 120px;
+    font-size: medium;
+    font-weight: 500;
+  }
+
+ .Adminlogin-link-Admin-signup{
+    margin-left: 40px;
+ } 

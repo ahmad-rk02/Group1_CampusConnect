@@ -145,7 +145,7 @@ const LoginForm = () => {
                     value={formData.PRN}
                     onChange={handleChange}
                     placeholder="PRN number"
-                    className="login-input"
+                    className={`login-input ${errors.PRN && 'is-invalid'}`}
                     pattern="[0-9]*"
                   />
                 </Form.Group>
