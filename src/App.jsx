@@ -28,6 +28,7 @@ import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
 import Forgotpassword from './Administration/Forgotpassword';
+import Forgotpassword2 from './Administration/Forgotpassword2';
 
 function App() {
   const navItems = [
@@ -94,6 +95,7 @@ function App() {
                   <Route path="/boyshostel" element={<Boyshostel/>} />
                   <Route path="/adminform" element={<AdminForm/>} />
                   <Route path="/forgotpassword" element={<Forgotpassword/>} />
+                  <Route path="/forgotpassword2" element={<Forgotpassword2/>} />
                 </Routes>
               </div>
             </Router>
