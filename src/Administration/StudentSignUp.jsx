@@ -292,8 +292,16 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className='sub-btn-grivncee'>
-                  Submit
+                  SignUp
                 </Button>
+
+                <div className='to-student-login'>
+                <p className='text-Student-signup'>
+                  Already have an account ?
+                </p>
+
+                <Link to="/studentform" className="Studentlogin-link-Student-signup">Login</Link>
+                </div>
               </Form>
             </div>
           </Col>

@@ -189,7 +189,7 @@ const LoginForm = () => {
                 </Button>
 
                 <div className="login-links">
-                  <Link to="/signup" className="login-link">Sign Up</Link>
+                  <Link to="/studentsignup" className="login-link">Sign Up</Link>
                   <Link to="/forgotpassword" className="login-link">Forgot password?</Link>
                    
                 </div>
