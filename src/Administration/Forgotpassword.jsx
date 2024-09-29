@@ -76,13 +76,13 @@ const Forgotpassword = () => {
          <div className='pass'>
           <form onSubmit={handleSendOTP} className="forgot-form">
             <div className="form-group">
-              <label htmlFor="enrollmentId">Enrollment Id / Email Address*</label>
+              <label htmlFor="enrollmentId">PRN no./ Email Address*</label>
               <input
                 type="text"
-                id="enrollmentId"
+                id="PRN no."
                 value={enrollmentId}
                 onChange={(e) => setEnrollmentId(e.target.value)}
-                placeholder="Enter Enrollment ID / Email ID"
+                placeholder="Enter PRN no. / Email ID"
                 className="form-control"
               />
             </div>

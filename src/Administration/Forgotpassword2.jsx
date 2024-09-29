@@ -107,10 +107,10 @@ const Forgotpassword2 = () => {
       <Form onSubmit={handleSubmit} className="forgot-form">
         {/* Enrollment ID / Email */}
         <Form.Group controlId="formEnrollmentId" className="mb-3">
-          <Form.Label>Enrollment Id / Email Address*</Form.Label>
+          <Form.Label>PRN no. / Email Address*</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Enter Enrollment ID / Email ID"
+            placeholder="PRN no. / Email ID"
             value={enrollmentId}
             onChange={(e) => setEnrollmentId(e.target.value)}
             required
