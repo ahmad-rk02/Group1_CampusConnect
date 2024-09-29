@@ -237,14 +237,14 @@ const SignupAdmin = () => {
                     name="committee"
                     value={formData.committee}
                     onChange={handleChange} 
-                    className={`input-box-Admin-signup sem-dd ${errors.semester && 'is-invalid'}`}
+                    className={`input-box-Admin-signup commmittee-dd ${errors.semester && 'is-invalid'}`}
                   >
-                    <option value="1">Select committee</option>
-                    <option value="1">Committee 1</option>
-                    <option value="2">Committee 2</option>
-                    <option value="3">Committee 3</option>
-                    <option value="4">Committee 4</option>
-                    <option value="5">Committee 5</option>
+                    <option value="">Select committee</option>
+                    <option value="1">Anti ragging Committee</option>
+                    <option value="2">Grievance Redressal Committee</option>
+                    <option value="3">Internal Complaint committee</option>
+                    <option value="4">SC/ST,WOMEN/GIRLS complaint committee</option>
+                    <option value="5">Online Grievance Form</option>
                   </Form.Select>
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
@@ -254,6 +254,15 @@ const SignupAdmin = () => {
                 <Button variant="primary" type="submit" className='sub-btn-Admin-signup'>
                   Sign Up
                 </Button>
+
+                <div className='to-admin-login'>
+                <p className='text-Admin-signup'>
+                  Already have an account ?
+                </p>
+
+                <Link to="/adminform" className="Adminlogin-link-Admin-signup">Login</Link>
+                </div>
+
               </Form>
             </div>
           </Col>
