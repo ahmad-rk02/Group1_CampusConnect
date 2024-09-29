@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Forgotpassword.css'; // Import the CSS file
@@ -6,16 +6,45 @@ import './Forgotpassword.css'; // Import the CSS file
 const Forgotpassword = () => {
   const [enrollmentId, setEnrollmentId] = useState('');
   const [mobileNumber, setMobileNumber] = useState('');
-  const [captcha, setCaptcha] = useState('');
+  const [captchaAnswer, setCaptchaAnswer] = useState('');
+  const [captchaExpression, setCaptchaExpression] = useState('');
+  const [captchaResult, setCaptchaResult] = useState(null); // Store the actual result of the CAPTCHA
   const [error, setError] = useState('');
   const navigate = useNavigate(); // Hook for navigation
 
+  // Function to generate a random arithmetic expression
+  const generateCaptcha = () => {
+    const num1 = Math.floor(Math.random() * 10); // Random number between 0 and 9
+    const num2 = Math.floor(Math.random() * 10); // Random number between 0 and 9
+    const operators = ['+', '-', '*']; // Arithmetic operators
+    const randomOperator = operators[Math.floor(Math.random() * operators.length)];
+
+    // Create the expression and calculate its result
+    let expression = `${num1} ${randomOperator} ${num2}`;
+    let result = eval(expression); // Evaluate the arithmetic expression
+
+    // Set the state with the expression and its result
+    setCaptchaExpression(expression);
+    setCaptchaResult(result);
+  };
+
+  // Run the CAPTCHA generator when the component mounts
+  useEffect(() => {
+    generateCaptcha();
+  }, []);
+
   const handleSendOTP = (e) => {
     e.preventDefault();
-    if (enrollmentId === '' || mobileNumber === '' || captcha === '') {
+    if (enrollmentId === '' || mobileNumber === '' || captchaAnswer === '') {
       setError('All fields are required');
       return;
     }
+    // Check if the captcha is correct
+    if (parseInt(captchaAnswer) !== captchaResult) {
+      setError('Invalid CAPTCHA answer');
+      return;
+    }
+
     setError('');
     // Handle OTP logic here
     alert('OTP Sent!');
@@ -108,11 +137,11 @@ const Forgotpassword = () => {
             <div className="form-group">
               <label>Evaluate the arithmetic expression and enter the answer below*</label>
               <div className="captcha-input">
-                <div className="captcha-box">8 - 4 =</div>
+                <div className="captcha-box">{captchaExpression} =</div> {/* Display the generated expression */}
                 <input
                   type="text"
-                  value={captcha}
-                  onChange={(e) => setCaptcha(e.target.value)}
+                  value={captchaAnswer}
+                  onChange={(e) => setCaptchaAnswer(e.target.value)}
                   placeholder="Enter Answer"
                   className="form-control"
                 />
