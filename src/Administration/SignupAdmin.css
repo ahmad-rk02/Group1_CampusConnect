@@ -89,17 +89,6 @@
     margin-top: 50px;
     margin-left: 200px;
 }
-
-.message-box {
-    height: 100px;
-    background-color: white;
-    width: 95%;
-    border-style: solid;
-    border-width: 0.5px;
-    border-radius: 10px;
-    border-color: #102c57;
-}
-
 .field-name-Admin-signup
 {
     font-weight: 500;

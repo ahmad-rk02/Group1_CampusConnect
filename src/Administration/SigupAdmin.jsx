@@ -32,8 +32,8 @@ const SignupAdmin = () => {
     let formErrors = {};
     let valid = true;
 
-     // Check if any field is empty
-     for (let field in formData) {
+    // Check if any field is empty
+    for (let field in formData) {
       if (!formData[field]) {
         valid = false;
         formErrors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
@@ -53,22 +53,22 @@ const SignupAdmin = () => {
       formErrors.email = "A valid email is required";
     }
 
-    // Semester validation
-    if (!formData.committee) {
+    // Password validation
+    if (!formData.password) {
       valid = false;
-      formErrors.committee = "Please select committee";
+      formErrors.password = "Password is required";
+    } else if (formData.password.length < 8) {
+      valid = false;
+      formErrors.password = "Password must be at least 8 characters long";
     }
 
-    // Grievance Type validation
-    if (!formData.grievanceType) {
+    // Confirm Password validation
+    if (!formData.confirmPassword) {
       valid = false;
-      formErrors.grievanceType = "Grievance type is required";
-    }
-
-    // Message validation
-    if (!formData.message) {
+      formErrors.confirmPassword = "Confirm Password is required";
+    } else if (formData.password !== formData.confirmPassword) {
       valid = false;
-      formErrors.message = "Message is required";
+      formErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(formErrors);
@@ -83,11 +83,10 @@ const SignupAdmin = () => {
       setFormData({
         fullname: '',
         email: '',
-        phone: '',
-        universityNumber: '',
-        semester: '',
-        grievanceType: '',
-        message: '',
+        dte: '',
+        committee: '',
+        password: '',
+        confirmPassword: '',
       });
       setErrors({});
     } else {
@@ -182,15 +181,15 @@ const SignupAdmin = () => {
             <div className='form-section-Admin-signup'>
               <Form onSubmit={handleSubmit} className='whole-form-Admin-signup'>
 
-              {submitted && (
+                {submitted && (
                   <Alert variant="success" className='mb-3'>
-                   Signed Up Successfully!
+                    Signed Up Successfully!
                   </Alert>
                 )}
 
-<div className="Admin-signup-logo-container">
-              <img src={Gec} alt="Logo" className="Admin-signup-logo" />
-            </div>
+                <div className="Admin-signup-logo-container">
+                  <img src={Gec} alt="Logo" className="Admin-signup-logo" />
+                </div>
 
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Full Name</Form.Label>
@@ -223,7 +222,7 @@ const SignupAdmin = () => {
                   <Form.Select
                     name="committee"
                     value={formData.committee}
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className={`input-box-Admin-signup commmittee-dd ${errors.semester && 'is-invalid'}`}
                   >
                     <option value="">Select committee</option>
@@ -249,21 +248,45 @@ const SignupAdmin = () => {
                   {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
                 </Form.Group>
 
+                 {/* Password Field */}
+                 <Form.Group controlId="formPassword" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Enter Password"
+                    className={`input-box-Admin-signup ${errors.password && 'is-invalid'}`}
+                  />
+                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                </Form.Group>
 
-                
+                {/* Confirm Password Field */}
+                <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>Confirm Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    placeholder="Confirm Password"
+                    className={`input-box-Admin-signup ${errors.confirmPassword && 'is-invalid'}`}
+                  />
+                  {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                </Form.Group>
 
-      
 
                 <Button variant="primary" type="submit" className='sub-btn-Admin-signup'>
                   Sign Up
                 </Button>
 
                 <div className='to-admin-login'>
-                <p className='text-Admin-signup'>
-                  Already have an account ?
-                </p>
+                  <p className='text-Admin-signup'>
+                    Already have an account ?
+                  </p>
 
-                <Link to="/adminform" className="Adminlogin-link-Admin-signup">Login</Link>
+                  <Link to="/adminform" className="Adminlogin-link-Admin-signup">Login</Link>
                 </div>
 
               </Form>
