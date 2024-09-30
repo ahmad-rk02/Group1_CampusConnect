@@ -27,9 +27,10 @@
 
 /* Styling the logo */
 .form-clg-logo {
-    width: 120px; /* Adjust the size of the logo */
+    width: 120px;
+    /* Adjust the size of the logo */
     height: auto;
-    width:25%
+    width: 25%
 }
 
 .head-box-grivnce {
@@ -112,7 +113,7 @@
     margin-left: 200px;
     background-color: white;
     border-radius: 20px;
-    
+
 
 }
 
@@ -200,4 +201,19 @@
     margin: 0;
     padding-top: 500px;
     margin-bottom: -80px;
+}
+
+.to-student-login {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.text-Student-signup {
+    margin-left: 250px;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.Studentlogin-link-Student-signup {
+    margin-left: 10px;
 }
