@@ -14,6 +14,7 @@ const SignupAdmin = () => {
     dte: '',
     committee: '',
     password: '',
+    confirmPassword: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -217,20 +218,6 @@ const SignupAdmin = () => {
                   {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formdteNumber" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
-                  <Form.Control
-                    type="number"
-                    name="dte"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="Enter DTE Number"
-                    className={`input-box-Admin-signup ${errors.phone && 'is-invalid'}`}
-                  />
-                  {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
-                </Form.Group>
-
-
                 <Form.Group controlId="formcommittee" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>committee</Form.Label>
                   <Form.Select
@@ -248,6 +235,22 @@ const SignupAdmin = () => {
                   </Form.Select>
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
+
+                <Form.Group controlId="formdteNumber" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
+                  <Form.Control
+                    type="number"
+                    name="dte"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="Enter DTE Number"
+                    className={`input-box-Admin-signup ${errors.phone && 'is-invalid'}`}
+                  />
+                  {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
+                </Form.Group>
+
+
+                
 
       
 
