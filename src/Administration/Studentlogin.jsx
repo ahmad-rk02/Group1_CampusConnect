@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import './StudentForm.css';
+import './Studentlogin.css';
 import Gec from '../assets/Gec.png';
 
 const LoginForm = () => {
@@ -17,8 +17,6 @@ const LoginForm = () => {
   });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [showModal, setShowModal] = useState(false);
-  const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
@@ -37,79 +35,51 @@ const LoginForm = () => {
     }));
   };
 
-  const validateForm = () => {
-    let formErrors = {};
-    let valid = true;
 
-    // PRN validation (non-empty and only numeric)
-    if (!formData.PRN) {
-      valid = false;
-      formErrors.PRN = "PRN is required";
-    } else if (isNaN(formData.PRN)) {
-      valid = false;
-      formErrors.PRN = "PRN should contain only numbers";
-    }
-
-    // Password validation (non-empty and specific pattern)
-    if (!formData.password) {
-      valid = false;
-      formErrors.password = "Password is required";
-    } else {
-      const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-      if (!passwordPattern.test(formData.password)) {
-        valid = false;
-        formErrors.password = "Password must be at least 8 characters long, contain an uppercase letter, a number, and a special character";
-      }
-    }
-
-    setErrors(formErrors);
-    return valid;
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    if (!formData.prnNumber || !formData.password) {
-      setError('PRN number and password are required.');
+  
+    let errorMessages = []; // Array to hold error messages
+  
+    if (!formData.prnNumber) {
+      errorMessages.push('PRN number is required.');
+    }
+  
+    if (!formData.password) {
+      errorMessages.push('Password is required.');
+    }
+  
+    // If there are any error messages, display them
+    if (errorMessages.length > 0) {
+      setError(errorMessages.join(' ')); // Join messages into a single string
       return;
     }
-
-    if (!validatePassword(formData.password)) {
-      setError('Password must be at least 8 characters long, with one uppercase letter, one number, and one special character.');
-      return;
-    }
-
+  
     setIsLoading(true); // Set loading to true
     try {
       const response = await axios.post('http://localhost:5000/api/users/login', {
         prnNumber: formData.prnNumber,
         password: formData.password,
       });
-
-      if (response.status===200) {
+  
+      if (response.status === 200) {
         navigate('/grievanceform');
-      } 
+      }
     } catch (error) {
       console.error('Error during login:', error);
-      setError(error.response?.data?.message || 'An error occurred. Please try again later.');
+      setError(error.response?.data?.message || 'Invalid Credentials');
     } finally {
       setIsLoading(false); // Set loading back to false
     }
   };
+  
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
 
-  const handleForgotPasswordSubmit = (e) => {
-    e.preventDefault();
-    if (!email) {
-      setError('Email is required.');
-      return;
-    }
-    alert(`A password reset link has been sent to ${email}.`);
-    setShowModal(false);
-  };
+
 
   return (
     <Container fluid className="p-0 w-100">
@@ -140,7 +110,7 @@ const LoginForm = () => {
         </Col>
 
         <Col>
-          <div className='head-right-top-login' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+          <div className="head-right-top-login" style={{ width: '70%', backgroundColor: '#eadbc8' }}>
             <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 
@@ -162,24 +132,20 @@ const LoginForm = () => {
                     placeholder="PRN number"
                     className="login-input"
                     pattern="[0-9]*"
-                    required
+   
                   />
-                  {errors.PRN && <div className="invalid-feedback">{errors.PRN}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="password" className="mb-3 position-relative">
                   <Form.Control
-                    type={showPassword ? "text" : "password"}
+                    type={showPassword ? 'text' : 'password'}
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
                     placeholder="Password"
                     className="login-input"
-                    required
-                  />
-                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
 
-                  {!errors.password && (
+                  />
                   <span
                     onClick={togglePasswordVisibility}
                     style={{
@@ -196,8 +162,6 @@ const LoginForm = () => {
                   >
                     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                   </span>
-                  )}
-                  
                 </Form.Group>
 
                 <Button type="submit" className="login-button w-100" disabled={isLoading}>
@@ -206,38 +170,13 @@ const LoginForm = () => {
 
                 <div className="login-links">
                   <Link to="/studentsignup" className="login-link">Sign Up</Link>
-                  <Link to="#" className="login-link" onClick={() => setShowModal(true)}>
-                    Forgot password?
-                  </Link>
+                  <Link to="/forgotpassword" className="login-link">Forgot password?</Link>
                 </div>
               </Form>
             </div>
           </div>
         </Col>
       </Row>
-
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
-        <Modal.Header closeButton>
-          <Modal.Title>Forgot Password</Modal.Title>
-        </Modal.Header>
-        <Modal.Body className="forgetpassword">
-          <Form onSubmit={handleForgotPasswordSubmit}>
-            <Form.Group controlId="email" className="mb-3">
-              <Form.Label>Email Address</Form.Label>
-              <Form.Control
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-                required
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit" className="w-100">
-              Send Reset Link
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
     </Container>
   );
 };

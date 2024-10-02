@@ -6,6 +6,7 @@
     margin-right: 50px;
     margin-top: 50px;
     margin-left: 200px;
+
 }
 
 .bg-goldeeen h4 {
@@ -27,8 +28,9 @@
 /* Styling the logo */
 .form-clg-logo {
     width: 120px;
+    /* Adjust the size of the logo */
     height: auto;
-    width: 25%;
+    width: 25%
 }
 
 .head-box-grivnce {
@@ -76,6 +78,7 @@
     color: black;
 }
 
+
 .left-nav-grivnce {
     background-color: white;
     border-radius: 0;
@@ -108,9 +111,10 @@
     width: 70%;
     margin-top: 50px;
     margin-left: 200px;
-    margin-bottom: 100px; /* Add space to avoid overlap with footer */
     background-color: white;
     border-radius: 20px;
+
+
 }
 
 .message-box {
@@ -152,15 +156,15 @@
     border-color: #102c57;
 }
 
-.sub-btn-grivncee {
-    margin-left: auto;
-    margin-right: auto;
+ 
+
+.submit-btn-grivncee {
+    margin-left: 330px;
     margin-top: 30px;
     margin-bottom: 30px;
-    width: 95%; /* Match the form's input width */
+    width: 90px;
     font-weight: 500;
     background-color: #102c57;
-    display: block; /* Ensure it's centered */
 }
 
 .whole-form-grivncee {
@@ -168,6 +172,7 @@
     border-width: 2px;
     border-color: #102c57;
     border-radius: 20px;
+    margin-bottom: 10vh;
 }
 
 .input-box-grivnce-2 {
@@ -195,8 +200,27 @@
         url('..\assets\mainBuilding.jpg');
     background-size: cover;
     background-position: center;
-    min-height: 210vh; /* Allow the height to expand based on content */
+    min-height: 250vh;
     margin: 0;
     padding-top: 500px;
-    padding-bottom: 100px; /* Ensure footer does not overlap with content */
+    margin-bottom: -80px;
+}
+
+
+
+.to-student-login {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.text-Student-signup {
+    margin-left: 250px;
+    font-size: medium;
+    font-weight: 500;
+}
+ 
+.Studentlogin-link-Student-signup {
+    margin-left: 10px;
+    text-decoration: none;
+
 }

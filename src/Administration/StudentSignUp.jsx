@@ -31,58 +31,62 @@ const StudentSignUp = () => {
       [name]: value,
     }));
   };
-
   const validateForm = () => {
     let formErrors = {};
     let valid = true;
-
+  
     // Validate each field
     if (!formData.fullname) {
       valid = false;
       formErrors.fullname = "Full Name is required";
     }
-
+  
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
     }
-
+  
     const phonePattern = /^[0-9]{10}$/;
     if (!formData.phone || !phonePattern.test(formData.phone)) {
       valid = false;
       formErrors.phone = "A valid 10-digit phone number is required";
     }
-
+  
     if (!formData.prnNumber) {
       valid = false;
       formErrors.prnNumber = "University number (PRN) is required";
     }
-
+  
     if (!formData.semester) {
       valid = false;
       formErrors.semester = "Please select your semester";
     }
-
+  
     if (!formData.branch) {
       valid = false;
       formErrors.branch = "Branch is required";
     }
-
+  
+    // Password validation
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
     if (!formData.password) {
       valid = false;
       formErrors.password = "Password is required";
+    } else if (!passwordPattern.test(formData.password)) {
+      valid = false;
+      formErrors.password = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.";
     }
-
+  
     if (formData.password !== formData.confirmPassword) {
       valid = false;
       formErrors.confirmPassword = "Passwords do not match";
     }
-
+  
     setErrors(formErrors);
     return valid;
   };
-
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -117,11 +121,26 @@ const StudentSignUp = () => {
         setErrors({});
 
         // Redirect to StudentForm upon successful registration
-        navigate('/StudentForm');
+        navigate('/Studentlogin');
         
       } catch (error) {
-        console.error('There was an error registering the user:', error);
-        console.log(error.message);
+        if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
+          alert('User already exists. Please try logging in.');
+        // Reset the form
+        setFormData({
+          fullname: '',
+          email: '',
+          phone: '',
+          prnNumber: '',
+          semester: '',
+          branch: '',
+          password: '',
+          confirmPassword: '',
+        });
+        } else {
+          console.error('There was an error registering the user:', error);
+          console.log(error.message);
+        }
       }
     } else {
       setSubmitted(false);
@@ -129,8 +148,8 @@ const StudentSignUp = () => {
   };
 
   return (
-    <div>
-      <Container fluid className="p-0 w-1000">
+    <div >
+      <Container fluid className="p-0 w-1000 m-100">
         {/* Header Section */}
         <Row className='head-box-grivnce'>
           <Col>
@@ -307,16 +326,17 @@ const StudentSignUp = () => {
                   {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className="submit-btn-grivncee">
+                
+
+                <Button type="submit" className="submit-btn-grivncee">
                   Register
                 </Button>
-
                 <div className='to-student-login'>
                 <p className='text-Student-signup'>
                   Already have an account ?
                 </p>
 
-                <Link to="/studentform" className="Studentlogin-link-Student-signup">Login</Link>
+                <Link to="/studentlogin" className="Studentlogin-link-Student-signup">Login</Link>
                 </div>
               </Form>
             </div>
