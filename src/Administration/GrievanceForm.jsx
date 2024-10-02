@@ -12,6 +12,7 @@ const GrievanceForm = () => {
     email: '',
     phone: '',
     universityNumber: '',
+    branch: '',
     semester: '',
     grievanceType: '',
     message: '',
@@ -72,6 +73,12 @@ const GrievanceForm = () => {
       formErrors.semester = "Please select your semester";
     }
 
+    // Dept validation
+    if (!formData.branch) {
+      valid = false;
+      formErrors.branch = "Please select your branch";
+    }
+
     // Grievance Type validation
     if (!formData.grievanceType) {
       valid = false;
@@ -98,6 +105,7 @@ const GrievanceForm = () => {
         email: '',
         phone: '',
         universityNumber: '',
+        branch: '',
         semester: '',
         grievanceType: '',
         message: '',
@@ -181,11 +189,9 @@ const GrievanceForm = () => {
 
             <div>
               <div className='head-right-top-grivnce' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-                <h3 style={{ color: '#102C57' }} >Student Login
+                <h3 style={{ color: '#102C57' }} >Student Grievance Form</h3>
 
-                  <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="35px" viewBox="0 0 20 20" width="40px" fill="#102C57"><g><g><rect fill="none" height="20" width="20" /></g></g><g><polygon points="4.59,16.59 6,18 14,10 6,2 4.59,3.41 11.17,10" /></g></svg>
-
-                  Register Here</h3></div>
+            </div>
             </div>
 
             <div className='form-section-grivnce'>
@@ -247,6 +253,25 @@ const GrievanceForm = () => {
                     className={`input-box-grivnce ${errors.universityNumber && 'is-invalid'}`}
                   />
                    {errors.universityNumber && <div className="invalid-feedback">{errors.universityNumber}</div>}
+                </Form.Group>
+
+                <Form.Group controlId="formbranch" className="mb-3 whole-field-grivnce">
+                  <Form.Label className='field-name-grivnce'>Branch</Form.Label>
+                  <Form.Select
+                    name="branch"
+                    value={formData.branch}
+                    onChange={handleChange} 
+                    className={`input-box-grivnce branch-dd ${errors.branch && 'is-invalid'}`}
+                  >
+                    <option value="">Select Branch</option>
+                    <option value="1">Computer Science & Engineering</option>
+                    <option value="2">Instrumentation Engineering</option>
+                    <option value="3">Mechanical Engineering</option>
+                    <option value="4">Electrical engineering</option>
+                    <option value="5">Electronics and Communication</option>
+                    <option value="6">Civil</option>
+                  </Form.Select>
+                  {errors.branch && <div className="invalid-feedback">{errors.branch}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="formSemester" className="mb-3 whole-field-grivnce">

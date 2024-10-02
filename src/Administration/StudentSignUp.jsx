@@ -310,6 +310,14 @@ const StudentSignUp = () => {
                 <Button variant="primary" type="submit" className="submit-btn-grivncee">
                   Register
                 </Button>
+
+                <div className='to-student-login'>
+                <p className='text-Student-signup'>
+                  Already have an account ?
+                </p>
+
+                <Link to="/studentform" className="Studentlogin-link-Student-signup">Login</Link>
+                </div>
               </Form>
             </div>
           </Col>

@@ -89,17 +89,6 @@
     margin-top: 50px;
     margin-left: 200px;
 }
-
-.message-box {
-    height: 100px;
-    background-color: white;
-    width: 95%;
-    border-style: solid;
-    border-width: 0.5px;
-    border-radius: 10px;
-    border-color: #102c57;
-}
-
 .field-name-Admin-signup
 {
     font-weight: 500;
@@ -113,7 +102,7 @@
     border-style: solid;
     border-width: 0.5px;
     border-radius: 10px;
-    border-color: #102c57;
+    border-color: #000000;
 }
 
 .whole-field-Admin-signup
@@ -122,31 +111,34 @@
     margin-top: 30px;
 }
 
-.sem-dd{
-    width: 250px;
+.commmittee-dd{
+    width: 360px;
     background-color: white;
     border-style: solid;
     border-width: 0.5px;
     border-radius: 10px;
-    border-color: #102c57;
+    border-color: #000000;
 }
 
 .sub-btn-Admin-signup
 {
-    margin-left: 300px;
+    margin-left: 210px;
     margin-top: 30px;
     margin-bottom: 30px;
     width: 90px;
     font-weight: 500;
     background-color: #102c57;
+    border: none;
 }
 
 .whole-form-Admin-signup
 {
     border-style: solid;
     border-width: 2px;
-    border-color: #102c57;
+    border-color: #000000;
     border-radius: 20px;
+    width: 75%;
+    margin-left: 130px;
 }
 
 .error-text {
@@ -154,4 +146,28 @@
     font-size: 0.9rem;
     margin-top: 0.25rem;
   }
+ 
+  .Admin-signup-logo-container {
+    margin-bottom: 20px;
+    margin-left: 198px;
+  }
   
+  .Admin-signup-logo {
+    width: 100px;
+    height: auto;
+  }
+ 
+.to-admin-login{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+  .text-Admin-signup{
+    margin-left: 120px;
+    font-size: medium;
+    font-weight: 500;
+  }
+
+ .Adminlogin-link-Admin-signup{
+    margin-left: 40px;
+ } 

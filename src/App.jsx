@@ -25,8 +25,10 @@ import Login from './Administration/Login';
 import AdminForm from './Administration/AdminForm'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
+import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
-import ForgetAdmin from "./Administration/ForgetAAdmin";
+import Forgotpassword from './Administration/Forgotpassword';
+import Forgotpassword2 from './Administration/Forgotpassword2';
 
 function App() {
   const navItems = [
@@ -86,12 +88,14 @@ function App() {
                   <Route path="/studentsignup" element={<StudentSignUp/>} />
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentform" element={<StudentForm />} />
+                  <Route path="/signupadmin" element={<SignupAdmin />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />
                   <Route path="/boyshostel" element={<Boyshostel/>} />
                   <Route path="/adminform" element={<AdminForm/>} />
-                  <Route path="/forgetadmin" element={<ForgetAdmin/>} />
+                  <Route path="/forgotpassword" element={<Forgotpassword/>} />
+                  <Route path="/forgotpassword2" element={<Forgotpassword2/>} />
                 </Routes>
               </div>
             </Router>

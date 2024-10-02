@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
@@ -37,9 +37,33 @@ const LoginForm = () => {
     }));
   };
 
-  const validatePassword = (password) => {
-    const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
-    return passwordRegex.test(password);
+  const validateForm = () => {
+    let formErrors = {};
+    let valid = true;
+
+    // PRN validation (non-empty and only numeric)
+    if (!formData.PRN) {
+      valid = false;
+      formErrors.PRN = "PRN is required";
+    } else if (isNaN(formData.PRN)) {
+      valid = false;
+      formErrors.PRN = "PRN should contain only numbers";
+    }
+
+    // Password validation (non-empty and specific pattern)
+    if (!formData.password) {
+      valid = false;
+      formErrors.password = "Password is required";
+    } else {
+      const passwordPattern = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+      if (!passwordPattern.test(formData.password)) {
+        valid = false;
+        formErrors.password = "Password must be at least 8 characters long, contain an uppercase letter, a number, and a special character";
+      }
+    }
+
+    setErrors(formErrors);
+    return valid;
   };
 
   const handleSubmit = async (e) => {
@@ -116,7 +140,7 @@ const LoginForm = () => {
         </Col>
 
         <Col>
-          <div className="head-right-top-login" style={{ width: '70%', backgroundColor: '#eadbc8' }}>
+          <div className='head-right-top-login' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
             <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 
@@ -140,11 +164,12 @@ const LoginForm = () => {
                     pattern="[0-9]*"
                     required
                   />
+                  {errors.PRN && <div className="invalid-feedback">{errors.PRN}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="password" className="mb-3 position-relative">
                   <Form.Control
-                    type={showPassword ? 'text' : 'password'}
+                    type={showPassword ? "text" : "password"}
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
@@ -152,6 +177,9 @@ const LoginForm = () => {
                     className="login-input"
                     required
                   />
+                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+
+                  {!errors.password && (
                   <span
                     onClick={togglePasswordVisibility}
                     style={{
@@ -168,6 +196,8 @@ const LoginForm = () => {
                   >
                     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                   </span>
+                  )}
+                  
                 </Form.Group>
 
                 <Button type="submit" className="login-button w-100" disabled={isLoading}>
