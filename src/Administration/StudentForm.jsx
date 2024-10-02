@@ -69,7 +69,16 @@ const LoginForm = () => {
       } else {
         setErrors({ general: 'Invalid PRN or password. Please try again.' });
       }
+
+      if (formData.PRN === mockCredentials.PRN && formData.password === mockCredentials.password) {
+        localStorage.setItem('loggedIn', true); // Set login status in localStorage
+        navigate('/grievanceform');
+      } else {
+        setErrors({ general: 'Invalid PRN or password. Please try again.' });
+      }
+      
     }
+    
   };
 
   const togglePasswordVisibility = () => {

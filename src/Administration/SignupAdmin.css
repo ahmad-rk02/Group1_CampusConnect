@@ -171,3 +171,29 @@
  .Adminlogin-link-Admin-signup{
     margin-left: 40px;
  } 
+
+ .invalid-feedback {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: red;
+    font-size: 0.875rem; /* Small font size for error messages */
+    min-height: 20px; /* Reserve space for the error message */
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  
+  .input-box-Admin-signup:not(.is-invalid) + .invalid-feedback {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .whole-field-Admin-signup {
+    position: relative;
+    height: 100px; /* Adjust as needed */
+  }
+  
+  .input-box-Admin-signup.is-invalid {
+    border-color: red;
+  }
