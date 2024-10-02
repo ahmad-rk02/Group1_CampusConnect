@@ -7,7 +7,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleStudentLogin = () => {
-        navigate('/studentform');
+        navigate('/studentlogin');
     };
     const handleAdminLogin = () => {
         navigate('/adminform');

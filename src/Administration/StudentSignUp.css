@@ -156,7 +156,9 @@
     border-color: #102c57;
 }
 
-.sub-btn-grivncee {
+ 
+
+.submit-btn-grivncee {
     margin-left: 330px;
     margin-top: 30px;
     margin-bottom: 30px;
@@ -170,6 +172,7 @@
     border-width: 2px;
     border-color: #102c57;
     border-radius: 20px;
+    margin-bottom: 10vh;
 }
 
 .input-box-grivnce-2 {
@@ -197,11 +200,13 @@
         url('..\assets\mainBuilding.jpg');
     background-size: cover;
     background-position: center;
-    height: 210vh;
+    min-height: 250vh;
     margin: 0;
     padding-top: 500px;
     margin-bottom: -80px;
 }
+
+
 
 .to-student-login {
     display: flex;
@@ -213,7 +218,9 @@
     font-size: medium;
     font-weight: 500;
 }
-
+ 
 .Studentlogin-link-Student-signup {
     margin-left: 10px;
+    text-decoration: none;
+
 }
