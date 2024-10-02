@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import axios from 'axios'; // Import axios
 import './StudentSignUp.css';
 import Gec from '../assets/Gec.png';
 
 const StudentSignUp = () => {
-
+  const location = useLocation(); // Get location for active link checks
+  const navigate = useNavigate(); // Initialize navigate
 
   const [formData, setFormData] = useState({
     fullname: '',
@@ -16,6 +17,8 @@ const StudentSignUp = () => {
     prnNumber: '',
     semester: '',
     branch: '',
+    password: '',          // New field for password
+    confirmPassword: '',    // New field for confirm password
   });
 
   const [errors, setErrors] = useState({});
@@ -33,85 +36,100 @@ const StudentSignUp = () => {
     let formErrors = {};
     let valid = true;
 
-    // Check if any field is empty
-    for (let field in formData) {
-      if (!formData[field]) {
-        valid = false;
-        formErrors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
-      }
-    }
-
-    // Fullname validation
+    // Validate each field
     if (!formData.fullname) {
       valid = false;
       formErrors.fullname = "Full Name is required";
     }
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
     }
 
-    // Phone validation
     const phonePattern = /^[0-9]{10}$/;
     if (!formData.phone || !phonePattern.test(formData.phone)) {
       valid = false;
       formErrors.phone = "A valid 10-digit phone number is required";
     }
 
-    // University Number validation
-    if (!formData.universityNumber) {
+    if (!formData.prnNumber) {
       valid = false;
-      formErrors.universityNumber = "University number is required";
+      formErrors.prnNumber = "University number (PRN) is required";
     }
 
-    // Semester validation
     if (!formData.semester) {
       valid = false;
       formErrors.semester = "Please select your semester";
     }
 
-    // Grievance Type validation
-    if (!formData.grievanceType) {
+    if (!formData.branch) {
       valid = false;
-      formErrors.grievanceType = "Grievance type is required";
+      formErrors.branch = "Branch is required";
     }
 
-    // Message validation
-    if (!formData.message) {
+    if (!formData.password) {
       valid = false;
-      formErrors.message = "Message is required";
+      formErrors.password = "Password is required";
+    }
+
+    if (formData.password !== formData.confirmPassword) {
+      valid = false;
+      formErrors.confirmPassword = "Passwords do not match";
     }
 
     setErrors(formErrors);
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-      alert('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({
-        fullname: '',
-        email: '',
-        phone: '',
-        prnNumber: '',
-        semester: '',
-        branch: '',
-      });
-      setErrors({});
+      try {
+        // Sending POST request to the server
+        const response = await axios.post('http://localhost:5000/api/users/register', {
+          fullname: formData.fullname,
+          email: formData.email,
+          phone: formData.phone,
+          prnNumber: formData.prnNumber,
+          semester: formData.semester,
+          branch: formData.branch,
+          password: formData.password,   // Include password in the request
+        });
+
+        console.log('Response:', response.data);
+        setSubmitted(true);
+        alert('Registration successful!');
+
+        // Reset the form
+        setFormData({
+          fullname: '',
+          email: '',
+          phone: '',
+          prnNumber: '',
+          semester: '',
+          branch: '',
+          password: '',
+          confirmPassword: '',
+        });
+        setErrors({});
+
+        // Redirect to StudentForm upon successful registration
+        navigate('/StudentForm');
+        
+      } catch (error) {
+        console.error('There was an error registering the user:', error);
+        console.log(error.message);
+      }
     } else {
       setSubmitted(false);
     }
-  }
-
+  };
 
   return (
     <div>
-
       <Container fluid className="p-0 w-1000">
         {/* Header Section */}
         <Row className='head-box-grivnce'>
@@ -120,56 +138,38 @@ const StudentSignUp = () => {
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-grivnce just" >
+        <Row noGutters className="flex-nowrap left-index-grivnce just">
           {/* Left Sidebar */}
-          <Col md={2} className='left-sidebar-grivnce' >
-            <Card className="left-nav-grivnce" >
+          <Col md={2} className='left-sidebar-grivnce'>
+            <Card className="left-nav-grivnce">
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Principal and HOD
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Student Section
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Office
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to="/committees"
-                    className={location.pathname === "/committees" ? "active-link" : ""}
-                  >
-                    Commiittees
+                  <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
+                    Committees
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to="/tenders"
-                    className={location.pathname === "/tenders" ? "active-link" : ""}
-                  >
+                  <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
                     Tenders
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce-01">
-                  <Link
-                    to="/login"
-                    className={location.pathname === "/login" ? "active-link" : ""}
-                  >
+                  <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
                     Grievance Form
                   </Link>
                 </ListGroup.Item>
@@ -178,18 +178,13 @@ const StudentSignUp = () => {
           </Col>
 
           <Col>
-
             <Card.Header className="bg-goldeeen">
               <h4>Student SignUp</h4>
             </Card.Header>
 
-
-
             <div className='form-section-grivncee'>
               <Form onSubmit={handleSubmit} className='whole-form-grivncee'>
-
                 {submitted && (
-                  // eslint-disable-next-line react/jsx-no-undef
                   <Alert variant="success" className='mb-3'>
                     Registered Successfully!
                   </Alert>
@@ -238,71 +233,90 @@ const StudentSignUp = () => {
                   {errors.phone && <div className="invalid-feedback">{errors.phone}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formUniversityNumber" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>University Number</Form.Label>
+                <Form.Group controlId="formPrnNumber" className="mb-3 whole-field-grivncee">
+                  <Form.Label className='field-name-grivnce'>University Number (PRN)</Form.Label>
                   <Form.Control
-                    type="number"
-                    name="universityNumber"
-                    value={formData.universityNumber}
+                    type="text"
+                    name="prnNumber"
+                    value={formData.prnNumber}
                     onChange={handleChange}
                     placeholder="Enter University Number"
-                    className={`input-box-grivncee ${errors.universityNumber && 'is-invalid'}`}
+                    className={`input-box-grivncee ${errors.prnNumber && 'is-invalid'}`}
                   />
-                  {errors.universityNumber && <div className="invalid-feedback">{errors.universityNumber}</div>}
+                  {errors.prnNumber && <div className="invalid-feedback">{errors.prnNumber}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="formSemester" className="mb-3 whole-field-grivncee">
                   <Form.Label className='field-name-grivnce'>Semester</Form.Label>
-                  <Form.Select
+                  <Form.Control
+                    as="select"
                     name="semester"
                     value={formData.semester}
                     onChange={handleChange}
-                    className={`input-box-grivncee sem-ddd ${errors.semester && 'is-invalid'}`}
+                    className={`input-box-grivncee ${errors.semester && 'is-invalid'}`}
                   >
-                    <option value="">Select Semester</option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
-                  </Form.Select>
+                    <option value="">-- Select Semester --</option>
+                    <option value="First">First</option>
+                    <option value="Second">Second</option>
+                    <option value="Third">Third</option>
+                    <option value="Fourth">Fourth</option>
+                    <option value="Fifth">Fifth</option>
+                    <option value="Sixth">Sixth</option>
+                    <option value="Seventh">Seventh</option>
+                    <option value="Eighth">Eighth</option>
+                  </Form.Control>
                   {errors.semester && <div className="invalid-feedback">{errors.semester}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formGrievanceType" className="mb-3 whole-field-grivncee">
+                <Form.Group controlId="formBranch" className="mb-3 whole-field-grivncee">
                   <Form.Label className='field-name-grivnce'>Branch</Form.Label>
-                  <Form.Select
+                  <Form.Control
+                    type="text"
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
-                    className={`input-box-grivncee-2 branch-dd-2 ${errors.branch && 'is-invalid'}`}
-                  >
-                    <option value="">Select Branch</option>
-                    <option value="1">Computer Science & Engineering</option>
-                    <option value="2">Mechanical Engineering</option>
-                    <option value="3">Instrumentation Engineering</option>
-                    <option value="4">Civil Engineering</option>
-                    <option value="5">Electronics & Telecommunication Engineering</option>
-                    <option value="6">Electrical Engineering</option>
-                  </Form.Select>
-                  {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
+                    placeholder="Enter Your Branch"
+                    className={`input-box-grivncee ${errors.branch && 'is-invalid'}`}
+                  />
+                  {errors.branch && <div className="invalid-feedback">{errors.branch}</div>}
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className='sub-btn-grivncee'>
-                  Submit
+                <Form.Group controlId="formPassword" className="mb-3 whole-field-grivncee">
+                  <Form.Label className='field-name-grivnce'>Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    placeholder="Enter Password"
+                    className={`input-box-grivncee ${errors.password && 'is-invalid'}`}
+                  />
+                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                </Form.Group>
+
+                <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-grivncee">
+                  <Form.Label className='field-name-grivnce'>Confirm Password</Form.Label>
+                  <Form.Control
+                    type="password"
+                    name="confirmPassword"
+                    value={formData.confirmPassword}
+                    onChange={handleChange}
+                    placeholder="Confirm Password"
+                    className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
+                  />
+                  {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                </Form.Group>
+
+                <Button variant="primary" type="submit" className="submit-btn-grivncee">
+                  Register
                 </Button>
               </Form>
             </div>
           </Col>
-
         </Row>
       </Container>
-
     </div>
-  )
-}
+  );
+};
 
-export default StudentSignUp
+export default StudentSignUp;

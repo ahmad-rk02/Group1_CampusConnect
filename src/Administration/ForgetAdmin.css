@@ -1,0 +1,153 @@
+.head-box-loginA {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-loginA h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 85px;
+    color: white;
+}
+
+.left-index-loginA {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-loginA {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-loginA .card {
+    text-align: center;
+}
+
+.left-sidebar-loginA .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.left-sidebar-loginA a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-loginA {
+    background-color: white;
+    border-radius: 0;
+    width: 300px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-loginA{
+    height: 56px;
+  }
+
+.left-nav-row-loginA-01{
+    font-weight: 700;
+}
+
+.head-right-top-loginA{
+    margin-top: 50px;
+    margin-left: 200px;
+    height: 50px;
+}
+
+.head-right-top-loginA h3{
+    text-align: left;
+   padding-left: 15px;
+   padding-top: 5px;
+}
+
+/* Second column styling */
+.right-col-forgetA {
+    padding: 2rem;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 200px;
+    margin-top: 80px;
+}
+
+.right-col-forgetA h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #102c57;
+}
+
+/* Form input fields */
+.right-col-forgetA .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.right-col-forgetA .form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Form button */
+.right-col-forgetA button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.right-col-forgetA button[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Modal Styling */
+.modal-content-forgetA {
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.modal-header-forgetA {
+    background-color: #f1f1f1;
+    border-bottom: none;
+}
+
+.modal-header-forgetA .modal-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-footer-forgetA {
+    border-top: none;
+}
+
+.right-col-forgetA .modal-body {
+    padding: 2rem;
+}
+
+/* Alert message */
+.right-col-forgetA .alert {
+    padding: 0.75rem 1.25rem;
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+}

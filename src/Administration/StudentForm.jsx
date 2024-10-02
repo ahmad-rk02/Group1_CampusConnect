@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
 import './StudentForm.css';
 import Gec from '../assets/Gec.png';
 
@@ -11,18 +12,19 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    PRN: '',
+    prnNumber: '',
     password: '',
   });
   const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false); // State for password visibility
-  const [showModal, setShowModal] = useState(false); // State to control the modal visibility
-  const [email, setEmail] = useState(''); // State for the email input in the forgot password modal
+  const [showPassword, setShowPassword] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === 'PRN' && /[^0-9]/.test(value)) {
+    if (name === 'prnNumber' && /[^0-9]/.test(value)) {
       setError('PRN should contain only numbers.');
       return;
     } else {
@@ -40,29 +42,34 @@ const LoginForm = () => {
     return passwordRegex.test(password);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.PRN && !formData.password) {
-      setError('PRN number and password is required.');
+    if (!formData.prnNumber || !formData.password) {
+      setError('PRN number and password are required.');
       return;
     }
 
-    if (formData.PRN=='') {
-      setError('PRN is required.');
+    if (!validatePassword(formData.password)) {
+      setError('Password must be at least 8 characters long, with one uppercase letter, one number, and one special character.');
       return;
     }
 
-    if (formData.password=='') {
-      setError('Password is required.');
-      return;
-    }
+    setIsLoading(true); // Set loading to true
+    try {
+      const response = await axios.post('http://localhost:5000/api/users/login', {
+        prnNumber: formData.prnNumber,
+        password: formData.password,
+      });
 
-    // Mock credentials for testing
-    if (formData.PRN === '2021033700996804' && formData.password === 'Password@123') {
-      navigate('/grievanceform');
-    } else {
-      setError('Invalid PRN or password. Please try again.');
+      if (response.status===200) {
+        navigate('/grievanceform');
+      } 
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError(error.response?.data?.message || 'An error occurred. Please try again later.');
+    } finally {
+      setIsLoading(false); // Set loading back to false
     }
   };
 
@@ -72,57 +79,41 @@ const LoginForm = () => {
 
   const handleForgotPasswordSubmit = (e) => {
     e.preventDefault();
-    // Handle the email submission (e.g., send a password reset email)
+    if (!email) {
+      setError('Email is required.');
+      return;
+    }
     alert(`A password reset link has been sent to ${email}.`);
-    setShowModal(false); // Close the modal after submission
+    setShowModal(false);
   };
 
   return (
     <Container fluid className="p-0 w-100">
-<Row className='head-box-login'>
-  <Col>
-    <h1 className="text-left">ADMINISTRATION</h1>
-  </Col>
-</Row>
+      <Row className="head-box-login">
+        <Col>
+          <h1 className="text-left">ADMINISTRATION</h1>
+        </Col>
+      </Row>
 
-<Row noGutters className="flex-nowrap left-index-login just">
-  <Col md={2} className='left-sidebar-login'>
-    <Card className="left-nav-login">
-      <ListGroup variant="flush">
-        {/* Sidebar Links */}
-        <ListGroup.Item className="left-nav-row-login">
-          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-            Principal and HOD
-          </Link>
-        </ListGroup.Item>
-        <ListGroup.Item className="left-nav-row-login">
-          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-            Student Section
-          </Link>
-        </ListGroup.Item>
-        <ListGroup.Item className="left-nav-row-login">
-          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-            Office
-          </Link>
-        </ListGroup.Item>
-        <ListGroup.Item className="left-nav-row-login">
-          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-            Committees
-          </Link>
-        </ListGroup.Item>
-        <ListGroup.Item className="left-nav-row-login">
-          <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-            Tenders
-          </Link>
-        </ListGroup.Item>
-        <ListGroup.Item className="left-nav-row-login-01">
-          <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
-            Grievance Form
-          </Link>
-        </ListGroup.Item>
-      </ListGroup>
-    </Card>
-  </Col>
+      <Row noGutters className="flex-nowrap left-index-login just">
+        <Col md={2} className="left-sidebar-login">
+          <Card className="left-nav-login">
+            <ListGroup variant="flush">
+              {['Principal and HOD', 'Student Section', 'Office', 'Committees', 'Tenders'].map((item, index) => (
+                <ListGroup.Item key={index} className="left-nav-row-login">
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                    {item}
+                  </Link>
+                </ListGroup.Item>
+              ))}
+              <ListGroup.Item className="left-nav-row-login-01">
+                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
+                  Grievance Form
+                </Link>
+              </ListGroup.Item>
+            </ListGroup>
+          </Card>
+        </Col>
 
         <Col>
           <div className="head-right-top-login" style={{ width: '70%', backgroundColor: '#eadbc8' }}>
@@ -135,18 +126,19 @@ const LoginForm = () => {
             </div>
 
             <div className="login-form-container">
-              {error && <Alert variant="danger">{error}</Alert>}
+              {error && <Alert variant="danger" aria-live="assertive">{error}</Alert>} 
 
               <Form onSubmit={handleSubmit}>
-                <Form.Group controlId="PRN" className="mb-3">
+                <Form.Group controlId="prnNumber" className="mb-3">
                   <Form.Control
                     type="text"
-                    name="PRN"
-                    value={formData.PRN}
+                    name="prnNumber"
+                    value={formData.prnNumber}
                     onChange={handleChange}
                     placeholder="PRN number"
                     className="login-input"
                     pattern="[0-9]*"
+                    required
                   />
                 </Form.Group>
 
@@ -158,6 +150,7 @@ const LoginForm = () => {
                     onChange={handleChange}
                     placeholder="Password"
                     className="login-input"
+                    required
                   />
                   <span
                     onClick={togglePasswordVisibility}
@@ -168,20 +161,21 @@ const LoginForm = () => {
                       transform: 'translateY(-50%)',
                       cursor: 'pointer',
                     }}
+                    aria-label={showPassword ? 'Hide password' : 'Show password'}
+                    role="button"
+                    tabIndex="0"
+                    onKeyDown={(e) => e.key === 'Enter' && togglePasswordVisibility()}
                   >
                     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
                   </span>
                 </Form.Group>
 
-                <Button type="submit" className="login-button">
-                  LOGIN
+                <Button type="submit" className="login-button w-100" disabled={isLoading}>
+                  {isLoading ? 'Logging in...' : 'LOGIN'}
                 </Button>
 
                 <div className="login-links">
-                  <Link to="/studentsignup" className="login-link">
-                    Sign Up
-                  </Link>
-                  {/* Trigger the modal when clicking "Forgot password?" */}
+                  <Link to="/studentsignup" className="login-link">Sign Up</Link>
                   <Link to="#" className="login-link" onClick={() => setShowModal(true)}>
                     Forgot password?
                   </Link>
@@ -191,13 +185,12 @@ const LoginForm = () => {
           </div>
         </Col>
       </Row>
-  {/* Forgot Password Modal */}
-      <Modal show={showModal} onHide={() => setShowModal(false)} centered >
-    
+
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Header closeButton>
           <Modal.Title>Forgot Password</Modal.Title>
         </Modal.Header>
-        <Modal.Body className='forgetpassword'>
+        <Modal.Body className="forgetpassword">
           <Form onSubmit={handleForgotPasswordSubmit}>
             <Form.Group controlId="email" className="mb-3">
               <Form.Label>Email Address</Form.Label>
