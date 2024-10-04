@@ -1,4 +1,4 @@
-import React from 'react';
+ 
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; // Import Link and useLocation from react-router-dom
 import './AboutVM.css';
@@ -36,7 +36,7 @@ const AboutVM = () => {
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
                   >
-                    Principal's Desk
+                    Principals Desk
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-vm">

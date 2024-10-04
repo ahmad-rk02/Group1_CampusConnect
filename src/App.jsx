@@ -30,6 +30,8 @@ import StudentSignUp from './Administration/StudentSignUp';
 import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
 import ForgetAdmin from "./Administration/ForgetAdmin";
+import Workshop from './Departments/Workshop';
+
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -39,7 +41,7 @@ function App() {
     },
     {
       name: "DEPARTMENTS",
-      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering"]
+      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Workshop"]
     },
     {
       name: "ADMINISTRATION",

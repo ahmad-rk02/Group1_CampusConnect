@@ -1,7 +1,6 @@
-import React from 'react'
 import CSECarousel from '../../Departments/Cse/CSECarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './CSE.css'
 import CSEvm from '../../Departments/Cse/CSEvm';
 import CodeUnnati from './CodeUnnati';
@@ -73,6 +72,14 @@ const CSE = () => {
                       className={location.pathname === "" ? "active-link" : ""}
                     >
                       Civil Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-cse">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Workshop
                     </Link>
                   </ListGroup.Item>
                 </ListGroup>
