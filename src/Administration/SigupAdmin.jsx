@@ -249,7 +249,7 @@ const SignupAdmin = () => {
                     />
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="custom-eye-button"
                       onClick={() => setShowPassword(!showPassword)}
                     >
                       <i className={`bi ${showPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`}></i>
@@ -272,7 +272,7 @@ const SignupAdmin = () => {
                     />
                     <button
                       type="button"
-                      className="btn btn-outline-secondary"
+                      className="custom-eye-button"
                       onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                     >
                       <i className={`bi ${showConfirmPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`}></i>

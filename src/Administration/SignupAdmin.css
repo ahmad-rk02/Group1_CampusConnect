@@ -197,3 +197,14 @@
     border-color: red;
     
   }
+
+  .custom-eye-button {
+    border: 1px solid #6c757d;
+    background-color: transparent; 
+    transition: background-color 0.3s; 
+  }
+  
+  .custom-eye-button:hover {
+    background-color: transparent;
+  }
+  

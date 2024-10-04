@@ -325,7 +325,7 @@ const StudentSignUp = () => {
                       className={`input-box-grivncee ${errors.password && 'is-invalid'}`}
                     />
                     <span className="input-group-text" onClick={togglePasswordVisibility}>
-                      {showPassword ? <FaEyeSlash /> : <FaEye />}
+                      {showPassword ? <FaEye />: <FaEyeSlash />}
                     </span>
                     {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                   </div>
@@ -343,7 +343,7 @@ const StudentSignUp = () => {
                       className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
                     />
                     <span className="input-group-text" onClick={toggleConfirmPasswordVisibility}>
-                      {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
+                    {showPassword ? <FaEye />: <FaEyeSlash />}
                     </span>
                     {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                   </div>
