@@ -29,6 +29,7 @@ import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
 import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
+import Workshop from './Departments/Workshop';
 
 function App() {
   const navItems = [
@@ -39,7 +40,7 @@ function App() {
     },
     {
       name: "DEPARTMENTS",
-      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering"]
+      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "CIIIT", "Workshop"]
     },
     {
       name: "ADMINISTRATION",
@@ -96,6 +97,7 @@ function App() {
                   <Route path="/adminform" element={<AdminForm/>} />
                   <Route path="/forgotpassword" element={<Forgotpassword/>} />
                   <Route path="/forgotpassword2" element={<Forgotpassword2/>} />
+                  <Route path="/workshop" element={<Workshop/>} />
                 </Routes>
               </div>
             </Router>
