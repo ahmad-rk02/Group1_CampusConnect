@@ -109,6 +109,7 @@
 {
     margin-left: 40px;
     margin-top: 30px;
+    margin-right: 40px;
 }
 
 .commmittee-dd{
@@ -161,7 +162,9 @@
     display: flex;
     margin-bottom: 20px;
 }
-
+.to-admin-login a{
+  text-decoration: none;
+}
   .text-Admin-signup{
     margin-left: 120px;
     font-size: medium;
@@ -171,18 +174,14 @@
  .Adminlogin-link-Admin-signup{
     margin-left: 40px;
  } 
-
+  
  .invalid-feedback {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    color: red;
-    font-size: 0.875rem; /* Small font size for error messages */
-    min-height: 20px; /* Reserve space for the error message */
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
+  color: red;
+  font-size: 12px;
+  margin-top: 5px; /* Add margin to ensure space between the input and feedback */
+  display: block; /* Ensure it's block to take up full width */
+  position: relative; /* Keep feedback aligned with input */
+}
   
   .input-box-Admin-signup:not(.is-invalid) + .invalid-feedback {
     visibility: hidden;
@@ -196,4 +195,5 @@
   
   .input-box-Admin-signup.is-invalid {
     border-color: red;
+    
   }
