@@ -1,139 +1,137 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import './Workshop.css';
-import workshop from "../assets/workshop.png";
-
+ 
+import { Container, Row, Col, Card, ListGroup  } from 'react-bootstrap';
+import { Link, useLocation } from 'react-router-dom'; 
+ import './Workshop.css'
+import AboutInstituteImage from '../assets/AboutInstitute.jpg'; 
 
 
 const Workshop = () => {
-    return (
-        <div className='ws-page-div d-flex flex-column'>
-            <Container fluid className="p-0 w-100 flex-grow-1">
+  const location = useLocation(); 
 
-                <Row className='head-box-ws'>
-                    <h1 className="text-left">DEPARTMENTS</h1>
-                </Row>
 
+  
+
+  return (
+    <>
+      <Container fluid className="p-0 w-100">
+        {/* Header Section */}
+        <Row className="header-design-ws text-white">
+          <Col className="header-align-ws">
+            <h1 className="text-left ">ABOUT US</h1>
+          </Col>
+        </Row>
+
+        <Row className="flex-nowrap left-index-ws">
+
+               
+
+         
+
+          {/* Left Sidebar */}
+          <Col md={3}  className="left-sidebar-ws ">
+            <Card className="left-nav-ws">
+              <ListGroup variant="flush">
+              <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to="/cse"
+                      className={location.pathname === "/cse" ? "active-link" : ""}
+                    >
+                      Computer Science & Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Electronics & Telecommunication Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Instrumentation Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Electrical Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Mechanical Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Civil Engineering
+                    </Link>
+                  </ListGroup.Item>
+                  <ListGroup.Item className="left-nav-row-ws">
+                    <Link
+                      to=""
+                      className={location.pathname === "" ? "active-link" : ""}
+                    >
+                      Workshop
+                    </Link>
+                  </ListGroup.Item>
+              </ListGroup>
+            </Card>
+
+            <div className='side-heading-bottom-ws'>
+            <div className="fs-4 fw-bold gcoec-text " style={{ color: '#EADBC8'}}>GCOEC</div>
+            <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '1.5' }}>
+                     Delivering Wisdom Engineers</h2>
+
+            </div>
+
+          </Col>
+
+         
+
+          {/* Right Content Section */}
+          <Col md={9} className="mt-4 content-card-ws">
+            {/* About Institute */}
+            <Card className="mb-4 w-100 card-content-ws">
+              <Card.Body className="bg-white-ws">
                 <Row>
+                  <Col md={12} className=" p-0 text-center mb-3">
+                    <img
+                      src={AboutInstituteImage}
+                      alt="Institute"
+                      className="about-image"
+                    />
+                  </Col>
+                  <Card.Header className="bg-golden-ws w-100">
+                    <h4>About Institute</h4>  
+                  </Card.Header>
 
-                    <Row className="g-0 overlay-roww w-100" >
-                        {/* Left Sidebar */}
-                        <Col md={4} className='left-sidebar-ws overlay-col ' >
-                            <Card className="left-nav-ws">
-                                <ListGroup variant="flush">
-                                    <ListGroup.Item className="left-nav-row-ws-01">
-                                        <Link
-                                            to="/cse"
-                                            className={location.pathname === "/cse" ? "active-link" : ""}
-                                        >
-                                            Computer Science & Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Electronics & Telecommunication Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Instrumentation Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Electrical Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Mechanical Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Civil Engineering
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            CIIIT
-                                        </Link>
-                                    </ListGroup.Item>
-                                    <ListGroup.Item className="left-nav-row-ws">
-                                        <Link
-                                            to=""
-                                            className={location.pathname === "" ? "active-link" : ""}
-                                        >
-                                            Workshop
-                                        </Link>
-                                    </ListGroup.Item>
-                                </ListGroup>
-                            </Card>
-                        </Col>
-
-                        {/* Right Content Section */}
-                        <Col md={9} className="mt-4 content-card-pd">
-                            {/* Workshop */}
-                            <Card className="mb-4 w-100 card-content-pd">
-                                <Card.Header className="bg-golden-pd">
-                                    <h4>Workshop</h4>
-                                </Card.Header>
-                                <Card.Body className="bg-white-pd">
-                                    <Row>
-                                        <Col md={12} className=" p-0 text-center mb-3">
-                                            <img
-                                                src={workshop}
-                                                alt="GCOEC Workshop"
-                                                className="workshop-image-pd"
-                                            />
-                                        </Col>
-
-
-                                        <Col md={12}>
-                                            <p style={{ marginTop: "20px" }}>
-
-                                                <p>The Workshop is the backbone of the Institute practical, all maintenance & project related activities are carried out here. Under the visionary leadership of Principal, Dr. S. G. Akojwar and Guidance of Workshop Superintendent, Prof. S. D. Butley, workshop Department has emerged as the powerhouse to enhance the practical and technical skills of budding technocrats. The department is now focusing on practical excellence and technical skill development of the students through integrated efforts.</p>
-
-                                                <p>To make the students familiar with various manufacturing practices and processes the institute has well equipped workshops. As the saying goes, â€œLearning by doing is the best method of learning and leaves a lasting impression on the young minds of the students. The students of the college get the opportunity to work in Machine Shop, Carpentry Shop, Sheet Metal Shop, Welding Shop, Fitting Shop, Moulding Shop and Smithy Shop to get hands-on training. Sincere and persistent efforts by the staff of workshop wing helps students learn by actually doing the various procedures by their own hands. The exposure to design intricacies, manufacturing processes, fabrication techniques and working of machinery and equipment used in manufacturing helps students adapt to the industrial environment, when they come across similar floor situations in the industry.</p>
-
-                                                </p>
-                                        </Col>
-                                    </Row>
-                                </Card.Body>
-                            </Card>
-                        </Col>
-
-
-                    </Row>
+                  <Col md={12}>
+                    <p style={{ marginTop: '20px' }}> 
+                    Government College of Engineering Chandrapur is established in 1996 This is the only Government Institute under Gondwana University, Gadchiroli. This Government institute is completely funded by Government of Maharashtra. The Institute is under Director of Technical Education, M.S., Mumbws and is administered through its Regional office at Nagpur. Now a days, due to globalization there is stiff competition at the national & International level as well phenomenal growth in the technology. For this, competent technocrats & engineers are in great demand and to serve this requirement, Government College of Engineering,Chandrapur is taking efforts to produce high quality technocrats.
+                    </p>
+                  </Col>
 
                 </Row>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
 
-            </Container>
-
-        </div>
-
-
-    )
-}
-
-export default Workshop
+export default Workshop; // Export the component

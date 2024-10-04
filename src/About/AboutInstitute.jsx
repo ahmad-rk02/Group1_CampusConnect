@@ -1,4 +1,4 @@
-import React from 'react';
+ 
 import { Container, Row, Col, Card, ListGroup  } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom'; 
 import './AboutInstitute.css';
@@ -44,7 +44,7 @@ const AboutInstitute = () => {
                     to="/principaldesk"
                     className={location.pathname === "/principaldesk" ? "active-link" : ""}
                   >
-                    Principal's Desk
+                    Principal&apos;s Desk
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ai">
@@ -58,7 +58,7 @@ const AboutInstitute = () => {
               </ListGroup>
             </Card>
 
-            <div class='side-heading-bottom-ai'>
+            <div className='side-heading-bottom-ai'>
             <div className="fs-4 fw-bold gcoec-text " style={{ color: '#EADBC8'}}>GCOEC</div>
             <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '1.5' }}>
                      Delivering Wisdom Engineers</h2>
