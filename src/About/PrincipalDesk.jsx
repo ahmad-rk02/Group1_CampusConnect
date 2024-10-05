@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from "react";
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
@@ -43,7 +44,7 @@ const PrincipalDesk = () => {
                         : ""
                     }
                   >
-                    Principal's Desk
+                    Principal&apos;s Desk
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-pd">

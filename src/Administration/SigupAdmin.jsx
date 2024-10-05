@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './SignupAdmin.css';
 import Gec from '../assets/Gec.png';
 
 const SignupAdmin = () => {
-
-
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -19,6 +17,8 @@ const SignupAdmin = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [showPassword, setShowPassword] = useState(false); // New state for password visibility
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,6 +51,21 @@ const SignupAdmin = () => {
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
+    }
+
+    // DTE Number validation
+    if (!formData.dte) {
+      valid = false;
+      formErrors.dte = "DTE Number is required";
+    } else if (isNaN(formData.dte) || formData.dte <= 0) {
+      valid = false;
+      formErrors.dte = "DTE Number must be a positive number";
+    }
+
+    // Committee validation
+    if (!formData.committee) {
+      valid = false;
+      formErrors.committee = "Committee selection is required";
     }
 
     // Password validation
@@ -92,73 +107,51 @@ const SignupAdmin = () => {
     } else {
       setSubmitted(false);
     }
-  }
-
+  };
 
   return (
     <div>
-
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
-        <Row className='head-box-Admin-signup
-        '>
+        <Row className='head-box-Admin-signup'>
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-Admin-signup
-         just" >
+        <Row noGutters className="flex-nowrap left-index-Admin-signup just">
           {/* Left Sidebar */}
-          <Col md={2} className='left-sidebar-Admin-signup
-          ' >
-            <Card className="left-nav-Admin-signup" >
+          <Col md={2} className='left-sidebar-Admin-signup'>
+            <Card className="left-nav-Admin-signup">
               <ListGroup variant="flush">
+                {/* Sidebar Links */}
                 <ListGroup.Item className="left-nav-row-Admin-signup">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Principal and HOD
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-Admin-signup">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Student Section
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-Admin-signup">
-                  <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
-                  >
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Office
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-Admin-signup">
-                  <Link
-                    to="/committees"
-                    className={location.pathname === "/committees" ? "active-link" : ""}
-                  >
-                    Commiittees
+                  <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
+                    Committees
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-Admin-signup">
-                  <Link
-                    to="/tenders"
-                    className={location.pathname === "/tenders" ? "active-link" : ""}
-                  >
+                  <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
                     Tenders
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-Admin-signup-01">
-                  <Link
-                    to="/login"
-                    className={location.pathname === "/login" ? "active-link" : ""}
-                  >
+                  <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
                     Grievance Form
                   </Link>
                 </ListGroup.Item>
@@ -167,20 +160,14 @@ const SignupAdmin = () => {
           </Col>
 
           <Col>
-
             <div>
               <div className='head-right-top-Admin-signup' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-                <h3 style={{ color: '#102C57' }} >Sign Up
-
-                  <svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 20 20" height="35px" viewBox="0 0 20 20" width="40px" fill="#102C57"><g><g><rect fill="none" height="20" width="20" /></g></g><g><polygon points="4.59,16.59 6,18 14,10 6,2 4.59,3.41 11.17,10" /></g></svg>
-
-                  Admin Registration</h3></div>
+                <h3 style={{ color: '#102C57' }}>Admin SignUp</h3>
+              </div>
             </div>
-
 
             <div className='form-section-Admin-signup'>
               <Form onSubmit={handleSubmit} className='whole-form-Admin-signup'>
-
                 {submitted && (
                   <Alert variant="success" className='mb-3'>
                     Signed Up Successfully!
@@ -217,65 +204,82 @@ const SignupAdmin = () => {
                   {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formcommittee" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>committee</Form.Label>
+                <Form.Group controlId="formCommittee" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className='field-name-Admin-signup'>Committee</Form.Label>
                   <Form.Select
                     name="committee"
                     value={formData.committee}
                     onChange={handleChange}
-                    className={`input-box-Admin-signup commmittee-dd ${errors.semester && 'is-invalid'}`}
+                    className={`input-box-Admin-signup ${errors.committee && 'is-invalid'}`}
                   >
                     <option value="">Select committee</option>
-                    <option value="1">Anti ragging Committee</option>
+                    <option value="1">Anti Ragging Committee</option>
                     <option value="2">Grievance Redressal Committee</option>
-                    <option value="3">Internal Complaint committee</option>
-                    <option value="4">SC/ST,WOMEN/GIRLS complaint committee</option>
+                    <option value="3">Internal Complaint Committee</option>
+                    <option value="4">SC/ST, Women/Girls Complaint Committee</option>
                     <option value="5">Online Grievance Form</option>
                   </Form.Select>
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formdteNumber" className="mb-3 whole-field-Admin-signup">
+                <Form.Group controlId="formDTE" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
                   <Form.Control
-                    type="number"
+                    type="text"
                     name="dte"
-                    value={formData.phone}
+                    value={formData.dte}
                     onChange={handleChange}
                     placeholder="Enter DTE Number"
-                    className={`input-box-Admin-signup ${errors.phone && 'is-invalid'}`}
+                    className={`input-box-Admin-signup ${errors.dte && 'is-invalid'}`}
                   />
                   {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
                 </Form.Group>
 
-                 {/* Password Field */}
-                 <Form.Group controlId="formPassword" className="mb-3 whole-field-Admin-signup">
+                {/* Password Field */}
+                <Form.Group controlId="formPassword" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Enter Password"
-                    className={`input-box-Admin-signup ${errors.password && 'is-invalid'}`}
-                  />
+                  <div className="input-group">
+                    <Form.Control
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      placeholder="Enter Password"
+                      className={`input-box-Admin-signup ${errors.password && 'is-invalid'}`}
+                    />
+                    <button
+                      type="button"
+                      className="custom-eye-button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      <i className={`bi ${showPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`}></i>
+                    </button>
+                  </div>
                   {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                 </Form.Group>
 
                 {/* Confirm Password Field */}
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Confirm Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm Password"
-                    className={`input-box-Admin-signup ${errors.confirmPassword && 'is-invalid'}`}
-                  />
+                  <div className="input-group">
+                    <Form.Control
+                      type={showConfirmPassword ? "text" : "password"}
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Confirm Password"
+                      className={`input-box-Admin-signup ${errors.confirmPassword && 'is-invalid'}`}
+                    />
+                    <button
+                      type="button"
+                      className="custom-eye-button"
+                      onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                    >
+                      <i className={`bi ${showConfirmPassword ? 'bi-eye-fill' : 'bi-eye-slash-fill'}`}></i>
+                    </button>
+                  </div>
                   {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                 </Form.Group>
-
 
                 <Button variant="primary" type="submit" className='sub-btn-Admin-signup'>
                   Sign Up
@@ -283,21 +287,17 @@ const SignupAdmin = () => {
 
                 <div className='to-admin-login'>
                   <p className='text-Admin-signup'>
-                    Already have an account ?
+                    Already have an account?
                   </p>
-
-                  <Link to="/adminform" className="Adminlogin-link-Admin-signup">Login</Link>
+                  <Link to="/adminlogin" className="Adminlogin-link-Admin-signup">Login</Link>
                 </div>
-
               </Form>
             </div>
           </Col>
-
         </Row>
       </Container>
-
     </div>
   )
 }
 
-export default SignupAdmin
+export default SignupAdmin;

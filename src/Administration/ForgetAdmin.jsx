@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Card, ListGroup, Button, Modal, Alert } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './ForgetAdmin.css';
 
 const ForgetAdmin = () => {
@@ -10,17 +10,22 @@ const ForgetAdmin = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [showModal, setShowModal] = useState(false);
     const [showOtpModal, setShowOtpModal] = useState(false);
-    const [error, setError] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [otpError, setOtpError] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+    
+    // New states for password visibility
+    const [showNewPassword, setShowNewPassword] = useState(false);
+    const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
     const handleEmailSubmit = (e) => {
         e.preventDefault();
         if (email) {
-            // Mock OTP sending (Replace this with actual OTP generation and email service)
-            alert(`OTP sent to ${email}`);
-            setShowOtpModal(true); // Show the OTP modal
+            alert(`OTP sent to ${email}`); // Mock OTP sending
+            setShowOtpModal(true);
+            setEmailError('');
         } else {
-            setError('Please enter a valid email address.');
+            setEmailError('Please enter a valid email address.');
         }
     };
 
@@ -28,7 +33,8 @@ const ForgetAdmin = () => {
         e.preventDefault();
         if (otp === '123456') { // Mock OTP validation
             setShowOtpModal(false);
-            setShowModal(true); // Show new password modal
+            setShowModal(true);
+            setOtpError('');
         } else {
             setOtpError('Invalid OTP. Please try again.');
         }
@@ -36,15 +42,30 @@ const ForgetAdmin = () => {
 
     const handleNewPasswordSubmit = (e) => {
         e.preventDefault();
+        
+        // Clear previous error messages
+        setPasswordError('');
+    
+        // Check if both fields are filled
+        if (!newPassword || !confirmPassword) {
+            setPasswordError('Both password fields must be filled out.');
+            return;
+        }
+    
+        // Check if passwords match
         if (newPassword !== confirmPassword) {
-            setError('Passwords do not match.');
+            setPasswordError('Passwords do not match.');
         } else {
-            // Process password reset logic (Replace with real backend call)
-            alert('Password reset successfully.');
+            alert('Password reset successfully.'); // Process password reset logic
+            // Clear fields after successful submission
+            setEmail('');
+            setOtp('');
+            setNewPassword('');
+            setConfirmPassword('');
             setShowModal(false);
         }
     };
-
+    
     return (
         <Container fluid className="p-0 w-100">
             <Row className='head-box-loginP'>
@@ -102,8 +123,8 @@ const ForgetAdmin = () => {
                                 placeholder="Enter your email"
                             />
                         </Form.Group>
-                        {error && <Alert variant="danger">{error}</Alert>}
-                        <Button variant="primary" type="submit" className="w-100">
+                        {emailError && <Alert variant="danger">{emailError}</Alert>}
+                        <Button type="submit" className="w-100 send-otp-button">
                             Send OTP
                         </Button>
                     </Form>
@@ -126,7 +147,7 @@ const ForgetAdmin = () => {
                                     />
                                 </Form.Group>
                                 {otpError && <Alert variant="danger">{otpError}</Alert>}
-                                <Button variant="primary" type="submit" className="w-100">
+                                <Button   type="submit" className="w-100 verify-otp-button">
                                     Verify OTP
                                 </Button>
                             </Form>
@@ -140,28 +161,36 @@ const ForgetAdmin = () => {
                         </Modal.Header>
                         <Modal.Body>
                             <Form onSubmit={handleNewPasswordSubmit}>
-                                <Form.Group controlId="newPassword" className="mb-3">
+                                <Form.Group controlId="newPassword" className="mb-3 position-relative">
                                     <Form.Label>New Password</Form.Label>
                                     <Form.Control
-                                        type="password"
+                                        type={showNewPassword ? 'text' : 'password'}
                                         value={newPassword}
                                         onChange={(e) => setNewPassword(e.target.value)}
                                         placeholder="Enter new password"
-                                        required
                                     />
+                                    <i
+                                        className={`far ${showNewPassword ? 'fa-eye' : 'fa-eye-slash'} password-eye`}
+                                        onClick={() => setShowNewPassword(!showNewPassword)}
+                                        style={{ cursor: 'pointer', position: 'absolute', right: '10px', top: '68%', transform: 'translateY(-50%)' }}
+                                    ></i>
                                 </Form.Group>
-                                <Form.Group controlId="confirmPassword" className="mb-3">
+                                <Form.Group controlId="confirmPassword" className="mb-3 position-relative">
                                     <Form.Label>Confirm New Password</Form.Label>
                                     <Form.Control
-                                        type="password"
+                                        type={showConfirmPassword ? 'text' : 'password'}
                                         value={confirmPassword}
                                         onChange={(e) => setConfirmPassword(e.target.value)}
                                         placeholder="Confirm new password"
-                                        required
                                     />
+                                    <i
+                                        className={`far ${showConfirmPassword ? 'fa-eye' : 'fa-eye-slash'} password-eye`}
+                                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                                        style={{ cursor: 'pointer', position: 'absolute', right: '10px', top: '68%', transform: 'translateY(-50%)' }}
+                                    ></i>
                                 </Form.Group>
-                                {error && <Alert variant="danger">{error}</Alert>}
-                                <Button variant="primary" type="submit" className="w-100">
+                                {passwordError && <Alert variant="danger">{passwordError}</Alert>}
+                                <Button   type="submit" className="w-100 reset-password-button">
                                     Reset Password
                                 </Button>
                             </Form>

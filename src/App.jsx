@@ -22,7 +22,7 @@ import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
 import Login from './Administration/Login';
-import AdminForm from './Administration/AdminForm'
+import AdminLogin from './Administration/AdminLogin'
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
@@ -38,6 +38,8 @@ import CIIITLeaflet from "./CIIITPage/CIIITLeaflet";
 import CoursesDetails from "./CIIITPage/CoursesDetails";
 import EligibilityCriteria from "./CIIITPage/EligibilityCriteria";
 import TrainingConducted from "./CIIITPage/TrainingConducted";
+import ForgetAdmin from "./Administration/ForgetAdmin";
+import Workshop from './Departments/Workshop';
 
 function App() {
   const navItems = [
@@ -48,7 +50,7 @@ function App() {
     },
     {
       name: "DEPARTMENTS",
-      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering"]
+      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Workshop"]
     },
     {
       name: "ADMINISTRATION",
@@ -113,9 +115,10 @@ function App() {
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />
                   <Route path="/boyshostel" element={<Boyshostel/>} />
-                  <Route path="/adminform" element={<AdminForm/>} />
+                  <Route path="/adminlogin" element={<AdminLogin/>} />
                   <Route path="/forgotpassword" element={<Forgotpassword/>} />
                   <Route path="/forgotpassword2" element={<Forgotpassword2/>} />
+                  <Route path="/forgetadmin" element={<ForgetAdmin/>} />
                 </Routes>
               </div>
             </Router>
