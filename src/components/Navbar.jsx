@@ -63,6 +63,15 @@ function Navbar({ imageSrcPath, navItems }) {
         "Girls Hostel": "/girlshostel",
         "Boys Hostel": "/boyshostel",
         "Committees": "/committees",
+        "About CIIIT": "/aboutciiit",
+        "Admission Form": "/admissionform",
+        "Centers Under CIIIT": "/centersunderciiit",
+        "CIIIT Brochure": "/ciiitbrochure",
+        "CIIIT Contact": "/ciiitcontact",
+        "CIIIT Leaflet": "/ciiitleaflet",
+        "Courses Details": "/coursesdetails",
+        "Eligibility Criteria": "/eligibilitycriteria",
+        "Training Conducted": "/trainingconducted"
       };
 
       if (typeof subLink === "string") {

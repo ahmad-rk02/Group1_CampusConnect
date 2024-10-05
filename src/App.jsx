@@ -29,6 +29,15 @@ import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
 import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
+import AboutCIIIT from "./CIIITPage/AboutCIIIT";
+import AdmissionForm from "./CIIITPage/AdmissionForm";
+import CentersUnderCIIIT from "./CIIITPage/CentersUnderCIIIT";
+import CIIITBrochure from "./CIIITPage/CIIITBrochure";
+import CIIITContact from "./CIIITPage/CIIITContact";
+import CIIITLeaflet from "./CIIITPage/CIIITLeaflet";
+import CoursesDetails from "./CIIITPage/CoursesDetails";
+import EligibilityCriteria from "./CIIITPage/EligibilityCriteria";
+import TrainingConducted from "./CIIITPage/TrainingConducted";
 
 function App() {
   const navItems = [
@@ -61,6 +70,8 @@ function App() {
         { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
       ]
     },
+    {name: "CIIIT", subLinks: ["About CIIIT", "Centers Under CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact", "Training Conducted"]},
+
     { name: "CONTACT" }
   ];
   
@@ -89,6 +100,15 @@ function App() {
                   <Route path="/cse" element={<CSE />} />
                   <Route path="/studentlogin" element={<Studentlogin />} />
                   <Route path="/signupadmin" element={<SignupAdmin />} />
+                  <Route path="/aboutCIIIT" element={<AboutCIIIT />} />
+                  <Route path="/admissionform" element={<AdmissionForm />} />
+                  <Route path="/centersunderciiit" element={<CentersUnderCIIIT />} />
+                  <Route path="/ciiitbrochure" element={<CIIITBrochure />} />
+                  <Route path="/ciiitcontact" element={<CIIITContact />} />
+                  <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />
+                  <Route path="/coursesdetails" element={<CoursesDetails />} />
+                  <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
+                  <Route path="/trainingconducted" element={<TrainingConducted />} />
                   <Route path="/login" element={<Login />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/girlshostel" element={<Girlshostel/>} />

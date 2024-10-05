@@ -223,6 +223,7 @@ const StudentSignUp = () => {
                     placeholder="Enter Your Full Name"
                     className={`input-box-grivncee ${errors.fullname && 'is-invalid'}`}
                   />
+                  
                   {errors.fullname && <div className="invalid-feedback">{errors.fullname}</div>}
                 </Form.Group>
 
