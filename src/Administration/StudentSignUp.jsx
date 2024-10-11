@@ -1,8 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import axios from 'axios'; // Import axios
+import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for eye and eye-slash
 import './StudentSignUp.css';
 import Gec from '../assets/Gec.png';
 
@@ -24,6 +24,10 @@ const StudentSignUp = () => {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevState) => ({
@@ -31,6 +35,15 @@ const StudentSignUp = () => {
       [name]: value,
     }));
   };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(!showConfirmPassword);
+  };
+
   const validateForm = () => {
     let formErrors = {};
     let valid = true;
@@ -223,6 +236,7 @@ const StudentSignUp = () => {
                     placeholder="Enter Your Full Name"
                     className={`input-box-grivncee ${errors.fullname && 'is-invalid'}`}
                   />
+                  
                   {errors.fullname && <div className="invalid-feedback">{errors.fullname}</div>}
                 </Form.Group>
 
@@ -302,28 +316,38 @@ const StudentSignUp = () => {
 
                 <Form.Group controlId="formPassword" className="mb-3 whole-field-grivncee">
                   <Form.Label className='field-name-grivnce'>Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="password"
-                    value={formData.password}
-                    onChange={handleChange}
-                    placeholder="Enter Password"
-                    className={`input-box-grivncee ${errors.password && 'is-invalid'}`}
-                  />
-                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                  <div className="input-group">
+                    <Form.Control
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      value={formData.password}
+                      onChange={handleChange}
+                      placeholder="Enter Password"
+                      className={`input-box-grivncee ${errors.password && 'is-invalid'}`}
+                    />
+                    <span className="input-group-text" onClick={togglePasswordVisibility}>
+                      {showPassword ? <FaEye />: <FaEyeSlash />}
+                    </span>
+                    {errors.password && <div className="invalid-feedback">{errors.password}</div>}
+                  </div>
                 </Form.Group>
 
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-grivncee">
                   <Form.Label className='field-name-grivnce'>Confirm Password</Form.Label>
-                  <Form.Control
-                    type="password"
-                    name="confirmPassword"
-                    value={formData.confirmPassword}
-                    onChange={handleChange}
-                    placeholder="Confirm Password"
-                    className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
-                  />
-                  {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                  <div className="input-group">
+                    <Form.Control
+                      type={showConfirmPassword ? "text" : "password"}
+                      name="confirmPassword"
+                      value={formData.confirmPassword}
+                      onChange={handleChange}
+                      placeholder="Confirm Password"
+                      className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
+                    />
+                    <span className="input-group-text" onClick={toggleConfirmPasswordVisibility}>
+                    {showPassword ? <FaEye />: <FaEyeSlash />}
+                    </span>
+                    {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
+                  </div>
                 </Form.Group>
 
                 

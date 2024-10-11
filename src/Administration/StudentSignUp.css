@@ -224,3 +224,11 @@
     text-decoration: none;
 
 }
+
+.invalid-feedback {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px; /* Add margin to ensure space between the input and feedback */
+    display: block; /* Ensure it's block to take up full width */
+    position: relative; /* Keep feedback aligned with input */
+  }

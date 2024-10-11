@@ -1,0 +1,67 @@
+.head-box-AbtCiiit {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-AbtCiiit h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+    color: white;
+}
+
+.left-index-AbtCiiit {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-AbtCiiit {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-AbtCiiit .card {
+    text-align: center;
+}
+
+.left-sidebar-AbtCiiit .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-AbtCiiit a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-AbtCiiit {
+    background-color: white;
+    border-radius: 0;
+    height: 410px;
+    width: 320px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-AbtCiiit{
+    height: 45px;
+  }
+
+.name-AbtCiiit-prog{
+    text-align: left;
+}
+
+

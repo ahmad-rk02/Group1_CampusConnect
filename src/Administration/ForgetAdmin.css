@@ -104,7 +104,7 @@
 
 /* Form button */
 .right-col-forgetA button[type="submit"] {
-    background-color: #007bff;
+    background-color: #102c57;
     color: white;
     font-size: 1.2rem;
     padding: 10px;
@@ -150,4 +150,20 @@
     border: 1px solid transparent;
     border-radius: 0.25rem;
     font-size: 1rem;
+}
+
+.password-eye {
+    transform: translateY(-50%); 
+    color: #888;  
+    transition: color 0.3s ease;  
+}
+
+.password-eye:hover {
+    color: #555;  
+}
+.verify-otp-button{
+    background-color: #102c57;
+}
+.reset-password-button{
+    background-color: #102c57;
 }

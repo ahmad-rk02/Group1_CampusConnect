@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import carousel1 from '../assets/mainGate.jpg';
 import carousel2 from '../assets/mainBuilding.jpg';
@@ -16,6 +17,12 @@ import carousel10 from '../assets/electricDept.jpg';
 import './CarouselPage.css';
 
 function CarouselPage() {
+const navigate = useNavigate();
+
+const handleNavigation = (path) =>{
+  navigate(path);
+}
+
   return (
     <div className='Carousel-container-4'>
       <Carousel>
@@ -28,7 +35,7 @@ function CarouselPage() {
           />
           <div className="carousel-caption">
             <h2>Government College Of Engineering, Chandrapur</h2>
-            <button className="more-button">More</button>
+            <button className="more-button" onClick={() => handleNavigation('/aboutinstitute')}>More</button>
           </div>
         </Carousel.Item>
 
@@ -42,7 +49,7 @@ function CarouselPage() {
           <div className="carousel-caption">
             <h2>Engineering Degree Programmes</h2>
             <p>Under Graduate & Post Graduate</p>
-            <button className="more-button">More</button>
+            <button className="more-button" onClick={() => handleNavigation('/ug')}>More</button>
           </div>
         </Carousel.Item>
 
@@ -82,7 +89,7 @@ function CarouselPage() {
           />
           <div className="carousel-caption">
             <h2>COMPUTER SCIENCE AND ENGINEERING</h2>
-            <button className="more-button">More</button>
+            <button className="more-button" onClick={() => handleNavigation('/aboutinstitute')}>More</button>
           </div>
         </Carousel.Item>
 
@@ -121,7 +128,7 @@ function CarouselPage() {
           />
           <div className="carousel-caption">
             <h2>MECHANICAL ENGINEERING</h2>
-            <button className="more-button">More</button>
+            <button className="more-button" >More</button>
           </div>
         </Carousel.Item>
 

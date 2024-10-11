@@ -10,7 +10,7 @@ const Login = () => {
         navigate('/studentlogin');
     };
     const handleAdminLogin = () => {
-        navigate('/adminform');
+        navigate('/adminlogin');
     };
     return (
         <Container fluid className="p-0 w-100">
