@@ -71,7 +71,7 @@ function App() {
         { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
       ]
     },
-    {name: "CIIIT", subLinks: ["About CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact", "Training Conducted"]},
+    {name: "CIIIT", subLinks: ["About CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"]},
 
     { name: "CONTACT" }
   ];

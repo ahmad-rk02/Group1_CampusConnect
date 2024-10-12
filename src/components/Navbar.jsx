@@ -70,7 +70,6 @@ function Navbar({ imageSrcPath, navItems }) {
         "CIIIT Leaflet": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf",
         "Courses Details": "/coursesdetails",
         "Eligibility Criteria": "/eligibilitycriteria",
-        "Training Conducted": "/trainingconducted"
       };
 
       if (typeof subLink === "string") {
