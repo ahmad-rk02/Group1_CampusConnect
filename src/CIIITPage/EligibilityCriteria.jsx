@@ -73,38 +73,50 @@ const EligibilityCriteria = () => {
         </Col>
 
         <Col>
-        <Card.Header className="gh-goldenn-3">
-          <h4>Hostel Committee Members</h4>
+        <Card.Header className="ciiit-cd">
+          <h4> Courses Details / Fees</h4>
         </Card.Header>
-        <table className="committee-table-gh">
+        <table className="ciiit-cdetail-gh">
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Course name</th>
-              <th>Course code</th>
-              <th>Duration</th>
+              <th>Admission Type</th>
+              <th>Condition</th>
+              <th>Admission Criteria</th>
+              <th>Course Fee (each course, in Rs.)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Computer Aided Product Design and Development (IDI)</td>
-              <td>CIIIT/GCOE/001</td>
-              <td>3 months - (2 Hours per day - Mon to Fri)</td>
+              <td>Pursuing B.E./B.Tech. 3rd/4th year in engineering & technology within Chandrapur (Maharashtra) district - College/Institute</td>
+              <td>Students must submit College Bonafide Letter from their respective college for enrolments, then only admission will be done under Student Admission Criteria.</td>
+              <td>Student Admission Criteria</td>
+              <td>3,000/-</td>
             </tr>
 
             <tr>
               <td>2</td>
-              <td></td>
-              <td>Warden (Girl's Hostel)</td>
-              <td></td>
+              <td>Student Pursuing B.E./B.Tech. 3rd/4th year in engineering & technology from out of Chandrapur (Maharashtra) district - College/Institute</td>
+              <td>Students must submit College Bonafide Letter from their respective college for enrolments, then only admission will be done under Student Admission Criteria.</td>
+              <td>Open Admission Criteria</td>
+              <td>4,500/-</td>
             </tr>
 
             <tr>
               <td>3</td>
-              <td>Smt. Kanchan Khobragade</td>
-              <td>Assistant</td>
-              <td></td>
+              <td>Minimum Degree/Diploma Passed in engineering & technology</td>
+              <td>Need to submit last Passing education certificate</td>
+              <td>Open Admission Criteria</td>
+              <td>7,000/-</td>
+            </tr>
+
+            <tr>
+              <td>4</td>
+              <td>Industry Sponsor</td>
+              <td>Letter from respective Organization</td>
+              <td>Industry Engagement</td>
+              <td>10,000/-</td>
             </tr>
           </tbody>
         </table>
