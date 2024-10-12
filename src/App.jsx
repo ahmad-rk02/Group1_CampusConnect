@@ -31,7 +31,7 @@ import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
 import AboutCIIIT from "./CIIITPage/AboutCIIIT";
 import AdmissionForm from "./CIIITPage/AdmissionForm";
-import CentersUnderCIIIT from "./CIIITPage/CentersUnderCIIIT";
+
 import CIIITBrochure from "./CIIITPage/CIIITBrochure";
 import CIIITContact from "./CIIITPage/CIIITContact";
 import CIIITLeaflet from "./CIIITPage/CIIITLeaflet";
@@ -105,7 +105,7 @@ function App() {
                   <Route path="/signupadmin" element={<SignupAdmin />} />
                   <Route path="/aboutCIIIT" element={<AboutCIIIT />} />
                   <Route path="/admissionform" element={<AdmissionForm />} />
-                  <Route path="/centersunderciiit" element={<CentersUnderCIIIT />} />
+                 
                   <Route path="/ciiitbrochure" element={<CIIITBrochure />} />
                   <Route path="/ciiitcontact" element={<CIIITContact />} />
                   <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />
