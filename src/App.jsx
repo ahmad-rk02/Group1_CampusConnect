@@ -105,7 +105,7 @@ function App() {
                   <Route path="/signupadmin" element={<SignupAdmin />} />
                   <Route path="/aboutCIIIT" element={<AboutCIIIT />} />
                   <Route path="/admissionform" element={<AdmissionForm />} />
-                 
+                  
                   <Route path="/ciiitbrochure" element={<CIIITBrochure />} />
                   <Route path="/ciiitcontact" element={<CIIITContact />} />
                   <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />
