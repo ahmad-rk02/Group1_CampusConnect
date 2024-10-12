@@ -65,7 +65,6 @@ function Navbar({ imageSrcPath, navItems }) {
         "Committees": "/committees",
         "About CIIIT": "/aboutciiit",
         "Admission Form": "https://www.gcoec.ac.in/gcoec/PDF/Adm-CIIIT-Form.pdf",
-        "Centers Under CIIIT": "/centersunderciiit",
         "CIIIT Brochure": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf",
         "CIIIT Contact": "/ciiitcontact",
         "CIIIT Leaflet": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf",
