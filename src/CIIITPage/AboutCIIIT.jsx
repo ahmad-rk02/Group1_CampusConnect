@@ -28,16 +28,22 @@ const AboutCIIIT = () => {
               </ListGroup.Item>
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
-                  Admission Form
+                <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
+                  Courses Details
                 </Link>
               </ListGroup.Item>
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/centersunderciiit" className={location.pathname === "/centersunderciiit" ? "active-link" : ""}>
-                  Centers Under CIIIT
+                <Link to="/eligibilitycriteria" className={location.pathname === "/eligibilitycriteria" ? "active-link" : ""}>
+                  Eligibility Criteria
                 </Link>
               </ListGroup.Item>
+              
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
+                  Admission Form
+                </Link>
+              </ListGroup.Item>   
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
@@ -54,18 +60,6 @@ const AboutCIIIT = () => {
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
                   CIIIT Leaflet
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
-                  Courses Details
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/eligibilitycriteria" className={location.pathname === "/eligibilitycriteria" ? "active-link" : ""}>
-                  Eligibility Criteria
                 </Link>
               </ListGroup.Item>
 

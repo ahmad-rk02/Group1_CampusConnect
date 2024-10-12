@@ -19,66 +19,95 @@ const EligibilityCriteria = () => {
           <Card className="left-nav-eligibilitycrt">
             <ListGroup variant="flush">
 
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
+            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
-                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
-                  Admission Form
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
-                <Link to="/centersunderciiit" className={location.pathname === "/centersunderciiit" ? "active-link" : ""}>
-                  Centers Under CIIIT
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
-                <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
-                  CIIIT Brochure
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
-                <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
-                  CIIIT Contact
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
-                <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
-                  CIIIT Leaflet
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
                   Courses Details
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-eligibilitycrt-01">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/eligibilitycriteria" className={location.pathname === "/eligibilitycriteria" ? "active-link" : ""}>
                   Eligibility Criteria
                 </Link>
               </ListGroup.Item>
+              
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
+                  Admission Form
+                </Link>
+              </ListGroup.Item>   
 
-              <ListGroup.Item className="left-nav-row-eligibilitycrt">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
+                  CIIIT Brochure
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
+                  CIIIT Contact
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
+                  CIIIT Leaflet
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/trainingconducted" className={location.pathname === "/trainingconducted" ? "active-link" : ""}>
                   Training Conducted
                 </Link>
               </ListGroup.Item>
+              
 
             </ListGroup>
           </Card>
         </Col>
 
         <Col>
-          
+        <Card.Header className="gh-goldenn-3">
+          <h4>Hostel Committee Members</h4>
+        </Card.Header>
+        <table className="committee-table-gh">
+          <thead>
+            <tr>
+              <th>Sr. No.</th>
+              <th>Course name</th>
+              <th>Course code</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Computer Aided Product Design and Development (IDI)</td>
+              <td>CIIIT/GCOE/001</td>
+              <td>3 months - (2 Hours per day - Mon to Fri)</td>
+            </tr>
+
+            <tr>
+              <td>2</td>
+              <td></td>
+              <td>Warden (Girl's Hostel)</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>3</td>
+              <td>Smt. Kanchan Khobragade</td>
+              <td>Assistant</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
          
 
         </Col>

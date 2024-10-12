@@ -19,59 +19,54 @@ const CIIITContact = () => {
           <Card className="left-nav-cntctciiit">
             <ListGroup variant="flush">
 
-              <ListGroup.Item className="left-nav-row-cntctciiit">
+            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-cntctciiit">
-                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
-                  Admission Form
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-cntctciiit">
-                <Link to="/centersunderciiit" className={location.pathname === "/centersunderciiit" ? "active-link" : ""}>
-                  Centers Under CIIIT
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-cntctciiit">
-                <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
-                  CIIIT Brochure
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-cntctciiit-01">
-                <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
-                  CIIIT Contact
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-cntctciiit">
-                <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
-                  CIIIT Leaflet
-                </Link>
-              </ListGroup.Item>
-
-              <ListGroup.Item className="left-nav-row-cntctciiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
                   Courses Details
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-cntctciiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/eligibilitycriteria" className={location.pathname === "/eligibilitycriteria" ? "active-link" : ""}>
                   Eligibility Criteria
                 </Link>
               </ListGroup.Item>
+              
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
+                  Admission Form
+                </Link>
+              </ListGroup.Item>   
 
-              <ListGroup.Item className="left-nav-row-cntctciiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
+                  CIIIT Brochure
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
+                  CIIIT Contact
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
+                <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
+                  CIIIT Leaflet
+                </Link>
+              </ListGroup.Item>
+
+              <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/trainingconducted" className={location.pathname === "/trainingconducted" ? "active-link" : ""}>
                   Training Conducted
                 </Link>
               </ListGroup.Item>
+
 
             </ListGroup>
           </Card>

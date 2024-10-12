@@ -27,6 +27,7 @@
     top: -20px;
     z-index: 2;
     width: 250px;
+    height: 300px;
     margin-left: 40px;
 }
 
@@ -57,7 +58,7 @@
 .left-nav-AbtCiiit {
     background-color: white;
     border-radius: 0;
-    height: 410px;
+    height: 300px;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
