@@ -38,13 +38,13 @@ const CIIITBrochure = () => {
               </ListGroup.Item>
               
               <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/admissionform" className={location.pathname === "/admissionform" ? "active-link" : ""}>
+                <Link to="https://www.gcoec.ac.in/gcoec/PDF/Adm-CIIIT-Form.pdf" className={location.pathname === "https://www.gcoec.ac.in/gcoec/PDF/Adm-CIIIT-Form.pdf" ? "active-link" : ""}>
                   Admission Form
                 </Link>
-              </ListGroup.Item>   
+              </ListGroup.Item>    
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/ciiitbrochure" className={location.pathname === "/ciiitbrochure" ? "active-link" : ""}>
+                <Link to="https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf" className={location.pathname === "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf" ? "active-link" : ""}>
                   CIIIT Brochure
                 </Link>
               </ListGroup.Item>
@@ -56,7 +56,7 @@ const CIIITBrochure = () => {
               </ListGroup.Item>
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/ciiitleaflet" className={location.pathname === "/ciiitleaflet" ? "active-link" : ""}>
+                <Link to="https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf" className={location.pathname === "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf" ? "active-link" : ""}>
                   CIIIT Leaflet
                 </Link>
               </ListGroup.Item>

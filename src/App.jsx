@@ -31,7 +31,6 @@ import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
 import AboutCIIIT from "./CIIITPage/AboutCIIIT";
 import AdmissionForm from "./CIIITPage/AdmissionForm";
-import CentersUnderCIIIT from "./CIIITPage/CentersUnderCIIIT";
 import CIIITBrochure from "./CIIITPage/CIIITBrochure";
 import CIIITContact from "./CIIITPage/CIIITContact";
 import CIIITLeaflet from "./CIIITPage/CIIITLeaflet";
@@ -72,7 +71,7 @@ function App() {
         { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
       ]
     },
-    {name: "CIIIT", subLinks: ["About CIIIT", "Centers Under CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact", "Training Conducted"]},
+    {name: "CIIIT", subLinks: ["About CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact", "Training Conducted"]},
 
     { name: "CONTACT" }
   ];
@@ -100,11 +99,11 @@ function App() {
                   <Route path="/committees" element={<Committees/>} />
                   <Route path="/studentsignup" element={<StudentSignUp/>} />
                   <Route path="/cse" element={<CSE />} />
+                  <Route path="/workshop" element={<Workshop />} />
                   <Route path="/studentlogin" element={<Studentlogin />} />
                   <Route path="/signupadmin" element={<SignupAdmin />} />
                   <Route path="/aboutCIIIT" element={<AboutCIIIT />} />
                   <Route path="/admissionform" element={<AdmissionForm />} />
-                  <Route path="/centersunderciiit" element={<CentersUnderCIIIT />} />
                   <Route path="/ciiitbrochure" element={<CIIITBrochure />} />
                   <Route path="/ciiitcontact" element={<CIIITContact />} />
                   <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />

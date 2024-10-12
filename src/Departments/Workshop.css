@@ -17,7 +17,8 @@
   
   .bg-golden-ws{
   background-color: #EADBC8;
-  padding: 0px;
+  padding: 2px;
+  color: #102C57;
   }
   
   .header-design-ws{
@@ -71,7 +72,7 @@
   color: black;
   }
   
-  .about-image-ws {
+  .ws-image {
     max-width: 100%; 
     display: block;
     margin: 0 auto; 
@@ -86,10 +87,10 @@
     text-align: justify;
   }
   
-  .side-heading-bottom-ws {
+  /* .side-heading-bottom-ws {
    margin-top: 18em;;
    margin-left: 10em;
-  }
+  } */
   
   
   .left-nav-row-ws{
@@ -100,10 +101,13 @@
   .left-nav-ws{
     background-color: white;
     border-radius: 0;
-    height: 200px;
-    width: 300px;
+    height: 460px;
+    width: 360px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
   }
   
-  
+.table-ws{
+  border-width: 2px;
+  border-color: #102C57;
+}
   
