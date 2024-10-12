@@ -1,3 +1,8 @@
+
+.p-0-w-100{
+    background-color: #FEFAF6;
+}
+
 .head-box-AbtCiiit {
     background-color: #102c57;
     height: 130px;
@@ -63,5 +68,45 @@
 .name-AbtCiiit-prog{
     text-align: left;
 }
+.ciiit-heading h1{
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+    color: #102C57;
+}
+.ciiit-heading{
+    width: 90%;
+    background-color: #eadbc8;
+    height: 55px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.ciiit-logo {
+    margin-top: 40px; 
+    margin-left: 200px;
 
+  }
+.ciiit-img {
+    width: 160px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  .ciiit-heading2 h2{
+    margin-left: 450px;
+    margin-top: -150px;
+    text-align: center;
 
+  }
+  .com-img{
+    margin-left: 110px;
+    margin-top: 30px;
+  }
+  .para{
+    width: 900px;
+    margin-left: 160px;
+  }
+  .ciiit-content{
+    margin-left: 140px;
+    margin-top: 40px;
+    font-weight: bold;
+  }
