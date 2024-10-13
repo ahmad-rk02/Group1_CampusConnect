@@ -63,11 +63,6 @@ const AboutCIIIT = () => {
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
-                <Link to="/trainingconducted" className={location.pathname === "/trainingconducted" ? "active-link" : ""}>
-                  Training Conducted
-                </Link>
-              </ListGroup.Item>
 
             </ListGroup>
           </Card>
