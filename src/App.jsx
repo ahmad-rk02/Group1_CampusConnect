@@ -29,6 +29,13 @@ import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
 import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
+import AboutCIIIT from "./CIIITPage/AboutCIIIT";
+import AdmissionForm from "./CIIITPage/AdmissionForm";
+import CIIITBrochure from "./CIIITPage/CIIITBrochure";
+import CIIITContact from "./CIIITPage/CIIITContact";
+import CIIITLeaflet from "./CIIITPage/CIIITLeaflet";
+import CoursesDetails from "./CIIITPage/CoursesDetails";
+import EligibilityCriteria from "./CIIITPage/EligibilityCriteria";
 import ForgetAdmin from "./Administration/ForgetAdmin";
 import Workshop from './Departments/Workshop';
 import Studentprofile from './Administration/Studentprofile';
@@ -48,10 +55,12 @@ function App() {
       name: "ADMINISTRATION",
       subLinks: ["Principal & HOD", "Student Section", "Office", "Committees", "Tenders", "Grievance Form"]
     },
+
     {
       name: "PROGRAMMES",
       subLinks: ["UG (B.Tech)", "PG (M.Tech)", "Ph.D"]
     },
+    { name: "CIIIT", subLinks: ["About CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"] },
     {
       name: "PAYMENTS",
       subLinks: [
@@ -63,6 +72,7 @@ function App() {
       name: "HOSTEL",
       subLinks: ["Boys Hostel", "Girls Hostel"]
     },
+    
     {
       name: "OTHERS",
       subLinks: [
@@ -73,6 +83,7 @@ function App() {
         "Resources"
       ]
     },
+
     { name: "CONTACT" }
   ];
 
@@ -107,6 +118,14 @@ function App() {
             <Route path="/forgetadmin" element={<ForgetAdmin />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/studentprofile" element={<Studentprofile />} />
+            <Route path="/aboutCIIIT" element={<AboutCIIIT />} />
+            <Route path="/admissionform" element={<AdmissionForm />} />
+            <Route path="/ciiitbrochure" element={<CIIITBrochure />} />
+            <Route path="/ciiitcontact" element={<CIIITContact />} />
+            <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />
+            <Route path="/coursesdetails" element={<CoursesDetails />} />
+            <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
+
           </Routes>
         </div>
       </Router>

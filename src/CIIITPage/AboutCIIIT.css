@@ -1,0 +1,113 @@
+
+.p-0-w-100{
+    background-color: #FEFAF6;
+}
+
+.head-box-AbtCiiit {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-AbtCiiit h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+    color: white;
+}
+
+.left-index-AbtCiiit {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-AbtCiiit {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    height: 300px;
+    margin-left: 40px;
+}
+
+.left-sidebar-AbtCiiit .card {
+    text-align: center;
+}
+
+.left-sidebar-AbtCiiit .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-AbtCiiit a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-AbtCiiit {
+    background-color: white;
+    border-radius: 0;
+    height: 360px;
+    width: 320px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-AbtCiiit{
+    height: 45px;
+  }
+
+.name-AbtCiiit-prog{
+    text-align: left;
+}
+.ciiit-heading h1{
+    text-align: left;
+    padding-left: 40px;
+    padding-top: 5px;
+    color: #102C57;
+}
+.ciiit-heading{
+    width: 90%;
+    background-color: #eadbc8;
+    height: 55px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 40px;
+}
+.ciiit-logo {
+    margin-top: 40px; 
+    margin-left: 200px;
+
+  }
+.ciiit-img {
+    width: 160px; /* Adjust the size of the logo */
+    height: auto;
+  }
+  .ciiit-heading2 h2{
+    margin-left: 450px;
+    margin-top: -150px;
+    text-align: center;
+
+  }
+  .com-img{
+    margin-left: 110px;
+    margin-top: 30px;
+  }
+  .para{
+    width: 900px;
+    margin-left: 160px;
+  }
+  .ciiit-content{
+    margin-left: 140px;
+    margin-top: 40px;
+    font-weight: bold;
+  }

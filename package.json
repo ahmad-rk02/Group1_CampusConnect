@@ -25,7 +25,7 @@
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
-    "react-router-dom": "^6.26.1",
+    "react-router-dom": "^6.26.2",
     "react-slick": "^0.30.2",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1"
@@ -42,5 +42,10 @@
     "gh-pages": "^6.1.1",
     "globals": "^15.9.0",
     "vite": "^5.4.7"
-  }
+  },
+  "description": "This project aims to enhance the college website by integrating a smart chatbot to help students easily find important information and get quick answers to their questions. Many students struggle to locate details about exams, courses, and administrative processes on the current website, leading to frustration and wasted time. By developing a user-friendly website combined with an AI-powered chatbot, this solution will provide instant support and improve the overall efficiency of student interactions with the college. The chatbot will be able to answer common queries, guide students through various processes, and ensure they have quick and easy access to the information they need.",
+  "main": "eslint.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

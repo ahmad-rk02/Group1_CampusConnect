@@ -1,0 +1,100 @@
+.head-box-coursesdetls {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-coursesdetls h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+    color: white;
+}
+.left-index-coursesdetls {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-coursesdetls {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-coursesdetls .card {
+    text-align: center;
+}
+
+.left-sidebar-coursesdetls .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-coursesdetls a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-coursesdetls {
+    background-color: white;
+    border-radius: 0;
+    height: 360px;
+    width: 320px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-coursesdetls{
+    height: 45px;
+  }
+
+.name-coursesdetls-prog{
+    text-align: left;
+}
+.c-para{
+    width: 900px;
+    margin-left: 120px;
+    margin-top: 20px;
+}
+.course-img1{
+    width: 400px;
+    height: 200px;
+    margin-left: 140px;
+}
+.course-img2{
+    width: 400px;
+    height: 200px;
+    margin-left: 600px;
+    margin-top: -240px;
+}
+.feature-ciiit{
+    margin-left: 120px;
+}
+.ciiit-hed h4{
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 5px;
+    color: rgb(249, 243, 208);
+}
+.ciiit-hed{
+    width: 55%;
+    background-color: #102c57;
+    height: 40px;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 40px;
+    border-radius: 16px;
+}
+
+

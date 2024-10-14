@@ -70,7 +70,14 @@ function Navbar({ imageSrcPath, navItems }) {
         "Payment by the Student": "https://eazypay.icicibank.com/eazypayLink?P1=mBO7cjSAmo9OXu/JIqWW9w=",
         "Payment for Testing and Consultancy": "https://eazypay.icicibank.com/eazypayLink?P1=QgBSGQ03E9jZBrZgASNtLQ=",
         "Payment for Ex Student Verification": "https://eazypay.icicibank.com/eazypayLink?P1=0Mu4L8f1DKJifFJeYNOYWA=",
-        "Resources": "https://alumni-gcoec.vercel.app/"
+        "Resources": "https://alumni-gcoec.vercel.app/",
+        "About CIIIT": "/aboutciiit",
+        "Admission Form": "https://www.gcoec.ac.in/gcoec/PDF/Adm-CIIIT-Form.pdf",
+        "CIIIT Brochure": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf",
+        "CIIIT Contact": "/ciiitcontact",
+        "CIIIT Leaflet": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf",
+        "Courses Details": "/coursesdetails",
+        "Eligibility Criteria": "/eligibilitycriteria",
       };
 
       if (typeof subLink === "string") {

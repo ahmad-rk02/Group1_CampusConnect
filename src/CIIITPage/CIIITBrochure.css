@@ -1,0 +1,67 @@
+.head-box-brochureciiit {
+    background-color: #102c57;
+    height: 130px;
+}
+
+.head-box-brochureciiit h1 {
+    font-weight: bold;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 100px;
+    color: white;
+}
+
+.left-index-brochureciiit {
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.left-sidebar-brochureciiit {
+    position: relative;
+    top: -20px;
+    z-index: 2;
+    width: 250px;
+    margin-left: 40px;
+}
+
+.left-sidebar-brochureciiit .card {
+    text-align: center;
+}
+
+.left-sidebar-brochureciiit .list-group-item {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.footer-spacing {
+    margin-top: 80px;
+}
+
+.active-link {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.left-sidebar-brochureciiit a {
+    text-decoration: none;
+    color: black;
+}
+
+
+.left-nav-brochureciiit {
+    background-color: white;
+    border-radius: 0;
+    height: 360px;
+    width: 320px;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+.left-nav-row-brochureciiit{
+    height: 45px;
+  }
+
+.name-brochureciiit-prog{
+    text-align: left;
+}
+
+
