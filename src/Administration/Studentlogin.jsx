@@ -64,7 +64,12 @@ const LoginForm = () => {
       });
   
       if (response.status === 200) {
-        navigate('/grievanceform');
+        const token = response.data.token;
+
+      // Save the token in local storage
+      localStorage.setItem('authToken', token);
+
+        navigate('/studentprofile');
       }
     } catch (error) {
       console.error('Error during login:', error);

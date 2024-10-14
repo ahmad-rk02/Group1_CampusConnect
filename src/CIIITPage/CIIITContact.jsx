@@ -66,9 +66,21 @@ const CIIITContact = () => {
         </Col>
 
         <Col>
-          
+        <div className='ciiit-heading-contact'>
+        <h1> CIIIT contact</h1>
+      </div>  
+      <h3 className='head-ciiit'>CENTER FOR INVENTION, INNOVATION,<br/> INCUBATION & TRAINING (CIIIT)</h3>
+         <div className='ciiit-contact'>
+          <h4>  Chief Coordinator :</h4>
+          <p>  Dr. Ganesh R. Chavhan<br/>  Assistant Professor, Department of Mechanical Engineering,<br/>  Email: ganeshchavhan@gcoec.ac.in | Mobile: +919765658597</p>
+         <h4>  Program Director :</h4>
+         <p>  Dr. Arun Kohli<br/>  Assistant Professor, Department of Mechanical Engineering,<br/>  Email: arun.Kohli@tatatechnologies.com| Mobile: +919028745918</p>
+         <h4>  CIIIT Office :</h4>
+         <p>  CENTER FOR INVENTION, INNOVATION, INCUBATION & TRAINING (CIIIT)<br/>  1st Floor, Academic Main Building,<br/>  Government College of Engineering Chandrapur. M.S.<br/>  Ph: 07172-227334 Fax: 07172-227664<br/>  E-mail :- chiefcoordinatorciiit@gcoec.ac.in<br/>  E-mail (Principal):- principal.gcoechandrapur@dtemaharashtra.gov.in<br/>  Institute Website: - www.gcoec.ac.in</p>
+         <h4>  Connectivity :</h4>
+         <p>  Road on Ballarshah Rd 264<br/>  Rail: Chandrapur 5km<br/>  Email: Nearest Airport: Nagpur 164km (3 hrs)</p>
          
-
+         </div>
         </Col>
       </Row>
     </Container>
