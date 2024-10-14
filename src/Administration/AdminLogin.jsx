@@ -5,22 +5,24 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './AdminLogin.css';
 import Gec from '../assets/Gec.png';
+import axios from 'axios';
 
 const LoginForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    adminDTE: '',
+    dte: '',
     password: '',
   });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); // Loading state
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === 'adminDTE' && /[^0-9]/.test(value)) {
+    if (name === 'dte' && /[^0-9]/.test(value)) {
       setError('DTE Number should contain only numbers.');
       return;
     } else {
@@ -33,41 +35,47 @@ const LoginForm = () => {
     }));
   };
 
-  // Mock credentials for testing
-  const mockCredentials = {
-    adminDTE: '2021033700996804',
-    password: 'Password@123',
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!formData.adminDTE && !formData.password) {
-      setError('DTE number and password is required.');
-      return;
-    }
-
-    if (formData.adminDTE=='') {
-      setError('PRN is required.');
-      return;
-    }
-
-    if (formData.password=='') {
-      setError('Password is required.');
-      return;
-    }
-
-    if (formData.adminDTE === mockCredentials.adminDTE && formData.password === mockCredentials.password) {
-      navigate('/home');
-    } else {
-      setError('Invalid DTE number or password. Please try again.');
-    }
-  };
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+  
+    let errorMessages = []; // Array to hold error messages
+  
+    if (formData.dte=='') {
+      setError('DTE is required.');
+      return;
+    }
+  
+    if (formData.password=='') {
+      setError('Password is required.');
+      return;
+    }
+    // If there are any error messages, display them
+    if (errorMessages.length > 0) {
+      setError(errorMessages.join(' ')); // Join messages into a single string
+      return;
+    }
+  
+    setIsLoading(true); // Set loading to true
+    try {
+      const response = await axios.post('http://localhost:5000/api/users/login', {
+        dte: formData.dte,
+        password: formData.password,
+      });
+  
+      if (response.status === 200) {
+        navigate('/studentprofile');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      setError(error.response?.data?.message || 'Invalid Credentials');
+    } finally {
+      setIsLoading(false); // Set loading back to false
+    }
+  };
   return (
     <Container fluid className="p-0 w-100">
       <Row className='head-box-loginA'>
@@ -131,8 +139,8 @@ const LoginForm = () => {
                 <Form.Group controlId="AadminDTE" className="mb-3">
                   <Form.Control
                     type="text"
-                    name="adminDTE"
-                    value={formData.adminDTE}
+                    name="dte"
+                    value={formData.dte}
                     onChange={handleChange}
                     placeholder="DTE number"
                     className="login-input"
@@ -163,8 +171,8 @@ const LoginForm = () => {
                   </span>
                 </Form.Group>
 
-                <Button type="submit" className="loginA-button">
-                  LOGIN
+                <Button type="submit" className="login-button w-100" disabled={isLoading}>
+                  {isLoading ? 'Logging in...' : 'LOGIN'}
                 </Button>
 
                 <div className="loginA-links">

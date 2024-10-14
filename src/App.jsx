@@ -17,12 +17,12 @@ import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
-import Footer from './pages/Footer'
+import Footer from './pages/Footer';
 import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
 import Girlshostel from './hostel/Girlshostel';
 import Login from './Administration/Login';
-import AdminLogin from './Administration/AdminLogin'
+import AdminLogin from './Administration/AdminLogin';
 import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
@@ -31,6 +31,7 @@ import Forgotpassword from './Administration/Forgotpassword';
 import Forgotpassword2 from './Administration/Forgotpassword2';
 import ForgetAdmin from "./Administration/ForgetAdmin";
 import Workshop from './Departments/Workshop';
+import Studentprofile from './Administration/Studentprofile';
 
 function App() {
   const navItems = [
@@ -51,68 +52,69 @@ function App() {
       name: "PROGRAMMES",
       subLinks: ["UG (B.Tech)", "PG (M.Tech)", "Ph.D"]
     },
-    { name: "PAYMENTS" },
+    {
+      name: "PAYMENTS",
+      subLinks: [
+        { name: "Online Payment (SBI)", subLinks: ["Admission/Exam/CIIIT fee", "Academic Verification/Security Deposit", "Tender/Testing", "Hostel Fee"] },
+        { name: "Payment Gateway", subLinks: ["Payment by the Student", "Payment for Testing and Consultancy", "Payment for Ex-Student Verification"] }
+      ]
+    },
+    {
+      name: "HOSTEL",
+      subLinks: ["Boys Hostel", "Girls Hostel"]
+    },
     {
       name: "OTHERS",
       subLinks: [
         "Committees",
         "Training & Placements",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
-        "Alumini",
-        "Resources",
-        { name: "Hostel", subLinks: ["Boys Hostel", "Girls Hostel"] }
+        "Alumni",
+        "Resources"
       ]
     },
     { name: "CONTACT" }
   ];
-  
+
   return (
-          <>
-            <Router>
-              <Navbar
-                imageSrcPath={imagePath}
-                navItems={navItems}
-              />
-              <div className="container-fluid container m-0 p-0">
-                <Routes>
-                  <Route path="*" element={<Navigate to="/" />} />
-                  <Route path="/" element={<Home />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/aboutvm" element={<AboutVM />} />
-                  <Route path="/aboutinstitute" element={<AboutInstitute />} />
-                  <Route path="/principaldesk" element={<PrincipalDesk />} />
-                  <Route path="/ug" element={<UG />} />
-                  <Route path="/phd" element={<PhD />} />
-                  <Route path="/pg" element={<PG />} />
-                  <Route path="/grievanceform" element={<GrievanceForm />} />
-                  <Route path="/tenders" element={<Tenders/>} />
-                  <Route path="/committees" element={<Committees/>} />
-                  <Route path="/studentsignup" element={<StudentSignUp/>} />
-                  <Route path="/cse" element={<CSE />} />
-                  <Route path="/studentlogin" element={<Studentlogin />} />
-                  <Route path="/signupadmin" element={<SignupAdmin />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/contact" element={<Contact />} />
-                  <Route path="/girlshostel" element={<Girlshostel/>} />
-                  <Route path="/boyshostel" element={<Boyshostel/>} />
-                  <Route path="/adminlogin" element={<AdminLogin/>} />
-                  <Route path="/forgotpassword" element={<Forgotpassword/>} />
-                  <Route path="/forgotpassword2" element={<Forgotpassword2/>} />
-                  <Route path="/forgetadmin" element={<ForgetAdmin/>} />
-                </Routes>
-              </div>
-            </Router>
-            <div className='footer-spacing'>
-              <Footer />
-    </div>
-          </>
-          );
+    <>
+      <Router basename="/Group1_CampusConnect">
+        <Navbar imageSrcPath={imagePath} navItems={navItems} />
+        <div className="container-fluid container m-0 p-0">
+          <Routes>
+            <Route path="*" element={<Navigate to="/" />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutvm" element={<AboutVM />} />
+            <Route path="/aboutinstitute" element={<AboutInstitute />} />
+            <Route path="/principaldesk" element={<PrincipalDesk />} />
+            <Route path="/ug" element={<UG />} />
+            <Route path="/phd" element={<PhD />} />
+            <Route path="/pg" element={<PG />} />
+            <Route path="/grievanceform" element={<GrievanceForm />} />
+            <Route path="/tenders" element={<Tenders />} />
+            <Route path="/committees" element={<Committees />} />
+            <Route path="/studentsignup" element={<StudentSignUp />} />
+            <Route path="/cse" element={<CSE />} />
+            <Route path="/studentlogin" element={<Studentlogin />} />
+            <Route path="/signupadmin" element={<SignupAdmin />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/girlshostel" element={<Girlshostel />} />
+            <Route path="/boyshostel" element={<Boyshostel />} />
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/forgotpassword" element={<Forgotpassword />} />
+            <Route path="/forgotpassword2" element={<Forgotpassword2 />} />
+            <Route path="/forgetadmin" element={<ForgetAdmin />} />
+            <Route path="/workshop" element={<Workshop />} />
+            <Route path="/studentprofile" element={<Studentprofile />} />
+          </Routes>
+        </div>
+      </Router>
+      <div className='footer-spacing'>
+        <Footer />
+      </div>
+    </>
+  );
 }
-
-        
-
-
-  
-
 
 export default App;

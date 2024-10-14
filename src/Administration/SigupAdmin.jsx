@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './SignupAdmin.css';
 import Gec from '../assets/Gec.png';
 
 const SignupAdmin = () => {
+  const location = useLocation(); // Get location for active link checks
+  const navigate = useNavigate(); // Initialize navigate
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -90,20 +93,56 @@ const SignupAdmin = () => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (validateForm()) {
-      alert('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({
-        fullname: '',
-        email: '',
-        dte: '',
-        committee: '',
-        password: '',
-        confirmPassword: '',
-      });
-      setErrors({});
+      try {
+        // Sending POST request to the server
+        const response = await axios.post('http://localhost:5000/api/users/register', {
+          fullname: formData.fullname,
+          email: formData.email,
+          dte: formData.dte,
+          committee:formData.committee,
+          password: formData.password,   // Include password in the request
+        });
+
+        console.log('Response:', response.data);
+        setSubmitted(true);
+        alert('Registration successful!');
+
+        // Reset the form
+        setFormData({
+          fullname: '',
+          email: '',
+          dte: '',
+          committee: '',
+          password: '',
+          confirmPassword: '',
+        });
+        setErrors({});
+
+        // Redirect to StudentForm upon successful registration
+        navigate('/adminlogin');
+        
+      } catch (error) {
+        if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
+          alert('User already exists. Please try logging in.');
+        // Reset the form
+        setFormData({
+          fullname: '',
+          email: '',
+          dte: '',
+          committee: '',
+          password: '',
+          confirmPassword: '',
+        });
+        } else {
+          console.error('There was an error registering the user:', error);
+          console.log(error.message);
+        }
+      }
     } else {
       setSubmitted(false);
     }

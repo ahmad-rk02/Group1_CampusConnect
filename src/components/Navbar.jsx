@@ -7,8 +7,8 @@ function Navbar({ imageSrcPath, navItems }) {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
-  const handleSearch = (x) => {
-    x.preventDefault();
+  const handleSearch = (event) => {
+    event.preventDefault();
     
     // Simple search logic
     const lowerQuery = query.toLowerCase();
@@ -22,7 +22,7 @@ function Navbar({ imageSrcPath, navItems }) {
       phd: '/phd',
       cse: '/cse',
       contact: '/contact',
-      Grievance:'/login'
+      grievance: '/login'
     };
 
     if (routes[lowerQuery]) {
@@ -59,13 +59,40 @@ function Navbar({ imageSrcPath, navItems }) {
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
         "Grievance Form": "/login",
-        "Tenders" : "/tenders",
+        "Tenders": "/tenders",
         "Girls Hostel": "/girlshostel",
         "Boys Hostel": "/boyshostel",
         "Committees": "/committees",
+        "Admission/Exam/CIIIT fee": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2976360",
+        "Academic Verification/Security Deposit": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2976360",
+        "Tender/Testing": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2976360",
+        "Hostel Fee": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2976360",
+        "Payment by the Student": "https://eazypay.icicibank.com/eazypayLink?P1=mBO7cjSAmo9OXu/JIqWW9w=",
+        "Payment for Testing and Consultancy": "https://eazypay.icicibank.com/eazypayLink?P1=QgBSGQ03E9jZBrZgASNtLQ=",
+        "Payment for Ex Student Verification": "https://eazypay.icicibank.com/eazypayLink?P1=0Mu4L8f1DKJifFJeYNOYWA=",
+        "Resources": "https://alumni-gcoec.vercel.app/"
       };
 
       if (typeof subLink === "string") {
+        const isExternal = routeMap[subLink] && (routeMap[subLink].startsWith("http://") || routeMap[subLink].startsWith("https://"));
+        
+        // Handle external links
+        if (isExternal) {
+          return (
+            <li key={subIndex}>
+              <a
+                href={routeMap[subLink]}
+                className="dropdown-item"
+                target="_blank"  // Open link in a new tab
+                rel="noopener noreferrer"  // Security for opening new tab
+              >
+                {subLink}
+              </a>
+            </li>
+          );
+        }
+
+        // Handle internal links
         return (
           <li key={subIndex}>
             <Link to={routeMap[subLink] || `/${subLink.toLowerCase().replace(/ /g, '-')}`} className="dropdown-item">
@@ -160,7 +187,7 @@ function Navbar({ imageSrcPath, navItems }) {
               placeholder="Search"
               aria-label="Search"
               value={query}
-              onChange={(x) => setQuery(x.target.value)}
+              onChange={(event) => setQuery(event.target.value)}
             />
             <button className="btn btn-outline-success" type="submit">
               Search
