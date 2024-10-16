@@ -1,25 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Row, Col, Spinner, Alert, Button, Form, Modal } from 'react-bootstrap';
-import useAuth from '../hooks/usestudentAuth';
+import useAdminAuth from '../hooks/useAdminAuth'; // Use the corrected hook for admin authentication
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
-
-const Profile = () => {
+const AdminProfile = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated, loading, error, logout } = useAuth();
+  const { user, isAuthenticated, loading, error, logout } = useAdminAuth();
 
   // State management for modal and data
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
-  const [formData, setFormData] = useState({}); 
-  const [updateError, setUpdateError] = useState(null); 
+  const [formData, setFormData] = useState({}); // Pre-fill with admin data
+  const [updateError, setUpdateError] = useState(null); // Error state for update
 
   // Redirect to login if not authenticated
   useEffect(() => {
     if (!isAuthenticated && !loading) {
-      navigate('/login');
+      navigate('/login'); // Redirect to login
     }
   }, [isAuthenticated, loading, navigate]);
 
@@ -36,14 +35,14 @@ const Profile = () => {
     setUpdateLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.put('http://localhost:5000/api/users/student/update', formData, {
+      const response = await axios.put('http://localhost:5000/api/users/admin/update', formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-     
-      Object.assign(user, response.data.updatedUser); // Update user data
-      setShowUpdateModal(false); // Close the modal after successful updat
+ 
+      Object.assign(user, response.data.updatedUser); // Update admin data
+      setShowUpdateModal(false); 
     } catch (err) {
       setUpdateError(err.response?.data?.message || 'Failed to update profile');
     } finally {
@@ -59,7 +58,7 @@ const Profile = () => {
     setDeleteLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      await axios.delete('http://localhost:5000/api/users/student/delete', {
+      await axios.delete('http://localhost:5000/api/users/admin/delete', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,16 +72,14 @@ const Profile = () => {
     }
   };
 
-  // Populate form data with user information
+  // Populate form data with admin information
   useEffect(() => {
     if (user) {
       setFormData({
         fullname: user.fullname,
         email: user.email,
-        phone: user.phone,
-        prnNumber: user.prnNumber,
-        semester: user.semester,
-        branch: user.branch,
+        dte: user.dte,
+        committee: user.committee,
       });
     }
   }, [user]);
@@ -113,7 +110,7 @@ const Profile = () => {
           <Card className="profile-card mt-4 shadow-lg">
             <Card.Body className='bg-white'>
               <div className="profile-header">
-                <Card.Title className="profile-title">User Profile</Card.Title>
+                <Card.Title className="profile-title">Admin Profile</Card.Title>
                 <Button className="logout-btn" variant="danger" onClick={logout}>
                   Logout
                 </Button>
@@ -121,10 +118,8 @@ const Profile = () => {
               <hr className="profile-divider " />
               <Card.Text className='bg-white'><strong>Full Name:</strong> {user.fullname}</Card.Text>
               <Card.Text className='bg-white'><strong>Email:</strong> {user.email}</Card.Text>
-              <Card.Text className='bg-white'><strong>Phone:</strong> {user.phone}</Card.Text>
-              <Card.Text className='bg-white'><strong>PRN Number:</strong> {user.prnNumber}</Card.Text>
-              <Card.Text className='bg-white'><strong>Semester:</strong> {user.semester}</Card.Text>
-              <Card.Text className='bg-white'><strong>Branch:</strong> {user.branch}</Card.Text>
+              <Card.Text className='bg-white'><strong>DTE:</strong> {user.dte}</Card.Text>
+              <Card.Text className='bg-white'><strong>Committee:</strong> {user.committee}</Card.Text>
 
               {/* Button to open the update modal */}
               <Button
@@ -172,53 +167,30 @@ const Profile = () => {
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="formPhone" className="mt-3">
-                      <Form.Label>Phone</Form.Label>
+                    <Form.Group controlId="formDTE" className="mt-3">
+                      <Form.Label>DTE</Form.Label>
                       <Form.Control
                         type="text"
-                        name="phone"
-                        value={formData.phone}
+                        name="dte"
+                        value={formData.dte}
                         onChange={handleChange}
                       />
                     </Form.Group>
 
-                    <Form.Group controlId="formPRN" className="mt-3">
-                      <Form.Label>PRN Number</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="prnNumber"
-                        value={formData.prnNumber}
-                        onChange={handleChange}
-                      />
-                    </Form.Group>
-
-                    <Form.Group controlId="formSemester" className="mt-3">
-                      <Form.Label>Semester</Form.Label>
+                    <Form.Group controlId="formCommittee" className="mt-3">
+                      <Form.Label>Committee</Form.Label>
                       <Form.Select
-                        name="semester"
-                        value={formData.semester}
+                        name="committee"
+                        value={formData.committee}
                         onChange={handleChange}
                       >
-                    <option value="">-- Select Semester --</option>
-                    <option value="First">First</option>
-                    <option value="Second">Second</option>
-                    <option value="Third">Third</option>
-                    <option value="Fourth">Fourth</option>
-                    <option value="Fifth">Fifth</option>
-                    <option value="Sixth">Sixth</option>
-                    <option value="Seventh">Seventh</option>
-                    <option value="Eighth">Eighth</option>
+                    <option value="">Select committee</option>
+                    <option value="Anti Ragging Committee">Anti Ragging Committee</option>
+                    <option value="Grievance Redressal Committee">Grievance Redressal Committee</option>
+                    <option value="Internal Complaint Committee">Internal Complaint Committee</option>
+                    <option value="SC/ST, Women/Girls Complaint Committee">SC/ST, Women/Girls Complaint Committee</option>
+                    <option value="Online Grievance Form">Online Grievance Form</option>
                       </Form.Select>
-                    </Form.Group>
-
-                    <Form.Group controlId="formBranch" className="mt-3">
-                      <Form.Label>Branch</Form.Label>
-                      <Form.Control
-                        type="text"
-                        name="branch"
-                        value={formData.branch}
-                        onChange={handleChange}
-                      />
                     </Form.Group>
 
                     {updateError && <Alert variant="danger" className="mt-3">{updateError}</Alert>}
@@ -233,15 +205,10 @@ const Profile = () => {
                     onClick={handleUpdate}
                     disabled={updateLoading}
                   >
-                    {updateLoading ? 'Updating...' : 'Update Profile'}
+                    {updateLoading ? 'Updating...' : 'Update'}
                   </Button>
                 </Modal.Footer>
               </Modal>
-
-              {/* Add button to navigate to Grievance Form */}
-              <Button  className="mt-3 bg-dark" onClick={() => navigate('/grievanceform')}>
-                Go to Grievance Form
-              </Button>
             </Card.Body>
           </Card>
         </Col>
@@ -250,4 +217,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default AdminProfile;

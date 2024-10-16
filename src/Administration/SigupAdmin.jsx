@@ -100,11 +100,11 @@ const SignupAdmin = () => {
     if (validateForm()) {
       try {
         // Sending POST request to the server
-        const response = await axios.post('http://localhost:5000/api/users/register', {
+        const response = await axios.post('http://localhost:5000/api/users/admin/signup', {
           fullname: formData.fullname,
           email: formData.email,
           dte: formData.dte,
-          committee:formData.committee,
+          committee: formData.committee,
           password: formData.password,   // Include password in the request
         });
 
@@ -125,19 +125,19 @@ const SignupAdmin = () => {
 
         // Redirect to StudentForm upon successful registration
         navigate('/adminlogin');
-        
+
       } catch (error) {
         if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
           alert('User already exists. Please try logging in.');
-        // Reset the form
-        setFormData({
-          fullname: '',
-          email: '',
-          dte: '',
-          committee: '',
-          password: '',
-          confirmPassword: '',
-        });
+          // Reset the form
+          setFormData({
+            fullname: '',
+            email: '',
+            dte: '',
+            committee: '',
+            password: '',
+            confirmPassword: '',
+          });
         } else {
           console.error('There was an error registering the user:', error);
           console.log(error.message);
@@ -242,7 +242,6 @@ const SignupAdmin = () => {
                   />
                   {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </Form.Group>
-
                 <Form.Group controlId="formCommittee" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Committee</Form.Label>
                   <Form.Select
@@ -252,14 +251,15 @@ const SignupAdmin = () => {
                     className={`input-box-Admin-signup ${errors.committee && 'is-invalid'}`}
                   >
                     <option value="">Select committee</option>
-                    <option value="1">Anti Ragging Committee</option>
-                    <option value="2">Grievance Redressal Committee</option>
-                    <option value="3">Internal Complaint Committee</option>
-                    <option value="4">SC/ST, Women/Girls Complaint Committee</option>
-                    <option value="5">Online Grievance Form</option>
+                    <option value="Anti Ragging Committee">Anti Ragging Committee</option>
+                    <option value="Grievance Redressal Committee">Grievance Redressal Committee</option>
+                    <option value="Internal Complaint Committee">Internal Complaint Committee</option>
+                    <option value="SC/ST, Women/Girls Complaint Committee">SC/ST, Women/Girls Complaint Committee</option>
+                    <option value="Online Grievance Form">Online Grievance Form</option>
                   </Form.Select>
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
+
 
                 <Form.Group controlId="formDTE" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>

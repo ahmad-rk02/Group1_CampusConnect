@@ -19,7 +19,7 @@ const useAuth = () => {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://localhost:5000/api/users/profile', {
+        const response = await axios.get('http://localhost:5000/api/users/student/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -43,6 +43,7 @@ const useAuth = () => {
     localStorage.removeItem('authToken');
     setUser(null);
     setIsAuthenticated(false);
+    alert("Log out successfully");
     navigate('/login'); // Redirect to login page after logout
   };
 
@@ -50,3 +51,6 @@ const useAuth = () => {
 };
 
 export default useAuth;
+
+
+
