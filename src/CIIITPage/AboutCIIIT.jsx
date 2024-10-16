@@ -47,19 +47,19 @@ const AboutCIIIT = () => {
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf" className={location.pathname === "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf" ? "active-link" : ""}>
-                  CIIIT Brochure
+                  Brochure
                 </Link>
               </ListGroup.Item>
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
-                  CIIIT Contact
+                  Contact
                 </Link>
               </ListGroup.Item>
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf" className={location.pathname === "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf" ? "active-link" : ""}>
-                  CIIIT Leaflet
+                  Leaflet
                 </Link>
               </ListGroup.Item>
 

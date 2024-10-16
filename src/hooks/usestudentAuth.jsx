@@ -43,6 +43,7 @@ const useAuth = () => {
     localStorage.removeItem('authToken');
     setUser(null);
     setIsAuthenticated(false);
+    alert("Log out successfully");
     navigate('/login'); // Redirect to login page after logout
   };
 

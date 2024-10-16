@@ -46,6 +46,7 @@ const useAdminAuth = () => {
     localStorage.removeItem('authToken'); // Clear token from local storage
     setUser(null); // Reset admin data
     setIsAuthenticated(false); 
+    alert("Log out successfully");
     navigate('/login'); 
   };
 
