@@ -112,3 +112,7 @@
   border-color: #102C57;
 }
   
+.three-columns{
+  column-count: 3; 
+  column-gap: 20px;
+}

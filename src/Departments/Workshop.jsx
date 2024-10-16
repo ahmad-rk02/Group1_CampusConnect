@@ -3,6 +3,11 @@ import { Container, Row, Col, Card, ListGroup, Table } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './Workshop.css'
 import WorkshopImage from '../assets/workshop.png';
+import TurningShop from '../assets/Machine-Turning_Shop.jpg';
+import WeldingShop from '../assets/Welding-shop.jpg'
+import FittingShop from '../assets/Fitting-shop.jpg'
+import CarpentryShop from '../assets/Carpentry-shop.jpg'
+import SmithyShop from '../assets/Smithy-shop.jpg'
 
 
 const Workshop = () => {
@@ -110,7 +115,7 @@ const Workshop = () => {
                   <Col md={12} className=" p-0 text-center mb-3">
                     <img
                       src={WorkshopImage}
-                      alt="Institute"
+                      alt="workshopimage"
                       className="ws-image"
                     />
                   </Col>
@@ -158,10 +163,10 @@ const Workshop = () => {
                       <h4>Infrastructure</h4>
                     </Card.Header>
 
-                    <h5 style={{ color: '#102c57', marginTop: '30px' }}>Brief Description :</h5>
+                    <h4 style={{ color: '#102c57', marginTop: '30px' }}>Brief Description :</h4>
 
                     <Table style={{ marginTop: '40px' }} className='table-ws'>
-              
+
                       <tbody className='table-ws'>
                         <tr>
                           <td>Number of shops</td>
@@ -197,6 +202,308 @@ const Workshop = () => {
                     <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '40px' }}>
                       <h4>Shop Details</h4>
                     </Card.Header>
+
+                    <div className='shop-details-content-01'>
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Machine/Turning Shop</strong></h4>
+
+                      <img
+                        src={TurningShop}
+                        alt="TurningShop"
+                        className="ws-imagesss"
+                        style={{ width: '850px', height: '350px' }}
+                      />
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '20px' }}>Major Equipments :</h4>
+
+                      <ul class="three-columns">
+                        <li>
+                          Lathe machine
+                        </li>
+                        <li>
+                          Milling machine
+                        </li>
+                        <li>
+                          Radial drilling machine
+                        </li>
+                        <li>
+                          Shaping machine
+                        </li>
+                        <li>
+                          Lathe machine
+                        </li>
+                        <li>
+                          Shaping machine
+                        </li>
+                        <li>
+                          Milling tool dynamometer
+                        </li>
+                        <li>
+                          Milling tool Griding dynamometer
+                        </li>
+                        <li>
+                          Drill Tool dynamometer
+                        </li>
+                        <li>
+                          Lathe tool dynamometer
+                        </li>
+                        <li>
+                          P.S.G Lathe
+                        </li>
+                        <li>
+                          Shaping machine
+                        </li>
+                        <li>
+                          Universal cutter & Tool grinder
+                        </li>
+                        <li>
+                          Central lathe
+                        </li>
+                        <li>
+                          Plasma machine
+                        </li>
+                        <li>
+                          Spark erosion
+                        </li>
+                        <li>
+                          Milling machine
+                        </li>
+                        <li>
+                          All geared central lathe machine
+                        </li>
+                        <li>
+                          Heavy duty shaping machine
+                        </li>
+                        <li>
+                          Milling machine
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div className='shop-details-content-02'>
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Welding Shop</strong></h4>
+
+                      <img
+                        src={WeldingShop}
+                        alt="weldingShop"
+                        className="ws-imagesss"
+                        style={{ width: '850px', height: '350px' }}
+                      />
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '20px' }}>Major Equipments :</h4>
+
+                      <ul class="three-columns">
+                        <li>
+                        Welding Transformer 150 Amp
+                        </li>
+                        <li>
+                        Welding Transformer Air Cool
+                        </li>
+                        <li>
+                        Bench drilling Machine
+                        </li>
+                        <li>
+                        Heavy Duty Grinder With Stand
+                        </li>
+                        <li>
+                        Welding Transformer Air Cool
+                        </li>
+                        <li>
+                          Shaping machine
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div className='shop-details-content-03'>
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Fitting Shop</strong></h4>
+
+                      <img
+                        src={FittingShop}
+                        alt="FittingShop"
+                        className="ws-imagesss"
+                        style={{ width: '850px', height: '350px' }}
+                      />
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '20px' }}>Major Equipments :</h4>
+                      
+                      <ul class="three-columns">
+                        <li>
+                        Drill Machine Portable 1/2"
+                        </li>
+                        <li>
+                        Drill Machine Portable 1/4"
+                        </li>
+                        <li>
+                        Portable bench grinder 1ph
+                        </li>
+                        <li>
+                        Hydraulic hacksaw machine 250mm
+                        </li>
+                        <li>
+                        Vernier height gauge 12"
+                        </li>
+                        <li>
+                        Bench drill Machine
+                        </li>
+                        <li>
+                        Heavy duty grinder
+                        </li>
+                        <li>
+                        Air Compressor 1/2'' HP
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div className='shop-details-content-04'>
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '230px', borderRadius: '7px' }}><strong>Carpentry Shop</strong></h4>
+
+                      <img
+                        src={CarpentryShop}
+                        alt="CarpentryShop"
+                        className="ws-imagesss"
+                        style={{ width: '850px', height: '350px' }}
+                      />
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '20px' }}>Major Equipments :</h4>
+
+                      <ul class="three-columns">
+                        <li>
+                        Circular Saw
+                        </li>
+                        <li>
+                        Wood Turning Machine M/C
+                        </li>
+                        <li>
+                        Circular Saw Heavy Duty Machine
+                        </li>
+                        <li>
+                        Bench Drill Machine
+                        </li>
+                        <li>
+                        Wooden Zig Saw Machine
+                        </li>
+                        <li>
+                        Surface Grinder Machine
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <div className='shop-details-content-05'>
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Smithy Shop</strong></h4>
+
+                      <img
+                        src={SmithyShop}
+                        alt="SmithyShop"
+                        className="ws-imagesss"
+                        style={{ width: '850px', height: '350px' }}
+                      />
+
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '20px' }}>Major Equipments :</h4>
+
+                      <ul class="three-columns">
+                        <li>
+                        Hand shaering machine
+                        </li>
+                        <li>
+                        Anvil 100kg
+                        </li>
+                        <li>
+                        Air blower 1hp
+                        </li>
+                        <li>
+                        Heavy duty grinder with stand
+                        </li>
+                        <li>
+                        Anvil 105kg
+                        </li>
+                        <li>
+                        Sewage block heavy duty
+                        </li>
+                      </ul>
+
+                    </div>
+
+                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '50px' }}>
+                      <h4>Teaching & Learning Material</h4>
+                    </Card.Header>
+
+                    <h4 style={{ color: '#102c57', marginTop: '30px' }}>Youtube Video Links for Workshop Practicals :</h4>
+
+                    <Table style={{ marginTop: '40px' }} className='table-ws'>
+
+                      <tbody className='table-ws'>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>Safety and Precautions of Machine Section by Mr. N.D. Barse, Instructor :</td>
+                          <td><a href='https://youtu.be/JasFWsJyytY'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>Introduction of machine section tools by Mr. N. D. Barse, Instructor :</td>
+                          <td><a href='https://youtu.be/mukZMBKbspo'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>First Year All Branch Machine section Practical perform such as Step Turning, Taper Turning and drilling by Mr. N. D. Barse, Instructor : </td>
+                          <td><a href='https://youtu.be/LEDD7X7oTdI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Third Year Mechanical (Machine Shop) Spur gear practical perform on lathe and milling Machine by Mr. N. D. Barse, Instructor : </td>
+                        <td><a href='https://youtu.be/CaLEniMKzVE'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Third Year Workshop (Machine Shop)practical on Taper turning , shaping and internal threading by Mr. N. D. Barse, Instructor : </td>
+                        <td><a href='https://youtu.be/0xLBulK0MMI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Welding Section tools by Mr. Y. R. Bondre, Instructor : </td>
+                        <td><a href='https://youtu.be/OID-i_HAGjs'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Welding Section practical of BUTT JOINT by Mr. Y. R. Bondre, Instructor : </td>
+                        <td><a href='https://youtu.be/WuLtbzg2DXY'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Fitter Section tools by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/mWeokCtabyk'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Fitter Section practical perform such as Filling, Sawing, Drilling by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/lY5kP9tcpSI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Smithy Section tools by Mr. R. D. Bodhalkar, Instructor : </td>
+                        <td><a href='https://youtu.be/d2HVXwZAMlw'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Smithy Section practical of CHISEL by Mr. R. D. Bodhalkar, Instructor : </td>
+                        <td><a href='https://youtu.be/P2xT7tYZ7q4'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of sheet metal section tools by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/tkkBwkyv-hw'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Sheet metal practical of Rectangle Trey by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/jec1k3U85vE'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Carpentry practical of T Joint by Mr. M. T. Ghose, Instructor : </td>
+                        <td><a href='https://youtu.be/ToF2edd5ySo'>Click Here</a></td>
+                        </tr>
+                      </tbody>
+                    </Table>
+
+                    <div>
+
+                      
+
+                    </div>
 
                   </Col>
 

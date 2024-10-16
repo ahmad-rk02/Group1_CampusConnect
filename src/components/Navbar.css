@@ -18,3 +18,88 @@
     background-color: #102C57; 
     color: #fff; 
   }
+
+  .marquee-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center; /* Centers the text vertically if needed */
+    width: 162%;
+  }
+  
+  .marquee-text {
+    white-space: nowrap; /* Ensure the text doesn't wrap */
+    overflow: hidden; /* Hide overflow */
+    animation: marquee 25s linear infinite; /* Scrolling animation */
+    font-size: 15px;
+    will-change: transform; 
+  }
+
+
+a.event-links-nav {
+  text-decoration: none;
+  color: #102C57;
+}
+
+a.event-links-nav:hover{
+  text-decoration: underline;
+}
+  
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .new-blink-nav-01, .new-blink-nav-02 {
+    font-size: 14px;
+    display: inline-block;
+    background-color: #102C57;
+    width: 50px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    margin-right: 4px;
+}
+
+/* Animation for Div 1 */
+.new-blink-nav-01 {
+    background-color: #102C57;
+    color: #FEFAF6;
+    animation: blink1 0.2s infinite alternate;
+}
+
+/* Animation for Div 2 */
+.new-blink-nav-02 {
+    background-color: #FEFAF6;
+    color: #102C57;
+    animation: blink2 0.2s infinite alternate;
+}
+
+  
+/* Keyframes for blinking Div 1 */
+@keyframes blink1 {
+    0% {
+        background-color: #102C57;
+        color: #FEFAF6;
+    }
+    100% {
+        background-color: #FEFAF6;
+        color: #102C57;
+    }
+}
+
+/* Keyframes for blinking Div 2 */
+@keyframes blink2 {
+    0% {
+        background-color: #FEFAF6;
+        color: #102C57;
+    }
+    100% {
+        background-color: #102C57;
+        color: #FEFAF6;
+    }
+}
