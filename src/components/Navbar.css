@@ -20,6 +20,7 @@
   }
 
   .marquee-container {
+    background-color: #102C57;
     display: flex;
     justify-content: flex-start;
     align-items: center; /* Centers the text vertically if needed */
@@ -29,15 +30,18 @@
   .marquee-text {
     white-space: nowrap; /* Ensure the text doesn't wrap */
     overflow: hidden; /* Hide overflow */
-    animation: marquee 25s linear infinite; /* Scrolling animation */
-    font-size: 15px;
+    animation: marquee 30s linear infinite; /* Scrolling animation */
+    font-size: 17px;
     will-change: transform; 
   }
 
+  .marquee-text:hover {
+    animation-play-state: paused; 
+  }
 
 a.event-links-nav {
   text-decoration: none;
-  color: #102C57;
+  color: #FEFAF6;
 }
 
 a.event-links-nav:hover{
@@ -54,15 +58,16 @@ a.event-links-nav:hover{
   }
   
   .new-blink-nav-01, .new-blink-nav-02 {
-    font-size: 14px;
+    font-size: 12px;
     display: inline-block;
     background-color: #102C57;
-    width: 50px;
-    height: 30px;
+    width: 43px;
+    height: 20px;
     justify-content: center;
     align-items: center;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 
 /* Animation for Div 1 */

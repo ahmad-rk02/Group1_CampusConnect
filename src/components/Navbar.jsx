@@ -208,9 +208,9 @@ function Navbar({ imageSrcPath, navItems }) {
 
     <div className="marquee-container">
       <div className="marquee-text">
-      <a className="event-links-nav  event-box" href='#'>Girls Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <a className="event-links-nav " href='#'>Girls Hostel Direct Second Year Allotment Round I 2023-24</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav  event-box" href='#'>Boys Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <a className="event-links-nav" href='#'>Boys Hostel Direct Second Year Allotment Round I 2023-24</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
       <a className="event-links-nav" href='#'>Direct Second Year Girls Hostel Provisional Allotment Merit List 2023-24</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
