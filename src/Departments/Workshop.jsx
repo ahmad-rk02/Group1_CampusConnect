@@ -1,4 +1,3 @@
-
 import { Container, Row, Col, Card, ListGroup, Table } from 'react-bootstrap';
 import { Link, useLocation } from 'react-router-dom';
 import './Workshop.css'
@@ -21,8 +20,8 @@ const Workshop = () => {
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
         <Row className="header-design-ws text-white">
-          <Col className="header-align-ws">
-            <h1 className="text-left ">ABOUT US</h1>
+          <Col className="header-align-ws head-box-ws">
+            <h1 className="text-left ">DEPARTMENTS</h1>
           </Col>
         </Row>
 
