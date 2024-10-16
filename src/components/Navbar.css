@@ -30,11 +30,14 @@
   .marquee-text {
     white-space: nowrap; /* Ensure the text doesn't wrap */
     overflow: hidden; /* Hide overflow */
-    animation: marquee 25s linear infinite; /* Scrolling animation */
+    animation: marquee 30s linear infinite; /* Scrolling animation */
     font-size: 15px;
     will-change: transform; 
   }
 
+  .marquee-text:hover {
+    animation-play-state: paused; 
+  }
 
 a.event-links-nav {
   text-decoration: none;
