@@ -205,7 +205,7 @@ const Workshop = () => {
 
                     <div className='shop-details-content-01'>
 
-                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#EADBC8', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Machine/Turning Shop</strong></h4>
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Machine/Turning Shop</strong></h4>
 
                       <img
                         src={TurningShop}
@@ -283,7 +283,7 @@ const Workshop = () => {
 
                     <div className='shop-details-content-02'>
 
-                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#EADBC8', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Welding Shop</strong></h4>
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Welding Shop</strong></h4>
 
                       <img
                         src={WeldingShop}
@@ -319,7 +319,7 @@ const Workshop = () => {
 
                     <div className='shop-details-content-03'>
 
-                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#EADBC8', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Fitting Shop</strong></h4>
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Fitting Shop</strong></h4>
 
                       <img
                         src={FittingShop}
@@ -361,7 +361,7 @@ const Workshop = () => {
 
                     <div className='shop-details-content-04'>
 
-                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#EADBC8', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Carpentry Shop</strong></h4>
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '230px', borderRadius: '7px' }}><strong>Carpentry Shop</strong></h4>
 
                       <img
                         src={CarpentryShop}
@@ -397,7 +397,7 @@ const Workshop = () => {
 
                     <div className='shop-details-content-05'>
 
-                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#EADBC8', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '300px', borderRadius: '7px' }}><strong>Smithy Shop</strong></h4>
+                      <h4 style={{ color: '#102c57', marginTop: '30px', marginBottom: '30px', borderColor: '#102c57', borderWidth: '2px', borderStyle: 'solid', padding: '7px', width: '210px', borderRadius: '7px' }}><strong>Smithy Shop</strong></h4>
 
                       <img
                         src={SmithyShop}
@@ -428,6 +428,80 @@ const Workshop = () => {
                         Sewage block heavy duty
                         </li>
                       </ul>
+
+                    </div>
+
+                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '50px' }}>
+                      <h4>Teaching & Learning Material</h4>
+                    </Card.Header>
+
+                    <h4 style={{ color: '#102c57', marginTop: '30px' }}>Youtube Video Links for Workshop Practicals :</h4>
+
+                    <Table style={{ marginTop: '40px' }} className='table-ws'>
+
+                      <tbody className='table-ws'>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>Safety and Precautions of Machine Section by Mr. N.D. Barse, Instructor :</td>
+                          <td><a href='https://youtu.be/JasFWsJyytY'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>Introduction of machine section tools by Mr. N. D. Barse, Instructor :</td>
+                          <td><a href='https://youtu.be/mukZMBKbspo'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                          <td style={{ maxWidth: '430px' }}>First Year All Branch Machine section Practical perform such as Step Turning, Taper Turning and drilling by Mr. N. D. Barse, Instructor : </td>
+                          <td><a href='https://youtu.be/LEDD7X7oTdI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Third Year Mechanical (Machine Shop) Spur gear practical perform on lathe and milling Machine by Mr. N. D. Barse, Instructor : </td>
+                        <td><a href='https://youtu.be/CaLEniMKzVE'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Third Year Workshop (Machine Shop)practical on Taper turning , shaping and internal threading by Mr. N. D. Barse, Instructor : </td>
+                        <td><a href='https://youtu.be/0xLBulK0MMI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Welding Section tools by Mr. Y. R. Bondre, Instructor : </td>
+                        <td><a href='https://youtu.be/OID-i_HAGjs'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Welding Section practical of BUTT JOINT by Mr. Y. R. Bondre, Instructor : </td>
+                        <td><a href='https://youtu.be/WuLtbzg2DXY'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Fitter Section tools by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/mWeokCtabyk'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Fitter Section practical perform such as Filling, Sawing, Drilling by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/lY5kP9tcpSI'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of Smithy Section tools by Mr. R. D. Bodhalkar, Instructor : </td>
+                        <td><a href='https://youtu.be/d2HVXwZAMlw'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Smithy Section practical of CHISEL by Mr. R. D. Bodhalkar, Instructor : </td>
+                        <td><a href='https://youtu.be/P2xT7tYZ7q4'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> Introduction of sheet metal section tools by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/tkkBwkyv-hw'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Sheet metal practical of Rectangle Trey by Mr. D. T. Wandhare, Instructor : </td>
+                        <td><a href='https://youtu.be/jec1k3U85vE'>Click Here</a></td>
+                        </tr>
+                        <tr>
+                        <td style={{ maxWidth: '430px' }}> First Year All Branch Carpentry practical of T Joint by Mr. M. T. Ghose, Instructor : </td>
+                        <td><a href='https://youtu.be/ToF2edd5ySo'>Click Here</a></td>
+                        </tr>
+                      </tbody>
+                    </Table>
+
+                    <div>
+
+                      
 
                     </div>
 

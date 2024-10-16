@@ -127,6 +127,7 @@ function Navbar({ imageSrcPath, navItems }) {
   };
 
   return (
+    <div className="main-div" style={{ display: 'block'}}>
     <nav className="navbar navbar-expand-md ">
       <div className="container-fluid ms-4">
         <a className="navbar-brand" href="#">
@@ -201,8 +202,27 @@ function Navbar({ imageSrcPath, navItems }) {
             </button>
           </form>
         </div>
-      </div>
+      </div>  
+
     </nav>
+
+    <div className="marquee-container">
+      <div className="marquee-text">
+      <a className="event-links  event-box" href='#'>Girls Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      <a className="event-links  event-box" href='#'>Boys Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      <a className="event-links" href='#'>Direct Second Year Girls Hostel Provisional Allotment Merit List 2023-24</a>
+      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      <a className="event-links" href='#'>Direct Second Year Boys Hostel Provisional Allotment Merit List 2023-24</a>
+      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      <a className="event-links" href='#'>First Year Girls Quarter Allotment Round I 2023-24</a>
+      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      </div>
+    </div>
+
+
+    </div>
   );
 }
 
