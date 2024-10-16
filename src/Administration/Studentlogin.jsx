@@ -58,7 +58,7 @@ const LoginForm = () => {
   
     setIsLoading(true); // Set loading to true
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post('http://localhost:5000/api/users/student/login', {
         prnNumber: formData.prnNumber,
         password: formData.password,
       });

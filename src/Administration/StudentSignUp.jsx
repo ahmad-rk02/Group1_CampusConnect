@@ -106,7 +106,7 @@ const StudentSignUp = () => {
     if (validateForm()) {
       try {
         // Sending POST request to the server
-        const response = await axios.post('http://localhost:5000/api/users/register', {
+        const response = await axios.post('http://localhost:5000/api/users/student/signup', {
           fullname: formData.fullname,
           email: formData.email,
           phone: formData.phone,

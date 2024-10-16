@@ -19,7 +19,7 @@ const useAuth = () => {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://localhost:5000/api/users/profile', {
+        const response = await axios.get('http://localhost:5000/api/users/student/profile', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -50,3 +50,6 @@ const useAuth = () => {
 };
 
 export default useAuth;
+
+
+

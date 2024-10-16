@@ -40,6 +40,7 @@ const LoginForm = () => {
     setShowPassword((prev) => !prev);
   };
   const handleSubmit = async (e) => {
+    console.log("clicked")
     e.preventDefault();
   
     let errorMessages = []; // Array to hold error messages
@@ -55,19 +56,23 @@ const LoginForm = () => {
     }
     // If there are any error messages, display them
     if (errorMessages.length > 0) {
-      setError(errorMessages.join(' ')); // Join messages into a single string
+      setError(errorMessages.join(' ')); 
       return;
     }
   
     setIsLoading(true); // Set loading to true
     try {
-      const response = await axios.post('http://localhost:5000/api/users/login', {
+      const response = await axios.post('http://localhost:5000/api/users/admin/login', {
         dte: formData.dte,
         password: formData.password,
       });
   
       if (response.status === 200) {
-        navigate('/studentprofile');
+        const token = response.data.token;
+
+        // Save the token in local storage
+        localStorage.setItem('authToken', token);
+        navigate('/adminprofile');
       }
     } catch (error) {
       console.error('Error during login:', error);

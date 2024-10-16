@@ -39,6 +39,8 @@ import EligibilityCriteria from "./CIIITPage/EligibilityCriteria";
 import ForgetAdmin from "./Administration/ForgetAdmin";
 import Workshop from './Departments/Workshop';
 import Studentprofile from './Administration/Studentprofile';
+import AdminProfile from "./Administration/Adminprofile";
+
 
 function App() {
   const navItems = [
@@ -125,7 +127,7 @@ function App() {
             <Route path="/ciiitleaflet" element={<CIIITLeaflet />} />
             <Route path="/coursesdetails" element={<CoursesDetails />} />
             <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
-
+            <Route path="/adminprofile" element={<AdminProfile />} />
           </Routes>
         </div>
       </Router>
