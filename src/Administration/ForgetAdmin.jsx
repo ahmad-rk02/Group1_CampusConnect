@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Card, ListGroup, Button, Modal, Alert } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './ForgetAdmin.css';
 
 const ForgetAdmin = () => {
@@ -17,6 +17,8 @@ const ForgetAdmin = () => {
     // New states for password visibility
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    
+    const navigate = useNavigate(); // Initialize navigate
 
     const handleEmailSubmit = (e) => {
         e.preventDefault();
@@ -57,12 +59,16 @@ const ForgetAdmin = () => {
             setPasswordError('Passwords do not match.');
         } else {
             alert('Password reset successfully.'); // Process password reset logic
+            
             // Clear fields after successful submission
             setEmail('');
             setOtp('');
             setNewPassword('');
             setConfirmPassword('');
             setShowModal(false);
+
+            // Redirect to login page after successful password reset
+            navigate('/AdminLogin');
         }
     };
     
