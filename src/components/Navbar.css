@@ -20,6 +20,7 @@
   }
 
   .marquee-container {
+    background-color: #102C57;
     display: flex;
     justify-content: flex-start;
     align-items: center; /* Centers the text vertically if needed */
@@ -37,7 +38,7 @@
 
 a.event-links-nav {
   text-decoration: none;
-  color: #102C57;
+  color: #FEFAF6;
 }
 
 a.event-links-nav:hover{
