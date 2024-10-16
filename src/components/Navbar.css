@@ -21,22 +21,27 @@
 
   .marquee-container {
     display: flex;
-    justify-content: center; /* Centers the marquee horizontally */
+    justify-content: flex-start;
     align-items: center; /* Centers the text vertically if needed */
-    width: 100%;
+    width: 162%;
   }
   
   .marquee-text {
     white-space: nowrap; /* Ensure the text doesn't wrap */
     overflow: hidden; /* Hide overflow */
-    animation: marquee 10s linear infinite; /* Scrolling animation */
-    font-size: 20px;
+    animation: marquee 25s linear infinite; /* Scrolling animation */
+    font-size: 15px;
+    will-change: transform; 
   }
 
 
-a.event-links {
-  display: inline-block; /* Ensures each link behaves like inline-block to respect margins */
-  padding: 0 10px; /* Optional padding around links */
+a.event-links-nav {
+  text-decoration: none;
+  color: #102C57;
+}
+
+a.event-links-nav:hover{
+  text-decoration: underline;
 }
   
   @keyframes marquee {
@@ -49,6 +54,7 @@ a.event-links {
   }
   
   .new-blink-nav-01, .new-blink-nav-02 {
+    font-size: 14px;
     display: inline-block;
     background-color: #102C57;
     width: 50px;
@@ -56,6 +62,7 @@ a.event-links {
     justify-content: center;
     align-items: center;
     margin-left: 4px;
+    margin-right: 4px;
 }
 
 /* Animation for Div 1 */
