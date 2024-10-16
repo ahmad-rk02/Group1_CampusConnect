@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Card, ListGroup, Button, Modal, Alert } from 'react-bootstrap';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
 import './ForgetAdmin.css';
 
 const ForgetAdmin = () => {
@@ -17,6 +17,8 @@ const ForgetAdmin = () => {
     // New states for password visibility
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+    
+    const navigate = useNavigate(); // Initialize navigate
 
     const handleEmailSubmit = (e) => {
         e.preventDefault();
@@ -57,53 +59,57 @@ const ForgetAdmin = () => {
             setPasswordError('Passwords do not match.');
         } else {
             alert('Password reset successfully.'); // Process password reset logic
+            
             // Clear fields after successful submission
             setEmail('');
             setOtp('');
             setNewPassword('');
             setConfirmPassword('');
             setShowModal(false);
+
+            // Redirect to login page after successful password reset
+            navigate('/AdminLogin');
         }
     };
     
     return (
         <Container fluid className="p-0 w-100">
-            <Row className='head-box-loginP'>
+            <Row className='head-box-loginA'>
                 <Col>
                     <h1 className="text-left">ADMINISTRATION</h1>
                 </Col>
             </Row>
 
-            <Row className="flex-nowrap left-index-loginP just">
-                <Col md={2} className='left-sidebar-loginP'>
-                    <Card className="left-nav-loginP">
+            <Row className="flex-nowrap left-index-loginA just">
+                <Col md={2} className='left-sidebar-loginA'>
+                    <Card className="left-nav-loginA">
                         <ListGroup variant="flush">
-                            <ListGroup.Item className="left-nav-row-loginP">
+                            <ListGroup.Item className="left-nav-row-loginA">
                                 <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Principal and HOD
                                 </Link>
                             </ListGroup.Item>
-                            <ListGroup.Item className="left-nav-row-loginP">
+                            <ListGroup.Item className="left-nav-row-loginA">
                                 <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Student Section
                                 </Link>
                             </ListGroup.Item>
-                            <ListGroup.Item className="left-nav-row-loginP">
+                            <ListGroup.Item className="left-nav-row-loginA">
                                 <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Office
                                 </Link>
                             </ListGroup.Item>
-                            <ListGroup.Item className="left-nav-row-loginP">
+                            <ListGroup.Item className="left-nav-row-loginA">
                                 <Link to="/committees" className={useLocation().pathname === "/committees" ? "active-link" : ""}>
                                     Committees
                                 </Link>
                             </ListGroup.Item>
-                            <ListGroup.Item className="left-nav-row-loginP">
+                            <ListGroup.Item className="left-nav-row-loginA">
                                 <Link to="/tenders" className={useLocation().pathname === "/tenders" ? "active-link" : ""}>
                                     Tenders
                                 </Link>
                             </ListGroup.Item>
-                            <ListGroup.Item className="left-nav-row-loginP-01">
+                            <ListGroup.Item className="left-nav-row-loginA-01">
                                 <Link to="/login" className={useLocation().pathname === "/login" ? "active-link" : ""}>
                                     Grievance Form
                                 </Link>
