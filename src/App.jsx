@@ -81,8 +81,7 @@ function App() {
         "Committees",
         "Training & Placements",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
-        "Alumni",
-        "Resources"
+        "Alumni"
       ]
     },
 
