@@ -21,7 +21,7 @@ body {
   .right-content-cse{
     margin-top: 30px;
     margin-left: 250px;
-    width: 60%;
+    width: 85%;
   }
   
 
@@ -48,7 +48,6 @@ body {
   .left-nav-row-cse-01{
     text-align: center;
     font-size: 1.2rem;
-    font-weight:700;
   }
 
   .left-sidebar-cse a{

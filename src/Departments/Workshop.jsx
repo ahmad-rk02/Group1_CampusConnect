@@ -20,7 +20,7 @@ const Workshop = () => {
       <Container fluid className="p-0 w-100">
         {/* Header Section */}
         <Row className="header-design-ws text-white">
-          <Col className="header-align-ws head-box-ws">
+          <Col className="header-align-ws">
             <h1 className="text-left ">DEPARTMENTS</h1>
           </Col>
         </Row>

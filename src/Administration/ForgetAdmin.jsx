@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Form, Row, Col, Card, ListGroup, Button, Modal, Alert } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import './ForgetAdmin.css';
 
 const ForgetAdmin = () => {
@@ -13,65 +14,80 @@ const ForgetAdmin = () => {
     const [emailError, setEmailError] = useState('');
     const [otpError, setOtpError] = useState('');
     const [passwordError, setPasswordError] = useState('');
-    
+
     // New states for password visibility
     const [showNewPassword, setShowNewPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    
+
     const navigate = useNavigate(); // Initialize navigate
 
-    const handleEmailSubmit = (e) => {
+    const handleEmailSubmit = async (e) => {
         e.preventDefault();
         if (email) {
-            alert(`OTP sent to ${email}`); // Mock OTP sending
-            setShowOtpModal(true);
-            setEmailError('');
+            try {
+                const response = await axios.post('http://localhost:5000/api/users/password/request-otp', { email });
+                alert(`OTP sent to ${email}`); // Mock OTP sending
+                setShowOtpModal(true);
+                setEmailError('');
+            } catch (error) {
+                setEmailError('Error sending OTP. Please try again.');
+            }
         } else {
             setEmailError('Please enter a valid email address.');
         }
     };
 
-    const handleOtpSubmit = (e) => {
+    const handleOtpSubmit = async (e) => {
         e.preventDefault();
-        if (otp === '123456') { // Mock OTP validation
-            setShowOtpModal(false);
-            setShowModal(true);
-            setOtpError('');
-        } else {
-            setOtpError('Invalid OTP. Please try again.');
+        try {
+            const response = await axios.post('http://localhost:5000/api/users/password/verify-otp', { email, otp });
+            if (response.data.success) {
+                setShowOtpModal(false);
+                setShowModal(true);
+                setOtpError('');
+            } else {
+                setOtpError('Invalid OTP. Please try again.');
+            }
+        } catch (error) {
+            setOtpError('Error verifying OTP. Please try again.');
         }
     };
 
-    const handleNewPasswordSubmit = (e) => {
+    const handleNewPasswordSubmit = async (e) => {
         e.preventDefault();
-        
+
         // Clear previous error messages
         setPasswordError('');
-    
+
         // Check if both fields are filled
         if (!newPassword || !confirmPassword) {
             setPasswordError('Both password fields must be filled out.');
             return;
         }
-    
+
         // Check if passwords match
         if (newPassword !== confirmPassword) {
             setPasswordError('Passwords do not match.');
         } else {
-            alert('Password reset successfully.'); // Process password reset logic
-            
-            // Clear fields after successful submission
-            setEmail('');
-            setOtp('');
-            setNewPassword('');
-            setConfirmPassword('');
-            setShowModal(false);
+            try {
+                const response = await axios.post('http://localhost:5000/api/users/password/reset', { email, newPassword });
+                alert('Password reset successfully.'); // Process password reset logic
+                
+                // Clear fields after successful submission
+                setEmail('');
+                setOtp('');
+                setNewPassword('');
+                setConfirmPassword('');
+                setShowModal(false);
 
-            // Redirect to login page after successful password reset
-            navigate('/AdminLogin');
+                // Redirect to login page after successful password reset
+                navigate('/AdminLogin');
+            } catch (error) {
+                setPasswordError('Error resetting password. Please try again.');
+            }
         }
     };
-    
+
     return (
         <Container fluid className="p-0 w-100">
             <Row className='head-box-loginA'>
@@ -153,7 +169,7 @@ const ForgetAdmin = () => {
                                     />
                                 </Form.Group>
                                 {otpError && <Alert variant="danger">{otpError}</Alert>}
-                                <Button   type="submit" className="w-100 verify-otp-button">
+                                <Button type="submit" className="w-100 verify-otp-button">
                                     Verify OTP
                                 </Button>
                             </Form>
@@ -196,7 +212,7 @@ const ForgetAdmin = () => {
                                     ></i>
                                 </Form.Group>
                                 {passwordError && <Alert variant="danger">{passwordError}</Alert>}
-                                <Button   type="submit" className="w-100 reset-password-button">
+                                <Button type="submit" className="w-100 reset-password-button">
                                     Reset Password
                                 </Button>
                             </Form>
