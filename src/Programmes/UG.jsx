@@ -33,7 +33,7 @@ const UG = () => {
         <Col md={2} className='left-sidebar-ug' >
           <Card className="left-nav-ug" >
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-ug">
+              <ListGroup.Item className="left-nav-row-ug-01">
               <Link
                     to="/ug"
                     className={location.pathname === "/ug" ? "active-link" : ""}
