@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import './ForgetAdmin.css';
+import './ForgetStudent.css';
 
 const ForgetAdmin = () => {
   const [email, setEmail] = useState('');
@@ -35,18 +35,18 @@ const ForgetAdmin = () => {
       await axios.post('http://localhost:5000/api/users/verify-otp', { email, otp });
       const response = await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
       alert(response.data.message);
-      navigate('/adminlogin');
+      navigate('/studentlogin');
     } catch (error) {
       alert(error.response?.data?.error || 'Error resetting password');
     }
   };
 
   return (
-    <div className="Forgot-container">
+    <div className="SForgot-container">
       {isRequestingOTP ? (
-        <div className="form-container">
+        <div className="Sform-container">
           <h2>Request OTP</h2>
-          <form onSubmit={handleRequestOTP}>
+          <formS onSubmit={handleRequestOTP}>
             <input
               type="email"
               value={email}
@@ -56,12 +56,12 @@ const ForgetAdmin = () => {
               className="input-field"
             />
             <button type="submit" className="submit-button">Send OTP</button>
-          </form>
+          </formS>
         </div>
       ) : (
-        <div className="form-container">
+        <div className="Sform-container">
           <h2>Reset Password</h2>
-          <form onSubmit={handleResetPassword}>
+          <formS onSubmit={handleResetPassword}>
             <input
               type="email"
               value={email}
@@ -78,7 +78,7 @@ const ForgetAdmin = () => {
               required
               className="input-field"
             />
-            <div className="password-field-container">
+            <div className="Spassword-field-container">
               <input
                 type={showNewPassword ? 'text' : 'password'}
                 value={newPassword}
@@ -87,11 +87,11 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="Stoggle-password-button">
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <div className="password-field-container">
+            <div className="Spassword-field-container">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 value={confirmPassword}
@@ -100,16 +100,16 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="Stoggle-password-button">
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
             <button type="submit" className="submit-button">Reset Password</button>
-          </form>
+          </formS>
         </div>
       )}
 
-      <button className="toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
+      <button className="Stoggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
         {isRequestingOTP ? 'Go to Reset Password' : 'Go to Request OTP'}
       </button>
     </div>
