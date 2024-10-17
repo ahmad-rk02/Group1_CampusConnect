@@ -208,15 +208,15 @@ function Navbar({ imageSrcPath, navItems }) {
 
     <div className="marquee-container">
       <div className="marquee-text">
-      <a className="event-links-nav " href='#'>Girls Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <a className="event-links-nav " href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_Girls%20Quarter_Allotment%20List_2024-25.pdf'>First Year Girls Quarter Allotment List 2024-25</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='#'>Boys Hostel Direct Second Year Allotment Round I 2023-24</a>
+      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_%20Girls%20Quarter_%20Allotment%20List(%20Against%20Cancellation)_2024-25.pdf'>First Year Girls Quarter Allotment List( Against Cancellation) 2024-25</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='#'>Direct Second Year Girls Hostel Provisional Allotment Merit List 2023-24</a>
+      <a className="event-links-nav" href='https://docs.google.com/forms/d/e/1FAIpQLSc8majz1zChMy755RbmPX1P1-pnOy9FNDkxqptIz29ge9cQuA/viewform'>ADDITIONAL INSTITUTE LEVEL SPOT ROUND (DIRECT SECOND YEAR ENGINEERING) ON 19/10/2024</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='#'>Direct Second Year Boys Hostel Provisional Allotment Merit List 2023-24</a>
+      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/Direct%20Second%20Year_Hostel%20Allotment%20List%20_%20Against%20Cancellation_2024-25.pdf'>Direct Second Year Hostel Allotment List-Against Cancellation-2024-25</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='#'>First Year Girls Quarter Allotment Round I 2023-24</a>
+      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/DSE%20INSTITUTE%20level%20merit%20list%202024%2025.pdf'>DSE INSTITUTE level merit list 2024-25</a>
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
       </div>
     </div>

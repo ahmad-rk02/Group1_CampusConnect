@@ -28,8 +28,10 @@ height: 130px;
 }
 
 .header-align-ws h1{
-  padding-top: 40px;
-   padding-left: 120px;
+  font-size: 2.5rem;
+  text-align: left;
+  margin-top: 50px;
+  margin-left: 160px;
 }
 
 .card-content-ws{
@@ -38,13 +40,12 @@ border-radius: none;
 padding-left: 170px;
 }
 .left-index-ws{
-  position: sticky;
   margin-left: 60px;
   margin-right: 60px;
   }
 .left-sidebar-ws {
-  position: sticky;
 position: relative;
+top: -20px;
 z-index: 2;
 width: 250px;
 margin-left: 40px; 
@@ -52,7 +53,6 @@ margin-left: 40px;
 
 .left-sidebar-ws .card {
 text-align: center;
-position: sticky;
 }
 
 .left-sidebar-ws .list-group-item {
@@ -94,15 +94,15 @@ color: black;
 
 
 .left-nav-row-ws{
-  text-align: center;
-    font-size: 1.2rem;
+  height: 65px;
+  width: 350px;
 }
 
 .left-nav-ws{
-  position: sticky;
   background-color: white;
   border-radius: 0;
-  width: 350px;
+  height: 460px;
+  width: 360px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
 
