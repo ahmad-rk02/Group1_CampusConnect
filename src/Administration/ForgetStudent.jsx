@@ -5,14 +5,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import './ForgetStudent.css';
 
-const ForgetAdmin = () => {
+const ForgetStudent = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isRequestingOTP, setIsRequestingOTP] = useState(true);
-  const [showNewPassword, setShowNewPassword] = useState(false); // State for showing/hiding new password
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for showing/hiding confirm password
+  const [showNewPassword, setShowNewPassword] = useState(false); 
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleRequestOTP = async (e) => {
@@ -42,11 +42,11 @@ const ForgetAdmin = () => {
   };
 
   return (
-    <div className="SForgot-container">
+    <div className="student-Forgot-container">
       {isRequestingOTP ? (
-        <div className="Sform-container">
+        <div className="student-form-container">
           <h2>Request OTP</h2>
-          <formS onSubmit={handleRequestOTP}>
+          <form onSubmit={handleRequestOTP}>
             <input
               type="email"
               value={email}
@@ -56,12 +56,12 @@ const ForgetAdmin = () => {
               className="input-field"
             />
             <button type="submit" className="submit-button">Send OTP</button>
-          </formS>
+          </form>
         </div>
       ) : (
-        <div className="Sform-container">
+        <div className="student-form-container">
           <h2>Reset Password</h2>
-          <formS onSubmit={handleResetPassword}>
+          <form onSubmit={handleResetPassword}>
             <input
               type="email"
               value={email}
@@ -78,7 +78,7 @@ const ForgetAdmin = () => {
               required
               className="input-field"
             />
-            <div className="Spassword-field-container">
+            <div className="student-password-field-container">
               <input
                 type={showNewPassword ? 'text' : 'password'}
                 value={newPassword}
@@ -87,11 +87,11 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="Stoggle-password-button">
+              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="student-toggle-password-button">
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <div className="Spassword-field-container">
+            <div className="student-password-field-container">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 value={confirmPassword}
@@ -100,20 +100,20 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="Stoggle-password-button">
+              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="student-toggle-password-button">
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
             <button type="submit" className="submit-button">Reset Password</button>
-          </formS>
+          </form>
         </div>
       )}
 
-      <button className="Stoggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
+      <button className="student-toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
         {isRequestingOTP ? 'Go to Reset Password' : 'Go to Request OTP'}
       </button>
     </div>
   );
 };
 
-export default ForgetAdmin;
+export default ForgetStudent;

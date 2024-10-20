@@ -27,7 +27,7 @@ import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
-import ForgetStudent from './Administration/ForgteStudent';
+import ForgetStudent from './Administration/ForgetStudent';
 
 import AboutCIIIT from "./CIIITPage/AboutCIIIT";
 import AdmissionForm from "./CIIITPage/AdmissionForm";

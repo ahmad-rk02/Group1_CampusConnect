@@ -175,7 +175,7 @@ const LoginForm = () => {
 
                 <div className="login-links">
                   <Link to="/studentsignup" className="login-link">Sign Up</Link>
-                  <Link to="/forgetadmin" className="login-link">Forgot password?</Link>
+                  <Link to="/forgetstudent" className="login-link">Forgot password?</Link>
                 </div>
               </Form>
             </div>
