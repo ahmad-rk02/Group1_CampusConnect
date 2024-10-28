@@ -45,7 +45,7 @@ const PhD = () => {
                     PG (M.Tech)
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row-phd">
+                <ListGroup.Item className="left-nav-row-phd-01">
                   <Link
                     to="/phd"
                     className={location.pathname === "/phd" ? "active-link" : ""}

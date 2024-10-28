@@ -36,7 +36,7 @@ const PG = () => {
                     UG (B.Tech)
                     </Link>
                     </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-PG">
+              <ListGroup.Item className="left-nav-row-PG-01">
               <Link
                     to="/pg"
                     className={location.pathname === "/pg" ? "active-link" : ""}

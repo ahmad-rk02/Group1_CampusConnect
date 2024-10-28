@@ -3,16 +3,16 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import './ForgetAdmin.css';
+import './ForgetStudent.css';
 
-const ForgetAdmin = () => {
+const ForgetStudent = () => {
   const [email, setEmail] = useState('');
   const [otp, setOtp] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isRequestingOTP, setIsRequestingOTP] = useState(true);
-  const [showNewPassword, setShowNewPassword] = useState(false); // State for showing/hiding new password
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for showing/hiding confirm password
+  const [showNewPassword, setShowNewPassword] = useState(false); 
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); 
   const navigate = useNavigate();
 
   const handleRequestOTP = async (e) => {
@@ -35,16 +35,16 @@ const ForgetAdmin = () => {
       await axios.post('http://localhost:5000/api/users/verify-otp', { email, otp });
       const response = await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
       alert(response.data.message);
-      navigate('/adminlogin');
+      navigate('/studentlogin');
     } catch (error) {
       alert(error.response?.data?.error || 'Error resetting password');
     }
   };
 
   return (
-    <div className="Forgot-container">
+    <div className="student-Forgot-container">
       {isRequestingOTP ? (
-        <div className="form-container">
+        <div className="student-form-container">
           <h2>Request OTP</h2>
           <form onSubmit={handleRequestOTP}>
             <input
@@ -59,7 +59,7 @@ const ForgetAdmin = () => {
           </form>
         </div>
       ) : (
-        <div className="form-container">
+        <div className="student-form-container">
           <h2>Reset Password</h2>
           <form onSubmit={handleResetPassword}>
             <input
@@ -78,7 +78,7 @@ const ForgetAdmin = () => {
               required
               className="input-field"
             />
-            <div className="password-field-container">
+            <div className="student-password-field-container">
               <input
                 type={showNewPassword ? 'text' : 'password'}
                 value={newPassword}
@@ -87,11 +87,11 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="student-toggle-password-button">
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <div className="password-field-container">
+            <div className="student-password-field-container">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 value={confirmPassword}
@@ -100,7 +100,7 @@ const ForgetAdmin = () => {
                 required
                 className="input-field"
               />
-              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="student-toggle-password-button">
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
@@ -109,11 +109,11 @@ const ForgetAdmin = () => {
         </div>
       )}
 
-      <button className="toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
+      <button className="student-toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
         {isRequestingOTP ? 'Go to Reset Password' : 'Go to Request OTP'}
       </button>
     </div>
   );
 };
 
-export default ForgetAdmin;
+export default ForgetStudent;

@@ -27,8 +27,8 @@ import Tenders from './Administration/Tenders';
 import Committees from './Administration/Committees';
 import SignupAdmin from './Administration/SigupAdmin';
 import StudentSignUp from './Administration/StudentSignUp';
-import Forgotpassword from './Administration/Forgotpassword';
-import Forgotpassword2 from './Administration/Forgotpassword2';
+import ForgetStudent from './Administration/ForgetStudent';
+
 import AboutCIIIT from "./CIIITPage/AboutCIIIT";
 import AdmissionForm from "./CIIITPage/AdmissionForm";
 import CIIITBrochure from "./CIIITPage/CIIITBrochure";
@@ -114,8 +114,8 @@ function App() {
             <Route path="/girlshostel" element={<Girlshostel />} />
             <Route path="/boyshostel" element={<Boyshostel />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
-            <Route path="/forgotpassword" element={<Forgotpassword />} />
-            <Route path="/forgotpassword2" element={<Forgotpassword2 />} />
+            <Route path="/forgetstudent" element={<ForgetStudent />} />
+            
             <Route path="/forgetadmin" element={<ForgetAdmin />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/studentprofile" element={<Studentprofile />} />
