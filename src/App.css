@@ -36,10 +36,6 @@
 }
 
  
-.dropdown-submenu .dropdown-item:hover {
-  background-color: #28a745;  
-  color: #fff;   
-}
 
 @media (max-width: 767.98px) {
   .dropdown-submenu .dropdown-menu {
