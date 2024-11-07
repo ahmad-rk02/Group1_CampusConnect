@@ -1,6 +1,8 @@
+/* General Responsive Adjustments */
 .head-box-committee-clg {
     background-color: #102c57;
     height: 130px;
+    padding-left: 20px;
 }
 
 .head-box-committee-clg h1 {
@@ -8,107 +10,94 @@
     text-align: left;
     font-size: 40px;
     margin-top: 50px;
-    margin-left: 85px;
     color: white;
 }
 
 .left-index-committee-clg {
-    margin-left: 60px;
-    margin-right: 60px;
+    margin: 0 15px;
 }
 
 .left-sidebar-committee-clg {
     position: relative;
     top: -20px;
     z-index: 2;
-    width: 250px;
-    margin-left: 40px;
+    width: 100%;
+    margin-left: 0;
+    max-width: 250px;
+    margin-bottom: 20px;
 }
 
 .left-sidebar-committee-clg .card {
     text-align: center;
 }
 
-.left-sidebar-committee-clg .list-group-item {
-    font-size: 1.2rem;
-    text-align: center;
+.head-right-top-committee-clg{
+    margin-left: 8rem;
+    width: 75%;
+    margin-top: 1rem;
 }
-
-.footer-spacing {
-    margin-top: 80px;
-}
-
-.left-sidebar-committee-clg a {
-    text-decoration: none;
-    color: black;
-}
-
 
 .left-nav-committee-clg {
     background-color: white;
-    border-radius: 0;
-    width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-
-.left-nav-row-committee-clg {
-    height: 56px;
-}
-
-.left-nav-row-committee-clg-01 {
+.left-nav-row-committee-clg-01 a {
     font-weight: 700;
+    text-decoration: none;
+    color: black;
+  }
+  
+.left-nav-row-committee-clg, .left-nav-row-committee-clg-01 {
+    height: 56px;
+ 
 }
-
-.head-right-top-committee-clg {
-    margin-top: 50px;
-    margin-left: 200px;
-    height: 50px;
-    margin-bottom: 50px;
+.left-nav-row-committee-clg a{
+    text-decoration: none;
+    color: black;
 }
-
-.head-right-top-committee-clg h3 {
-    text-align: left;
-    padding-left: 15px;
-    padding-top: 5px;
-}
-
-.committee-clg-table{
+/* Responsive Table */
+.committee-clg-table {
     border-radius: 10px;
-    margin-left: 200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-.table-header-committee-clg th{
+.table-header-committee-clg th {
     background-color: #102c57;
     color: white;
     text-align: center;
-    font-size: 13px;
 }
 
-.table-header-committee-clg th:first-child {
-    border-top-left-radius: 10px; 
-  }
-  
-  .table-header-committee-clg th:last-child {
-    border-top-right-radius: 10px; 
-  }
-
-.table-body-committee-clg tr{
+.table-body-committee-clg tr {
     text-align: center;
-    font-size: 13px;
-  }
-
-  .table-row-committee-clg{
-    height: 40px;
-  }
-
-.name-of-committees{
-    text-align: left;
 }
 
 .table-row-committee-clg a{
     text-decoration: none;
-  }
+    color: black;
+}
 
-  .table-row-committee-clg a:hover{
-    text-decoration: underline;
-  }
+@media (max-width: 768px) {
+    /* Adjust header */
+    .head-box-committee-clg h1 {
+        font-size: 24px;
+        margin-left: 10px;
+    }
+
+    .head-right-top-committee-clg, .right-top-text-committee-clg, .committee-clg-table {
+        margin: 0 auto;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .left-sidebar-committee-clg {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Reduce padding and font size */
+    .table-header-committee-clg th, .table-body-committee-clg td {
+        font-size: 0.9rem;
+        padding: 5px;
+    }
+}

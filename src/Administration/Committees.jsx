@@ -26,9 +26,9 @@ const Committees = () => {
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-committee-clg just" >
+        <Row className="left-index-committee-clg" >
           {/* Left Sidebar */}
-          <Col md={2} className='left-sidebar-committee-clg' >
+          <Col md={2} xs={12} className='left-sidebar-committee-clg' >
             <Card className="left-nav-committee-clg" >
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-committee-clg">
@@ -83,10 +83,10 @@ const Committees = () => {
             </Card>
           </Col>
 
-          <Col>
+          <Col md={9} xs={12}>
 
-            <div className='head-right-top-committee-clg' style={{ width: "75%", backgroundColor: "#eadbc8" }}>
-              <h3 style={{ color: '#102C57' }} >GCOEC Committees</h3></div>
+            <div className='head-right-top-committee-clg'  >
+              <h3 style={{ color: '#102C57', backgroundColor:'rgb(234,219,200)',padding:'10px' }} >GCOEC Committees</h3></div>
 
             <Table className='committee-clg-table' style={{ width: "75%" }} striped bordered hover>
               <thead className='table-header-committee-clg'>
