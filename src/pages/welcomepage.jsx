@@ -39,7 +39,7 @@ function WelcomeSection() {
               </Col>
               <Col xs={8} md={8}>
                 <Card.Body>
-                  <Card.Title className="fw-bold mb-1" style={{ fontSize: '1rem' }}>Shri V C Rastogi</Card.Title>
+                  <Card.Title className="fw-bold mb-1" style={{ fontSize: '1rem' }}>Shri XYZ</Card.Title>
                   <Card.Text className="mb-0">Principal Secretary, Higher & Technical Education</Card.Text>
                 </Card.Body>
               </Col>
@@ -67,7 +67,7 @@ function WelcomeSection() {
               </Col>
               <Col xs={8} md={8}>
                 <Card.Body>
-                  <Card.Title className="fw-bold mb-1" style={{ fontSize: '1rem' }}>Dr. R. P. Borkar</Card.Title>
+                  <Card.Title className="fw-bold mb-1" style={{ fontSize: '1rem' }}>Dr. Prashant V. Washimkar</Card.Title>
                   <Card.Text className="mb-0">Principal</Card.Text>
                 </Card.Body>
               </Col>
