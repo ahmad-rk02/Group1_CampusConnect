@@ -32,23 +32,30 @@
 }
 
 .left-nav-tender {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 5px;
     background-color: white;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
+
 .left-nav-row-tender-01 a {
     font-weight: 700;
     text-decoration: none;
     color: black;
-  }
-  
-.left-nav-row-tender, .left-nav-row-tender-01 {
-    height: 56px;
- 
 }
-.left-nav-row-tender a{
+
+.left-nav-row-tender,
+.left-nav-row-tender-01 {
+    height: 56px;
+
+}
+
+.left-nav-row-tender a {
     text-decoration: none;
     color: black;
 }
+
 /* Responsive Table */
 .tender-table {
     border-radius: 10px;
@@ -66,19 +73,22 @@
     text-align: center;
 }
 
-.table-row-tender a{
+.table-row-tender a {
     text-decoration: none;
     color: black;
 }
 
 @media (max-width: 768px) {
+
     /* Adjust header */
     .head-box-tender h1 {
         font-size: 24px;
         margin-left: 10px;
     }
 
-    .head-right-top-tender, .right-top-text-tender, .tender-table {
+    .head-right-top-tender,
+    .right-top-text-tender,
+    .tender-table {
         margin: 0 auto;
         width: 100%;
         padding: 10px;
@@ -90,7 +100,8 @@
     }
 
     /* Reduce padding and font size */
-    .table-header-tender th, .table-body-tender td {
+    .table-header-tender th,
+    .table-body-tender td {
         font-size: 0.9rem;
         padding: 5px;
     }

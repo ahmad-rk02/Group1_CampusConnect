@@ -71,9 +71,9 @@
 }
 
 .left-nav-bh {
-  position: -webkit-sticky; /* For Safari */
+  position: -webkit-sticky;
   position: sticky;
-  top: 0; /* Adjust this as needed */
+  top: 5px;
   background-color: white;
   border-radius: 0;
   height: 140px;
@@ -183,7 +183,7 @@
 
 }
 
-.apply-button-bh:hover{
+.apply-button-bh:hover {
   background-color: #eadbc8;
   border-color: #102C57;
   border-width: 2px;
@@ -214,7 +214,7 @@
   margin-top: 70px;
 }
 
-.EN-button-bh:hover{
+.EN-button-bh:hover {
   background-color: #eadbc8;
   border-color: #102C57;
   border-width: 2px;
@@ -236,7 +236,7 @@
 
 }
 
-.HOSTEL-button-bh:hover{
+.HOSTEL-button-bh:hover {
   background-color: #eadbc8;
   border-color: #102C57;
   border-width: 2px;
@@ -252,12 +252,12 @@
   margin-bottom: 20px;
   margin-top: 50px;
   margin-left: 480px;
-  margin-bottom: 40px; 
+  margin-bottom: 40px;
 }
 
 .hostel-info-table-bh th,
 .hostel-info-table-bh td {
-  border: 1px solid #000000 ; 
+  border: 1px solid #000000;
   padding: 8px;
   text-align: left;
 }

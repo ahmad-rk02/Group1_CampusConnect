@@ -95,6 +95,9 @@
 }
 
 .left-nav-ai {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5px;
   background-color: white;
   border-radius: 0;
   height: 200px;
