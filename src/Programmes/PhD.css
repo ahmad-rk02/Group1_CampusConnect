@@ -48,6 +48,9 @@
 }
 
 .left-nav-phd {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Adjust this as needed */
     background-color: white;
     border-radius: 0;
     height: 200px;

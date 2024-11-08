@@ -45,6 +45,9 @@
 
 
 .left-nav-tender {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Adjust this as needed */
     background-color: white;
     border-radius: 0;
     width: 300px;
