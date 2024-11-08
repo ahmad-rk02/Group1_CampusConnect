@@ -1,0 +1,119 @@
+ /* welcomepage.css */
+
+.welcome-section {
+    background-color: #f8f9fa; /* Light background */
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ 
+  }
+  
+  /* Headings and Text */
+  .welcome-section h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .welcome-section p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* READ MORE button */
+  /* .welcome-section .btn-link {
+    font-size: 1rem;
+    text-decoration: underline;
+    padding: 0;
+  }
+  
+  .welcome-section .btn-link:hover {
+    color: #004085;
+    text-decoration: none;
+  } */
+  
+  /* Key People Section */
+  .key-people-section {
+    margin-top: 20px;
+  }
+  
+  .key-people-section h5 {
+    font-size: 1.5rem;
+    color: #0066cc;
+    margin-bottom: 15px;
+  }
+  
+  /* Card styling for each person */
+  .key-people-section .card {
+    background-color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .key-people-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .key-people-section .card .card-body {
+    padding: 0px;
+    
+  }
+  
+  .key-people-section  .card .card-title {
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  .key-people-section .card .card-text {
+    font-size: 0.9rem;
+    color: #666;
+    height: 75px;
+  }
+  
+  /* Circular Image Styling */
+  .key-people-section .card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #0066cc;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .welcome-section {
+      padding: 20px 15px;
+    }
+  
+    .welcome-section h3 {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  
+    .welcome-section p {
+      font-size: 0.95rem;
+      text-align: center;
+    }
+  
+    .key-people-section h5 {
+      font-size: 1.3rem;
+      text-align: center;
+    }
+  
+    .key-people-section .card img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .key-people-section .card .card-title {
+      font-size: 1rem;
+    }
+  
+    .key-people-section .card .card-text {
+      font-size: 0.85rem;
+    }
+  }
+  

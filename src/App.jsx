@@ -40,7 +40,7 @@ import ForgetAdmin from "./Administration/ForgetAdmin";
 import Workshop from './Departments/Workshop';
 import Studentprofile from './Administration/Studentprofile';
 import AdminProfile from "./Administration/Adminprofile";
-
+import WelcomeSection from "./pages/welcomepage";
 
 function App() {
   const navItems = [
@@ -127,6 +127,7 @@ function App() {
             <Route path="/coursesdetails" element={<CoursesDetails />} />
             <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
             <Route path="/adminprofile" element={<AdminProfile />} />
+            <Route path="/welcomepage" element={<WelcomeSection />} />
           </Routes>
         </div>
       </Router>

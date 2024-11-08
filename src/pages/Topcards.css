@@ -1,99 +1,83 @@
- 
+
+
 .card-container2 {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin: 0 auto;
-    padding-top: 90px;
 }
 
-.container2 {
-    justify-content: center;
-    display: flex;
-    width: 100%;
-}
-
-.custom-topcards {
-    max-width: 22rem; 
-    min-width: 16rem; 
-    border: 2px solid #003366; 
+.cards {
+    background-color: #f8f9fa;
     border-radius: 8px;
-    background-color: #ffffff;
-    transition: box-shadow 0.2s ease-in-out;
-    text-align: center; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border: 2px solid #003366;
+    height: 100%;
 }
 
-.custom-topcards:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.cards:hover {
+    transform: scale(1.05);
+}
+
+.cards-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .icon {
-    font-size: 2.5rem;
+    font-size: 36px;
     color: #003366;
 }
 
 .topcards-title {
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: bold;
-    color: #003366;
+    color: #333;
+    margin-top: 10px;
 }
 
 .topcards-text {
-    font-size: 0.9rem;
-    color: #555;
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
 }
 
-/* Mobile View */
 @media (max-width: 768px) {
-    .card-container2 {
-        flex-direction: column;
-        padding: 20px 15px;
-        gap: 20px;  
-    }
-
-    .custom-topcards {
-        max-width: 100%;
-        min-width: 100%;
-        border: 1px solid #003366; 
-        margin-bottom: 20px;
-    }
-
     .icon {
-        font-size: 2rem;  
+        font-size: 28px;
     }
 
     .topcards-title {
-        font-size: 1rem;
+        font-size: 16px;
     }
 
     .topcards-text {
-        font-size: 0.8rem;
+        font-size: 13px;
     }
 }
 
-@media (max-width: 480px) {
-    .card-container2 {
-        padding: 15px 10px;
-        gap: 15px; 
-    }
-
-    .custom-topcards {
-        max-width: 100%;
-        min-width: 100%;
-        border: 1px solid #003366;
-        padding: 10px;
+@media (max-width: 576px) {
+    .cards {
+        padding: 15px;
     }
 
     .icon {
-        font-size: 1.8rem; 
+        font-size: 24px;
     }
 
     .topcards-title {
-        font-size: 0.9rem;
+        font-size: 14px;
     }
 
     .topcards-text {
-        font-size: 0.75rem;
+        font-size: 12px;
     }
 }
+
+
+
+
+ 

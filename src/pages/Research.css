@@ -1,9 +1,7 @@
- /* Research.css */
-
-/* Desktop view */
 .main-research {
   margin: 0 auto;
   padding: 20px;
+  max-width: 1200px;
 }
 
 h3 {
@@ -16,16 +14,36 @@ h3 {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .carousel-image img {
   width: 30%;
+  max-width: 400px; 
   height: auto;
+  margin: 5px;
 }
 
-/* Mobile view */
+/* Medium screens (tablets, 768px and up) */
+@media (max-width: 992px) {
+  .carousel-image img {
+    width: 30%;
+  }
+}
+
+/* Small screens (phones, 768px and down) */
 @media (max-width: 768px) {
   .main-research {
-    display: none; /* Hide the Research section on mobile */
+    padding: 10px;
+  }
+  h3, .carousel-image {
+    display: none; 
+  }
+}
+
+/* Extra small screens (phones, 576px and down) */
+@media (max-width: 576px) {
+  .main-research {
+    padding: 5px;
   }
 }
