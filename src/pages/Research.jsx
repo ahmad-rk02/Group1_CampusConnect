@@ -10,70 +10,54 @@ import research05 from '../assets/research-img-05.jpg';
 import research06 from '../assets/research-img-06.jpg';
 
 const Research = () => {
-    return (
-        <div className="main-research col-md-12">
-            <h3 className="text-center">Research</h3>
+  return (
+    <div className="main-research col-12">
+      <h3 className="text-center">Research</h3>
+      <Carousel interval={1000} pause="hover">
+        {/* First Slide */}
+        <Carousel.Item>
+          <div className="carousel-image">
+            <img
+              className="d-block"
+              src={research01}
+              alt="First slide"
+            />
+            <img
+              className="d-block"
+              src={research02}
+              alt="First slide"
+            />
+            <img
+              className="d-block"
+              src={research03}
+              alt="First slide"
+            />
+          </div>
+        </Carousel.Item>
 
-
-      
-            <Carousel interval={1000} pause="hover">
-      {/* First Slide */}
-      <Carousel.Item>
-        <div className="d-flex justify-content-around carousel-image">
-          <img
-            className="d-block"
-            src={research01}
-            alt="First slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-          <img
-            className="d-block"
-            src={research02}
-            alt="First slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-          <img
-            className="d-block"
-            src={research03}
-            alt="First slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-        </div>
-      </Carousel.Item>
-
-      {/* Second Slide */}
-      <Carousel.Item>
-        <div className="d-flex justify-content-around carousel-image">
-          <img
-            className="d-block"
-            src={research04}
-            alt="Second slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-          <img
-            className="d-block"
-            src={research05}
-            alt="Second slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-          <img
-            className="d-block"
-            src={research06}
-            alt="Second slide"
-            style={{ width: "30%", height: "auto" }}
-          />
-        </div>
-      </Carousel.Item>
-    </Carousel>
-
-
-            
-        </div>
-    );
+        {/* Second Slide */}
+        <Carousel.Item>
+          <div className="carousel-image">
+            <img
+              className="d-block"
+              src={research04}
+              alt="Second slide"
+            />
+            <img
+              className="d-block"
+              src={research05}
+              alt="Second slide"
+            />
+            <img
+              className="d-block"
+              src={research06}
+              alt="Second slide"
+            />
+          </div>
+        </Carousel.Item>
+      </Carousel>
+    </div>
+  );
 };
 
 export default Research;
-
-
-
-
