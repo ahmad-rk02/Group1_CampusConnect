@@ -1,3 +1,4 @@
+/* General styling */
 .head-box-ug {
     background-color: #102c57;
     height: 130px;
@@ -15,6 +16,7 @@
 .left-index-ug {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-ug {
@@ -48,35 +50,32 @@
     color: black;
 }
 
-
 .left-nav-ug {
-    position: -webkit-sticky; /* For Safari */
     position: sticky;
-    top: 5px; /* Adjust this as needed */
+    top: 5px;
     background-color: white;
     border-radius: 0;
     height: 200px;
     width: 300px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.left-nav-row-ug{
+
+.left-nav-row-ug {
     height: 65px;
-  }
+}
 
-
-.head-table-top h3{
+.head-table-top-ug h3 {
    text-align: left;
    padding-left: 15px;
    padding-top: 6px;
 }
 
-
-.ug-table{
-    width: 70%;
+.ug-table {
+    width: 80%;
     border-radius: 10px;
 }
 
-.table-header-ug th{
+.table-header-ug th {
     background-color: #102c57;
     color: white;
     text-align: center;
@@ -84,21 +83,159 @@
 
 .table-header-ug th:first-child {
     border-top-left-radius: 10px; 
-  }
-  
-  .table-header-ug th:last-child {
+}
+
+.table-header-ug th:last-child {
     border-top-right-radius: 10px; 
-  }
+}
 
-.table-body-ug tr{
+.table-body-ug tr {
     text-align: center;
-  }
+}
 
-.name-ug-prog{
+.name-ug-prog {
     text-align: left;
 }
 
-.left-nav-row-ug-01{
+.left-nav-row-ug-01 {
     font-weight: 700;
     height: 65px;
+}
+.para-ug{
+    padding-Bottom: "15px";
+     font-Size: "medium";
+      font-Weight: "500";
+       word-wrap: "break-word" ;
+       width: 80%;
+}
+.para-ugmain{
+     padding-Top: "50px";
+      padding-Bottom: "0px";
+       font-Size: "large";
+        font-Weight: "700";
+         word-Wrap: "break-word";
+         width: 80%;
+}
+.head-table-top-ug{
+    width:80% ;
+    height: 50px;
+    background-color: antiquewhite;
+    margin-bottom: 20px;
+}
+.head-table-top-ug h3{
+    color: '#102C57' 
+}
+
+/* Responsive styling */
+
+/* Medium screens: adjust sidebar width and reduce table width */
+@media (max-width: 992px) {
+    .head-box-ug h1 {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-ug {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .ug-table {
+        width: 90%;
+    }
+}
+
+/* Small screens: stack sidebar and content vertically */
+@media (max-width: 768px) {
+    .head-box-ug h1 {
+        font-size: 28px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+
+    /* Stack elements vertically */
+    .left-index-ug {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Full-width for sidebar */
+    .left-sidebar-ug {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    /* Full-width for content */
+    .table-n-head {
+        width: 60%;
+        padding-left: 0;
+        margin-left: -200px;
+    }
+
+    /* Full-width for table */
+    .ug-table {
+        width:60%;
+    }
+
+    /* Reduce font size and padding for table on small screens */
+    .table-header-ug th, .table-body-ug tr td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .head-table-top-ug h3{
+        text-align: center;
+        font-size: 22px;
+    }
+    .para-ug{
+        width: 60%;
+    }
+    .para-ugmain{
+        width: 60%;
+    }
+    .head-table-top-ug{
+        width: 60%;
+    }
+}
+
+/* Extra small screens: full-width adjustments */
+@media (max-width: 576px) {
+    .head-box-ug h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    /* Stack layout remains */
+    .left-index-ug {
+        padding: 5px;
+    }
+
+    /* Adjust table and content spacing */
+    .ug-table, .head-table-top, p {
+        width: 40%;
+        padding: 5px;
+    }
+
+    /* Further reduce font size for extra-small screens */
+    .table-header-ug th, .table-body-ug tr td {
+        font-size: 0.8rem;
+        padding: 6px;
+    }
+
+    .head-table-top h3 {
+        font-size: 1.2rem;
+    }
+
+.para-ug{
+    width: 40%;
+}
+.para-ugmain{
+    width: 40%;
+}
+.head-table-top-ug{
+    width: 40%;
+}
 }
