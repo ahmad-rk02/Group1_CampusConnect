@@ -142,7 +142,7 @@
     }
 
     .ug-table {
-        width: 80%;
+        width: 100%;
     }
      /* Stack elements vertically */
      .left-index-ug {
@@ -156,7 +156,7 @@
 
     /* Full-width for content */
     .table-n-head {
-        width: 60%;
+        width: 77%;
         padding-left: 0;
         margin-left: -200px;
     }
@@ -171,13 +171,13 @@
         font-size: 22px;
     }
     .para-ug{
-        width: 80%;
+        width: 100%;
     }
     .para-ugmain{
-        width: 80%;
+        width: 100%;
     }
     .head-table-top-ug{
-        width: 80%;
+        width: 100%;
     }
 }
 
@@ -209,12 +209,12 @@
     .table-n-head {
         width: 60%;
         padding-left: 0;
-        margin-left: -200px;
+      
     }
 
     /* Full-width for table */
     .ug-table {
-        width:60%;
+        width:100%;
     }
 
     /* Reduce font size and padding for table on small screens */
@@ -228,51 +228,52 @@
         font-size: 22px;
     }
     .para-ug{
-        width: 60%;
+        width: 100%;
     }
     .para-ugmain{
-        width: 60%;
+        width: 100%;
     }
     .head-table-top-ug{
-        width: 60%;
+        width: 100%;
     }
 }
 
 /* Extra small screens: full-width adjustments */
+/* Extra small screens: full-width adjustments without horizontal scrolling */
 @media (max-width: 576px) {
     .head-box-ug h1 {
         font-size: 24px;
         margin-top: 10px;
+        text-align: center;
     }
 
-    /* Stack layout remains */
-    .left-index-ug {
+    /* Compact table adjustments */
+    .ug-table {
+        width: 100%;
+        margin: 0 auto;
         padding: 5px;
+        border-collapse: collapse;
     }
 
-    /* Adjust table and content spacing */
-    .ug-table, .head-table-top, p {
-        width: 40%;
-        padding: 5px;
-    }
-
-    /* Further reduce font size for extra-small screens */
+    /* Reduce padding and font size for table cells */
     .table-header-ug th, .table-body-ug tr td {
-        font-size: 0.8rem;
-        padding: 6px;
+        font-size: 0.65rem;
+        padding: 4px;
+        text-align: center;
     }
 
-    .head-table-top h3 {
-        font-size: 1.2rem;
+    .head-table-top-ug {
+        width: 100%;
+        padding: 5px;
+        text-align: center;
     }
 
-.para-ug{
-    width: 40%;
-}
-.para-ugmain{
-    width: 40%;
-}
-.head-table-top-ug{
-    width: 40%;
-}
+    .head-table-top-ug h3 {
+        font-size: 1.1rem;
+    }
+
+    /* Ensure text areas take full width */
+    .para-ug, .para-ugmain {
+        width: 100%;
+    }
 }

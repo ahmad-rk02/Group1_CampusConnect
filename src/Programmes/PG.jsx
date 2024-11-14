@@ -23,7 +23,7 @@ const PG = () => {
         </Col>
       </Row>
 
-      <Row  className="flex-nowrap left-index-PG just" >
+      <Row  className="left-index-PG" >
         {/* Left Sidebar */}
         <Col md={2} className='left-sidebar-PG' >
           <Card className="left-nav-PG" >
@@ -57,13 +57,13 @@ const PG = () => {
         </Col>
 
         <Col>
-          <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }} >
+          <div className=" mt-5 table-n-head" >
 
-            <div className='head-table-top'>
-            <h3 style={{ color: '#102C57' }} >PG (M.Tech) Programmes</h3>
+            <div className='head-table-top-PG'>
+            <h3 >PG (M.Tech) Programmes</h3>
             </div>
 
-            <p style={{paddingTop: "15px", paddingBottom: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
+            <p className='para-pg'>
             Graduates of the program will develop the sensitivity towards environment and society for sustainable development and effective disaster management.
             </p>
 

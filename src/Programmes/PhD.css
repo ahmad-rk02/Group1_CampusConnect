@@ -14,6 +14,7 @@
 .left-index-phd {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-phd {
@@ -63,13 +64,13 @@
 
  
 
-.head-table-top{
+.head-table-top-phd{
     background-color: #eadbc8;
     width: 70%;
     height: 50px;
 }
 
-.head-table-top h3{
+.head-table-top-phd h3{
    text-align: left;
    padding-left: 15px;
    padding-top: 6px;
@@ -111,3 +112,157 @@ width: max-content;
 .left-nav-row-phd-01{
     font-weight: 700;
 }
+.para-phd{
+    padding-Bottom: "15px";
+     padding-Top: "15px";
+     font-Size:"medium";
+     font-Weight: "500";
+     width: "70%";
+     word-Wrap: "break-word"; 
+}
+/* Responsive styling */
+
+/* Medium screens: adjust sidebar width and reduce table width */
+@media (max-width: 992px) {
+    .head-box-phd h1 {
+        font-size: 32px;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+  
+    .left-sidebar-phd {
+        width: 100%;
+        margin-left: 0;
+    }
+  
+    .phd-table {
+        width: 100%;
+    }
+     /* Stack elements vertically */
+     .left-index-phd {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+  
+   
+    
+  
+    /* Full-width for content */
+    .table-n-head {
+        width: 100%;
+        padding-left: 0;
+        margin-left: 8px;
+    }
+    /* Reduce font size and padding for table on small screens */
+    .table-header-phd th, .table-body-phd tr td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+  
+    .head-table-top-phd h3{
+        text-align: center;
+        font-size: 22px;
+    }
+    .para-phd{
+        width: 100%;
+    }
+    
+    .head-table-top-phd{
+        width: 100%;
+    }
+  }
+  
+  
+  
+  /* Small screens: stack sidebar and content vertically */
+  @media (max-width: 768px) {
+    .head-box-phd h1 {
+        font-size: 28px;
+        margin-top: 20px;
+        text-align: center;
+    }
+    
+  
+    /* Stack elements vertically */
+    .left-index-phd {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+  
+    /* Full-width for sidebar */
+    .left-sidebar-phd {
+        width: 100%;
+       
+    }
+  
+    /* Full-width for content */
+    .table-n-head {
+        width: 100%;
+        padding-left: 0;
+      
+    }
+  
+    /* Full-width for table */
+    .phd-table {
+        width:100%;
+    }
+  
+    /* Reduce font size and padding for table on small screens */
+    .table-header-phd th, .table-body-phd tr td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+  
+    .head-table-top-phd h3{
+        text-align: center;
+        font-size: 22px;
+    }
+    .para-pg{
+        width: 100%;
+    }
+    
+    .head-table-top-phd{
+        width: 100%;
+    }
+  }
+  
+  /* Extra small screens: full-width adjustments */
+  @media (max-width: 576px) {
+    .head-box-phd h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+  
+    /* Stack layout remains */
+    .left-index-phd {
+        padding: 5px;
+    }
+  
+    /* Adjust table and content spacing */
+    .phd-table, .head-table-top, p {
+        width: 100%;
+        padding: 5px;
+        margin-left: -5px;
+    }
+  
+    /* Further reduce font size for extra-small screens */
+    .table-header-phd th, .table-body-phd tr td {
+        font-size: 0.65rem;
+        padding: 6px;
+    }
+  
+    .head-table-top h3 {
+        font-size: 1.2rem;
+    }
+  
+  .para-pg{
+    width: 100%;
+  }
+  
+  .head-table-top-phd{
+    width: 100%;
+  }
+  }
+  

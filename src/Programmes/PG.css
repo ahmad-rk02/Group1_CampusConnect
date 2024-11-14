@@ -15,6 +15,7 @@
 .left-index-PG {
   margin-left: 60px;
   margin-right: 60px;
+  flex-wrap: nowrap;
 }
 
 .left-sidebar-PG {
@@ -48,14 +49,11 @@
   color: #007bff;
 }
 
-.head-table-top h3 {
+.head-table-top-PG h3 {
   text-align: left;
   padding-left: 15px;
   padding-top: 6px;
 }
-
-
-
 .PG-table {
   width: 70%;
   border-radius: 10px;
@@ -100,4 +98,166 @@
 .left-nav-row-PG-01{
   font-weight: 700;
   height: 65px;
+}
+.para-pg{
+  padding-Bottom: "15px";
+     font-Size: "medium";
+      font-Weight: "500";
+       word-wrap: "break-word" ;
+       width: 70%;
+}
+.head-table-top-PG{
+  width:70% ;
+  height: 50px;
+  background-color: antiquewhite;
+  margin-bottom: 20px;
+}/* Responsive styling */
+
+/* Medium screens: adjust sidebar width and reduce table width */
+@media (max-width: 992px) {
+  .head-box-PG h1 {
+      font-size: 32px;
+      margin-top: 30px;
+      margin-left: 20px;
+  }
+
+  .left-sidebar-PG {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  .PG-table {
+      width: 100%;
+  }
+   /* Stack elements vertically */
+   .left-index-PG {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+
+ 
+  
+
+  /* Full-width for content */
+  .table-n-head {
+      width: 70%;
+      padding-left: 0;
+      margin-left: -200px;
+  }
+  /* Reduce font size and padding for table on small screens */
+  .table-header-PG th, .table-body-PG tr td {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+
+  .head-table-top-PG h3{
+      text-align: center;
+      font-size: 22px;
+  }
+  .para-pg{
+      width: 100%;
+  }
+  
+  .head-table-top-PG{
+      width: 100%;
+  }
+}
+
+
+
+/* Small screens: stack sidebar and content vertically */
+@media (max-width: 768px) {
+  .head-box-PG h1 {
+      font-size: 28px;
+      margin-top: 20px;
+      text-align: center;
+  }
+  
+
+  /* Stack elements vertically */
+  .left-index-PG {
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+  }
+
+  /* Full-width for sidebar */
+  .left-sidebar-PG {
+      width: 100%;
+     
+  }
+
+  /* Full-width for content */
+  .table-n-head {
+      width: 57%;
+      padding-left: 0;
+    
+  }
+
+  /* Full-width for table */
+  .PG-table {
+      width:100%;
+  }
+
+  /* Reduce font size and padding for table on small screens */
+  .table-header-PG th, .table-body-PG tr td {
+      font-size: 0.9rem;
+      padding: 8px;
+  }
+
+  .head-table-top-PG h3{
+      text-align: center;
+      font-size: 22px;
+  }
+  .para-pg{
+      width: 100%;
+  }
+  
+  .head-table-top-PG{
+      width: 100%;
+  }
+}
+
+/* Extra small screens: full-width adjustments */
+@media (max-width: 576px) {
+  .head-box-PG h1 {
+      font-size: 24px;
+      margin-top: 10px;
+  }
+
+  /* Stack layout remains */
+  .left-index-PG {
+      padding: 5px;
+  }
+
+  /* Adjust table and content spacing */
+  .PG-table{
+    width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+        border-collapse: collapse;
+  } 
+  .head-table-top, p {
+      width: 100%;
+      padding: 5px;
+  }
+
+  /* Further reduce font size for extra-small screens */
+  .table-header-PG th, .table-body-PG tr td {
+      font-size: 0.65rem;
+      padding: 5px;
+  }
+
+  .head-table-top h3 {
+      font-size: 1.1rem;
+  }
+
+.para-pg{
+  width: 100%;
+}
+
+.head-table-top-PG{
+  width: 100%;
+}
 }
