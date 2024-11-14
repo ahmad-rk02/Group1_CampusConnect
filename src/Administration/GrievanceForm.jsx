@@ -297,14 +297,17 @@ const GrievanceForm = () => {
 
                 <Form.Group controlId="formGrievanceType" className="mb-3 whole-field-grivnce">
                   <Form.Label className='field-name-grivnce'>Grievance Type</Form.Label>
-                  <Form.Control
-                    type="text"
+                  <Form.Select
                     name="grievanceType"
                     value={formData.grievanceType}
                     onChange={handleChange}
-                    placeholder="Enter Grievance Type"
                     className={`input-box-grivnce ${errors.grievanceType && 'is-invalid'}`}
-                  />
+                  > 
+                  <option value="">Grievance Type</option>
+                    <option value="1">Departmental</option>
+                    <option value="2">Office Related</option>
+                    <option value="3">Others</option>
+                  </Form.Select>
                    {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
                 </Form.Group>
 

@@ -96,3 +96,36 @@ color: black;
 .content-card-vm{
   padding-left: 170px;
 }
+
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .header-align-vm h1 {
+    font-size: 1.8rem;
+    margin: 30px auto;
+  }
+  .content-card-vm {
+    padding-left: 0;
+    padding-top: 20px;
+  }
+  .left-sidebar-vm {
+    margin-left: 0;
+    margin-bottom: 20px;
+  }
+  .left-nav-vm {
+    width: 100%;
+    height: auto;
+  }
+  .card-content-vm {
+    padding: 15px;
+  }
+  .vision-img,
+  .mission-img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .text-medium {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
