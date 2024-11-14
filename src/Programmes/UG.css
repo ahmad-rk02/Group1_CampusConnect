@@ -142,9 +142,46 @@
     }
 
     .ug-table {
-        width: 90%;
+        width: 80%;
+    }
+     /* Stack elements vertically */
+     .left-index-ug {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+   
+    
+
+    /* Full-width for content */
+    .table-n-head {
+        width: 60%;
+        padding-left: 0;
+        margin-left: -200px;
+    }
+    /* Reduce font size and padding for table on small screens */
+    .table-header-ug th, .table-body-ug tr td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .head-table-top-ug h3{
+        text-align: center;
+        font-size: 22px;
+    }
+    .para-ug{
+        width: 80%;
+    }
+    .para-ugmain{
+        width: 80%;
+    }
+    .head-table-top-ug{
+        width: 80%;
     }
 }
+
+
 
 /* Small screens: stack sidebar and content vertically */
 @media (max-width: 768px) {
