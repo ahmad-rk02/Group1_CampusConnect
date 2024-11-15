@@ -79,7 +79,7 @@ const PrincipalDesk = () => {
                   </Col>
 
 
-                  <Col md={12}>
+                  <Col md={12} className="right-para-principal-desk">
                   <p style={{ marginTop: "20px" }}>
                     <h4 className="principal-name-pd" style={{ marginRight: "100px" }}>Dr. Prashant V. Washimkar</h4>
                     
