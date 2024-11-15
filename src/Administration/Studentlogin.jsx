@@ -115,8 +115,8 @@ const LoginForm = () => {
         </Col>
 
         <Col>
-          <div className="head-right-top-login-1">
-            <h3>Student Login</h3>
+          <div className="head-right-top-login" >
+            <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 
           <div className="login-section">

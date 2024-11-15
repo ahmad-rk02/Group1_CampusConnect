@@ -56,7 +56,7 @@ const Contact = () => {
                 title="GCOE Chandrapur Location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.062032202545!2d79.31693817468579!3d19.921790624877737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd2d4719e5cbe07%3A0xb8c55b177f1c18f2!2sGEC!5e0!3m2!1sen!2sin!4v1726080900088!5m2!1sen!2sin" width="100%"
                 height="300"
-                style={{ border: '0' }}
+                
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
