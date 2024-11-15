@@ -20,7 +20,7 @@ const Login = () => {
                 </Col>
             </Row>
             
-            <Row className="flex-nowrap left-index-loginP just">
+            <Row className="left-index-loginP">
                 <Col md={2} className='left-sidebar-loginP'>
                     <Card className="left-nav-loginP">
                         <ListGroup variant="flush">
@@ -59,8 +59,8 @@ const Login = () => {
                 </Col>
                 <Col >
                     <div className="login-portal">
-                        <div className='head-right-top-loginP' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-                            <h3 style={{ color: '#102C57' }}>
+                        <div className='head-right-top-loginP' >
+                            <h3>
                                 Login
                             </h3>
                         </div>
