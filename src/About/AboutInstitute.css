@@ -88,6 +88,8 @@
 .side-heading-bottom-ai {
   margin-top: 18em;
   margin-left: 10em;
+  z-index: 1; /* Ensure this value is higher than the navbar if needed */
+  position: relative;
 }
 
 .left-nav-row-ai {
@@ -103,149 +105,81 @@
   height: 200px;
   width: 300px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 }
 
-/* Responsive adjustments */
 
-  @media (max-width: 1239px) {
-    
-    .left-index-ai{
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 20px;
-    }
-
-    .left-sidebar-ai {
-      margin-left: 20px;
-      width: 200px;
-    }
-  
-    .left-nav-ai {
-      width: 200px; 
-      height: auto; 
-    }
-  
-    .left-sidebar-ai .list-group-item {
-      font-size: 1rem; 
-      padding: 10px;
-    }
-  
-    .content-card-ai {
-      padding-left: 30px; 
-      width: calc(100% - 220px); 
-      position: relative;
-      z-index: 1;
-    }
-  
-    .header-align-ai h1 {
-      font-size: 2rem; 
-      margin-left: 100px; 
-      margin-top: 40px;
-    }
-  
-    .side-heading-bottom-ai {
-      margin-left: 4em;
-      margin-top: 12em; 
-    }
-  
-    .about-image-ai {
-      max-width: 90%;
-      padding: 10px;
-    }
-  }
-  
-
-/* Adjust font size and alignment for smaller screens */
+/* Responsive Styling */
 @media (max-width: 992px) {
   .header-align-ai h1 {
     font-size: 2rem;
-    margin-left: 80px;
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 4rem;
+    margin-left: 10rem;
   }
 
   .card-content-ai {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 50px;
   }
+  .side-heading-bottom-ai {
+    margin-top: 1em;
+    margin-left: 2em;
+    font-size: 1.5rem;
+  }
+  .about-image-ai {
+    width: 100%;
+  }
+}
 
-  .left-index-ai {
-    display: flex;
-    flex-wrap: nowrap;
-    margin-left: 20px;
-    margin-right: 20px;
+
+@media (max-width: 768px) {
+  .header-align-ai h1 {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
   }
 
   .side-heading-bottom-ai {
     margin-top: 5em;
     margin-left: 2em;
-  }
-
-  .left-sidebar-ai {
-    margin-left: 10px;
-    width: 100%;
-  }
-
-  .left-sidebar-ai .card {
-    width: 100%;
-  }
-
-  .left-sidebar-ai .list-group-item {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .header-align-ai h1 {
     font-size: 1.5rem;
-    margin-left: 0;
-    text-align: center;
   }
 
-  .left-sidebar-ai {
-    margin-left: 0;
+  .card-content-ai {
+    padding-left: 0;
   }
 
-.left-index-ai{
-  flex-direction: column;
-  align-items: center;
-  margin: 0;
-}
-
-  .side-heading-bottom-ai {
-    margin-top: 2em;
-    text-align: center;
-    margin-left: 0;
+  .about-image-ai {
+    width: 100%;
   }
-
-  
-
-  .card-body{
-    overflow: visible; 
-    align-items: center;
-    align-content: center;
-    margin-left: 1%;
-    margin-right: 1%;
-  }
-
-  .content-card-ai p {
-    font-size: 1rem;
-   
+  .left-nav-ai{
+    position: sticky;
   }
 }
+
 
 @media (max-width: 576px) {
   .header-align-ai h1 {
-    font-size: 1.3rem;
-  }
-
-  .side-heading-bottom-ai h2 {
     font-size: 1.5rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
   }
 
-  .left-nav-ai {
-    height: auto;
+  .side-heading-bottom-ai {
+    margin-top: 2em;
+    margin-left: 1em;
+  }
+
+  .left-sidebar-ai {
     width: 100%;
-    top: 0;
+    margin-left: 0;
+  }
+
+  .about-image-ai {
+    width: 100%;
+    min-width: 200px; /* Ensures the image doesn’t get too small */
+  }
+
+  .card-content-ai {
+    padding:0 10px;
   }
 }
