@@ -1,7 +1,8 @@
+/* Default Styles (Full Screen) - No Changes */
 .head-box-loginP {
   background-color: #102c57;
   height: 130px;
-   padding-left: 20px;
+  padding-left: 20px;
 }
 
 .head-box-loginP h1 {
@@ -30,8 +31,6 @@
   text-align: center;
 }
 
-
-
 .footer-spacing {
   margin-top: 80px;
 }
@@ -41,16 +40,15 @@
   color: black;
 }
 
-
 .left-nav-loginP {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 0; /* Adjust this as needed */
+  top: 0;
   background-color: white;
   border-radius: 0;
   width: 300px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);}
-
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
 
 .left-nav-row-loginP {
   height: 56px;
@@ -60,7 +58,6 @@
   font-weight: 700;
   height: 56px;
 }
-
 
 .login-portal {
   display: flex;
@@ -108,6 +105,7 @@
   margin-bottom: 30px;
   background-color: white;
 }
+
 .login-card .btn {
   width: 100%;
   padding: 12px;
@@ -115,10 +113,12 @@
   border-radius: 6px;
   transition: background-color 0.3s, transform 0.2s;
 }
+
 .login-card .btn-primary {
   background-color: #102C57;
   border: none;
 }
+
 .login-card .btn-primary:hover {
   background-color: #0056b3;
   transform: scale(1.05);
@@ -145,88 +145,93 @@
   text-align: left;
   padding-left: 15px;
   padding-top: 5px;
-   color: #102C57;
+  color: #102C57;
 }
-/* Default styles for full-screen (desktop) remain unchanged */
-
-/* Responsive styling for tablets and smaller screens */
-@media (max-width: 1024px) {
-  .login-portal {
+/* General Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+  .head-box-loginP {
+      height: 100px;
+      padding-left: 10px;
+  }
+  .left-index-loginP {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
   }
-  
-  
-  .left-sidebar-loginP {
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  
-
- 
-}
-
-/* Responsive styling for mobile screens */
-@media (max-width: 768px) {
-  
-  
   .head-box-loginP h1 {
-    font-size: 24px;
-        margin-left: 10px;
+      font-size: 32px;
+      margin-top: 20px;
+      text-align: left;
   }
 
-  .left-index-loginP{
- 
-      display: flex;
-      flex-direction: column;
-      padding: 10px;
-  
+  .left-index-loginP {
+      margin-left: 20px;
+      margin-right: 20px;
   }
+
   .left-sidebar-loginP {
-    width: 100%;
-    max-width: 100%;
-  
-  }
-
-  
-  .login-portal {
-    flex-direction: column;
-  }
-
-  .login-card {
-    max-width: 100%;
-    margin: 10px;
+      width: 200px;
+      margin-left: 20px;
   }
 
   .head-right-top-loginP {
-    width: 100%;
-    margin-top: 20px;
-    margin: 0 auto;
+      
+      width: 100%;
+      margin-top: 0.5rem;
+      margin: 0 auto;
+  }
+
+  .left-nav-loginP {
+      width: 240px;
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .left-nav-row-loginP, .left-nav-row-loginP-01 {
+      height: 50px;
+  }
+
+  -loginP-table {
+      width: 100%;
   }
 }
 
-/* Additional small screen adjustments (e.g., for extra small mobile screens) */
-@media (max-width: 480px) {
-  .head-box-loginP h1 {
-    font-size: 24px;
-    margin-left: 10px;
-  }
-  
-  .login-card {
-    padding: 10px;
+/* Responsive Table Adjustments for Small Screens */
+@media screen and (max-width: 768px) {
+  -loginP-table {
+      width: 100%; /* Ensure table fits within the viewport */
+      font-size: 14px; /* Reduce font size */
   }
 
-  .login-card .card-body {
-    padding: 20px;
+  -loginP-table th, 
+  -loginP-table td {
+      padding: 5px; /* Reduce cell padding */
   }
 
-  .login-card .card-title {
-    font-size: 1.2rem;
+  .table-header-loginP th {
+      font-size: 12px; /* Smaller font for headers */
   }
 
-  .login-card .btn {
-    font-size: 1rem;
+  .table-body-loginP tr {
+      font-size: 12px; /* Smaller font for rows */
   }
 }
+
+@media screen and (max-width: 480px) {
+  -loginP-table {
+      width: 100%; /* Ensure the table fits the screen */
+      font-size: 13px; /* Further reduce font size for very small screens */
+  }
+
+  -loginP-table th, 
+  -loginP-table td {
+      padding: 3px; /* Minimize cell padding */
+  }
+
+  .table-header-loginP th {
+      font-size: 11px; /* Adjust header font size */
+  }
+
+  .table-body-loginP tr {
+      font-size: 11px; /* Adjust body font size */
+  }
+}
+

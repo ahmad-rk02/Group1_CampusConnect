@@ -14,7 +14,7 @@ const EligibilityCriteria = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-eligibilitycrt just">
+      <Row noGutters className=" left-index-eligibilitycrt ">
         <Col md={2} className='left-sidebar-eligibilitycrt'>
           <Card className="left-nav-eligibilitycrt">
             <ListGroup variant="flush">
