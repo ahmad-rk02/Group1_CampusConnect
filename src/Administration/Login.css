@@ -1,6 +1,7 @@
 .head-box-loginP {
   background-color: #102c57;
   height: 130px;
+   padding-left: 20px;
 }
 
 .head-box-loginP h1 {
@@ -8,7 +9,6 @@
   text-align: left;
   font-size: 40px;
   margin-top: 50px;
-  margin-left: 85px;
   color: white;
 }
 
@@ -30,10 +30,7 @@
   text-align: center;
 }
 
-.left-sidebar-loginP .list-group-item {
-  font-size: 1.2rem;
-  text-align: center;
-}
+
 
 .footer-spacing {
   margin-top: 80px;
@@ -46,11 +43,14 @@
 
 
 .left-nav-loginP {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust this as needed */
   background-color: white;
   border-radius: 0;
   width: 300px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
-}
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);}
+
 
 .left-nav-row-loginP {
   height: 56px;
@@ -58,6 +58,7 @@
 
 .left-nav-row-loginP-01 {
   font-weight: 700;
+  height: 56px;
 }
 
 
@@ -156,37 +157,24 @@
     gap: 20px;
   }
   
-  .left-index-loginP,
+  
   .left-sidebar-loginP {
     margin-left: 20px;
     margin-right: 20px;
   }
 
-  .left-nav-loginP {
-    width: 100%;
-    box-shadow: none;
-  }
+  
 
-  .login-card {
-    max-width: 100%;
-    margin: 10px 0;
-  }
-  .head-right-top-loginP {
-    width: 100%;
-  }
+ 
 }
 
 /* Responsive styling for mobile screens */
 @media (max-width: 768px) {
-  .head-box-loginP {
-    height: auto;
-    padding: 20px;
-  }
+  
   
   .head-box-loginP h1 {
-    font-size: 30px;
-    margin-top: 10px;
-    margin-left: 20px;
+    font-size: 24px;
+        margin-left: 10px;
   }
 
   .left-index-loginP{
@@ -197,11 +185,8 @@
   
   }
   .left-sidebar-loginP {
-    margin-left: 20px;
-    margin-right: 20px;
-    
-      width: 100%;
-      margin-bottom: 15px;
+    width: 100%;
+    max-width: 100%;
   
   }
 
@@ -218,6 +203,7 @@
   .head-right-top-loginP {
     width: 100%;
     margin-top: 20px;
+    margin: 0 auto;
   }
 }
 

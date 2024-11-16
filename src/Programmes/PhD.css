@@ -113,12 +113,12 @@ width: max-content;
     font-weight: 700;
 }
 .para-phd{
-    padding-Bottom: "15px";
-     padding-Top: "15px";
-     font-Size:"medium";
-     font-Weight: "500";
-     width: "70%";
-     word-Wrap: "break-word"; 
+    padding-Bottom: 15px;
+     padding-Top: 15px;
+     font-Size:medium;
+     font-Weight: 500;
+     width: 70%;
+     word-Wrap: break-word; 
 }
 /* Responsive styling */
 
