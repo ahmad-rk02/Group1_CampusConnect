@@ -1,9 +1,10 @@
-.header-design-contact{
-    background-color:#102C57;
-    height: 130px; 
+/* Base styling for large screens (original styling) */
+.header-design-contact {
+    background-color: #102C57;
+    height: 130px;
 }
 
-.header-align-contact h1{ 
+.header-align-contact h1 {
     font-size: 2.5rem;
     font-weight: bold;
     text-align: left;
@@ -21,11 +22,13 @@
     z-index: 2;
     margin-left: 100px;
 }
+
 .card3 {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     margin-right: 50px;
 }
+
 .card2 p {
     font-size: 16px;
     line-height: 1.6;
@@ -50,4 +53,59 @@
 
 .card2 a:visited {
     color: #6610f2;
+}
+
+/* Responsive adjustments */
+
+/* Tablets and small screens (768px and below) */
+@media (max-width: 768px) {
+    .header-design-contact {
+        height: 100px;
+    }
+
+    .header-align-contact h1 {
+        font-size: 2rem;
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+    .card2 {
+        padding: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        top: 0;
+    }
+
+    .card3 {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    .header-design-contact {
+        height: 80px;
+    }
+
+    .header-align-contact h1 {
+        font-size: 1.5rem;
+        margin-top: 20px;
+        margin-left: 10px;
+    }
+
+    .card2 {
+        padding: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .card3 {
+        margin-right: 10px;
+    }
+
+    .card2 p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
 }

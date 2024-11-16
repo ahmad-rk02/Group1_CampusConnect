@@ -94,7 +94,7 @@ const LoginForm = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-login just">
+      <Row noGutters className="left-index-login ">
         <Col md={2} className="left-sidebar-login">
           <Card className="left-nav-login">
             <ListGroup variant="flush">
@@ -115,7 +115,7 @@ const LoginForm = () => {
         </Col>
 
         <Col>
-          <div className="head-right-top-login" style={{ width: '70%', backgroundColor: '#eadbc8' }}>
+          <div className="head-right-top-login" >
             <h3 style={{ color: '#102C57' }}>Student Login</h3>
           </div>
 

@@ -24,7 +24,7 @@ const PhD = () => {
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-phd just" >
+        <Row noGutters className="left-index-phd just" >
           {/* Left Sidebar */}
           <Col md={2} className='left-sidebar-phd'>
             <Card className="left-nav-phd" >
@@ -60,10 +60,10 @@ const PhD = () => {
           <Col>
             <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }}>
 
-              <div  className='head-table-top'>
-                <h3 style={{ color: '#102C57' }} > Ph.D</h3></div>
+              <div  className='head-table-top-phd'>
+                <h3 style={{ color: '#102C57' }} > Ph.D Programmes</h3></div>
 
-              <p style={{ paddingBottom: "15px", paddingTop: "15px", fontSize: "medium", fontWeight: "500", width: "70%", wordWrap: "break-word" }}>
+              <p className="para-phd">
                 PhD program will have qualities of life-long learning, team work with effective communication for successful implementation of Civil Engineering projects.
               </p>
 
