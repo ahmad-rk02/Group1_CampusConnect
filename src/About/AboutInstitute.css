@@ -86,7 +86,7 @@
 }
 
 .side-heading-bottom-ai {
-  margin-top: 18em;
+  margin-top: 10em;
   margin-left: 10em;
   z-index: 1; /* Ensure this value is higher than the navbar if needed */
   position: relative;
@@ -97,8 +97,7 @@
 }
 
 .left-nav-ai {
-  position: -webkit-sticky;
-  position: sticky;
+  position: static;
   top: 5px;
   background-color: white;
   border-radius: 0;
@@ -151,9 +150,7 @@
   .about-image-ai {
     width: 100%;
   }
-  .left-nav-ai{
-    position: sticky;
-  }
+  
 }
 
 
