@@ -226,6 +226,7 @@
     .head-table-top-ug h3{
         text-align: center;
         font-size: 22px;
+        visibility: visible;
     }
     .para-ug{
         width: 60%;
@@ -235,6 +236,14 @@
     }
     .head-table-top-ug{
         width: 60%;
+    }
+
+    .head-table-top-ug h3{
+        text-align: center;
+        font-size: 22px;
+        visibility: visible;
+        text-align: center;
+        color: #102c57;
     }
 }
 
@@ -254,6 +263,15 @@
     .ug-table, .head-table-top, p {
         width: 40%;
         padding: 5px;
+    }
+
+    .head-table-top-ug h3{
+        font-size: 1.2rem;
+        color: #102c57;
+        visibility: visible;
+        text-align: center;
+        color: #102c57;
+        z-index: 1;
     }
 
     /* Further reduce font size for extra-small screens */
