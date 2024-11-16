@@ -69,7 +69,8 @@ const PrincipalDesk = () => {
                 <h4>About Principal</h4>
               </Card.Header>
               <Card.Body className="bg-white-pd">
-                <Row>
+
+                <Row  className="right-row">
                   <Col md={12} className=" p-0 text-center mb-3">
                     <img
                       src={principaldesk}

@@ -52,7 +52,7 @@ const AboutInstitute = () => {
           <Col md={9} sm={12} className="content-card-ai">
             {/* About Institute */}
             <Card className="mb-4 card-content-ai border-0">
-              <Card.Body className="bg-white">
+              <Card.Body className="bg-white card-body">
                 <Row>
                   <Col xs={12} className="text-center mb-3">
                     <img src={AboutInstituteImage} alt="Institute" className="about-image-ai" />

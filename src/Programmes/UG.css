@@ -226,6 +226,7 @@
     .head-table-top-ug h3{
         text-align: center;
         font-size: 22px;
+        visibility: visible;
     }
     .para-ug{
         width: 100%;
@@ -235,6 +236,14 @@
     }
     .head-table-top-ug{
         width: 100%;
+    }
+
+    .head-table-top-ug h3{
+        text-align: center;
+        font-size: 22px;
+        visibility: visible;
+        text-align: center;
+        color: #102c57;
     }
 }
 
