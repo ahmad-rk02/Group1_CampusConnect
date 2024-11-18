@@ -51,7 +51,7 @@
     color: black;
 }
 .tender-table{
-    width: 600px;
+   width: 75%;
 }
 .left-nav-row-tender,
 .left-nav-row-tender-01 {
@@ -86,41 +86,96 @@
     color: black;
 }
 
-@media (max-width: 768px) {
-
-    /* Adjust header */
-    .head-box-tender h1 {
-        font-size: 24px;
-        margin-left: 10px;
+/* Responsive styling for tablets and smaller screens */
+@media (max-width: 1024px) {
+    .head-box-tender {
+        height: 100px;
+        padding-left: 10px;
     }
 
-    .head-right-top-tender,
-    .right-top-text-tender,
-    .tender-table {
-        margin: 0 auto;
-        width: 100%;
-        padding: 10px;
+    .head-box-tender h1 {
+        font-size: 32px;
+        margin-top: 20px;
+        text-align: left;
+    }
+
+    .left-index-tender {
+        margin-left: 20px;
+        margin-right: 20px;
     }
 
     .left-sidebar-tender {
-        width: 100%;
-        max-width: 100%;
-        
+        width: 200px;
+        margin-left: 20px;
     }
 
-    /* Reduce padding and font size */
-    .table-header-tender th,
-    .table-body-tender td {
-        font-size: 0.9rem;
-        padding: 5px;
+    .head-right-top-tender {
+        
+        width: 100%;
+        margin-top: 0.5rem;
     }
+
+    .left-nav-tender {
+        width: 240px;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .left-nav-row-tender, .left-nav-row-tender-01 {
+        height: 50px;
+    }
+  .head-right-top-tender{
+    width: 100%;
+    margin-top: 40px;
+    margin: 0 auto;
+  }
+.tender-table{
+    width: 100%;
+}
+.right-top-text-tender{
+    width: 100%;
+    margin: 20px;
+ }
+ 
 }
 
-@media (max-width: 480px){
-    .head-box-loginP h1 {
-        font-size: 24px;
+/* Responsive styling for mobile screens */
+@media (max-width: 768px) {
+  
+  
+  .head-box-tender h1 {
+    font-size: 24px;
         margin-left: 10px;
-      }
+  }
+  .left-sidebar-tender {
+    width: 100%;
+    max-width: 100%;
+  }
+ .right-top-text-tender{
+    width: 100%;
+ }
+ .right-top-text-tender{
+    width: 100%;
+    margin: 20px;
+ }
+  
 
-      
+  .head-right-top-tender {
+    width: 100%;
+    margin-top: 40px;
+    margin: 0 auto;
+
+  }
+}
+
+/* Additional small screen adjustments (e.g., for extra small mobile screens) */
+@media (max-width: 480px) {
+  .head-box-tender h1 {
+    font-size: 24px;
+    margin-left: 10px;
+  }
+  .right-top-text-tender{
+    width: 100%;
+    margin: 20px;
+ }
+ 
 }

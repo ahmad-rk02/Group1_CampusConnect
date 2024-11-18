@@ -19,6 +19,7 @@
 .left-index-vm{
 margin-left: 60px;
 margin-right: 60px;
+flex-wrap: nowrap;
 }
 .bg-golden-vm{
 background-color: #EADBC8;
@@ -99,25 +100,41 @@ color: black;
 
 
 /* Responsive styling */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .header-align-vm h1 {
-    font-size: 1.8rem;
-    margin: 30px auto;
+    font-size: 2rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
+  }
+  .left-index-vm {
+    display: flex;
+    flex-direction: column;
+    }
+  .card-content-vm {
+    padding-left: 50px;
+  }
+ 
+  .about-image-vm {
+    width: 100%;
   }
   .content-card-vm {
     padding-left: 0;
     padding-top: 20px;
   }
-  .left-sidebar-vm {
-    margin-left: 0;
-    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+  .header-align-vm h1 {
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
   }
-  .left-nav-vm {
-    width: 100%;
-    height: auto;
-  }
-  .card-content-vm {
-    padding: 15px;
+  .left-index-vm {
+    display: flex;
+    flex-direction: column;
+    }
+  .content-card-vm {
+    padding-left: 0;
+    padding-top: 20px;
   }
   .vision-img,
   .mission-img {
@@ -128,4 +145,28 @@ color: black;
     font-size: 1rem;
     line-height: 1.5;
   }
+}
+@media (max-width: 576px) {
+  .header-align-vm h1 {
+    font-size: 1.5rem;
+    margin-top: 4rem;
+    margin-left: 10rem;
+  }
+  .vision-img,
+  .mission-img {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .left-sidebar-vm {
+    width: 100%;
+    margin-left: 0;
+  }
+  .text-medium,.miss-vm {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+
+  
 }

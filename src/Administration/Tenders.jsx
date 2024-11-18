@@ -53,6 +53,7 @@ const Tenders = () => {
 
         {/* Right Content */}
         <Col md={9} xs={12}>
+        <div className='tender-portal'>
           <div className='head-right-top-tender'>
             <h3 style={{ color: '#102C57', backgroundColor:'rgb(234,219,200)', marginTop:'20px',padding:'10px' }}>Tenders</h3>
           </div>
@@ -81,6 +82,7 @@ const Tenders = () => {
               ))}
             </tbody>
           </Table>
+          </div>
         </Col>
       </Row>
     </Container>

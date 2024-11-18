@@ -16,7 +16,7 @@ const AboutVM = () => {
         </Col>
       </Row>
 
-      <Row className="flex-nowrap left-index-vm">
+      <Row className=" left-index-vm">
         {/* Left Sidebar */}
         <Col xs={12} md={3} className="left-sidebar-vm"> 
           <Card className="left-nav-vm">
@@ -69,7 +69,7 @@ const AboutVM = () => {
             <Card.Body className="bg-white-vm">
               <Row>
                 <Col xs={12} sm={9}>
-                  <ul>
+                  <ul className="miss-vm">
                     <li>To educate and train undergraduate and research students for practicing professionalism, ethical approach, leadership, and entrepreneurship ability.</li>
                     <li>To nurture a conducive environment for learning.</li>
                     <li>To develop proficient technocrats catering to the needs of industry, society, and the environment.</li>
