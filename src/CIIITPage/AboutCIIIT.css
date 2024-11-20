@@ -1,5 +1,4 @@
-
-.p-0-w-100{
+.p-0-w-100 {
     background-color: #FEFAF6;
 }
 
@@ -20,6 +19,7 @@
 .left-index-AbtCiiit {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-AbtCiiit {
@@ -27,7 +27,7 @@
     top: -20px;
     z-index: 2;
     width: 250px;
-    height: 300px;
+    height: auto;
     margin-left: 40px;
 }
 
@@ -54,28 +54,30 @@
     color: black;
 }
 
-
 .left-nav-AbtCiiit {
     background-color: white;
     border-radius: 0;
-    height: 360px;
+    height: auto;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.left-nav-row-AbtCiiit{
-    height: 45px;
-  }
 
-.name-AbtCiiit-prog{
+.left-nav-row-AbtCiiit {
+    height: 45px;
+}
+
+.name-AbtCiiit-prog {
     text-align: left;
 }
-.ciiit-heading h1{
+
+.ciiit-heading h1 {
     text-align: left;
     padding-left: 40px;
     padding-top: 5px;
     color: #102C57;
 }
-.ciiit-heading{
+
+.ciiit-heading {
     width: 90%;
     background-color: #eadbc8;
     height: 55px;
@@ -83,31 +85,278 @@
     margin-left: 100px;
     margin-top: 40px;
 }
-.ciiit-logo {
-    margin-top: 40px; 
-    margin-left: 200px;
 
-  }
+.ciiit-logo {
+    margin-top: 40px;
+    margin-left: 200px;
+}
+
 .ciiit-img {
-    width: 160px; /* Adjust the size of the logo */
+    width: 160px;
     height: auto;
-  }
-  .ciiit-heading2 h2{
+}
+
+.ciiit-heading2 h2 {
     margin-left: 450px;
     margin-top: -150px;
     text-align: center;
+}
 
-  }
-  .com-img{
+.com-img {
     margin-left: 110px;
     margin-top: 30px;
-  }
-  .para{
+}
+
+.para {
     width: 900px;
     margin-left: 160px;
-  }
-  .ciiit-content{
-    margin-left: 140px;
+    text-align: justify;
+}
+
+.ciiit-content {
+    margin-left: 110px;
+    margin-right: 40px;
     margin-top: 40px;
     font-weight: bold;
-  }
+    text-align: justify;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 1200px) {
+    .head-box-AbtCiiit h1 {
+        font-size: 32px;
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+
+    .left-index-AbtCiiit {
+        margin: 0;
+        flex-wrap: wrap;
+    }
+
+    .left-sidebar-AbtCiiit {
+        width: 100%;
+        margin: 0;
+        margin-bottom: 20px;
+    }
+
+    .left-nav-AbtCiiit {
+        width: 100%;
+        height: auto;
+    }
+
+    .ciiit-heading {
+        margin-left: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .ciiit-logo,
+    .ciiit-heading2 {
+        margin: 20px auto;
+        text-align: center;
+    }
+
+    .ciiit-logo img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .ciiit-heading2 h2 {
+        margin: 0;
+        text-align: center;
+    }
+
+    .com-img {
+        margin: 20px auto;
+        display: block;
+        
+    }
+
+    .para {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .ciiit-content {
+        margin: 20px auto;
+        width: 90%;
+    }
+}
+
+@media (max-width: 992px) {
+    .head-box-AbtCiiit {
+        height: auto;
+        padding: 10px;
+    }
+
+    .head-box-AbtCiiit h1 {
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    .left-sidebar-AbtCiiit {
+        margin: 0 auto;
+    }
+
+    .ciiit-heading {
+        margin-left: 10px;
+        width: calc(100% - 20px);
+        padding: 10px;
+    }
+
+    .ciiit-logo {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .ciiit-img {
+        width: 120px;
+    }
+
+    .ciiit-heading2 h2 {
+        font-size: 18px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .ciiit-heading h1 {
+        text-align: left;
+        padding-left: 40px;
+        margin-top: -10px;
+        color: #102C57;
+    }
+
+    .com-img {
+        margin: 10px auto;
+        width: 90%;
+        margin-left: 10px;
+        
+    }
+
+    .para,
+    .ciiit-content {
+        width: 95%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-AbtCiiit h1 {
+        font-size: 20px;
+    }
+
+    .ciiit-logo img {
+        width: 80px;
+    }
+
+    .ciiit-heading2 h2 {
+        font-size: 16px;
+    }
+
+    .para,
+    .ciiit-content {
+        font-size: 14px;
+    }
+
+    .com-img {
+        margin: 10px auto;
+        width: 100%;
+        margin-left: 0px;
+        
+    }
+
+    .ciiit-heading h1 {
+    text-align: left;
+    padding-left: 40px;
+    margin-top: -10px;
+    color: #102C57;
+}
+
+    
+}
+
+@media (max-width: 576px) {
+    .head-box-AbtCiiit {
+        height: auto;
+        padding: 5px;
+    }
+
+    .head-box-AbtCiiit h1 {
+        font-size: 18px;
+        margin: 5px;
+        text-align: center;
+    }
+
+    .left-index-AbtCiiit {
+        margin: 0;
+        padding: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-sidebar-AbtCiiit {
+        width: 100%;
+        margin: 10px 0;
+        height: auto;
+    }
+
+    .left-nav-AbtCiiit {
+        width: 100%;
+        height: auto;
+        box-shadow: none;
+    }
+
+    .ciiit-heading {
+        margin: 5px auto;
+        width: calc(100% - 10px);
+        padding: 5px;
+        text-align: center;
+    }
+
+    .ciiit-logo {
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .ciiit-img {
+        width: 80px;
+        height: auto;
+    }
+
+    .ciiit-heading2 h2 {
+        font-size: 14px;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+    .com-img {
+        margin: 10px auto;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .para {
+        width: 95%;
+        margin: 5px auto;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .ciiit-content {
+        margin: 10px auto;
+        width: 95%;
+        font-size: 14px;
+    }
+
+    .left-sidebar-AbtCiiit .list-group-item {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    .ciiit-heading h1 {
+        font-size: 25px;
+        margin: 5px 0;
+    }
+}

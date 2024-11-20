@@ -182,7 +182,7 @@ height: 200px;
 
 
 /* Responsive Styles */
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
   /* Adjust header for medium screens */
   .head-box-login h1 {
       font-size: 30px;
@@ -190,11 +190,22 @@ height: 200px;
       margin-left: 20px;
   }
 
+  .head-right-top-login-1{
+    width: 100%;
+    background-color: #eadbc8;
+    margin-left: 10px;
+  }
+  
+  .head-right-top-login-1 h3{
+    color: #102C57;
+  }
+
   /* Center elements on medium screens */
   .left-sidebar-login, .login-section {
       margin: 20px auto;
       width: 80%;
   }
+  
   .left-index-login {
     display: flex;
     flex-direction: column;
@@ -211,33 +222,23 @@ height: 200px;
       padding: 10px;
   }
 
-  .login-section {
-      width: 90%;
-      padding: 15px;
-  }
 
   .login-section {
-    width: 600px;  
-    margin:40px auto;  
+    width: 600px;    
     background-color: white;
     border: 2px black solid;
     border-radius: 20px;  
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1); 
     padding: 20px 30px;  
     text-align: center; 
-    margin-left: 10px;
+    margin-top: 40px;
   }
 
   .forgetpassword {
       width: 90%;
   }
 
-  .head-right-top-login-1{
-    width: 100%;
-    margin-top: 30px;
-    margin-left: 0px;
-    
-  }
+
 }
 
 @media (max-width: 768px) {
