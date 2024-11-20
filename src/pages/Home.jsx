@@ -36,7 +36,7 @@ function NewsSection() {
                             <img src={news.img} className="card-img-top" alt="College" />
                             <div className="card-body">
                                 <h5 className="card-title">{news.title}</h5>
-                                <p className="card-text">{news.text}</p>
+                                <p className="card-text-h">{news.text}</p>
                                 <button href="#" className="news-btn btn-primary">More</button>
                             </div>
                         </div>

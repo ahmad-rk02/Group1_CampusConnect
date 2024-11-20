@@ -3,6 +3,7 @@ import { Container, Card, Row, Col, Spinner, Alert, Button, Form, Modal } from '
 import useAuth from '../hooks/usestudentAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import StudentProfile from './StudentGrievanceDisplay';
 
 
 const Profile = () => {
@@ -126,6 +127,10 @@ const Profile = () => {
               <Card.Text className='bg-white'><strong>Semester:</strong> {user.semester}</Card.Text>
               <Card.Text className='bg-white'><strong>Branch:</strong> {user.branch}</Card.Text>
 
+              <div>
+              <StudentProfile />
+              </div>
+
               {/* Button to open the update modal */}
               <Button
                 variant="primary"
@@ -245,7 +250,9 @@ const Profile = () => {
             </Card.Body>
           </Card>
         </Col>
+        
       </Row>
+
     </Container>
   );
 };

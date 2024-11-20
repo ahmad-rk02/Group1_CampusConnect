@@ -3,10 +3,10 @@ import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootst
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './GrievanceForm.css';
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 const GrievanceForm = () => {
-
-
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -95,28 +95,40 @@ const GrievanceForm = () => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      alert('Form submitted:', formData);
-      setSubmitted(true);
-      setFormData({
-        fullname: '',
-        email: '',
-        phone: '',
-        universityNumber: '',
-        branch: '',
-        semester: '',
-        grievanceType: '',
-        message: '',
-      });
-      setErrors({});
-    } else {
-      setSubmitted(false);
+      try {
+        const response = await axios.post('http://localhost:5000/api/grievances/submit', formData);
+  
+        // Confirm the response is successful
+        if (response.status === 200 || response.status === 201) {
+          setFormData({
+            fullname: '',
+            email: '',
+            phone: '',
+            universityNumber: '',
+            branch: '',
+            semester: '',
+            grievanceType: '',
+            message: '',
+          });
+          console.log('Response:', response.data);
+          alert('Grievance submitted successfully!');
+          setSubmitted(true);
+  
+          navigate('/studentprofile'); // Ensure navigate is properly initialized
+        } else {
+          throw new Error('Unexpected response status: ' + response.status);
+        }
+      } catch (err) {
+        console.error('Error:', err.response || err.message || err);
+        alert('Error submitting grievance: ' + (err.response?.data?.message || err.message));
+        setSubmitted(false);
+      }
     }
-  }
-
-
+  };
+  
   return (
     <div>
 
