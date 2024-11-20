@@ -1,3 +1,4 @@
+/* Original Styling for Full Screen */
 .bg-goldeeen {
     background-color: #eadbc8;
     width: 70%;
@@ -6,7 +7,6 @@
     margin-right: 50px;
     margin-top: 50px;
     margin-left: 200px;
-
 }
 
 .bg-goldeeen h4 {
@@ -28,9 +28,8 @@
 /* Styling the logo */
 .form-clg-logo {
     width: 120px;
-    /* Adjust the size of the logo */
     height: auto;
-    width: 25%
+    width: 25%;
 }
 
 .head-box-grivnce {
@@ -50,6 +49,7 @@
 .left-index-grivnce {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-grivnce {
@@ -77,7 +77,6 @@
     text-decoration: none;
     color: black;
 }
-
 
 .left-nav-grivnce {
     background-color: white;
@@ -113,8 +112,6 @@
     margin-left: 200px;
     background-color: white;
     border-radius: 20px;
-
-
 }
 
 .message-box {
@@ -156,8 +153,6 @@
     border-color: #102c57;
 }
 
- 
-
 .submit-btn-grivncee {
     margin-left: 330px;
     margin-top: 30px;
@@ -194,7 +189,7 @@
     border-color: #102c57;
 }
 
-/* Add a background image for the entire container */
+/* Background image */
 .p-0 .w-1000 {
     background: linear-gradient(rgba(255, 255, 255, 0.601), rgba(255, 255, 255, 0.601)),
         url('..\assets\mainBuilding.jpg');
@@ -206,8 +201,6 @@
     margin-bottom: -80px;
 }
 
-
-
 .to-student-login {
     display: flex;
     margin-bottom: 20px;
@@ -218,17 +211,17 @@
     font-size: medium;
     font-weight: 500;
 }
- 
+
 .Studentlogin-link-Student-signup {
     margin-left: 10px;
     text-decoration: none;
-
 }
 
 .invalid-feedback {
     color: red;
     font-size: 12px;
-    margin-top: 5px; /* Add margin to ensure space between the input and feedback */
-    display: block; /* Ensure it's block to take up full width */
-    position: relative; /* Keep feedback aligned with input */
-  }
+    margin-top: 5px;
+    display: block;
+    position: relative;
+}
+
