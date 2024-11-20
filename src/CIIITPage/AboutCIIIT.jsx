@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
+import { Link} from 'react-router-dom';
 import './AboutCIIIT.css'
 import ciiitlogo from '../assets/ciiit-logo.gif';
 import compon from '../assets/compon.png';
@@ -16,7 +16,7 @@ const AboutCIIIT = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-AbtCiiit just">
+      <Row noGutters className="left-index-AbtCiiit just">
         <Col md={2} className='left-sidebar-AbtCiiit'>
           <Card className="left-nav-AbtCiiit">
             <ListGroup variant="flush">
@@ -112,7 +112,7 @@ const AboutCIIIT = () => {
       <div className='ciiit-content'>
         <ul>
           <li>Promote Invention, Innovation and Incubation under the mentorship of industry experts.</li>
-          <li>Strengthen GCOE's Vision & Mission of innovation entrepreneurship and skill development including all the nearby colleges.</li>
+          <li>Strengthen GCOEC's Vision & Mission of innovation entrepreneurship and skill development including all the nearby colleges.</li>
           <li>Enable Industry-Academia partnerships.</li>
           <li>Leverages advanced competency centers and expertise of the Industry subject matter experts (SMEs) for training the students, industry professionals and unemployed youth with industry relevant skills and competencies in industry environment.</li>
           <li>Enables competency development in modern engineering tools necessary for product design, development and manufacturing and provide students to gain insights of industry 4.0 and other disruptive technologies.</li>

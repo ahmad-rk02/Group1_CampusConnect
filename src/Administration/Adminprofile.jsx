@@ -3,6 +3,7 @@ import { Container, Card, Row, Col, Spinner, Alert, Button, Form, Modal } from '
 import useAdminAuth from '../hooks/useAdminAuth'; // Use the corrected hook for admin authentication
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import AdminDashboard from './AdminGrievanceDisplay';
 
 const AdminProfile = () => {
   const navigate = useNavigate();
@@ -120,6 +121,8 @@ const AdminProfile = () => {
               <Card.Text className='bg-white'><strong>Email:</strong> {user.email}</Card.Text>
               <Card.Text className='bg-white'><strong>DTE:</strong> {user.dte}</Card.Text>
               <Card.Text className='bg-white'><strong>Committee:</strong> {user.committee}</Card.Text>
+
+              <AdminDashboard />
 
               {/* Button to open the update modal */}
               <Button

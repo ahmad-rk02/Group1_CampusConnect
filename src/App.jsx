@@ -41,7 +41,8 @@ import Workshop from './Departments/Workshop';
 import Studentprofile from './Administration/Studentprofile';
 import AdminProfile from "./Administration/Adminprofile";
 import WelcomeSection from "./pages/welcomepage";
-
+import StudentProfile from "./Administration/StudentGrievanceDisplay";
+import AdminDashboard from "./Administration/AdminGrievanceDisplay";
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -128,6 +129,8 @@ function App() {
             <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
             <Route path="/adminprofile" element={<AdminProfile />} />
             <Route path="/welcomepage" element={<WelcomeSection />} />
+            <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
+            <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
           </Routes>
         </div>
       </Router>

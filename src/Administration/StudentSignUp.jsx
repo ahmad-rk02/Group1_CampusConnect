@@ -170,7 +170,7 @@ const StudentSignUp = () => {
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-grivnce just">
+        <Row noGutters className="left-index-grivnce just">
           {/* Left Sidebar */}
           <Col md={2} className='left-sidebar-grivnce'>
             <Card className="left-nav-grivnce">
