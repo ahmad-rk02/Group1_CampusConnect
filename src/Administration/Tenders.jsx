@@ -53,6 +53,7 @@ const Tenders = () => {
 
         {/* Right Content */}
         <Col md={9} xs={12}>
+        <div className='tender-portal'>
           <div className='head-right-top-tender'>
             <h3 style={{ color: '#102C57', backgroundColor:'rgb(234,219,200)', marginTop:'20px',padding:'10px' }}>Tenders</h3>
           </div>
@@ -61,7 +62,7 @@ const Tenders = () => {
             <p>Given are the Circulars of the Tenders published:</p>
           </div>
 
-          <Table className='tender-table' striped bordered hover>
+          <Table className='tender-table'style={{ width: "75%" }} striped bordered hover>
             <thead className='table-header-tender'>
               <tr>
                 <th>Dated</th>
@@ -81,6 +82,7 @@ const Tenders = () => {
               ))}
             </tbody>
           </Table>
+          </div>
         </Col>
       </Row>
     </Container>

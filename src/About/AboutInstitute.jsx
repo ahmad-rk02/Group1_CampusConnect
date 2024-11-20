@@ -41,8 +41,8 @@ const AboutInstitute = () => {
             </Card>
 
             <div className='side-heading-bottom-ai'>
-              <div className="fs-4 fw-bold gcoec-text" style={{ color: '#EADBC8'}}>GCOEC</div>
-              <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '1.5' }}>
+              <div className="fs-4 fw-bold gcoec-text" style={{ color: '#EADBC8',fontSize:'2.5rem'}}>GCOEC</div>
+              <h2 className="fw-bold text" style={{ color: '#102C57', lineHeight: '2',fontSize:'2.2rem' }}>
                 Delivering Wisdom Engineers
               </h2>
             </div>
@@ -52,7 +52,7 @@ const AboutInstitute = () => {
           <Col md={9} sm={12} className="content-card-ai">
             {/* About Institute */}
             <Card className="mb-4 card-content-ai border-0">
-              <Card.Body className="bg-white">
+              <Card.Body className="bg-white card-body">
                 <Row>
                   <Col xs={12} className="text-center mb-3">
                     <img src={AboutInstituteImage} alt="Institute" className="about-image-ai" />

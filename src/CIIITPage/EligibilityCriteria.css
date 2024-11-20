@@ -1,3 +1,4 @@
+/* Default Styles (Full Screen) - No Changes */
 .head-box-eligibilitycrt {
     background-color: #102c57;
     height: 130px;
@@ -15,6 +16,7 @@
 .left-index-eligibilitycrt {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-eligibilitycrt {
@@ -48,7 +50,6 @@
     color: black;
 }
 
-
 .left-nav-eligibilitycrt {
     position: -webkit-sticky;
     position: sticky;
@@ -59,13 +60,15 @@
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.left-nav-row-eligibilitycrt{
-    height: 45px;
-  }
 
-.name-eligibilitycrt-prog{
+.left-nav-row-eligibilitycrt {
+    height: 45px;
+}
+
+.name-eligibilitycrt-prog {
     text-align: left;
 }
+
 .ciiit-cd {
     width: 90%;
     background-color: #eadbc8;
@@ -74,38 +77,140 @@
     margin-left: 100px;
     margin-top: 40px;
 }
-.ciiit-cd h4{
+
+.ciiit-cd h4 {
     text-align: left;
     padding-left: 40px;
     padding-top: 5px;
     color: #102C57;
 }
-.ciiit-cdetail-gh{
+
+.ciiit-cdetail-gh {
     width: 90%;
     border-radius: 10px;
     margin-top: 40px;
     margin-left: 100px;
-  }
-  
-  .ciiit-cdetail-gh th {
+}
+
+.ciiit-cdetail-gh th {
     background-color: #102c57;
     color: white;
     text-align: center;
-  }
-  
-  .ciiit-cdetail-gh th:first-child {
+}
+
+.ciiit-cdetail-gh th:first-child {
     border-top-left-radius: 10px;
-  }
-  
-  .ciiit-cdetail-gh th:last-child {
+}
+
+.ciiit-cdetail-gh th:last-child {
     border-top-right-radius: 10px;
-  }
-  
-  .ciiit-cdetail-gh tr {
+}
+
+.ciiit-cdetail-gh tr {
     text-align: center;
-  }
-  
-  .ciiit-cdetail-gh th,.ciiit-cdetail-gh td{
+}
+
+.ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
     border: 1px solid #ddd;
     padding: 12px;
-  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .head-box-eligibilitycrt h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .left-sidebar-eligibilitycrt {
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-eligibilitycrt  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+    .ciiit-cd {
+        margin-left: 50px;
+    }
+
+    .ciiit-cdetail-gh {
+        margin-left: 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .head-box-eligibilitycrt h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-eligibilitycrt {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    .ciiit-cd, .ciiit-cdetail-gh {
+        width: 95%;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-eligibilitycrt h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-eligibilitycrt {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    .ciiit-cd, .ciiit-cdetail-gh {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .head-box-eligibilitycrt {
+        height: 100px;
+    }
+
+    .head-box-eligibilitycrt h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+   
+
+    .ciiit-cd {
+        width: 100%; /* Adjust container width */
+        margin: 10px auto;
+    }
+
+    .ciiit-cdetail-gh {
+        width: 100%; /* Shrink table container width */
+        margin: 10px auto;
+        font-size: 0.8rem; /* Reduce font size */
+    }
+
+    .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
+        padding: 6px; /* Reduce cell padding */
+    }
+
+    .ciiit-cdetail-gh th {
+        font-size: 0.9rem; /* Slightly larger font for headers */
+    }
+
+    .ciiit-cdetail-gh table {
+        width: 100%; 
+        margin-right: 10px;/* Ensure table fits its container */
+    }
+
+    .ciiit-cdetail-gh tr {
+        height: auto; /* Allow rows to adjust their height dynamically */
+    }
+}
