@@ -84,7 +84,6 @@ color: black;
 }
 
 .left-nav-vm{
-  position: -webkit-sticky;
   position: sticky;
   top: 5px;
   background-color: white;
