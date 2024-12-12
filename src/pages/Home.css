@@ -13,7 +13,7 @@
 }
 
 .card1 {
-    border-radius: 25px;
+    border-radius: 20px;
     margin-bottom: 20px;
     background-color: #eadbc8;
 }
@@ -21,15 +21,20 @@
 .card-img-top {
     height: 200px;
     object-fit: cover;
-    border-radius: 25px;
+    border-radius: 20px 20px 0px 0px;
+}
+
+.card-title{
+    padding: 10px;
 }
 
 .card-title, .card-text, .news-btn {
     color: #102C57;
 }
 
-.card-text-h {
-    height: 30vh;
+.card-text-news {
+    height: 10vh;
+    padding: 20px;
 }
 
 .news-btn {
@@ -39,13 +44,18 @@
     height: 40px;
     width: 60px;
     border-radius: 5px;
+    margin: 30px;
+}
+
+.list-group{
+    border-radius: 10px;
 }
 
 .list-group-items {
     background-color: #eadbc8;
     display: flex;
     justify-content: space-between;
-    padding: 15px;
+    padding: 16px;
 }
 
 .event-link {
@@ -62,6 +72,10 @@
     background-color: #102C57;
     color: #FEFAF6;
     animation: blink 0.5s infinite alternate;
+}
+
+.news-events-section{
+    margin-bottom: 50px;
 }
 
 /* Keyframes for blinking effect */
