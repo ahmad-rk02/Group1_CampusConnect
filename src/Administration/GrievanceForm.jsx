@@ -316,10 +316,11 @@ const GrievanceForm = () => {
                     className={`input-box-grivnce ${errors.grievanceType && 'is-invalid'}`}
                   > 
                   <option value="">Grievance Type</option>
-                    <option value="1">Departmental</option>
-                    <option value="2">Office Related</option>
-                    <option value="3">Others</option>
+                    <option value="Departmental">Departmental</option>
+                    <option value="Office Related">Office Related</option>
+                    <option value="Others">Others</option>
                   </Form.Select>
+          y
                    {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
                 </Form.Group>
 
