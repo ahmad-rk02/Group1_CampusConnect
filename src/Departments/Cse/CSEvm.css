@@ -1,22 +1,23 @@
-.cse-intro{
+/* Base Styles - Full Screen */
+.cse-intro {
     margin-bottom: 50px;
 }
 
-.cse-intro-heading{
+.cse-intro-heading {
     width: 80%;
     background-color: #eadbc8;
     height: 50px;
     position: relative;
 }
 
-.cse-intro-heading h3{
+.cse-intro-heading h3 {
     text-align: left;
     padding-left: 20px;
     padding-top: 5px;
     color: #102C57;
 }
 
-.cse-intro-box{
+.cse-intro-box {
     position: relative;
     background-color: #eadbc8;
     border-radius: 10px;
@@ -30,7 +31,7 @@
     padding-bottom: 20px;
 }
 
-.cse-intro-box .first-para-small{
+.cse-intro-box .first-para-small {
     text-align: center;
     width: 90%;
     padding-top: 40px;
@@ -40,18 +41,17 @@
     font-weight: 500;
 }
 
-.cse-intro-box .small-intro-heading{
-    
+.cse-intro-box .small-intro-heading {
     color: #102C57;
     text-align: center;
     padding-bottom: 15px;
 }
 
-.cse-intro-box .small-intro-heading h6{
+.cse-intro-box .small-intro-heading h6 {
     font-weight: 700;
 }
 
-.cse-intro-box .second-para-large{
+.cse-intro-box .second-para-large {
     text-align: left;
     width: 90%;
     height: fit-content;
@@ -61,81 +61,165 @@
     font-weight: 500;
 }
 
-.cse-intro-box:hover  .second-para-large{
+.cse-intro-box:hover .second-para-large {
     visibility: hidden;
 }
 
-.cse-intro-box:hover  .first-para-small{
+.cse-intro-box:hover .first-para-small {
     visibility: hidden;
 }
 
-.cse-intro-box:hover  .small-intro-heading{
+.cse-intro-box:hover .small-intro-heading {
     visibility: hidden;
 }
 
-.cse-intro-box:hover{
+.cse-intro-box:hover {
     background-color: #102C57;
 }
 
-.cse-intro-box:hover::after{
+.cse-intro-box:hover::after {
     content: "Code the Future, Ignite the Spark CSE, We Leave our Mark!";
     font-size: 40px;
     color: #eadbc8;
     transition: 0.3s ease;
     text-align: center;
-    padding-top: 0%;
-    padding-left: 10;
+    padding: 10px;
     width: 80%;
     position: absolute;
     top: 50%; 
     left: 50%; 
-    transform: translate(-50%, -50%);  
-    padding: 10px; 
-    box-sizing: border-box; 
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
     word-wrap: break-word;
 }
 
-.cse-vision-heading{
+.cse-vision-heading,
+.cse-mission-heading {
     width: 80%;
     background-color: #eadbc8;
     height: 50px;
     position: relative;
 }
 
-.cse-vision-heading h3{
+.cse-vision-heading h3,
+.cse-mission-heading h3 {
     text-align: left;
     padding-left: 20px;
     padding-top: 5px;
     color: #102C57;
 }
 
-.vision-content{
+.vision-content,
+.mission-content {
     margin-top: 30px;
     text-align: left;
     width: 80%;
 }
 
-.cse-mission{
+.cse-mission {
     margin-top: 30px;
     margin-bottom: 30px;
 }
 
-.cse-mission-heading{
-    width: 80%;
-    background-color: #eadbc8;
-    height: 50px;
-    position: relative;
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .cse-intro-heading,
+    .cse-vision-heading,
+    .cse-mission-heading {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .cse-intro-heading h3,
+    .cse-vision-heading h3,
+    .cse-mission-heading h3 {
+        font-size: 1.5rem;
+    }
+
+    .cse-intro-box {
+        width: 90%;
+        margin-left: 20px;
+        padding-bottom: 15px;
+    }
+
+    .cse-intro-box .first-para-small,
+    .cse-intro-box .second-para-large {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .cse-intro-box:hover::after {
+        font-size: 1.5rem;
+        width: 90%;
+    }
+
+    .vision-content,
+    .mission-content {
+        width: 90%;
+        padding: 0 15px;
+    }
 }
 
-.cse-mission-heading h3{
-    text-align: left;
-    padding-left: 20px;
-    padding-top: 5px;
-    color: #102C57;
+@media (max-width: 768px) {
+    .cse-intro-heading,
+    .cse-vision-heading,
+    .cse-mission-heading {
+        width: 100%;
+        text-align: center;
+    }
+
+    .cse-intro-heading h3,
+    .cse-vision-heading h3,
+    .cse-mission-heading h3 {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+
+    .cse-intro-box {
+        width: 95%;
+        margin-left: 10px;
+        padding: 10px;
+    }
+
+    .cse-intro-box .first-para-small,
+    .cse-intro-box .second-para-large {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .cse-intro-box:hover::after {
+        font-size: 1rem;
+    }
+
+    .vision-content,
+    .mission-content {
+        width: 95%;
+    }
 }
 
-.mission-content{
-    margin-top: 30px;
-    text-align: left;
-    width: 80%;
+@media (max-width: 576px) {
+    .cse-intro-heading h3,
+    .cse-vision-heading h3,
+    .cse-mission-heading h3 {
+        font-size: 1rem;
+    }
+
+    .cse-intro-box {
+        width: 100%;
+        margin-left: 0;
+        border-width: 3px;
+        padding: 5px;
+    }
+
+    .cse-intro-box:hover::after {
+        font-size: 0.8rem;
+    }
+
+    .vision-content,
+    .mission-content {
+        width: 100%;
+        text-align: justify;
+        padding: 5px;
+    }
 }
