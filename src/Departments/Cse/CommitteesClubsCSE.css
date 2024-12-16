@@ -412,3 +412,214 @@
   margin-left: 50px;
   color: aliceblue;
 }
+/* Base styles remain unchanged for full-screen view */
+
+/* Original styles remain unchanged */
+
+/* Adjustments for medium screens (e.g., tablets) */
+@media (max-width: 1200px) {
+  .bada-row{
+    width: 90%;
+    margin-left: 37px;
+
+  }
+  .bg-golden1 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .acses-section {
+    padding: 20px;
+  }
+
+  .AcsesLogo-card {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .acses-logo {
+    width: 100%;
+  }
+
+  .logo-ka-box {
+    width: 50%;
+    margin: 20px auto;
+    height: 555px;
+  }
+.bitsnbytes-text,
+  .acses-text {
+    width: 100%;
+    font-size: 14px;
+    margin: 20px auto;
+    padding: 10px;
+  }
+
+  .bitsnbytes-logo-ka-box1
+  { margin: 20px auto;
+    width: 50%;
+  
+
+  }
+  .bitsnbytes-logo-ka-box2
+   {
+    margin: 20px auto;
+    width: 1%;
+    height: 100;
+  }
+
+  .cncevents-box1, .cncevents-box3, .cncevents-box5, .cncevents-box7, .cncevents-box9 {
+    width: 70%;
+    height: 300px;
+    margin-left: 200px;
+    margin-right: 300px;
+  }
+
+  .cncevents-box2, .cncevents-box4, .cncevents-box6, .cncevents-box8, .cncevents-box10 {
+    width: 65%;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .clangbootcamp-image, .nsdceleb-image, .internalhackathon-image, .blindcoding-image, .treeplantation-image {
+    width: 95%;
+    height: auto;
+  }
+
+  .cncevents-box11 {
+    width: 60%;
+    height: 40px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+}
+
+/* Adjustments for smaller screens (e.g., phones) */
+@media (max-width: 768px) {
+  .bada-row,
+  .bg-golden1,
+  .AcsesLogo-card {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .acses-logo {
+    width: 100%;
+  }
+
+  .logo-ka-box{
+    height: 577px;
+  }
+  .acses-text {
+    width: 90%;
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 12px;
+  }
+
+  .bitsnbytes-logo-ka-box1{
+
+  }
+  .bitsnbytes-logo-ka-box2
+  {
+    margin: 10px auto;
+    width: 100%;
+  
+  }
+
+  .acses-text,
+  .bitsnbytes-text,
+  .cncevents-text1,
+  .cncevents-text2,
+  .cncevents-text3,
+  .cncevents-text4,
+  .cncevents-text5 {
+    font-size: 14px;
+    margin: 10px auto;
+    padding: 5px;
+  }
+
+  .cncevents-title1,
+  .cncevents-title2,
+  .cncevents-title3,
+  .cncevents-title4,
+  .cncevents-title5,
+  .cncevents-title6 {
+    font-size: 16px;
+    margin: 10px 0;
+  }
+
+  .clangbootcamp-image,
+  .nsdceleb-image,
+  .internalhackathon-image,
+  .blindcoding-image,
+  .treeplantation-image {
+    width: 100%;
+    margin: 10px auto;
+  }
+}
+
+/* Further adjustments for extra-small screens (e.g., small phones) */
+@media (max-width: 480px) {
+  .bada-row,
+  .bg-golden1,
+  .AcsesLogo-card {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .acses-logo{
+    width: 100%;
+  }
+  .logo-ka-box{
+    height: 1010px;
+  }
+  .acses-text{
+    font-size: 10px;
+  }
+  .bitsnbytes-text {
+    width: 100%;
+    margin: 5px auto;
+  }
+
+  .bitsnbytes-logo-ka-box1,
+  .bitsnbytes-logo-ka-box2,
+  .cncevents-box1,
+  .cncevents-box2,
+  .cncevents-box3,
+  .cncevents-box4,
+  .cncevents-box5,
+  .cncevents-box6,
+  .cncevents-box7,
+  .cncevents-box8,
+  .cncevents-box9,
+  .cncevents-box10,
+  .cncevents-box11 {
+    margin: 5px auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .cncevents-title1,
+  .cncevents-title2,
+  .cncevents-title3,
+  .cncevents-title4,
+  .cncevents-title5,
+  .cncevents-title6 {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .clangbootcamp-image,
+  .nsdceleb-image,
+  .internalhackathon-image,
+  .blindcoding-image,
+  .treeplantation-image {
+    width: 100%;
+    height: auto;
+  }
+}
