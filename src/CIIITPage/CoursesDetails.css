@@ -1,3 +1,5 @@
+/* Original styles remain unchanged */
+
 .head-box-coursesdetls {
     background-color: #102c57;
     height: 130px;
@@ -11,6 +13,7 @@
     margin-left: 100px;
     color: white;
 }
+
 .left-index-coursesdetls {
     margin-left: 60px;
     margin-right: 60px;
@@ -47,7 +50,6 @@
     color: black;
 }
 
-
 .left-nav-coursesdetls {
     position: -webkit-sticky;
     position: sticky;
@@ -58,39 +60,46 @@
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
-.left-nav-row-coursesdetls{
-    height: 45px;
-  }
 
-.name-coursesdetls-prog{
+.left-nav-row-coursesdetls {
+    height: 45px;
+}
+
+.name-coursesdetls-prog {
     text-align: left;
 }
-.c-para{
+
+.c-para {
     width: 900px;
     margin-left: 120px;
     margin-top: 20px;
 }
-.course-img1{
+
+.course-img1 {
     width: 400px;
     height: 200px;
     margin-left: 140px;
 }
-.course-img2{
+
+.course-img2 {
     width: 400px;
     height: 200px;
     margin-left: 600px;
     margin-top: -240px;
 }
-.feature-ciiit{
+
+.feature-ciiit {
     margin-left: 120px;
 }
-.ciiit-hed h4{
+
+.ciiit-hed h4 {
     text-align: left;
     padding-left: 20px;
     padding-top: 5px;
     color: rgb(249, 243, 208);
 }
-.ciiit-hed{
+
+.ciiit-hed {
     width: 55%;
     background-color: #102c57;
     height: 40px;
@@ -100,4 +109,89 @@
     border-radius: 16px;
 }
 
+/* Responsive adjustments using media queries */
 
+@media (max-width: 1200px) {
+    .head-box-coursesdetls h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .left-sidebar-coursesdetls {
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-coursesdetls  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .c-para {
+        width: 100%;
+        margin-left: 10%;
+    }
+
+    .course-img1, .course-img2 {
+        width: 500px;
+        height: 200px;
+        margin-left: 90px;
+        margin-right: auto;
+    }
+
+    .course-img2 {
+        margin-top: 20px;
+    }
+
+    .left-sidebar-coursesdetls {
+        width: 220px;
+    }
+    .ciiit-hed {
+        width: 70%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-coursesdetls h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-coursesdetls {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    .c-para {
+        width: 100%;
+        margin-left: 5%;
+    }
+
+    .course-img1, .course-img2 {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    .ciiit-hed {
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .head-box-coursesdetls {
+        height: 100px;
+    }
+
+    .head-box-coursesdetls h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .ciiit-hed {
+        width: 100%;
+        margin-left: 0;
+    }
+}

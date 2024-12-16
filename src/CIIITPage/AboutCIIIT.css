@@ -126,26 +126,17 @@
 /* Responsive styles for smaller screens */
 @media (max-width: 1200px) {
     .head-box-AbtCiiit h1 {
-        font-size: 32px;
+        font-size: 30px;
         margin-left: 20px;
-        margin-top: 20px;
     }
-
-
-    .left-index-AbtCiiit {
-        margin: 0;
-        flex-wrap: wrap;
-    }
-
     .left-sidebar-AbtCiiit {
-        width: 100%;
-        margin: 0;
-        margin-bottom: 20px;
+        width: 150px;
+        margin-left: 10px;
     }
-
-    .left-nav-AbtCiiit {
-        width: 100%;
-        height: auto;
+    .left-index-AbtCiiit  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .ciiit-heading {
@@ -187,18 +178,18 @@
 }
 
 @media (max-width: 992px) {
-    .head-box-AbtCiiit {
-        height: auto;
-        padding: 10px;
-    }
-
     .head-box-AbtCiiit h1 {
-        font-size: 24px;
-        margin: 10px;
+        font-size: 30px;
+        margin-left: 20px;
     }
-
     .left-sidebar-AbtCiiit {
-        margin: 0 auto;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-AbtCiiit  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .ciiit-heading {
@@ -245,7 +236,13 @@
 
 @media (max-width: 768px) {
     .head-box-AbtCiiit h1 {
-        font-size: 20px;
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-AbtCiiit {
+        width: 150px;
+        margin-left: 10px;
     }
 
     .ciiit-logo img {
@@ -279,34 +276,14 @@
 }
 
 @media (max-width: 576px) {
-    .head-box-AbtCiiit {
-        height: auto;
-        padding: 5px;
+    .head-box-coursesdetls {
+        height: 100px;
     }
 
-    .head-box-AbtCiiit h1 {
-        font-size: 18px;
-        margin: 5px;
-        text-align: center;
-    }
-
-    .left-index-AbtCiiit {
-        margin: 0;
-        padding: 5px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .left-sidebar-AbtCiiit {
-        width: 100%;
-        margin: 10px 0;
-        height: auto;
-    }
-
-    .left-nav-AbtCiiit {
-        width: 100%;
-        height: auto;
-        box-shadow: none;
+    .head-box-coursesdetls h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-top: 20px;
     }
 
     .ciiit-heading {
