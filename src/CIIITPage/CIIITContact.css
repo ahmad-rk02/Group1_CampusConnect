@@ -15,6 +15,7 @@
 .left-index-cntctciiit {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-cntctciiit {
@@ -90,4 +91,113 @@
 .ciiit-contact p{
     margin-left: 360px;
     margin-top: -33px;
+}
+
+/* Responsive Adjustments for 1200px and below */
+@media (max-width: 1200px) {
+    .left-index-cntctciiit {
+        flex-direction: column; /* Stack the sidebar on top */
+        align-items: stretch;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 100%; /* Full width for the sidebar */
+        margin: 0 0 20px 0; /* Add margin at the bottom for spacing */
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px 10px; /* Adjust margins for smaller screens */
+    }
+
+    .head-ciiit,
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .head-box-cntctciiit {
+        height: 110px;
+    }
+
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .left-index-cntctciiit {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px auto;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        margin: 10px;
+    }
+
+    .ciiit-contact p {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-cntctciiit h1 {
+        font-size: 2rem;
+    }
+
+    .left-index-cntctciiit {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 10px;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .ciiit-heading-contact h1 {
+        font-size: 1.5rem;
+    }
+
+    .head-ciiit {
+        font-size: 1.2rem;
+    }
+
+    .ciiit-contact h4 {
+        font-size: 1rem;
+    }
+
+    .ciiit-contact p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .head-box-cntctciiit {
+        height: auto;
+        padding: 10px;
+    }
+
+    .head-box-cntctciiit h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        text-align: left;
+        font-size: 0.8rem;
+    }
 }
