@@ -495,7 +495,6 @@
     margin-right: auto;
   }
 }
-}
 
 /* Adjustments for smaller screens (e.g., phones) */
 @media (max-width: 768px) {
@@ -521,9 +520,7 @@
     font-size: 12px;
   }
 
-  .bitsnbytes-logo-ka-box1{
 
-  }
   .bitsnbytes-logo-ka-box2
   {
     margin: 10px auto;
