@@ -14,7 +14,7 @@ const CIIITContact = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-cntctciiit just">
+      <Row noGutters className="left-index-cntctciiit just">
         <Col md={2} className='left-sidebar-cntctciiit'>
           <Card className="left-nav-cntctciiit">
             <ListGroup variant="flush">

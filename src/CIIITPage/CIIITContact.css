@@ -1,36 +1,37 @@
 .head-box-cntctciiit {
     background-color: #102c57;
     height: 130px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .head-box-cntctciiit h1 {
     font-weight: bold;
-    text-align: left;
-    font-size: 40px;
-    margin-top: 50px;
-    margin-left: 100px;
+    font-size: 2.5rem;
     color: white;
+    margin: 0;
 }
 
 .left-index-cntctciiit {
-    margin-left: 60px;
-    margin-right: 60px;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 20px;
 }
 
 .left-sidebar-cntctciiit {
-    position: relative;
-    top: -20px;
-    z-index: 2;
-    width: 250px;
-    margin-left: 40px;
+    width: 20%;
+    min-width: 250px;
+    margin-right: 20px;
 }
 
 .left-sidebar-cntctciiit .card {
     text-align: center;
+    width: 100%;
 }
 
 .left-sidebar-cntctciiit .list-group-item {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: center;
 }
 
@@ -48,46 +49,159 @@
     color: black;
 }
 
-
 .left-nav-cntctciiit {
     position: sticky;
     top: 5px;
     background-color: white;
     border-radius: 0;
-    height: 360px;
-    width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+    padding: 10px;
 }
-.left-nav-row-cntctciiit{
-    height: 45px;
-  }
 
-.name-cntctciiit-prog{
+.left-nav-row-cntctciiit {
+    padding: 10px 0;
+}
+
+.name-cntctciiit-prog {
     text-align: left;
 }
-.ciiit-heading-contact h1{
+
+.ciiit-heading-contact h1 {
     text-align: left;
-    padding-left: 40px;
-    padding-top: 5px;
+    padding: 10px 20px;
+    font-size: 1.8rem;
     color: #102C57;
+    margin: 0;
 }
-.ciiit-heading-contact{
-    width: 90%;
+
+.ciiit-heading-contact {
     background-color: #eadbc8;
-    height: 55px;
-    position: relative;
-    margin-left: 120px;
-    margin-top: 40px;
+    margin: 20px 0;
+    padding: 10px;
 }
-.head-ciiit{
-    margin-top: 40px;
-    margin-left: 50px;
+
+.head-ciiit {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    text-align: left;
+    padding: 0 20px;
 }
-.ciiit-contact h4{
-    margin-left: 140px;
-    margin-top: 40px;
+
+.ciiit-contact h4 {
+    margin: 20px 20px 10px;
+    font-size: 1.2rem;
 }
-.ciiit-contact p{
-    margin-left: 360px;
-    margin-top: -33px;
+
+.ciiit-contact p {
+    margin: 0 20px 20px;
+    line-height: 1.5;
+}
+
+/* Responsive Adjustments for 1200px and below */
+@media (max-width: 1200px) {
+    .left-index-cntctciiit {
+        flex-direction: column; /* Stack the sidebar on top */
+        align-items: stretch;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 100%; /* Full width for the sidebar */
+        margin: 0 0 20px 0; /* Add margin at the bottom for spacing */
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px 10px; /* Adjust margins for smaller screens */
+    }
+
+    .head-ciiit,
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .head-box-cntctciiit {
+        height: 110px;
+    }
+
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .left-index-cntctciiit {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 90%;
+        margin: 20px 0;
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px auto;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        margin: 10px;
+    }
+
+    .ciiit-contact p {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-cntctciiit h1 {
+        font-size: 2rem;
+    }
+
+    .left-index-cntctciiit {
+        flex-direction: column;
+        align-items: stretch;
+        margin: 10px;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .ciiit-heading-contact h1 {
+        font-size: 1.5rem;
+    }
+
+    .head-ciiit {
+        font-size: 1.2rem;
+    }
+
+    .ciiit-contact h4 {
+        font-size: 1rem;
+    }
+
+    .ciiit-contact p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .head-box-cntctciiit {
+        height: auto;
+        padding: 10px;
+    }
+
+    .head-box-cntctciiit h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        text-align: left;
+        font-size: 0.8rem;
+    }
 }
