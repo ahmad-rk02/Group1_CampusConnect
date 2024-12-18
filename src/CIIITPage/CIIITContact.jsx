@@ -14,7 +14,7 @@ const CIIITContact = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-cntctciiit just">
+      <Row noGutters className="left-index-cntctciiit just">
         <Col md={2} className='left-sidebar-cntctciiit'>
           <Card className="left-nav-cntctciiit">
             <ListGroup variant="flush">
@@ -69,7 +69,7 @@ const CIIITContact = () => {
         <div className='ciiit-heading-contact'>
         <h1> CIIIT contact</h1>
       </div>  
-      <h3 className='head-ciiit'>CENTER FOR INVENTION, INNOVATION,<br/> INCUBATION & TRAINING (CIIIT)</h3>
+      <h3 className='con-ciiit'>CENTER FOR INVENTION, INNOVATION,<br/> INCUBATION & TRAINING (CIIIT)</h3>
          <div className='ciiit-contact'>
           <h4>  Chief Coordinator :</h4>
           <p>  Dr. Ganesh R. Chavhan<br/>  Assistant Professor, Department of Mechanical Engineering,<br/>  Email: ganeshchavhan@gcoec.ac.in | Mobile: +919765658597</p>

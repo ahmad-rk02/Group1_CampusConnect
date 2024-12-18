@@ -12,9 +12,11 @@
     color: white;
 }
 
+
 .left-index-cntctciiit {
     margin-left: 60px;
     margin-right: 60px;
+    flex-wrap: nowrap;
 }
 
 .left-sidebar-cntctciiit {
@@ -46,6 +48,9 @@
 .left-sidebar-cntctciiit a {
     text-decoration: none;
     color: black;
+}
+.con-ciiit{
+    margin-left: 120px;
 }
 
 
@@ -90,4 +95,107 @@
 .ciiit-contact p{
     margin-left: 360px;
     margin-top: -33px;
+}
+
+/* Responsive Adjustments for 1200px and below */
+@media (max-width: 1200px) {
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .left-sidebar-cntctciiit{
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-cntctciiit {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px 10px; /* Adjust margins for smaller screens */
+    }
+
+    .head-ciiit,
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+    .left-sidebar-cntctciiit {
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-cntctciiit  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .ciiit-heading-contact {
+        margin: 20px auto;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        margin: 10px;
+    }
+
+    .ciiit-contact p {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-left: 20px;
+    }
+
+    .left-sidebar-cntctciiit {
+        width: 150px;
+        margin-left: 10px;
+    }
+
+    .ciiit-heading-contact h1 {
+        font-size: 1.5rem;
+    }
+
+    .head-ciiit {
+        font-size: 1.2rem;
+    }
+
+    .ciiit-contact h4 {
+        font-size: 1rem;
+    }
+
+    .ciiit-contact p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .head-box-cntctciiit {
+        height:100px;
+        padding: 10px;
+    }
+
+    .head-box-cntctciiit h1 {
+        font-size: 25px;
+        margin-left: 10px;
+        margin-top: 20px;
+    }
+
+    .ciiit-contact h4,
+    .ciiit-contact p {
+        text-align: left;
+        font-size: 0.8rem;
+    }
 }

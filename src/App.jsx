@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -43,6 +42,7 @@ import AdminProfile from "./Administration/Adminprofile";
 import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
+
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -58,7 +58,6 @@ function App() {
       name: "ADMINISTRATION",
       subLinks: ["Principal & HOD", "Student Section", "Office", "Committees", "Tenders", "Grievance Form"]
     },
-
     {
       name: "PROGRAMMES",
       subLinks: ["UG (B.Tech)", "PG (M.Tech)", "Ph.D"]
@@ -75,7 +74,6 @@ function App() {
       name: "HOSTEL",
       subLinks: ["Boys Hostel", "Girls Hostel"]
     },
-    
     {
       name: "OTHERS",
       subLinks: [
@@ -85,7 +83,6 @@ function App() {
         "Alumni"
       ]
     },
-
     { name: "CONTACT" }
   ];
 
@@ -93,7 +90,7 @@ function App() {
     <>
       <Router basename="/Group1_CampusConnect">
         <Navbar imageSrcPath={imagePath} navItems={navItems} />
-        <div className="container-fluid container m-0 p-0">
+        <div className="container-fluid m-0 p-0">
           <Routes>
             <Route path="*" element={<Navigate to="/" />} />
             <Route path="/" element={<Home />} />
@@ -116,7 +113,6 @@ function App() {
             <Route path="/boyshostel" element={<Boyshostel />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
             <Route path="/forgetstudent" element={<ForgetStudent />} />
-            
             <Route path="/forgetadmin" element={<ForgetAdmin />} />
             <Route path="/workshop" element={<Workshop />} />
             <Route path="/studentprofile" element={<Studentprofile />} />
@@ -134,9 +130,7 @@ function App() {
           </Routes>
         </div>
       </Router>
-      <div className='footer-spacing'>
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

@@ -51,7 +51,7 @@
     color: black;
 }
 .tender-table{
-   width: 75%;
+   width: 100%;
 }
 .left-nav-row-tender,
 .left-nav-row-tender-01 {
@@ -130,6 +130,7 @@
   }
 .tender-table{
     width: 100%;
+    
 }
 .right-top-text-tender{
     width: 100%;
@@ -157,7 +158,9 @@
     width: 100%;
     margin: 20px;
  }
-  
+  .tender-table{
+    width: 100%;
+  }
 
   .head-right-top-tender {
     width: 100%;
@@ -177,5 +180,7 @@
     width: 100%;
     margin: 20px;
  }
- 
+ .tender-table{
+    width: 100%;
+ }
 }
