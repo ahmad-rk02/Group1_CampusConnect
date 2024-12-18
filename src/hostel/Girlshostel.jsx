@@ -42,6 +42,8 @@ const Girlshostel = () => {
           </Card>
         </Col>
       </Row>
+
+      <div className='Right-row-gh'>
       <Card.Header className="gh-goldenn-1">
         <h4>Hostel Facilities</h4>
       </Card.Header>
@@ -91,6 +93,8 @@ const Girlshostel = () => {
         className="about-image-gh"
         style={{ width: '34%' }}
       />
+
+      <div className='The-three-buttons-gh'>
       <Button type="submit" className="apply-button-gh">
         Apply Now
       </Button>
@@ -100,6 +104,7 @@ const Girlshostel = () => {
       <Button type="submit" className="HOSTEL-button-gh">
         Hostel Rules & Regulations
       </Button>
+      </div>
       <Col>
 
 
@@ -163,6 +168,7 @@ const Girlshostel = () => {
         </table>
 
       </Col>
+      </div>
 
     </Container>
   );

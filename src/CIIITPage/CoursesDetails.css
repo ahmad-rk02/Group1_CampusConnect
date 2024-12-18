@@ -49,12 +49,11 @@
 
 
 .left-nav-coursesdetls {
-    position: -webkit-sticky;
     position: sticky;
     top: 5px;
     background-color: white;
     border-radius: 0;
-    height: 360px;
+    height: auto;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -100,4 +99,6 @@
     border-radius: 16px;
 }
 
-
+@media (max-width: 1200px){
+    
+}

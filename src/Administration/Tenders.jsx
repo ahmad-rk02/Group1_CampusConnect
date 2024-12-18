@@ -7,12 +7,15 @@ import './Tenders.css';
 
 const Tenders = () => {
   const TenderTable = [
-    { text: 'Quatation Calling Letter', dated: '28/08/2023', circular: 'http://localhost:5173/wsnIot-lab-09-Jul-2021-13-48-09.pdf' },
-    { text: '4 TB surveillance Letter', dated: '28/08/2023', circular: 'http://localhost:5173/4TB%20surveillance%20Hard%20Disk.pdf' },
-    { text: '66U Cable 19 Rack', dated: '28/08/2023', circular: 'http://localhost:5173/66U%20Cabal%2019%20Rack.pdf' },
-    { text: 'CCTV 20 CH NVR', dated: '28/08/2023', circular: 'http://localhost:5173/CCTV%2020%20CH%20NVR.pdf' },
-    { text: 'CCTV PoE Switch', dated: '28/08/2023', circular: 'http://localhost:5173/CCTV%20PoE%20Switch.pdf' },
-    { text: 'Display Unit', dated: '28/08/2023', circular: 'http://localhost:5173/Display%20Unit.pdf' },
+    { text: 'Quatation Calling Letter', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/wsnIot-lab-09-Jul-2021-13-48-09.pdf' },
+    { text: '4 TB surveillance Letter', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/4TB%20surveillance%20Hard%20Disk.pdf' },
+    { text: '66U Cable 19 Rack', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/66U%20Cabal%2019%20Rack.pdf' },
+    { text: 'CCTV 20 CH NVR', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/CCTV%2020%20CH%20NVR.pdf' },
+    { text: 'CCTV PoE Switch', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/CCTV%20PoE%20Switch.pdf' },
+    { text: 'Display Unit', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Display%20Unit.pdf' },
+    { text: 'Service Installation Configuration', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Service%20Installation%20Configuration.pdf' },
+    { text: 'Camera', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Camera.pdf' },
+    { text: 'KVA UPS with Battery', dated: '28/08/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/KVA%20UPS%20with%20Battery.pdf' }
   ];
 
   return (

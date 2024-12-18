@@ -100,13 +100,13 @@
     }
 
     .news-btn {
-        width: 100%;
+        width: 20vw;
     }
 }
 
 @media (max-width: 768px) {
     .event-section, .news-section {
-        width: 100%;
+        width: 90%;
     }
 
     .card-img-top {
@@ -119,6 +119,7 @@
 
     .news-btn {
         height: 45px;
+        width: 20vw;
     }
 }
 

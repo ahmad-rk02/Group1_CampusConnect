@@ -19,7 +19,7 @@ const CIIITContact = () => {
           <Card className="left-nav-cntctciiit">
             <ListGroup variant="flush">
 
-            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
+            <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
@@ -49,7 +49,7 @@ const CIIITContact = () => {
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
                   Contact
                 </Link>

@@ -89,6 +89,8 @@ const Boyshostel = () => {
         <p>The Boys' Hostel at GCOEC is a dynamic and secure residence tailored to the unique needs of male students. Located within the vibrant campus, it provides modern amenities, comfortable rooms, and round-the-clock security. More than just a place to stay, the hostel fosters a strong sense of brotherhood, encouraging deep connections and supporting the overall personal and academic development of its residents.
         </p>
       </Col>
+
+      <div className='The-three-buttons-bh'>
       <img
         src={BoysHostel}
         alt="Boys Hostel"
@@ -104,6 +106,8 @@ const Boyshostel = () => {
       <Button type="submit" className="HOSTEL-button-bh">
         Hostel Rules & Regulations
       </Button>
+      </div>
+
       <Col>
 
 

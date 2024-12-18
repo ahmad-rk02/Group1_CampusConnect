@@ -63,7 +63,7 @@ function App() {
       name: "PROGRAMMES",
       subLinks: ["UG (B.Tech)", "PG (M.Tech)", "Ph.D"]
     },
-    { name: "CIIIT", subLinks: ["About CIIIT", "Couse Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"] },
+    { name: "CIIIT", subLinks: ["About CIIIT", "Courses Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"] },
     {
       name: "PAYMENTS",
       subLinks: [

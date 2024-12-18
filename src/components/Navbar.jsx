@@ -128,8 +128,8 @@ function Navbar({ imageSrcPath, navItems }) {
 
   return (
     <div className="main-div" style={{ display: 'block'}}>
-    <nav className="navbar navbar-expand-md ">
-      <div className="container-fluid ms-4">
+    <nav className="d-flex navbar navbar-expand-xl">
+      <div className="d-flex container-fluid ms-4">
         <a className="navbar-brand" href="#">
           <img
             src={imageSrcPath}
@@ -137,7 +137,7 @@ function Navbar({ imageSrcPath, navItems }) {
             height="100"
             className="d-inline-block align-center"
             alt=""
-          />
+          />  
         </a>
         <button
           className="navbar-toggler"
@@ -150,12 +150,12 @@ function Navbar({ imageSrcPath, navItems }) {
         >
           <span className="navbar-toggler-icon" />
         </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-md-1 justify-content-center w-100">
+        <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
             {navItems.map((item, index) => (
               <li
                 key={index}
-                className="nav-item"
+                className="nav-item flex"
                 onClick={() => setSelectedIndex(index)}
               >
                 {item.subLinks ? (
@@ -220,7 +220,9 @@ function Navbar({ imageSrcPath, navItems }) {
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
       </div>
     </div>
-
+    <h1 className="">
+      Hello world!
+    </h1>
 
     </div>
   );
