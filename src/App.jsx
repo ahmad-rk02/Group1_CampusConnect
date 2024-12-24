@@ -42,7 +42,7 @@ import AdminProfile from "./Administration/Adminprofile";
 import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
-import ChatbotCTA from "./chatbotCTA";
+import ChatbotCTA from "./pages/chatbotCTA";
 
 function App() {
   const navItems = [
