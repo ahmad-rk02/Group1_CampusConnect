@@ -9,7 +9,7 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    
+
     // Simple search logic
     const lowerQuery = query.toLowerCase();
     const routes = {
@@ -82,7 +82,7 @@ function Navbar({ imageSrcPath, navItems }) {
 
       if (typeof subLink === "string") {
         const isExternal = routeMap[subLink] && (routeMap[subLink].startsWith("http://") || routeMap[subLink].startsWith("https://"));
-        
+
         // Handle external links
         if (isExternal) {
           return (
@@ -127,103 +127,99 @@ function Navbar({ imageSrcPath, navItems }) {
   };
 
   return (
-    <div className="main-div" style={{ display: 'block'}}>
-    <nav className="d-flex navbar navbar-expand-xl">
-      <div className="d-flex container-fluid ms-4">
-        <a className="navbar-brand" href="#">
-          <img
-            src={imageSrcPath}
-            width="85"
-            height="100"
-            className="d-inline-block align-center"
-            alt=""
-          />  
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
-            {navItems.map((item, index) => (
-              <li
-                key={index}
-                className="nav-item flex"
-                onClick={() => setSelectedIndex(index)}
-              >
-                {item.subLinks ? (
-                  <div className="nav-item dropdown">
+    <div className="main-div" style={{ display: 'block' }}>
+      <nav className="d-flex navbar navbar-expand-xl">
+        <div className="d-flex container-fluid ms-4">
+          <a className="navbar-brand" href="#">
+            <img
+              src={imageSrcPath}
+              width="85"
+              height="100"
+              className="d-inline-block align-center"
+              alt=""
+            />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
+              {navItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="nav-item flex"
+                  onClick={() => setSelectedIndex(index)}
+                >
+                  {item.subLinks ? (
+                    <div className="nav-item dropdown">
+                      <Link
+                        to={`/${item.name.toLowerCase()}`}
+                        className="nav-link dropdown-toggle"
+                        id={`navbarDropdown${index}`}
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        {item.name}
+                      </Link>
+                      <ul
+                        className="dropdown-menu"
+                        aria-labelledby={`navbarDropdown${index}`}
+                      >
+                        {renderSubLinks(item.subLinks)}
+                      </ul>
+                    </div>
+                  ) : (
                     <Link
                       to={`/${item.name.toLowerCase()}`}
-                      className="nav-link dropdown-toggle"
-                      id={`navbarDropdown${index}`}
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                      className={selectedIndex === index ? "nav-link active fw-bold" : "nav-link"}
                     >
                       {item.name}
                     </Link>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby={`navbarDropdown${index}`}
-                    >
-                      {renderSubLinks(item.subLinks)}
-                    </ul>
-                  </div>
-                ) : (
-                  <Link
-                    to={`/${item.name.toLowerCase()}`}
-                    className={selectedIndex === index ? "nav-link active fw-bold" : "nav-link"}
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-          <form className="d-flex me-3" onSubmit={handleSearch}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+                  )}
+                </li>
+              ))}
+            </ul>
+            <form className="d-flex me-3" onSubmit={handleSearch}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
         </div>
-      </div>  
 
-    </nav>
+      </nav>
 
-    <div className="marquee-container">
-      <div className="marquee-text">
-      <a className="event-links-nav " href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_Girls%20Quarter_Allotment%20List_2024-25.pdf'>First Year Girls Quarter Allotment List 2024-25</a>
-      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_%20Girls%20Quarter_%20Allotment%20List(%20Against%20Cancellation)_2024-25.pdf'>First Year Girls Quarter Allotment List( Against Cancellation) 2024-25</a>
-      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='https://docs.google.com/forms/d/e/1FAIpQLSc8majz1zChMy755RbmPX1P1-pnOy9FNDkxqptIz29ge9cQuA/viewform'>ADDITIONAL INSTITUTE LEVEL SPOT ROUND (DIRECT SECOND YEAR ENGINEERING) ON 19/10/2024</a>
-      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/Direct%20Second%20Year_Hostel%20Allotment%20List%20_%20Against%20Cancellation_2024-25.pdf'>Direct Second Year Hostel Allotment List-Against Cancellation-2024-25</a>
-      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-      <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/DSE%20INSTITUTE%20level%20merit%20list%202024%2025.pdf'>DSE INSTITUTE level merit list 2024-25</a>
-      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+      <div className="marquee-container">
+        <div className="marquee-text">
+          <a className="event-links-nav " href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_Girls%20Quarter_Allotment%20List_2024-25.pdf'>First Year Girls Quarter Allotment List 2024-25</a>
+          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_%20Girls%20Quarter_%20Allotment%20List(%20Against%20Cancellation)_2024-25.pdf'>First Year Girls Quarter Allotment List( Against Cancellation) 2024-25</a>
+          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+          <a className="event-links-nav" href='https://docs.google.com/forms/d/e/1FAIpQLSc8majz1zChMy755RbmPX1P1-pnOy9FNDkxqptIz29ge9cQuA/viewform'>ADDITIONAL INSTITUTE LEVEL SPOT ROUND (DIRECT SECOND YEAR ENGINEERING) ON 19/10/2024</a>
+          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/Direct%20Second%20Year_Hostel%20Allotment%20List%20_%20Against%20Cancellation_2024-25.pdf'>Direct Second Year Hostel Allotment List-Against Cancellation-2024-25</a>
+          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/DSE%20INSTITUTE%20level%20merit%20list%202024%2025.pdf'>DSE INSTITUTE level merit list 2024-25</a>
+          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+        </div>
       </div>
-    </div>
-    <h1 className="">
-      Hello world!
-    </h1>
-
     </div>
   );
 }
