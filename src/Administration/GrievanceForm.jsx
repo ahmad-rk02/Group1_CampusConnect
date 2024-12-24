@@ -276,12 +276,12 @@ const GrievanceForm = () => {
                     className={`input-box-grivnce branch-dd ${errors.branch && 'is-invalid'}`}
                   >
                     <option value="">Select Branch</option>
-                    <option value="1">Computer Science & Engineering</option>
-                    <option value="2">Instrumentation Engineering</option>
-                    <option value="3">Mechanical Engineering</option>
-                    <option value="4">Electrical engineering</option>
-                    <option value="5">Electronics and Communication</option>
-                    <option value="6">Civil</option>
+                    <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                    <option value=">Instrumentation Engineering">Instrumentation Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical engineering">Electrical engineering</option>
+                    <option value="Electronics and Communication">Electronics and Communication</option>
+                    <option value="Civil">Civil</option>
                   </Form.Select>
                   {errors.branch && <div className="invalid-feedback">{errors.branch}</div>}
                 </Form.Group>
@@ -295,14 +295,14 @@ const GrievanceForm = () => {
                     className={`input-box-grivnce sem-dd ${errors.semester && 'is-invalid'}`}
                   >
                     <option value="">Select Semester</option>
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5">Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
+                    <option value="Semester 1">Semester 1</option>
+                    <option value="Semester 1">Semester 2</option>
+                    <option value="Semester 1">Semester 3</option>
+                    <option value="Semester 1">Semester 4</option>
+                    <option value="Semester 1">Semester 5</option>
+                    <option value="Semester 1">Semester 6</option>
+                    <option value="Semester 1">Semester 7</option>
+                    <option value="Semester 1">Semester 8</option>
                   </Form.Select>
                   {errors.semester && <div className="invalid-feedback">{errors.semester}</div>}
                 </Form.Group>
@@ -316,11 +316,15 @@ const GrievanceForm = () => {
                     className={`input-box-grivnce ${errors.grievanceType && 'is-invalid'}`}
                   > 
                   <option value="">Grievance Type</option>
-                    <option value="Departmental">Departmental</option>
-                    <option value="Office Related">Office Related</option>
+                  <option value="Computer Sence & Engineiering Dept. Related">Computer Science & Engineering Dept. Related</option>
+                    <option value=">Instrumentation Engneering Dept. Related">Instrumentation Engineering Dept. Related</option>
+                    <option value="Mechanical Engineering Dept. Related">Mechanical Engineering Dept. Related</option>
+                    <option value="Electrical engineering Dept. Related">Electrical engineering Dept. Related</option>
+                    <option value="Electronics and Communication Dept. Related">Electronics and Communication Dept. Related</option>
+                    <option value="Civil Dept. Related">Civil Dept. Related</option>
+                    <option value="Office Related Dept. Related">Office Related</option>
                     <option value="Others">Others</option>
                   </Form.Select>
-          y
                    {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
                 </Form.Group>
 
