@@ -20,70 +20,70 @@ function CSECarousel() {
   return (
     <div>
 
-       <Carousel interval={2000} className='cse-carousel w-100'>
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel01}
-                alt="First slide"
-              />
-            </Carousel.Item>
+      <Carousel interval={2000} className='cse-carousel w-100'>
+        <Carousel.Item>
+          <img
 
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel02}
-                alt="Second slide"
-              />
-            </Carousel.Item>
+            className="d-block "
+            src={cseCarousel01}
+            alt="First slide"
+          />
+        </Carousel.Item>
 
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel03}
-                alt="Third slide"
-              />
-            </Carousel.Item>
+        <Carousel.Item>
+          <img
 
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel04}
-                alt="Fourth slide"
-              />
-            </Carousel.Item>
+            className="d-block "
+            src={cseCarousel02}
+            alt="Second slide"
+          />
+        </Carousel.Item>
 
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel05}
-                alt="Fifth slide"
-              />
-            </Carousel.Item>
+        <Carousel.Item>
+          <img
 
-            <Carousel.Item>
-              <img
-                
-                className="d-block "
-                src={cseCarousel06}
-                alt="Sixth slide"
-              />
-            </Carousel.Item>
+            className="d-block "
+            src={cseCarousel03}
+            alt="Third slide"
+          />
+        </Carousel.Item>
 
-            <Carousel.Item>
-              <img
-               
-                className="d-block "
-                src={cseCarousel07}
-                alt="Seventh slide"
-              />
-            </Carousel.Item>
-          </Carousel>
+        <Carousel.Item>
+          <img
+
+            className="d-block "
+            src={cseCarousel04}
+            alt="Fourth slide"
+          />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+
+            className="d-block "
+            src={cseCarousel05}
+            alt="Fifth slide"
+          />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+
+            className="d-block "
+            src={cseCarousel06}
+            alt="Sixth slide"
+          />
+        </Carousel.Item>
+
+        <Carousel.Item>
+          <img
+
+            className="d-block "
+            src={cseCarousel07}
+            alt="Seventh slide"
+          />
+        </Carousel.Item>
+      </Carousel>
 
 
     </div>

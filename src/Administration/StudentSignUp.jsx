@@ -47,40 +47,40 @@ const StudentSignUp = () => {
   const validateForm = () => {
     let formErrors = {};
     let valid = true;
-  
+
     // Validate each field
     if (!formData.fullname) {
       valid = false;
       formErrors.fullname = "Full Name is required";
     }
-  
+
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
     }
-  
+
     const phonePattern = /^[0-9]{10}$/;
     if (!formData.phone || !phonePattern.test(formData.phone)) {
       valid = false;
       formErrors.phone = "A valid 10-digit phone number is required";
     }
-  
+
     if (!formData.prnNumber) {
       valid = false;
       formErrors.prnNumber = "University number (PRN) is required";
     }
-  
+
     if (!formData.semester) {
       valid = false;
       formErrors.semester = "Please select your semester";
     }
-  
+
     if (!formData.branch) {
       valid = false;
       formErrors.branch = "Branch is required";
     }
-  
+
     // Password validation
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
     if (!formData.password) {
@@ -90,16 +90,16 @@ const StudentSignUp = () => {
       valid = false;
       formErrors.password = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.";
     }
-  
+
     if (formData.password !== formData.confirmPassword) {
       valid = false;
       formErrors.confirmPassword = "Passwords do not match";
     }
-  
+
     setErrors(formErrors);
     return valid;
   };
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -135,21 +135,21 @@ const StudentSignUp = () => {
 
         // Redirect to StudentForm upon successful registration
         navigate('/Studentlogin');
-        
+
       } catch (error) {
         if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
           alert('User already exists. Please try logging in.');
-        // Reset the form
-        setFormData({
-          fullname: '',
-          email: '',
-          phone: '',
-          prnNumber: '',
-          semester: '',
-          branch: '',
-          password: '',
-          confirmPassword: '',
-        });
+          // Reset the form
+          setFormData({
+            fullname: '',
+            email: '',
+            phone: '',
+            prnNumber: '',
+            semester: '',
+            branch: '',
+            password: '',
+            confirmPassword: '',
+          });
         } else {
           console.error('There was an error registering the user:', error);
           console.log(error.message);
@@ -236,7 +236,7 @@ const StudentSignUp = () => {
                     placeholder="Enter Your Full Name"
                     className={`input-box-grivncee ${errors.fullname && 'is-invalid'}`}
                   />
-                  
+
                   {errors.fullname && <div className="invalid-feedback">{errors.fullname}</div>}
                 </Form.Group>
 
@@ -304,13 +304,21 @@ const StudentSignUp = () => {
                 <Form.Group controlId="formBranch" className="mb-3 whole-field-grivncee">
                   <Form.Label className='field-name-grivnce'>Branch</Form.Label>
                   <Form.Control
-                    type="text"
+                    as="select"
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
                     placeholder="Enter Your Branch"
                     className={`input-box-grivncee ${errors.branch && 'is-invalid'}`}
-                  />
+                  >
+                    <option value="">Select Branch</option>
+                    <option value="Computer Science & Engineering">Computer Science & Engineering</option>
+                    <option value=">Instrumentation Engineering">Instrumentation Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Electrical engineering">Electrical engineering</option>
+                    <option value="Electronics and Communication">Electronics and Communication</option>
+                    <option value="Civil">Civil</option>
+                  </Form.Control>
                   {errors.branch && <div className="invalid-feedback">{errors.branch}</div>}
                 </Form.Group>
 
@@ -326,7 +334,7 @@ const StudentSignUp = () => {
                       className={`input-box-grivncee ${errors.password && 'is-invalid'}`}
                     />
                     <span className="input-group-text" onClick={togglePasswordVisibility}>
-                      {showPassword ? <FaEye />: <FaEyeSlash />}
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                     {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                   </div>
@@ -344,23 +352,23 @@ const StudentSignUp = () => {
                       className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
                     />
                     <span className="input-group-text" onClick={toggleConfirmPasswordVisibility}>
-                    {showPassword ? <FaEye />: <FaEyeSlash />}
+                      {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
                     {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                   </div>
                 </Form.Group>
 
-                
+
 
                 <Button type="submit" className="submit-btn-grivncee">
                   Register
                 </Button>
                 <div className='to-student-login'>
-                <p className='text-Student-signup'>
-                  Already have an account ?
-                </p>
+                  <p className='text-Student-signup'>
+                    Already have an account ?
+                  </p>
 
-                <Link to="/studentlogin" className="Studentlogin-link-Student-signup">Login</Link>
+                  <Link to="/studentlogin" className="Studentlogin-link-Student-signup">Login</Link>
                 </div>
               </Form>
             </div>

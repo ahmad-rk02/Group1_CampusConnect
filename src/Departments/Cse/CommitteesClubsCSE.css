@@ -1,622 +1,240 @@
-/* Container for the entire section */
-.bada-row {
-  width: 70%;
+/* General Styling */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
 }
 
-.bg-golden1 {
-  background-color: #eadbc8;
-  width: 70%;
-  height: 50px;
-  position: relative;
-  margin-right: 50px;
-  margin-top: 50px;
-  margin-left: 246px;
-  
+/* Container */
+.container {
+  width: 90%;
+  margin: auto;
+  max-width: 1200px;
 }
 
-.bg-golden1 h4 {
-  font-weight: bold;
-  text-align: left;
-  padding-left: 20px;
-  padding-top: 10px;
-  color: #102C57;
-  width: 50%;
-}
-
-.acses-section {
-  padding: 40px;
-  background-color: #f9f9f9;
-  /* Light background for the section */
-  border-radius: 8px;
-}
-
-/* Card that holds the logo */
-.AcsesLogo-card {
-  background-color: #102C57;
-  /* Dark blue background for logo card */
-  width: 450px;
+/* Heading Section */
+.heading-box-CmtClb {
+  margin: auto;
+  background: linear-gradient(90deg, #eadbc8, #e8c796);
+  color: black;
+  text-align: center;
+  padding: 15px;
   border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.heading-box-CmtClb h4 {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ACSES Section */
+.Acses-cmt {
+  display: flex;
+  margin: 40px 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Acses-cmt-logo-part {
+  width: 30%;
+  background-color: #102C57;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 20px;
-  margin-top: 30px;
-  margin-left: -10px;
-
 }
 
-/* Styling the ACSES logo */
-.acses-logo {
-
-  /* Adjust width as per your design */
-  border-radius: 8px;
-  width: 80%;
-  margin-top: 160px;
-  margin-left: -10px;
-
+.acses-cmt-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
-.logo-ka-box {
-  width: 20%;
-  margin-top: 40px;
-  margin-left: 260px;
-  margin-right: 60px;
-  margin-bottom: 1px;
-  height: 622px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-}
-
-/* Right column text */
-.acses-text {
-
-  color: #000000;
-  /* Darker text for readability */
-  line-height: 1.6;
-  width: 50%;
-  margin-top: 40px;
-  margin-right: -260px;
-  margin-left: -60px;
-  text-align: justify;
-  font-size: 16px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-bottom: 30px;
-}
-
-/* Title of the section */
-.acses-title {
-  color: #102C57;
-  /* Dark blue to match the branding */
-  font-weight: bold;
-  text-align: center;
-  margin-top: 30px;
-
-}
-
-.bitsnbytes-title {
-  color: #102C57;
-  font-weight: bold;
-  text-align: center;
-  margin-top: 100px;
-}
-
-.bitsnbytes-text {
-  margin-top: 2px;
-  margin-right: 510px;
-  margin-left: 250px;
-  text-align: justify;
-  font-size: 16px;
-}
-
-.bitsnbytes-logo-ka-box1 {
-  margin-top: -225px;
-  margin-left: 850px;
-  margin-right: 155px;
-  height: 300px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-
-}
-
-.bitsnbytes-logo-ka-box2 {
-  margin-top: -280px;
-  margin-left: 870px;
-  margin-right: 180px;
-  height: 260px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.bitsnbytes-logo {
-  margin-top: 22px;
-  width: 90%
-}
-
-/* .bg-golden2 {
-  background-color: #eadbc8;
+.Acses-cmt-right-part {
   width: 70%;
-  height: 50px;
-  position: relative;
-  margin-right: 50px;
-  margin-top: 50px;
-  margin-left: 246px;
-  
-} */
-
-.cncevents-title1{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
+  padding: 30px;
+  background-color: #EADBC8;
+  color: #333;
 }
 
-.cncevents-text1{
-  margin-top: -130px;
-  margin-left: 585px;
-  margin-right: 185px;
-  text-align: justify;
+.Acses-text {
+  margin-bottom: 15px;
   font-size: 16px;
-
-}
-
-.cncevents-box1{
-  margin-top: 30px;
-  margin-left: 257px;
-  margin-right: 150px;
-  height: 350px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-box2{
-  margin-top: -300px;
-  margin-left: 310px;
-  margin-right: 755px;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.clangbootcamp-image{
-  width: 99%;
-  margin-top: 14px;
-  margin-left: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-
-}
-
-.cncevents-box3{
-  margin-top: 30px;
-  margin-left: 257px;
-  margin-right: 150px;
-  height: 350px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-box4{
-  margin-top: -300px;
-  margin-left: 865px;
-  margin-right: 195px;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.nsdceleb-image{
-  width: 99%;
-  margin-top: 14px;
-  margin-left: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-title2{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
-}
-
-.cncevents-text2{
-  margin-top: -130px;
-  margin-left: 295px;
-  margin-right: 480px;
+  line-height: 1.8;
   text-align: justify;
+}
+
+/* Bits and Bytes Section */
+.Bits-and-bytes {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px 0;
+  background-color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Bits-and-bytes-left {
+  width: 60%;
+  padding: 30px;
+  background-color: #EADBC8;
+
+}
+
+.Bits-and-bytes-heading {
+  font-size: 22px;
+  font-weight: bold;
+  color: #102C57;
+  margin-bottom: 10px;
+}
+
+.Bits-and-bytes-text {
   font-size: 16px;
-
+  line-height: 1.8;
+  color: #555;
 }
 
-.internalhackathon-image{
-  width: 99%;
-  margin-top: 14px;
-  margin-left: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
+.Bits-and-bytes-right {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #06427C, #102C57);
 }
 
-.cncevents-box5{
+.Bits-and-bytes-box {
+  width: 80%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Bits-and-bytes-logo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.cc_container {
+  margin: 40px 0;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cc_heading h3 {
+  text-align: center;
+  color: #06427C;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.event_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjusted to a minimum width of 300px */
+  gap: 20px;
+  justify-content: center;
+  align-items: stretch; /* Ensures all event boxes stretch to the same height */
+}
+
+.event_box {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 400px; /* Set a fixed height for consistency */
+}
+
+.event_box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.img_bg {
+  flex: 1; /* Ensures the image takes all available space within the event box */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 200px; /* Set a fixed height for images */
+}
+
+.img_bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.event_info {
+  padding: 15px;
+  background-color: #fff;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event_info ol {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.event_info li {
+  margin-bottom: 5px;
+}
+
+.know_more_container {
+  text-align: center;
   margin-top: 30px;
-  margin-left: 257px;
-  margin-right: 150px;
-  height: 400px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
-.cncevents-box6{
-  margin-top: -320px;
-  margin-left: 310px;
-  margin-right: 755px;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-title3{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
-}
-
-.cncevents-text3{
-  margin-top: -190px;
-  margin-left: 585px;
-  margin-right: 185px;
-  text-align: justify;
+.know_more_btn {
+  padding: 10px 20px;
+  background-color: #06427C;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.cncevents-title4{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
+.know_more_btn:hover {
+  background-color: #032f5b;
 }
 
-.cncevents-text4{
-  margin-top: -190px;
-  margin-left: 295px;
-  margin-right: 480px;
-  text-align: justify;
-  font-size: 16px;
-
-}
-
-.cncevents-box7{
-  margin-top: 30px;
-  margin-left: 257px;
-  margin-right: 150px;
-  height: 400px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-box8{
-  margin-top: -320px;
-  margin-left: 865px;
-  margin-right: 195px;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.blindcoding-image{
-  width: 99%;
-  margin-top: 14px;
-  margin-left: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.treeplantation-image{
-  width: 99%;
-  margin-top: 14px;
-  margin-left: 1px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-title5{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
-}
-
-.cncevents-text5{
-  margin-top: -190px;
-  margin-left: 585px;
-  margin-right: 185px;
-  text-align: justify;
-  font-size: 16px;
-}
-
-.cncevents-box9{
-  margin-top: 30px;
-  margin-left: 257px;
-  margin-right: 150px;
-  height: 400px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-box10{
-  margin-top: -320px;
-  margin-left: 310px;
-  margin-right: 755px;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-box11{
-  margin-top: 40px;
-  margin-left: 600px;
-  margin-right: 500px;
-  height: 50px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.cncevents-title6{
-  font-weight: bold;
-  font-size: 18px;
-  text-align: center;
-  margin-top: -170px;
-  margin-bottom: 20px;
-  margin-top: -37px;
-  margin-left: 50px;
-  color: aliceblue;
-}
-/* Base styles remain unchanged for full-screen view */
-
-/* Original styles remain unchanged */
-
-/* Adjustments for medium screens (e.g., tablets) */
-@media (max-width: 1200px) {
-  .bada-row{
-    width: 90%;
-    margin-left: 37px;
-
-  }
-  .bg-golden1 {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .acses-section {
-    padding: 20px;
-  }
-
-  .AcsesLogo-card {
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .acses-logo {
-    width: 100%;
-  }
-
-  .logo-ka-box {
-    width: 50%;
-    margin: 20px auto;
-    height: 555px;
-  }
-.bitsnbytes-text,
-  .acses-text {
-    width: 100%;
-    font-size: 14px;
-    margin: 20px auto;
-    padding: 10px;
-  }
-
-  .bitsnbytes-logo-ka-box1
-  { margin: 20px auto;
-    width: 50%;
-  
-
-  }
-  .bitsnbytes-logo-ka-box2
-   {
-    margin: 20px auto;
-    width: 1%;
-    height: 100;
-  }
-
-  .cncevents-box1, .cncevents-box3, .cncevents-box5, .cncevents-box7, .cncevents-box9 {
-    width: 70%;
-    height: 300px;
-    margin-left: 200px;
-    margin-right: 300px;
-  }
-
-  .cncevents-box2, .cncevents-box4, .cncevents-box6, .cncevents-box8, .cncevents-box10 {
-    width: 65%;
-    height: 200px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .clangbootcamp-image, .nsdceleb-image, .internalhackathon-image, .blindcoding-image, .treeplantation-image {
-    width: 95%;
-    height: auto;
-  }
-
-  .cncevents-box11 {
-    width: 60%;
-    height: 40px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
-
-/* Adjustments for smaller screens (e.g., phones) */
 @media (max-width: 768px) {
-  .bada-row,
-  .bg-golden1,
-  .AcsesLogo-card {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+  .event_box {
+    height: auto;  
   }
 
-  .acses-logo {
-    width: 100%;
+  .cc_heading h3 {
+    font-size: 20px;
   }
 
-  .logo-ka-box{
-    height: 577px;
-  }
-  .acses-text {
-    width: 90%;
-    margin: 20px auto;
-    padding: 5px;
-    font-size: 12px;
+  .event_info ol {
+    font-size: 13px;
   }
 
-
-  .bitsnbytes-logo-ka-box2
-  {
-    margin: 10px auto;
-    width: 100%;
-  
-  }
-
-  .acses-text,
-  .bitsnbytes-text,
-  .cncevents-text1,
-  .cncevents-text2,
-  .cncevents-text3,
-  .cncevents-text4,
-  .cncevents-text5 {
+  .know_more_btn {
     font-size: 14px;
-    margin: 10px auto;
-    padding: 5px;
-  }
-
-  .cncevents-title1,
-  .cncevents-title2,
-  .cncevents-title3,
-  .cncevents-title4,
-  .cncevents-title5,
-  .cncevents-title6 {
-    font-size: 16px;
-    margin: 10px 0;
-  }
-
-  .clangbootcamp-image,
-  .nsdceleb-image,
-  .internalhackathon-image,
-  .blindcoding-image,
-  .treeplantation-image {
-    width: 100%;
-    margin: 10px auto;
-  }
-}
-
-/* Further adjustments for extra-small screens (e.g., small phones) */
-@media (max-width: 480px) {
-  .bada-row,
-  .bg-golden1,
-  .AcsesLogo-card {
-    width: 90%;
-    margin: 10px auto;
-  }
-
-  .acses-logo{
-    width: 100%;
-  }
-  .logo-ka-box{
-    height: 1010px;
-  }
-  .acses-text{
-    font-size: 10px;
-  }
-  .bitsnbytes-text {
-    width: 100%;
-    margin: 5px auto;
-  }
-
-  .bitsnbytes-logo-ka-box1,
-  .bitsnbytes-logo-ka-box2,
-  .cncevents-box1,
-  .cncevents-box2,
-  .cncevents-box3,
-  .cncevents-box4,
-  .cncevents-box5,
-  .cncevents-box6,
-  .cncevents-box7,
-  .cncevents-box8,
-  .cncevents-box9,
-  .cncevents-box10,
-  .cncevents-box11 {
-    margin: 5px auto;
-    width: 100%;
-    height: auto;
-  }
-
-  .cncevents-title1,
-  .cncevents-title2,
-  .cncevents-title3,
-  .cncevents-title4,
-  .cncevents-title5,
-  .cncevents-title6 {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .clangbootcamp-image,
-  .nsdceleb-image,
-  .internalhackathon-image,
-  .blindcoding-image,
-  .treeplantation-image {
-    width: 100%;
-    height: auto;
+    padding: 8px 16px;
   }
 }

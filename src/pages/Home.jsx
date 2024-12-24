@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Topcards from './Topcards';
 import universityBuilding from '../assets/university-building.jpg';
@@ -74,6 +74,9 @@ function EventsSection() {
     );
 }
 
+
+
+
 function Home() {
     return (
         <div className="home-container">
@@ -87,6 +90,7 @@ function Home() {
             </div>
             <Counter className="counter-section" />
             <Research className="research-section" />
+
         </div>
     );
 }

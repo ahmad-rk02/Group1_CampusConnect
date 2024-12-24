@@ -42,6 +42,7 @@ import AdminProfile from "./Administration/Adminprofile";
 import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
+import ChatbotCTA from "./chatbotCTA";
 
 function App() {
   const navItems = [
@@ -127,9 +128,11 @@ function App() {
             <Route path="/welcomepage" element={<WelcomeSection />} />
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
+            <Route path="/chatbotCTA" element={<chatbotCTA />} />
           </Routes>
         </div>
       </Router>
+      <ChatbotCTA />
       <Footer />
     </>
   );

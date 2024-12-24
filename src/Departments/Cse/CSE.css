@@ -1,159 +1,163 @@
-/* Full Screen Styles */
+ 
 .cse-page-div {
-  position: relative;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.head-box-cse {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
   padding: 0;
+}
+
+/* Header Section */
+.head-box-cse {
   background-color: #102c57;
   height: 130px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
 }
 
 .head-box-cse h1 {
   color: white;
-  padding-top: 40px;
-  padding-left: 120px;
+  font-size: 2rem;
+  margin: 0;
 }
 
+/* Right Content Section */
 .right-content-cse {
-  margin-top: 30px;
-  margin-left: 250px;
-  width: 85%;
+  position: relative;
+  margin: 30px auto 30px auto;
+  padding: 20px;
+  width: 75%;
+  transition: all 0.3s ease;
+  margin-left: auto;
 }
 
-.overlay-row {
-  position: absolute;
-}
-
+/* Sidebar Section */
 .left-nav-cse {
-  position: -webkit-sticky;
   position: sticky;
-  top: 250px;
-  width: 350px;
-  border-radius: 0;
-  margin-left: 85px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  z-index: 2;
+  top: 150px;
+  height: fit-content;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+ margin-left: 100px;
 }
 
-.left-nav-row-cse {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
+.left-nav-row-cse,
 .left-nav-row-cse-01 {
   text-align: center;
   font-size: 1.2rem;
+  margin: 10px 0;
+  color: #333;
 }
 
 .left-sidebar-cse a {
   text-decoration: none;
-  color: black;
+  color: #007bff;
+  transition: color 0.3s ease;
 }
 
-.left-sidebar-cse {
-  position: relative;
-  top: -20px;
-  z-index: 2;
+.left-sidebar-cse a:hover {
+  color: #0056b3;
 }
-
-.left-sidebar-wrapper {
-  position: relative;
-}
-
 
 /* Responsive Styles */
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .right-content-cse {
-    margin-left: 50px;
-    width: 96%;
-  }
-
-  .left-nav-cse {
-    width: 300px;
-    margin-left: 50px;
-    top: 150px;
-  }
-  
-}
-
-@media (max-width: 768px) {
-  .head-box-cse h1 {
-    font-size: 1.8rem;
-    padding-top: 20px;
-    padding-left: 20px;
-  }
-
-  .right-content-cse {
-    margin-left: 20px;
-    width: 96%;
+    width: 80%;
+    margin-left: auto;
+    overflow-x: hidden;
   }
 
   .left-nav-cse {
     width: 250px;
-    margin-left: 20px;
-    top: 120px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
- 
-  
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
+  .head-box-cse h1 {
+    font-size: 1.8rem;
+  }
+
+  .right-content-cse {
+    width: 85%;
+    margin-left: 120px;
+  }
+
+  .left-nav-cse {
+    width: 220px;
+    margin: 0px 40px;
+  }
+}
+
+@media (max-width: 768px) {
   .head-box-cse {
     height: 100px;
   }
 
   .head-box-cse h1 {
     font-size: 1.5rem;
-    padding-top: 10px;
     padding-left: 10px;
   }
 
   .right-content-cse {
-    margin-left: 0;
-    width: 100%;
-    padding: 0 15px;
+    margin-top: 15em;
+    margin-left: auto;
+    width: 85%;
   }
 
   .left-nav-cse {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    top: 0;
-    box-shadow: none;
+    width: 80%;
+    margin-top: 17em;
+    margin-left: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 576px) {
+  .head-box-cse h1 {
+    font-size: 1.3rem;
+    text-align: center;
   }
 
-  .left-nav-row-cse, 
+  .right-content-cse {
+    width: 95%;
+    margin-right: 0;
+    margin-left: auto;
+  }
+
+  .left-nav-cse {
+    width: 80%;
+    padding: 1px;
+    margin-left: 80px;
+  }
+
+  .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 400px) {
+  .head-box-cse {
+    height: 80px;
+  }
+
   .head-box-cse h1 {
     font-size: 1.2rem;
-    padding: 5px;
-    text-align: center;
   }
 
   .right-content-cse {
-    width: 100%;
-    padding: 5px;
+    padding: 10px;
   }
 
   .left-nav-cse {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+    width: 95%;
+    margin: 0 auto;
   }
 
-  .left-nav-row-cse, 
+  .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 0.9rem;
   }
