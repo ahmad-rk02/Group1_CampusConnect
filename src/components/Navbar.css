@@ -1,23 +1,18 @@
 .dropdown-submenu {
-    position: relative;
-  }
-  
-  .dropdown-submenu .dropdown-menu {
-    top: 0;
-    left: 100%;
-    margin-top: -1px; 
-    display: none; 
-  }
+  position: relative;
+}
 
-  .navbar .dropdown-menu .dropdown-item:hover {
-    background-color: #102C57; 
-    color: #fff; 
-  }
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px; 
+  display: none; 
+}
 
-  .navbar .dropdown-menu .dropdown-item:focus {
-    background-color: #102C57; 
-    color: #fff; 
-  }
+.navbar .dropdown-menu .dropdown-item:hover {
+  background-color: #102C57; 
+  color: #fff; 
+}
 
   .marquee-container {
     background-color: #102C57;

@@ -51,7 +51,6 @@
 }
 
 .left-nav-gh {
-  position: -webkit-sticky;
   position: sticky;
   top: 5px;
   background-color: white;
@@ -284,4 +283,263 @@
 .committee-table-gh td {
   border: 1px solid #ddd;
   padding: 12px;
+}
+
+
+@media (min-width: 1240px) and (max-width: 1439px) {
+  .left-nav-gh{
+    margin-bottom: 100px;
+  }
+  
+    .gh-goldenn-1.card-header, .gh-goldenn-2.card-header, .gh-goldenn-3.gh-goldenn-3.card-header, .gh-goldenn-4.card-header {
+      width: 65%;
+      margin-left: 35vw;
+      margin-right: 5vw;
+    }
+  
+    .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
+      width: 60%;
+      margin-left: 36vw;
+      margin-right: 5vw;
+      font-size: 15px;
+    }
+  
+    .apply-button-gh, .EN-button-gh, .HOSTEL-button-gh {
+      margin-left: 2vw;
+      width: auto;
+    }
+  
+    .The-three-buttons-gh{
+      margin-top: 5vw;
+      margin-left: 42vw;
+    }
+  
+    .hostel-info-table-gh, .committee-table-gh {
+      width: 60%;
+      margin-left: 37vw;
+      margin-right: 15%;
+    }
+  
+    .head-box-gh h1 {
+      font-size: 38px;
+      margin-left: 180px;
+    }
+  
+    .about-image-gh {
+      width: 80%;
+      margin-left: 50vw;
+      margin-right: 10%;
+      margin-top: 5vw;
+    }
+  }
+
+  
+  @media (max-width: 1239px) {
+    .left-nav-gh{
+      margin-bottom: 100px;
+      position: center;
+      margin-left: 25vw;
+      margin-right: 25vw;
+    }
+    
+      .gh-goldenn-1.gh-goldenn-1.card-header, .gh-goldenn-2.gh-goldenn-2.card-header, .gh-goldenn-3.gh-goldenn-3.card-header, .gh-goldenn-4.gh-goldenn-4.card-header {
+        width: 88%;
+        margin-left: 5%;
+        margin-right: 10%;
+      }
+    
+      .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
+        width: 87%;
+        margin-left: 6%;
+        margin-right: 10%;
+      }
+    
+      .apply-button-gh, .EN-button-gh, .HOSTEL-button-gh {
+        margin-left: 5%;
+      }
+    
+      .The-three-buttons-gh{
+        margin-top: 2vw;
+        margin-left: 23vw;
+      }
+    
+      .hostel-info-table, .committee-table-gh {
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+      }
+    
+      .head-box-gh h1 {
+        font-size: 35px;
+        margin-left: 20px;
+      }
+    
+      .about-image-gh {
+        margin-left: 36vw;
+        margin-right: 10%;
+        margin-top: 5vw;
+        width: 80%;
+      }
+    }
+
+    /* For tablets and small laptops (width between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .left-nav-gh{
+   position: center;
+   margin-bottom: 100px;
+   margin-left: 20vw;
+   margin-right: 20vw;
+  }
+ 
+   .gh-goldenn-1.card-header, .gh-goldenn-2.card-header, .gh-goldenn-3.card-header, .gh-goldenn-4.card-header {
+     width: 90%;
+     margin-left: 5%;
+     margin-right: 5%;
+   }
+ 
+   .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
+     width: 90%;
+     margin-left: 5%;
+     margin-right: 5%;
+   }
+ 
+   .apply-button-gh, .EN-button-gh, .HOSTEL-button-gh {
+     margin-left: 5%;
+     width: auto;
+   }
+ 
+   .The-three-buttons-gh{
+     margin-top: 1vw;
+     margin-left: 20vw;
+     margin-right: 10vw;
+   }
+ 
+   .head-box-gh h1 {
+     font-size: 30px;
+     margin-left: 30px;
+   }
+ 
+   .hostel-info-table, .committee-table-gh {
+     width: 80%;
+     margin-left: 10%;
+     margin-right: 5%;
+   }
+ 
+   .about-image-gh {
+     margin-left: 35vw;
+     margin-right: 20vw;
+     width: 90%;
+   }
+ }
+
+ /* For mobile phones (width less than 768px) */
+@media (max-width: 768px) {
+  .gh-goldenn-1.card-header, .gh-goldenn-2.card-header, .gh-goldenn-3.card-header, .gh-goldenn-4.card-header {
+    width: 90%;
+    margin-left: 5vw;
+    margin-right: 0;
+  }
+
+  .gh-goldenn-1.card-header h4, .gh-goldenn-2.card-header h4, .gh-goldenn-3.card-header h4, .gh-goldenn-4.card-header h4{
+    font-size: 22px;
+    width: 70%;
+  } 
+
+  .left-nav-gh{
+    position: center;
+    margin-bottom: 100px;
+    margin-left: 10vw;
+  }
+
+  .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
+    width: 90%;
+    margin-left: 5vw;
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  .apply-button-gh, .EN-button-gh, .HOSTEL-button-gh {
+    width: 25%;
+    margin-left: 2vw;
+    font-size: 12px;
+  }
+
+  .The-three-buttons-gh{
+    margin-top: 1vw;
+    margin-left: 20vw;
+  }
+
+  .hostel-info-table, .committee-table-gh {
+    width: 80%;
+    margin-left: 10vw;
+    margin-right: 0;
+  }
+
+  .head-box-gh h1 {
+    font-size: 25px;
+    margin-left: 20px;
+  }
+
+  .about-image-gh {
+    width: 100%;
+    margin-left: 30vw;
+    margin-right: 0;
+  }
+
+  .left-nav-gh {
+    width: 100%;
+    top: 0;
+    height: auto;
+  }
+}
+
+ /* For extra small devices (width less than 480px) */
+@media (max-width: 480px) {
+  .left-nav-gh{
+    margin-left: 10%;
+    margin-right: 40vw;
+  }
+
+  .gh-goldenn-1, .gh-goldenn-2, .gh-goldenn-3, .gh-goldenn-4 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .gh-goldenn-1 h4, .gh-goldenn-2 h4, .gh-goldenn-3 h4, .gh-goldenn-3.card-header h4{
+    font-size: 23px;
+    width: 90%;
+  }
+
+  .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .apply-button, .EN-button, .HOSTEL-button {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .The-three-buttons-gh{
+    margin-top: 1%;
+    margin-right: 10%;
+    margin-left: 10%;
+    width: 90vw;
+  }
+
+  .head-box h1 {
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 70px;
+  }
+
+  .hostel-info-table, .committee-table {
+    font-size: 12px;
+  }
+
+  img.about-image {
+    width: 100px;
+  }
 }

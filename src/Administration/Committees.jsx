@@ -8,10 +8,10 @@ import './committees.css'
 const Committees = () => {
 
   const CommitteeTable = [
-    { id: 1, name:'Anti ragging Committees' , text: 'Circular', dated: '16/03/2023', circular: 'http://localhost:5173/wsnIot-lab-09-Jul-2021-13-48-09.pdf' , incharge: 'Dr P. Washimkar' },
-    { id: 2, name: 'Grievance Redressal Committee' , text: 'Circular', dated: '16/03/2023', circular: 'http://localhost:5173/4TB%20surveillance%20Hard%20Disk.pdf' , incharge: 'Kranti Bokhre'},
-    { id: 3, name: 'Internal Complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'http://localhost:5173/66U%20Cabal%2019%20Rack.pdf' , incharge: 'Mrs. Bokhare'},
-    { id: 4, name: 'SC/ST,WOMEN/GIRLS complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'http://localhost:5173/CCTV%2020%20CH%20NVR.pdf' , incharge: 'Amit R Sakhare'},
+    { id: 1, name:'Anti ragging Committees' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Anti-Ragging-Committee.pdf' , incharge: 'Dr P. Washimkar' },
+    { id: 2, name: 'Grievance Redressal Committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Grievance-Redressal-Committee.pdf' , incharge: 'Kranti Bokhre'},
+    { id: 3, name: 'Internal Complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Internal-Complaint-Committee.pdf' , incharge: 'Mrs. Bokhare'},
+    { id: 4, name: 'SC/ST,WOMEN/GIRLS complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/SC-ST-Committee.pdf' , incharge: 'Amit R Sakhare'},
     { id: 5, name: 'Online Grievance Form' , text: 'Form', dated: '16/03/2023', circular: '/login',  incharge: 'Student Section'},
   ];
 

@@ -317,3 +317,300 @@
   color: #102C57;
   width: 50%;
 }
+
+/* For devices with width less than 1239px */
+@media (min-width: 1440px) and (max-width: 1499px) {
+  .bg-goldenn-1, .bg-goldenn-2, .bg-goldenn-3, .bg-goldenn-4 {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    width: 150px;
+    font-size: 14px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .head-box-bh h1 {
+    font-size: 40px;
+    margin-left: 50px;
+  }
+
+  .about-image-bh {
+    max-width: 67%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -210px;
+  }
+}
+
+
+@media (min-width: 1240px) and (max-width: 1439px) {
+.left-nav-bh{
+  margin-bottom: 100px;
+}
+
+  .bg-goldenn-1.card-header, .bg-goldenn-2.card-header, .bg-goldenn-3.bg-goldenn-3.card-header, .bg-goldenn-4.card-header {
+    width: 65%;
+    margin-left: 35vw;
+    margin-right: 5vw;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    width: 60%;
+    margin-left: 36vw;
+    margin-right: 5vw;
+    font-size: 15px;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    margin-left: 2vw;
+    width: auto;
+  }
+
+  .The-three-buttons-bh{
+    margin-top: 27vw;
+    margin-left: 42vw;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    width: 60%;
+    margin-left: 37vw;
+    margin-right: 15%;
+  }
+
+  .head-box-bh h1 {
+    font-size: 38px;
+    margin-left: 180px;
+  }
+
+  .about-image-bh {
+    width: 80%;
+    margin-left: 15vw;
+    margin-right: 10%;
+  }
+}
+
+
+@media (max-width: 1239px) {
+.left-nav-bh{
+  margin-bottom: 100px;
+  position: center;
+  margin-left: 25vw;
+  margin-right: 25vw;
+}
+
+  .bg-goldenn-1.bg-goldenn-1.card-header, .bg-goldenn-2.bg-goldenn-2.card-header, .bg-goldenn-3.bg-goldenn-3.card-header, .bg-goldenn-4.bg-goldenn-4.card-header {
+    width: 88%;
+    margin-left: 5%;
+    margin-right: 10%;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    width: 87%;
+    margin-left: 6%;
+    margin-right: 10%;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    margin-left: 5%;
+  }
+
+  .The-three-buttons-bh{
+    margin-top: 35vw;
+    margin-left: 15vw;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .head-box-bh h1 {
+    font-size: 35px;
+    margin-left: 20px;
+  }
+
+  .about-image-bh {
+    margin-left: 20vw;
+    margin-right: 10%;
+    width: 80%;
+  }
+}
+
+/* For tablets and small laptops (width between 768px and 1024px) */
+@media (max-width: 1024px) {
+ .left-nav-bh{
+  position: center;
+  margin-bottom: 100px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+ }
+
+  .bg-goldenn-1.card-header, .bg-goldenn-2.card-header, .bg-goldenn-3.card-header, .bg-goldenn-4.card-header {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    margin-left: 5%;
+    width: auto;
+  }
+
+  .The-three-buttons-bh{
+    margin-top: 40vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+
+  .head-box-bh h1 {
+    font-size: 30px;
+    margin-left: 30px;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .about-image-bh {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    width: 90%;
+  }
+}
+
+/* For mobile phones (width less than 768px) */
+@media (max-width: 768px) {
+  .bg-goldenn-1.card-header, .bg-goldenn-2.card-header, .bg-goldenn-3.card-header, .bg-goldenn-4.card-header {
+    width: 90%;
+    margin-left: 5vw;
+    margin-right: 0;
+  }
+
+  .bg-goldenn-1.card-header h4, .bg-goldenn-2.card-header h4, .bg-goldenn-3.card-header h4, .bg-goldenn-4.card-header h4{
+    font-size: 22px;
+    width: 70%;
+  } 
+
+  .left-nav-bh{
+    position: center;
+    margin-bottom: 100px;
+    margin-left: 20vw;
+    margin-right: auto;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    width: 90%;
+    margin-left: 5vw;
+    margin-right: 0;
+    font-size: 14px;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    width: 25%;
+    margin-left: 2vw;
+    font-size: 12px;
+  }
+
+  .The-three-buttons-bh{
+    margin-top: 50vw;
+    margin-left: 10vw;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    width: 80%;
+    margin-left: 10vw;
+    margin-right: 0;
+  }
+
+  .head-box-bh h1 {
+    font-size: 25px;
+    margin-left: 20px;
+  }
+
+  .about-image-bh {
+    width: 100%;
+    margin-left: 30vw;
+    margin-right: 0;
+  }
+
+  .left-nav-bh {
+    width: 100%;
+    top: 0;
+    height: auto;
+  }
+}
+
+/* For extra small devices (width less than 480px) */
+@media (max-width: 480px) {
+  .left-nav-bh.card{
+    margin-left: 0vw;
+    margin-right: 10vw;
+  }
+
+  .bg-goldenn-1, .bg-goldenn-2, .bg-goldenn-3, .bg-goldenn-4 {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    height: auto;
+  }
+
+  .bg-goldenn-1 h4, .bg-goldenn-2 h4, .bg-goldenn-3 h4, .bg-goldenn-4 h4{
+    font-size: 19px;
+    width: 60vw;
+  }
+
+  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    font-size: 14px;
+    height: 40px;
+  }
+
+  .The-three-buttons-bh{
+    margin-top: 260px;
+  }
+
+  .head-box-bh h1 {
+    font-size: 25px;
+    margin-left: 25px;
+    margin-top: 70px;
+  }
+
+  .hostel-info-table-bh, .committee-table-bh {
+    font-size: 12px;
+  }
+
+  img.about-image-bh {
+    width: 100px;
+  }
+}

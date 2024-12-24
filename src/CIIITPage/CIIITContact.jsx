@@ -19,7 +19,7 @@ const CIIITContact = () => {
           <Card className="left-nav-cntctciiit">
             <ListGroup variant="flush">
 
-            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
+            <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
@@ -49,7 +49,7 @@ const CIIITContact = () => {
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/ciiitcontact" className={location.pathname === "/ciiitcontact" ? "active-link" : ""}>
                   Contact
                 </Link>
@@ -69,7 +69,7 @@ const CIIITContact = () => {
         <div className='ciiit-heading-contact'>
         <h1> CIIIT contact</h1>
       </div>  
-      <h3 className='head-ciiit'>CENTER FOR INVENTION, INNOVATION,<br/> INCUBATION & TRAINING (CIIIT)</h3>
+      <h3 className='con-ciiit'>CENTER FOR INVENTION, INNOVATION,<br/> INCUBATION & TRAINING (CIIIT)</h3>
          <div className='ciiit-contact'>
           <h4>  Chief Coordinator :</h4>
           <p>  Dr. Ganesh R. Chavhan<br/>  Assistant Professor, Department of Mechanical Engineering,<br/>  Email: ganeshchavhan@gcoec.ac.in | Mobile: +919765658597</p>

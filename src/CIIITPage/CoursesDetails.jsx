@@ -36,13 +36,13 @@ const CoursesDetails = () => {
           <Card className="left-nav-coursesdetls">
             <ListGroup variant="flush">
 
-            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
+            <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
                   Courses Details
                 </Link>

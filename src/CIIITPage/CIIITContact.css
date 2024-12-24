@@ -12,6 +12,7 @@
     color: white;
 }
 
+
 .left-index-cntctciiit {
     margin-left: 60px;
     margin-right: 60px;
@@ -48,6 +49,9 @@
     text-decoration: none;
     color: black;
 }
+.con-ciiit{
+    margin-left: 120px;
+}
 
 
 .left-nav-cntctciiit {
@@ -55,7 +59,7 @@
     top: 5px;
     background-color: white;
     border-radius: 0;
-    height: 360px;
+    height: auto;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -95,14 +99,18 @@
 
 /* Responsive Adjustments for 1200px and below */
 @media (max-width: 1200px) {
-    .left-index-cntctciiit {
-        flex-direction: column; /* Stack the sidebar on top */
-        align-items: stretch;
+    .head-box-cntctciiit h1 {
+        font-size: 30px;
+        margin-left: 20px;
     }
-
-    .left-sidebar-cntctciiit {
-        width: 100%; /* Full width for the sidebar */
-        margin: 0 0 20px 0; /* Add margin at the bottom for spacing */
+    .left-sidebar-cntctciiit{
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-cntctciiit {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .ciiit-heading-contact {
@@ -117,24 +125,18 @@
 }
 
 @media (max-width: 992px) {
-    .head-box-cntctciiit {
-        height: 110px;
-    }
-
     .head-box-cntctciiit h1 {
         font-size: 30px;
-        margin-top: 20px;
         margin-left: 20px;
     }
-
-    .left-index-cntctciiit {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .left-sidebar-cntctciiit {
-        width: 90%;
-        margin: 20px 0;
+        width: 150px;
+        margin-left: 10px;
+    }
+    .left-index-cntctciiit  {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
     }
 
     .ciiit-heading-contact {
@@ -153,18 +155,13 @@
 
 @media (max-width: 768px) {
     .head-box-cntctciiit h1 {
-        font-size: 2rem;
-    }
-
-    .left-index-cntctciiit {
-        flex-direction: column;
-        align-items: stretch;
-        margin: 10px;
+        font-size: 30px;
+        margin-left: 20px;
     }
 
     .left-sidebar-cntctciiit {
-        width: 100%;
-        margin-bottom: 20px;
+        width: 150px;
+        margin-left: 10px;
     }
 
     .ciiit-heading-contact h1 {
@@ -186,13 +183,14 @@
 
 @media (max-width: 576px) {
     .head-box-cntctciiit {
-        height: auto;
+        height:100px;
         padding: 10px;
     }
 
     .head-box-cntctciiit h1 {
-        font-size: 1.5rem;
-        text-align: center;
+        font-size: 25px;
+        margin-left: 10px;
+        margin-top: 20px;
     }
 
     .ciiit-contact h4,
