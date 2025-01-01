@@ -9,7 +9,7 @@
 .cse-code-unnati h4 {
   text-align: left;
   padding-left: 20px;
-  padding-top: 5px;
+  padding-top: 7px;
   color: #102C57;
 }
 
@@ -21,15 +21,18 @@
 }
 
 .code-unnati-container {
-  background-color: #002e5d;  
-  width: 80%;
+  background-color: #002e5d; /* The dark blue background color */
+  width: 770px;
   height: 400px;
   padding: 30px;
   border-radius: 10px;
-  margin: 20px auto;
-  position: relative;
+  max-width: 1000px; /* Adjust the width as per your layout */
+  
+  margin: auto;
+  margin-top: -10px; /* Adjust the positioning to have the logo sit on top */
   z-index: 0;
-}
+  
+  }
 
 .code-unnati-logo {
   background-color: #ffd700; 
@@ -38,6 +41,7 @@
   display: inline-block;
   margin-bottom: -60px;  
   transform: translateX(-50%);
+  margin-left: -400px;
   z-index: 1;
 }
 
@@ -68,11 +72,16 @@
 }
 
 .course-objective-container {
-  background-color: #002e5d;
+  background-color: #002e5d; /* The dark blue background color */
   padding: 30px;
   border-radius: 10px;
-  width: 80%;
-  margin: 40px auto;
+  max-width: 770px; /* Adjust the width as per your layout */
+  margin: auto;
+  margin-top: 40px; /* Adjust the margin based on your design */
+
+  width: 800px;
+  height: 450px;
+
 }
 
 .course-objective-text {
@@ -264,11 +273,12 @@
     width: 95%;
     height: auto;
   }
+  
 
   .code-unnati-logo {
 margin-top: auto;
 margin-left: -14em;
-    margin-bottom: -100px;
+    margin-bottom: -40px;
   }
 
   .code-unnati-text {
@@ -297,12 +307,12 @@ margin-left: -14em;
   }
 
   .year-section {
-    height: 700px;
+    height: 650px;
   }
 
   .year-content {
     flex-direction: column;
-    gap: 15px;
+   
   }
 
   .course-block,
