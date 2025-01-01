@@ -221,9 +221,6 @@ function Navbar({ imageSrcPath, navItems }) {
       <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
       </div>
     </div>
-    <h1 className="">
-      Hello world!
-    </h1>
 
     </div>
   );
