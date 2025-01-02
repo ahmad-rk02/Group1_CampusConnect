@@ -1,61 +1,62 @@
-/* Full Screen Styles */
+ 
 .cse-page-div {
-  position: relative;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-.head-box-cse {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
   padding: 0;
+}
+
+/* Header Section */
+.head-box-cse {
   background-color: #102c57;
   height: 130px;
+  
+  
+  padding-left: 0px;
 }
 
 .head-box-cse h1 {
   color: white;
-  padding-top: 40px;
-  padding-left: 120px;
+  font-size: 2rem;
+  margin: 0;
 }
 
-.right-content-cse {
+/* Right Content Section */
+.right-codeunnati-content-cse,.right-content-cse {
   margin-top: 30px;
   margin-left: 250px;
-  width: 85%;
+  width: 80%;
 }
 
-.overlay-row {
-  position: absolute;
-}
-
+/* Sidebar Section */
 .left-nav-cse {
-  position: -webkit-sticky;
   position: sticky;
   top: 250px;
-  width: 350px;
-  border-radius: 0;
-  margin-left: 85px;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.2);
-  background-color: white;
   z-index: 2;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 0px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 2);
+ margin-left: 80px;
 }
 
-.left-nav-row-cse {
-  text-align: center;
-  font-size: 1.2rem;
-}
-
+.left-nav-row-cse,
 .left-nav-row-cse-01 {
   text-align: center;
   font-size: 1.2rem;
+  
 }
 
 .left-sidebar-cse a {
   text-decoration: none;
-  color: black;
+  color: black
+  
 }
 
+.left-sidebar-cse a:hover {
+  color: #0056b3;
+}
 .left-sidebar-cse {
   position: relative;
   top: -20px;
@@ -66,67 +67,75 @@ body {
   position: relative;
 }
 
-@media (max-width: 1200px){
-
-  .right-content-cse{
-    margin-left: 10px;
-  }
-
-}
-
 
 /* Responsive Styles */
-@media (max-width: 992px) {
-  .right-content-cse {
-    margin-left: 50px;
-    width: 96%;
+@media (max-width: 1200px) {
+  .right-codeunnati-content-cse,.right-content-cse {
+    width: 80%;
+    margin-left: auto;
+    overflow-x: hidden;
   }
 
   .left-nav-cse {
-    width: 300px;
-    margin-left: 50px;
-    top: 150px;
+    width: 250px;
   }
-  
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .head-box-cse h1 {
     font-size: 1.8rem;
-    padding-top: 60px;
+    padding-top: 20px;
     padding-left: 20px;
   }
-
+  .right-codeunnati-content-cse,
   .right-content-cse {
-    margin-top: 170px;
     margin-left: 20px;
     width: 96%;
   }
 
   .left-nav-cse {
-    margin-top: 370px;
-    width: 80%;
-    margin-left: 10vw;
+    width: 250px;
+    margin-left: 20px;
     top: 120px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
- 
-  
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .head-box-cse {
     height: 100px;
   }
 
   .head-box-cse h1 {
     font-size: 1.5rem;
-    margin-top: 7vw;
-    margin-left: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+.right-codeunnati-content-cse{
+  margin-left: 50px;
+    width: 90%;
+}
+  .right-content-cse {
+    margin-top: 10em;
+    margin-left: 50px;
+    width: 90%;
   }
 
+  .left-nav-cse {
+    width: 80%;
+    margin-top: 17em;
+    margin-left: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 576px) {
+  .head-box-cse h1 {
+    font-size: 1.3rem;
+    text-align: center;
+  }
+  .right-codeunnati-content-cse,
   .right-content-cse {
-    margin-top: 40vw;
     margin-left: 0;
     width: 100%;
     padding: 0 15px;
@@ -139,36 +148,37 @@ body {
 
   .left-nav-cse {
     position: relative;
-    width: 90%;
-    margin-left: 10%;
-    margin-top: 5px;
+    width: 100%;
+    margin: 0 auto;
+    top: 0;
+    box-shadow: none;
   }
 
-  .left-nav-row-cse, 
+  .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 1rem;
   }
 }
 
-@media (max-width: 320px) {
-  .head-box-cse h1 {
-    font-size: 1.2rem;
-    padding: 5px;
-    text-align: center;
+@media (max-width: 400px) {
+  .head-box-cse {
+    height: 80px;
   }
 
+  .head-box-cse h1 {
+    font-size: 1.2rem;
+  }
+  .right-codeunnati-content-cse,
   .right-content-cse {
-    width: 100%;
-    padding: 5px;
+    padding: 10px;
   }
 
   .left-nav-cse {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+    width: 95%;
+    margin: 0 auto;
   }
 
-  .left-nav-row-cse, 
+  .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 0.9rem;
   }

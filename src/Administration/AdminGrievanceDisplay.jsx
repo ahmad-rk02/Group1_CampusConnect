@@ -16,8 +16,8 @@ const AdminDashboard = () => {
     const fetchGrievances = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/grievances/fetchgrievance', {
-          params: { 
-            commonId: user?.role === 'admin' ? 'all' : user?.email 
+          params: {
+            commonId: user?.role === 'admin' ? 'all' : user?.email
           },
         });
         setGrievances(response.data);
@@ -40,7 +40,7 @@ const AdminDashboard = () => {
   }, [filter, grievances]);
 
   const closeGrievance = async (ticketId) => {
-    const grievanceRemarks = remarks[ticketId]; 
+    const grievanceRemarks = remarks[ticketId];
     try {
       await axios.post(`http://localhost:5000/api/grievances/close/${ticketId}`, { remarks: grievanceRemarks });
       alert('Grievance closed successfully');
@@ -53,7 +53,7 @@ const AdminDashboard = () => {
   const handleRemarksChange = (ticketId, event) => {
     setRemarks(prevRemarks => ({
       ...prevRemarks,
-      [ticketId]: event.target.value 
+      [ticketId]: event.target.value
     }));
   };
 
@@ -68,7 +68,7 @@ const AdminDashboard = () => {
   return (
     <div className="dashboard-container">
       <h1 className="dashboard-title">Grievance Dashboard</h1>
-      
+
       {/* Filter Section */}
       <div className="filter-container">
         <label htmlFor="filter" className="filter-label">Filter by Grievance Type:</label>
@@ -79,7 +79,12 @@ const AdminDashboard = () => {
           onChange={(e) => setFilter(e.target.value)}
         >
           <option value="all">All</option>
-          <option value="Departmental">Departmental</option>
+          <option value="Computer Science & Engineering Dept. Related">Computer Science & Engineering Dept. Related</option>
+          <option value=">Instrumentation Engineering Dept. Related">Instrumentation Engineering Dept. Related</option>
+          <option value="Mechanical Engineering Dept. Related">Mechanical Engineering Dept. Related</option>
+          <option value="Electrical engineering Dept. Related">Electrical engineering Dept. Related</option>
+          <option value="Electronics and Communication Dept. Related">Electronics and Communication Dept. Related</option>
+          <option value="Civil Dept. Related">Civil Dept. Related</option>
           <option value="Office Related">Office Related</option>
           <option value="Others">Others</option>
         </select>
@@ -109,18 +114,18 @@ const AdminDashboard = () => {
                 <td>{grievance.status}</td>
                 <td>
                   {grievance.status === 'open' && (
-                    <input 
-                      type="text" 
+                    <input
+                      type="text"
                       className="remarks-input"
-                      placeholder="Enter remarks" 
+                      placeholder="Enter remarks"
                       value={remarks[grievance.ticketId] || ''}
-                      onChange={(e) => handleRemarksChange(grievance.ticketId, e)} 
+                      onChange={(e) => handleRemarksChange(grievance.ticketId, e)}
                     />
                   )}
                 </td>
                 <td>
                   {grievance.status === 'open' && (
-                    <button 
+                    <button
                       className="close-button"
                       onClick={() => closeGrievance(grievance.ticketId)}
                     >
