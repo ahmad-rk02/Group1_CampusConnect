@@ -66,6 +66,14 @@ body {
   position: relative;
 }
 
+@media (max-width: 1200px){
+
+  .right-content-cse{
+    margin-left: 10px;
+  }
+
+}
+
 
 /* Responsive Styles */
 @media (max-width: 992px) {
@@ -85,18 +93,20 @@ body {
 @media (max-width: 768px) {
   .head-box-cse h1 {
     font-size: 1.8rem;
-    padding-top: 20px;
+    padding-top: 60px;
     padding-left: 20px;
   }
 
   .right-content-cse {
+    margin-top: 170px;
     margin-left: 20px;
     width: 96%;
   }
 
   .left-nav-cse {
-    width: 250px;
-    margin-left: 20px;
+    margin-top: 370px;
+    width: 80%;
+    margin-left: 10vw;
     top: 120px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
@@ -111,22 +121,27 @@ body {
 
   .head-box-cse h1 {
     font-size: 1.5rem;
-    padding-top: 10px;
-    padding-left: 10px;
+    margin-top: 7vw;
+    margin-left: 0;
   }
 
   .right-content-cse {
+    margin-top: 40vw;
     margin-left: 0;
     width: 100%;
     padding: 0 15px;
   }
 
+  .left-sidebar-cse{
+    margin-top: 150px;
+    top: -10vw;
+  }
+
   .left-nav-cse {
     position: relative;
-    width: 100%;
-    margin: 0 auto;
-    top: 0;
-    box-shadow: none;
+    width: 90%;
+    margin-left: 10%;
+    margin-top: 5px;
   }
 
   .left-nav-row-cse, 
