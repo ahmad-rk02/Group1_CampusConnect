@@ -97,7 +97,7 @@ const CSE = () => {
             </div>
 
             <div >
-              <CodeUnnati className='  right-content-cse' />
+              <CodeUnnati className='  right-codeunnati-content-cse' />
             </div>
 
             <div >

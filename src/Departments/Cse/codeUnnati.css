@@ -209,8 +209,14 @@
 .upper-wave {
   background-color: #002e5d;
 }
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .cse-code-unnati {
+    width: 90%;
+    height: auto;
+    padding: 10px;
+  }
 
-@media (max-width: 1200px) {
   .code-unnati-container {
     width: 90%;
     height: auto;
@@ -246,11 +252,17 @@
     width: 120px;
     height: 40px;
     font-size: 20px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .course-outline-container {
     margin-left: 20px;
     margin-right: 20px;
+  }
+
+  .year-section{
+    height: 700px;
   }
 
   .year-content {
@@ -352,8 +364,13 @@ margin-left: -14em;
     font-size: 16px;
   }
 
+  .course-objective-text p {
+    font-size: 12px;
+  }
+
   .year-header,
   .year-header2 {
+    margin-left: 60%;
     width: 80px;
     height: 30px;
     font-size: 16px;

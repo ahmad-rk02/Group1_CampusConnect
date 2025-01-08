@@ -177,7 +177,7 @@
     .cse-intro-heading h3,
     .cse-vision-heading h3,
     .cse-mission-heading h3 {
-      font-size: 4vw;
+        font-size: 1rem;
     }
   
     .cse-intro-box {
