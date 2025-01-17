@@ -5,8 +5,7 @@ import './CSE.css'
 import CSEvm from '../../Departments/Cse/CSEvm';
 import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
-// import Footer from './pages/Footer.jsx'
-
+import FacultyDetails from './FacultyDetails';
 
 const CSE = () => {
   return (
@@ -20,6 +19,7 @@ const CSE = () => {
         <Row>
 
           <CSECarousel />
+
 
           <Row className="g-0 overlay-row w-100" >
             {/* Left Sidebar */}
@@ -94,6 +94,10 @@ const CSE = () => {
             {/* render components here in this Col tag - vinni and vaishnavi */}
             <div >
               <CSEvm className='  right-content-cse' />
+            </div>
+
+            <div>
+              <FacultyDetails />
             </div>
 
             <div >
