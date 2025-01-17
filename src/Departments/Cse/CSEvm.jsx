@@ -4,7 +4,7 @@ import './CSEvm.css';
 const CSEvm = ({ className }) => {
   return (
     <div className={className}>
-      <div className="cse-intro">
+      <div className="cse-intro" id='vission-mission-cse'>
         <div className="cse-intro-heading">
           <h3>Computer Science & Engineering</h3>
         </div>
@@ -22,8 +22,12 @@ const CSEvm = ({ className }) => {
             <p>
               As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
             </p>
-          </div>
+          
         </div>
+        </div>
+          <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE_Couse%20Outcome.pdf'>Department Course Outcomes</a>
+            </div>
       </div>
 
       <div className="cse-vision">
@@ -52,6 +56,11 @@ const CSEvm = ({ className }) => {
           </ul>
         </div>
       </div>
+
+      <div className='vision-mission-link'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE-Vision%20mission%20PEO%20PSO.pdf'>Vision, Mission, PEO's & PSO</a>
+            </div>
+
     </div>
   );
 };
