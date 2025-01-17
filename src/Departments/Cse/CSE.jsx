@@ -5,10 +5,14 @@ import './CSE.css'
 import CSEvm from '../../Departments/Cse/CSEvm';
 import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
+import DropDownCse from './DropDownCse';
+import { useState } from 'react';
 // import Footer from './pages/Footer.jsx'
 
 
 const CSE = () => {
+const[openDropdown, setOpenDropdown] = useState(false);
+
   return (
     <div className='cse-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
@@ -21,7 +25,7 @@ const CSE = () => {
 
           <CSECarousel />
 
-          <Row className="g-0 overlay-row w-100" >
+          <Row className="g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} " >
             {/* Left Sidebar */}
             <Col md={4} className='left-sidebar-cse overlay-col ' >
               <div className="left-sidebar-wrapper">
@@ -32,8 +36,15 @@ const CSE = () => {
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : ""}
                       >
-                        <b>Computer Science & Engineering</b>
+                        <b onClick={() => setOpenDropdown((openDropdown) => !openDropdown)}>Computer Science & Engineering</b>
                       </Link>
+
+                      {
+                        openDropdown &&  <DropDownCse/>
+                      }
+
+                     
+
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link

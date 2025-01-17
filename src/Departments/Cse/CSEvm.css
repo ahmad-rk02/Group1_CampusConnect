@@ -84,10 +84,39 @@
     visibility: visible;
 }
 
+.course-outcome{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.course-outcome a{
+  color: #102C57;
+  text-decoration: none;
+}
+
+.course-outcome a:hover{
+  text-decoration: underline;
+}
+
+.vision-mission-link{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.vision-mission-link a{
+  color: #102C57;
+  text-decoration: none;
+}
+
+.vision-mission-link a:hover{
+  text-decoration: underline;
+}
+
 /* Hide content when hover occurs */
 .cse-intro-box:hover .second-para-large,
 .cse-intro-box:hover .first-para-small,
-.cse-intro-box:hover .small-intro-heading {
+.cse-intro-box:hover .small-intro-heading, 
+.cse-intro-box:hover .course-outcome{
     visibility: hidden;
 }
   

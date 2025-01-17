@@ -8,11 +8,15 @@ import './committees.css'
 const Committees = () => {
 
   const CommitteeTable = [
-    { id: 1, name:'Anti ragging Committees' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Anti-Ragging-Committee.pdf' , incharge: 'Dr P. Washimkar' },
-    { id: 2, name: 'Grievance Redressal Committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Grievance-Redressal-Committee.pdf' , incharge: 'Kranti Bokhre'},
-    { id: 3, name: 'Internal Complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Internal-Complaint-Committee.pdf' , incharge: 'Mrs. Bokhare'},
-    { id: 4, name: 'SC/ST,WOMEN/GIRLS complaint committee' , text: 'Circular', dated: '16/03/2023', circular: 'https://www.gcoec.ac.in/gcoec/PDF/SC-ST-Committee.pdf' , incharge: 'Amit R Sakhare'},
-    { id: 5, name: 'Online Grievance Form' , text: 'Form', dated: '16/03/2023', circular: '/login',  incharge: 'Student Section'},
+    { id: 1, name:'Anti ragging Committees' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Anti-Ragging-Committee.pdf' , incharge: 'Dr P. Washimkar' },
+    { id: 2, name: 'Grievance Redressal Committee' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Grievance-Redressal-Committee.pdf' , incharge: 'Kranti Bokhre'},
+    { id: 3, name: 'Internal Complaint committee' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Internal-Complaint-Committee.pdf' , incharge: 'Mrs. Bokhare'},
+    { id: 4, name: 'SC/ST,WOMEN/GIRLS complaint committee' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/SC-ST-Committee.pdf' , incharge: 'Amit R Sakhare'},
+    { id: 5, name: 'Online Grievance Form' , text: 'Form', dated: '03/12/2024', circular: '/login',  incharge: 'Student Section'},
+    { id: 6, name: 'IIC Council' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/IIC-Council-Office-Order-2024.pdf',  incharge: '--'},
+    { id: 7, name: 'Internal Quality Assurance Cell' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/IQAC-Office-Order-2024.pdf',  incharge: '--'},
+    { id: 8, name: 'Student Counsellor Cell' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Student-Counsellor-Cell.pdf',  incharge: '--'},
+    { id: 9, name: 'Industry Institute Cell & Entrepreneurship Cell' , text: 'Circular', dated: '03/12/2024', circular: 'https://www.gcoec.ac.in/gcoec/PDF/Institution-Industry-cell.pdf',  incharge: '--'},
   ];
 
   return (
