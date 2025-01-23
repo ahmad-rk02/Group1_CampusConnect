@@ -1,5 +1,7 @@
  body{
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
  }
  
 .navbar-nav .dropdown-menu {
@@ -67,4 +69,8 @@
   .container-fluid {
     padding: 0 15px;
   }
+
+  body{
+    overflow-x: hidden;
+   }
 }

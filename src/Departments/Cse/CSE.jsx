@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 
 const CSE = () => {
-const[openDropdown, setOpenDropdown] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(false);
 
   return (
     <div className='cse-page-div d-flex flex-column'>
@@ -25,7 +25,7 @@ const[openDropdown, setOpenDropdown] = useState(false);
 
           <CSECarousel />
 
-          <Row className="g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} " >
+          <Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} " >
             {/* Left Sidebar */}
             <Col md={4} className='left-sidebar-cse overlay-col ' >
               <div className="left-sidebar-wrapper">
@@ -36,14 +36,19 @@ const[openDropdown, setOpenDropdown] = useState(false);
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : ""}
                       >
-                        <b onClick={() => setOpenDropdown((openDropdown) => !openDropdown)}>Computer Science & Engineering</b>
+                        <b onClick={() => setOpenDropdown(!openDropdown)}>Computer Science & Engineering</b>
                       </Link>
 
                       {
-                        openDropdown &&  <DropDownCse/>
+                        openDropdown &&
+
+                        <div className={`cse-dropdown-cse ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownCse />
+                        </div>
+
                       }
 
-                     
+
 
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">

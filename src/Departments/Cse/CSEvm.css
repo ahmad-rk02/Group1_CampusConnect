@@ -209,6 +209,7 @@
         font-size: 1rem;
     }
   
+    
     .cse-intro-box {
       width: 100%;
       margin-left: 0;
@@ -216,6 +217,11 @@
       padding: 5px;
     }
   
+     .first-para-small, .small-intro-heading, div.second-para-large{
+      text-align: center;
+      padding: auto;
+     }
+
     .vision-content, .mission-content {
       width: 100%;
       text-align: justify;
