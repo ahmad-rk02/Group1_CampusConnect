@@ -318,7 +318,13 @@ body {
   margin-top: auto;
   margin-left: 30%;
   margin-right: 30%;
-  height: 190px;
+  height: 165px;
+  border-radius: 10px;
+ }
+ 
+ .event_box img{
+  height: 300px;
+  width: 300px;
   border-radius: 10px;
  }
 }

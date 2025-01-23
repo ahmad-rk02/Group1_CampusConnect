@@ -387,14 +387,22 @@ margin-left: -14em;
 
   .year-header,
   .year-header2 {
-    margin-left: 60%;
-    width: 80px;
-    height: 30px;
-    font-size: 16px;
+    align-self: flex-end;
   }
 
   .year-section {
     height: 730px;
+    font-size: 14px;
+  }
+
+  .year-content, .capstone-block{
+    width: 90%;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .capstone-block ul{
+    padding: 0;
   }
 }
 

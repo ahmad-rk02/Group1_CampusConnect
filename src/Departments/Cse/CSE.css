@@ -223,6 +223,10 @@ ul.dropdown-cse-text{
     padding: 10px;
     margin-top: 210px;
   }
+
+  .dropdown-cse-text{
+    line-height: 3vh;
+  }
 }
 
 @media (max-width: 400px) {

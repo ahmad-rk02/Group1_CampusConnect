@@ -214,11 +214,15 @@
       width: 100%;
       margin-left: 0;
       border-width: 3px;
-      padding: 5px;
+      padding-left: 5%;
+      padding-right: 5%;
+      align-items: center;
+      justify-content: center;
     }
   
-     .first-para-small, .small-intro-heading, div.second-para-large{
-      text-align: center;
+     .first-para-small, .small-intro-heading, div.second-para-large p{
+      width: auto;
+      text-align:justify;
       padding: auto;
      }
 
@@ -226,6 +230,7 @@
       width: 100%;
       text-align: justify;
       padding: 5px;
+      font-size: 14px;
     }
   
     .cse-intro-box:hover::after {
