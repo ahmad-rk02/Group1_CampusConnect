@@ -169,6 +169,7 @@
   .header-align-ai{
     justify-content: center;
     align-items: center;
+    padding: 0;
   }
 
   .header-align-ai h1 {
@@ -176,6 +177,10 @@
     font-size: 1.5rem;
     margin-inline: 30%;
   }
+
+  .bg-golden-ai.card-header h4{
+    margin: 1vh;
+   }
 
   .side-heading-bottom-ai {
     margin-top: 2em;

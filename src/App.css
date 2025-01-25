@@ -70,7 +70,15 @@
     padding: 0 15px;
   }
 
-  body{
+  html{
     overflow-x: hidden;
    }
+}
+
+@media (max-width: 576x){
+  html{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
 }
