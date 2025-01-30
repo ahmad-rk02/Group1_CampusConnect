@@ -172,7 +172,8 @@
 
     .committee-clg-table {
         width: 100%; 
-        font-size: 13px; 
+        font-size: 13px;
+        margin-inline: 0; 
     }
 
     table.committee-clg-table{
