@@ -174,7 +174,36 @@
 }
 
 /* Additional small screen adjustments (e.g., for extra small mobile screens) */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}    
+ 
+.head-box-tender h1{
+ margin: 0;
+ margin-left: 0;
+ padding-inline: 23%;
+ padding-top: 10%;
+ width: fit-content;
+}
+
+.head-box-tender h1.text-left{
+    margin: 0;
+}
+
+.left-sidebar-tender{
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+  .left-nav-tender{
+    margin-inline: 30%;
+  }
+
   .head-box-tender h1 {
     font-size: 24px;
     margin-left: 10px;
