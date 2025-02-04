@@ -87,7 +87,7 @@ const Committees = () => {
             </Card>
           </Col>
 
-          <Col md={9} xs={12}>
+          <Col md={9} xs={12} className='committee-div'>
 
             <div className='head-right-top-committee-clg'  >
               <h3 style={{ color: '#102C57', backgroundColor:'rgb(234,219,200)',padding:'10px' }} >GCOEC Committees</h3></div>

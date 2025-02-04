@@ -166,17 +166,22 @@
         margin-inline: 20%;
     }
 
+    .committee-div{
+        width: 100%;
+    }
+
     .head-right-top-committee-clg{
         padding-top: 5%;
     }
 
     .committee-clg-table {
-        width: 100%; 
+        width: 80%; 
         font-size: 13px;
         margin-inline: 0; 
     }
 
     table.committee-clg-table{
+        width: 70%; 
         margin-top: 10%;
     }
 
