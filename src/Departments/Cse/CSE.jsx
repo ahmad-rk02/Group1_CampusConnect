@@ -2,10 +2,10 @@ import CSECarousel from '../../Departments/Cse/CSECarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './CSE.css'
+import Faculty from './FacultyDetails';
 import CSEvm from '../../Departments/Cse/CSEvm';
 import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
-import FacultyDetails from './FacultyDetails';
 import DropDownCse from './DropDownCse';
 import { useState } from 'react';
 // import Footer from './pages/Footer.jsx'
@@ -26,11 +26,14 @@ const[openDropdown, setOpenDropdown] = useState(false);
 
           <CSECarousel />
 
-
-          <Row className="g-0 overlay-row w-100" >
+          <Row className="g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} " >
             {/* Left Sidebar */}
+            <Col md={4} className='left-sidebar-cse overlay-col ' >
               <div className="left-sidebar-wrapper">
                 <Card className="left-nav-cse">
+                  <ListGroup variant="flush">
+                    <ListGroup.Item className="left-nav-row-cse-01">
+                      <Link
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : ""}
                       >
@@ -105,8 +108,8 @@ const[openDropdown, setOpenDropdown] = useState(false);
               <CSEvm className='  right-content-cse' />
             </div>
 
-            <div>
-              <FacultyDetails />
+            <div className="facultyDetails">
+              <Faculty />
             </div>
 
             <div >
