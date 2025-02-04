@@ -65,7 +65,8 @@ const Tenders = () => {
             <p>Given are the Circulars of the Tenders published:</p>
           </div>
 
-          <Table className='tender-table'style={{ width: "75%" }} striped bordered hover>
+          <div className='tender-table-box'>
+          <Table className='tender-table' striped bordered hover>
             <thead className='table-header-tender'>
               <tr>
                 <th>Dated</th>
@@ -85,6 +86,7 @@ const Tenders = () => {
               ))}
             </tbody>
           </Table>
+          </div>
           </div>
         </Col>
       </Row>
