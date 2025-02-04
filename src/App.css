@@ -1,5 +1,7 @@
  body{
   overflow-x: hidden;
+  margin: 0;
+  padding: 0;
  }
  
 .navbar-nav .dropdown-menu {
@@ -66,5 +68,17 @@
   }
   .container-fluid {
     padding: 0 15px;
+  }
+
+  html{
+    overflow-x: hidden;
+   }
+}
+
+@media (max-width: 576x){
+  html{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 }

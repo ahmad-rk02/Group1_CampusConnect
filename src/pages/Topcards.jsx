@@ -17,7 +17,7 @@ const Card = ({ icon, title, description }) => {
 
 function Topcards() {
     return (
-        <div className="container card-container2">
+        <div className="container-2 card-container2">
             <div className="row justify-content-center">
                 <Card
                     icon={<i className="fa fa-search"></i>}

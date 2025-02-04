@@ -7,7 +7,7 @@ import background from '../../assets/code-unnati-logo.jpg'; // Replace with your
 const CodeUnnati = ({ className }) => {
   return (
     <div className={className}>
-      <div className='cse-code-unnati'>
+      <div className='cse-code-unnati' id='code-unnati-cse'>
       <h4 style={{ color: '#102C57' }} >Code Unnati</h4></div>
       <div className="code-unnati-wrapper">
       <div className="code-unnati-logo">

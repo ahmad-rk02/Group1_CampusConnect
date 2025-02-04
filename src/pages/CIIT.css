@@ -1,7 +1,8 @@
-.container {
+.container-ct {
   padding-top: 30px;
   padding-bottom: 10px;
   max-width: 100%;
+  padding-inline: 10%;
 }
 
 .container h3 {
@@ -53,7 +54,7 @@
 
 /* Overlay for the description text */
 .overlay {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   text-align: justify;
   background-color: rgba(16, 44, 87, 0.85);
   position: absolute;

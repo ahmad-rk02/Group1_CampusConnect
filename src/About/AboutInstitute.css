@@ -18,6 +18,8 @@
 .header-design-ai {
   background-color: #102C57;
   height: 130px;
+  width: 100%;
+  margin: 0;
 }
 
 .header-align-ai h1 {
@@ -155,20 +157,38 @@
 
 
 @media (max-width: 576px) {
-  .header-align-ai h1 {
-    font-size: 1.5rem;
-    margin-top: 4rem;
-    margin-left: 10rem;
+
+  .body{
+    overflow-x: hidden;
   }
+
+  .left-index-ai{
+    margin-inline: 0;
+  }
+
+  .header-align-ai{
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .header-align-ai h1 {
+    width: fit-content;
+    font-size: 1.5rem;
+    margin-inline: 30%;
+  }
+
+  .bg-golden-ai.card-header h4{
+    margin: 1vh;
+   }
 
   .side-heading-bottom-ai {
     margin-top: 2em;
     margin-left: 1em;
   }
 
-  .left-sidebar-ai {
-    width: 100%;
-    margin-left: 0;
+  .about-text{
+    margin: 0;
   }
 
   .about-image-ai {

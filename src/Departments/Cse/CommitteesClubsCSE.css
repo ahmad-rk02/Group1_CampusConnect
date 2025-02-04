@@ -287,6 +287,14 @@ body {
 }
 
 @media (max-width: 576px){
+
+  .committees-clubs.container{
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
  .Acses-cmt{
   display: block;
  } 
@@ -310,7 +318,13 @@ body {
   margin-top: auto;
   margin-left: 30%;
   margin-right: 30%;
-  height: 190px;
+  height: 165px;
+  border-radius: 10px;
+ }
+ 
+ .event_box img{
+  height: 300px;
+  width: 300px;
   border-radius: 10px;
  }
 }
