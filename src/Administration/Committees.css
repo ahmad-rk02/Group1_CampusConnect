@@ -62,7 +62,7 @@
 .committee-clg-table {
     border-radius: 10px;
     margin: 0 auto;
-    width: 100%;
+    width: 75%;
     margin-bottom: 5vw;
     margin-top: 3vw;
 }
@@ -157,13 +157,13 @@
     .head-box-committee-clg h1{
         font-size: 24px;
         margin: 0;
-        padding-inline: 23%;
+        padding-inline: 17%;
         padding-top: 10%;
         width: fit-content;
        }
 
-    .left-nav-committee-clg{
-        margin-inline: 20%;
+    .left-sidebar-committee-clg{
+        margin-inline: 7%;
     }
 
     .committee-div{
@@ -174,14 +174,16 @@
         padding-top: 5%;
     }
 
+    .committee-clg-table-cont{
+        overflow-x: auto;
+    }
+
     .committee-clg-table {
-        width: 80%; 
         font-size: 13px;
         margin-inline: 0; 
     }
 
     table.committee-clg-table{
-        width: 70%; 
         margin-top: 10%;
     }
 
