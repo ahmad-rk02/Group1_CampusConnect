@@ -44,6 +44,7 @@ import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
 import ChatbotCTA from "./pages/chatbotCTA";
+import firebase from "firebase/compat/app";
 
 function App() {
   const navItems = [
@@ -131,6 +132,7 @@ function App() {
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
             <Route path="/chatbotCTA" element={<chatbotCTA />} />
+            <Route path="/firebaseconfig" element={<firebaseConfig />} />
           </Routes>
         </div>
       </Router>

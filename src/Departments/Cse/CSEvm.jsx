@@ -18,7 +18,7 @@ const CSEvm = ({ className }) => {
   ];
   return (
     <div className={className}>
-      <div className="cse-intro">
+      <div className="cse-intro" id='vission-mission-cse'>
         <div className="cse-intro-heading">
           <h3>Computer Science & Engineering</h3>
         </div>
@@ -36,8 +36,12 @@ const CSEvm = ({ className }) => {
             <p>
               As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
             </p>
-          </div>
+          
         </div>
+        </div>
+          <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE_Couse%20Outcome.pdf'>Department Course Outcomes</a>
+            </div>
       </div>
 
       <div className="cse-vision">
@@ -66,75 +70,6 @@ const CSEvm = ({ className }) => {
           </ul>
         </div>
       </div>
-      <div className='infra-cse'>
-      <div className="cse-mission-heading">
-          <h3>Infrastructure</h3>
-        </div>
-        <Table className='cse-table' striped bordered hover>
-                      <thead  className='table-header-cse'>
-                        <tr>
-                          <th>Facility</th>
-                          <th>Quantity</th>
-                        </tr>
-                      </thead>
-                      <tbody className="table-body-cse">
-                        {CSETable.map((prog) => (
-                          <tr>
-                            
-                            <td className='name-cse-prog'>{prog.facility}</td>
-                            <td>{prog.quantity}</td>
-                            
-                          </tr>
-                        ))}
-                      </tbody>
-                    </Table>
-                    <div className="headlab"><h1>Laboratories</h1></div>
-                    <div className='ciiit-hed'> 
-                    <h4>01.Computer Laboratory-118 </h4>
-                    </div>
-                    <img
-                    src={lab1}
-                    alt="lab-1"
-                    className="lab-img2"
-                  /><div className="lab-eq">
-                  <h5>Equipment:</h5>
-                  <p>
-                  Desktop,Computer, 
-                  Printer,Scanner
-                  </p>
-                  </div>
-                  <div className='lab-2'> 
-                    <h4>02.Computer Laboratory-119 </h4>
-                    </div>
-                    <img
-                    src={lab2}
-                    alt="lab-1"
-                    className="lab-img2"
-                  />
-                  <div className="lab-eq">
-                  <h5>Equipment:</h5>
-                  <p>
-                  Desktop,Computer, 
-                  Printer
-                  </p>
-                  </div>
-                  <div className='lab-2'> 
-                    <h4>03.Computer Laboratory-120 </h4>
-                    </div>
-                    <img
-                    src={lab3}
-                    alt="lab-1"
-                    className="lab-img2"
-                  />
-                  <div className="lab-eq">
-                  <h5>Equipment:</h5>
-                  <p>
-                  Desktop,Computer, 
-                  Printer
-                  </p>
-                  </div>
-
-        </div> 
     </div>
   );
 };

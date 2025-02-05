@@ -280,7 +280,56 @@ body {
     font-size: 14px;
     padding: 8px 16px;
   }
+  .Bits-and-bytes-right{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 25%;
+  }
 }
+
+@media (max-width: 576px){
+
+  .committees-clubs.container{
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+ .Acses-cmt{
+  display: block;
+ } 
+ .Acses-cmt-logo-part{
+  width: 100%;
+ }
+ .acses-cmt-logo{
+  width: 40%;
+ }
+ .Acses-cmt-right-part{
+  width: 100%;
+ }
+ .Bits-and-bytes{
+  display: block;
+ }
+ .Bits-and-bytes-left{
+  width: 100%;
+  text-align: center;
+ }
+ .Bits-and-bytes-right{
+  margin-top: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 165px;
+  border-radius: 10px;
+ }
+ 
+ .event_box img{
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+ }
+}
+
 @media (max-width: 320px){
   .container{
     padding: 10px;

@@ -11,7 +11,7 @@ import TreePlantation from '../../assets/TreePlantation.jpg';
 const CommitteesAndClubs = () => {
     return (
         <div className="committees-clubs container">
-            <div className="heading-box-CmtClb">
+            <div className="heading-box-CmtClb" id='cmt-club-cse'>
                 <h4>Committees and Clubs</h4>
             </div>
 

@@ -84,10 +84,39 @@
     visibility: visible;
 }
 
+.course-outcome{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.course-outcome a{
+  color: #102C57;
+  text-decoration: none;
+}
+
+.course-outcome a:hover{
+  text-decoration: underline;
+}
+
+.vision-mission-link{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.vision-mission-link a{
+  color: #102C57;
+  text-decoration: none;
+}
+
+.vision-mission-link a:hover{
+  text-decoration: underline;
+}
+
 /* Hide content when hover occurs */
 .cse-intro-box:hover .second-para-large,
 .cse-intro-box:hover .first-para-small,
-.cse-intro-box:hover .small-intro-heading {
+.cse-intro-box:hover .small-intro-heading, 
+.cse-intro-box:hover .course-outcome{
     visibility: hidden;
 }
   
@@ -276,20 +305,31 @@ height: 1450px;
     .cse-intro-heading h3,
     .cse-vision-heading h3,
     .cse-mission-heading h3 {
-      font-size: 4vw;
+        font-size: 1rem;
     }
   
+    
     .cse-intro-box {
       width: 100%;
       margin-left: 0;
       border-width: 3px;
-      padding: 5px;
+      padding-left: 5%;
+      padding-right: 5%;
+      align-items: center;
+      justify-content: center;
     }
   
+     .first-para-small, .small-intro-heading, div.second-para-large p{
+      width: auto;
+      text-align:justify;
+      padding: auto;
+     }
+
     .vision-content, .mission-content {
       width: 100%;
       text-align: justify;
       padding: 5px;
+      font-size: 14px;
     }
   
     .cse-intro-box:hover::after {

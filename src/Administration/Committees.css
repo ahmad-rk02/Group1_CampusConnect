@@ -11,6 +11,7 @@
     font-size: 40px;
     margin-top: 50px;
     color: white;
+    margin-left: 64px;
 }
 
 .left-index-committee-clg {
@@ -61,7 +62,9 @@
 .committee-clg-table {
     border-radius: 10px;
     margin: 0 auto;
-    width: 100%;
+    width: 75%;
+    margin-bottom: 5vw;
+    margin-top: 3vw;
 }
 
 .table-header-committee-clg th {
@@ -144,10 +147,44 @@
     }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 576px) {
+    body{
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+    }   
+
+    .head-box-committee-clg h1{
+        font-size: 24px;
+        margin: 0;
+        padding-inline: 17%;
+        padding-top: 10%;
+        width: fit-content;
+       }
+
+    .left-sidebar-committee-clg{
+        margin-inline: 7%;
+    }
+
+    .committee-div{
+        width: 100%;
+    }
+
+    .head-right-top-committee-clg{
+        padding-top: 5%;
+    }
+
+    .committee-clg-table-cont{
+        overflow-x: auto;
+    }
+
     .committee-clg-table {
-        width: 100%; /* Ensure the table fits the screen */
-        font-size: 13px; /* Further reduce font size for very small screens */
+        font-size: 13px;
+        margin-inline: 0; 
+    }
+
+    table.committee-clg-table{
+        margin-top: 10%;
     }
 
     .committee-clg-table th, 
