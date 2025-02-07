@@ -291,6 +291,7 @@
 margin-top: auto;
 margin-left: -14em;
     margin-bottom: -40px;
+    
   }
 
   .code-unnati-text {
@@ -378,6 +379,7 @@ margin-left: -14em;
   
   .course-objective-text h2 {
     font-size: 16px;
+    
   }
 
   .course-objective-text  {
@@ -420,8 +422,9 @@ margin-left: -14em;
     font-size: 14px;
   }
 
-  .course-objective-text h2 {
-    font-size: 14px;
+  .course-objective-text p {
+    font-size: 12px;
+    word-wrap: break-word;
   }
 
   .year-header,

@@ -17,6 +17,7 @@ const CommitteesAndClubs = () => {
 
             {/* ACSES Section */}
             <div className="Acses-cmt">
+                
                 <div className="Acses-cmt-logo-part">
                     <img
                         src={acseslogo}

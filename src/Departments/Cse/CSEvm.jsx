@@ -1,7 +1,21 @@
 import React from 'react';
+import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import './CSEvm.css';
+import lab1 from '../../assets/1-lab.png';
+import lab2 from '../../assets/lab-2.png';
+import lab3 from '../../assets/lab-3.png';
 
 const CSEvm = ({ className }) => {
+  const CSETable = [
+    {  facility: 'Number of Classrooms', quantity: '02'},
+    {  facility: 'Number of Laboratories', quantity: '04'},
+    {  facility: 'Tutorial Rooms', quantity: '--'},
+    {  facility: 'Faculty Cabins', quantity: '01'},
+    {  facility: 'Number of Computers', quantity: '100'},
+    {  facility: 'Number of Projectors', quantity: '01'},
+    {  facility: 'Number of laptops', quantity: '02'},
+  ];
   return (
     <div className={className}>
       <div className="cse-intro" id='vission-mission-cse'>
@@ -56,11 +70,6 @@ const CSEvm = ({ className }) => {
           </ul>
         </div>
       </div>
-
-      <div className='vision-mission-link'>
-            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE-Vision%20mission%20PEO%20PSO.pdf'>Vision, Mission, PEO's & PSO</a>
-            </div>
-
     </div>
   );
 };

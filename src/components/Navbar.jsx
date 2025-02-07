@@ -59,6 +59,7 @@ function Navbar({ imageSrcPath, navItems }) {
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
         "Electrical Engineering":"/elec",
+        "Instrumentation Engineering":"/instru",
         "Grievance Form": "/login",
         "Tenders": "/tenders",
         "Girls Hostel": "/girlshostel",
