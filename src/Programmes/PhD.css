@@ -75,10 +75,12 @@
    padding-top: 6px;
 }
 
-.table-n-head{
-padding-top: 30px;
+.table-n-head-phd{
+    margin-top: 50px;
 padding-left: 170px;
-width: max-content;
+padding: 0;  
+max-width: 100%;  
+table-layout: auto;
 }
 
 .phd-table{
@@ -229,27 +231,57 @@ width: max-content;
   
   /* Extra small screens: full-width adjustments */
   @media (max-width: 576px) {
+    .left-nav-phd{
+        width: 70%;
+        height: 150px;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    .left-sidebar-phd{
+        width: 100%;
+       margin-inline: 15%;
+    }
+
+  
+    div.left-nav-row-phd-01, div.left-nav-row-phd{
+        height: 50px;
+    }
+
+    div.left-index-phd.row{
+        margin-inline: 0;
+    }
+
     .head-box-phd h1 {
         font-size: 24px;
-        margin-top: 10px;
+        padding-inline: 20%;
+        padding-top: 22%;
+        margin: 0;
+        text-align: center;
     }
-  
-    /* Stack layout remains */
-    .left-index-phd {
-        padding: 5px;
+
+    div.table-n-head-phd{
+        margin:0;
+        margin-top: 5%;
+    }
+
+    .table-wrapper-phd{
+        height: fit-content;
     }
   
     /* Adjust table and content spacing */
-    .phd-table, .head-table-top, p {
+    .phd-table {
         width: 100%;
+        margin: 0 auto;
         padding: 5px;
-        margin-left: -5px;
+        border-collapse: collapse;
     }
   
     /* Further reduce font size for extra-small screens */
     .table-header-phd th, .table-body-phd tr td {
         font-size: 0.65rem;
-        padding: 6px;
+        padding: 4px;
+        text-align: center;
     }
   
     .head-table-top h3 {

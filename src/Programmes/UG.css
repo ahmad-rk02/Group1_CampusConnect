@@ -64,6 +64,12 @@
     height: 65px;
 }
 
+.table-n-head-ug{
+    margin-top: 50px;
+padding-left: 170px;
+width: max-content;
+}
+
 .head-table-top-ug h3 {
    text-align: left;
    padding-left: 15px;
@@ -103,7 +109,7 @@
 }
 .para-ug{
     padding-Bottom: "15px";
-     font-Size: "medium";
+     font-Size: 14px;
       font-Weight: "500";
        word-wrap: "break-word" ;
        width: 80%;
@@ -111,7 +117,7 @@
 .para-ugmain{
      padding-Top: "50px";
       padding-Bottom: "0px";
-       font-Size: "large";
+       font-Size: 14px;
         font-Weight: "700";
          word-Wrap: "break-word";
          width: 80%;
@@ -250,10 +256,46 @@
 /* Extra small screens: full-width adjustments */
 /* Extra small screens: full-width adjustments without horizontal scrolling */
 @media (max-width: 576px) {
+
+    .left-nav-ug{
+        width: 70%;
+        height: 150px;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+
+    .left-sidebar-ug{
+        width: 100%;
+       margin-inline: 15%;
+    }
+
+    div.left-nav-row-ug-01, div.left-nav-row-ug{
+        height: 50px;
+    }
+
+    div.left-index-ug.row{
+        margin-inline: 0;
+    }
+
     .head-box-ug h1 {
         font-size: 24px;
-        margin-top: 10px;
+        padding-inline: 20%;
+        padding-top: 22%;
+        margin: 0;
         text-align: center;
+    }
+
+    div.table-n-head-ug{
+        margin:0;
+       margin-top: 0;
+       padding-top: 0;
+       padding: 0;  
+       max-width: 100%;  
+       table-layout: auto;
+    }
+    
+    .table-wrapper-ug{
+        height: fit-content;
     }
 
     /* Compact table adjustments */
@@ -275,10 +317,6 @@
         width: 100%;
         padding: 5px;
         text-align: center;
-    }
-
-    .head-table-top-ug h3 {
-        font-size: 1.1rem;
     }
 
     /* Ensure text areas take full width */
