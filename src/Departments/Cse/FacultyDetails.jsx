@@ -49,7 +49,7 @@ const FacultyList = () => {
   };
 
   return (
-    <div>
+    <div className="faculty-cont-wrapper">
       {/* HOD Section */}
       {hod && (
         <div className="faculty-container">

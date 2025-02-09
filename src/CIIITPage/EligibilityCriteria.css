@@ -174,18 +174,36 @@
     }
 }
 
-@media (max-width: 576px) {
-    .head-box-eligibilitycrt {
-        height: 100px;
+@media (max-width: 480px) {
+    .p-0-w-100{
+        padding: 0;
+        width: 100%;
+    }
+
+    .head-box-eligibilitycrt{
+        width: 100%;
+        padding: 0%;
+        margin-inline: 0%;
     }
 
     .head-box-eligibilitycrt h1 {
-        font-size: 25px;
-        margin-left: 10px;
-        margin-top: 20px;
+        font-size: 24px;
+        margin-top: 7%;
     }
 
-   
+    .left-nav-eligibilitycrt{
+        width: 300px;
+        margin-inline: 20%;
+    }
+
+    .left-index-eligibilitycrt{
+        margin-inline: 0%;
+    }
+
+    .left-sidebar-eligibilitycrt .list-group-item {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
 
     .ciiit-cd {
         width: 100%; /* Adjust container width */

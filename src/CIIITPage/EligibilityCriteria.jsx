@@ -19,7 +19,7 @@ const EligibilityCriteria = () => {
           <Card className="left-nav-eligibilitycrt">
             <ListGroup variant="flush">
 
-            <ListGroup.Item className="left-nav-row-AbtCiiit-01">
+            <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/aboutciiit" className={location.pathname === "/aboutciiit" ? "active-link" : ""}>
                   About CIIIT
                 </Link>
@@ -31,7 +31,7 @@ const EligibilityCriteria = () => {
                 </Link>
               </ListGroup.Item>
 
-              <ListGroup.Item className="left-nav-row-AbtCiiit">
+              <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/eligibilitycriteria" className={location.pathname === "/eligibilitycriteria" ? "active-link" : ""}>
                   Eligibility Criteria
                 </Link>

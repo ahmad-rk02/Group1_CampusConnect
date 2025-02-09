@@ -280,16 +280,34 @@
     
 }
 
-@media (max-width: 576px) {
-    .head-box-coursesdetls {
-        height: 100px;
+@media (max-width: 480px) {
+    .p-0-w-100{
+        padding: 0;
+        width: 100%;
     }
 
-    .head-box-coursesdetls h1 {
-        font-size: 25px;
-        margin-left: 10px;
-        margin-top: 20px;
+    .head-box-AbtCiiit{
+        width: 100%;
+        padding: 0%;
+        margin-inline: 0%;
     }
+
+    .head-box-AbtCiiit h1{
+        font-size: 24px;
+        margin-top: 7%;
+    }
+
+    .left-index-AbtCiiit{
+        margin-inline: 0%;
+    }
+
+    .left-nav-AbtCiiit{
+        width: 300px;
+        margin-inline: 20%;
+    }
+
+    
+
 
     .ciiit-heading {
         margin: 5px auto;
