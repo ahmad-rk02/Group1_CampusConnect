@@ -51,12 +51,10 @@
 }
 
 .left-nav-eligibilitycrt {
-    position: -webkit-sticky;
     position: sticky;
     top: 5px;
     background-color: white;
     border-radius: 0;
-    height: 360px;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -192,12 +190,12 @@
     }
 
     .left-nav-eligibilitycrt{
-        width: 300px;
-        margin-inline: 20%;
+        width: 250px;
     }
 
     .left-index-eligibilitycrt{
-        margin-inline: 0%;
+        margin-inline: 10%;
+        padding-inline: 0;
     }
 
     .left-sidebar-eligibilitycrt .list-group-item {
@@ -205,31 +203,50 @@
         padding: 8px 10px;
     }
 
+    .eligibility-col{
+        width: 100%;
+        padding-inline: 0%;
+    }
+
     .ciiit-cd {
-        width: 100%; /* Adjust container width */
-        margin: 10px auto;
+        width: 100%;
+        margin: 10px;
+        margin-inline: 0%;
+    }
+
+    .ciiit-cd h4{
+        padding-inline: 5%;
+        padding-block: 5%;
     }
 
     .ciiit-cdetail-gh {
-        width: 100%; /* Shrink table container width */
-        margin: 10px auto;
-        font-size: 0.8rem; /* Reduce font size */
+        font-size: 10px;
+    }
+
+    table.ciiit-cdetail-gh{
+        padding-inline: 5%; 
+        width: 100%; 
+        border-collapse: collapse;
+    }
+
+    .table-cont-eligibility{
+        box-sizing: border-box;
+        margin-inline: 10%;
+        width: 70%;
+        overflow-x: scroll;
+        scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
     }
 
     .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
-        padding: 6px; /* Reduce cell padding */
+        padding: 6px; 
     }
 
     .ciiit-cdetail-gh th {
-        font-size: 0.9rem; /* Slightly larger font for headers */
-    }
-
-    .ciiit-cdetail-gh table {
-        width: 100%; 
-        margin-right: 10px;/* Ensure table fits its container */
+        font-size: 10px; 
     }
 
     .ciiit-cdetail-gh tr {
-        height: auto; /* Allow rows to adjust their height dynamically */
+        height: auto; 
     }
 }

@@ -65,10 +65,11 @@ const EligibilityCriteria = () => {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='eligibility-col'>
         <Card.Header className="ciiit-cd">
           <h4> Courses Details / Fees</h4>
         </Card.Header>
+        <div classname='table-cont-eligibility'>
         <table className="ciiit-cdetail-gh">
           <thead>
             <tr>
@@ -113,7 +114,7 @@ const EligibilityCriteria = () => {
             </tr>
           </tbody>
         </table>
-         
+        </div>
 
         </Col>
       </Row>
