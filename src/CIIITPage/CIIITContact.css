@@ -199,12 +199,22 @@
     }
 
     .left-index-cntctciiit{
-        margin-inline: 0%;
+        margin-inline: 10%;
+        padding-inline: 0;
     }
 
     .left-nav-cntctciiit{
-        width: 300px;
-        margin-inline: 20%;
+        width: 250px;
+    }
+
+    .ciiit-heading-contact{
+        margin-inline: 0%;
+        width: 100%;
+    }
+
+    .ciiit-heading-contact h1{
+        padding-inline: 5%;
+        padding-block: 5%;
     }
 
     .left-sidebar-cntctciiit .list-group-item {
@@ -215,11 +225,15 @@
     .ciiit-contact h4,
     .ciiit-contact p {
         text-align: left;
-        font-size: 0.8rem;
+        font-size: 12px;
+    }
+
+    div.ciiit-contact{
+        word-wrap: break-word;
     }
 
     .con-ciiit{
-        margin-inline: 7%;
+       margin-inline: 5%;
     }
 
     .ciiit-contact p{

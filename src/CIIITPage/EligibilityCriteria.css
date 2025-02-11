@@ -220,7 +220,7 @@
     }
 
     .ciiit-cdetail-gh {
-        font-size: 10px;
+        font-size: 9px;
     }
 
     table.ciiit-cdetail-gh{
@@ -229,21 +229,12 @@
         border-collapse: collapse;
     }
 
-    .table-cont-eligibility{
-        box-sizing: border-box;
-        margin-inline: 10%;
-        width: 70%;
-        overflow-x: scroll;
-        scrollbar-width: thin;
-    scrollbar-color: #888 #f1f1f1;
-    }
-
     .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
         padding: 6px; 
     }
 
     .ciiit-cdetail-gh th {
-        font-size: 10px; 
+        font-size: 9px; 
     }
 
     .ciiit-cdetail-gh tr {
