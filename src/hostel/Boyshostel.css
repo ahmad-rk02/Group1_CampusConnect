@@ -163,7 +163,7 @@
 }
 
 .about-image-bh {
-  max-width: 100%;
+  width: 500px;
   height: auto;
   display: block;
   margin-left: 890px;
@@ -569,35 +569,86 @@
 
 /* For extra small devices (width less than 480px) */
 @media (max-width: 480px) {
-  .left-nav-bh.card{
-    margin-left: 0vw;
-    margin-right: 10vw;
+  .text-left-bh{
+    width: fit-content;
+    padding-inline: 30%;
+    margin-inline: 0;
+    font-size: 24px;
   }
 
-  .bg-goldenn-1, .bg-goldenn-2, .bg-goldenn-3, .bg-goldenn-4 {
-    width: 100%;
+  .left-sidebar-bh{
+    width: 70%;
     margin-left: 0;
-    margin-right: 0;
+    padding-inline: 0;
+  }
+
+  .left-nav-bh.card{
+    margin-inline: 23%;
+  }
+
+  .bg-goldenn-1 h4{
+    padding-inline: 5%;
+    padding-block: 3%;
+    width: fit-content;
+    margin-bottom: 0;
+  }
+  
+  .boyshostel-text1{
+    width: 85%;
+    margin-inline: 7%;
+    margin-block: 5%;
+  }
+
+  .bg-goldenn-2 h4{
+    padding-inline: 5%;
+    padding-block: 3%;
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+
+  .boyshostel-text2{
+    width: 85%;
+    margin-inline: 7%;
+    margin-block: 5%;
+  }
+
+  .bg-goldenn-3 h4{
+    padding-inline: 5%;
+    padding-block: 3%;
+    white-space: nowrap;
+    margin-bottom: 0;
+  }
+
+  .boyshostel-text3{
+    width: 85%;
+    margin-inline: 7%;
+    margin-block: 5%;
+  }
+
+  .about-image-bh{
+    margin: 0;
+    width: 100%;
     height: auto;
-  }
-
-  .bg-goldenn-1 h4, .bg-goldenn-2 h4, .bg-goldenn-3 h4, .bg-goldenn-4 h4{
-    font-size: 19px;
-    width: 60vw;
-  }
-
-  .boyshostel-text1, .boyshostel-text2, .boyshostel-text3 {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-
-  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
-    font-size: 14px;
-    height: 40px;
+    
   }
 
   .The-three-buttons-bh{
-    margin-top: 260px;
+    margin: 0;
+    margin-inline: 2%;
+  }
+
+  .apply-button-bh, .EN-button-bh, .HOSTEL-button-bh {
+    font-size: 13px;
+    height: 45px;
+    margin-inline: 4%;
+    padding-inline: 3%;
+  }
+
+  .bg-goldenn-4 h4{
+    padding-inline: 5%;
+    padding-block: 3%;
+    white-space: nowrap;
+    margin-bottom: 0;
   }
 
   .head-box-bh h1 {
