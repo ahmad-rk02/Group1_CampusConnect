@@ -221,7 +221,6 @@
   color: #102C57;
   font-size: 16px;
   font-weight: 500;
-
 }
 
 .HOSTEL-button-bh {
@@ -627,9 +626,10 @@
 
   .about-image-bh{
     margin: 0;
+    margin-inline: 7%;
+    padding: 0%;
     width: 100%;
     height: auto;
-    
   }
 
   .The-three-buttons-bh{
@@ -643,6 +643,10 @@
     margin-inline: 4%;
     padding-inline: 3%;
   }
+
+  .apply-button-bh:hover, .EN-button-bh:hover, .HOSTEL-button-bh:hover{
+    font-size: 10px;
+  } 
 
   .bg-goldenn-4 h4{
     padding-inline: 5%;
@@ -662,6 +666,11 @@
   }
 
   img.about-image-bh {
-    width: 100px;
+    width: 300px;
+  }
+
+  .committee-table-bh{
+    margin-bottom: 5%;
+    margin-top: 5%;
   }
 }
