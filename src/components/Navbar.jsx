@@ -43,6 +43,8 @@ function Navbar({ imageSrcPath, navItems }) {
         const subMenu = this.nextElementSibling;
         if (subMenu) {
           subMenu.classList.toggle('show');
+        }if (subMenu !== subMenu) {
+          subMenu.classList.toggle('hide');
         }
       });
     });
