@@ -230,6 +230,7 @@
     }
 
     .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
+        text-align: justify;
         padding: 6px; 
     }
 

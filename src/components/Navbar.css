@@ -118,6 +118,8 @@
     }
 
     .dropdown-menu {
+      width: 95%;
+      margin-top: 0;
       position: static !important;
       display: none;
     }

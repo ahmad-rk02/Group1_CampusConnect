@@ -1,1 +1,6 @@
- 
+ @media (max-width: 480px) {
+   div.profile-container{
+    margin-inline: 5%;
+    margin-bottom: 5%;
+   }
+ }
