@@ -202,8 +202,12 @@ div.infra-instru{
 
 
 .lab-eq-instru{
-  margin-left: 300px;
+  margin-left: 290px;
   margin-top:-150px;
+  width: 130px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+font-size: 14px;
 }
 .instru-mi-heading{
   background-color: #eadbc8;

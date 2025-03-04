@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './INSTRUvm.css';
-import lab1 from '../../assets/1-lab.png';
-import lab2 from '../../assets/lab-2.png';
-import lab3 from '../../assets/lab-3.png';
-
+import lab1 from '../../assets/I1.jpg';
+import lab2 from '../../assets/I1.jpg';
+import lab3 from '../../assets/I2.jpg';
+import lab4 from '../../assets/I3.jpg';
+import lab5 from '../../assets/I3.jpg';
+import lab6 from '../../assets/I4.jpg';
+import lab7 from '../../assets/I5.jpg';
+import lab8 from '../../assets/I6.jpg';
+import lab9 from '../../assets/I7.jpg';
+import lab10 from '../../assets/I8.jpg';
 
 const INSTRUvm = ({ className }) => {
   const INSTRUTable = [
@@ -22,16 +28,16 @@ const INSTRUvm = ({ className }) => {
     const [showFirstSet, setShowFirstSet] = useState(true);
   
   const labs = [
-    { id: 1, name: 'Computer Laboratory-118', img: lab1, equipment: 'Desktop, Computer, Printer, Scanner' },
-    { id: 2, name: 'Computer Laboratory-119', img: lab2, equipment: 'Desktop, Computer, Printer' },
-    { id: 3, name: 'Computer Laboratory-120', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 4, name: 'Computer Laboratory-121', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 5, name: 'Computer Laboratory-122', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 6, name: 'Computer Laboratory-123', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 7, name: 'Computer Laboratory-124', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 8, name: 'Computer Laboratory-125', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 9, name: 'Computer Laboratory-126', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 10, name: 'Computer Laboratory-127', img: lab3, equipment: 'Desktop, Computer, Printer' }
+    { id: 1, name: 'Biomedical Instrumentation Lab', img: lab1, equipment: 'Bio Signal Simulator, X-Ray Machine Simulator, External Pace Maker,EEG Machine Simulator' },
+    { id: 2, name: 'Analytical Instrumentation Lab', img: lab2, equipment: 'Fetal Monitoring System Trainer, PC based Lang analyzer,Hemo Dialysis Trainer Internal,' },
+    { id: 3, name: 'Digital Signal Processing Lab', img: lab3, equipment: 'Desktop,Printers, Scanners,UPS,License Softwares- Automation Studio, MATLAB, LabVIEW,etc.' },
+    { id: 4, name: 'Advance Process Control Lab', img: lab4, equipment: 'Multi Brand PLC Training System,DCS Trainer with SCADA,PLC Based Electro-Hydraulic Trainer' },
+    { id: 5, name: 'Control System Lab', img: lab5, equipment: 'Control Logix Training System,Multi Process Trainer,Control Valve Characteristics Trainer,MATLAB based Heat Exchanger System' },
+    { id: 6, name: 'Applied Electronics Lab', img: lab6, equipment: 'Universal IC Tester,Dual channel DSO,Dual power supply DC,Function generator,Multifunction Unit' },
+    { id: 7, name: 'Sensor & Transducer Lab', img: lab7, equipment: 'Speed Measurement,LVDT setup,Tachometer,pH meter,Universal Calibrator,Pressure Measurement' },
+    { id: 8, name: 'Electronics Measurement Lab', img: lab8, equipment: 'Digital LCR Meter,Bench Top DMM,AC & DC Bridges,CRO, Multimeter' },
+    { id: 9, name: 'Microcontroller Lab', img: lab9, equipment: 'Traffic Control, Stepper Motor Control, DC Motor Control Cards,Intelligent Universal Programmer,Microcontroller Developer ' },
+    { id: 10, name: 'Project Lab', img: lab10, equipment: 'CRO,Multi-meters,Computers with Matlab ,Hydraulic Trainer,DCS' }
   ];
   const displayedLabs = showFirstSet ? labs.slice(0, 5) : labs.slice(5, 10);
 
