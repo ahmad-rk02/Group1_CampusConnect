@@ -99,3 +99,44 @@
     }
   }
   
+  @media (max-width: 480px) {
+    .dropdown-submenu {
+      position: relative;
+    }
+  
+    .dropdown-submenu .dropdown-menu {
+      position: relative;  /* Change position to relative */
+      top: 0;
+      left: 0;  /* Align it to start below the submenu */
+      margin-top: 5px;
+      display: none;  /* Initially hidden */
+      width: 100%;  /* Ensure it takes up full width */
+    }
+  
+    ul.dropdown-menu.show {
+      display: block;  
+    }
+
+    .dropdown-menu {
+      width: 95%;
+      margin-top: 0;
+      position: static !important;
+      display: none;
+    }
+
+    .dropdown-menu.hide{
+      display: none !important;
+    }
+  
+    .dropdown-menu.show {
+      display: block !important;
+    }
+
+    .dropdown-events-achievements {
+      display: block !important;
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      width: 100%;
+    }
+  }

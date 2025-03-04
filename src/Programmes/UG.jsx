@@ -60,8 +60,8 @@ const UG = () => {
             </Card>
           </Col>
 
-          <Col >
-            <div className="mt-5 table-n-head" >
+          <Col className='table-wrapper-ug'>
+            <div className="table-n-head-ug" >
 
               <div className='head-table-top-ug'>
                 <h3>UG (B.Tech) Programmes</h3>

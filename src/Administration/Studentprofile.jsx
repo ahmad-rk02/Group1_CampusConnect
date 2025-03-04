@@ -4,6 +4,7 @@ import useAuth from '../hooks/usestudentAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import StudentProfile from './StudentGrievanceDisplay';
+import './Studentprofile.css';
 
 
 const Profile = () => {

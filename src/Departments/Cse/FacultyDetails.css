@@ -202,6 +202,11 @@
 
 /*  Small Mobile View */
 @media (max-width: 480px) {
+  .faculty-cont-wrapper{
+    display: grid;
+    place-items: center;
+  }
+
   .faculty-container {
     padding: 10px;
   }

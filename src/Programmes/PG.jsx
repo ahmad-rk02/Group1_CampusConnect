@@ -56,8 +56,8 @@ const PG = () => {
           </Card>
         </Col>
 
-        <Col>
-          <div className=" mt-5 table-n-head" >
+        <Col className='table-wrapper-PG'>
+          <div className="table-n-head-PG" >
 
             <div className='head-table-top-PG'>
             <h3 >PG (M.Tech) Programmes</h3>

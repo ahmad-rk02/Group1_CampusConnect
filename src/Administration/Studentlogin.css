@@ -276,14 +276,26 @@ height: 200px;
 
 @media (max-width: 480px) {
   /* Further adjust for small screens */
-  .head-box-login h1 {
-      font-size: 20px;
-      margin: 5px 0;
+  h1.text-left{
+      font-size: 24px;
   }
 
   .login-section {
       width: 100%;
       padding: 10px;
+  }
+
+  .left-nav-login{
+    margin-top: -7%;
+    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .left-index-login{
+    margin-inline: 5%;
+  }
+
+  .head-right-top-login-1{
+    margin-left: 0;
   }
 
   .login-input, .login-button {

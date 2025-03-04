@@ -162,11 +162,12 @@
 }
 
 .about-image-gh {
-  max-width: 100%;
+  width: 500px;
   height: auto;
   display: block;
-  margin-left: 870px;
-  margin-top: -290px;
+  margin-left: 890px;
+  margin-top: -239px;
+  padding-right: 15px;
 }
 
 .apply-button-gh {
@@ -495,41 +496,61 @@
 
  /* For extra small devices (width less than 480px) */
 @media (max-width: 480px) {
-  .left-nav-gh{
-    margin-left: 10%;
-    margin-right: 40vw;
+  .text-left-gh{
+    width: fit-content;
+    padding-inline: 30%;
+    margin-inline: 0;
+    font-size: 24px;
   }
 
-  .gh-goldenn-1, .gh-goldenn-2, .gh-goldenn-3, .gh-goldenn-4 {
-    width: 100%;
+  .left-sidebar-gh{
+    width: 70%;
     margin-left: 0;
-    margin-right: 0;
-    height: auto;
+    padding-inline: 0;
   }
 
-  .gh-goldenn-1 h4, .gh-goldenn-2 h4, .gh-goldenn-3 h4, .gh-goldenn-3.card-header h4{
-    font-size: 23px;
-    width: 90%;
+  .left-nav-gh.card{
+    margin-inline: 23%;
+  }
+
+  .gh-goldenn-1 h4, .gh-goldenn-2 h4, .gh-goldenn-3 h4{
+    padding-inline: 5%;
+    padding-block: 3%;
+    width: fit-content;
+    margin-bottom: 0;
+    white-space: nowrap;
   }
 
   .girlshostel-text1, .girlshostel-text2, .girlshostel-text3 {
-    font-size: 12px;
-    line-height: 1.4;
+    width: 85%;
+    margin-inline: 7%;
+    margin-block: 5%;
   }
 
-  .apply-button, .EN-button, .HOSTEL-button {
-    font-size: 14px;
-    height: 40px;
+  .about-image-gh{
+    padding: 0;
+    margin-inline: 5%;
+    width: 90%;
+    height: auto;
+  }
+
+  .apply-button-gh, .EN-button-gh, .HOSTEL-button-gh {
+    font-size: 13px;
+    height: 45px;
+    margin-inline: 4%;
+    padding-inline: 3%;
   }
 
   .The-three-buttons-gh{
-    margin-top: 1%;
-    margin-right: 10%;
-    margin-left: 10%;
-    width: 90vw;
+    margin: 0;
+    margin-inline: 2%;
   }
 
-  .head-box h1 {
+  .apply-button-gh:hover, .EN-button-gh:hover, .HOSTEL-button-gh:hover{
+    font-size: 10px;
+  } 
+
+  .head-box-gh h1 {
     font-size: 25px;
     margin-left: 25px;
     margin-top: 70px;
@@ -541,5 +562,10 @@
 
   img.about-image {
     width: 100px;
+  }
+
+  .committee-table-gh{
+    margin-bottom: 5%;
+    margin-top: 5%;
   }
 }

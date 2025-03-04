@@ -44,7 +44,16 @@ import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
 import ChatbotCTA from "./pages/chatbotCTA";
-import firebase from "firebase/compat/app";
+import StudentSection from "./Administration/studentSection";
+import Technoutsav from "./Others/Technoutsav";
+import TechnoutsavGallery from "./Others/TechnoutsavGallery";
+import TechnoBanner from "./Others/TechnoBanner";
+import Abhirang from "./Others/Abhirang";
+import AbhirangGallery from "./Others/AbhirangGallery";
+import AbhirangBanner from "./Others/AbhirangBanner";
+import NewsEvents from "./pages/NewsEvents";
+import PrincipalHods from "./Administration/principalHods";
+import Office from "./Administration/office";
 
 function App() {
   const navItems = [
@@ -128,11 +137,20 @@ function App() {
             <Route path="/coursesdetails" element={<CoursesDetails />} />
             <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
             <Route path="/adminprofile" element={<AdminProfile />} />
+            <Route path="/technoutsav" element={<Technoutsav />} />
+            <Route path="/technoutsavgallery" element={<TechnoutsavGallery />} />
+            <Route path="/technobanner" element={<TechnoBanner />} />
+            <Route path="/abhirang" element={<Abhirang />} />
+            <Route path="/abhiranggallery" element={<AbhirangGallery />} />
+            <Route path="/abhirangbanner" element={<AbhirangBanner />} />
             <Route path="/welcomepage" element={<WelcomeSection />} />
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
             <Route path="/chatbotCTA" element={<chatbotCTA />} />
-            <Route path="/firebaseconfig" element={<firebaseConfig />} />
+            <Route path="/newsevents" element={<NewsEvents />} />
+            <Route path="/principalHods" element={<PrincipalHods />} />
+            <Route path="/studentSection" element={<StudentSection />} />
+            <Route path="/office" element={<Office />} />
           </Routes>
         </div>
       </Router>

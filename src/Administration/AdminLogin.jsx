@@ -127,8 +127,8 @@ const LoginForm = () => {
           </Card>
         </Col>
 
-        <Col>
-          <div className='head-right-top-loginA' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+        <Col className='cont-loginA'>
+          <div className='head-right-top-loginA' style={{ backgroundColor: "#eadbc8" }}>
             <h3 style={{ color: '#102C57' }}>Admin Login</h3>
           </div>
 

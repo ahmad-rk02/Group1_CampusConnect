@@ -200,7 +200,7 @@ const SignupAdmin = () => {
 
           <Col>
             <div>
-              <div className='head-right-top-Admin-signup' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+              <div className='head-right-top-Admin-signup' style={{ backgroundColor: "#eadbc8" }}>
                 <h3 style={{ color: '#102C57' }}>Admin SignUp</h3>
               </div>
             </div>

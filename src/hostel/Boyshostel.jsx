@@ -90,13 +90,13 @@ const Boyshostel = () => {
         </p>
       </Col>
 
-      <div className='The-three-buttons-bh'>
+      <div >
       <img
         src={BoysHostel}
         alt="Boys Hostel"
         className="about-image-bh"
-        style={{ width: '34%' }}
       />
+      <div className='The-three-buttons-bh'>
       <Button type="submit" className="apply-button-bh">
         Apply Now
       </Button>
@@ -106,6 +106,7 @@ const Boyshostel = () => {
       <Button type="submit" className="HOSTEL-button-bh">
         Hostel Rules & Regulations
       </Button>
+      </div>
       </div>
 
       <Col>
