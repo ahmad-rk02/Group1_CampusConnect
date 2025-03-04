@@ -8,6 +8,7 @@ import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
 import DropDownCse from './DropDownCse';
 import { useState } from 'react';
+import FacultyList from './FacultyDetails';
 // import Footer from './pages/Footer.jsx'
 
 
@@ -114,7 +115,7 @@ const CSE = () => {
             </div>
 
             <div className="facultyDetails">
-              <Faculty />
+              <FacultyList />
             </div>
 
             <div >
