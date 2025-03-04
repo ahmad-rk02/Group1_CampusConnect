@@ -51,12 +51,10 @@
 }
 
 .left-nav-eligibilitycrt {
-    position: -webkit-sticky;
     position: sticky;
     top: 5px;
     background-color: white;
     border-radius: 0;
-    height: 360px;
     width: 320px;
     box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
 }
@@ -174,44 +172,73 @@
     }
 }
 
-@media (max-width: 576px) {
-    .head-box-eligibilitycrt {
-        height: 100px;
+@media (max-width: 480px) {
+    .p-0-w-100{
+        padding: 0;
+        width: 100%;
+    }
+
+    .head-box-eligibilitycrt{
+        width: 100%;
+        padding: 0%;
+        margin-inline: 0%;
     }
 
     .head-box-eligibilitycrt h1 {
-        font-size: 25px;
-        margin-left: 10px;
-        margin-top: 20px;
+        font-size: 24px;
+        margin-top: 7%;
     }
 
-   
+    .left-nav-eligibilitycrt{
+        width: 250px;
+    }
+
+    .left-index-eligibilitycrt{
+        margin-inline: 10%;
+        padding-inline: 0;
+    }
+
+    .left-sidebar-eligibilitycrt .list-group-item {
+        font-size: 1rem;
+        padding: 8px 10px;
+    }
+
+    .eligibility-col{
+        width: 100%;
+        padding-inline: 0%;
+    }
 
     .ciiit-cd {
-        width: 100%; /* Adjust container width */
-        margin: 10px auto;
+        width: 100%;
+        margin: 10px;
+        margin-inline: 0%;
+    }
+
+    .ciiit-cd h4{
+        padding-inline: 5%;
+        padding-block: 5%;
     }
 
     .ciiit-cdetail-gh {
-        width: 100%; /* Shrink table container width */
-        margin: 10px auto;
-        font-size: 0.8rem; /* Reduce font size */
+        font-size: 9px;
+    }
+
+    table.ciiit-cdetail-gh{
+        padding-inline: 5%; 
+        width: 100%; 
+        border-collapse: collapse;
     }
 
     .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
-        padding: 6px; /* Reduce cell padding */
+        text-align: justify;
+        padding: 6px; 
     }
 
     .ciiit-cdetail-gh th {
-        font-size: 0.9rem; /* Slightly larger font for headers */
-    }
-
-    .ciiit-cdetail-gh table {
-        width: 100%; 
-        margin-right: 10px;/* Ensure table fits its container */
+        font-size: 9px; 
     }
 
     .ciiit-cdetail-gh tr {
-        height: auto; /* Allow rows to adjust their height dynamically */
+        height: auto; 
     }
 }

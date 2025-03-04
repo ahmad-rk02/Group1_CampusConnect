@@ -1,4 +1,7 @@
- 
+body{
+  overflow-x: hidden;
+}
+
 .navbar-nav .dropdown-menu {
   width: auto;  
   min-width: 150px;   

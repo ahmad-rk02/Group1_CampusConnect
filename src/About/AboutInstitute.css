@@ -166,6 +166,10 @@
     margin-inline: 0;
   }
 
+  a.active-link{
+    font-size: 1.2rem;
+  }
+
   .header-align-ai{
     justify-content: center;
     align-items: center;

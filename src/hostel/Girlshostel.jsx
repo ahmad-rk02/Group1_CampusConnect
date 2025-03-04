@@ -86,14 +86,12 @@ const Girlshostel = () => {
         <p>Welcome to the heart of GCOEC hostel life, where comfort meets community amidst the serene greenery of our residential zone. Our hostels, both for boys and girls, are designed to support your academic journey while offering a vibrant, student-centered environment. Hostel admissions are granted based on merit and reservation rules as per government norms, with priority given to higher merit students for room allocation. The process follows the CAP round of engineering admissions, ensuring fairness and transparency.
         </p>
       </Col>
-
+      <div>
       <img
         src={girlshostel}
         alt="girlshostel"
         className="about-image-gh"
-        style={{ width: '34%' }}
       />
-
       <div className='The-three-buttons-gh'>
       <Button type="submit" className="apply-button-gh">
         Apply Now
@@ -104,6 +102,7 @@ const Girlshostel = () => {
       <Button type="submit" className="HOSTEL-button-gh">
         Hostel Rules & Regulations
       </Button>
+      </div>
       </div>
       <Col>
 
