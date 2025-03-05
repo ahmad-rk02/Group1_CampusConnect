@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './INSTRUvm.css';
-import lab1 from '../../assets/I1.jpg';
-import lab2 from '../../assets/I1.jpg';
-import lab3 from '../../assets/I2.jpg';
-import lab4 from '../../assets/I3.jpg';
-import lab5 from '../../assets/I3.jpg';
-import lab6 from '../../assets/I4.jpg';
-import lab7 from '../../assets/I5.jpg';
-import lab8 from '../../assets/I6.jpg';
-import lab9 from '../../assets/I7.jpg';
-import lab10 from '../../assets/I8.jpg';
+import lab1 from '../../assets/i1.jpg';
+import lab2 from '../../assets/i1.jpg';
+import lab3 from '../../assets/i2.jpg';
+import lab4 from '../../assets/i3.jpg';
+import lab5 from '../../assets/i3.jpg';
+import lab6 from '../../assets/i4.jpg';
+import lab7 from '../../assets/i5.jpg';
+import lab8 from '../../assets/i6.jpg';
+import lab9 from '../../assets/i7.jpg';
+import lab10 from '../../assets/i8.jpg';
 
 const INSTRUvm = ({ className }) => {
   const INSTRUTable = [
