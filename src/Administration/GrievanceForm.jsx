@@ -132,7 +132,7 @@ const GrievanceForm = () => {
   return (
     <div>
 
-      <Container fluid className="p-0 w-100">
+      <Container fluid className="p-0 w-100  cont-grivnc-form">
         {/* Header Section */}
         <Row className='head-box-grivnce'>
           <Col>
@@ -200,7 +200,7 @@ const GrievanceForm = () => {
           <Col>
 
             <div>
-              <div className='head-right-top-grivnce' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
+              <div className='head-right-top-grivnce' style={{  backgroundColor: "#eadbc8" }}>
                 <h3 style={{ color: '#102C57' }} >Student Grievance Form</h3>
 
             </div>
