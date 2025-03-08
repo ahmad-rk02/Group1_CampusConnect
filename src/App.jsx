@@ -17,6 +17,7 @@ import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
 import INSTRU from './Departments/Instrumentation/instru';
+import MECH from './Departments/Mechanical/Mech';
 import Footer from './pages/Footer';
 import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
@@ -118,6 +119,7 @@ function App() {
             <Route path="/studentsignup" element={<StudentSignUp />} />
             <Route path="/cse" element={<CSE />} />
             <Route path="/instru" element={<INSTRU />} />
+            <Route path="/mech" element={<MECH />} />
             <Route path="/studentlogin" element={<Studentlogin />} />
             <Route path="/signupadmin" element={<SignupAdmin />} />
             <Route path="/login" element={<Login />} />
