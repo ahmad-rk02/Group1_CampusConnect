@@ -120,9 +120,9 @@ ul.dropdown-cse-text{
     padding-top: 20px;
     padding-left: 20px;
   }
-  .right-codeunnati-content-cse,
+  
   .right-content-cse {
-    margin-left: 20px;
+    margin-inline: 5%;
     width: 96%;
   }
 
