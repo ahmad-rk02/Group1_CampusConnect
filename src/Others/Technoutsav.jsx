@@ -2,6 +2,7 @@ import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import TechnoutsavGallery from "./TechnoutsavGallery";
 import TechnoBanner from "./TechnoBanner";
+import './Technoutsav.css';
 
 const Technoutsav = () => {
   const location = useLocation();
