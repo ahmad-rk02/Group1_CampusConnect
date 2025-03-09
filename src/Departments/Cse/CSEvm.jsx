@@ -69,6 +69,9 @@ const CSEvm = ({ className }) => {
             <li>To fulfill the expectations of society by creating resourceful and responsible engineers.</li>
           </ul>
         </div>
+        <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE-Vision%20mission%20PEO%20PSO.pdf'>Department PEO's & PSO</a>
+            </div>
       </div>
       <div className='infra-cse'>
             <div className="cse-infra-head">

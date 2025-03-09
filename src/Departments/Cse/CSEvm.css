@@ -87,10 +87,12 @@
 .course-outcome{
   text-align: center;
   margin-top: 15px;
+  margin-bottom: 15px;
+font-size: 20px;
 }
 
 .course-outcome a{
-  color: #102C57;
+  color: #f20707;
   text-decoration: none;
 }
 

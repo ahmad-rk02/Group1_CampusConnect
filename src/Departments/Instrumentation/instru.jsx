@@ -30,10 +30,10 @@ const instru = () => {
         <ListGroup variant="flush">
           <ListGroup.Item className="left-nav-row-instru-01">
             <Link
-              to="/instru"
-              className={location.pathname === "/instru" ? "active-link" : ""}
+              to="/cse"
+              className={location.pathname === "" ? "active-link" : "/cse"}
             >
-              <b>Computer Science & Engineering</b>
+              Computer Science & Engineering
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
@@ -49,21 +49,21 @@ const instru = () => {
               to=""
               className={location.pathname === "" ? "active-link" : ""}
             >
-              Instrumentation Engineering
+             <b>Instrumentation Engineering</b> 
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/instru"
+              className={location.pathname === "/instru" ? "active-link" : ""}
             >
               Electrical Engineering
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/mech"
+              className={location.pathname === "" ? "active-link" : "/mech"}
             >
               Mechanical Engineering
             </Link>

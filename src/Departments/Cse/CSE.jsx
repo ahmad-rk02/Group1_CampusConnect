@@ -63,8 +63,8 @@ const CSE = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
-                        to=""
-                        className={location.pathname === "/instru" ? "active-link" : ""}
+                        to="/instru"
+                        className={location.pathname === "" ? "active-link" : "/instru"}
                       >
                         Instrumentation Engineering
                       </Link>
@@ -79,8 +79,8 @@ const CSE = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
-                        to=""
-                        className={location.pathname === "/mech" ? "active-link" : ""}
+                        to="/mech"
+                        className={location.pathname === "" ? "active-link" : "/mech"}
                       >
                         Mechanical Engineering
                       </Link>
