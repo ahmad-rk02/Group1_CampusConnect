@@ -85,7 +85,8 @@ function Navbar({ imageSrcPath, navItems }) {
         "News & Events": "/newsevents",
         "Principal & HOD": "/principalHods",
         "Student Section": "/studentSection",
-          "Office":"/Office"
+          "Office":"/Office",
+        "Training & Placements":"/tpopage"
       };
 
       if (typeof subLink === "string") {

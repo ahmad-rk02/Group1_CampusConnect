@@ -54,6 +54,7 @@ import AbhirangBanner from "./Others/AbhirangBanner";
 import NewsEvents from "./pages/NewsEvents";
 import PrincipalHods from "./Administration/principalHods";
 import Office from "./Administration/office";
+import TPOPage from "./Others/TPOPage";
 
 function App() {
   const navItems = [
@@ -151,6 +152,7 @@ function App() {
             <Route path="/principalHods" element={<PrincipalHods />} />
             <Route path="/studentSection" element={<StudentSection />} />
             <Route path="/office" element={<Office />} />
+            <Route path="/tpopage" element={<TPOPage />} />
           </Routes>
         </div>
       </Router>
