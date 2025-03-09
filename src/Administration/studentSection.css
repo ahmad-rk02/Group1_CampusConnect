@@ -4,6 +4,7 @@
     padding: 2rem;
     background: #f8f9fa;
     min-height: calc(100vh - 100px);
+    margin-left: 100px;
   }
   
   .members-container {
@@ -178,7 +179,11 @@
     }
   }
   
-  @media (max-width: 576px) {
+  @media (max-width: 480px) {
+   div.main-content{
+      margin-left: 0;
+    }
+
     .member-card {
       padding: 0.75rem;
     }

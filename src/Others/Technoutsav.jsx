@@ -2,6 +2,7 @@ import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import TechnoutsavGallery from "./TechnoutsavGallery";
 import TechnoBanner from "./TechnoBanner";
+import './Technoutsav.css';
 
 const Technoutsav = () => {
   const location = useLocation();
@@ -47,7 +48,7 @@ const Technoutsav = () => {
                   </Card.Header>
                   <Col xs={12}>
                     <p className="about-text">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta perspiciatis, obcaecati facilis iusto exercitationem aliquid maxime, commodi nostrum neque ut harum veniam nihil voluptatem rem reiciendis. Quae, ea iure! Vel.
+                    **TechnoUtsav 2025** is the ultimate fusion of technology, innovation, and gaming, hosted by **Government College of Engineering, Chandrapur**. This exciting fest brings together tech enthusiasts and gamers to compete in thrilling events like **Free Fire, BGMI, RC Race Gateway, Virtual Simulation, Hackathons, Paper Presentation, Poster Mania,** and more. Whether you're a coder, a gamer, or a creative thinker, TechnoUtsav 2025 offers the perfect platform to showcase your skills, push your limits, and experience the excitement of tech-driven competitions. Get ready to innovate, compete, and celebrate technology like never before! 🚀🔥
                     </p>
                   </Col>
                   <div>

@@ -120,9 +120,9 @@ ul.dropdown-cse-text{
     padding-top: 20px;
     padding-left: 20px;
   }
-  .right-codeunnati-content-cse,
+  
   .right-content-cse {
-    margin-left: 20px;
+    margin-inline: 5%;
     width: 96%;
   }
 
@@ -229,14 +229,16 @@ ul.dropdown-cse-text{
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .head-box-cse {
     height: 80px;
   }
 
   .head-box-cse h1 {
     font-size: 1.2rem;
+    margin-bottom: 7%;
   }
+  
   .right-codeunnati-content-cse,
   .right-content-cse {
     padding: 10px;
@@ -247,9 +249,22 @@ ul.dropdown-cse-text{
     margin: 0 auto;
   }
 
+  .left-sidebar-cse{
+    margin-top: 300px;
+  }
+
   .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 0.9rem;
+  }
+
+  .right-content-cse{
+    margin-top: 170px;
+  }
+
+  div.right-codeunnati-content-cse{
+    margin-inline: 2%;
+    padding-inline: 0;
   }
   
 }

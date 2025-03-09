@@ -1,28 +1,31 @@
  
-.instru-page-div {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 0;
-}
-
-/* Header Section */
-div.head-box-instru.row {
-  background-color: #102c57;
-  height: 130px;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.head-box-instru h1 {
-  color: white;
-  font-size: 2rem;
-  margin: 0;
-}
+.Mech-page-div {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+   
+    padding: 0;
+  }
+  
+  /* Header Section */
+  .head-box-Mech 
+  {
+    background-color: #102c57;
+    height: 130px;
+    
+    
+    padding-left: 0px;
+  }
+  
+  .head-box-Mech 
+  h1 {
+    color: white;
+    font-size: 2rem;
+    margin: 0;
+  }
   
   /* Right Content Section */
-  .right-codeunnati-content-instru,.instru-vision-mission 
+  .right-codeunnati-content-Mech,.Mech-vision-mission 
   {
     margin-top: 30px;
     margin-left: 250px;
@@ -30,7 +33,7 @@ div.head-box-instru.row {
   }
   
   /* Sidebar Section */
-  .left-nav-instru 
+  .left-nav-Mech 
   {
     position: sticky;
   top: 250px;
@@ -41,28 +44,28 @@ div.head-box-instru.row {
   box-shadow: 7px 7px 15px;
   margin-left: 40px;
   margin-bottom: 5px;
-
-  }
+}
   
-  .left-nav-row-instru,
-  .left-nav-row-instru-01 {
+  
+  .left-nav-row-Mech,
+  .left-nav-row-Mech-01 {
     text-align: center;
     font-size: 1.2rem;
     
   }
   
-  .left-sidebar-instru 
+  .left-sidebar-Mech 
   a {
     text-decoration: none;
     color: black
     
   }
   
-  .left-sidebar-instru 
+  .left-sidebar-Mech 
   a:hover {
     color: #0056b3;
   }
-  .left-sidebar-instru 
+  .left-sidebar-Mech 
   {
     position: relative;
     top: -20px;
@@ -71,32 +74,32 @@ div.head-box-instru.row {
   
   /* Responsive Styles */
   @media (max-width: 1200px) {
-    .right-codeunnati-content-instru,.right-content-instru 
+    .right-codeunnati-content-Mech,.right-content-Mech 
     {
       width: 80%;
       margin-left: auto;
       overflow-x: hidden;
     }
   
-    .left-nav-instru 
+    .left-nav-Mech 
     {
       width: 250px;
     }
   }
   
   @media (max-width: 992px) {
-    .head-box-instru 
+    .head-box-Mech 
     h1 {
       font-size: 1.8rem;
     }
-    .right-codeunnati-content-instru,
-    .right-content-instru 
+    .right-codeunnati-content-Mech,
+    .right-content-Mech 
     {
       width: 85%;
       margin-left: 120px;
     }
   
-    .left-nav-instru 
+    .left-nav-Mech 
     {
       width: 220px;
       margin: 0px 40px;
@@ -104,28 +107,28 @@ div.head-box-instru.row {
   }
   
   @media (max-width: 768px) {
-    .head-box-instru 
+    .head-box-Mech 
     {
       height: 100px;
     }
   
-    .head-box-instru 
+    .head-box-Mech 
     h1 {
       font-size: 1.5rem;
       padding-left: 10px;
     }
-  .right-codeunnati-content-instru{
+  .right-codeunnati-content-Mech{
     margin-left: 50px;
       width: 90%;
   }
-    .right-content-instru 
+    .right-content-Mech 
     {
       margin-top: 10em;
       margin-left: 50px;
       width: 90%;
     }
   
-    .left-nav-instru 
+    .left-nav-Mech 
     {
       width: 80%;
       margin-top: 17em;
@@ -135,56 +138,56 @@ div.head-box-instru.row {
   }
   
   @media (max-width: 576px) {
-    .head-box-instru 
+    .head-box-Mech 
     h1 {
       font-size: 1.3rem;
       text-align: center;
     }
-    .right-codeunnati-content-instru,
-    .right-content-instru 
+    .right-codeunnati-content-Mech,
+    .right-content-Mech 
     {
       width: 95%;
       margin-right: 0;
       margin-left: auto;
     }
   
-    .left-nav-instru 
+    .left-nav-Mech 
     {
       width: 80%;
       padding: 1px;
       margin-left: 80px;
     }
   
-    .left-nav-row-instru,
-    .left-nav-row-instru-01 {
+    .left-nav-row-Mech,
+    .left-nav-row-Mech-01 {
       font-size: 1rem;
     }
   }
   
   @media (max-width: 400px) {
-    .head-box-instru 
+    .head-box-Mech 
     {
       height: 80px;
     }
   
-    .head-box-instru 
+    .head-box-Mech 
     h1 {
       font-size: 1.2rem;
     }
-    .right-codeunnati-content-instru,
-    .right-content-instru 
+    .right-codeunnati-content-Mech,
+    .right-content-Mech 
     {
       padding: 10px;
     }
   
-    .left-nav-instru 
+    .left-nav-Mech 
     {
       width: 95%;
       margin: 0 auto;
     }
   
-    .left-nav-row-instru,
-    .left-nav-row-instru-01 {
+    .left-nav-row-Mech,
+    .left-nav-row-Mech-01 {
       font-size: 0.9rem;
     }
   }

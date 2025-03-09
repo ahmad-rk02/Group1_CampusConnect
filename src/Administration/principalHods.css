@@ -39,3 +39,17 @@
   .faculty-info {
     flex: 1;
   }
+
+  @media (max-width: 480px){
+    .left-nav-tender{
+      margin-top: 8%;
+    }
+
+    .faculty-info{
+      width: 90%;
+    }
+
+    .faculty-email{
+      word-wrap: break-word;
+    }
+  }

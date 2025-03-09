@@ -48,7 +48,7 @@ const Abhirang = () => {
                   </Card.Header>
                   <Col xs={12}>
                     <p className="about-text">
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta perspiciatis, obcaecati facilis iusto exercitationem aliquid maxime, commodi nostrum neque ut harum veniam nihil voluptatem rem reiciendis. Quae, ea iure! Vel.
+                    Abhirang 2025 is the vibrant cultural festival of Government College of Engineering, Chandrapur, where talent meets celebration! This electrifying fest is packed with thrilling performances, including dance and singing competitions, orchestra, drama, DJ night, a grand feast, and many more fun-filled activities. Whether you're a performer, a music lover, or just here for the vibes, Abhirang promises unforgettable moments of rhythm, creativity, and joy. Get ready to experience the magic of art and culture like never before! 🎭🎶🔥
                     </p>
                   </Col>
                   <div>

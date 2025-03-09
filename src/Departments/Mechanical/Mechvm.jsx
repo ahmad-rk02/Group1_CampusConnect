@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
-import './INSTRUvm.css';
+import './Mechvm.css';
 import lab1 from '../../assets/i1.jpg';
 import lab2 from '../../assets/i1.jpg';
 import lab3 from '../../assets/i2.jpg';
@@ -12,16 +12,15 @@ import lab8 from '../../assets/i6.jpg';
 import lab9 from '../../assets/i7.jpg';
 import lab10 from '../../assets/i8.jpg';
 
-const INSTRUvm = ({ className }) => {
-  const INSTRUTable = [
+const Mechvm = ({ className }) => {
+  const MechTable = [
     {  facility: 'Number of Classrooms', quantity: '03'},
     {  facility: 'Number of Laboratories', quantity: '10'},
-    {  facility: 'Tutorial Rooms', quantity: '01'},
-    {  facility: 'Faculty Cabins', quantity: '08'},
-    {  facility: 'Number of Computers', quantity: '45'},
+    {  facility: 'Tutorial Rooms', quantity: '03'},
+    {  facility: 'Faculty Cabins', quantity: '14'},
+    {  facility: 'Number of Computers', quantity: '40'},
     {  facility: 'Number of Projectors', quantity: '04'},
-    {  facility: 'Number of laptops', quantity: '06'},
-    {  facility: 'Digital library', quantity: '01'},
+    {  facility: 'Number of laptops', quantity: '03'},
     {  facility: 'Seminar hall', quantity: '01'},
   ];
   
@@ -44,12 +43,12 @@ const INSTRUvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="instru-intro">
-        <div className="instru-intro-heading">
-          <h3>Instrumentation Engineering</h3>
+      <div className="Mech-intro">
+        <div className="Mech-intro-heading">
+          <h3>Mechanical Engineering</h3>
         </div>
 
-        <div className="instru-intro-box">
+        <div className="Mech-intro-box">
           <p className="first-para-small">
             The department focuses on creating skilled professionals, preparing students for industry, and developing their skills.
           </p>
@@ -65,56 +64,56 @@ const INSTRUvm = ({ className }) => {
           </div>
         </div>
         <div className='course-outcome'>
-            <a href='https://www.gcoec.ac.in/gcoec/cos/IE_CO.pdf'>Department course-outcome</a>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/Mech_Course%20Outcomes.pdf'>Department course-outcome</a>
             </div>
       </div>
 
-      <div className="instru-vision">
-        <div className="instru-vision-heading">
+      <div className="Mech-vision">
+        <div className="Mech-vision-heading">
           <h3>Vision</h3>
         </div>
 
         <div className="vision-content">
           <p>
-          The department of Instrumentation engineering envisions to emerge as an innovator in the field of industrial automation and product development.
+          To be the most most sought after academic centre that transforms students in to globally competent Mechanical Engineers for industry and society.
           </p>
         </div>
       </div>
 
-      <div className="instru-mission">
-        <div className="instru-mission-heading">
+      <div className="Mech-mission">
+        <div className="Mech-mission-heading">
           <h3>Mission</h3>
         </div>
 
         <div className="mission-content">
           <ul>
-            <li>To educate and train Instrumentation Engineering students to be motivated, proactive and professionally developed individuals for successful employment/self-employment.</li>
-            <li>To inculcate students with fundamental engineering base for the development of component, products and systems.</li>
-            <li>To train students to undertake global challenges by adapting safe practices.</li>
+            <li>To facilitate environment for students and faculty to excel in the field of mechanical engineering.</li>
+            <li>To strengthen students to meet intellectual, ethical and career challenges in employment/self-employment.</li>
+            <li>To develop collaborations with industries, research & development organizations and educational institutions for excellence in teaching, research and consultancy practices.</li>
             
           </ul>
         </div>
         <div className='course-outcome'>
-            <a href='https://www.gcoec.ac.in/gcoec/cos/Instru-Vision%20mission%20PEO%20PSO-1.pdf'>Department PEO's & PSO</a>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/mech-Vision-Mission-PEOs-POs-PSOs.pdf'>Department PEO's & PSO</a>
             </div>
         </div>
       
-      <div className='infra-instru'>
-      <div className="instru-infra-head">
+      <div className='infra-Mech'>
+      <div className="Mech-infra-head">
           <h3>Infrastructure</h3>
         </div>
-        <Table className='instru-table' striped bordered hover>
-                      <thead  className='table-header-instru'>
+        <Table className='Mech-table' striped bordered hover>
+                      <thead  className='table-header-Mech'>
                         <tr>
                           <th>Facility</th>
                           <th>Quantity</th>
                         </tr>
                       </thead>
-                      <tbody className="table-body-instru">
-                        {INSTRUTable.map((prog) => (
+                      <tbody className="table-body-Mech">
+                        {MechTable.map((prog) => (
                           <tr>
                             
-                            <td className='name-instru-prog'>{prog.facility}</td>
+                            <td className='name-Mech-prog'>{prog.facility}</td>
                             <td>{prog.quantity}</td>
                             
                           </tr>
@@ -122,15 +121,15 @@ const INSTRUvm = ({ className }) => {
                       </tbody>
                     </Table>
                     <div className='right-'>
-      <div className='infra-instru'>
-        <div className='instru-mi-heading'>
+      <div className='infra-Mech'>
+        <div className='Mech-mi-heading'>
           <h3>Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
-          <div key={lab.id} className='lab-instru'>
+          <div key={lab.id} className='lab-Mech'>
             <h4>{lab.id}. {lab.name}</h4>
-            <img src={lab.img} alt={lab.name} className='lab-img-instru' />
-            <div className='lab-eq-instru'>
+            <img src={lab.img} alt={lab.name} className='lab-img-Mech' />
+            <div className='lab-eq-Mech'>
               <h5>Equipment:</h5>
               <p>{lab.equipment}</p>
             </div>
@@ -147,4 +146,4 @@ const INSTRUvm = ({ className }) => {
   );
 };
 
-export default INSTRUvm;
+export default Mechvm;

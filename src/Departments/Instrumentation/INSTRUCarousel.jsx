@@ -7,20 +7,19 @@ import Carousel from 'react-bootstrap/Carousel';
 // const cseCarousel03 = require('../assets/cse-carousel-03.jpg');
 // const cseCarousel04 = require('../assets/cse-carousel-04.jpg');
 
-import cseCarousel01 from '../../assets/cse-carousel-01.jpg';
-import cseCarousel02 from '../../assets/cse-carousel-02.jpg';
-import cseCarousel03 from '../../assets/cse-carousel-03.jpg';
-import cseCarousel04 from '../../assets/cse-carousel-04.jpg';
-import cseCarousel05 from '../../assets/cse-carousel-05.jpg';
-import cseCarousel06 from '../../assets/cse-carousel-06.jpg';
-import cseCarousel07 from '../../assets/cse-carousel-07.jpg';
-
+import cseCarousel01 from '../../assets/instru7.jpg';
+import cseCarousel02 from '../../assets/instru1.jpg';
+import cseCarousel03 from '../../assets/instru3.jpg';
+import cseCarousel04 from '../../assets/instru4.jpg';
+import cseCarousel05 from '../../assets/instru6.jpg';
+import cseCarousel06 from '../../assets/instru2.jpg';
+import cseCarousel07 from '../../assets/instru5.jpg';
 
 function INSTRUCarousel() {
   return (
     <div>
 
-      <Carousel interval={2000} className='cse-carousel w-100'>
+      <Carousel interval={1500} className='cse-carousel w-100'>
         <Carousel.Item>
           <img
 
@@ -65,22 +64,20 @@ function INSTRUCarousel() {
             alt="Fifth slide"
           />
         </Carousel.Item>
-
         <Carousel.Item>
           <img
 
             className="d-block "
             src={cseCarousel06}
-            alt="Sixth slide"
+            alt="sixth slide"
           />
         </Carousel.Item>
-
         <Carousel.Item>
           <img
 
             className="d-block "
             src={cseCarousel07}
-            alt="Seventh slide"
+            alt="seventh slide"
           />
         </Carousel.Item>
       </Carousel>

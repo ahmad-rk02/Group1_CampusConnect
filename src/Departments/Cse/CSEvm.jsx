@@ -69,6 +69,85 @@ const CSEvm = ({ className }) => {
             <li>To fulfill the expectations of society by creating resourceful and responsible engineers.</li>
           </ul>
         </div>
+        <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE-Vision%20mission%20PEO%20PSO.pdf'>Department PEO's & PSO</a>
+            </div>
+      </div>
+      <div className='infra-cse'>
+            <div className="cse-infra-head">
+                <h3>Infrastructure</h3>
+              </div>
+              <Table className='cse-table' striped bordered hover>
+                            <thead  className='table-header-cse'>
+                              <tr>
+                                <th>Facility</th>
+                                <th>Quantity</th>
+                              </tr>
+                            </thead>
+                            <tbody className="table-body-cse">
+                              {CSETable.map((prog) => (
+                                <tr>
+                                  
+                                  <td className='name-cse-prog'>{prog.facility}</td>
+                                  <td>{prog.quantity}</td>
+                                  
+                                </tr>
+                              ))}
+                            </tbody>
+                          </Table>
+                          <div className='right-'>
+      <div className='infra-cse'>
+        <div className='headlab'>
+          <h1>Laboratories</h1>
+        </div>
+        <div>
+                    <div className='lab-1'> 
+                    <h4>01.Computer Laboratory-118 </h4>
+                    </div>
+                    <img
+                    src={lab1}
+                    alt="lab-1"
+                    className="lab-img2"
+                  /><div className="lab-eq">
+                  <h5>Equipment:</h5>
+                  <p>
+                  Desktop,Computer, 
+                  Printer,Scanner
+                  </p>
+                  </div>
+                  <div className='lab-2'> 
+                    <h4>02.Computer Laboratory-119 </h4>
+                    </div>
+                    <img
+                    src={lab2}
+                    alt="lab-1"
+                    className="lab-img2"
+                  />
+                  <div className="lab-eq">
+                  <h5>Equipment:</h5>
+                  <p>
+                  Desktop,
+                  Computer, 
+                  Printer
+                  </p>
+                  </div><div className='lab-2'> 
+                    <h4>03.Computer Laboratory-120 </h4>
+                    </div>
+                    <img
+                    src={lab3}
+                    alt="lab-1"
+                    className="lab-img2"
+                  />
+                  <div className="lab-eq">
+                  <h5>Equipment:</h5>
+                  <p>
+                  Desktop,Computer, 
+                  Printer
+                  </p>
+                  </div>
+                  </div>
+        </div>
+      </div>
       </div>
     </div>
   );

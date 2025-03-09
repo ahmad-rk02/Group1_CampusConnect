@@ -7,6 +7,7 @@
   
   /* Carousel Styling */
   .custom-carousel {
+    margin-block: 5%;
     max-width: 100%;
     border-radius: 10px;
     overflow: hidden;
