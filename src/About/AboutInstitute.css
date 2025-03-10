@@ -166,6 +166,11 @@
     margin-inline: 0;
   }
 
+  .left-nav-ai{
+    width: 100%;
+    margin-inline: 7%;
+  }
+
   a.active-link{
     font-size: 1.2rem;
   }
