@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from 'axios';
 import './Navbar.css';
 
 function Navbar({ imageSrcPath, navItems }) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
   const [query, setQuery] = useState('');
+  const [marqueeEvents, setMarqueeEvents] = useState([]);
   const navigate = useNavigate();
+
+  const STRAPI_API_URL = 'http://localhost:1337/api/gec-announcement-bars';
+  const STRAPI_BASE_URL = 'http://localhost:1337';
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get(STRAPI_API_URL, {
+          params: {
+            sort: 'createdAt:desc',
+            populate: 'link',
+          },
+        });
+        setMarqueeEvents(response.data.data);
+      } catch (error) {
+        console.error('Error fetching events from Strapi:', error);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   const handleSearch = (event) => {
     event.preventDefault();
-
-    // Simple search logic
     const lowerQuery = query.toLowerCase();
     const routes = {
       home: '/home',
@@ -26,7 +46,6 @@ function Navbar({ imageSrcPath, navItems }) {
       contact: '/contact',
       grievance: '/login'
     };
-
     if (routes[lowerQuery]) {
       navigate(routes[lowerQuery]);
     } else {
@@ -36,16 +55,13 @@ function Navbar({ imageSrcPath, navItems }) {
 
   useEffect(() => {
     const dropdowns = document.querySelectorAll('.dropdown-submenu .dropdown-toggle');
-
     dropdowns.forEach((dropdown) => {
       dropdown.addEventListener('click', function (e) {
         e.preventDefault();
         e.stopPropagation();
-
         const subMenu = this.nextElementSibling;
         if (subMenu) {
           subMenu.classList.toggle('show');
-        }if (subMenu) {
           subMenu.classList.toggle('hide');
         }
       });
@@ -88,30 +104,25 @@ function Navbar({ imageSrcPath, navItems }) {
         "News & Events": "/newsevents",
         "Principal & HOD": "/principalHods",
         "Student Section": "/studentSection",
-          "Office":"/Office",
-        "Training & Placements":"/tpopage"
+        "Office": "/Office",
+        "Training & Placements": "/tpopage"
       };
-
       if (typeof subLink === "string") {
         const isExternal = routeMap[subLink] && (routeMap[subLink].startsWith("http://") || routeMap[subLink].startsWith("https://"));
-
-        // Handle external links
         if (isExternal) {
           return (
             <li key={subIndex}>
               <a
                 href={routeMap[subLink]}
                 className="dropdown-item"
-                target="_blank"  // Open link in a new tab
-                rel="noopener noreferrer"  // Security for opening new tab
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {subLink}
               </a>
             </li>
           );
         }
-
-        // Handle internal links
         return (
           <li key={subIndex}>
             <Link to={routeMap[subLink] || `/${subLink.toLowerCase().replace(/ /g, '-')}`} className="dropdown-item">
@@ -138,6 +149,13 @@ function Navbar({ imageSrcPath, navItems }) {
     });
   };
 
+  const isRecentEvent = (createdAt) => {
+    const eventDate = new Date(createdAt);
+    const now = new Date();
+    const diffInDays = (now - eventDate) / (1000 * 60 * 60 * 24);
+    return diffInDays <= 7;
+  };
+
   return (
     <div className="main-div" style={{ display: 'block' }}>
       <nav className="d-flex navbar navbar-expand-xl">
@@ -162,7 +180,7 @@ function Navbar({ imageSrcPath, navItems }) {
           >
             <span className="navbar-toggler-icon" />
           </button>
-          <div className="collapse navbar-collapse " id="navbarSupportedContent">
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
               {navItems.map((item, index) => (
                 <li
@@ -215,24 +233,47 @@ function Navbar({ imageSrcPath, navItems }) {
             </form>
           </div>
         </div>
-
       </nav>
 
       <div className="marquee-container">
         <div className="marquee-text">
-          <a className="event-links-nav " href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_Girls%20Quarter_Allotment%20List_2024-25.pdf'>First Year Girls Quarter Allotment List 2024-25</a>
-          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/First%20Year_%20Girls%20Quarter_%20Allotment%20List(%20Against%20Cancellation)_2024-25.pdf'>First Year Girls Quarter Allotment List( Against Cancellation) 2024-25</a>
-          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-          <a className="event-links-nav" href='https://docs.google.com/forms/d/e/1FAIpQLSc8majz1zChMy755RbmPX1P1-pnOy9FNDkxqptIz29ge9cQuA/viewform'>ADDITIONAL INSTITUTE LEVEL SPOT ROUND (DIRECT SECOND YEAR ENGINEERING) ON 19/10/2024</a>
-          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/Direct%20Second%20Year_Hostel%20Allotment%20List%20_%20Against%20Cancellation_2024-25.pdf'>Direct Second Year Hostel Allotment List-Against Cancellation-2024-25</a>
-          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-          <a className="event-links-nav" href='https://www.gcoec.ac.in/gcoec/PDF/DSE%20INSTITUTE%20level%20merit%20list%202024%2025.pdf'>DSE INSTITUTE level merit list 2024-25</a>
-          <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+          {marqueeEvents.map((event, eventIndex) => (
+            <React.Fragment key={eventIndex}>
+              {event.link && event.link.length > 0 ? (
+                event.link.map((linkItem, linkIndex) => (
+                  <React.Fragment key={linkIndex}>
+                    <a 
+                      className="event-links-nav" 
+                      href={`${STRAPI_BASE_URL}${linkItem.url}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {event.title}
+                    </a>
+                    {isRecentEvent(event.createdAt) && (
+                      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+                    )}
+                  </React.Fragment>
+                ))
+              ) : (
+                <React.Fragment>
+                  <a 
+                    className="event-links-nav" 
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {event.title}
+                  </a>
+                  {isRecentEvent(event.createdAt) && (
+                    <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+                  )}
+                </React.Fragment>
+              )}
+            </React.Fragment>
+          ))}
         </div>
       </div>
-
     </div>
   );
 }

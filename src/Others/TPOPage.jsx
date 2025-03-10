@@ -1,23 +1,37 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Card, ListGroup, Table, Carousel, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, ListGroup, Table, Carousel, Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
+import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // For green tick and exclamation mark
 import "./TPOPage.css";
 
-const STRAPI_URL = "http://localhost:1337/api/";
-const BASE_URL = "http://localhost:1337";
+const STRAPI_URL = "http://localhost:1337/api/"; // Update to your Strapi Cloud URL if hosted
+const BASE_URL = "http://localhost:1337"; // Update to your Strapi Cloud base URL if hosted
 
 const TPOPage = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState("");
-  const [newsOffset, setNewsOffset] = useState(0); 
-  const NEWS_PER_PAGE = 3; 
+  const [newsOffset, setNewsOffset] = useState(0);
+  const NEWS_PER_PAGE = 3;
+
+  // State for feedback form
+  const [feedback, setFeedback] = useState({
+    name: "",
+    department: "",
+    year: "",
+    prn: "",
+    message: ""
+  });
+  const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
+  const [feedbackError, setFeedbackError] = useState(null);
+  const [feedbackSuccess, setFeedbackSuccess] = useState(false);
+  const [showModal, setShowModal] = useState(false); // For popup
 
   useEffect(() => {
     const collectionEndpoints = [
       "placement-records", "training-programs", "tpo-photo-galleries",
       "tpo-activities", "tpo-internships", "tpo-reports", "tpo-brochures",
-      "tpo-news", "tpo-mous", "tpo-placement-policies", "tpo-nocs","tpo-staffs", "tpo-offices"
+      "tpo-news", "tpo-mous", "tpo-placement-policies", "tpo-nocs", "tpo-staffs", "tpo-offices"
     ];
 
     const fetchData = async () => {
@@ -59,11 +73,9 @@ const TPOPage = () => {
     return years.sort((a, b) => b - a);
   };
 
-  // Helper function to render rich text description
   const renderDescription = (description) => {
     if (!description) return "No description available";
     if (!Array.isArray(description)) return "Invalid description format";
-
     return description.map((paragraph, index) => {
       if (!paragraph.children || !Array.isArray(paragraph.children)) {
         return (
@@ -81,7 +93,6 @@ const TPOPage = () => {
     });
   };
 
-  // Navigation handlers for news items
   const handlePrevNews = () => {
     setNewsOffset((prev) => Math.max(prev - NEWS_PER_PAGE, 0));
   };
@@ -90,6 +101,58 @@ const TPOPage = () => {
     const totalNews = data["tpo-news"]?.length || 0;
     setNewsOffset((prev) => Math.min(prev + NEWS_PER_PAGE, totalNews - NEWS_PER_PAGE));
   };
+
+  // Handle feedback input changes
+  const handleFeedbackChange = (e) => {
+    const { name, value } = e.target;
+    setFeedback((prev) => ({ ...prev, [name]: value }));
+  };
+
+  // Validate PRN (16 digits)
+  const validatePRN = (prn) => {
+    const prnRegex = /^\d{16}$/;
+    return prnRegex.test(prn);
+  };
+
+  // Submit feedback to Strapi
+  const handleFeedbackSubmit = async (e) => {
+    e.preventDefault();
+    setFeedbackSubmitting(true);
+    setFeedbackError(null);
+    setFeedbackSuccess(false);
+
+    // Validate PRN
+    if (!validatePRN(feedback.prn)) {
+      setFeedbackError("PRN must be exactly 16 digits.");
+      setFeedbackSubmitting(false);
+      setShowModal(true);
+      return;
+    }
+
+    try {
+      const response = await axios.post(`${STRAPI_URL}tpo-feedbacks`, {
+        data: {
+          name: feedback.name,
+          department: feedback.department,
+          year: feedback.year,
+          prn: feedback.prn,
+          message: feedback.message
+        }
+      });
+      console.log("Feedback submitted successfully:", response.data);
+      setFeedbackSuccess(true);
+      setFeedback({ name: "", department: "", year: "", prn: "", message: "" }); // Reset form
+      setShowModal(true); // Show success popup
+    } catch (error) {
+      console.error("Error submitting feedback to Strapi:", error);
+      setFeedbackError("Failed to submit feedback. Please try again.");
+      setShowModal(true); // Show error popup
+    } finally {
+      setFeedbackSubmitting(false);
+    }
+  };
+
+  const handleCloseModal = () => setShowModal(false);
 
   return (
     <Container fluid className="p-0 tpo-container">
@@ -116,6 +179,7 @@ const TPOPage = () => {
                 { name: "TPO MoUs", id: "tpo-mous" },
                 { name: "TPO Placement Policy", id: "tpo-placement-policies" },
                 { name: "TPO NOC", id: "tpo-nocs" },
+                { name: "TPO Feedback", id: "tpo-feedback" },
                 { name: "TPO Contact", id: "tpo-contact" }
               ].map((item, index) => (
                 <ListGroup.Item
@@ -422,7 +486,7 @@ const TPOPage = () => {
                         disabled={newsOffset === 0}
                         className="news-arrow"
                       >
-                        &larr;
+                        ←
                       </Button>
                     </Col>
                     <Col xs={10}>
@@ -456,7 +520,7 @@ const TPOPage = () => {
                         disabled={newsOffset + NEWS_PER_PAGE >= data["tpo-news"].length}
                         className="news-arrow"
                       >
-                        &rarr;
+                        →
                       </Button>
                     </Col>
                   </Row>
@@ -534,14 +598,112 @@ const TPOPage = () => {
                 <p className="text-muted text-center">Error: Invalid MOUs data</p>
               )}
             </section>
-            
+
+            <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Feedback</h2>
+              <Card className="shadow-sm rounded-3 border-0">
+                <Card.Body className="p-3 p-md-4">
+                  <Form onSubmit={handleFeedbackSubmit}>
+                    <Row className="g-3">
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="feedbackName">
+                          <Form.Label>Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="name"
+                            value={feedback.name}
+                            onChange={handleFeedbackChange}
+                            placeholder="Enter your name"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="feedbackDepartment">
+                          <Form.Label>Department</Form.Label>
+                          <Form.Select
+                            name="department"
+                            value={feedback.department}
+                            onChange={handleFeedbackChange}
+                            required
+                          >
+                            <option value="">Select Department</option>
+                            <option value="Computer Science and Engineering">Computer Science and Engineering</option>
+                            <option value="Civil Engineering">Civil Engineering</option>
+                            <option value="Electrical Engineering">Electrical Engineering</option>
+                            <option value="Electronics and Telecommunication Engineering">Electronics and Telecommunication Engineering</option>
+                            <option value="Instrumentation Engineering">Instrumentation Engineering</option>
+                            <option value="Mechanical Engineering">Mechanical Engineering</option>
+                          </Form.Select>
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="feedbackYear">
+                          <Form.Label>Year</Form.Label>
+                          <Form.Select
+                            name="year"
+                            value={feedback.year}
+                            onChange={handleFeedbackChange}
+                            required
+                          >
+                            <option value="">Select Year</option>
+                            <option value="First">First</option>
+                            <option value="Second">Second</option>
+                            <option value="Third">Third</option>
+                            <option value="Final">Final</option>
+                          </Form.Select>
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="feedbackPRN">
+                          <Form.Label>PRN</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="prn"
+                            value={feedback.prn}
+                            onChange={handleFeedbackChange}
+                            placeholder="Enter 16-digit PRN"
+                            maxLength={16}
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12}>
+                        <Form.Group controlId="feedbackMessage">
+                          <Form.Label>Message</Form.Label>
+                          <Form.Control
+                            as="textarea"
+                            rows={3}
+                            name="message"
+                            value={feedback.message}
+                            onChange={handleFeedbackChange}
+                            placeholder="Enter your feedback"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12}>
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          disabled={feedbackSubmitting}
+                          className="mt-3"
+                        >
+                          {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                        </Button>
+                      </Col>
+                    </Row>
+                  </Form>
+                </Card.Body>
+              </Card>
+            </section>
+
             <section id="tpo-contact" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Contact</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading contact details...</p>
               ) : (
                 <>
-                  {/* TPO Staff */}
                   <h3 className="fw-bold mb-3">TPO Staff</h3>
                   {Array.isArray(data["tpo-staffs"]) && data["tpo-staffs"].length > 0 ? (
                     <Row className="g-3">
@@ -575,7 +737,6 @@ const TPOPage = () => {
                     <p className="text-muted text-center">No staff details available</p>
                   )}
 
-                  {/* TPO Office */}
                   <h3 className="fw-bold mb-3 mt-4">TPO Office</h3>
                   {Array.isArray(data["tpo-offices"]) && data["tpo-offices"].length > 0 ? (
                     data["tpo-offices"].map((office, index) => (
@@ -626,6 +787,28 @@ const TPOPage = () => {
           </div>
         </Col>
       </Row>
+
+      {/* Success/Error Modal */}
+      <Modal show={showModal} onHide={handleCloseModal} centered>
+        <Modal.Body className="text-center">
+          {feedbackSuccess ? (
+            <>
+              <FaCheckCircle size={50} color="green" className="mb-3" />
+              <h5>Successfully Submitted</h5>
+              <p>Your feedback has been submitted successfully!</p>
+            </>
+          ) : (
+            <>
+              <FaExclamationCircle size={50} color="red" className="mb-3" />
+              <h5>Not Successfully Submitted</h5>
+              <p>{feedbackError}</p>
+            </>
+          )}
+          <Button variant="primary" onClick={handleCloseModal}>
+            Close
+          </Button>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };
