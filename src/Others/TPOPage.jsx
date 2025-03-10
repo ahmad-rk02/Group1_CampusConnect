@@ -10,8 +10,8 @@ const TPOPage = () => {
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedYear, setSelectedYear] = useState("");
-  const [newsOffset, setNewsOffset] = useState(0); // State to track the current offset for news items
-  const NEWS_PER_PAGE = 3; // Number of news items to display at a time
+  const [newsOffset, setNewsOffset] = useState(0); 
+  const NEWS_PER_PAGE = 3; 
 
   useEffect(() => {
     const collectionEndpoints = [
