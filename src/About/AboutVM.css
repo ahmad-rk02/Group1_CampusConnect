@@ -161,9 +161,9 @@ color: black;
     margin-inline: 0;
   }
 
-  .left-sidebar-vm{
-    padding-inline: 12.7%;
-    width: 100%;
+  .left-nav-vm{
+    width: 67%;
+    margin-inline: 17%;
   }
 
   .content-card-vm{
