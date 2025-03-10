@@ -17,7 +17,7 @@ const TPOPage = () => {
     const collectionEndpoints = [
       "placement-records", "training-programs", "tpo-photo-galleries",
       "tpo-activities", "tpo-internships", "tpo-reports", "tpo-brochures",
-      "tpo-news", "tpo-mous", "tpo-placement-policies", "tpo-nocs"
+      "tpo-news", "tpo-mous", "tpo-placement-policies", "tpo-nocs","tpo-staffs", "tpo-offices"
     ];
 
     const fetchData = async () => {
@@ -115,7 +115,8 @@ const TPOPage = () => {
                 { name: "TPO News", id: "tpo-news" },
                 { name: "TPO MoUs", id: "tpo-mous" },
                 { name: "TPO Placement Policy", id: "tpo-placement-policies" },
-                { name: "TPO NOC", id: "tpo-nocs" }
+                { name: "TPO NOC", id: "tpo-nocs" },
+                { name: "TPO Contact", id: "tpo-contact" }
               ].map((item, index) => (
                 <ListGroup.Item
                   key={index}
@@ -309,9 +310,6 @@ const TPOPage = () => {
                                 : "https://via.placeholder.com/800x400?text=No+Image"}
                               alt={img.caption || `Photo ${index + 1}`}
                             />
-                            <Carousel.Caption className="carousel-caption-custom">
-                              <h3>{photo.year}</h3>
-                            </Carousel.Caption>
                           </Carousel.Item>
                         ))
                       )}
@@ -534,6 +532,95 @@ const TPOPage = () => {
                 )
               ) : (
                 <p className="text-muted text-center">Error: Invalid MOUs data</p>
+              )}
+            </section>
+            
+            <section id="tpo-contact" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Contact</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading contact details...</p>
+              ) : (
+                <>
+                  {/* TPO Staff */}
+                  <h3 className="fw-bold mb-3">TPO Staff</h3>
+                  {Array.isArray(data["tpo-staffs"]) && data["tpo-staffs"].length > 0 ? (
+                    <Row className="g-3">
+                      {data["tpo-staffs"].map((staff, index) => (
+                        <Col xs={12} md={6} key={staff.id || index}>
+                          <Card className="shadow-sm rounded-3 border-0 h-100">
+                            <Card.Body className="p-3">
+                              <Card.Title className="fw-bold">{staff.name || "N/A"}</Card.Title>
+                              <Card.Subtitle className="mb-2 text-muted">
+                                {staff.designation || "N/A"}
+                              </Card.Subtitle>
+                              <p><strong>Department:</strong> {staff.description || "N/A"}</p>
+                              <p>
+                                <strong>Email:</strong>{" "}
+                                <a href={`mailto:${staff.email}`} className="text-primary">
+                                  {staff.email || "N/A"}
+                                </a>
+                              </p>
+                              <p>
+                                <strong>Mobile:</strong>{" "}
+                                <a href={`tel:${staff.mobile}`} className="text-primary">
+                                  {staff.mobile || "N/A"}
+                                </a>
+                              </p>
+                            </Card.Body>
+                          </Card>
+                        </Col>
+                      ))}
+                    </Row>
+                  ) : (
+                    <p className="text-muted text-center">No staff details available</p>
+                  )}
+
+                  {/* TPO Office */}
+                  <h3 className="fw-bold mb-3 mt-4">TPO Office</h3>
+                  {Array.isArray(data["tpo-offices"]) && data["tpo-offices"].length > 0 ? (
+                    data["tpo-offices"].map((office, index) => (
+                      <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
+                        <Card.Body className="p-3">
+                          <Card.Title className="fw-bold">{office.office_name || "N/A"}</Card.Title>
+                          <p>{office.room_details || "N/A"}</p>
+                          <p>{office.institute_name || "N/A"}</p>
+                          <p>
+                            <strong>Phone:</strong>{" "}
+                            <a href={`tel:${office.phone}`} className="text-primary">
+                              {office.phone || "N/A"}
+                            </a>
+                          </p>
+                          <p><strong>Fax:</strong> {office.fax || "N/A"}</p>
+                          <p>
+                            <strong>Principal Email:</strong>{" "}
+                            <a href={`mailto:${office.principal_email}`} className="text-primary">
+                              {office.principal_email || "N/A"}
+                            </a>
+                          </p>
+                          <p>
+                            <strong>TPO Email:</strong>{" "}
+                            <a href={`mailto:${office.tpo_email}`} className="text-primary">
+                              {office.tpo_email || "N/A"}
+                            </a>
+                          </p>
+                          <p>
+                            <strong>Website:</strong>{" "}
+                            <a
+                              href={office.website ? office.website : "#"}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary"
+                            >
+                              {office.website || "N/A"}
+                            </a>
+                          </p>
+                        </Card.Body>
+                      </Card>
+                    ))
+                  ) : (
+                    <p className="text-muted text-center">No office details available</p>
+                  )}
+                </>
               )}
             </section>
           </div>
