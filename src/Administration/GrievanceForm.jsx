@@ -147,7 +147,7 @@ const GrievanceForm = () => {
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/principalHods"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Principal and HOD
@@ -155,7 +155,7 @@ const GrievanceForm = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/studentSection"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Student Section
@@ -163,7 +163,7 @@ const GrievanceForm = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/office"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Office

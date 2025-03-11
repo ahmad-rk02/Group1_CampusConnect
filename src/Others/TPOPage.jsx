@@ -688,7 +688,7 @@ const TPOPage = () => {
                           variant="primary"
                           type="submit"
                           disabled={feedbackSubmitting}
-                          className="mt-3"
+                          className="mt-3 feedback-form"
                         >
                           {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
                         </Button>
@@ -805,7 +805,7 @@ const TPOPage = () => {
               <p>{feedbackError}</p>
             </>
           )}
-          <Button variant="primary" onClick={handleCloseModal}>
+          <Button variant="primary" onClick={handleCloseModal} className="feedback-form">
             Close
           </Button>
         </Modal.Body>

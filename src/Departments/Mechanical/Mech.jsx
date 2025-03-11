@@ -2,6 +2,7 @@
 import MechCarousel from '../../Departments/Mechanical/MechCarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import './Mech.css'
+import MechFaculty from './MechFaculty';
 import { Link } from 'react-router-dom';
 import Mechvm from '../../Departments/Mechanical/Mechvm';
 
@@ -31,7 +32,7 @@ const Mech = () => {
           <ListGroup.Item className="left-nav-row-Mech-01">
             <Link
               to="/cse"
-              className={location.pathname === "" ? "active-link" : "/cse"}
+              className={location.pathname === "/cse" ? "active-link" : "/cse"}
             >
               Computer Science & Engineering
             </Link>
@@ -47,7 +48,7 @@ const Mech = () => {
           <ListGroup.Item className="left-nav-row-Mech">
             <Link
               to="/instru"
-              className={location.pathname === "" ? "active-link" : "/instru"}
+              className={location.pathname === "/instru" ? "active-link" : "/instru"}
             >
               Instrumentation Engineering
             </Link>
@@ -63,7 +64,7 @@ const Mech = () => {
           <ListGroup.Item className="left-nav-row-Mech">
             <Link
               to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              className={location.pathname === "/mech" ? "active-link" : ""}
             >
               <b>Mechanical Engineering</b>
             </Link>
@@ -79,7 +80,7 @@ const Mech = () => {
           <ListGroup.Item className="left-nav-row-Mech">
             <Link
               to="/workshop"
-              className={location.pathname === "" ? "active-link" : "/workshop"}
+              className={location.pathname === "/workshop" ? "active-link" : "/workshop"}
             >
               Workshop
             </Link>
@@ -95,7 +96,11 @@ const Mech = () => {
              
 <div >
               <Mechvm className='Mech-vision-mission' />
-            </div>       
+            </div>  
+
+            <div className="facultyDetails">
+              <MechFaculty />
+            </div>     
             
           </Col>
 </Row>
