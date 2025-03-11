@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faEyeSlash, faCheckCircle, faExclamationCircle } from '@fortawesome/free-solid-svg-icons';
 import './AdminLogin.css';
 import Gec from '../assets/Gec.png';
 import axios from 'axios';
@@ -11,76 +11,65 @@ const LoginForm = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    dte: '',
-    password: '',
-  });
+  const [formData, setFormData] = useState({ dte: '', password: '' });
   const [error, setError] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false); // Loading state
+  const [isLoading, setIsLoading] = useState(false);
+  
+  // Modal State
+  const [showModal, setShowModal] = useState(false);
+  const [modalMessage, setModalMessage] = useState({ text: '', icon: null });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name === 'dte' && /[^0-9]/.test(value)) {
       setError('DTE Number should contain only numbers.');
       return;
     } else {
       setError('');
     }
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
-
 
   const togglePasswordVisibility = () => {
     setShowPassword((prev) => !prev);
   };
+
   const handleSubmit = async (e) => {
-    console.log("clicked")
     e.preventDefault();
   
-    let errorMessages = []; // Array to hold error messages
-  
-    if (formData.dte=='') {
-      setError('DTE is required.');
+    if (!formData.dte || !formData.password) {
+      setError('DTE and Password are required.');
       return;
     }
-  
-    if (formData.password=='') {
-      setError('Password is required.');
-      return;
-    }
-    // If there are any error messages, display them
-    if (errorMessages.length > 0) {
-      setError(errorMessages.join(' ')); 
-      return;
-    }
-  
-    setIsLoading(true); // Set loading to true
+
+    setIsLoading(true);
+
     try {
       const response = await axios.post('http://localhost:5000/api/users/admin/login', {
         dte: formData.dte,
         password: formData.password,
       });
-  
-      if (response.status === 200) {
-        const token = response.data.token;
 
-        // Save the token in local storage
-        localStorage.setItem('authToken', token);
-        navigate('/adminprofile');
+      if (response.status === 200) {
+        localStorage.setItem('authToken', response.data.token);
+        setModalMessage({ text: 'Login Successful!', icon: faCheckCircle });
+        setShowModal(true);
+
+        setTimeout(() => {
+          setShowModal(false);
+          navigate('/adminprofile');
+        }, 2000);
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      setModalMessage({ text: 'Login Denied!', icon: faExclamationCircle });
+      setShowModal(true);
       setError(error.response?.data?.message || 'Invalid Credentials');
     } finally {
-      setIsLoading(false); // Set loading back to false
+      setIsLoading(false);
     }
   };
+
   return (
     <Container fluid className="p-0 w-100">
       <Row className='head-box-loginA'>
@@ -89,40 +78,16 @@ const LoginForm = () => {
         </Col>
       </Row>
 
-      <Row noGutters className="flex-nowrap left-index-loginA just">
+      <Row className="flex-nowrap left-index-loginA just">
         <Col md={2} className='left-sidebar-loginA'>
           <Card className="left-nav-loginA">
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Principal and HOD
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Student Section
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                  Office
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
-                  Committees
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA">
-                <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
-                  Tenders
-                </Link>
-              </ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA-01">
-                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
-                  Grievance Form
-                </Link>
-              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Principal and HOD</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Student Section</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Office</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA"><Link to="/committees">Committees</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA"><Link to="/tenders">Tenders</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA-01"><Link to="/login">Grievance Form</Link></ListGroup.Item>
             </ListGroup>
           </Card>
         </Col>
@@ -149,7 +114,6 @@ const LoginForm = () => {
                     onChange={handleChange}
                     placeholder="DTE number"
                     className="login-input"
-                    pattern="[0-9]*"
                   />
                 </Form.Group>
 
@@ -189,6 +153,15 @@ const LoginForm = () => {
           </div>
         </Col>
       </Row>
+
+      {/* Modal for Success or Failure */}
+      <Modal show={showModal} onHide={() => setShowModal(false)} centered>
+        <Modal.Body className="text-center">
+          <FontAwesomeIcon icon={modalMessage.icon} size="3x" color={modalMessage.icon === faCheckCircle ? 'green' : 'red'} />
+          <h4 className="mt-3">{modalMessage.text}</h4>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+        </Modal.Body>
+      </Modal>
     </Container>
   );
 };

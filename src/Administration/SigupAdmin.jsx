@@ -1,14 +1,14 @@
-import React, { useState } from 'react'
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './SignupAdmin.css';
 import Gec from '../assets/Gec.png';
 
 const SignupAdmin = () => {
-  const location = useLocation(); // Get location for active link checks
-  const navigate = useNavigate(); // Initialize navigate
+  const location = useLocation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -20,8 +20,13 @@ const SignupAdmin = () => {
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-  const [showPassword, setShowPassword] = useState(false); // New state for password visibility
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  
+  // New state for modals
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -35,7 +40,6 @@ const SignupAdmin = () => {
     let formErrors = {};
     let valid = true;
 
-    // Check if any field is empty
     for (let field in formData) {
       if (!formData[field]) {
         valid = false;
@@ -43,20 +47,17 @@ const SignupAdmin = () => {
       }
     }
 
-    // Fullname validation
     if (!formData.fullname) {
       valid = false;
       formErrors.fullname = "Full Name is required";
     }
 
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
     }
 
-    // DTE Number validation
     if (!formData.dte) {
       valid = false;
       formErrors.dte = "DTE Number is required";
@@ -65,13 +66,11 @@ const SignupAdmin = () => {
       formErrors.dte = "DTE Number must be a positive number";
     }
 
-    // Committee validation
     if (!formData.committee) {
       valid = false;
       formErrors.committee = "Committee selection is required";
     }
 
-    // Password validation
     if (!formData.password) {
       valid = false;
       formErrors.password = "Password is required";
@@ -80,7 +79,6 @@ const SignupAdmin = () => {
       formErrors.password = "Password must be at least 8 characters long";
     }
 
-    // Confirm Password validation
     if (!formData.confirmPassword) {
       valid = false;
       formErrors.confirmPassword = "Confirm Password is required";
@@ -93,24 +91,22 @@ const SignupAdmin = () => {
     return valid;
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       try {
-        // Sending POST request to the server
         const response = await axios.post('http://localhost:5000/api/users/admin/signup', {
           fullname: formData.fullname,
           email: formData.email,
           dte: formData.dte,
           committee: formData.committee,
-          password: formData.password,   // Include password in the request
+          password: formData.password,
         });
 
         console.log('Response:', response.data);
         setSubmitted(true);
-        alert('Registration successful!');
+        setShowSuccessModal(true); // Show success modal
 
         // Reset the form
         setFormData({
@@ -123,12 +119,10 @@ const SignupAdmin = () => {
         });
         setErrors({});
 
-        // Redirect to StudentForm upon successful registration
-        navigate('/adminlogin');
-
       } catch (error) {
-        if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
-          alert('User already exists. Please try logging in.');
+        if (error.response && error.response.status === 409) {
+          setErrorMessage('User already exists. Please try logging in.');
+          setShowErrorModal(true); // Show error modal for existing user
           // Reset the form
           setFormData({
             fullname: '',
@@ -140,7 +134,8 @@ const SignupAdmin = () => {
           });
         } else {
           console.error('There was an error registering the user:', error);
-          console.log(error.message);
+          setErrorMessage('Registration failed. Please try again later.');
+          setShowErrorModal(true); // Show error modal for other errors
         }
       }
     } else {
@@ -151,7 +146,6 @@ const SignupAdmin = () => {
   return (
     <div>
       <Container fluid className="p-0 w-100">
-        {/* Header Section */}
         <Row className='head-box-Admin-signup'>
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
@@ -159,11 +153,9 @@ const SignupAdmin = () => {
         </Row>
 
         <Row noGutters className="flex-nowrap left-index-Admin-signup just">
-          {/* Left Sidebar */}
           <Col md={2} className='left-sidebar-Admin-signup'>
             <Card className="left-nav-Admin-signup">
               <ListGroup variant="flush">
-                {/* Sidebar Links */}
                 <ListGroup.Item className="left-nav-row-Admin-signup">
                   <Link to="" className={location.pathname === "" ? "active-link" : ""}>
                     Principal and HOD
@@ -260,7 +252,6 @@ const SignupAdmin = () => {
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
 
-
                 <Form.Group controlId="formDTE" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
                   <Form.Control
@@ -274,7 +265,6 @@ const SignupAdmin = () => {
                   {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
                 </Form.Group>
 
-                {/* Password Field */}
                 <Form.Group controlId="formPassword" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Password</Form.Label>
                   <div className="input-group">
@@ -297,7 +287,6 @@ const SignupAdmin = () => {
                   {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                 </Form.Group>
 
-                {/* Confirm Password Field */}
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-Admin-signup">
                   <Form.Label className='field-name-Admin-signup'>Confirm Password</Form.Label>
                   <div className="input-group">
@@ -334,9 +323,64 @@ const SignupAdmin = () => {
             </div>
           </Col>
         </Row>
+
+        {/* Success Modal */}
+        <Modal
+          show={showSuccessModal}
+          onHide={() => {
+            setShowSuccessModal(false);
+            navigate('/adminlogin'); // Redirect to admin login after closing
+          }}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header className="modal-header-success">
+            <Modal.Title>
+              <i className="bi bi-check-circle-fill me-2"></i>
+              Registration Successful!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-body-success">
+            <p>Your admin account has been successfully created. You can now log in to access the dashboard.</p>
+          </Modal.Body>
+          <Modal.Footer className="modal-footer-success">
+            <Button
+              variant="success"
+              onClick={() => {
+                setShowSuccessModal(false);
+                navigate('/adminlogin');
+              }}
+            >
+              Go to Login
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        {/* Error Modal */}
+        <Modal
+          show={showErrorModal}
+          onHide={() => setShowErrorModal(false)}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header className="modal-header-error">
+            <Modal.Title>
+              <i className="bi bi-exclamation-triangle-fill me-2"></i>
+              Registration Failed
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-body-error">
+            <p>{errorMessage}</p>
+          </Modal.Body>
+          <Modal.Footer className="modal-footer-error">
+            <Button variant="danger" onClick={() => setShowErrorModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </div>
-  )
-}
+  );
+};
 
 export default SignupAdmin;

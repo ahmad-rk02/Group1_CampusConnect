@@ -18,10 +18,10 @@ function Navbar({ imageSrcPath, navItems }) {
         const response = await axios.get(STRAPI_API_URL, {
           params: {
             sort: 'createdAt:desc',
-            populate: '*', // Adjusted to avoid specific 'link' population since it's not needed
+            populate: '*', // Populates all related fields, including the pdf media collection
           },
         });
-        setMarqueeEvents(response.data.data); // Directly use data as it’s a collection type
+        setMarqueeEvents(response.data.data); // Store the fetched events
       } catch (error) {
         console.error('Error fetching events from Strapi:', error);
       }
@@ -156,6 +156,14 @@ function Navbar({ imageSrcPath, navItems }) {
     return diffInDays <= 7;
   };
 
+  // Helper function to ensure a valid external URL
+  const ensureValidUrl = (url) => {
+    if (!url) return '#'; // Return default if null or undefined
+    if (url.startsWith('http://') || url.startsWith('https://')) return url;
+    // If no protocol is specified, assume https
+    return `https://${url}`;
+  };
+
   return (
     <div className="main-div" style={{ display: 'block' }}>
       <nav className="d-flex navbar navbar-expand-xl">
@@ -237,39 +245,31 @@ function Navbar({ imageSrcPath, navItems }) {
 
       <div className="marquee-container">
         <div className="marquee-text">
-          {marqueeEvents.map((event, eventIndex) => (
-            <React.Fragment key={eventIndex}>
-              {event.url ? (
-                <React.Fragment>
-                  <a 
-                    className="event-links-nav" 
-                    href={event.url} // Directly use the url field from JSON
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {event.title}
-                  </a>
-                  {isRecentEvent(event.createdAt) && (
-                    <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-                  )}
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  <a 
-                    className="event-links-nav" 
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {event.title}
-                  </a>
-                  {isRecentEvent(event.createdAt) && (
-                    <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-                  )}
-                </React.Fragment>
-              )}
-            </React.Fragment>
-          ))}
+          {marqueeEvents.map((event, eventIndex) => {
+            let linkUrl = '#';
+            if (event.url) {
+              linkUrl = ensureValidUrl(event.url); // Fix and use external URL
+            } else if (event.pdf && event.pdf.length > 0) {
+              // Use the first PDF in the collection
+              linkUrl = `${STRAPI_BASE_URL}${event.pdf[0].url}`;
+            }
+
+            return (
+              <React.Fragment key={eventIndex}>
+                <a 
+                  className="event-links-nav" 
+                  href={linkUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {event.title}
+                </a>
+                {isRecentEvent(event.createdAt) && (
+                  <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+                )}
+              </React.Fragment>
+            );
+          })}
         </div>
       </div>
     </div>

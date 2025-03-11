@@ -6,26 +6,34 @@ import axios from 'axios';
 import StudentProfile from './StudentGrievanceDisplay';
 import './Studentprofile.css';
 
-
 const Profile = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated, loading, error, logout } = useAuth();
+  const { 
+    user, 
+    isAuthenticated, 
+    loading, 
+    error, 
+    confirmLogout, 
+    logout,
+    showLogoutModal, 
+    setShowLogoutModal 
+  } = useAuth();
 
-  // State management for modal and data
+  // State management
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
   const [formData, setFormData] = useState({}); 
-  const [updateError, setUpdateError] = useState(null); 
+  const [updateError, setUpdateError] = useState(null);
+  const [showUpdateSuccessModal, setShowUpdateSuccessModal] = useState(false); // New state for update success
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false); // New state for delete success
 
-  // Redirect to login if not authenticated
   useEffect(() => {
     if (!isAuthenticated && !loading) {
       navigate('/login');
     }
   }, [isAuthenticated, loading, navigate]);
 
-  // Handle form change for profile update
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -33,7 +41,7 @@ const Profile = () => {
     });
   };
 
-  // Handle profile update
+  // Handle profile update with success modal
   const handleUpdate = async () => {
     setUpdateLoading(true);
     try {
@@ -44,8 +52,10 @@ const Profile = () => {
         },
       });
      
-      Object.assign(user, response.data.updatedUser); // Update user data
-      setShowUpdateModal(false); // Close the modal after successful updat
+      Object.assign(user, response.data.updatedUser);
+      setShowUpdateModal(false);
+      setShowUpdateSuccessModal(true); // Show success modal
+      setTimeout(() => setShowUpdateSuccessModal(false), 5000); 
     } catch (err) {
       setUpdateError(err.response?.data?.message || 'Failed to update profile');
     } finally {
@@ -53,7 +63,7 @@ const Profile = () => {
     }
   };
 
-  // Handle profile deletion
+  // Handle profile deletion with success modal
   const handleDelete = async () => {
     const confirm = window.confirm('Are you sure you want to delete your profile?');
     if (!confirm) return;
@@ -66,16 +76,18 @@ const Profile = () => {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert('Profile deleted successfully');
-      logout(); // Logout after deleting profile
+      setShowDeleteSuccessModal(true); // Show success modal
+      setTimeout(() => {
+        setShowDeleteSuccessModal(false);
+        logout(); 
+      }, 5000); 
     } catch (err) {
-      alert('Failed to delete profile');
+      setUpdateError('Failed to delete profile');
     } finally {
       setDeleteLoading(false);
     }
   };
 
-  // Populate form data with user information
   useEffect(() => {
     if (user) {
       setFormData({
@@ -89,7 +101,6 @@ const Profile = () => {
     }
   }, [user]);
 
-  // Show loading spinner if data is still being fetched
   if (loading) {
     return (
       <Container className="text-center">
@@ -99,7 +110,6 @@ const Profile = () => {
     );
   }
 
-  // Show error alert if there is an error
   if (error) {
     return (
       <Container>
@@ -116,11 +126,11 @@ const Profile = () => {
             <Card.Body className='bg-white'>
               <div className="profile-header">
                 <Card.Title className="profile-title">User Profile</Card.Title>
-                <Button className="logout-btn" variant="danger" onClick={logout}>
+                <Button className="logout-btn" variant="danger" onClick={confirmLogout}>
                   Logout
                 </Button>
               </div>
-              <hr className="profile-divider " />
+              <hr className="profile-divider" />
               <Card.Text className='bg-white'><strong>Full Name:</strong> {user.fullname}</Card.Text>
               <Card.Text className='bg-white'><strong>Email:</strong> {user.email}</Card.Text>
               <Card.Text className='bg-white'><strong>Phone:</strong> {user.phone}</Card.Text>
@@ -129,10 +139,9 @@ const Profile = () => {
               <Card.Text className='bg-white'><strong>Branch:</strong> {user.branch}</Card.Text>
 
               <div>
-              <StudentProfile />
+                <StudentProfile />
               </div>
 
-              {/* Button to open the update modal */}
               <Button
                 variant="primary"
                 className="mx-1 mt-3"
@@ -141,7 +150,6 @@ const Profile = () => {
                 Update Profile
               </Button>
 
-              {/* Button to delete profile */}
               <Button
                 variant="danger"
                 className="mt-3 mx-1"
@@ -151,7 +159,7 @@ const Profile = () => {
                 {deleteLoading ? 'Deleting...' : 'Delete Profile'}
               </Button>
 
-              {/* Modal for updating profile */}
+              {/* Update Profile Modal */}
               <Modal show={showUpdateModal} onHide={() => setShowUpdateModal(false)} centered>
                 <Modal.Header closeButton>
                   <Modal.Title>Update Profile</Modal.Title>
@@ -205,15 +213,15 @@ const Profile = () => {
                         value={formData.semester}
                         onChange={handleChange}
                       >
-                    <option value="">-- Select Semester --</option>
-                    <option value="First">First</option>
-                    <option value="Second">Second</option>
-                    <option value="Third">Third</option>
-                    <option value="Fourth">Fourth</option>
-                    <option value="Fifth">Fifth</option>
-                    <option value="Sixth">Sixth</option>
-                    <option value="Seventh">Seventh</option>
-                    <option value="Eighth">Eighth</option>
+                        <option value="">-- Select Semester --</option>
+                        <option value="First">First</option>
+                        <option value="Second">Second</option>
+                        <option value="Third">Third</option>
+                        <option value="Fourth">Fourth</option>
+                        <option value="Fifth">Fifth</option>
+                        <option value="Sixth">Sixth</option>
+                        <option value="Seventh">Seventh</option>
+                        <option value="Eighth">Eighth</option>
                       </Form.Select>
                     </Form.Group>
 
@@ -244,16 +252,88 @@ const Profile = () => {
                 </Modal.Footer>
               </Modal>
 
-              {/* Add button to navigate to Grievance Form */}
-              <Button  className="mt-3 bg-dark" onClick={() => navigate('/grievanceform')}>
+              {/* Update Success Modal */}
+              <Modal 
+                show={showUpdateSuccessModal} 
+                onHide={() => setShowUpdateSuccessModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Profile updated successfully!
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="primary" 
+                    onClick={() => setShowUpdateSuccessModal(false)}
+                  >
+                    OK
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              {/* Delete Success Modal */}
+              <Modal 
+                show={showDeleteSuccessModal} 
+                onHide={() => setShowDeleteSuccessModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Profile deleted successfully!
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="primary" 
+                    onClick={() => {
+                      setShowDeleteSuccessModal(false);
+                      logout();
+                    }}
+                  >
+                    OK
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              {/* Logout Confirmation Modal */}
+              <Modal 
+                show={showLogoutModal} 
+                onHide={() => setShowLogoutModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Confirm Logout</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Are you sure you want to logout?
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="secondary" 
+                    onClick={() => setShowLogoutModal(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button 
+                    variant="danger" 
+                    onClick={logout}
+                  >
+                    Logout
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              <Button className="mt-3 bg-dark" onClick={() => navigate('/grievanceform')}>
                 Go to Grievance Form
               </Button>
             </Card.Body>
           </Card>
         </Col>
-        
       </Row>
-
     </Container>
   );
 };
