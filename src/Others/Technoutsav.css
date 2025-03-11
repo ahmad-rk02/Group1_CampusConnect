@@ -1,3 +1,8 @@
+.bg-golden-tech{
+    background-color: #EADBC8;
+    margin-block: 10px
+}
+
 @media (max-width: 480px){
     p.about-text{
        text-align: justify; 

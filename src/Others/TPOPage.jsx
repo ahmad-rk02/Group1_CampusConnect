@@ -154,6 +154,7 @@ const TPOPage = () => {
 
   const handleCloseModal = () => setShowModal(false);
 
+
   return (
     <Container fluid className="p-0 tpo-container">
       <Row className="header-design-tech text-white py-3 py-md-4">
@@ -164,7 +165,7 @@ const TPOPage = () => {
 
       <Row className="g-0">
         <Col xs={12} md={3} className="left-sidebar p-2 p-md-3">
-          <Card className="left-nav shadow-sm rounded">
+          <Card className="left-nav ">
             <ListGroup variant="flush">
               {[
                 { name: "TPO Desk", id: "tpo-desk" },
@@ -809,6 +810,7 @@ const TPOPage = () => {
           </Button>
         </Modal.Body>
       </Modal>
+
     </Container>
   );
 };
