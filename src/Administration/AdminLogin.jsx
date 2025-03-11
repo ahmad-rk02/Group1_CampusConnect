@@ -82,12 +82,36 @@ const LoginForm = () => {
         <Col md={2} className='left-sidebar-loginA'>
           <Card className="left-nav-loginA">
             <ListGroup variant="flush">
-              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Principal and HOD</Link></ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Student Section</Link></ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA"><Link to="">Office</Link></ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA"><Link to="/committees">Committees</Link></ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA"><Link to="/tenders">Tenders</Link></ListGroup.Item>
-              <ListGroup.Item className="left-nav-row-loginA-01"><Link to="/login">Grievance Form</Link></ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA">
+                <Link to="/principalHods" className={location.pathname === "" ? "active-link" : ""}>
+                  Principal and HOD
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA">
+                <Link to="/studentSection" className={location.pathname === "" ? "active-link" : ""}>
+                  Student Section
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA">
+                <Link to="/office" className={location.pathname === "" ? "active-link" : ""}>
+                  Office
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA">
+                <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
+                  Committees
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA">
+                <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
+                  Tenders
+                </Link>
+              </ListGroup.Item>
+              <ListGroup.Item className="left-nav-row-loginA-01">
+                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
+                  Grievance Form
+                </Link>
+              </ListGroup.Item>
             </ListGroup>
           </Card>
         </Col>

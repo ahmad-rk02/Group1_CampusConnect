@@ -56,7 +56,7 @@ const StudentSection = () => {
                 <Link to="/studentSection">Student Section</Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-tender">
-                <Link to="">Office</Link>
+                <Link to="/office">Office</Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-tender">
                 <Link to="/committees">Committees</Link>

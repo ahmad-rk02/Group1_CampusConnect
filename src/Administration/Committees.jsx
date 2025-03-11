@@ -37,7 +37,7 @@ const Committees = () => {
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-committee-clg">
                   <Link
-                    to=""
+                    to="/principalHods"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Principal and HOD
@@ -45,7 +45,7 @@ const Committees = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-committee-clg">
                   <Link
-                    to=""
+                    to="/studentSection"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Student Section
@@ -53,7 +53,7 @@ const Committees = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-committee-clg">
                   <Link
-                    to=""
+                    to="/office"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Office

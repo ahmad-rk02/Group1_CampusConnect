@@ -26,7 +26,6 @@
   .left-nav {
     border: none;
     overflow: hidden;
-    width: 70%;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
   
@@ -35,7 +34,6 @@
     font-size: 12px;
     color: black;
     background-color: #fff;
-    height: 50px;
   }
   
   .left-nav-item:hover {
@@ -66,7 +64,9 @@
   
   /* TPO Desk */
   .profile-img {
-    border: 2px solid #007bff;
+    margin-bottom: 320px;
+    border-radius: 50%;
+    border: 2px solid #000000;
     transition: transform 0.3s ease;
   }
   
@@ -87,8 +87,8 @@
   }
   
   /* Tables */
-  .table-dark {
-    background-color: #343a40;
+  thead.table-dark {
+    background-color: #102C57;
   }
   
   .table th, .table td {
@@ -104,7 +104,7 @@
   }
   
   .btn-outline-primary:hover {
-    background-color: #007bff;
+    background-color: #102C57;
     color: white;
   }
   
@@ -161,13 +161,13 @@
     padding: 0.5rem;
     width: 100%;
     background-color: #fff;
-    border: 1px solid #007bff;
-    color: #007bff;
+    border: 1px solid #102C57;
+    color: #102C57;
     transition: all 0.3s ease;
   }
   
   .news-arrow:hover:not(:disabled) {
-    background-color: #007bff;
+    background-color: #102C57;
     color: #fff;
   }
   
@@ -186,7 +186,7 @@
   .activity-list .list-group-item:hover,
   .document-list .list-group-item:hover {
     background-color: #e9ecef;
-    color: #007bff;
+    color: #102C57;
     transform: translateX(5px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -207,10 +207,10 @@
     border-radius: 5px;
   }
   
-  .feedback-form button {
-    background-color: #007bff;
-    color: white;
+  .feedback-form{
     padding: 10px;
+    background-color: #102C57;
+    color: white;
     border: none;
     cursor: pointer;
     border-radius: 5px;
@@ -255,6 +255,7 @@
     .left-sidebar {
       padding: 2rem;
     }
+
   }
   
   @media (max-width: 991px) {
@@ -293,6 +294,10 @@
   
     .content-section {
       padding: 1.5rem;
+    }
+
+    .profile-img{
+      margin-bottom: 750px;
     }
   }
   
@@ -335,6 +340,10 @@
     .news-arrow {
       font-size: 1.2rem;
       padding: 0.4rem;
+    }
+
+    .profile-img{
+      margin-bottom: 0;
     }
   }
   
@@ -437,4 +446,8 @@
       font-size: 0.9rem;
       padding: 0.2rem;
     }
+
+     .profile-img{
+      margin-bottom: 0;
+     }
   }
