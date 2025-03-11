@@ -155,52 +155,6 @@ const TPOPage = () => {
   const handleCloseModal = () => setShowModal(false);
 
 
-    //FEEDBACK 
-    const [formData, setFormData] = useState({
-      name: "",
-      department: "",
-      semester: "",
-      message: "",
-    });
-
-      
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  // Handle form input changes
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  // Handle form submission
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-  
-    try {
-      // POST request to Strapi
-      const response = await axios.post(`${STRAPI_URL}feedback-tpos`, {
-        data,
-      });
-  
-      if (response.status === 200 || response.status === 201) {
-        alert("Feedback submitted successfully!");
-        setFormData({ name: "", department: "", semester: "", message: "" });
-      } else {
-        alert("Failed to submit feedback.");
-      }
-    } catch (error) {
-      console.error("Error submitting feedback:", error);
-      alert("An error occurred. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-  
-
-      
-
-
-
   return (
     <Container fluid className="p-0 tpo-container">
       <Row className="header-design-tech text-white py-3 py-md-4">
@@ -211,7 +165,7 @@ const TPOPage = () => {
 
       <Row className="g-0">
         <Col xs={12} md={3} className="left-sidebar p-2 p-md-3">
-          <Card className="left-nav shadow-sm rounded">
+          <Card className="left-nav ">
             <ListGroup variant="flush">
               {[
                 { name: "TPO Desk", id: "tpo-desk" },
@@ -856,19 +810,6 @@ const TPOPage = () => {
           </Button>
         </Modal.Body>
       </Modal>
-
-      {/* Feedback Form */}
-      <form onSubmit={handleSubmit} className="feedback-form">
-        <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} required />
-        <input type="text" name="department" placeholder="Department" value={formData.department} onChange={handleChange} required />
-        <input type="number" name="semester" placeholder="Semester" value={formData.semester} onChange={handleChange} required />
-        <textarea name="message" placeholder="Your Message" value={formData.message} onChange={handleChange} required />
-        <button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? "Submitting..." : "Submit"}
-        </button>
-      </form>
-
-    
 
     </Container>
   );

@@ -18,10 +18,10 @@ function Navbar({ imageSrcPath, navItems }) {
         const response = await axios.get(STRAPI_API_URL, {
           params: {
             sort: 'createdAt:desc',
-            populate: 'link',
+            populate: '*', // Adjusted to avoid specific 'link' population since it's not needed
           },
         });
-        setMarqueeEvents(response.data.data);
+        setMarqueeEvents(response.data.data); // Directly use data as it’s a collection type
       } catch (error) {
         console.error('Error fetching events from Strapi:', error);
       }
@@ -239,22 +239,20 @@ function Navbar({ imageSrcPath, navItems }) {
         <div className="marquee-text">
           {marqueeEvents.map((event, eventIndex) => (
             <React.Fragment key={eventIndex}>
-              {event.link && event.link.length > 0 ? (
-                event.link.map((linkItem, linkIndex) => (
-                  <React.Fragment key={linkIndex}>
-                    <a 
-                      className="event-links-nav" 
-                      href={`${STRAPI_BASE_URL}${linkItem.url}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      {event.title}
-                    </a>
-                    {isRecentEvent(event.createdAt) && (
-                      <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-                    )}
-                  </React.Fragment>
-                ))
+              {event.url ? (
+                <React.Fragment>
+                  <a 
+                    className="event-links-nav" 
+                    href={event.url} // Directly use the url field from JSON
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {event.title}
+                  </a>
+                  {isRecentEvent(event.createdAt) && (
+                    <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+                  )}
+                </React.Fragment>
               ) : (
                 <React.Fragment>
                   <a 

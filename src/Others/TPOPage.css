@@ -7,14 +7,15 @@
   
   /* Header */
   .header-design-tech {
-    background: linear-gradient(90deg, #007bff, #0056b3);
+    min-height: 120px;
+    background:#102C57;
     padding: 1.5rem 1rem;
   }
   
   .header-align-tech h1 {
     color: white;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-    font-size: 1.75rem;
+    font-size: 1 rem;
   }
   
   /* Sidebar */
@@ -25,18 +26,21 @@
   .left-nav {
     border: none;
     overflow: hidden;
+    width: 70%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
   
   .left-nav-item {
     transition: all 0.3s ease;
-    font-size: 1rem;
-    color: #333;
+    font-size: 12px;
+    color: black;
     background-color: #fff;
+    height: 50px;
   }
   
   .left-nav-item:hover {
     background-color: #e9ecef;
-    color: #007bff;
+    color: #102C57;
     transform: translateX(5px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
@@ -51,8 +55,11 @@
   }
   
   .section-title {
-    color: #007bff;
-    border-bottom: 2px solid #007bff;
+    text-align: left;
+    background-color:  #EADBC8;
+    color: #102C57;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
     font-size: 1.5rem;
   }
