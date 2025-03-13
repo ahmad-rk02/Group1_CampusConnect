@@ -25,17 +25,17 @@ const Login = () => {
                     <Card className="left-nav-loginP">
                         <ListGroup variant="flush">
                             <ListGroup.Item className="left-nav-row-loginP">
-                                <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
+                                <Link to="/principalHods" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Principal and HOD
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item className="left-nav-row-loginP">
-                                <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
+                                <Link to="/studentSection" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Student Section
                                 </Link>
                             </ListGroup.Item>
                             <ListGroup.Item className="left-nav-row-loginP">
-                                <Link to="" className={useLocation().pathname === "" ? "active-link" : ""}>
+                                <Link to="/office" className={useLocation().pathname === "" ? "active-link" : ""}>
                                     Office
                                 </Link>
                             </ListGroup.Item>

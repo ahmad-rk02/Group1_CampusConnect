@@ -48,7 +48,7 @@ const Technoutsav = () => {
                   </Card.Header>
                   <Col xs={12}>
                     <p className="about-text">
-                    **TechnoUtsav 2025** is the ultimate fusion of technology, innovation, and gaming, hosted by **Government College of Engineering, Chandrapur**. This exciting fest brings together tech enthusiasts and gamers to compete in thrilling events like **Free Fire, BGMI, RC Race Gateway, Virtual Simulation, Hackathons, Paper Presentation, Poster Mania,** and more. Whether you're a coder, a gamer, or a creative thinker, TechnoUtsav 2025 offers the perfect platform to showcase your skills, push your limits, and experience the excitement of tech-driven competitions. Get ready to innovate, compete, and celebrate technology like never before! 🚀🔥
+                    **TechnoUtsav** is the ultimate fusion of technology, innovation, and gaming, hosted by **Government College of Engineering, Chandrapur**. This exciting fest brings together tech enthusiasts and gamers to compete in thrilling events like **Free Fire, BGMI, RC Race Gateway, Virtual Simulation, Hackathons, Paper Presentation, Poster Mania,** and more. Whether you're a coder, a gamer, or a creative thinker, TechnoUtsav 2025 offers the perfect platform to showcase your skills, push your limits, and experience the excitement of tech-driven competitions. Get ready to innovate, compete, and celebrate technology like never before! 🚀🔥
                     </p>
                   </Col>
                   <div>

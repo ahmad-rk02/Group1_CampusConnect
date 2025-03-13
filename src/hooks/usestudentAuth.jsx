@@ -7,6 +7,8 @@ const useAuth = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showLogoutModal, setShowLogoutModal] = useState(false); // Logout modal state
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -14,7 +16,7 @@ const useAuth = () => {
       setLoading(true);
       try {
         const token = localStorage.getItem('authToken');
-        
+
         if (!token) {
           throw new Error('No token found');
         }
@@ -30,8 +32,8 @@ const useAuth = () => {
       } catch (err) {
         setError(err.response?.data?.message || 'Authentication failed');
         setIsAuthenticated(false);
-        localStorage.removeItem('authToken'); // Optional: clear token if auth fails
-        navigate('/login'); // Redirect to login page if authentication fails
+        localStorage.removeItem('authToken'); // Clear token on auth failure
+        navigate('/login'); // Redirect to login
       } finally {
         setLoading(false);
       }
@@ -39,18 +41,22 @@ const useAuth = () => {
 
     fetchUser();
   }, [navigate]);
+
+  // Show logout confirmation modal
+  const confirmLogout = () => {
+    setShowLogoutModal(true);
+  };
+
+  // Perform logout
   const logout = () => {
     localStorage.removeItem('authToken');
     setUser(null);
     setIsAuthenticated(false);
-    alert("Log out successfully");
-    navigate('/login'); // Redirect to login page after logout
+    setShowLogoutModal(false); // Close modal after logout
+    navigate('/login'); // Redirect to login
   };
 
-  return { user, isAuthenticated, loading, error,logout };
+  return { user, isAuthenticated, loading, error, confirmLogout, logout, showLogoutModal, setShowLogoutModal };
 };
 
 export default useAuth;
-
-
-

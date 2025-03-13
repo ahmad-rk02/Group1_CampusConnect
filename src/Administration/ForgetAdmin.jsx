@@ -11,40 +11,57 @@ const ForgetAdmin = () => {
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [isRequestingOTP, setIsRequestingOTP] = useState(true);
-  const [showNewPassword, setShowNewPassword] = useState(false); // State for showing/hiding new password
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // State for showing/hiding confirm password
+  const [showNewPassword, setShowNewPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [modalMessage, setModalMessage] = useState('');
+  const [modalType, setModalType] = useState('');
+  const [showModal, setShowModal] = useState(false);
   const navigate = useNavigate();
+
+  const showModalPopup = (message, type) => {
+    setModalMessage(message);
+    setModalType(type);
+    setShowModal(true);
+
+    if (type === 'success') {
+      setTimeout(() => {
+        setShowModal(false);
+        if (message === 'Password reset successfully!') {
+          navigate('/adminlogin'); 
+        }
+      }, 3000);
+    }
+  };
 
   const handleRequestOTP = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:5000/api/users/send-otp', { email });
-      alert(response.data.message);
+      showModalPopup(response.data.message, 'success');
     } catch (error) {
-      alert(error.response?.data?.error || 'Error requesting OTP');
+      showModalPopup(error.response?.data?.error || 'Error requesting OTP', 'error');
     }
   };
 
   const handleResetPassword = async (e) => {
     e.preventDefault();
     if (newPassword !== confirmPassword) {
-      alert('Passwords do not match!');
+      showModalPopup('Passwords do not match!', 'error');
       return;
     }
     try {
       await axios.post('http://localhost:5000/api/users/verify-otp', { email, otp });
-      const response = await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
-      alert(response.data.message);
-      navigate('/adminlogin');
+      await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
+      showModalPopup('Password reset successfully!', 'success');
     } catch (error) {
-      alert(error.response?.data?.error || 'Error resetting password');
+      showModalPopup(error.response?.data?.error || 'Error resetting password', 'error');
     }
   };
 
   return (
-    <div className="Forgot-container">
+    <div className="admin-forgot-container">
       {isRequestingOTP ? (
-        <div className="form-container">
+        <div className="admin-form-container">
           <h2>Request OTP</h2>
           <form onSubmit={handleRequestOTP}>
             <input
@@ -53,13 +70,13 @@ const ForgetAdmin = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="input-field"
+              className="admin-input-field"
             />
-            <button type="submit" className="submit-button">Send OTP</button>
+            <button type="submit" className="admin-submit-button">Send OTP</button>
           </form>
         </div>
       ) : (
-        <div className="form-container">
+        <div className="admin-form-container">
           <h2>Reset Password</h2>
           <form onSubmit={handleResetPassword}>
             <input
@@ -68,7 +85,7 @@ const ForgetAdmin = () => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
               required
-              className="input-field"
+              className="admin-input-field"
             />
             <input
               type="text"
@@ -76,42 +93,54 @@ const ForgetAdmin = () => {
               onChange={(e) => setOtp(e.target.value)}
               placeholder="Enter OTP"
               required
-              className="input-field"
+              className="admin-input-field"
             />
-            <div className="password-field-container">
+            <div className="admin-password-field-container">
               <input
                 type={showNewPassword ? 'text' : 'password'}
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 placeholder="Enter new password"
                 required
-                className="input-field"
+                className="admin-input-field"
               />
-              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowNewPassword(!showNewPassword)} className="admin-toggle-password-button">
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <div className="password-field-container">
+            <div className="admin-password-field-container">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm new password"
                 required
-                className="input-field"
+                className="admin-input-field"
               />
-              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="toggle-password-button">
+              <button type="button" onClick={() => setShowConfirmPassword(!showConfirmPassword)} className="admin-toggle-password-button">
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <button type="submit" className="submit-button">Reset Password</button>
+            <button type="submit" className="admin-submit-button">Reset Password</button>
           </form>
         </div>
       )}
 
-      <button className="toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
+      <button className="admin-toggle-button" onClick={() => setIsRequestingOTP(!isRequestingOTP)}>
         {isRequestingOTP ? 'Go to Reset Password' : 'Go to Request OTP'}
       </button>
+
+      {showModal && (
+        <div className="admin-modal-overlay">
+          <div className="admin-modal-content">
+            <div className={`admin-modal-icon ${modalType === 'success' ? 'success' : 'error'}`}>
+              {modalType === 'success' ? '✅' : '❌'}
+            </div>
+            <p className="admin-modal-message">{modalMessage}</p>
+            <button className="admin-close-modal" onClick={() => setShowModal(false)}>Close</button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

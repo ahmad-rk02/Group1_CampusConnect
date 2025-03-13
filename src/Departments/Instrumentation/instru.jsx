@@ -2,6 +2,7 @@ import React from 'react';
 import INSTRUCarousel from '../../Departments/Instrumentation/INSTRUCarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import './INSTRU.css'
+import InstruFaculty from './InstruFaculty';
 import { Link } from 'react-router-dom';
 import INSTRUvm from '../../Departments/Instrumentation/INSTRUvm';
 
@@ -31,7 +32,7 @@ const instru = () => {
           <ListGroup.Item className="left-nav-row-instru-01">
             <Link
               to="/cse"
-              className={location.pathname === "" ? "active-link" : "/cse"}
+              className={location.pathname === "/cse" ? "active-link" : "/cse"}
             >
               Computer Science & Engineering
             </Link>
@@ -46,8 +47,8 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/instru"
+              className={location.pathname === "/intru" ? "active-link" : ""}
             >
              <b>Instrumentation Engineering</b> 
             </Link>
@@ -63,7 +64,7 @@ const instru = () => {
           <ListGroup.Item className="left-nav-row-instru">
             <Link
               to="/mech"
-              className={location.pathname === "" ? "active-link" : "/mech"}
+              className={location.pathname === "/mech" ? "active-link" : "/mech"}
             >
               Mechanical Engineering
             </Link>
@@ -79,7 +80,7 @@ const instru = () => {
           <ListGroup.Item className="left-nav-row-instru">
             <Link
               to="/workshop"
-              className={location.pathname === "" ? "active-link" : "/workshop"}
+              className={location.pathname === "/workshop" ? "active-link" : "/workshop"}
             >
               Workshop
             </Link>
@@ -95,6 +96,10 @@ const instru = () => {
              
             <div >
               <INSTRUvm className='right-content-instru' />
+            </div>
+
+            <div className="facultyDetails">
+              <InstruFaculty />
             </div>
 
             
