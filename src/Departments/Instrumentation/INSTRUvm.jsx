@@ -132,7 +132,7 @@ const INSTRUvm = ({ className }) => {
             <img src={lab.img} alt={lab.name} className='lab-img-instru' />
             <div className='lab-eq-instru'>
               <h5>Equipment:</h5>
-              <p>{lab.equipment}</p>
+              <p className='tick'>{lab.equipment}</p>
             </div>
           </div>
         ))}
