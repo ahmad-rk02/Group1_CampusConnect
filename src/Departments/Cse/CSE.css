@@ -102,7 +102,7 @@ ul.dropdown-cse-text{
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
- .right-content-cse {
+ .right-content-cse,.right-codeunnati-content-cse {
     width: 80%;
     overflow-x: hidden;
     margin-right: 60px;
@@ -121,7 +121,7 @@ ul.dropdown-cse-text{
     padding-left: 20px;
   }
   
-  .right-content-cse {
+  .right-content-cse,.right-codeunnati-content-cse{
     margin-inline: 5%;
     width: 96%;
   }

@@ -9,8 +9,7 @@ import Mechvm from '../../Departments/Mechanical/Mechvm';
 
 const Mech = () => {
   return (
-    <div>
-      
+    <div className='instru-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
 
       
@@ -23,7 +22,7 @@ const Mech = () => {
 
 <MechCarousel />
 
-<Row className="g-0 overlay-row w-100" >
+<Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} "  >
   {/* Left Sidebar */}
   <Col md={4} className='left-sidebar-Mech overlay-col ' >
     <div className="left-sidebar-wrapper">
@@ -95,12 +94,8 @@ const Mech = () => {
 <Col md={8} className='right-content-Mech' >
              
 <div >
-              <Mechvm className='Mech-vision-mission' />
-            </div>  
-
-            <div className="facultyDetails">
-              <MechFaculty />
-            </div>     
+              <Mechvm className='right-content-Mech' />
+            </div>       
             
           </Col>
 </Row>
