@@ -72,10 +72,10 @@ function Footerend() {
               <div className="col text-white" style={noUnderlineStyle}>
                 <h5>Quick Links</h5>
                 <ul className="list-unstyled text-white">
-                  <li><a href="#">Info Brochure</a></li>
+                  <li><a href="https://www.gcoec.ac.in/gcoec/app_documents/GEC%20Brochure%20_2020-21.pdf">Info Brochure</a></li>
                   <li><a href="https://www.gcoec.ac.in/gcoec/PDF/2022/Audit-Report-2021.PDF">Audit Report</a></li>
                   <li><a href="https://www.gcoec.ac.in/gcoec/PDF/Procurement/Impact_analysis_PROCUREMENT_UNDER_TEQIP.pdf">TEQIP</a></li>
-                  <li><a href="#">Facilities</a></li>
+                  <li><a href="Group1_CampusConnect/boyshostel">Facilities</a></li>
                   <li><a href="https://www.aicte-india.org/">AICTE</a></li>
                 </ul>
               </div>
