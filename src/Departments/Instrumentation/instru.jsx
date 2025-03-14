@@ -55,8 +55,8 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to="/instru"
-              className={location.pathname === "/instru" ? "active-link" : ""}
+              to="/Elec"
+              className={location.pathname === "/Elec" ? "active-link" : "/Elec"}
             >
               Electrical Engineering
             </Link>

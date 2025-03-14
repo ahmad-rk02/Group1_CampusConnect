@@ -1,9 +1,9 @@
 /* Base Styles - Full Screen */
-.instru-intro {
+.Elec-intro {
     margin-bottom: 50px;
   }
   
-  .instru-intro-heading {
+  .Elec-intro-heading {
     background-color: #eadbc8;
     height: 50px;
     padding-left: 20px;
@@ -12,7 +12,7 @@
     color: #102C57;
   }
   
-  .instru-intro-box {
+  .Elec-intro-box {
     position: relative;
     background-color: #eadbc8;
     border-radius: 10px;
@@ -26,7 +26,7 @@
     padding-bottom: 20px;
     transition: background-color 0.3s ease;
 }
-.instru-intro-box .first-para-small {
+.Elec-intro-box .first-para-small {
     text-align: center;
     width: 90%;
     padding-top: 40px;
@@ -36,17 +36,17 @@
     font-weight: 500;
 }
 
-.instru-intro-box .small-intro-heading {
+.Elec-intro-box .small-intro-heading {
     color: #102C57;
     text-align: center;
     padding-bottom: 15px;
 }
 
-.instru-intro-box .small-intro-heading h6 {
+.Elec-intro-box .small-intro-heading h6 {
     font-weight: 700;
 }
 
-.instru-intro-box .second-para-large {
+.Elec-intro-box .second-para-large {
     text-align: left;
     width: 90%;
     height: fit-content;
@@ -57,12 +57,12 @@
 }
 
 /* Hover effect */
-.instru-intro-box:hover {
+.Elec-intro-box:hover {
     background-color: #102C57;
 }
 
-.instru-intro-box:hover::after {
-    content: "Measure, Innovate, Engineer with Pride, Instrumentation Leads the Guide!";
+.Elec-intro-box:hover::after {
+    content: "Powering the Future, Sparking the Way – EE, We Light the Way!";
     font-size: 40px;
     color: #eadbc8;
     text-align: center;
@@ -78,9 +78,9 @@
 }
 
 /* Ensuring the text inside is hidden by default */
-.instru-intro-box .second-para-large,
-.instru-intro-box .first-para-small,
-.instru-intro-box .small-intro-heading {
+.Elec-intro-box .second-para-large,
+.Elec-intro-box .first-para-small,
+.Elec-intro-box .small-intro-heading {
     visibility: visible;
 }
 .course-outcome{
@@ -114,14 +114,14 @@ font-size: 20px;
 }
 
 /* Hide content when hover occurs */
-.instru-intro-box:hover .second-para-large,
-.instru-intro-box:hover .first-para-small,
-.instru-intro-box:hover .small-intro-heading {
+.Elec-intro-box:hover .second-para-large,
+.Elec-intro-box:hover .first-para-small,
+.Elec-intro-box:hover .small-intro-heading {
     visibility: hidden;
 }
   
-  .instru-vision-heading,
-  .instru-mission-heading {
+  .Elec-vision-heading,
+  .Elec-mission-heading {
     background-color: #eadbc8;
     height: 50px;
     padding-left: 20px;
@@ -138,45 +138,45 @@ font-size: 20px;
     width: 80%;
   }
   
-  .instru-mission {
+  .Elec-mission {
     margin-top: 30px;
   }
-  .table-header-instru th {
+  .table-header-Elec th {
     background-color: #102c57;
     color: white;
     text-align: center;
   }
   
-  .table-header-instru th:first-child {
+  .table-header-Elec th:first-child {
     border-top-left-radius: 10px;
   }
   
-  .table-header-instru th:last-child {
+  .table-header-Elec th:last-child {
     border-top-right-radius: 10px;
   }
   
-  .table-body-instru tr {
+  .table-body-Elec tr {
     text-align: center;
   }
-  .head-table-top-instru h3 {
+  .head-table-top-Elec h3 {
     text-align: left;
     padding-left: 15px;
     padding-top: 6px;
   }
-  .instru-table {
+  .Elec-table {
     width: 90%;
     border-radius: 10px;
     margin-left: 20px;
     margin-top: 20px;
   }
-  .head-table-top-instru{
+  .head-table-top-Elec{
 
     width:100% ;
     height: 50px;
     background-color: antiquewhite;
     margin-bottom: 20px;
   }
-  .name-instru-prog {
+  .name-Elec-prog {
     text-align: left;
   }
   .headlab h1 {
@@ -184,7 +184,7 @@ font-size: 20px;
     margin-bottom: 30px;
     margin-top: 30px;
   }
-.instru-infra-head{
+.Elec-infra-head{
   background-color: #eadbc8;
     height: 50px;
     padding-left: 20px;
@@ -194,7 +194,7 @@ font-size: 20px;
     color: #102C57;
 }
 
-div.infra-instru{
+div.infra-Elec{
   
   height:fit-content;
   display: inline-flex;
@@ -203,7 +203,7 @@ div.infra-instru{
  column-gap: 20px;
  
 }
-.lab-instru{
+.lab-Elec{
   width: 45%;
   background-color: #102c57;
   height: 40px;
@@ -214,21 +214,21 @@ div.infra-instru{
   margin-bottom: 200px;
 
 }
-.lab-instru h4{
+.lab-Elec h4{
   text-align: left;
   padding-left: 20px;
   padding-top: 5px;
   color: rgb(249, 243, 208);
   
 }
-.lab-img-instru{
+.lab-img-Elec{
   width: 270px;
   height: 150px;
   margin-top: 20px;
 }
 
 
-.lab-eq-instru{
+.lab-eq-Elec{
   margin-left: 290px;
   margin-top:-150px;
   width: 130px;
@@ -236,7 +236,7 @@ div.infra-instru{
   margin-bottom: 20px;
 font-size: 14px;
 }
-.instru-mi-heading{
+.Elec-mi-heading{
   background-color: #eadbc8;
   height: 50px;
   padding-left: 20px;
@@ -246,7 +246,7 @@ font-size: 14px;
   margin-bottom: 20px;
   width: 100%;
 }
-.instru-but{
+.Elec-but{
   width: 50px;
   height: 20px;
   color: bisque;
@@ -271,11 +271,11 @@ font-size: 14px;
 }
 
 @media (max-width: 1200px) {
-  .instru-intro-heading, .instru-vision-heading, .instru-mission-heading {
+  .Elec-intro-heading, .Elec-vision-heading, .Elec-mission-heading {
     width: 90%;
   }
 
-  .instru-intro-box {
+  .Elec-intro-box {
     width: 90%;
     margin-left: 20px;
   }
@@ -285,7 +285,7 @@ font-size: 14px;
     padding: 0 15px;
   }
 
-  .instru-intro-box:hover::after {
+  .Elec-intro-box:hover::after {
     font-size: 1.5rem;
     width: 90%;
   }
@@ -306,12 +306,12 @@ font-size: 14px;
 }
 
 @media (max-width: 992px) {
-  .instru-intro-heading, .instru-vision-heading, .instru-mission-heading {
+  .Elec-intro-heading, .Elec-vision-heading, .Elec-mission-heading {
     width: 100%;
     text-align: center;
   }
 
-  .instru-intro-box {
+  .Elec-intro-box {
     width: 95%;
     margin-left: 10px;
     padding: 10px;
@@ -321,21 +321,21 @@ font-size: 14px;
     width: 95%;
   }
 
-  .instru-intro-box:hover::after {
+  .Elec-intro-box:hover::after {
     font-size: 1.2rem;
   }
-  .lab-instru h4{
+  .lab-Elec h4{
     font-size: 20px;
 
-  }.lab-img-instru{
+  }.lab-img-Elec{
     width: 160px;
     height: 120px;
     margin-top: 20px;
   }
-  .lab-img-instru h5{
+  .lab-img-Elec h5{
     font-size: medium;
   }
-  .lab-eq-instru{
+  .lab-eq-Elec{
     margin-left: 175px;
     margin-top:-130px;
     width: 130px;
@@ -346,38 +346,38 @@ font-size: 14px;
 }
 
 @media (max-width: 768px) {
-  .instru-intro-heading h3,
-  .instru-vision-heading h3,
-  .instru-mission-heading h3 {
+  .Elec-intro-heading h3,
+  .Elec-vision-heading h3,
+  .Elec-mission-heading h3 {
     font-size: 1.5rem;
   }
 
-  .instru-intro-box .first-para-small,
-  .instru-intro-box .second-para-large {
+  .Elec-intro-box .first-para-small,
+  .Elec-intro-box .second-para-large {
     padding-left: 10px;
     padding-right: 10px;
   }
 
-  .instru-intro-box:hover::after {
+  .Elec-intro-box:hover::after {
     font-size: 1rem;
   }
-  .lab-instru h4{
+  .lab-Elec h4{
     font-size: 14px;
 
   }
-  .lab-instru{
+  .lab-Elec{
     height: 30px;
   }
   
-  .lab-img-instru{
+  .lab-img-Elec{
     width: 120px;
     height: 100px;
     margin-top: 20px;
   }
-  .lab-img-instru h5{
+  .lab-img-Elec h5{
     font-size: medium;
   }
-  .lab-eq-instru{
+  .lab-eq-Elec{
     margin-left: 135px;
     margin-top:-100px;
     width: 100px;
@@ -392,14 +392,14 @@ font-size: 14px;
 }
 
 @media (max-width: 576px) {
-  .instru-intro-heading h3,
-  .instru-vision-heading h3,
-  .instru-mission-heading h3 {
+  .Elec-intro-heading h3,
+  .Elec-vision-heading h3,
+  .Elec-mission-heading h3 {
       font-size: 1rem;
   }
 
   
-  .instru-intro-box {
+  .Elec-intro-box {
     width: 100%;
     margin-left: 0;
     border-width: 3px;
@@ -422,26 +422,26 @@ font-size: 14px;
     font-size: 14px;
   }
 
-  .instru-intro-box:hover::after {
+  .Elec-intro-box:hover::after {
     font-size: 0.8rem;
   }
-  .lab-instru h4{
+  .lab-Elec h4{
     font-size: 11px;
 
   }
-  .lab-instru{
+  .lab-Elec{
     height: 25px;
   }
   
-  .lab-img-instru{
+  .lab-img-Elec{
     width: 100px;
     height: 90px;
     margin-top: 20px;
   }
-  .lab-img-instru h5{
+  .lab-img-Elec h5{
     font-size: 14px;
   }
-  .lab-eq-instru{
+  .lab-eq-Elec{
     margin-left: 109px;
     margin-top:-100px;
     width: 100px;

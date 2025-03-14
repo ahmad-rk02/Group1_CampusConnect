@@ -1,0 +1,130 @@
+/* Base Styles */
+.head-box-Elec {
+    background-color: #102c57;
+    height: 130px;
+  }
+  
+  .head-box-Elec h1 {
+    color: white;
+    padding-top: 40px;
+    padding-left: 120px;
+  }
+  
+  .right-content-Elec {
+    margin-top: 200px;
+    margin-left: 300px;
+  }
+  
+  .Elec-carousel {
+    position: relative;
+  }
+  
+  .overlay-row {
+    position: absolute;
+  }
+  
+  .left-nav-Elec {
+    width: 380px;
+    border-radius: 0;
+    margin-left: 0px;
+  }
+  
+  .Elec-carousel .w-100 {
+    height: 80vh;
+    padding-block: 0vh;
+  }
+  
+  .d-block {
+    height: 80vh;
+    object-fit: cover;
+    width: 100%;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 1200px) {
+    .head-box-Elec h1 {
+      padding-left: 80px;
+      font-size: 1.8rem; /* Adjust font size */
+    }
+  
+    .right-content-Elec {
+      margin-top: 150px;
+    }
+  
+    .left-nav-Elec {
+      width: 320px;
+    }
+  
+    .Elec-carousel .w-100,
+    .d-block {
+      height: 70vh;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .head-box-Elec {
+      height: 100px; /* Reduce height for medium screens */
+    }
+  
+    .head-box-Elec h1 {
+      padding-left: 40px;
+      padding-top: 30px;
+      font-size: 1.5rem;
+    }
+  
+    .right-content-Elec {
+      margin-top: 100px;
+    }
+  
+    .left-nav-Elec {
+      width: 280px;
+    }
+  
+    .Elec-carousel .w-100,
+    .d-block {
+      height: 50vh;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .head-box-Elec {
+      height: auto; /* Let height adjust based on content */
+      text-align: center;
+      padding: 10px 0;
+    }
+  
+    .head-box-Elec h1 {
+      padding: 0;
+      font-size: 1.2rem;
+    }
+  
+    .right-content-Elec {
+      margin-top: 50px;
+      padding: 0 15px; /* Add padding for smaller screens */
+    }
+  
+    .left-nav-Elec {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    .Elec-carousel .w-100,
+    .d-block {
+      height: 40vh;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .head-box-Elec h1 {
+      font-size: 1rem; /* Further reduce font size */
+    }
+  
+    .right-content-Elec {
+      margin-top: 30px;
+    }
+  
+    .Elec-carousel .w-100,
+    .d-block {
+      height: 40vh;
+    }
+  }

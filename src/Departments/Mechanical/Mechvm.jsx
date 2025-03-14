@@ -43,12 +43,12 @@ const Mechvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="Mech-intro">
-        <div className="Mech-intro-heading">
+      <div className="mech-intro">
+        <div className="mech-intro-heading">
           <h3>Mechanical Engineering</h3>
         </div>
 
-        <div className="Mech-intro-box">
+        <div className="mech-intro-box">
           <p className="first-para-small">
             The department focuses on creating skilled professionals, preparing students for industry, and developing their skills.
           </p>
@@ -59,7 +59,7 @@ const Mechvm = ({ className }) => {
 
           <div className="second-para-large">
             <p>
-              As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
+            The department offers a well-structured curriculum with practical and industrial exposure through visits, projects, and training. Students engage in co-curricular and extracurricular activities under MESA, including competitions, expert lectures, and sports. With qualified faculty involved in research and development, the department ensures quality education. Graduates secure placements or pursue higher studies
             </p>
           </div>
         </div>
@@ -68,8 +68,8 @@ const Mechvm = ({ className }) => {
             </div>
       </div>
 
-      <div className="Mech-vision">
-        <div className="Mech-vision-heading">
+      <div className="mech-vision">
+        <div className="mech-vision-heading">
           <h3>Vision</h3>
         </div>
 
@@ -80,40 +80,40 @@ const Mechvm = ({ className }) => {
         </div>
       </div>
 
-      <div className="Mech-mission">
-        <div className="Mech-mission-heading">
+      <div className="mech-mission">
+        <div className="mech-mission-heading">
           <h3>Mission</h3>
         </div>
 
         <div className="mission-content">
           <ul>
-            <li>To facilitate environment for students and faculty to excel in the field of mechanical engineering.</li>
+          <li>To facilitate environment for students and faculty to excel in the field of mechanical engineering.</li>
             <li>To strengthen students to meet intellectual, ethical and career challenges in employment/self-employment.</li>
             <li>To develop collaborations with industries, research & development organizations and educational institutions for excellence in teaching, research and consultancy practices.</li>
             
           </ul>
         </div>
         <div className='course-outcome'>
-            <a href='https://www.gcoec.ac.in/gcoec/cos/mech-Vision-Mission-PEOs-POs-PSOs.pdf'>Department PEO's & PSO</a>
-            </div>
+        <a href='https://www.gcoec.ac.in/gcoec/cos/mech-Vision-Mission-PEOs-POs-PSOs.pdf'>Department PEO's & PSO</a>
+        </div>
         </div>
       
-      <div className='infra-Mech'>
-      <div className="Mech-infra-head">
+      <div className='infra-mech'>
+      <div className="mech-infra-head">
           <h3>Infrastructure</h3>
         </div>
-        <Table className='Mech-table' striped bordered hover>
-                      <thead  className='table-header-Mech'>
+        <Table className='mech-table' striped bordered hover>
+                      <thead  className='table-header-mech'>
                         <tr>
                           <th>Facility</th>
                           <th>Quantity</th>
                         </tr>
                       </thead>
-                      <tbody className="table-body-Mech">
+                      <tbody className="table-body-mech">
                         {MechTable.map((prog) => (
                           <tr>
                             
-                            <td className='name-Mech-prog'>{prog.facility}</td>
+                            <td className='name-mech-prog'>{prog.facility}</td>
                             <td>{prog.quantity}</td>
                             
                           </tr>
@@ -121,17 +121,17 @@ const Mechvm = ({ className }) => {
                       </tbody>
                     </Table>
                     <div className='right-'>
-      <div className='infra-Mech'>
-        <div className='Mech-mi-heading'>
+      <div className='infra-mech'>
+        <div className='mech-mi-heading'>
           <h3>Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
-          <div key={lab.id} className='lab-Mech'>
+          <div key={lab.id} className='lab-mech'>
             <h4>{lab.id}. {lab.name}</h4>
-            <img src={lab.img} alt={lab.name} className='lab-img-Mech' />
-            <div className='lab-eq-Mech'>
+            <img src={lab.img} alt={lab.name} className='lab-img-mech' />
+            <div className='lab-eq-mech'>
               <h5>Equipment:</h5>
-              <p>{lab.equipment}</p>
+              <p className='tick'>{lab.equipment}</p>
             </div>
           </div>
         ))}
