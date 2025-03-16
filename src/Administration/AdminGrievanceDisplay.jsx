@@ -1,7 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import useAuth from '../hooks/usestudentAuth';
-import './AdminGrievanceDisplay.css'
+import './AdminGrievanceDisplay.css';
+
+const Popup = ({ message, onClose }) => (
+  <div className="popup-overlay">
+    <div className="popup-content">
+      <div className="popup-icon">✅</div>
+      <h2 className="popup-title">Success</h2>
+      <p className="popup-message">{message}</p>
+      <button className="popup-close-btn" onClick={onClose}>
+        OK
+      </button>
+    </div>
+  </div>
+);
 
 const AdminDashboard = () => {
   const [grievances, setGrievances] = useState([]);
@@ -10,6 +23,7 @@ const AdminDashboard = () => {
   const [error, setError] = useState(null);
   const [remarks, setRemarks] = useState({});
   const [filter, setFilter] = useState('all');
+  const [popup, setPopup] = useState(null); // State for popup
   const { user } = useAuth();
 
   useEffect(() => {
@@ -17,7 +31,7 @@ const AdminDashboard = () => {
       try {
         const response = await axios.get('http://localhost:5000/api/grievances/fetchgrievance', {
           params: {
-            commonId: user?.role === 'admin' ? 'all' : user?.email
+            commonId: user?.role === 'admin' ? 'all' : user?.email,
           },
         });
         setGrievances(response.data);
@@ -35,27 +49,37 @@ const AdminDashboard = () => {
     if (filter === 'all') {
       setFilteredGrievances(grievances);
     } else {
-      setFilteredGrievances(grievances.filter(g => g.grievanceType === filter));
+      setFilteredGrievances(grievances.filter((g) => g.grievanceType === filter));
     }
   }, [filter, grievances]);
 
   const closeGrievance = async (ticketId) => {
     const grievanceRemarks = remarks[ticketId];
     try {
-      await axios.post(`http://localhost:5000/api/grievances/close/${ticketId}`, { remarks: grievanceRemarks });
-      alert('Grievance closed successfully');
-      setGrievances(grievances.map(grievance => grievance.ticketId === ticketId ? { ...grievance, status: 'closed', remarks: grievanceRemarks } : grievance));
+      await axios.post(`http://localhost:5000/api/grievances/close/${ticketId}`, {
+        remarks: grievanceRemarks,
+      });
+      setGrievances(
+        grievances.map((grievance) =>
+          grievance.ticketId === ticketId
+            ? { ...grievance, status: 'closed', remarks: grievanceRemarks }
+            : grievance
+        )
+      );
+      setPopup('Grievance closed successfully!'); // Show popup
     } catch (err) {
-      alert('Error closing grievance');
+      setPopup('Error closing grievance. Please try again.'); // Error popup
     }
   };
 
   const handleRemarksChange = (ticketId, event) => {
-    setRemarks(prevRemarks => ({
+    setRemarks((prevRemarks) => ({
       ...prevRemarks,
-      [ticketId]: event.target.value
+      [ticketId]: event.target.value,
     }));
   };
+
+  const closePopup = () => setPopup(null);
 
   if (loading) {
     return <div className="loading">Loading...</div>;
@@ -71,7 +95,9 @@ const AdminDashboard = () => {
 
       {/* Filter Section */}
       <div className="filter-container">
-        <label htmlFor="filter" className="filter-label">Filter by Grievance Type:</label>
+        <label htmlFor="filter" className="filter-label">
+          Filter by Grievance Type:
+        </label>
         <select
           id="filter"
           className="filter-select"
@@ -79,11 +105,21 @@ const AdminDashboard = () => {
           onChange={(e) => setFilter(e.target.value)}
         >
           <option value="all">All</option>
-          <option value="Computer Science & Engineering Dept. Related">Computer Science & Engineering Dept. Related</option>
-          <option value=">Instrumentation Engineering Dept. Related">Instrumentation Engineering Dept. Related</option>
-          <option value="Mechanical Engineering Dept. Related">Mechanical Engineering Dept. Related</option>
-          <option value="Electrical engineering Dept. Related">Electrical engineering Dept. Related</option>
-          <option value="Electronics and Communication Dept. Related">Electronics and Communication Dept. Related</option>
+          <option value="Computer Science & Engineering Dept. Related">
+            Computer Science & Engineering Dept. Related
+          </option>
+          <option value="Instrumentation Engineering Dept. Related">
+            Instrumentation Engineering Dept. Related
+          </option>
+          <option value="Mechanical Engineering Dept. Related">
+            Mechanical Engineering Dept. Related
+          </option>
+          <option value="Electrical engineering Dept. Related">
+            Electrical engineering Dept. Related
+          </option>
+          <option value="Electronics and Communication Dept. Related">
+            Electronics and Communication Dept. Related
+          </option>
           <option value="Civil Dept. Related">Civil Dept. Related</option>
           <option value="Office Related">Office Related</option>
           <option value="Others">Others</option>
@@ -138,6 +174,9 @@ const AdminDashboard = () => {
           </tbody>
         </table>
       </div>
+
+      {/* Popup */}
+      {popup && <Popup message={popup} onClose={closePopup} />}
     </div>
   );
 };
