@@ -9,8 +9,8 @@ import INSTRUvm from '../../Departments/Instrumentation/INSTRUvm';
 
 const instru = () => {
   return (
-    <div>
-      
+    
+       <div className='instru-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
 
       
@@ -23,7 +23,7 @@ const instru = () => {
 
 <INSTRUCarousel />
 
-<Row className="g-0 overlay-row w-100" >
+<Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} "  >
   {/* Left Sidebar */}
   <Col md={4} className='left-sidebar-instru overlay-col ' >
     <div className="left-sidebar-wrapper">
@@ -55,8 +55,8 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to="/instru"
-              className={location.pathname === "/instru" ? "active-link" : ""}
+              to="/Elec"
+              className={location.pathname === "/Elec" ? "active-link" : "/Elec"}
             >
               Electrical Engineering
             </Link>
@@ -95,7 +95,7 @@ const instru = () => {
 <Col md={8} className='right-content-instru' >
              
             <div >
-              <INSTRUvm className='instru-vision-mission' />
+              <INSTRUvm className='right-content-instru' />
             </div>
 
             <div className="facultyDetails">

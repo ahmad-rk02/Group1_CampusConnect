@@ -24,6 +24,8 @@
   }
   
   .left-nav {
+    top: -25px;
+    border-radius: 0;
     border: none;
     overflow: hidden;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
@@ -90,6 +92,10 @@
   thead.table-dark {
     background-color: #102C57;
   }
+
+  .table th{
+    background-color: #102C57;
+  }
   
   .table th, .table td {
     vertical-align: middle;
@@ -98,13 +104,14 @@
   }
   
   .btn-outline-primary {
+    border-color: #102C57;
+    color: #102C57;
     transition: all 0.3s ease;
     font-size: 0.85rem;
     padding: 0.25rem 0.75rem;
   }
   
   .btn-outline-primary:hover {
-    background-color: #102C57;
     color: white;
   }
   
@@ -175,9 +182,14 @@
     opacity: 0.5;
     cursor: not-allowed;
   }
+
+  .text-primary{
+    color: #102C57;
+  }
   
   /* List Groups */
   .list-group-item {
+    color: #102C57;
     border: none;
     transition: all 0.3s ease;
     font-size: 0.9rem;
@@ -186,7 +198,7 @@
   .activity-list .list-group-item:hover,
   .document-list .list-group-item:hover {
     background-color: #e9ecef;
-    color: #102C57;
+    color: #54accd;
     transform: translateX(5px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }

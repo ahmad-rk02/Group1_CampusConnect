@@ -1,3 +1,12 @@
 div.left-index-tech.row{
     margin-inline: 5%;
 }
+
+@media (max-width: 480px){
+    .header-align-tech h1.text-left{
+        font-size: 25px;
+        margin-bottom: 0;
+        margin-inline: 7%;
+      }
+  
+}

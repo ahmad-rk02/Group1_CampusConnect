@@ -1,4 +1,14 @@
 /* ====== Main Container ====== */
+.whole-right-grivnce{
+  margin-left: 100px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.head-right-top-grivnce h3{
+  padding: 7px;
+}
+
 .admin-forgot-container {
     display: flex;
     flex-direction: column;
@@ -177,6 +187,25 @@
   @media (max-width: 600px) {
     .admin-form-container {
       padding: 20px;
+    }
+
+    .head-box-grivnce h1.text-left{
+      font-size: 25px;
+      margin-top: 60px;
+    }
+
+    div.left-nav-grivnce{
+      margin-inline: 27%;
+    }
+
+    .left-index-grivnce{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .whole-right-grivnce{
+      width: 90%;
+      margin-inline: 5%;
     }
   
     .admin-submit-button,

@@ -1,368 +1,456 @@
 /* Base Styles - Full Screen */
-.Mech-intro {
-    margin-bottom: 50px;
-  }
-  
-  .Mech-intro-heading {
-    background-color: #eadbc8;
-    height: 50px;
-    margin-top: -100px;
-    padding-left: 20px;
-    display: flex;
-    width: 900px;
-    align-items: center;
-    color: #102C57;
-  }
-  
-  .Mech-intro-box {
-    position: relative;
-    background-color: #eadbc8;
-    border-radius: 10px;
-    border-width: 5px;
-    border-color: #102C57;
-    border-style: solid;
-    margin-top: 30px;
-    width: 90%;
-    align-content: center;
-    margin-left: 50px;
-    padding-bottom: 20px;
-    transition: background-color 0.3s ease;
-}
-.Mech-intro-box .first-para-small {
-    text-align: center;
-    width: 90%;
-    padding-top: 40px;
-    padding-bottom: 10px;
-    padding-left: 90px;
-    text-wrap: wrap;
-    font-weight: 500;
+.mech-intro {
+  margin-bottom: 50px;
 }
 
-.Mech-intro-box .small-intro-heading {
-    color: #102C57;
-    text-align: center;
-    padding-bottom: 15px;
-}
-
-.Mech-intro-box .small-intro-heading h6 {
-    font-weight: 700;
-}
-
-.Mech-intro-box .second-para-large {
-    text-align: left;
-    width: 90%;
-    height: fit-content;
-    padding-bottom: 40px;
-    padding-left: 90px;
-    text-wrap: wrap;
-    font-weight: 500;
-}
-
-/* Hover effect */
-.Mech-intro-box:hover {
-    background-color: #102C57;
-}
-
-.Mech-intro-box:hover::after {
-    content: "Code the Future, Ignite the Spark CSE, We Leave our Mark!";
-    font-size: 40px;
-    color: #eadbc8;
-    text-align: center;
-    padding: 10px;
-    width: 80%;
-    position: absolute;
-    top: 50%; 
-    left: 50%; 
-    transform: translate(-50%, -50%);
-    box-sizing: border-box;
-    word-wrap: break-word;
-    visibility: visible;
-}
-
-/* Ensuring the text inside is hidden by default */
-.Mech-intro-box .second-para-large,
-.Mech-intro-box .first-para-small,
-.Mech-intro-box .small-intro-heading {
-    visibility: visible;
-}
-
-/* Hide content when hover occurs */
-.Mech-intro-box:hover .second-para-large,
-.Mech-intro-box:hover .first-para-small,
-.Mech-intro-box:hover .small-intro-heading {
-    visibility: hidden;
-}
-  
-  .Mech-vision-heading,
-  .Mech-mission-heading {
-    background-color: #eadbc8;
-    height: 50px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    width: 900px;
-    color: #102C57;
-  }
-  
-  .vision-content,
-  .mission-content {
-    margin-top: 30px;
-    text-align: left;
-    width: 100%;
-  }
-  
-  .Mech-mission {
-    margin-top: 30px;
-  }
-  .table-header-Mech th {
-    background-color: #102c57;
-    color: white;
-    text-align: center;
-  }
-  
-  .table-header-Mech th:first-child {
-    border-top-left-radius: 10px;
-  }
-  
-  .table-header-Mech th:last-child {
-    border-top-right-radius: 10px;
-  }
-  
-  .table-body-Mech tr {
-    text-align: center;
-  }
-  .head-table-top-Mech h3 {
-    text-align: left;
-    padding-left: 15px;
-    padding-top: 6px;
-  }
-  .Mech-table {
-    width: 100%;
-    border-radius: 10px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 20px;
-  }
-  .head-table-top-Mech{
-
-    width:90% ;
-    height: 50px;
-    background-color: antiquewhite;
-    margin-bottom: 20px;
-  }
-  .name-Mech-prog {
-    text-align: left;
-  }
-  .headlab h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-.Mech-infra-head{
-  background-color: #eadbc8;
-    height: 50px;
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    width: 900px;
-    color: #102C57;
-}
-
-div.infra-Mech{
-  
-  height:fit-content;
-  display: inline-flex;
-  flex-wrap: wrap;
-  align-items: center;
- column-gap: 20px;
- 
-}
-.lab-Mech{
-  width: 45%;
-  background-color: #102c57;
-  height: 40px;
-  position: relative;
-  border-radius: 16px;
-  margin-left: 0;
-  padding-left: 0;
-  margin-bottom: 200px;
-
-}
-.lab-Mech h4{
-  text-align: left;
-  padding-left: 20px;
-  padding-top: 5px;
-  color: rgb(249, 243, 208);
-  
-}
-.lab-img-Mech{
-  width: 270px;
-  height: 150px;
-  margin-top: 20px;
-}
-
-
-.lab-eq-Mech{
-  margin-left: 290px;
-  margin-top:-150px;
-  width: 130px;
-  margin-right: 10px;
-  margin-bottom: 20px;
-font-size: 14px;
-}
-.Mech-mi-heading{
+.mech-intro-heading {
   background-color: #eadbc8;
   height: 50px;
   padding-left: 20px;
   display: flex;
   align-items: center;
   color: #102C57;
-  margin-bottom: 20px;
-  width: 900px;
 }
-.Mech-but{
-  width: 50px;
-  height: 20px;
-  color: bisque;
+
+.mech-intro-box {
+  position: relative;
+  background-color: #eadbc8;
+  border-radius: 10px;
+  border-width: 5px;
+  border-color: #102C57;
+  border-style: solid;
+  margin-top: 30px;
+  width: 90%;
+  align-content: center;
+  margin-left: 50px;
+  padding-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+.mech-intro-box .first-para-small {
+  text-align: center;
+  width: 90%;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  padding-left: 90px;
+  text-wrap: wrap;
+  font-weight: 500;
+}
+
+.mech-intro-box .small-intro-heading {
+  color: #102C57;
+  text-align: center;
+  padding-bottom: 15px;
+}
+
+.mech-intro-box .small-intro-heading h6 {
+  font-weight: 700;
+}
+
+.mech-intro-box .second-para-large {
+  text-align: left;
+  width: 90%;
+  height: fit-content;
+  padding-bottom: 40px;
+  padding-left: 90px;
+  text-wrap: wrap;
+  font-weight: 500;
+}
+
+/* Hover effect */
+.mech-intro-box:hover {
+  background-color: #102C57;
+}
+
+.mech-intro-box:hover::after {
+  content: "Fuel the Future, Power the Dream, MECH Engineers Reign Supreme!";
+  font-size: 40px;
+  color: #eadbc8;
+  text-align: center;
+  padding: 10px;
+  width: 80%;
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  word-wrap: break-word;
+  visibility: visible;
+}
+
+/* Ensuring the text inside is hidden by default */
+.mech-intro-box .second-para-large,
+.mech-intro-box .first-para-small,
+.mech-intro-box .small-intro-heading {
+  visibility: visible;
+}
+.course-outcome{
+text-align: center;
+margin-top: 15px;
+margin-bottom: 15px;
+font-size: 20px;
+}
+
+.course-outcome a{
+color: #f20707;
+text-decoration: none;
+}
+
+.course-outcome a:hover{
+text-decoration: underline;
+}
+
+.vision-mission-link{
+text-align: center;
+margin-top: 15px;
+}
+
+.vision-mission-link a{
+color: #102C57;
+text-decoration: none;
+}
+
+.vision-mission-link a:hover{
+text-decoration: underline;
+}
+
+/* Hide content when hover occurs */
+.mech-intro-box:hover .second-para-large,
+.mech-intro-box:hover .first-para-small,
+.mech-intro-box:hover .small-intro-heading {
+  visibility: hidden;
+}
+
+.mech-vision-heading,
+.mech-mission-heading {
+  background-color: #eadbc8;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  
+  color: #102C57;
+}
+
+.vision-content,
+.mission-content {
+  margin-top: 30px;
+  text-align: left;
+  width: 80%;
+}
+
+.mech-mission {
+  margin-top: 30px;
+}
+.table-header-mech th {
+  background-color: #102c57;
+  color: white;
+  text-align: center;
+}
+
+.table-header-mech th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.table-header-mech th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.table-body-mech tr {
+  text-align: center;
+}
+.head-table-top-mech h3 {
+  text-align: left;
+  padding-left: 15px;
+  padding-top: 6px;
+}
+.mech-table {
+  width: 90%;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.head-table-top-mech{
+
+  width:100% ;
+  height: 50px;
+  background-color: antiquewhite;
+  margin-bottom: 20px;
+}
+.name-mech-prog {
+  text-align: left;
+}
+.headlab h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.mech-infra-head{
+background-color: #eadbc8;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #102C57;
+}
+
+div.infra-mech{
+
+height:fit-content;
+display: inline-flex;
+flex-wrap: wrap;
+align-items: center;
+column-gap: 20px;
+
+}
+.lab-mech{
+width: 45%;
+background-color: #102c57;
+height: 40px;
+position: relative;
+border-radius: 16px;
+margin-left: 0;
+padding-left: 0;
+margin-bottom: 200px;
+
+}
+.lab-mech h4{
+text-align: left;
+padding-left: 20px;
+padding-top: 5px;
+color: rgb(249, 243, 208);
+
+}
+.lab-img-mech{
+width: 270px;
+height: 150px;
+margin-top: 20px;
+}
+
+
+.lab-eq-mech{
+margin-left: 290px;
+margin-top:-150px;
+width: 130px;
+margin-right: 10px;
+margin-bottom: 20px;
+font-size: 14px;
+}
+.mech-mi-heading{
+background-color: #eadbc8;
+height: 50px;
+padding-left: 20px;
+display: flex;
+align-items: center;
+color: #102C57;
+margin-bottom: 20px;
+width: 100%;
+}
+.mech-but{
+width: 50px;
+height: 20px;
+color: bisque;
 
 }
 
 .but-toggle-button {
-  font-size: 1.2rem; /* Increase font size */
-  padding: 12px 24px; /* Add padding for a larger button */
-  border-radius: 10px; /* Rounded edges */
-  border: none;
-  background-color: #102C57; /* Blue background */
-  color: #eadbc8;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-  margin-left: 60px;
-  margin-top: -20px;
+font-size: 1.2rem; /* Increase font size */
+padding: 12px 24px; /* Add padding for a larger button */
+border-radius: 10px; /* Rounded edges */
+border: none;
+background-color: #102C57; /* Blue background */
+color: #eadbc8;
+cursor: pointer;
+transition: all 0.3s ease-in-out;
+margin-left: 60px;
+margin-top: -20px;
 }
 
 .but-toggle-button:hover {
-  background-color: #030f1b; /* Darker blue on hover */
+background-color: #030f1b; /* Darker blue on hover */
+}
+
+@media (max-width: 1200px) {
+.mech-intro-heading, .mech-vision-heading, .mech-mission-heading {
+  width: 90%;
+}
+
+.mech-intro-box {
+  width: 90%;
+  margin-left: 20px;
+}
+
+.vision-content, .mission-content {
+  width: 90%;
+  padding: 0 15px;
+}
+
+.mech-intro-box:hover::after {
+  font-size: 1.5rem;
+  width: 90%;
+}
+.lab-2,.lab-3 {
+  width: 70%;
+  margin-left: 5%;
+}
+.lab-img2 {
+  width: 370px;
+  margin-left: 90px;
+  margin-right: auto;
+}
+.lab-eq{
+margin-left: 470px;
+margin-top: -200px;
+}
+
+}
+
+@media (max-width: 992px) {
+.mech-intro-heading, .mech-vision-heading, .mech-mission-heading {
+  width: 100%;
+  text-align: center;
+}
+
+.mech-intro-box {
+  width: 95%;
+  margin-left: 10px;
+  padding: 10px;
+}
+
+.vision-content, .mission-content {
+  width: 95%;
+}
+
+.mech-intro-box:hover::after {
+  font-size: 1.2rem;
+}
+.lab-mech h4{
+  font-size: 20px;
+
+}.lab-img-mech{
+  width: 160px;
+  height: 120px;
+  margin-top: 20px;
+}
+.lab-img-mech h5{
+  font-size: medium;
+}
+.lab-eq-mech{
+  margin-left: 175px;
+  margin-top:-130px;
+  width: 130px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+ 
+}
+}
+
+@media (max-width: 768px) {
+.mech-intro-heading h3,
+.mech-vision-heading h3,
+.mech-mission-heading h3 {
+  font-size: 1.5rem;
+}
+
+.mech-intro-box .first-para-small,
+.mech-intro-box .second-para-large {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.mech-intro-box:hover::after {
+  font-size: 1rem;
+}
+.lab-mech h4{
+  font-size: 14px;
+
+}
+.lab-mech{
+  height: 30px;
+}
+
+.lab-img-mech{
+  width: 120px;
+  height: 100px;
+  margin-top: 20px;
+}
+.lab-img-mech h5{
+  font-size: medium;
+}
+.lab-eq-mech{
+  margin-left: 135px;
+  margin-top:-100px;
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+ 
+}
+.d-flex p.tick{
+  font-size: 10px;
+}
+
+}
+
+@media (max-width: 576px) {
+.mech-intro-heading h3,
+.mech-vision-heading h3,
+.mech-mission-heading h3 {
+    font-size: 1rem;
 }
 
 
-  
-  /* Responsive Styles */
-  @media (max-width: 1200px) {
-    .Mech-intro-heading, .Mech-vision-heading, .Mech-mission-heading,.Mech-mi-heading {
-      width: 90%;
-    }
-  
-    .Mech-intro-box {
-      width: 90%;
-      margin-left: 20px;
-    }
-  
-    .vision-content, .mission-content {
-      width: 90%;
-      padding: 0 15px;
-    }
-  
-    .Mech-intro-box:hover::after {
-      font-size: 1.5rem;
-      width: 90%;
-    }
-    .lab-2,.lab-3 {
-      width: 70%;
-      margin-left: 5%;
-    }
-    .lab-img2 {
-      width: 370px;
-      margin-left: 90px;
-      margin-right: auto;
-  }
-  .lab-eq{
-    margin-left: 470px;
-    margin-top: -200px;
-  }
-    
-  }
-  
-  @media (max-width: 992px) {
-    .Mech-intro-heading, .Mech-vision-heading, .Mech-mission-heading,.Mech-mi-heading  {
-      width: 100%;
-      text-align: center;
-    }
-  
-    .Mech-intro-box {
-      width: 95%;
-      margin-left: 10px;
-      padding: 10px;
-    }
-  
-    .vision-content, .mission-content {
-      width: 95%;
-    }
-  
-    .Mech-intro-box:hover::after {
-      font-size: 1.2rem;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .Mech-intro-heading h3,
-    .Mech-vision-heading h3,
-    .Mech-mission-heading h3 
-    .Mech-mi-heading h3{
-      font-size: 1.5rem;
-    }
-  
-    .Mech-intro-box .first-para-small,
-    .Mech-intro-box .second-para-large {
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-  
-    .Mech-intro-box:hover::after {
-      font-size: 1rem;
-    }
-    .lab-2, .lab-3 {
-      width: 90%;
-      margin-left: 5%;}
-      .lab-img2 {
-        width: 60%;
-        height: auto;
-        margin: 10px;
-    }
-    .lab-eq{
-      margin-left: 370px;
-      margin-top: -160px;}
-  }
-  
-  @media (max-width: 576px) {
-    .Mech-intro-heading h3,
-    .Mech-vision-heading h3,
-    .Mech-mission-heading h3
-    .Mech-mi-heading h3 {
-      font-size: 4vw;
-    }
-  
-    .Mech-intro-box {
-      width: 100%;
-      margin-left: 0;
-      border-width: 3px;
-      padding: 5px;
-    }
-  
-    .vision-content, .mission-content {
-      width: 100%;
-      text-align: justify;
-      padding: 5px;
-    }
-  
-    .Mech-intro-box:hover::after {
-      font-size: 0.8rem;
-    }
-    .lab-2,.lab-3 {
-      width: 100%;
-      margin-left: 0;
-  }
-  .lab-eq{
-    margin-left: 250px;
-    margin-top: -120px;}
+.mech-intro-box {
+  width: 100%;
+  margin-left: 0;
+  border-width: 3px;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+  justify-content: center;
+}
+
+ .first-para-small, .small-intro-heading, div.second-para-large p{
+  width: auto;
+  text-align:justify;
+  padding: auto;
+ }
+
+.vision-content, .mission-content {
+  width: 100%;
+  text-align: justify;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.mech-intro-box:hover::after {
+  font-size: 0.8rem;
+}
+.lab-mech h4{
+  font-size: 11px;
+
+}
+.lab-mech{
+  height: 25px;
+}
+
+.lab-img-mech{
+  width: 100px;
+  height: 90px;
+  margin-top: 20px;
+}
+.lab-img-mech h5{
+  font-size: 14px;
+}
+.lab-eq-mech{
+  margin-left: 109px;
+  margin-top:-100px;
+  width: 100px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+ 
+}
+.d-flex p.tick{
+  font-size: 10px;
+}
 
 }

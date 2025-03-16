@@ -1,0 +1,251 @@
+.faculty-container-instru {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 5%;
+    background-color: #f4f4f4;
+    margin-top: 5%;
+    margin-left: 200px;
+  }
+  
+  /* Heading Styling */
+  .faculty-heading {
+    background-color: #eadbc8;
+    color: #102C57;
+    padding-left: 20px;
+    padding-top: 8px;
+    height: 50px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Faculty Card Styling */
+  .faculty-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .faculty-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Faculty Image */
+  .faculty-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #eadbc8;
+    margin-right: 20px;
+  }
+  
+  /* Faculty Info */
+  .faculty-info {
+    flex: 1;
+  }
+  
+  /* Faculty Name */
+  .faculty-info h2 {
+    font-size: 1.8rem;
+    margin: 5px 0;
+    color: #102C57;
+  }
+  
+  /* Faculty Details */
+  .faculty-info h3 {
+    font-size: 1rem;
+    color: #555;
+    margin: 5px 0;
+  }
+  
+  /* Email Styling */
+  .faculty-email {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+  
+  .faculty-email:hover {
+    text-decoration: underline;
+    color: #0e61dd;
+  }
+  
+  /* Read More Button */
+  .read-more-btn {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .read-more-btn:hover {
+    text-decoration: underline;
+    color: #0e61dd;
+  }
+  
+  /* Faculty Bio */
+  .faculty-bio {
+    font-size: 1rem;
+    color: #444;
+    margin-top: 10px;
+    line-height: 1.6;
+    max-height: 4.8em;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease-in-out;
+    text-align: justify;
+  }
+  
+  .faculty-bio.expanded {
+    max-height: none;
+  }
+  
+  /* Visiting Faculty Table */
+  .faculty-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .faculty-table th, .faculty-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .faculty-table th {
+    background-color: #102C57;
+    color: white;
+  }
+  
+  /* ----------- Responsive Styles ----------- */
+  
+  /* Tablet View */
+  @media (max-width: 1024px) {
+    .faculty-container {
+      padding: 20px;
+      margin-inline: 5%;
+    }
+  
+    .faculty-card {
+      flex-direction: column;
+      text-align: center;
+      padding:20px;
+    }
+  
+    .faculty-photo {
+      margin-right: 0;
+      margin-bottom: 20px;
+      width: 130px;
+      height: 130px;
+    }
+  
+    .faculty-info h2 {
+      font-size: 1.6rem;
+    }
+  
+    .faculty-info h3 {
+      font-size: 1rem;
+    }
+  
+    .faculty-table th, .faculty-table td {
+      padding: 8px;
+    }
+  }
+  
+  /*Mobile View */
+  @media (max-width: 768px) {
+    .faculty-container {
+      padding: 20px;
+      margin-inline: 5%;
+    }
+  
+    .faculty-heading {
+      font-size: 1.5rem;
+      padding-left:20px;
+      padding-top: 10px;
+    }
+  
+    .faculty-card {
+      padding: 15px;
+    }
+  
+    .faculty-photo {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .faculty-info h2 {
+      font-size: 1.4rem;
+    }
+  
+    .faculty-info h3 {
+      font-size: 0.9rem;
+    }
+  
+    .faculty-email {
+      font-size: 1rem;
+    }
+  
+    .faculty-table th, .faculty-table td {
+      font-size: 0.9rem;
+      padding: 6px;
+    }
+  }
+  
+  /*  Small Mobile View */
+  @media (max-width: 480px) {
+    .faculty-cont-wrapper{
+      display: grid;
+      place-items: center;
+    }
+  
+    .faculty-container {
+      width: 90%;
+      padding: 10px;
+      margin-inline: 4%;
+    }
+  
+    .faculty-heading {
+      font-size: 1.3rem;
+      padding-left:20px;
+      padding-top: 10px;
+    }
+  
+    .faculty-photo {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .faculty-info h2 {
+      font-size: 1.3rem;
+    }
+  
+    .faculty-info h3 {
+      font-size: 0.8rem;
+    }
+  
+    .faculty-email {
+      font-size: 0.9rem;
+    }
+  
+    .faculty-table {
+      font-size: 0.8rem;
+    }
+  }
+  

@@ -60,7 +60,7 @@ const INSTRUvm = ({ className }) => {
 
           <div className="second-para-large">
             <p>
-              As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
+            The department features state-of-the-art laboratories in Sensors & Process Control, Electronics, Measurement & Control, Microprocessors, Computers, and Biomedical Instrumentation, with advanced simulation tools and equipment worth ₹1.65 crore. Spread across 3134 sq. m., it houses the Instrumentation Engineering Student Association (IESA), organizing cultural and technical events. Students gain industry exposure through practicals, projects, training, and tours, along with soft-skills development for overall growth.
             </p>
           </div>
         </div>
@@ -132,7 +132,7 @@ const INSTRUvm = ({ className }) => {
             <img src={lab.img} alt={lab.name} className='lab-img-instru' />
             <div className='lab-eq-instru'>
               <h5>Equipment:</h5>
-              <p>{lab.equipment}</p>
+              <p className='tick'>{lab.equipment}</p>
             </div>
           </div>
         ))}

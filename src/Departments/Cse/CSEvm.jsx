@@ -97,50 +97,50 @@ const CSEvm = ({ className }) => {
                           </Table>
                           <div className='right-'>
       <div className='infra-cse'>
-        <div className='headlab'>
-          <h1>Laboratories</h1>
+        <div className='cse-mi-heading'>
+          <h3>Laboratories</h3>
         </div>
         <div>
-                    <div className='lab-1'> 
+                    <div className='lab-1-cs'> 
                     <h4>01.Computer Laboratory-118 </h4>
                     </div>
                     <img
                     src={lab1}
                     alt="lab-1"
-                    className="lab-img2"
-                  /><div className="lab-eq">
+                    className="lab-img-cs"
+                  /><div className="lab-eq-cs">
                   <h5>Equipment:</h5>
-                  <p>
+                  <p className='pick'>
                   Desktop,Computer, 
                   Printer,Scanner
                   </p>
                   </div>
-                  <div className='lab-2'> 
+                  <div className='lab-2-cs'> 
                     <h4>02.Computer Laboratory-119 </h4>
                     </div>
                     <img
                     src={lab2}
                     alt="lab-1"
-                    className="lab-img2"
+                    className="lab-img-cs"
                   />
-                  <div className="lab-eq">
+                  <div className="lab-eq-cs">
                   <h5>Equipment:</h5>
-                  <p>
+                  <p className='pick'>
                   Desktop,
                   Computer, 
                   Printer
                   </p>
-                  </div><div className='lab-2'> 
+                  </div><div className='lab-2-cs'> 
                     <h4>03.Computer Laboratory-120 </h4>
                     </div>
                     <img
                     src={lab3}
                     alt="lab-1"
-                    className="lab-img2"
+                    className="lab-img-cs"
                   />
-                  <div className="lab-eq">
+                  <div className="lab-eq-cs">
                   <h5>Equipment:</h5>
-                  <p>
+                  <p className='pick'>
                   Desktop,Computer, 
                   Printer
                   </p>

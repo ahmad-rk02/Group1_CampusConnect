@@ -185,32 +185,32 @@ font-size: 20px;
     margin-top: 30px;
   }
   
-.infra-cse{
-  
-  height: 1449px;
+  .infra-cse{
+  height: 1400px;
+    
    
   }
 
 
 
-.lab-eq{
+.lab-eq-cs{
   margin-left: 530px;
   margin-top: -200px;
 }
-.lab-2 h4{
+.lab-2-cs h4{
   text-align: left;
   padding-left: 20px;
   padding-top: 5px;
   color: rgb(249, 243, 208);
 
 }
-.lab-1 h4{
+.lab-1-cs h4{
   text-align: left;
   padding-left: 20px;
   padding-top: 5px;
   color: rgb(249, 243, 208);
 }
-.lab-2{
+.lab-2-cs{
   width: 55%;
   background-color: #102c57;
   height: 40px;
@@ -219,7 +219,7 @@ font-size: 20px;
   margin-top: 180px;
   border-radius: 16px;
 }
-.lab-1{
+.lab-1-cs{
   width: 55%;
   background-color: #102c57;
   height: 40px;
@@ -228,16 +228,30 @@ font-size: 20px;
   
   border-radius: 16px;
 }
-.lab-img2{
+.lab-img-cs{
   width: 400px;
   margin-top: 20px;
   margin-left: 100px;
 }
 .cse-infra-head{
-  text-align: center;
-  font-size: larger;
+  background-color: #eadbc8;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #102C57;
 }
-
+.cse-mi-heading{
+  background-color: #eadbc8;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  color: #102C57;
+  margin-bottom: 20px;
+  width: 100%;
+}
 
   
   /* Responsive Styles */
@@ -260,16 +274,16 @@ font-size: 20px;
       font-size: 1.5rem;
       width: 90%;
     }
-    .lab-2,.lab-3 {
+    .lab-2-cs,.lab-1-cs {
       width: 70%;
       margin-left: 5%;
     }
-    .lab-img2 {
-      width: 370px;
+    .lab-img-cs {
+      width: 360px;
       margin-left: 90px;
-      margin-right: auto;
+      margin-top: 30px;
   }
-  .lab-eq{
+  .lab-eq-cs{
     margin-left: 470px;
     margin-top: -200px;
   }
@@ -313,17 +327,20 @@ font-size: 20px;
     .cse-intro-box:hover::after {
       font-size: 1rem;
     }
-    .lab-2, .lab-3 {
-      width: 90%;
+    .lab-2-cs,.lab-1-cs {
+      width: 70%;
       margin-left: 5%;}
-      .lab-img2 {
-        width: 60%;
-        height: auto;
-        margin: 10px;
-    }
-    .lab-eq{
-      margin-left: 370px;
-      margin-top: -160px;}
+      
+    .lab-eq-cs{
+      margin-left: 390px;
+      margin-top: -140px;}
+      .lab-img-cs {
+      width: 290px;
+      margin-left: 90px;
+      margin-right: auto;
+  }
+
+  
   }
   
   @media (max-width: 576px) {
@@ -360,12 +377,23 @@ font-size: 20px;
     .cse-intro-box:hover::after {
       font-size: 0.8rem;
     }
-    .lab-2,.lab-3 {
+    .lab-1-cs{
       width: 100%;
       margin-left: 0;
   }
-  .lab-eq{
-    margin-left: 250px;
-    margin-top: -120px;}
+  .lab-2-cs{
+    width: 100%;
+      margin-left: 0;
+  }
+  .lab-eq-cs{
+    margin-left: 270px;
+    margin-top: 0px;
+  margin-bottom: -90px;}
+    .lab-img-cs {
+    width: 200px;
+    margin-left: 50px;
+    margin-right: auto;
+    margin-bottom: -90px;
+}
 
 }

@@ -150,7 +150,7 @@ const GrievanceForm = () => {
             </Card>
           </Col>
 
-          <Col>
+          <Col className='whole-right-grivnce'>
             <div>
               <div className='head-right-top-grivnce' style={{ backgroundColor: "#eadbc8" }}>
                 <h3 style={{ color: '#102C57' }}>Student Grievance Form</h3>
