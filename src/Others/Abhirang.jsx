@@ -12,7 +12,7 @@ const Abhirang = () => {
       {/* Header Section */}
       <Row className="header-design-tech text-white">
         <Col className="header-align-tech">
-          <h1 className="text-left">Abhirang</h1>
+          <h1 className="text-left">ABHIRANG</h1>
         </Col>
       </Row>
 

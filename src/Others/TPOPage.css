@@ -24,6 +24,8 @@
   }
   
   .left-nav {
+    top: -25px;
+    border-radius: 0;
     border: none;
     overflow: hidden;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
