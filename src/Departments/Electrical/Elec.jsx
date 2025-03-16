@@ -1,34 +1,35 @@
- import React from 'react';
-import MechCarousel from '../../Departments/Mechanical/MechCarousel'
+import React from 'react';
+import ElecCarousel from '../../Departments/Electrical/ElecCarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import './Mech.css'
-import MechFaculty from './MechFaculty';
+import './Elec.css'
+
 import { Link } from 'react-router-dom';
-import Mechvm from '../../Departments/Mechanical/Mechvm';
+import Elecvm from '../../Departments/Electrical/Elecvm';
 
 
-const Mech = () => {
+const Elec = () => {
   return (
-    <div className='instru-page-div d-flex flex-column'>
+    
+       <div className='Elec-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
 
       
 
-      <Row className='head-box-Mech'>
+      <Row className='head-box-Elec'>
           <h1 className="text-left">DEPARTMENTS</h1>
         </Row>
 
         <Row>
 
-<MechCarousel />
+<ElecCarousel />
 
 <Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} "  >
   {/* Left Sidebar */}
-  <Col md={4} className='left-sidebar-Mech overlay-col ' >
+  <Col md={4} className='left-sidebar-Elec overlay-col ' >
     <div className="left-sidebar-wrapper">
-      <Card className="left-nav-Mech">
+      <Card className="left-nav-Elec">
         <ListGroup variant="flush">
-          <ListGroup.Item className="left-nav-row-Mech-01">
+          <ListGroup.Item className="left-nav-row-Elec-01">
             <Link
               to="/cse"
               className={location.pathname === "/cse" ? "active-link" : "/cse"}
@@ -36,7 +37,7 @@ const Mech = () => {
               Computer Science & Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to=""
               className={location.pathname === "" ? "active-link" : ""}
@@ -44,39 +45,39 @@ const Mech = () => {
               Electronics & Telecommunication Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to="/instru"
-              className={location.pathname === "/instru" ? "active-link" : "/instru"}
+              className={location.pathname === "/intru" ? "active-link" : "/instru"}
             >
-              Instrumentation Engineering
+             Instrumentation Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to="/Elec"
-              className={location.pathname === "" ? "active-link" : "/Elec"}
+              className={location.pathname === "/Elec" ? "active-link" : ""}
             >
-              Electrical Engineering
+              <b>Electrical Engineering</b>
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
-            <Link
-              to=""
-              className={location.pathname === "/mech" ? "active-link" : ""}
-            >
-              <b>Mechanical Engineering</b>
-            </Link>
-          </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to="/mech"
-              className={location.pathname === "/mech" ? "active-link" : ""}
+              className={location.pathname === "/mech" ? "active-link" : "/mech"}
+            >
+              Mechanical Engineering
+            </Link>
+          </ListGroup.Item>
+          <ListGroup.Item className="left-nav-row-Elec">
+            <Link
+              to=""
+              className={location.pathname === "" ? "active-link" : ""}
             >
               Civil Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Mech">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to="/workshop"
               className={location.pathname === "/workshop" ? "active-link" : "/workshop"}
@@ -91,20 +92,20 @@ const Mech = () => {
 
 
 </Row>
-<Col md={8} className='right-content-Mech' >
+<Col md={8} className='right-content-Elec' >
              
-<div >
-              <Mechvm className='right-content-Mech' />
-            </div>       
+            <div >
+              <Elecvm className='right-content-Elec' />
+            </div>
+
+
             
           </Col>
 </Row>
       </Container>
       
-   
- 
     </div>
   )
 }
 
-export default Mech;
+export default Elec;
