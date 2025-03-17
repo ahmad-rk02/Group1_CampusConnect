@@ -29,7 +29,7 @@ export default defineConfig({
     target: 'esnext', // Use modern JavaScript for better performance
     cssCodeSplit: true, // Separate CSS from JS files for better caching
     rollupOptions: {
-      external: ['pg-native', '@rollup/rollup-linux-x64-gnu'] // Ensure Rollup ignores these modules
+      external: ['pg-native', '@rollup/rollup-linux-x64-gnu'], // Ignore platform-specific modules
     }
   }
 })
