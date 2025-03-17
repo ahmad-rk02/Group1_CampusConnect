@@ -55,7 +55,7 @@ import AbhirangGallery from "./Others/AbhirangGallery";
 import AbhirangBanner from "./Others/AbhirangBanner";
 import NewsEvents from "./pages/NewsEvents";
 import PrincipalHods from "./Administration/principalHods";
-import Office from "./Administration/office";
+import Office from "./Administration/Office";
 import TPOPage from "./Others/TPOPage";
 
 function App() {
