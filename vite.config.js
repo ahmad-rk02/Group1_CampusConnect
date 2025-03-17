@@ -7,11 +7,12 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      'pg-native': false // Prevent Vite from bundling 'pg-native'
+      'pg-native': false, // Prevent Vite from bundling 'pg-native'
+      '@rollup/rollup-linux-x64-gnu': false // Ignore the Linux-specific module on Windows
     }
   },
   optimizeDeps: {
-    exclude: ['pg-native'] // Exclude 'pg-native' from optimized dependencies
+    exclude: ['pg-native', '@rollup/rollup-linux-x64-gnu'] // Exclude platform-specific modules from optimized dependencies
   },
   define: {
     global: {}, // Define 'global' to avoid compatibility issues
@@ -24,6 +25,11 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist', // Output directory for the build
-    sourcemap: true // Enable source maps for easier debugging
+    sourcemap: true, // Enable source maps for easier debugging
+    target: 'esnext', // Use modern JavaScript for better performance
+    cssCodeSplit: true, // Separate CSS from JS files for better caching
+    rollupOptions: {
+      external: ['pg-native', '@rollup/rollup-linux-x64-gnu'] // Ensure Rollup ignores these modules
+    }
   }
 })
