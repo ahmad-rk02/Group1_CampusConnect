@@ -21,6 +21,7 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cdbreact": "^1.5.19",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase": "^11.2.0",
     "jwt-decode": "^4.0.0",
@@ -56,7 +57,13 @@
     "npm": ">=9.0.0"
   },
   "description": "CampusConnect enhances the college website by integrating a smart chatbot to help students easily find important information about exams, courses, and administrative processes. This solution improves the overall efficiency of student interactions with the college by providing instant support and quick access to information.",
-  "keywords": ["college", "chatbot", "react", "vite", "website"],
+  "keywords": [
+    "college",
+    "chatbot",
+    "react",
+    "vite",
+    "website"
+  ],
   "author": "Anjali Rinayat",
   "license": "ISC"
 }
