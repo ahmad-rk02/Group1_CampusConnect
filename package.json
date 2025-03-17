@@ -1,13 +1,15 @@
 {
   "name": "campusconnect",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "start": "vite preview",
+    "lint": "eslint . --fix",
+    "clean": "rm -rf node_modules dist package-lock.json",
+    "deploy": "npm run build && npm run start"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.6.0",
@@ -49,8 +51,12 @@
     "tailwindcss": "^3.4.17",
     "vite": "^5.4.7"
   },
-  "description": "This project aims to enhance the college website by integrating a smart chatbot to help students easily find important information and get quick answers to their questions. Many students struggle to locate details about exams, courses, and administrative processes on the current website, leading to frustration and wasted time. By developing a user-friendly website combined with an AI-powered chatbot, this solution will provide instant support and improve the overall efficiency of student interactions with the college. The chatbot will be able to answer common queries, guide students through various processes, and ensure they have quick and easy access to the information they need.",
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "description": "CampusConnect enhances the college website by integrating a smart chatbot to help students easily find important information about exams, courses, and administrative processes. This solution improves the overall efficiency of student interactions with the college by providing instant support and quick access to information.",
+  "keywords": ["college", "chatbot", "react", "vite", "website"],
+  "author": "Anjali Rinayat",
   "license": "ISC"
 }
