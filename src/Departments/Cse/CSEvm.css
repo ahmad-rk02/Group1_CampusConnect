@@ -186,9 +186,8 @@ font-size: 20px;
   }
   
   .infra-cse{
-  height: 1400px;
-    
-   
+  height: 1400px; 
+  overflow-y: hidden;
   }
 
 
@@ -308,6 +307,11 @@ font-size: 20px;
   
     .cse-intro-box:hover::after {
       font-size: 1.2rem;
+    }
+
+    .infra-cse{
+      height: 1330px;
+      overflow-y: hidden;
     }
   }
   
