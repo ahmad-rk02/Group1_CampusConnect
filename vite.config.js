@@ -15,6 +15,7 @@ export default defineConfig({
     exclude: ['pg-native', '@rollup/rollup-linux-x64-gnu'] // Exclude platform-specific modules from optimized dependencies
   },
   define: {
+  'STRAPI_BASE_URL': JSON.stringify(process.env.STRAPI_BASE_URL || 'https://localhost:1337-backend.onrender.com'),
     global: {}, // Define 'global' to avoid compatibility issues
     'process.env': {} // Add empty 'process.env' for compatibility
   },
@@ -29,7 +30,7 @@ export default defineConfig({
     target: 'esnext', // Use modern JavaScript for better performance
     cssCodeSplit: true, // Separate CSS from JS files for better caching
     rollupOptions: {
-      external: ['pg-native', '@rollup/rollup-linux-x64-gnu'], // Ignore platform-specific modules
+      external: ['pg-native', '@rollup/rollup-linux-x64-gnu'] // Ensure Rollup ignores these modules
     }
   }
 })
