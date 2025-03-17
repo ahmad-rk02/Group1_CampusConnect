@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './committees.css'
+import './Committees.css'
 
 const Committees = () => {
 
