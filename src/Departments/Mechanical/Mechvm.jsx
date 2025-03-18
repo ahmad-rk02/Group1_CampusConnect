@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './Mechvm.css';
 import lab1 from '../../assets/I1.jpg';
+import lab2 from '../../assets/i2.jpg';
 import lab3 from '../../assets/i2.jpg';
 import lab4 from '../../assets/i3.jpg';
 import lab5 from '../../assets/i3.jpg';

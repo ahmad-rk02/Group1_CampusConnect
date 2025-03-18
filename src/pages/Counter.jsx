@@ -11,19 +11,27 @@ const Counter = () => {
         { icon: "bi bi-people-fill", value: "400", text: "Visitors" },
     ]);
 
-    const interval = 2;
     const isFirstRender = useRef(true);
 
+    // Increment visitor count on first render
     const incrementVisitorCount = () => {
-        const currentVisitors = localStorage.getItem("visitorCount") ? parseInt(localStorage.getItem("visitorCount")) : 0;
-        const updatedVisitors = currentVisitors + 1;
-        localStorage.setItem("visitorCount", updatedVisitors);
+        try {
+            const currentVisitors = localStorage.getItem("visitorCount")
+                ? parseInt(localStorage.getItem("visitorCount"))
+                : 0;
+            const updatedVisitors = currentVisitors + 1;
+            localStorage.setItem("visitorCount", updatedVisitors);
 
-        setDataItems((prevDataItems) =>
-            prevDataItems.map((item) =>
-                item.text === "Visitors" ? { ...item, value: updatedVisitors.toString() + "+" } : item
-            )
-        );
+            setDataItems((prevDataItems) =>
+                prevDataItems.map((item) =>
+                    item.text === "Visitors"
+                        ? { ...item, value: updatedVisitors.toString() + "+" }
+                        : item
+                )
+            );
+        } catch (error) {
+            console.error("Error updating visitor count:", error);
+        }
     };
 
     useEffect(() => {
@@ -33,33 +41,37 @@ const Counter = () => {
         }
     }, []);
 
+    // Function to animate counting
     const updateValues = () => {
-        const updatedDataItems = dataItems.map((item) => {
-            const endValue = parseInt(item.value);
-            let startValue = 0;
-            const duration = Math.floor(interval / endValue);
+        setDataItems((prevDataItems) =>
+            prevDataItems.map((item) => {
+                const endValue = parseInt(item.value.replace("+", ""));
+                let startValue = 0;
 
-            const counter = setInterval(() => {
-                startValue += 1;
-                if (startValue <= endValue) {
-                    setDataItems((prevDataItems) =>
-                        prevDataItems.map((prevItem) =>
-                            prevItem.text === item.text
-                                ? { ...prevItem, value: startValue.toString() + (startValue === endValue ? "+" : "") }
-                                : prevItem
-                        )
-                    );
-                } else {
-                    clearInterval(counter);
-                }
-            }, duration);
+                // Ensure duration is greater than zero
+                const duration = endValue > 0 ? Math.max(Math.floor(2000 / endValue), 10) : 50;
 
-            return { ...item, value: startValue.toString() };
-        });
+                const updateCount = () => {
+                    if (startValue < endValue) {
+                        startValue++;
+                        setDataItems((prevItems) =>
+                            prevItems.map((prevItem) =>
+                                prevItem.text === item.text
+                                    ? { ...prevItem, value: startValue.toString() + "+" }
+                                    : prevItem
+                            )
+                        );
+                        setTimeout(updateCount, duration);
+                    }
+                };
 
-        setDataItems(updatedDataItems);
+                updateCount();
+                return item;
+            })
+        );
     };
 
+    // Trigger counting animation when visible
     const handleVisibilityChange = (isVisible) => {
         if (isVisible) {
             updateValues();
@@ -71,17 +83,20 @@ const Counter = () => {
             {dataItems.map((item, index) => (
                 <VisibilitySensor
                     key={index}
-                    onChange={(isVisible) => handleVisibilityChange(isVisible)}
+                    onChange={handleVisibilityChange}
+                    partialVisibility
                 >
-                    <div className="icon-style">
-                        <i className={item.icon}></i>
-                        <span className="cnum" id={item.text}>
-                            {item.value}
-                        </span>
-                        <span className="ctext">
-                            {item.text}
-                        </span>
-                    </div>
+                    {({ isVisible }) => (
+                        <div className="icon-style">
+                            <i className={item.icon}></i>
+                            <span className="cnum" id={item.text}>
+                                {item.value}
+                            </span>
+                            <span className="ctext">
+                                {item.text}
+                            </span>
+                        </div>
+                    )}
                 </VisibilitySensor>
             ))}
         </div>
