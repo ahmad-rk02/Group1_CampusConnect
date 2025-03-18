@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import imagePath from "./assets/Gec.png";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutVM from './About/AboutVM';
@@ -103,7 +103,7 @@ function App() {
 
   return (
     <>
-      <Router basename="/Group1_CampusConnect">
+      <BrowserRouter basename="/Group1_CampusConnect">
         <Navbar imageSrcPath={imagePath} navItems={navItems} />
         <div className="container-fluid m-0 p-0">
           <Routes>
@@ -159,7 +159,7 @@ function App() {
             <Route path="/tpopage" element={<TPOPage />} />
           </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
       <ChatbotCTA />
       <Footer />
     </>
