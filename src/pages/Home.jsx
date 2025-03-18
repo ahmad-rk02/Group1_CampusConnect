@@ -7,8 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Research from './Research'
 import Counter from './Counter'
 import CIIT from './CIIT'
-import WelcomeSection from './welcomepage';
-
+import WelcomeSection from './welcomepage'
+import ErrorBoundary from '../pages/ErrorBoundary';
 
 
 
