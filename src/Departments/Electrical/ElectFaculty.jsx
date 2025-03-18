@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "./FacultyDetails.css";
+import "./ElectFaculty.css";
 
 const API_BASE_URL = "http://localhost:1337/api";
 const STRAPI_BASE_URL = "http://localhost:1337";
@@ -19,10 +19,10 @@ const ElectFaculty = () => {
     const fetchFaculty = async () => {
       try {
         const [res1, res2, res3, res4] = await Promise.all([
-          axios.get(`${API_BASE_URL}/cse-hod?populate=*`),
-          axios.get(`${API_BASE_URL}/cse-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/cse-non-teaching-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/cse-visiting-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/electrical-hod?populate=*`),
+          axios.get(`${API_BASE_URL}/elect-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/elect-non-teaching-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/elect-visiting-faculties?populate=*`),
         ]);
 
         setHod(res1.data.data);
@@ -48,7 +48,7 @@ const ElectFaculty = () => {
   if (error) return <p>Error loading data: {error.message}</p>;
 
   return (
-    <div className="faculty-container">
+    <div className="faculty-container-elect">
       {/* HOD Section */}
       <h3 className="faculty-heading">Head of Department</h3>
       {hod ? (
