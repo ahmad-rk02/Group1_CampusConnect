@@ -103,7 +103,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/Group1_CampusConnect">
+      <BrowserRouter basename="/group1campusconnect">
         <Navbar imageSrcPath={imagePath} navItems={navItems} />
         <div className="container-fluid m-0 p-0">
           <Routes>
