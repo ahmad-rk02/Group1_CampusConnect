@@ -1,5 +1,5 @@
 import React from 'react';
-import MechCarousel from '../../Departments/Mechanical/MechCarousel'
+import MechCarousel from '../../Departments/Mechanical/Mechcarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import './Mech.css'
 import MechFaculty from './MechFaculty';
@@ -95,12 +95,8 @@ const Mech = () => {
 
             <div >
               <Mechvm className='right-content-Mech' />
-            </div>
-
-            <div className="facultyDetails">
-              <MechFaculty />
-            </div>
-
+            </div>       
+            
           </Col>
         </Row>
       </Container>

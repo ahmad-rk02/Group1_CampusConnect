@@ -6,7 +6,7 @@ import TurningShop from '../assets/Machine-Turning_Shop.jpg';
 import WeldingShop from '../assets/Welding-shop.jpg'
 import FittingShop from '../assets/Fitting-shop.jpg'
 import CarpentryShop from '../assets/Carpentry-shop.jpg'
-import SmithyShop from '../assets/Smithy-shop.jpg'
+import SmithyShop from '../assets/Smithy-Shop.jpg'
 
 
 const Workshop = () => {

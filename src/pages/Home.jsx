@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Home.css';
 import Topcards from './Topcards';
-import universityBuilding from '../assets/university-building.jpg';
-import collegeBuilding from '../assets/main-building-photo.jpg';
-import universityNews from '../assets/clg-news.jpg';
 import CarouselPage from "./CarouselPage";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Carousel from 'react-bootstrap/Carousel';
 import Research from './Research'
 import Counter from './Counter'
 import CIIT from './CIIT'
@@ -24,9 +20,10 @@ function Home() {
             <WelcomeSection className="welcome-section" />
             <Topcards className="topcards-section" />
             <CIIT className="ciit-section" />
-            <Counter className="counter-section" />
+            <ErrorBoundary>
+                <Counter className="counter-section" />
+            </ErrorBoundary>
             <Research className="research-section" />
-
         </div>
     );
 }

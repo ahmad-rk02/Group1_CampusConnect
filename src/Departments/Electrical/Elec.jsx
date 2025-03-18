@@ -5,6 +5,7 @@ import './Elec.css'
 
 import { Link } from 'react-router-dom';
 import Elecvm from '../../Departments/Electrical/Elecvm';
+import ElectFaculty from './ElectFaculty';
 
 
 const Elec = () => {
@@ -98,7 +99,9 @@ const Elec = () => {
               <Elecvm className='right-content-Elec' />
             </div>
 
-
+            <div className="facultyDetails">
+              <ElectFaculty />
+            </div>
             
           </Col>
 </Row>

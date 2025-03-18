@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import './Admissionform.css'
+import './AdmissionForm.css'
 
 const AdmissionForm = () => {
   return (

@@ -15,6 +15,7 @@
 }
 
   .marquee-container {
+    width: fit-content;
     background-color: #102C57;
     display: flex;
     justify-content: flex-start;

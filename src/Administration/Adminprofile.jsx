@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Row, Col, Spinner, Alert, Button, Form, Modal } from 'react-bootstrap';
-import useAdminAuth from '../hooks/useAdminAuth'; 
+import useAdminAuth from '../hooks/useadminAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import AdminDashboard from './AdminGrievanceDisplay';
