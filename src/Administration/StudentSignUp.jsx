@@ -100,13 +100,14 @@ const StudentSignUp = () => {
     setErrors(formErrors);
     return valid;
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/users/student/signup', {
+        const response = await axios.post(`${API_BASE_URL}/api/users/student/signup`, {
           fullname: formData.fullname,
           email: formData.email,
           phone: formData.phone,

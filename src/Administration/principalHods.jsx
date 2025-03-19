@@ -5,8 +5,9 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 import './principalHods.css';
 
-const API_BASE_URL = "http://localhost:1337/api";
-const STRAPI_BASE_URL = "http://localhost:1337";
+// Use environment variables from .env
+const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
 const PrincipalHods = () => {
   const [principal, setPrincipal] = useState(null);
@@ -25,13 +26,13 @@ const PrincipalHods = () => {
       try {
         // Fetch Principal and Coordinator
         const [principalRes, coordinatorRes] = await Promise.all([
-          axios.get(`${API_BASE_URL}/gec-principal?populate=*`),
-          axios.get(`${API_BASE_URL}/gug-coordinator?populate=*`),
+          axios.get(`${STRAPI_API_BASE_URL}/api/gec-principal?populate=*`),
+          axios.get(`${STRAPI_API_BASE_URL}/api/gug-coordinator?populate=*`),
         ]);
 
         // Fetch all HODs
         const hodPromises = departments.map(dept =>
-          axios.get(`${API_BASE_URL}/${dept.toLowerCase()}-hod?populate=*`)
+          axios.get(`${STRAPI_API_BASE_URL}/api/${dept.toLowerCase()}-hod?populate=*`)
         );
         const hodResponses = await Promise.all(hodPromises);
 
@@ -59,7 +60,10 @@ const PrincipalHods = () => {
       if (!photoData || !photoData.url) {
         return "/placeholder.jpg"; // Use a default placeholder image
       }
-      return `${STRAPI_BASE_URL}${photoData.url}`;
+      const imgUrl = photoData.url;
+      return imgUrl.startsWith('http://') || imgUrl.startsWith('https://') 
+        ? imgUrl 
+        : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`;
     } catch (error) {
       console.error(`Error processing photo for ${memberName}:`, error);
       return "/placeholder.jpg";

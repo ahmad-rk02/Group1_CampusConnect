@@ -7,12 +7,17 @@ const NewsEvents = () => {
     const [events, setEvents] = useState([]);
     const [expandedNews, setExpandedNews] = useState({});
     const [expandedEvents, setExpandedEvents] = useState({});
-    
+
+    // Use environment variable from .env
+    const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+    const NEWS_API_URL = `${STRAPI_BASE_URL}/api/gcoec-news?populate=*`;
+    const EVENTS_API_URL = `${STRAPI_BASE_URL}/api/gcoec-events?populate=*`;
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const newsResponse = await axios.get("http://localhost:1337/api/gcoec-news?populate=*");
-                const eventsResponse = await axios.get("http://localhost:1337/api/gcoec-events?populate=*");
+                const newsResponse = await axios.get(NEWS_API_URL);
+                const eventsResponse = await axios.get(EVENTS_API_URL);
                 setNews(newsResponse.data.data);
                 setEvents(eventsResponse.data.data);
             } catch (error) {
@@ -38,7 +43,13 @@ const NewsEvents = () => {
                 {news.length > 0 ? (
                     news.map((item) => (
                         <div key={item.id} className="news-item">
-                            {item.image && <img src={`http://localhost:1337${item.image.url}`} alt={item.title} className="news-image" />}
+                            {item.image && (
+                                <img 
+                                    src={`${STRAPI_BASE_URL}${item.image.url}`} 
+                                    alt={item.title} 
+                                    className="news-image" 
+                                />
+                            )}
                             <h3 className="news-title">{item.title}</h3>
                             <p className="news-date">{item.date}</p>
                             <p className="news-description">
@@ -49,11 +60,23 @@ const NewsEvents = () => {
                                     : "No description available"}
                             </p>
                             {item.description && (
-                                <button onClick={() => toggleExpandNews(item.id)} className="read-more-btn">
+                                <button 
+                                    onClick={() => toggleExpandNews(item.id)} 
+                                    className="read-more-btn"
+                                >
                                     {expandedNews[item.id] ? "Read Less" : "Read More"}
                                 </button>
                             )}
-                            {item.external_url && <a href={item.external_url} className="external-link" target="_blank" rel="noopener noreferrer">Click Here</a>}
+                            {item.external_url && (
+                                <a 
+                                    href={item.external_url} 
+                                    className="external-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                >
+                                    Click Here
+                                </a>
+                            )}
                         </div>
                     ))
                 ) : (
@@ -67,7 +90,13 @@ const NewsEvents = () => {
                 {events.length > 0 ? (
                     events.map((item) => (
                         <div key={item.id} className="event-item">
-                            {item.image && <img src={`http://localhost:1337${item.image.url}`} alt={item.title} className="event-image" />}
+                            {item.image && (
+                                <img 
+                                    src={`${STRAPI_BASE_URL}${item.image.url}`} 
+                                    alt={item.title} 
+                                    className="event-image" 
+                                />
+                            )}
                             <h3 className="event-title">{item.title}</h3>
                             <p className="event-date">{item.date}</p>
                             <p className="event-description">
@@ -78,11 +107,23 @@ const NewsEvents = () => {
                                     : "No description available"}
                             </p>
                             {item.description && (
-                                <button onClick={() => toggleExpandEvents(item.id)} className="read-more-btn">
+                                <button 
+                                    onClick={() => toggleExpandEvents(item.id)} 
+                                    className="read-more-btn"
+                                >
                                     {expandedEvents[item.id] ? "Read Less" : "Read More"}
                                 </button>
                             )}
-                            {item.external_url && <a href={item.external_url} className="external-link" target="_blank" rel="noopener noreferrer">Click Here</a>}
+                            {item.external_url && (
+                                <a 
+                                    href={item.external_url} 
+                                    className="external-link" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                >
+                                    Click Here
+                                </a>
+                            )}
                         </div>
                     ))
                 ) : (

@@ -57,12 +57,13 @@ const GrievanceForm = () => {
     setErrors(formErrors);
     return valid;
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/grievances/submit', formData);
+        const response = await axios.post(`${API_BASE_URL}/api/grievances/submit`, formData);
   
         if (response.status === 200 || response.status === 201) {
           setFormData({

@@ -25,11 +25,12 @@ const AdminDashboard = () => {
   const [filter, setFilter] = useState('all');
   const [popup, setPopup] = useState(null); // State for popup
   const { user } = useAuth();
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchGrievances = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/grievances/fetchgrievance', {
+        const response = await axios.get(`${API_BASE_URL}/api/grievances/fetchgrievance`, {
           params: {
             commonId: user?.role === 'admin' ? 'all' : user?.email,
           },
@@ -56,7 +57,7 @@ const AdminDashboard = () => {
   const closeGrievance = async (ticketId) => {
     const grievanceRemarks = remarks[ticketId];
     try {
-      await axios.post(`http://localhost:5000/api/grievances/close/${ticketId}`, {
+      await axios.post(`${API_BASE_URL}/api/grievances/close/${ticketId}`, {
         remarks: grievanceRemarks,
       });
       setGrievances(

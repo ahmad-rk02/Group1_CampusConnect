@@ -96,7 +96,9 @@ const Mech = () => {
             <div >
               <Mechvm className='right-content-Mech' />
             </div>       
-            
+            <div >
+              <MechFaculty className='right-content-Mech' />
+            </div>    
           </Col>
         </Row>
       </Container>

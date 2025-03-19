@@ -19,6 +19,7 @@ const LoginForm = () => {
   // Modal State
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState({ text: '', icon: null });
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -46,7 +47,7 @@ const LoginForm = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/users/admin/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/users/admin/login`, {
         dte: formData.dte,
         password: formData.password,
       });

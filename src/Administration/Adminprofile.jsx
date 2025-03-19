@@ -27,6 +27,7 @@ const AdminProfile = () => {
   const [updateError, setUpdateError] = useState(null);
   const [showUpdateSuccessModal, setShowUpdateSuccessModal] = useState(false); // Update success modal
   const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false); // Delete success modal
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     if (!isAuthenticated && !loading) {
@@ -45,7 +46,7 @@ const AdminProfile = () => {
     setUpdateLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.put('http://localhost:5000/api/users/admin/update', formData, {
+      const response = await axios.put(`${API_BASE_URL}/api/users/admin/update`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -69,7 +70,7 @@ const AdminProfile = () => {
     setDeleteLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      await axios.delete('http://localhost:5000/api/users/admin/delete', {
+      await axios.delete(`${API_BASE_URL}/api/users/admin/delete`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

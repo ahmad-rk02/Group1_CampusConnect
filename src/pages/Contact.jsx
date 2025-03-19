@@ -3,7 +3,7 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import axios from 'axios';
 import './Contact.css';
 
-const STRAPI_URL = "http://localhost:1337/api/"; 
+  const STRAPI_URL = `${import.meta.env.VITE_STRAPI_API_BASE_URL}/api/`;
 
 const Contact = () => {
   const [contactData, setContactData] = useState(null);

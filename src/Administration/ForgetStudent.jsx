@@ -24,10 +24,13 @@ const ForgetStudent = () => {
     setShowModals(true);
   };
 
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+
+
   const handleRequestOTP = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/send-otp', { email });
+      const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
       showModalsPopup(response.data.message, 'success');
     } catch (error) {
       showModalsPopup(error.response?.data?.error || 'Error requesting OTP', 'error');
@@ -41,8 +44,8 @@ const ForgetStudent = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/api/users/verify-otp', { email, otp });
-      const response = await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
+      await axios.post(`${API_BASE_URL}/api/users/verify-otp`, { email, otp });
+      const response = await axios.post(`${API_BASE_URL}/api/users/reset-password`, { email, newPassword });
       showModalsPopup(response.data.message, 'success');
       setTimeout(() => navigate('/studentlogin'), 2000);
     } catch (error) {

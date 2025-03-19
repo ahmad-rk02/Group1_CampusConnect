@@ -8,7 +8,7 @@ const useAuth = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false); // Logout modal state
-
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const useAuth = () => {
           throw new Error('No token found');
         }
 
-        const response = await axios.get('http://localhost:5000/api/users/student/profile', {
+        const response = await axios.get(`${API_BASE_URL}/api/users/student/profile`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },

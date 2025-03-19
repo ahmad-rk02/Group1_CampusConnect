@@ -40,13 +40,14 @@ const Profile = () => {
       [e.target.name]: e.target.value,
     });
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // Handle profile update with success modal
   const handleUpdate = async () => {
     setUpdateLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.put('http://localhost:5000/api/users/student/update', formData, {
+      const response = await axios.put(`${API_BASE_URL}/api/users/student/update`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -71,7 +72,7 @@ const Profile = () => {
     setDeleteLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      await axios.delete('http://localhost:5000/api/users/student/delete', {
+      await axios.delete(`${API_BASE_URL}/api/users/student/delete`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

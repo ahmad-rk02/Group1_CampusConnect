@@ -3,8 +3,8 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./MechFaculty.css";
 
-const API_BASE_URL = "http://localhost:1337/api";
-const STRAPI_BASE_URL = "http://localhost:1337";
+const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+
 
 const MechFaculty = () => {
   const [hod, setHod] = useState(null);
@@ -19,10 +19,10 @@ const MechFaculty = () => {
     const fetchFaculty = async () => {
       try {
         const [res1, res2, res3, res4] = await Promise.all([
-          axios.get(`${API_BASE_URL}/mechanical-hod?populate=*`),
-          axios.get(`${API_BASE_URL}/mech-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/mech-non-teaching-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/mech-visiting-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/mechanical-hod?populate=*`),
+          axios.get(`${API_BASE_URL}/api/mech-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/mech-non-teaching-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/mech-visiting-faculties?populate=*`),
         ]);
 
         setHod(res1.data.data);
@@ -43,6 +43,12 @@ const MechFaculty = () => {
   const toggleExpand = (id) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
+  const getImageUrl = (photo) => {
+    if (photo?.url) {
+      return photo.url.startsWith("http") ? photo.url : `${API_BASE_URL}${photo.url}`;
+    }
+    return "placeholder.jpg";
+  };
 
   if (loading) return <p>Loading data...</p>;
   if (error) return <p>Error loading data: {error.message}</p>;
@@ -53,11 +59,8 @@ const MechFaculty = () => {
       <h3 className="faculty-heading">Head of Department</h3>
       {hod ? (
         <div className="faculty-card">
-          <img
-            src={hod.photo?.url ? `${STRAPI_BASE_URL}${hod.photo.url}` : "placeholder.jpg"}
-            alt={hod.name}
-            className="faculty-photo"
-          />
+          <img src={getImageUrl(hod.photo)} alt={hod.name} className="faculty-photo" />
+
           <div className="faculty-info">
             <h2>{hod.name || "N/A"}</h2>
             <h3>{hod.designation || "N/A"}</h3>
@@ -84,11 +87,8 @@ const MechFaculty = () => {
       <h3 className="faculty-heading">Faculty Members</h3>
       {faculties.map((member) => (
         <div key={member.id} className="faculty-card">
-          <img
-            src={member.photo?.url ? `${STRAPI_BASE_URL}${member.photo.url}` : "placeholder.jpg"}
-            alt={member.name}
-            className="faculty-photo"
-          />
+          <img src={getImageUrl(member.photo)} alt={member.name} className="faculty-photo" />
+
           <div className="faculty-info">
             <h2>{member.name}</h2>
             <h3>{member.designation}</h3>
@@ -113,11 +113,8 @@ const MechFaculty = () => {
       <h3 className="faculty-heading">Non-Teaching Faculty</h3>
       {nonTeachingFaculties.map((member) => (
         <div key={member.id} className="faculty-card">
-          <img
-            src={member.photo && member.photo.length > 0 ? `${STRAPI_BASE_URL}${member.photo[0].url}` : "placeholder.jpg"}
-            alt={member.name}
-            className="faculty-photo"
-          />
+          <img src={getImageUrl(member.photo?.[0])} alt={member.name} className="faculty-photo" />
+
           <div className="faculty-info">
             <h2>{member.name}</h2>
             <h3>{member.designation}</h3>

@@ -9,7 +9,7 @@ const useAdminAuth = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [showLogoutModal, setShowLogoutModal] = useState(false);
-
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ const useAdminAuth = () => {
         const token = localStorage.getItem('authToken');
         if (!token) throw new Error('No token found');
 
-        const response = await axios.get('http://localhost:5000/api/users/admin/profile', {
+        const response = await axios.get(`${API_BASE_URL}/api/users/admin/profile`, {
           headers: { Authorization: `Bearer ${token}` },
         });
 

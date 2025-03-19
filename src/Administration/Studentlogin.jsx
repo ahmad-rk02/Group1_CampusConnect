@@ -53,10 +53,11 @@ const LoginForm = () => {
       setError(errorMessages.join(' '));
       return;
     }
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/users/student/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/users/student/login`, {
         prnNumber: formData.prnNumber,
         password: formData.password,
       });

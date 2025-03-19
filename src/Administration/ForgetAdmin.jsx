@@ -32,11 +32,12 @@ const ForgetAdmin = () => {
       }, 3000);
     }
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleRequestOTP = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/users/send-otp', { email });
+      const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
       showModalPopup(response.data.message, 'success');
     } catch (error) {
       showModalPopup(error.response?.data?.error || 'Error requesting OTP', 'error');
@@ -50,8 +51,8 @@ const ForgetAdmin = () => {
       return;
     }
     try {
-      await axios.post('http://localhost:5000/api/users/verify-otp', { email, otp });
-      await axios.post('http://localhost:5000/api/users/reset-password', { email, newPassword });
+      await axios.post(`${API_BASE_URL}/api/users/verify-otp`, { email, otp });
+      await axios.post(`${API_BASE_URL}/api/users/reset-password`, { email, newPassword });
       showModalPopup('Password reset successfully!', 'success');
     } catch (error) {
       showModalPopup(error.response?.data?.error || 'Error resetting password', 'error');

@@ -7,17 +7,27 @@ const AbhirangBanner = () => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Use environment variables from .env
+  const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+  const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
+  const API_URL = `${STRAPI_API_BASE_URL}/api/abhirang-banner?populate=*`;
+
   useEffect(() => {
     const fetchPhotos = async () => {
       setLoading(true);
       try {
-        const response = await axios.get("http://localhost:1337/api/abhirang-banner?populate=*");
+        const response = await axios.get(API_URL);
 
         // Extract multimedia images
-        const images = response.data.data.images.map((img) => ({
-          id: img.id,
-          url: `http://localhost:1337${img.url}`,
-        }));
+        const images = response.data.data.images.map((img) => {
+          const imgUrl = img.url;
+          return {
+            id: img.id,
+            url: imgUrl.startsWith('http://') || imgUrl.startsWith('https://') 
+              ? imgUrl 
+              : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`,
+          };
+        });
 
         setPhotos(images);
       } catch (error) {

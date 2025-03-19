@@ -9,10 +9,15 @@ const AbhirangGallery = () => {
   const [photos, setPhotos] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // Use environment variables from .env
+  const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+  const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
+  const BASE_API_URL = `${STRAPI_API_BASE_URL}/api/abhirang-photos`;
+
   useEffect(() => {
     const fetchYears = async () => {
       try {
-        const response = await axios.get("http://localhost:1337/api/abhirang-photos?populate=*");
+        const response = await axios.get(`${BASE_API_URL}?populate=*`);
         const uniqueYears = [...new Set(response.data.data.map((photo) => photo.year))].sort((a, b) => b - a);
         setYears(uniqueYears);
       } catch (error) {
@@ -28,13 +33,18 @@ const AbhirangGallery = () => {
     const fetchPhotos = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:1337/api/abhirang-photos?filters[year][$eq]=${selectedYear}&populate=*`
+          `${BASE_API_URL}?filters[year][$eq]=${selectedYear}&populate=*`
         );
         const formattedPhotos = response.data.data.flatMap((photo) =>
-          photo.images.map((img) => ({
-            id: img.id,
-            url: `http://localhost:1337${img.formats?.medium?.url || img.formats?.small?.url || img.url}`,
-          }))
+          photo.images.map((img) => {
+            const imgUrl = img.formats?.medium?.url || img.formats?.small?.url || img.url;
+            return {
+              id: img.id,
+              url: imgUrl.startsWith('http://') || imgUrl.startsWith('https://') 
+                ? imgUrl 
+                : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`,
+            };
+          })
         );
         setPhotos(formattedPhotos);
       } catch (error) {

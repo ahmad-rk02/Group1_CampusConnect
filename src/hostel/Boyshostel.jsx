@@ -7,7 +7,8 @@ import BoysHostel from "../assets/BoysHostel.jpg";
 const Boyshostel = () => {
   const [committeeMembers, setCommitteeMembers] = useState([]);
   const [loading, setLoading] = useState(true);
-  const API_URL = "http://localhost:1337/api/gec-boys-hostels";
+  const API_URL = `${import.meta.env.VITE_STRAPI_API_BASE_URL}/api/gec-boys-hostels`;
+
 
   useEffect(() => {
     fetch(API_URL)

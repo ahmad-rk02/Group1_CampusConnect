@@ -4,8 +4,9 @@ import axios from "axios";
 import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // For green tick and exclamation mark
 import "./TPOPage.css";
 
-const STRAPI_URL = "http://localhost:1337/api/"; // Update to your Strapi Cloud URL if hosted
-const BASE_URL = "http://localhost:1337"; // Update to your Strapi Cloud base URL if hosted
+// Use environment variables from .env
+const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
 const TPOPage = () => {
   const [data, setData] = useState({});
@@ -37,11 +38,11 @@ const TPOPage = () => {
     const fetchData = async () => {
       try {
         const results = await Promise.all([
-          axios.get(`${STRAPI_URL}tpo-desk?populate=*`).then((res) => ({
+          axios.get(`${STRAPI_API_BASE_URL}/api/tpo-desk?populate=*`).then((res) => ({
             "tpo-desk": res.data.data
           })),
           ...collectionEndpoints.map(async (endpoint) => {
-            const response = await axios.get(`${STRAPI_URL}${endpoint}?populate=*`);
+            const response = await axios.get(`${STRAPI_API_BASE_URL}/api/${endpoint}?populate=*`);
             const items = response.data.data || [];
             console.log(`Data for ${endpoint}:`, items);
             return { [endpoint]: items };
@@ -93,6 +94,13 @@ const TPOPage = () => {
     });
   };
 
+  const getMediaUrl = (url) => {
+    if (!url) return "https://via.placeholder.com/200x200?text=No+Image";
+    return url.startsWith('http://') || url.startsWith('https://') 
+      ? url 
+      : `${STRAPI_MEDIA_BASE_URL}${url}`;
+  };
+
   const handlePrevNews = () => {
     setNewsOffset((prev) => Math.max(prev - NEWS_PER_PAGE, 0));
   };
@@ -130,7 +138,7 @@ const TPOPage = () => {
     }
 
     try {
-      const response = await axios.post(`${STRAPI_URL}tpo-feedbacks`, {
+      const response = await axios.post(`${STRAPI_API_BASE_URL}/api/tpo-feedbacks`, {
         data: {
           name: feedback.name,
           department: feedback.department,
@@ -153,7 +161,6 @@ const TPOPage = () => {
   };
 
   const handleCloseModal = () => setShowModal(false);
-
 
   return (
     <Container fluid className="p-0 tpo-container">
@@ -204,18 +211,11 @@ const TPOPage = () => {
                 <Card className="shadow-sm rounded-3 border-0">
                   <Row className="g-0 flex-column flex-md-row">
                     <Col xs={12} md={4} className="d-flex align-items-center justify-content-center p-3">
-                      {(() => {
-                        const photoUrl = data["tpo-desk"]?.photo?.url
-                          ? `${BASE_URL}${data["tpo-desk"].photo.url}`
-                          : "https://via.placeholder.com/200x200?text=No+Image";
-                        return (
-                          <Card.Img
-                            src={photoUrl}
-                            alt="TPO Photo"
-                            className="img-fluid profile-img full-size-img"
-                          />
-                        );
-                      })()}
+                      <Card.Img
+                        src={getMediaUrl(data["tpo-desk"]?.photo?.url)}
+                        alt="TPO Photo"
+                        className="img-fluid profile-img full-size-img"
+                      />
                     </Col>
                     <Col xs={12} md={8}>
                       <Card.Body className="p-3 p-md-4">
@@ -272,7 +272,7 @@ const TPOPage = () => {
                             <td>
                               {record.pdf?.url ? (
                                 <a
-                                  href={`${BASE_URL}${record.pdf.url}`}
+                                  href={getMediaUrl(record.pdf.url)}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="btn btn-sm btn-outline-primary"
@@ -370,9 +370,7 @@ const TPOPage = () => {
                           <Carousel.Item key={`${photo.id}-${index}`}>
                             <img
                               className="d-block w-100 carousel-img"
-                              src={img.url
-                                ? `${BASE_URL}${img.url}`
-                                : "https://via.placeholder.com/800x400?text=No+Image"}
+                              src={getMediaUrl(img.url)}
                               alt={img.caption || `Photo ${index + 1}`}
                             />
                           </Carousel.Item>
@@ -396,7 +394,7 @@ const TPOPage = () => {
                       <li key={activity.id || index} className="list-group-item py-2 py-md-3">
                         {activity.pdf?.url ? (
                           <a
-                            href={`${BASE_URL}${activity.pdf.url}`}
+                            href={getMediaUrl(activity.pdf.url)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-primary fw-medium"
@@ -446,7 +444,7 @@ const TPOPage = () => {
                             <td>
                               {intern.pdf?.url ? (
                                 <a
-                                  href={`${BASE_URL}${intern.pdf.url}`}
+                                  href={getMediaUrl(intern.pdf.url)}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="btn btn-sm btn-outline-primary"
@@ -499,9 +497,7 @@ const TPOPage = () => {
                               <Card className="shadow-sm rounded-3 h-100 news-card">
                                 <Card.Img
                                   variant="top"
-                                  src={news.image?.url
-                                    ? `${BASE_URL}${news.image.url}`
-                                    : "https://via.placeholder.com/300x200?text=No+Image"}
+                                  src={getMediaUrl(news.image?.url)}
                                   alt={news.title || "News"}
                                   className="news-img"
                                 />
@@ -543,7 +539,7 @@ const TPOPage = () => {
                         <li key={item.id || index} className="list-group-item py-2 py-md-3">
                           {item.pdf?.url || item.image?.url ? (
                             <a
-                              href={item.pdf?.url ? `${BASE_URL}${item.pdf.url}` : `${BASE_URL}${item.image.url}`}
+                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-primary fw-medium"
@@ -810,7 +806,6 @@ const TPOPage = () => {
           </Button>
         </Modal.Body>
       </Modal>
-
     </Container>
   );
 };

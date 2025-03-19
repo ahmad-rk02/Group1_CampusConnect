@@ -9,8 +9,10 @@ function Navbar({ imageSrcPath, navItems }) {
   const [marqueeEvents, setMarqueeEvents] = useState([]);
   const navigate = useNavigate();
 
-  const STRAPI_API_URL = 'http://localhost:1337/api/gec-announcement-bars';
-  const STRAPI_BASE_URL = 'http://localhost:1337';
+  // Use environment variables from .env
+  const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+  const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
+  const STRAPI_API_URL = `${STRAPI_BASE_URL}/api/gec-announcement-bars`;
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -248,10 +250,13 @@ function Navbar({ imageSrcPath, navItems }) {
           {marqueeEvents.map((event, eventIndex) => {
             let linkUrl = '#';
             if (event.url) {
-              linkUrl = ensureValidUrl(event.url); // Fix and use external URL
+              linkUrl = ensureValidUrl(event.url); // Use external URL if provided
             } else if (event.pdf && event.pdf.length > 0) {
-              // Use the first PDF in the collection
-              linkUrl = `${STRAPI_BASE_URL}${event.pdf[0].url}`;
+              // Check if pdf.url is already a full URL
+              const pdfUrl = event.pdf[0].url;
+              linkUrl = pdfUrl.startsWith('http://') || pdfUrl.startsWith('https://') 
+                ? pdfUrl 
+                : `${STRAPI_MEDIA_BASE_URL}${pdfUrl}`;
             }
 
             return (
