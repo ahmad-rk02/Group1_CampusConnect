@@ -17,7 +17,7 @@ const Login = () => {
         navigate('/adminlogin');
     };
     const handleAdminSignUp = () => {
-        navigate('/adminsignup');
+        navigate('/signupadmin');
     };
 
     return (
