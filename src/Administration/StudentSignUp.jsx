@@ -22,14 +22,14 @@ const StudentSignUp = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  
-  // New state for modals
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showOTPModal, setShowOTPModal] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [userId, setUserId] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,13 +39,8 @@ const StudentSignUp = () => {
     }));
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
+  const togglePasswordVisibility = () => setShowPassword(!showPassword);
+  const toggleConfirmPasswordVisibility = () => setShowConfirmPassword(!showConfirmPassword);
 
   const validateForm = () => {
     let formErrors = {};
@@ -100,6 +95,7 @@ const StudentSignUp = () => {
     setErrors(formErrors);
     return valid;
   };
+
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
@@ -117,60 +113,77 @@ const StudentSignUp = () => {
           password: formData.password,
         });
 
-        console.log('Response:', response.data);
-        setSubmitted(true);
-        setShowSuccessModal(true); // Show success modal
-
-        // Reset the form
-        setFormData({
-          fullname: '',
-          email: '',
-          phone: '',
-          prnNumber: '',
-          semester: '',
-          branch: '',
-          password: '',
-          confirmPassword: '',
-        });
-        setErrors({});
-
+        console.log('Signup Response:', response.data);
+        setUserId(response.data.userId);
+        setShowOTPModal(true);
       } catch (error) {
+        console.error('Signup Error:', error);
         if (error.response && error.response.status === 409) {
           setErrorMessage('User already exists. Please try logging in.');
-          setShowErrorModal(true); // Show error modal for existing user
-          // Reset the form
-          setFormData({
-            fullname: '',
-            email: '',
-            phone: '',
-            prnNumber: '',
-            semester: '',
-            branch: '',
-            password: '',
-            confirmPassword: '',
-          });
         } else {
-          console.error('There was an error registering the user:', error);
           setErrorMessage('Registration failed. Please try again later.');
-          setShowErrorModal(true); // Show error modal for other errors
         }
+        setShowErrorModal(true);
       }
-    } else {
-      setSubmitted(false);
+    }
+  };
+
+  const handleOTPSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/users/verify-signup-otp`, {
+        email: formData.email,
+        otp,
+      });
+
+      console.log('OTP Verification Response:', response.data);
+      setShowOTPModal(false);
+      setShowSuccessModal(true);
+      setFormData({
+        fullname: '',
+        email: '',
+        phone: '',
+        prnNumber: '',
+        semester: '',
+        branch: '',
+        password: '',
+        confirmPassword: '',
+      });
+      setOtp('');
+      setErrors({});
+    } catch (error) {
+      console.error('OTP Verification Error:', error);
+      setErrorMessage('Invalid or expired OTP. Please try again or resend OTP.');
+      setShowErrorModal(true);
+    }
+  };
+
+  const handleResendOTP = async () => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/users/resend-signup-otp`, {
+        email: formData.email,
+      });
+      console.log('Resend OTP Response:', response.data);
+      alert('A new OTP has been sent to your email.');
+      setOtp(''); // Clear the current OTP input
+    } catch (error) {
+      console.error('Resend OTP Error:', error);
+      setErrorMessage('Failed to resend OTP. Please try again.');
+      setShowErrorModal(true);
     }
   };
 
   return (
     <div>
       <Container fluid className="p-0 w-1000 m-100">
-        <Row className='head-box-grivnce'>
+        <Row className="head-box-grivnce">
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
           </Col>
         </Row>
 
         <Row noGutters className="left-index-grivnce just">
-          <Col md={2} className='left-sidebar-grivnce'>
+          <Col md={2} className="left-sidebar-grivnce">
             <Card className="left-nav-grivnce">
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-grivnce">
@@ -212,20 +225,14 @@ const StudentSignUp = () => {
               <h4>Student SignUp</h4>
             </Card.Header>
 
-            <div className='form-section-grivncee'>
-              <Form onSubmit={handleSubmit} className='whole-form-grivncee'>
-                {submitted && (
-                  <Alert variant="success" className='mb-3'>
-                    Registered Successfully!
-                  </Alert>
-                )}
-
+            <div className="form-section-grivncee">
+              <Form onSubmit={handleSubmit} className="whole-form-grivncee">
                 <div className="gec-logo-container">
                   <img src={Gec} alt="College Logo" className="form-clg-logo" />
                 </div>
 
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Full Name</Form.Label>
+                  <Form.Label className="field-name-grivnce">Full Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="fullname"
@@ -238,7 +245,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formEmail" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>E-Mail</Form.Label>
+                  <Form.Label className="field-name-grivnce">E-Mail</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
@@ -251,7 +258,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formPhoneNumber" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Phone Number</Form.Label>
+                  <Form.Label className="field-name-grivnce">Phone Number</Form.Label>
                   <Form.Control
                     type="tel"
                     name="phone"
@@ -264,7 +271,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formPrnNumber" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>University Number (PRN)</Form.Label>
+                  <Form.Label className="field-name-grivnce">University Number (PRN)</Form.Label>
                   <Form.Control
                     type="text"
                     name="prnNumber"
@@ -277,7 +284,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formSemester" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Semester</Form.Label>
+                  <Form.Label className="field-name-grivnce">Semester</Form.Label>
                   <Form.Control
                     as="select"
                     name="semester"
@@ -299,20 +306,19 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formBranch" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Branch</Form.Label>
+                  <Form.Label className="field-name-grivnce">Branch</Form.Label>
                   <Form.Control
                     as="select"
                     name="branch"
                     value={formData.branch}
                     onChange={handleChange}
-                    placeholder="Enter Your Branch"
                     className={`input-box-grivncee ${errors.branch && 'is-invalid'}`}
                   >
                     <option value="">Select Branch</option>
                     <option value="Computer Science & Engineering">Computer Science & Engineering</option>
                     <option value="Instrumentation Engineering">Instrumentation Engineering</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Electrical engineering">Electrical engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
                     <option value="Electronics and Communication">Electronics and Communication</option>
                     <option value="Civil">Civil</option>
                   </Form.Control>
@@ -320,7 +326,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formPassword" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Password</Form.Label>
+                  <Form.Label className="field-name-grivnce">Password</Form.Label>
                   <div className="input-group">
                     <Form.Control
                       type={showPassword ? "text" : "password"}
@@ -338,7 +344,7 @@ const StudentSignUp = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-grivncee">
-                  <Form.Label className='field-name-grivnce'>Confirm Password</Form.Label>
+                  <Form.Label className="field-name-grivnce">Confirm Password</Form.Label>
                   <div className="input-group">
                     <Form.Control
                       type={showConfirmPassword ? "text" : "password"}
@@ -358,10 +364,8 @@ const StudentSignUp = () => {
                 <Button type="submit" className="submit-btn-grivncee">
                   Register
                 </Button>
-                <div className='to-student-login'>
-                  <p className='text-Student-signup'>
-                    Already have an account ?
-                  </p>
+                <div className="to-student-login">
+                  <p className="text-Student-signup">Already have an account?</p>
                   <Link to="/studentlogin" className="Studentlogin-link-Student-signup">Login</Link>
                 </div>
               </Form>
@@ -374,7 +378,7 @@ const StudentSignUp = () => {
           show={showSuccessModal}
           onHide={() => {
             setShowSuccessModal(false);
-            navigate('/studentlogin'); // Redirect to student login after closing
+            navigate('/studentlogin');
           }}
           centered
           className="custom-modal"
@@ -422,6 +426,40 @@ const StudentSignUp = () => {
               Close
             </Button>
           </Modal.Footer>
+        </Modal>
+
+        {/* OTP Modal */}
+        <Modal
+          show={showOTPModal}
+          onHide={() => setShowOTPModal(false)}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header>
+            <Modal.Title>Verify OTP</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>An OTP has been sent to {formData.email}. Please enter it below:</p>
+            <Form onSubmit={handleOTPSubmit}>
+              <Form.Group>
+                <Form.Control
+                  type="text"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                  placeholder="Enter 6-digit OTP"
+                  maxLength="6"
+                />
+              </Form.Group>
+              <div className="mt-3">
+                <Button variant="primary" type="submit">
+                  Verify OTP
+                </Button>
+                <Button variant="link" onClick={handleResendOTP} className="ms-3">
+                  Resend OTP
+                </Button>
+              </div>
+            </Form>
+          </Modal.Body>
         </Modal>
       </Container>
     </div>

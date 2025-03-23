@@ -51,7 +51,7 @@ const AdminProfile = () => {
           Authorization: `Bearer ${token}`,
         },
       });
- 
+
       Object.assign(user, response.data.updatedUser);
       setShowUpdateModal(false);
       setShowUpdateSuccessModal(true); // Show success modal
@@ -305,3 +305,5 @@ const AdminProfile = () => {
 };
 
 export default AdminProfile;
+
+ 
