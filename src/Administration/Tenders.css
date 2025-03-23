@@ -11,6 +11,7 @@
     font-size: 40px;
     margin-top: 50px;
     color: white;
+    margin-left: 64px;
 }
 
 .left-index-tender {
@@ -50,9 +51,11 @@
     text-decoration: none;
     color: black;
 }
-.tender-table{
-   width: 100%;
+table.tender-table{
+   width: 75%;
+   margin-bottom: 5vw !important;
 }
+
 .left-nav-row-tender,
 .left-nav-row-tender-01 {
     height: 56px;
@@ -171,7 +174,36 @@
 }
 
 /* Additional small screen adjustments (e.g., for extra small mobile screens) */
-@media (max-width: 480px) {
+@media (max-width: 576px) {
+
+body{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}    
+ 
+.head-box-tender h1{
+ margin: 0;
+ margin-left: 0;
+ padding-inline: 17%;
+ padding-top: 10%;
+ width: fit-content;
+}
+
+.head-box-tender h1.text-left{
+    margin: 0;
+}
+
+.left-sidebar-tender{
+    width: 60%;
+    margin: 0;
+    padding: 0;
+}
+
+  .left-nav-tender{
+    margin-inline: 18.5%;
+  }
+
   .head-box-tender h1 {
     font-size: 24px;
     margin-left: 10px;
@@ -180,7 +212,10 @@
     width: 100%;
     margin: 20px;
  }
- .tender-table{
-    width: 100%;
+ 
+ table.tender-table{
+    width: 90%;
+   margin-inline: 5%;
  }
+ 
 }

@@ -16,6 +16,7 @@ import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
+import INSTRU from './Departments/Instrumentation/instru';
 import Footer from './pages/Footer';
 import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
@@ -43,6 +44,7 @@ import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
 import ChatbotCTA from "./pages/chatbotCTA";
+import firebase from "firebase/compat/app";
 
 function App() {
   const navItems = [
@@ -106,6 +108,7 @@ function App() {
             <Route path="/committees" element={<Committees />} />
             <Route path="/studentsignup" element={<StudentSignUp />} />
             <Route path="/cse" element={<CSE />} />
+            <Route path="/instru" element={<INSTRU />} />
             <Route path="/studentlogin" element={<Studentlogin />} />
             <Route path="/signupadmin" element={<SignupAdmin />} />
             <Route path="/login" element={<Login />} />
@@ -129,6 +132,7 @@ function App() {
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
             <Route path="/chatbotCTA" element={<chatbotCTA />} />
+            <Route path="/firebaseconfig" element={<firebaseConfig />} />
           </Routes>
         </div>
       </Router>

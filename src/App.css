@@ -35,6 +35,9 @@
   padding: 10px 20px;
 }
 
+
+
+
  
 
 /* @media (max-width: 767.98px) {
@@ -60,5 +63,17 @@
   }
   .container-fluid {
     padding: 0 15px;
+  }
+
+  html{
+    overflow-x: hidden;
+   }
+}
+
+@media (max-width: 576x){
+  html{
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
   }
 }

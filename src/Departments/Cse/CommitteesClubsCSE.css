@@ -9,26 +9,26 @@ body {
 
 /* Container */
 .container {
-  width: 90%;
-  margin: auto;
-  max-width: 1200px;
+  margin-top: 30px;
+  margin-left: 250px;
+  width: 80%;
 }
 
 /* Heading Section */
 .heading-box-CmtClb {
-  margin: auto;
-  background: linear-gradient(90deg, #eadbc8, #e8c796);
-  color: black;
-  text-align: center;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  background-color: #eadbc8;
+  height: 50px;
+  position: relative;
+  margin: 0 auto;
+ 
 }
 
 .heading-box-CmtClb h4 {
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 7px;
+  color: #102C57;
 }
 
 /* ACSES Section */
@@ -39,10 +39,13 @@ body {
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  margin-left: 25px;
+  flex-wrap: nowrap;
 }
 
 .Acses-cmt-logo-part {
-  width: 30%;
+  width: 40%;
   background-color: #102C57;
   display: flex;
   justify-content: center;
@@ -58,7 +61,7 @@ body {
 }
 
 .Acses-cmt-right-part {
-  width: 70%;
+  width: 60%;
   padding: 30px;
   background-color: #EADBC8;
   color: #333;
@@ -77,15 +80,14 @@ body {
   flex-wrap: wrap;
   margin: 40px 0;
   background-color: #ffffff;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  margin-left: 25px;
 }
 
 .Bits-and-bytes-left {
   width: 60%;
   padding: 30px;
-  background-color: #EADBC8;
+  
 
 }
 
@@ -94,6 +96,7 @@ body {
   font-weight: bold;
   color: #102C57;
   margin-bottom: 10px;
+ 
 }
 
 .Bits-and-bytes-text {
@@ -107,8 +110,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #06427C, #102C57);
+ background-color: #032f5b;
+ box-shadow: 0px 4px 8px rgba(171, 46, 46, 0.2);
+ overflow: hidden;
 }
+
 
 .Bits-and-bytes-box {
   width: 80%;
@@ -219,8 +225,45 @@ body {
 .know_more_btn:hover {
   background-color: #032f5b;
 }
+@media (max-width: 1200px) {
+  .heading-box-CmtClb{
+    width: 100%;
 
+  }
+  .container{
+    width: 80%;
+    margin-left: 130px;
+    overflow-x: hidden;
+    
+  }
+  .Acses-cmt{
+    margin-left: 15px;
+  }
+  .Acses-text{
+    font-size: 13px;
+  }
+  .Bits-and-bytes{
+    margin-left: 15px;
+  }
+  .Bits-and-bytes-text{
+    font-size: 13px;
+  }
+  .Bits-and-bytes-heading{
+    font-size: 20px;
+    
+  }
+}
 @media (max-width: 768px) {
+  .container{
+    margin-left: 50px;
+    width: 90%;
+}
+  .Acses-text{
+    font-size: 10px;
+  }
+  .Bits-and-bytes-text{
+    font-size: 10px;
+  }
   .event_box {
     height: auto;  
   }
@@ -237,4 +280,64 @@ body {
     font-size: 14px;
     padding: 8px 16px;
   }
+  .Bits-and-bytes-right{
+    height: 200px;
+    border-radius: 10px;
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 576px){
+
+  .committees-clubs.container{
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+ .Acses-cmt{
+  display: block;
+ } 
+ .Acses-cmt-logo-part{
+  width: 100%;
+ }
+ .acses-cmt-logo{
+  width: 40%;
+ }
+ .Acses-cmt-right-part{
+  width: 100%;
+ }
+ .Bits-and-bytes{
+  display: block;
+ }
+ .Bits-and-bytes-left{
+  width: 100%;
+  text-align: center;
+ }
+ .Bits-and-bytes-right{
+  margin-top: auto;
+  margin-left: 30%;
+  margin-right: 30%;
+  height: 165px;
+  border-radius: 10px;
+ }
+ 
+ .event_box img{
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+ }
+}
+
+@media (max-width: 320px){
+  .container{
+    padding: 10px;
+    width: 95%;
+    margin-right: 0;
+    margin-left: auto;
+  }
+.heading-box-CmtClb{
+  width: 90%;
+}
 }

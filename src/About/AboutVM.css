@@ -146,11 +146,62 @@ color: black;
   }
 }
 @media (max-width: 576px) {
+  .header-align-vm{
+    justify-content: center;
+    align-items: center;
+  }  
+ 
   .header-align-vm h1 {
+    width: fit-content;
     font-size: 1.5rem;
-    margin-top: 4rem;
-    margin-left: 10rem;
+    margin-inline: 30%;
   }
+
+  .left-index-vm{
+    margin-inline: 0;
+  }
+
+  .left-sidebar-vm{
+    padding-inline: 12.7%;
+    width: 100%;
+  }
+
+  .content-card-vm{
+    align-items: center;
+    justify-content: center;
+    padding-inline: 5%;
+  }
+
+  .card-content-vm{
+    padding-inline: 0;
+  }
+
+  .bg-golden-vm{
+    margin-inline: 5%;
+  }
+
+  .bg-golden-vm.card-header h4{
+    margin: 1vh;
+   }
+
+   .text-medium, .miss-vm{
+    font-size: 14px;
+    text-align: justify;
+    padding-inline: 7%;
+   }
+
+  ul.text-medium{
+    padding-inline: 0;
+   }
+
+   ul.miss-vm{
+    padding-inline: 5%;
+   }
+
+   .bg-white-vm{
+    padding-inline: 5%;
+   }
+
   .vision-img,
   .mission-img {
     width: 50%;

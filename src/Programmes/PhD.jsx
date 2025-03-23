@@ -57,8 +57,8 @@ const PhD = () => {
             </Card>
           </Col>
 
-          <Col>
-            <div className=" mt-5 table-n-head" style={{ paddingTop:"0px" }}>
+          <Col className='table-wrapper-phd'>
+            <div className="table-n-head-phd" style={{ paddingTop:"0px" }}>
 
               <div  className='head-table-top-phd'>
                 <h3 style={{ color: '#102C57' }} > Ph.D Programmes</h3></div>

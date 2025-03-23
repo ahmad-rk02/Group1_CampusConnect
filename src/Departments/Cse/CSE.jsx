@@ -2,13 +2,18 @@ import CSECarousel from '../../Departments/Cse/CSECarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './CSE.css'
+import Faculty from './FacultyDetails';
 import CSEvm from '../../Departments/Cse/CSEvm';
 import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
+import DropDownCse from './DropDownCse';
+import { useState } from 'react';
 // import Footer from './pages/Footer.jsx'
 
 
 const CSE = () => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+
   return (
     <div className='cse-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
@@ -21,7 +26,7 @@ const CSE = () => {
 
           <CSECarousel />
 
-          <Row className="g-0 overlay-row w-100" >
+          <Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} " >
             {/* Left Sidebar */}
             <Col md={4} className='left-sidebar-cse overlay-col ' >
               <div className="left-sidebar-wrapper">
@@ -32,8 +37,20 @@ const CSE = () => {
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : ""}
                       >
-                        <b>Computer Science & Engineering</b>
+                        <b onClick={() => setOpenDropdown(!openDropdown)}>Computer Science & Engineering</b>
                       </Link>
+
+                      {
+                        openDropdown &&
+
+                        <div className={`cse-dropdown-cse ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownCse />
+                        </div>
+
+                      }
+
+
+
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
@@ -96,8 +113,12 @@ const CSE = () => {
               <CSEvm className='  right-content-cse' />
             </div>
 
+            <div className="facultyDetails">
+              <Faculty />
+            </div>
+
             <div >
-              <CodeUnnati className='  right-content-cse' />
+              <CodeUnnati className='  right-codeunnati-content-cse' />
             </div>
 
             <div >

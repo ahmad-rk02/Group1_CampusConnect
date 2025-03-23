@@ -1,18 +1,19 @@
 /* Base Styles - Full Screen */
-.cse-intro {
+.instru-intro {
     margin-bottom: 50px;
   }
   
-  .cse-intro-heading {
+  .instru-intro-heading {
     background-color: #eadbc8;
     height: 50px;
     padding-left: 20px;
     display: flex;
+    width: 900px;
     align-items: center;
     color: #102C57;
   }
   
-  .cse-intro-box {
+  .instru-intro-box {
     position: relative;
     background-color: #eadbc8;
     border-radius: 10px;
@@ -26,7 +27,7 @@
     padding-bottom: 20px;
     transition: background-color 0.3s ease;
 }
-.cse-intro-box .first-para-small {
+.instru-intro-box .first-para-small {
     text-align: center;
     width: 90%;
     padding-top: 40px;
@@ -36,17 +37,17 @@
     font-weight: 500;
 }
 
-.cse-intro-box .small-intro-heading {
+.instru-intro-box .small-intro-heading {
     color: #102C57;
     text-align: center;
     padding-bottom: 15px;
 }
 
-.cse-intro-box .small-intro-heading h6 {
+.instru-intro-box .small-intro-heading h6 {
     font-weight: 700;
 }
 
-.cse-intro-box .second-para-large {
+.instru-intro-box .second-para-large {
     text-align: left;
     width: 90%;
     height: fit-content;
@@ -57,11 +58,11 @@
 }
 
 /* Hover effect */
-.cse-intro-box:hover {
+.instru-intro-box:hover {
     background-color: #102C57;
 }
 
-.cse-intro-box:hover::after {
+.instru-intro-box:hover::after {
     content: "Code the Future, Ignite the Spark CSE, We Leave our Mark!";
     font-size: 40px;
     color: #eadbc8;
@@ -78,55 +79,27 @@
 }
 
 /* Ensuring the text inside is hidden by default */
-.cse-intro-box .second-para-large,
-.cse-intro-box .first-para-small,
-.cse-intro-box .small-intro-heading {
+.instru-intro-box .second-para-large,
+.instru-intro-box .first-para-small,
+.instru-intro-box .small-intro-heading {
     visibility: visible;
 }
 
-.course-outcome{
-  text-align: center;
-  margin-top: 15px;
-}
-
-.course-outcome a{
-  color: #102C57;
-  text-decoration: none;
-}
-
-.course-outcome a:hover{
-  text-decoration: underline;
-}
-
-.vision-mission-link{
-  text-align: center;
-  margin-top: 15px;
-}
-
-.vision-mission-link a{
-  color: #102C57;
-  text-decoration: none;
-}
-
-.vision-mission-link a:hover{
-  text-decoration: underline;
-}
-
 /* Hide content when hover occurs */
-.cse-intro-box:hover .second-para-large,
-.cse-intro-box:hover .first-para-small,
-.cse-intro-box:hover .small-intro-heading, 
-.cse-intro-box:hover .course-outcome{
+.instru-intro-box:hover .second-para-large,
+.instru-intro-box:hover .first-para-small,
+.instru-intro-box:hover .small-intro-heading {
     visibility: hidden;
 }
   
-  .cse-vision-heading,
-  .cse-mission-heading {
+  .instru-vision-heading,
+  .instru-mission-heading {
     background-color: #eadbc8;
     height: 50px;
     padding-left: 20px;
     display: flex;
     align-items: center;
+    width: 900px;
     color: #102C57;
   }
   
@@ -137,44 +110,46 @@
     width: 80%;
   }
   
-  .cse-mission {
+  .instru-mission {
     margin-top: 30px;
   }
-  .table-header-cse th {
+  .table-header-instru th {
     background-color: #102c57;
     color: white;
     text-align: center;
   }
   
-  .table-header-cse th:first-child {
+  .table-header-instru th:first-child {
     border-top-left-radius: 10px;
   }
   
-  .table-header-cse th:last-child {
+  .table-header-instru th:last-child {
     border-top-right-radius: 10px;
   }
   
-  .table-body-cse tr {
+  .table-body-instru tr {
     text-align: center;
   }
-  .head-table-top-cse h3 {
+  .head-table-top-instru h3 {
     text-align: left;
     padding-left: 15px;
     padding-top: 6px;
   }
-  .cse-table {
-    width: 96%;
+  .instru-table {
+    width: 100%;
     border-radius: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-top: 20px;
   }
-  .head-table-top-cse{
-    width:100% ;
+  .head-table-top-instru{
+
+    width:90% ;
     height: 50px;
     background-color: antiquewhite;
     margin-bottom: 20px;
   }
-  .name-cse-prog {
+  .name-instru-prog {
     text-align: left;
   }
   .headlab h1 {
@@ -182,46 +157,97 @@
     margin-bottom: 30px;
     margin-top: 30px;
   }
+.instru-infra-head{
+  background-color: #eadbc8;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 900px;
+    color: #102C57;
+}
+
+div.infra-instru{
   
-.infra-cse{
-height: 1450px; 
+  height:fit-content;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+ column-gap: 20px;
+ 
+}
+.lab-instru{
+  width: 45%;
+  background-color: #102c57;
+  height: 40px;
+  position: relative;
+  border-radius: 16px;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 200px;
 
 }
-
-.lab-eq{
-  margin-left: 530px;
-  margin-top: -200px;
-}
-.lab-2 h4{
+.lab-instru h4{
   text-align: left;
   padding-left: 20px;
   padding-top: 5px;
   color: rgb(249, 243, 208);
+  
+}
+.lab-img-instru{
+  width: 270px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+
+.lab-eq-instru{
+  margin-left: 300px;
+  margin-top:-150px;
+}
+.instru-mi-heading{
+  background-color: #eadbc8;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  color: #102C57;
+  margin-bottom: 20px;
+  width: 900px;
+}
+.instru-but{
+  width: 50px;
+  height: 20px;
+  color: bisque;
 
 }
-.lab-2{
-  width: 55%;
-  background-color: #102c57;
-  height: 40px;
-  position: relative;
-  margin-left: 100px;
-  margin-top: 180px;
-  border-radius: 16px;
+
+.but-toggle-button {
+  font-size: 1.2rem; /* Increase font size */
+  padding: 12px 24px; /* Add padding for a larger button */
+  border-radius: 10px; /* Rounded edges */
+  border: none;
+  background-color: #102C57; /* Blue background */
+  color: #eadbc8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 60px;
+  margin-top: -20px;
 }
-.lab-img2{
-  width: 400px;
-  margin-top: 20px;
-  margin-left: 100px;
+
+.but-toggle-button:hover {
+  background-color: #030f1b; /* Darker blue on hover */
 }
+
 
   
   /* Responsive Styles */
   @media (max-width: 1200px) {
-    .cse-intro-heading, .cse-vision-heading, .cse-mission-heading {
+    .instru-intro-heading, .instru-vision-heading, .instru-mission-heading,.instru-mi-heading {
       width: 90%;
     }
   
-    .cse-intro-box {
+    .instru-intro-box {
       width: 90%;
       margin-left: 20px;
     }
@@ -231,7 +257,7 @@ height: 1450px;
       padding: 0 15px;
     }
   
-    .cse-intro-box:hover::after {
+    .instru-intro-box:hover::after {
       font-size: 1.5rem;
       width: 90%;
     }
@@ -252,12 +278,12 @@ height: 1450px;
   }
   
   @media (max-width: 992px) {
-    .cse-intro-heading, .cse-vision-heading, .cse-mission-heading {
+    .instru-intro-heading, .instru-vision-heading, .instru-mission-heading,.instru-mi-heading  {
       width: 100%;
       text-align: center;
     }
   
-    .cse-intro-box {
+    .instru-intro-box {
       width: 95%;
       margin-left: 10px;
       padding: 10px;
@@ -267,25 +293,26 @@ height: 1450px;
       width: 95%;
     }
   
-    .cse-intro-box:hover::after {
+    .instru-intro-box:hover::after {
       font-size: 1.2rem;
     }
   }
   
   @media (max-width: 768px) {
-    .cse-intro-heading h3,
-    .cse-vision-heading h3,
-    .cse-mission-heading h3 {
+    .instru-intro-heading h3,
+    .instru-vision-heading h3,
+    .instru-mission-heading h3 
+    .instru-mi-heading h3{
       font-size: 1.5rem;
     }
   
-    .cse-intro-box .first-para-small,
-    .cse-intro-box .second-para-large {
+    .instru-intro-box .first-para-small,
+    .instru-intro-box .second-para-large {
       padding-left: 10px;
       padding-right: 10px;
     }
   
-    .cse-intro-box:hover::after {
+    .instru-intro-box:hover::after {
       font-size: 1rem;
     }
     .lab-2, .lab-3 {
@@ -302,37 +329,27 @@ height: 1450px;
   }
   
   @media (max-width: 576px) {
-    .cse-intro-heading h3,
-    .cse-vision-heading h3,
-    .cse-mission-heading h3 {
-        font-size: 1rem;
+    .instru-intro-heading h3,
+    .instru-vision-heading h3,
+    .instru-mission-heading h3
+    .instru-mi-heading h3 {
+      font-size: 4vw;
     }
   
-    
-    .cse-intro-box {
+    .instru-intro-box {
       width: 100%;
       margin-left: 0;
       border-width: 3px;
-      padding-left: 5%;
-      padding-right: 5%;
-      align-items: center;
-      justify-content: center;
+      padding: 5px;
     }
   
-     .first-para-small, .small-intro-heading, div.second-para-large p{
-      width: auto;
-      text-align:justify;
-      padding: auto;
-     }
-
     .vision-content, .mission-content {
       width: 100%;
       text-align: justify;
       padding: 5px;
-      font-size: 14px;
     }
   
-    .cse-intro-box:hover::after {
+    .instru-intro-box:hover::after {
       font-size: 0.8rem;
     }
     .lab-2,.lab-3 {

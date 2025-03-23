@@ -3,17 +3,16 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
- 
   padding: 0;
 }
 
 /* Header Section */
-.head-box-cse {
+div.head-box-cse.row {
   background-color: #102c57;
   height: 130px;
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .head-box-cse h1 {
@@ -23,51 +22,91 @@
 }
 
 /* Right Content Section */
-.right-content-cse {
-  position: relative;
-  margin: 30px auto 30px auto;
-  padding: 20px;
-  width: 75%;
-  transition: all 0.3s ease;
-  margin-left: auto;
+.right-codeunnati-content-cse,.right-content-cse {
+  margin-top: 30px;
+  margin-left: 250px;
+  width: 80%;
 }
 
 /* Sidebar Section */
 .left-nav-cse {
   position: sticky;
-  top: 150px;
-  height: fit-content;
-  width: 300px;
+  top: 250px;
+  z-index: 2;
+  width: 450px;
   background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
- margin-left: 100px;
+  border-radius: 0px;
+  box-shadow: 7px 7px 15px;
+  margin-left: 40px;
+  margin-bottom: 5px;
 }
 
 .left-nav-row-cse,
 .left-nav-row-cse-01 {
   text-align: center;
   font-size: 1.2rem;
-  margin: 10px 0;
-  color: #333;
+  
 }
 
 .left-sidebar-cse a {
   text-decoration: none;
-  color: #007bff;
-  transition: color 0.3s ease;
+  color: black
+  
 }
 
 .left-sidebar-cse a:hover {
   color: #0056b3;
 }
+.left-sidebar-cse {
+  position: relative;
+  top: -20px;
+  z-index: 2;
+}
+
+.left-sidebar-wrapper {
+  position: relative;
+}
+
+.dropdown-cse{
+  padding: 5px;
+  padding-bottom: 0;
+  text-align: left;
+  top: 4rem;
+  margin-left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  box-shadow: 1px 1px 3px;
+  overflow: hidden;
+  transition: all 0.5s ease; 
+}
+
+.dropdown-cse-text li {
+  border-bottom: 1px solid #ccc; 
+   
+}
+
+ul.dropdown-cse-text{
+  padding-inline: 3vh;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.dropdown-cse-text li:last-child {
+  border-bottom: none; 
+}
+
+.dropdown-cse-text{
+  font-size: medium;
+  line-height: 5vh;
+}
 
 /* Responsive Styles */
 @media (max-width: 1200px) {
-  .right-content-cse {
+ .right-content-cse {
     width: 80%;
-    margin-left: auto;
     overflow-x: hidden;
+    margin-right: 60px;
+    margin-left: 150px;
   }
 
   .left-nav-cse {
@@ -78,16 +117,20 @@
 @media (max-width: 992px) {
   .head-box-cse h1 {
     font-size: 1.8rem;
+    padding-top: 20px;
+    padding-left: 20px;
   }
-
+  .right-codeunnati-content-cse,
   .right-content-cse {
-    width: 85%;
-    margin-left: 120px;
+    margin-left: 20px;
+    width: 96%;
   }
 
   .left-nav-cse {
-    width: 220px;
-    margin: 0px 40px;
+    width: 250px;
+    margin-left: 20px;
+    top: 120px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -98,13 +141,17 @@
 
   .head-box-cse h1 {
     font-size: 1.5rem;
+    padding-top: 10px;
     padding-left: 10px;
   }
-
+.right-codeunnati-content-cse{
+  margin-left: 50px;
+    width: 90%;
+}
   .right-content-cse {
-    margin-top: 15em;
-    margin-left: auto;
-    width: 85%;
+    margin-top: 10em;
+    margin-left: 30px;
+    width: 90%;
   }
 
   .left-nav-cse {
@@ -113,29 +160,72 @@
     margin-left: auto;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   }
+
 }
 
 @media (max-width: 576px) {
-  .head-box-cse h1 {
-    font-size: 1.3rem;
-    text-align: center;
+
+  div.head-box-cse.row{
+    height: 100px;
   }
 
+  .head-box-cse h1 {
+    font-size: 24px;
+    height: 30px;
+    margin-top: 5%;
+  }
+  .right-codeunnati-content-cse,
   .right-content-cse {
-    width: 95%;
-    margin-right: 0;
-    margin-left: auto;
+    margin-left: 0;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+
+  .left-sidebar-cse{
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    top: -5vw;
   }
 
   .left-nav-cse {
-    width: 80%;
-    padding: 1px;
-    margin-left: 80px;
+    position: relative;
+    width: 85%;
+    margin-top: 7vh;
+    margin-bottom: 5px;
+    top: 0;
+  }
+
+  .dropdown-cse-text{
+    font-size: medium;
+    line-height: 3vh;
   }
 
   .left-nav-row-cse,
   .left-nav-row-cse-01 {
     font-size: 1rem;
+  }
+
+  .some-container-for-dropdown{
+    
+    height: 300px;
+    width: 100%;
+    margin-right: 0;
+    margin: 10px;
+    margin-top: 0;
+    overlay:none
+  }
+  
+  .right-content-cse{
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 210px;
+  }
+
+  .dropdown-cse-text{
+    line-height: 3vh;
   }
 }
 
@@ -147,7 +237,7 @@
   .head-box-cse h1 {
     font-size: 1.2rem;
   }
-
+  .right-codeunnati-content-cse,
   .right-content-cse {
     padding: 10px;
   }
@@ -161,4 +251,5 @@
   .left-nav-row-cse-01 {
     font-size: 0.9rem;
   }
+  
 }

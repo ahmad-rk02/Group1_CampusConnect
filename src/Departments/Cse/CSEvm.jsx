@@ -1,10 +1,24 @@
 import React from 'react';
+import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
+import { Table } from 'react-bootstrap';
 import './CSEvm.css';
+import lab1 from '../../assets/1-lab.png';
+import lab2 from '../../assets/lab-2.png';
+import lab3 from '../../assets/lab-3.png';
 
 const CSEvm = ({ className }) => {
+  const CSETable = [
+    {  facility: 'Number of Classrooms', quantity: '02'},
+    {  facility: 'Number of Laboratories', quantity: '04'},
+    {  facility: 'Tutorial Rooms', quantity: '--'},
+    {  facility: 'Faculty Cabins', quantity: '01'},
+    {  facility: 'Number of Computers', quantity: '100'},
+    {  facility: 'Number of Projectors', quantity: '01'},
+    {  facility: 'Number of laptops', quantity: '02'},
+  ];
   return (
     <div className={className}>
-      <div className="cse-intro">
+      <div className="cse-intro" id='vission-mission-cse'>
         <div className="cse-intro-heading">
           <h3>Computer Science & Engineering</h3>
         </div>
@@ -22,8 +36,12 @@ const CSEvm = ({ className }) => {
             <p>
               As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
             </p>
-          </div>
+          
         </div>
+        </div>
+          <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/CSE_Couse%20Outcome.pdf'>Department Course Outcomes</a>
+            </div>
       </div>
 
       <div className="cse-vision">
