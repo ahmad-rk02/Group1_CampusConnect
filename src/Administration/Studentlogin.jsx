@@ -21,81 +21,71 @@ const LoginForm = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [modalMessage, setModalMessage] = useState({ icon: null, text: '' });
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     if (name === 'prnNumber' && /[^0-9]/.test(value)) {
       setError('PRN should contain only numbers.');
       return;
     } else {
       setError('');
     }
-
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     let errorMessages = [];
-
-    if (!formData.prnNumber) {
-      errorMessages.push('PRN number is required.');
-    }
-    if (!formData.password) {
-      errorMessages.push('Password is required.');
-    }
+    if (!formData.prnNumber) errorMessages.push('PRN number is required.');
+    if (!formData.password) errorMessages.push('Password is required.');
     if (errorMessages.length > 0) {
       setError(errorMessages.join(' '));
       return;
     }
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
     setIsLoading(true);
     try {
+      console.log('API_BASE_URL:', API_BASE_URL); // Debug URL
+      console.log('Request Payload:', { prnNumber: formData.prnNumber, password: formData.password }); // Debug payload
       const response = await axios.post(`${API_BASE_URL}/api/users/student/login`, {
         prnNumber: formData.prnNumber,
         password: formData.password,
+      }, {
+        timeout: 10000, // Add timeout to avoid hanging
       });
 
       if (response.status === 200) {
         localStorage.setItem('authToken', response.data.token);
-        
-        // Show success modal
         setModalMessage({ icon: faCheckCircle, text: 'Login Successful!' });
         setShowModal(true);
-
-        // Redirect after a short delay
-        setTimeout(() => {
-          navigate('/studentprofile');
-        }, 2000);
+        setTimeout(() => navigate('/studentprofile'), 2000);
       }
     } catch (error) {
-      console.error('Error during login:', error);
-      setError(error.response?.data?.message || 'Invalid Credentials');
-      
-      // Show failure modal
-      setModalMessage({ icon: faExclamationTriangle, text: 'Login Denied!' });
+      console.error('Login Error:', error.message, error.response?.data, error.response?.status);
+      if (error.response) {
+        setError(error.response.data?.message || 'Invalid Credentials');
+        setModalMessage({ icon: faExclamationTriangle, text: 'Login Denied!' });
+      } else if (error.request) {
+        setError('CORS or network error: No response from server. Check backend CORS settings.');
+        setModalMessage({ icon: faExclamationTriangle, text: 'Network Error!' });
+      } else {
+        setError('Request setup error: ' + error.message);
+        setModalMessage({ icon: faExclamationTriangle, text: 'Login Failed!' });
+      }
       setShowModal(true);
     } finally {
       setIsLoading(false);
     }
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword((prev) => !prev);
-  };
+  const togglePasswordVisibility = () => setShowPassword((prev) => !prev);
 
   return (
     <Container fluid className="p-0 w-100">
       <Row className="head-box-login">
-        <Col>
-          <h1 className="text-left">ADMINISTRATION</h1>
-        </Col>
+        <Col><h1 className="text-left">ADMINISTRATION</h1></Col>
       </Row>
 
       <Row noGutters className="left-index-login">
@@ -104,15 +94,11 @@ const LoginForm = () => {
             <ListGroup variant="flush">
               {['Principal and HOD', 'Student Section', 'Office', 'Committees', 'Tenders'].map((item, index) => (
                 <ListGroup.Item key={index} className="left-nav-row-login">
-                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
-                    {item}
-                  </Link>
+                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>{item}</Link>
                 </ListGroup.Item>
               ))}
               <ListGroup.Item className="left-nav-row-login-01">
-                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
-                  Grievance Form
-                </Link>
+                <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>Grievance Form</Link>
               </ListGroup.Item>
             </ListGroup>
           </Card>
@@ -155,13 +141,7 @@ const LoginForm = () => {
                   />
                   <span
                     onClick={togglePasswordVisibility}
-                    style={{
-                      position: 'absolute',
-                      right: '10px',
-                      top: '50%',
-                      transform: 'translateY(-50%)',
-                      cursor: 'pointer',
-                    }}
+                    style={{ position: 'absolute', right: '10px', top: '50%', transform: 'translateY(-50%)', cursor: 'pointer' }}
                     role="button"
                   >
                     <FontAwesomeIcon icon={showPassword ? faEye : faEyeSlash} />
@@ -182,7 +162,6 @@ const LoginForm = () => {
         </Col>
       </Row>
 
-      {/* Modal for Login Success or Failure */}
       <Modal show={showModal} onHide={() => setShowModal(false)} centered>
         <Modal.Body className="text-center">
           <FontAwesomeIcon icon={modalMessage.icon} size="3x" color={modalMessage.icon === faCheckCircle ? 'green' : 'red'} />
@@ -195,4 +174,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
- 
