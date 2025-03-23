@@ -77,10 +77,8 @@
 
 .table-n-head-phd{
     margin-top: 50px;
-padding-left: 170px;
-padding: 0;  
-max-width: 100%;  
-table-layout: auto;
+    padding-left: 170px;
+    width: max-content;
 }
 
 .phd-table{
@@ -263,6 +261,9 @@ table-layout: auto;
     div.table-n-head-phd{
         margin:0;
         margin-top: 5%;
+        padding: 0;  
+        max-width: 100%;  
+        table-layout: auto;
     }
 
     .table-wrapper-phd{

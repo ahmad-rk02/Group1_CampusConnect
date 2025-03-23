@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Container, Row, Col, Card, ListGroup, Form, Button } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Card, ListGroup, Form, Button, Modal } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import './GrievanceForm.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; // Import axios
+import axios from 'axios';
+
 const GrievanceForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -19,7 +20,8 @@ const GrievanceForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+  const [showResultModal, setShowResultModal] = useState(false); // State for result modal
+  const [isSuccess, setIsSuccess] = useState(false); // State to track success/failure
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,75 +35,36 @@ const GrievanceForm = () => {
     let formErrors = {};
     let valid = true;
 
-     // Check if any field is empty
-     for (let field in formData) {
+    for (let field in formData) {
       if (!formData[field]) {
         valid = false;
         formErrors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
       }
     }
 
-    // Fullname validation
-    if (!formData.fullname) {
-      valid = false;
-      formErrors.fullname = "Full Name is required";
-    }
-
-    // Email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email || !emailPattern.test(formData.email)) {
       valid = false;
       formErrors.email = "A valid email is required";
     }
 
-    // Phone validation
     const phonePattern = /^[0-9]{10}$/;
     if (!formData.phone || !phonePattern.test(formData.phone)) {
       valid = false;
       formErrors.phone = "A valid 10-digit phone number is required";
     }
 
-    // University Number validation
-    if (!formData.universityNumber) {
-      valid = false;
-      formErrors.universityNumber = "University number is required";
-    }
-
-    // Semester validation
-    if (!formData.semester) {
-      valid = false;
-      formErrors.semester = "Please select your semester";
-    }
-
-    // Dept validation
-    if (!formData.branch) {
-      valid = false;
-      formErrors.branch = "Please select your branch";
-    }
-
-    // Grievance Type validation
-    if (!formData.grievanceType) {
-      valid = false;
-      formErrors.grievanceType = "Grievance type is required";
-    }
-
-    // Message validation
-    if (!formData.message) {
-      valid = false;
-      formErrors.message = "Message is required";
-    }
-
     setErrors(formErrors);
     return valid;
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:5000/api/grievances/submit', formData);
+        const response = await axios.post(`${API_BASE_URL}/api/grievances/submit`, formData);
   
-        // Confirm the response is successful
         if (response.status === 200 || response.status === 201) {
           setFormData({
             fullname: '',
@@ -114,40 +77,40 @@ const GrievanceForm = () => {
             message: '',
           });
           console.log('Response:', response.data);
-          alert('Grievance submitted successfully!');
-          setSubmitted(true);
-  
-          navigate('/studentprofile'); // Ensure navigate is properly initialized
+          setIsSuccess(true);
+          setShowResultModal(true);
+          setTimeout(() => {
+            setShowResultModal(false);
+            navigate('/studentprofile');
+          }, 5000); 
         } else {
           throw new Error('Unexpected response status: ' + response.status);
         }
       } catch (err) {
         console.error('Error:', err.response || err.message || err);
-        alert('Error submitting grievance: ' + (err.response?.data?.message || err.message));
-        setSubmitted(false);
+        setIsSuccess(false);
+        setShowResultModal(true);
+        setTimeout(() => setShowResultModal(false), 5000); 
       }
     }
   };
-  
+
   return (
     <div>
-
-      <Container fluid className="p-0 w-100">
-        {/* Header Section */}
+      <Container fluid className="p-0 w-100 cont-grivnc-form">
         <Row className='head-box-grivnce'>
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
           </Col>
         </Row>
 
-        <Row noGutters className="flex-nowrap left-index-grivnce just" >
-          {/* Left Sidebar */}
-          <Col md={2} className='left-sidebar-grivnce' >
-            <Card className="left-nav-grivnce" >
+        <Row noGutters className="flex-nowrap left-index-grivnce just">
+          <Col md={2} className='left-sidebar-grivnce'>
+            <Card className="left-nav-grivnce">
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/principalHods"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Principal and HOD
@@ -155,7 +118,7 @@ const GrievanceForm = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/studentSection"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Student Section
@@ -163,33 +126,24 @@ const GrievanceForm = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
                   <Link
-                    to=""
+                    to="/office"
                     className={location.pathname === "" ? "active-link" : ""}
                   >
                     Office
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to="/committees"
-                    className={location.pathname === "/committees" ? "active-link" : ""}
-                  >
+                  <Link to="/committees" className={location.pathname === "/committees" ? "active-link" : ""}>
                     Commiittees
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link
-                    to="/tenders"
-                    className={location.pathname === "/tenders" ? "active-link" : ""}
-                  >
+                  <Link to="/tenders" className={location.pathname === "/tenders" ? "active-link" : ""}>
                     Tenders
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce-01">
-                  <Link
-                    to="/login"
-                    className={location.pathname === "/login" ? "active-link" : ""}
-                  >
+                  <Link to="/login" className={location.pathname === "/login" ? "active-link" : ""}>
                     Grievance Form
                   </Link>
                 </ListGroup.Item>
@@ -197,24 +151,15 @@ const GrievanceForm = () => {
             </Card>
           </Col>
 
-          <Col>
-
+          <Col className='whole-right-grivnce'>
             <div>
-              <div className='head-right-top-grivnce' style={{ width: "70%", backgroundColor: "#eadbc8" }}>
-                <h3 style={{ color: '#102C57' }} >Student Grievance Form</h3>
-
-            </div>
+              <div className='head-right-top-grivnce' style={{ backgroundColor: "#eadbc8" }}>
+                <h3 style={{ color: '#102C57' }}>Student Grievance Form</h3>
+              </div>
             </div>
 
             <div className='form-section-grivnce'>
               <Form onSubmit={handleSubmit} className='whole-form-grivnce'>
-
-              {submitted && (
-                  <Alert variant="success" className='mb-3'>
-                    Grievance form submitted successfully!
-                  </Alert>
-                )}
-
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-grivnce">
                   <Form.Label className='field-name-grivnce'>Full Name</Form.Label>
                   <Form.Control
@@ -264,7 +209,7 @@ const GrievanceForm = () => {
                     placeholder="Enter University Number"
                     className={`input-box-grivnce ${errors.universityNumber && 'is-invalid'}`}
                   />
-                   {errors.universityNumber && <div className="invalid-feedback">{errors.universityNumber}</div>}
+                  {errors.universityNumber && <div className="invalid-feedback">{errors.universityNumber}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="formbranch" className="mb-3 whole-field-grivnce">
@@ -272,12 +217,12 @@ const GrievanceForm = () => {
                   <Form.Select
                     name="branch"
                     value={formData.branch}
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className={`input-box-grivnce branch-dd ${errors.branch && 'is-invalid'}`}
                   >
                     <option value="">Select Branch</option>
                     <option value="Computer Science & Engineering">Computer Science & Engineering</option>
-                    <option value=">Instrumentation Engineering">Instrumentation Engineering</option>
+                    <option value="Instrumentation Engineering">Instrumentation Engineering</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Electrical engineering">Electrical engineering</option>
                     <option value="Electronics and Communication">Electronics and Communication</option>
@@ -291,18 +236,18 @@ const GrievanceForm = () => {
                   <Form.Select
                     name="semester"
                     value={formData.semester}
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     className={`input-box-grivnce sem-dd ${errors.semester && 'is-invalid'}`}
                   >
                     <option value="">Select Semester</option>
                     <option value="Semester 1">Semester 1</option>
-                    <option value="Semester 1">Semester 2</option>
-                    <option value="Semester 1">Semester 3</option>
-                    <option value="Semester 1">Semester 4</option>
-                    <option value="Semester 1">Semester 5</option>
-                    <option value="Semester 1">Semester 6</option>
-                    <option value="Semester 1">Semester 7</option>
-                    <option value="Semester 1">Semester 8</option>
+                    <option value="Semester 2">Semester 2</option>
+                    <option value="Semester 3">Semester 3</option>
+                    <option value="Semester 4">Semester 4</option>
+                    <option value="Semester 5">Semester 5</option>
+                    <option value="Semester 6">Semester 6</option>
+                    <option value="Semester 7">Semester 7</option>
+                    <option value="Semester 8">Semester 8</option>
                   </Form.Select>
                   {errors.semester && <div className="invalid-feedback">{errors.semester}</div>}
                 </Form.Group>
@@ -314,18 +259,18 @@ const GrievanceForm = () => {
                     value={formData.grievanceType}
                     onChange={handleChange}
                     className={`input-box-grivnce ${errors.grievanceType && 'is-invalid'}`}
-                  > 
-                  <option value="">Grievance Type</option>
-                  <option value="Computer Sence & Engineiering Dept. Related">Computer Science & Engineering Dept. Related</option>
-                    <option value=">Instrumentation Engneering Dept. Related">Instrumentation Engineering Dept. Related</option>
+                  >
+                    <option value="">Grievance Type</option>
+                    <option value="Computer Science & Engineering Dept. Related">Computer Science & Engineering Dept. Related</option>
+                    <option value="Instrumentation Engineering Dept. Related">Instrumentation Engineering Dept. Related</option>
                     <option value="Mechanical Engineering Dept. Related">Mechanical Engineering Dept. Related</option>
                     <option value="Electrical engineering Dept. Related">Electrical engineering Dept. Related</option>
                     <option value="Electronics and Communication Dept. Related">Electronics and Communication Dept. Related</option>
                     <option value="Civil Dept. Related">Civil Dept. Related</option>
-                    <option value="Office Related Dept. Related">Office Related</option>
+                    <option value="Office Related">Office Related</option>
                     <option value="Others">Others</option>
                   </Form.Select>
-                   {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
+                  {errors.grievanceType && <div className="invalid-feedback">{errors.grievanceType}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="formMessage" className="mb-3 whole-field-grivnce">
@@ -336,8 +281,8 @@ const GrievanceForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     className={`message-box ${errors.message && 'is-invalid'}`}
- />
-                    {errors.message && <div className="invalid-feedback">{errors.message}</div>}
+                  />
+                  {errors.message && <div className="invalid-feedback">{errors.message}</div>}
                 </Form.Group>
 
                 <Button variant="primary" type="submit" className='sub-btn-grivnce'>
@@ -346,12 +291,45 @@ const GrievanceForm = () => {
               </Form>
             </div>
           </Col>
-
         </Row>
       </Container>
 
+      {/* Result Modal */}
+      <Modal 
+        show={showResultModal} 
+        onHide={() => setShowResultModal(false)} 
+        centered
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Body className="text-center">
+          {isSuccess ? (
+            <>
+              <i className="bi bi-check-circle-fill" style={{ fontSize: '3rem', color: 'green' }}></i>
+              <h4 className="mt-3">Grievance Submitted Successfully!</h4>
+            </>
+          ) : (
+            <>
+              <i className="bi bi-exclamation-triangle-fill" style={{ fontSize: '3rem', color: 'red' }}></i>
+              <h4 className="mt-3">Failed to Submit Grievance</h4>
+              <p>Please try again later.</p>
+            </>
+          )}
+        </Modal.Body>
+        <Modal.Footer className="justify-content-center">
+          <Button 
+            variant={isSuccess ? "success" : "danger"} 
+            onClick={() => {
+              setShowResultModal(false);
+              if (isSuccess) navigate('/studentprofile');
+            }}
+          >
+            OK
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
-  )
-}
+  );
+};
 
-export default GrievanceForm
+export default GrievanceForm;

@@ -1,10 +1,16 @@
 import React, { useState } from 'react';
 import { Table } from 'react-bootstrap';
 import './INSTRUvm.css';
-import lab1 from '../../assets/1-lab.png';
-import lab2 from '../../assets/lab-2.png';
-import lab3 from '../../assets/lab-3.png';
-
+import lab1 from '../../assets/I1.jpg';
+import lab2 from '../../assets/I1.jpg';
+import lab3 from '../../assets/i2.jpg';
+import lab4 from '../../assets/i3.jpg';
+import lab5 from '../../assets/i3.jpg';
+import lab6 from '../../assets/i4.jpg';
+import lab7 from '../../assets/i5.jpg';
+import lab8 from '../../assets/i6.jpg';
+import lab9 from '../../assets/i7.jpg';
+import lab10 from '../../assets/i8.jpg';
 
 const INSTRUvm = ({ className }) => {
   const INSTRUTable = [
@@ -22,16 +28,16 @@ const INSTRUvm = ({ className }) => {
     const [showFirstSet, setShowFirstSet] = useState(true);
   
   const labs = [
-    { id: 1, name: 'Computer Laboratory-118', img: lab1, equipment: 'Desktop, Computer, Printer, Scanner' },
-    { id: 2, name: 'Computer Laboratory-119', img: lab2, equipment: 'Desktop, Computer, Printer' },
-    { id: 3, name: 'Computer Laboratory-120', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 4, name: 'Computer Laboratory-121', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 5, name: 'Computer Laboratory-122', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 6, name: 'Computer Laboratory-123', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 7, name: 'Computer Laboratory-124', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 8, name: 'Computer Laboratory-125', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 9, name: 'Computer Laboratory-126', img: lab3, equipment: 'Desktop, Computer, Printer' },
-    { id: 10, name: 'Computer Laboratory-127', img: lab3, equipment: 'Desktop, Computer, Printer' }
+    { id: 1, name: 'Biomedical Instrumentation Lab', img: lab1, equipment: 'Bio Signal Simulator, X-Ray Machine Simulator, External Pace Maker,EEG Machine Simulator' },
+    { id: 2, name: 'Analytical Instrumentation Lab', img: lab2, equipment: 'Fetal Monitoring System Trainer, PC based Lang analyzer,Hemo Dialysis Trainer Internal,' },
+    { id: 3, name: 'Digital Signal Processing Lab', img: lab3, equipment: 'Desktop,Printers, Scanners,UPS,License Softwares- Automation Studio, MATLAB, LabVIEW,etc.' },
+    { id: 4, name: 'Advance Process Control Lab', img: lab4, equipment: 'Multi Brand PLC Training System,DCS Trainer with SCADA,PLC Based Electro-Hydraulic Trainer' },
+    { id: 5, name: 'Control System Lab', img: lab5, equipment: 'Control Logix Training System,Multi Process Trainer,Control Valve Characteristics Trainer,MATLAB based Heat Exchanger System' },
+    { id: 6, name: 'Applied Electronics Lab', img: lab6, equipment: 'Universal IC Tester,Dual channel DSO,Dual power supply DC,Function generator,Multifunction Unit' },
+    { id: 7, name: 'Sensor & Transducer Lab', img: lab7, equipment: 'Speed Measurement,LVDT setup,Tachometer,pH meter,Universal Calibrator,Pressure Measurement' },
+    { id: 8, name: 'Electronics Measurement Lab', img: lab8, equipment: 'Digital LCR Meter,Bench Top DMM,AC & DC Bridges,CRO, Multimeter' },
+    { id: 9, name: 'Microcontroller Lab', img: lab9, equipment: 'Traffic Control, Stepper Motor Control, DC Motor Control Cards,Intelligent Universal Programmer,Microcontroller Developer ' },
+    { id: 10, name: 'Project Lab', img: lab10, equipment: 'CRO,Multi-meters,Computers with Matlab ,Hydraulic Trainer,DCS' }
   ];
   const displayedLabs = showFirstSet ? labs.slice(0, 5) : labs.slice(5, 10);
 
@@ -54,10 +60,13 @@ const INSTRUvm = ({ className }) => {
 
           <div className="second-para-large">
             <p>
-              As technology grows, the demand for computer engineers rises, with India as a major IT hub. The department admits 60 students yearly, offering support for technical events and providing high-speed internet, modern software, and well-equipped labs. Graduates secure placements in top companies like TCS, Oracle, and Cognizant. The student association, ACSES, organizes various technical and cultural activities.
+            The department features state-of-the-art laboratories in Sensors & Process Control, Electronics, Measurement & Control, Microprocessors, Computers, and Biomedical Instrumentation, with advanced simulation tools and equipment worth ₹1.65 crore. Spread across 3134 sq. m., it houses the Instrumentation Engineering Student Association (IESA), organizing cultural and technical events. Students gain industry exposure through practicals, projects, training, and tours, along with soft-skills development for overall growth.
             </p>
           </div>
         </div>
+        <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/IE_CO.pdf'>Department course-outcome</a>
+            </div>
       </div>
 
       <div className="instru-vision">
@@ -84,7 +93,11 @@ const INSTRUvm = ({ className }) => {
             <li>To train students to undertake global challenges by adapting safe practices.</li>
             
           </ul>
-        </div></div>
+        </div>
+        <div className='course-outcome'>
+            <a href='https://www.gcoec.ac.in/gcoec/cos/Instru-Vision%20mission%20PEO%20PSO-1.pdf'>Department PEO's & PSO</a>
+            </div>
+        </div>
       
       <div className='infra-instru'>
       <div className="instru-infra-head">
@@ -119,7 +132,7 @@ const INSTRUvm = ({ className }) => {
             <img src={lab.img} alt={lab.name} className='lab-img-instru' />
             <div className='lab-eq-instru'>
               <h5>Equipment:</h5>
-              <p>{lab.equipment}</p>
+              <p className='tick'>{lab.equipment}</p>
             </div>
           </div>
         ))}

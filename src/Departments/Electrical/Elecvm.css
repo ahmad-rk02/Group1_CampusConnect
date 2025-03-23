@@ -1,0 +1,456 @@
+/* Base Styles - Full Screen */
+.Elec-intro {
+    margin-bottom: 50px;
+  }
+  
+  .Elec-intro-heading {
+    background-color: #eadbc8;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    color: #102C57;
+  }
+  
+  .Elec-intro-box {
+    position: relative;
+    background-color: #eadbc8;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #102C57;
+    border-style: solid;
+    margin-top: 30px;
+    width: 90%;
+    align-content: center;
+    margin-left: 50px;
+    padding-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+.Elec-intro-box .first-para-small {
+    text-align: center;
+    width: 90%;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    padding-left: 90px;
+    text-wrap: wrap;
+    font-weight: 500;
+}
+
+.Elec-intro-box .small-intro-heading {
+    color: #102C57;
+    text-align: center;
+    padding-bottom: 15px;
+}
+
+.Elec-intro-box .small-intro-heading h6 {
+    font-weight: 700;
+}
+
+.Elec-intro-box .second-para-large {
+    text-align: left;
+    width: 90%;
+    height: fit-content;
+    padding-bottom: 40px;
+    padding-left: 90px;
+    text-wrap: wrap;
+    font-weight: 500;
+}
+
+/* Hover effect */
+.Elec-intro-box:hover {
+    background-color: #102C57;
+}
+
+.Elec-intro-box:hover::after {
+    content: "Powering the Future, Sparking the Way – EE, We Light the Way!";
+    font-size: 40px;
+    color: #eadbc8;
+    text-align: center;
+    padding: 10px;
+    width: 80%;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    word-wrap: break-word;
+    visibility: visible;
+}
+
+/* Ensuring the text inside is hidden by default */
+.Elec-intro-box .second-para-large,
+.Elec-intro-box .first-para-small,
+.Elec-intro-box .small-intro-heading {
+    visibility: visible;
+}
+.course-outcome{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+font-size: 20px;
+}
+
+.course-outcome a{
+  color: #f20707;
+  text-decoration: none;
+}
+
+.course-outcome a:hover{
+  text-decoration: underline;
+}
+
+.vision-mission-link{
+  text-align: center;
+  margin-top: 15px;
+}
+
+.vision-mission-link a{
+  color: #102C57;
+  text-decoration: none;
+}
+
+.vision-mission-link a:hover{
+  text-decoration: underline;
+}
+
+/* Hide content when hover occurs */
+.Elec-intro-box:hover .second-para-large,
+.Elec-intro-box:hover .first-para-small,
+.Elec-intro-box:hover .small-intro-heading {
+    visibility: hidden;
+}
+  
+  .Elec-vision-heading,
+  .Elec-mission-heading {
+    background-color: #eadbc8;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    
+    color: #102C57;
+  }
+  
+  .vision-content,
+  .mission-content {
+    margin-top: 30px;
+    text-align: left;
+    width: 80%;
+  }
+  
+  .Elec-mission {
+    margin-top: 30px;
+  }
+  .table-header-Elec th {
+    background-color: #102c57;
+    color: white;
+    text-align: center;
+  }
+  
+  .table-header-Elec th:first-child {
+    border-top-left-radius: 10px;
+  }
+  
+  .table-header-Elec th:last-child {
+    border-top-right-radius: 10px;
+  }
+  
+  .table-body-Elec tr {
+    text-align: center;
+  }
+  .head-table-top-Elec h3 {
+    text-align: left;
+    padding-left: 15px;
+    padding-top: 6px;
+  }
+  .Elec-table {
+    width: 90%;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 20px;
+  }
+  .head-table-top-Elec{
+
+    width:100% ;
+    height: 50px;
+    background-color: antiquewhite;
+    margin-bottom: 20px;
+  }
+  .name-Elec-prog {
+    text-align: left;
+  }
+  .headlab h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+.Elec-infra-head{
+  background-color: #eadbc8;
+    height: 50px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    color: #102C57;
+}
+
+div.infra-Elec{
+  
+  height:fit-content;
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+ column-gap: 20px;
+ 
+}
+.lab-Elec{
+  width: 45%;
+  background-color: #102c57;
+  height: 40px;
+  position: relative;
+  border-radius: 16px;
+  margin-left: 0;
+  padding-left: 0;
+  margin-bottom: 200px;
+
+}
+.lab-Elec h4{
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 5px;
+  color: rgb(249, 243, 208);
+  
+}
+.lab-img-Elec{
+  width: 270px;
+  height: 150px;
+  margin-top: 20px;
+}
+
+
+.lab-eq-Elec{
+  margin-left: 290px;
+  margin-top:-150px;
+  width: 130px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+font-size: 14px;
+}
+.Elec-mi-heading{
+  background-color: #eadbc8;
+  height: 50px;
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+  color: #102C57;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.Elec-but{
+  width: 50px;
+  height: 20px;
+  color: bisque;
+
+}
+
+.but-toggle-button {
+  font-size: 1.2rem; /* Increase font size */
+  padding: 12px 24px; /* Add padding for a larger button */
+  border-radius: 10px; /* Rounded edges */
+  border: none;
+  background-color: #102C57; /* Blue background */
+  color: #eadbc8;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-left: 60px;
+  margin-top: -20px;
+}
+
+.but-toggle-button:hover {
+  background-color: #030f1b; /* Darker blue on hover */
+}
+
+@media (max-width: 1200px) {
+  .Elec-intro-heading, .Elec-vision-heading, .Elec-mission-heading {
+    width: 90%;
+  }
+
+  .Elec-intro-box {
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  .vision-content, .mission-content {
+    width: 90%;
+    padding: 0 15px;
+  }
+
+  .Elec-intro-box:hover::after {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+  .lab-2,.lab-3 {
+    width: 70%;
+    margin-left: 5%;
+  }
+  .lab-img2 {
+    width: 370px;
+    margin-left: 90px;
+    margin-right: auto;
+}
+.lab-eq{
+  margin-left: 470px;
+  margin-top: -200px;
+}
+  
+}
+
+@media (max-width: 992px) {
+  .Elec-intro-heading, .Elec-vision-heading, .Elec-mission-heading {
+    width: 100%;
+    text-align: center;
+  }
+
+  .Elec-intro-box {
+    width: 95%;
+    margin-left: 10px;
+    padding: 10px;
+  }
+
+  .vision-content, .mission-content {
+    width: 95%;
+  }
+
+  .Elec-intro-box:hover::after {
+    font-size: 1.2rem;
+  }
+  .lab-Elec h4{
+    font-size: 20px;
+
+  }.lab-img-Elec{
+    width: 160px;
+    height: 120px;
+    margin-top: 20px;
+  }
+  .lab-img-Elec h5{
+    font-size: medium;
+  }
+  .lab-eq-Elec{
+    margin-left: 175px;
+    margin-top:-130px;
+    width: 130px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+   
+  }
+}
+
+@media (max-width: 768px) {
+  .Elec-intro-heading h3,
+  .Elec-vision-heading h3,
+  .Elec-mission-heading h3 {
+    font-size: 1.5rem;
+  }
+
+  .Elec-intro-box .first-para-small,
+  .Elec-intro-box .second-para-large {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .Elec-intro-box:hover::after {
+    font-size: 1rem;
+  }
+  .lab-Elec h4{
+    font-size: 14px;
+
+  }
+  .lab-Elec{
+    height: 30px;
+  }
+  
+  .lab-img-Elec{
+    width: 120px;
+    height: 100px;
+    margin-top: 20px;
+  }
+  .lab-img-Elec h5{
+    font-size: medium;
+  }
+  .lab-eq-Elec{
+    margin-left: 135px;
+    margin-top:-100px;
+    width: 100px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+   
+  }
+  .d-flex p.tick{
+    font-size: 10px;
+  }
+  
+}
+
+@media (max-width: 576px) {
+  .Elec-intro-heading h3,
+  .Elec-vision-heading h3,
+  .Elec-mission-heading h3 {
+      font-size: 1rem;
+  }
+
+  
+  .Elec-intro-box {
+    width: 100%;
+    margin-left: 0;
+    border-width: 3px;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+
+   .first-para-small, .small-intro-heading, div.second-para-large p{
+    width: auto;
+    text-align:justify;
+    padding: auto;
+   }
+
+  .vision-content, .mission-content {
+    width: 100%;
+    text-align: justify;
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .Elec-intro-box:hover::after {
+    font-size: 0.8rem;
+  }
+  .lab-Elec h4{
+    font-size: 11px;
+
+  }
+  .lab-Elec{
+    height: 25px;
+  }
+  
+  .lab-img-Elec{
+    width: 100px;
+    height: 90px;
+    margin-top: 20px;
+  }
+  .lab-img-Elec h5{
+    font-size: 14px;
+  }
+  .lab-eq-Elec{
+    margin-left: 109px;
+    margin-top:-100px;
+    width: 100px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+   
+  }
+  .d-flex p.tick{
+    font-size: 10px;
+  }
+  
+}

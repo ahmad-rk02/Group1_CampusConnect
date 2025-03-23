@@ -33,13 +33,13 @@ const Tenders = () => {
           <Card className="left-nav-tender">
             <ListGroup variant="flush">
               <ListGroup.Item className="left-nav-row-tender">
-                <Link to="">Principal and HOD</Link>
+                <Link to="/principalHods">Principal and HOD</Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-tender">
-                <Link to="">Student Section</Link>
+                <Link to="studentSection">Student Section</Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-tender">
-                <Link to="">Office</Link>
+                <Link to="/office">Office</Link>
               </ListGroup.Item>
               <ListGroup.Item className="left-nav-row-tender">
                 <Link to="/committees">Committees</Link>

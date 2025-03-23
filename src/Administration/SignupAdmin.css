@@ -71,6 +71,7 @@
 
 .head-right-top-Admin-signup
  {
+    width: 70%;
     margin-top: 50px;
     margin-left: 200px;
     height: 50px;
@@ -88,6 +89,7 @@
     width: 65%;
     margin-top: 50px;
     margin-left: 200px;
+    margin-bottom: 7%;
 }
 .field-name-Admin-signup
 {
@@ -207,4 +209,334 @@
   .custom-eye-button:hover {
     background-color: transparent;
   }
-  
+
+  @media (max-width: 480px){
+    .bg-goldeeen {
+      width: 100%;
+      margin: 10px auto;
+      height: auto;
+      margin-top: 60px;
+  }
+   
+  h1.text-left{
+    font-size: 24px;
+    margin-top: 17%;
+    padding-inline: 20%;
+    margin-inline: 0;
+}
+
+div.head-box-Admin-signup.row{
+  height: 100px;
+}
+
+div.left-sidebar-Admin-signup{
+  margin-left: 0;
+}
+
+.left-nav-Admin-signup{
+  margin-top: 7%;
+  margin-inline: 7%;
+}
+
+.left-index-Admin-signup{
+  display: flex;
+  flex-direction: column;
+  margin-inline: 0;
+}
+
+.bg-goldeeen h4 {
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #102C57;
+  width: 60%;
+}
+
+.head-right-top-Admin-signup{
+  width: 90%;
+  margin-inline: 7%;
+}
+
+.head-right-top-Admin-signup h3{
+  padding-block: 4%;
+}
+
+div.form-section-Admin-signup{
+  margin-bottom: 30%;
+  width: 90%;
+  margin-left: 0;
+}
+
+.whole-form-Admin-signup{
+  align-items: center;
+  margin-inline: 5%;
+  width: 100%;
+}
+
+.Admin-signup-logo-container{
+  margin-inline: 33%;
+  align-items: center;
+}
+
+.sub-btn-Admin-signup{
+  margin-inline: 33%;
+  align-items: center;
+}
+
+.to-admin-login{
+  margin-inline: 7%;
+  align-items: left;
+}
+.text-Admin-signup{
+  margin-inline: 7%;
+}
+.Adminlogin-link-Admin-signup{
+  margin-inline: 7%;
+}
+
+  }
+ /* Custom Modal Styling */
+.custom-modal .modal-content {
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  width: 500px;
+  margin: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-modal .modal-content {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .custom-modal .modal-content {
+    width: 90%;
+  }
+
+  .modal-body-success, .modal-body-error {
+    padding: 20px;
+    font-size: 1rem;
+  }
+
+  .modal-footer-success .btn-success,
+  .modal-footer-error .btn-danger {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    width: 90%;
+  }
+}
+
+/* Success Modal */
+.modal-header-success {
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.modal-body-success {
+  background-color: #f4f9f4;
+  color: #155724;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 30px;
+}
+
+.modal-footer-success {
+  background-color: #f4f9f4;
+  border-top: none;
+  justify-content: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.modal-footer-success .btn-success {
+  background-color: #28a745;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+}
+
+.modal-footer-success .btn-success:hover {
+  background-color: #218838;
+}
+
+/* Error Modal */
+.modal-header-error {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  border-bottom: none;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.modal-body-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 30px;
+}
+
+.modal-footer-error {
+  background-color: #f8d7da;
+  border-top: none;
+  justify-content: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.modal-footer-error .btn-danger {
+  background-color: #dc3545;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  max-width: 200px;
+}
+
+.modal-footer-error .btn-danger:hover {
+  background-color: #c82333;
+}
+
+/* Small screen adjustments */
+@media (max-width: 480px) {
+  .modal-body-success, .modal-body-error {
+    font-size: 1rem;
+    padding: 20px;
+  }
+
+  .modal-footer-success .btn-success,
+  .modal-footer-error .btn-danger {
+    width: 100%;
+  }
+}
+/* Custom Modal Styling */
+.custom-modal .modal-content {
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border: none;
+}
+
+.custom-modal .modal-header {
+  border-bottom: none;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.custom-modal .modal-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.custom-modal .modal-body {
+  font-size: 1rem;
+  padding: 20px;
+  text-align: center;
+}
+
+.custom-modal .modal-footer {
+  border-top: none;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Success Modal */
+.modal-header-success {
+  background-color: #d4edda;
+  color: #155724;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-body-success {
+  background-color: #f0fdf4;
+  color: #155724;
+}
+
+.modal-footer-success {
+  background-color: #f0fdf4;
+}
+
+/* Error Modal */
+.modal-header-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.modal-body-error {
+  background-color: #fdecea;
+  color: #721c24;
+}
+
+.modal-footer-error {
+  background-color: #fdecea;
+}
+
+/* Button Styling */
+.modal-footer button {
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-footer button:hover {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .custom-modal .modal-content {
+    width: 90%;
+    margin: auto;
+  }
+
+  .custom-modal .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .custom-modal .modal-body {
+    font-size: 0.95rem;
+  }
+
+  .modal-footer button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-modal .modal-content {
+    width: 95%;
+  }
+
+  .custom-modal .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .custom-modal .modal-body {
+    font-size: 0.9rem;
+    padding: 15px;
+  }
+
+  .modal-footer button {
+    font-size: 0.85rem;
+    padding: 5px 10px;
+  }
+}

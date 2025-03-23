@@ -50,9 +50,13 @@
 }
 
 .table-n-head-PG{
-  margin-top: 50px;
+margin-top: 50px;
 padding-left: 170px;
 width: max-content;
+}
+
+div.head-table-top-PG{
+  background-color: #eadbc8;
 }
 
 .head-table-top-PG h3 {

@@ -2,14 +2,15 @@ import React from 'react';
 import INSTRUCarousel from '../../Departments/Instrumentation/INSTRUCarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import './INSTRU.css'
+import InstruFaculty from './InstruFaculty';
 import { Link } from 'react-router-dom';
 import INSTRUvm from '../../Departments/Instrumentation/INSTRUvm';
 
 
 const instru = () => {
   return (
-    <div>
-      
+    
+       <div className='instru-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
 
       
@@ -22,7 +23,7 @@ const instru = () => {
 
 <INSTRUCarousel />
 
-<Row className="g-0 overlay-row w-100" >
+<Row className=" some-container-for-dropdown g-0 overlay-row w-100    {'main-container-dd ${openDropdown ? 'dropdown-open' : ''}'} "  >
   {/* Left Sidebar */}
   <Col md={4} className='left-sidebar-instru overlay-col ' >
     <div className="left-sidebar-wrapper">
@@ -30,10 +31,10 @@ const instru = () => {
         <ListGroup variant="flush">
           <ListGroup.Item className="left-nav-row-instru-01">
             <Link
-              to="/instru"
-              className={location.pathname === "/instru" ? "active-link" : ""}
+              to="/cse"
+              className={location.pathname === "/cse" ? "active-link" : "/cse"}
             >
-              <b>Computer Science & Engineering</b>
+              Computer Science & Engineering
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
@@ -46,24 +47,24 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/instru"
+              className={location.pathname === "/intru" ? "active-link" : ""}
             >
-              Instrumentation Engineering
+             <b>Instrumentation Engineering</b> 
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/Elec"
+              className={location.pathname === "/Elec" ? "active-link" : "/Elec"}
             >
               Electrical Engineering
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/mech"
+              className={location.pathname === "/mech" ? "active-link" : "/mech"}
             >
               Mechanical Engineering
             </Link>
@@ -79,7 +80,7 @@ const instru = () => {
           <ListGroup.Item className="left-nav-row-instru">
             <Link
               to="/workshop"
-              className={location.pathname === "" ? "active-link" : "/workshop"}
+              className={location.pathname === "/workshop" ? "active-link" : "/workshop"}
             >
               Workshop
             </Link>
@@ -94,7 +95,11 @@ const instru = () => {
 <Col md={8} className='right-content-instru' >
              
             <div >
-              <INSTRUvm className='instru-vision-mission' />
+              <INSTRUvm className='right-content-instru' />
+            </div>
+
+            <div className="facultyDetails">
+              <InstruFaculty />
             </div>
 
             

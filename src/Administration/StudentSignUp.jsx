@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Card, ListGroup, Form, Button, Alert } from 'react-bootstrap';
-import { Link, useLocation, useNavigate } from 'react-router-dom'; // Import useNavigate
-import axios from 'axios'; // Import axios
-import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Import icons for eye and eye-slash
+import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import './StudentSignUp.css';
 import Gec from '../assets/Gec.png';
 
 const StudentSignUp = () => {
-  const location = useLocation(); // Get location for active link checks
-  const navigate = useNavigate(); // Initialize navigate
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
     fullname: '',
@@ -17,16 +17,19 @@ const StudentSignUp = () => {
     prnNumber: '',
     semester: '',
     branch: '',
-    password: '',          // New field for password
-    confirmPassword: '',    // New field for confirm password
+    password: '',
+    confirmPassword: '',
   });
 
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
-
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
+  
+  // New state for modals
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +51,6 @@ const StudentSignUp = () => {
     let formErrors = {};
     let valid = true;
 
-    // Validate each field
     if (!formData.fullname) {
       valid = false;
       formErrors.fullname = "Full Name is required";
@@ -81,7 +83,6 @@ const StudentSignUp = () => {
       formErrors.branch = "Branch is required";
     }
 
-    // Password validation
     const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
     if (!formData.password) {
       valid = false;
@@ -99,26 +100,26 @@ const StudentSignUp = () => {
     setErrors(formErrors);
     return valid;
   };
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (validateForm()) {
       try {
-        // Sending POST request to the server
-        const response = await axios.post('http://localhost:5000/api/users/student/signup', {
+        const response = await axios.post(`${API_BASE_URL}/api/users/student/signup`, {
           fullname: formData.fullname,
           email: formData.email,
           phone: formData.phone,
           prnNumber: formData.prnNumber,
           semester: formData.semester,
           branch: formData.branch,
-          password: formData.password,   // Include password in the request
+          password: formData.password,
         });
 
         console.log('Response:', response.data);
         setSubmitted(true);
-        alert('Registration successful!');
+        setShowSuccessModal(true); // Show success modal
 
         // Reset the form
         setFormData({
@@ -133,12 +134,10 @@ const StudentSignUp = () => {
         });
         setErrors({});
 
-        // Redirect to StudentForm upon successful registration
-        navigate('/Studentlogin');
-
       } catch (error) {
-        if (error.response && error.response.status === 409) { // 409 for conflict (user already exists)
-          alert('User already exists. Please try logging in.');
+        if (error.response && error.response.status === 409) {
+          setErrorMessage('User already exists. Please try logging in.');
+          setShowErrorModal(true); // Show error modal for existing user
           // Reset the form
           setFormData({
             fullname: '',
@@ -152,7 +151,8 @@ const StudentSignUp = () => {
           });
         } else {
           console.error('There was an error registering the user:', error);
-          console.log(error.message);
+          setErrorMessage('Registration failed. Please try again later.');
+          setShowErrorModal(true); // Show error modal for other errors
         }
       }
     } else {
@@ -161,9 +161,8 @@ const StudentSignUp = () => {
   };
 
   return (
-    <div >
+    <div>
       <Container fluid className="p-0 w-1000 m-100">
-        {/* Header Section */}
         <Row className='head-box-grivnce'>
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
@@ -171,22 +170,21 @@ const StudentSignUp = () => {
         </Row>
 
         <Row noGutters className="left-index-grivnce just">
-          {/* Left Sidebar */}
           <Col md={2} className='left-sidebar-grivnce'>
             <Card className="left-nav-grivnce">
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                  <Link to="/principalHods" className={location.pathname === "" ? "active-link" : ""}>
                     Principal and HOD
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                  <Link to="/studentSection" className={location.pathname === "" ? "active-link" : ""}>
                     Student Section
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-grivnce">
-                  <Link to="" className={location.pathname === "" ? "active-link" : ""}>
+                  <Link to="/office" className={location.pathname === "" ? "active-link" : ""}>
                     Office
                   </Link>
                 </ListGroup.Item>
@@ -236,7 +234,6 @@ const StudentSignUp = () => {
                     placeholder="Enter Your Full Name"
                     className={`input-box-grivncee ${errors.fullname && 'is-invalid'}`}
                   />
-
                   {errors.fullname && <div className="invalid-feedback">{errors.fullname}</div>}
                 </Form.Group>
 
@@ -313,7 +310,7 @@ const StudentSignUp = () => {
                   >
                     <option value="">Select Branch</option>
                     <option value="Computer Science & Engineering">Computer Science & Engineering</option>
-                    <option value=">Instrumentation Engineering">Instrumentation Engineering</option>
+                    <option value="Instrumentation Engineering">Instrumentation Engineering</option>
                     <option value="Mechanical Engineering">Mechanical Engineering</option>
                     <option value="Electrical engineering">Electrical engineering</option>
                     <option value="Electronics and Communication">Electronics and Communication</option>
@@ -336,8 +333,8 @@ const StudentSignUp = () => {
                     <span className="input-group-text" onClick={togglePasswordVisibility}>
                       {showPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
-                    {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                   </div>
+                  {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                 </Form.Group>
 
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-grivncee">
@@ -352,13 +349,11 @@ const StudentSignUp = () => {
                       className={`input-box-grivncee ${errors.confirmPassword && 'is-invalid'}`}
                     />
                     <span className="input-group-text" onClick={toggleConfirmPasswordVisibility}>
-                      {showPassword ? <FaEye /> : <FaEyeSlash />}
+                      {showConfirmPassword ? <FaEye /> : <FaEyeSlash />}
                     </span>
-                    {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                   </div>
+                  {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                 </Form.Group>
-
-
 
                 <Button type="submit" className="submit-btn-grivncee">
                   Register
@@ -367,13 +362,67 @@ const StudentSignUp = () => {
                   <p className='text-Student-signup'>
                     Already have an account ?
                   </p>
-
                   <Link to="/studentlogin" className="Studentlogin-link-Student-signup">Login</Link>
                 </div>
               </Form>
             </div>
           </Col>
         </Row>
+
+        {/* Success Modal */}
+        <Modal
+          show={showSuccessModal}
+          onHide={() => {
+            setShowSuccessModal(false);
+            navigate('/studentlogin'); // Redirect to student login after closing
+          }}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header className="modal-header-success">
+            <Modal.Title>
+              <i className="bi bi-check-circle-fill me-2"></i>
+              Registration Successful!
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-body-success">
+            <p>Your student account has been successfully created. You can now log in to access your dashboard.</p>
+          </Modal.Body>
+          <Modal.Footer className="modal-footer-success">
+            <Button
+              variant="success"
+              onClick={() => {
+                setShowSuccessModal(false);
+                navigate('/studentlogin');
+              }}
+            >
+              Go to Login
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+        {/* Error Modal */}
+        <Modal
+          show={showErrorModal}
+          onHide={() => setShowErrorModal(false)}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header className="modal-header-error">
+            <Modal.Title>
+              <i className="bi bi-exclamation-triangle-fill me-2"></i>
+              Registration Failed
+            </Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="modal-body-error">
+            <p>{errorMessage}</p>
+          </Modal.Body>
+          <Modal.Footer className="modal-footer-error">
+            <Button variant="danger" onClick={() => setShowErrorModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </div>
   );

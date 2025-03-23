@@ -1,29 +1,40 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Card, Row, Col, Spinner, Alert, Button, Form, Modal } from 'react-bootstrap';
-import useAdminAuth from '../hooks/useAdminAuth'; // Use the corrected hook for admin authentication
+import useAdminAuth from '../hooks/useadminAuth';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import AdminDashboard from './AdminGrievanceDisplay';
+import "./Adminprofile.css";
 
 const AdminProfile = () => {
   const navigate = useNavigate();
-  const { user, isAuthenticated, loading, error, logout } = useAdminAuth();
+  const { 
+    user, 
+    isAuthenticated, 
+    loading, 
+    error, 
+    confirmLogout, 
+    logout,
+    showLogoutModal,
+    setShowLogoutModal 
+  } = useAdminAuth();
 
-  // State management for modal and data
+  // State management
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   const [deleteLoading, setDeleteLoading] = useState(false);
   const [updateLoading, setUpdateLoading] = useState(false);
-  const [formData, setFormData] = useState({}); // Pre-fill with admin data
-  const [updateError, setUpdateError] = useState(null); // Error state for update
+  const [formData, setFormData] = useState({});
+  const [updateError, setUpdateError] = useState(null);
+  const [showUpdateSuccessModal, setShowUpdateSuccessModal] = useState(false); // Update success modal
+  const [showDeleteSuccessModal, setShowDeleteSuccessModal] = useState(false); // Delete success modal
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
-  // Redirect to login if not authenticated
   useEffect(() => {
     if (!isAuthenticated && !loading) {
-      navigate('/login'); // Redirect to login
+      navigate('/login');
     }
   }, [isAuthenticated, loading, navigate]);
 
-  // Handle form change for profile update
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -31,19 +42,20 @@ const AdminProfile = () => {
     });
   };
 
-  // Handle profile update
   const handleUpdate = async () => {
     setUpdateLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.put('http://localhost:5000/api/users/admin/update', formData, {
+      const response = await axios.put(`${API_BASE_URL}/api/users/admin/update`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
  
-      Object.assign(user, response.data.updatedUser); // Update admin data
-      setShowUpdateModal(false); 
+      Object.assign(user, response.data.updatedUser);
+      setShowUpdateModal(false);
+      setShowUpdateSuccessModal(true); // Show success modal
+      setTimeout(() => setShowUpdateSuccessModal(false), 5000); // Auto-close after 2 seconds
     } catch (err) {
       setUpdateError(err.response?.data?.message || 'Failed to update profile');
     } finally {
@@ -51,7 +63,6 @@ const AdminProfile = () => {
     }
   };
 
-  // Handle profile deletion
   const handleDelete = async () => {
     const confirm = window.confirm('Are you sure you want to delete your profile?');
     if (!confirm) return;
@@ -59,21 +70,23 @@ const AdminProfile = () => {
     setDeleteLoading(true);
     try {
       const token = localStorage.getItem('authToken');
-      await axios.delete('http://localhost:5000/api/users/admin/delete', {
+      await axios.delete(`${API_BASE_URL}/api/users/admin/delete`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
-      alert('Profile deleted successfully');
-      logout(); // Logout after deleting profile
+      setShowDeleteSuccessModal(true); 
+      setTimeout(() => {
+        setShowDeleteSuccessModal(false);
+        logout(); 
+      }, 5000); 
     } catch (err) {
-      alert('Failed to delete profile');
+      setUpdateError('Failed to delete profile');
     } finally {
       setDeleteLoading(false);
     }
   };
 
-  // Populate form data with admin information
   useEffect(() => {
     if (user) {
       setFormData({
@@ -85,7 +98,6 @@ const AdminProfile = () => {
     }
   }, [user]);
 
-  // Show loading spinner if data is still being fetched
   if (loading) {
     return (
       <Container className="text-center">
@@ -95,7 +107,6 @@ const AdminProfile = () => {
     );
   }
 
-  // Show error alert if there is an error
   if (error) {
     return (
       <Container>
@@ -112,11 +123,11 @@ const AdminProfile = () => {
             <Card.Body className='bg-white'>
               <div className="profile-header">
                 <Card.Title className="profile-title">Admin Profile</Card.Title>
-                <Button className="logout-btn" variant="danger" onClick={logout}>
+                <Button className="logout-btn" variant="danger" onClick={confirmLogout}>
                   Logout
                 </Button>
               </div>
-              <hr className="profile-divider " />
+              <hr className="profile-divider" />
               <Card.Text className='bg-white'><strong>Full Name:</strong> {user.fullname}</Card.Text>
               <Card.Text className='bg-white'><strong>Email:</strong> {user.email}</Card.Text>
               <Card.Text className='bg-white'><strong>DTE:</strong> {user.dte}</Card.Text>
@@ -124,7 +135,6 @@ const AdminProfile = () => {
 
               <AdminDashboard />
 
-              {/* Button to open the update modal */}
               <Button
                 variant="primary"
                 className="mx-1 mt-3"
@@ -133,7 +143,6 @@ const AdminProfile = () => {
                 Update Profile
               </Button>
 
-              {/* Button to delete profile */}
               <Button
                 variant="danger"
                 className="mt-3 mx-1"
@@ -143,7 +152,7 @@ const AdminProfile = () => {
                 {deleteLoading ? 'Deleting...' : 'Delete Profile'}
               </Button>
 
-              {/* Modal for updating profile */}
+              {/* Update Profile Modal */}
               <Modal show={showUpdateModal} onHide={() => setShowUpdateModal(false)} centered>
                 <Modal.Header closeButton>
                   <Modal.Title>Update Profile</Modal.Title>
@@ -187,12 +196,12 @@ const AdminProfile = () => {
                         value={formData.committee}
                         onChange={handleChange}
                       >
-                    <option value="">Select committee</option>
-                    <option value="Anti Ragging Committee">Anti Ragging Committee</option>
-                    <option value="Grievance Redressal Committee">Grievance Redressal Committee</option>
-                    <option value="Internal Complaint Committee">Internal Complaint Committee</option>
-                    <option value="SC/ST, Women/Girls Complaint Committee">SC/ST, Women/Girls Complaint Committee</option>
-                    <option value="Online Grievance Form">Online Grievance Form</option>
+                        <option value="">Select committee</option>
+                        <option value="Anti Ragging Committee">Anti Ragging Committee</option>
+                        <option value="Grievance Redressal Committee">Grievance Redressal Committee</option>
+                        <option value="Internal Complaint Committee">Internal Complaint Committee</option>
+                        <option value="SC/ST, Women/Girls Complaint Committee">SC/ST, Women/Girls Complaint Committee</option>
+                        <option value="Online Grievance Form">Online Grievance Form</option>
                       </Form.Select>
                     </Form.Group>
 
@@ -209,6 +218,81 @@ const AdminProfile = () => {
                     disabled={updateLoading}
                   >
                     {updateLoading ? 'Updating...' : 'Update'}
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              {/* Update Success Modal */}
+              <Modal 
+                show={showUpdateSuccessModal} 
+                onHide={() => setShowUpdateSuccessModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Profile updated successfully!
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="primary" 
+                    onClick={() => setShowUpdateSuccessModal(false)}
+                  >
+                    OK
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              {/* Delete Success Modal */}
+              <Modal 
+                show={showDeleteSuccessModal} 
+                onHide={() => setShowDeleteSuccessModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Profile deleted successfully!
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="primary" 
+                    onClick={() => {
+                      setShowDeleteSuccessModal(false);
+                      logout();
+                    }}
+                  >
+                    OK
+                  </Button>
+                </Modal.Footer>
+              </Modal>
+
+              {/* Logout Confirmation Modal */}
+              <Modal 
+                show={showLogoutModal} 
+                onHide={() => setShowLogoutModal(false)} 
+                centered
+              >
+                <Modal.Header closeButton>
+                  <Modal.Title>Confirm Logout</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                  Are you sure you want to logout?
+                </Modal.Body>
+                <Modal.Footer>
+                  <Button 
+                    variant="secondary" 
+                    onClick={() => setShowLogoutModal(false)}
+                  >
+                    Cancel
+                  </Button>
+                  <Button 
+                    variant="danger" 
+                    onClick={logout}
+                  >
+                    Logout
                   </Button>
                 </Modal.Footer>
               </Modal>

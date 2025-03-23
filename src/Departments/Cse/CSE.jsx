@@ -8,6 +8,7 @@ import CodeUnnati from './CodeUnnati';
 import CommitteesClubsCSE from './CommitteesClubsCSE';
 import DropDownCse from './DropDownCse';
 import { useState } from 'react';
+import FacultyList from './FacultyDetails';
 // import Footer from './pages/Footer.jsx'
 
 
@@ -62,24 +63,24 @@ const CSE = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
-                        to=""
-                        className={location.pathname === "" ? "active-link" : ""}
+                        to="/instru"
+                        className={location.pathname === "/instru" ? "active-link" : "/instru"}
                       >
                         Instrumentation Engineering
                       </Link>
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
-                        to=""
-                        className={location.pathname === "" ? "active-link" : ""}
+                        to="/Elec"
+                        className={location.pathname === "/Elec" ? "active-link" : "/Elec"}
                       >
                         Electrical Engineering
                       </Link>
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
-                        to=""
-                        className={location.pathname === "" ? "active-link" : ""}
+                        to="/mech"
+                        className={location.pathname === "/mech" ? "active-link" : "/mech"}
                       >
                         Mechanical Engineering
                       </Link>
@@ -95,7 +96,7 @@ const CSE = () => {
                     <ListGroup.Item className="left-nav-row-cse">
                       <Link
                         to="/workshop"
-                        className={location.pathname === "" ? "active-link" : "/workshop"}
+                        className={location.pathname === "/workshop" ? "active-link" : "/workshop"}
                       >
                         Workshop
                       </Link>
@@ -114,7 +115,7 @@ const CSE = () => {
             </div>
 
             <div className="facultyDetails">
-              <Faculty />
+              <FacultyList />
             </div>
 
             <div >

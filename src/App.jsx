@@ -2,7 +2,7 @@ import React from "react";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import imagePath from "./assets/Gec.png";
-import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
+import { BrowserRouter as BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import AboutVM from './About/AboutVM';
@@ -17,6 +17,8 @@ import AboutInstitute from './About/AboutInstitute';
 import PrincipalDesk from './About/PrincipalDesk';
 import CSE from './Departments/Cse/CSE';
 import INSTRU from './Departments/Instrumentation/instru';
+import MECH from './Departments/Mechanical/Mech';
+import Elec from './Departments/Electrical/Elec';
 import Footer from './pages/Footer';
 import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
@@ -44,7 +46,17 @@ import WelcomeSection from "./pages/welcomepage";
 import StudentProfile from "./Administration/StudentGrievanceDisplay";
 import AdminDashboard from "./Administration/AdminGrievanceDisplay";
 import ChatbotCTA from "./pages/chatbotCTA";
-import firebase from "firebase/compat/app";
+import StudentSection from "./Administration/studentSection";
+import Technoutsav from "./Others/Technoutsav";
+import TechnoutsavGallery from "./Others/TechnoutsavGallery";
+import TechnoBanner from "./Others/TechnoBanner";
+import Abhirang from "./Others/Abhirang";
+import AbhirangGallery from "./Others/AbhirangGallery";
+import AbhirangBanner from "./Others/AbhirangBanner";
+import NewsEvents from "./pages/NewsEvents";
+import PrincipalHods from "./Administration/principalHods";
+import Office from "./Administration/Office";
+import TPOPage from "./Others/TPOPage";
 
 function App() {
   const navItems = [
@@ -91,7 +103,7 @@ function App() {
 
   return (
     <>
-      <Router basename="/Group1_CampusConnect">
+      <BrowserRouter basename="/">
         <Navbar imageSrcPath={imagePath} navItems={navItems} />
         <div className="container-fluid m-0 p-0">
           <Routes>
@@ -109,6 +121,8 @@ function App() {
             <Route path="/studentsignup" element={<StudentSignUp />} />
             <Route path="/cse" element={<CSE />} />
             <Route path="/instru" element={<INSTRU />} />
+            <Route path="/mech" element={<MECH />} />
+            <Route path="/elec" element={<Elec />} />
             <Route path="/studentlogin" element={<Studentlogin />} />
             <Route path="/signupadmin" element={<SignupAdmin />} />
             <Route path="/login" element={<Login />} />
@@ -128,14 +142,24 @@ function App() {
             <Route path="/coursesdetails" element={<CoursesDetails />} />
             <Route path="/eligibilitycriteria" element={<EligibilityCriteria />} />
             <Route path="/adminprofile" element={<AdminProfile />} />
+            <Route path="/technoutsav" element={<Technoutsav />} />
+            <Route path="/technoutsavgallery" element={<TechnoutsavGallery />} />
+            <Route path="/technobanner" element={<TechnoBanner />} />
+            <Route path="/abhirang" element={<Abhirang />} />
+            <Route path="/abhiranggallery" element={<AbhirangGallery />} />
+            <Route path="/abhirangbanner" element={<AbhirangBanner />} />
             <Route path="/welcomepage" element={<WelcomeSection />} />
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
             <Route path="/chatbotCTA" element={<chatbotCTA />} />
-            <Route path="/firebaseconfig" element={<firebaseConfig />} />
+            <Route path="/newsevents" element={<NewsEvents />} />
+            <Route path="/principalHods" element={<PrincipalHods />} />
+            <Route path="/studentSection" element={<StudentSection />} />
+            <Route path="/office" element={<Office />} />
+            <Route path="/tpopage" element={<TPOPage />} />
           </Routes>
         </div>
-      </Router>
+      </BrowserRouter>
       <ChatbotCTA />
       <Footer />
     </>

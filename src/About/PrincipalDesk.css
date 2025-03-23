@@ -181,7 +181,11 @@
   .left-sidebar-pd{
     justify-content: center;
     align-items: center;
+  }
+
+  .left-nav-pd{
     width: 100%;
+    margin-inline: 7%;
   }
 
   .bg-golden-pd.card-header{

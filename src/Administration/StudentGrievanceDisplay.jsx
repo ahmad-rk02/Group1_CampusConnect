@@ -15,12 +15,13 @@ const StudentProfile = () => {
       setEmail(user.email);
     }
   }, [user]);
+  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     const fetchGrievances = async () => {
       try {
         if (!email) return;
-        const response = await axios.get('http://localhost:5000/api/grievances/fetchgrievance', {
+        const response = await axios.get(`${API_BASE_URL}/api/grievances/fetchgrievance`, {
           params: { commonId: email },
         });
         setGrievances(response.data);
