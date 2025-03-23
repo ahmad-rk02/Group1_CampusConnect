@@ -23,14 +23,10 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "cdbreact": "^1.5.19",
-<<<<<<< HEAD
-    "firebase": "^11.3.0",
-=======
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase": "^11.2.0",
     "jwt-decode": "^4.0.0",
->>>>>>> e42a8f94540dd1ae40f46a84f49237b458bf48ba
     "mongodb": "^6.9.0",
     "react": "^19.0.0",
     "react-bootstrap": "^2.10.4",
