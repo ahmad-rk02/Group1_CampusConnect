@@ -43,6 +43,9 @@
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   }
   
+  p.about-text{
+    text-align: justify;
+  }
 
 @media (max-width: 480px){
     .header-align-tech h1.text-left{
@@ -56,6 +59,6 @@
     }
 
     p.about-text{
-       text-align: justify; 
+      text-align: justify;
     }
 }

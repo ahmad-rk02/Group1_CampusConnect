@@ -104,7 +104,7 @@ const NewsEvents = () => {
                                     ? expandedEvents[item.id]
                                         ? item.description
                                         : `${item.description.slice(0, 100)}...`
-                                    : "No description available"}
+                                    : ""}
                             </p>
                             {item.description && (
                                 <button 

@@ -60,8 +60,8 @@
 
 /* Text Styling */
 .news-title, .event-title {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 17px;
+    font-weight:bold;
     margin-bottom: 5px;
     color: #222;
 }
@@ -94,14 +94,21 @@
     background-color: #0056b3;
 }
 
-/* Links */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .external-link {
     display: block;
-    color: #28a745;
+    color: #5171d9;
     font-weight: bold;
-    margin-top: 10px;
-    text-decoration: none;
+    text-decoration: underline;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    animation: blink 1s infinite;
 }
+
 
 .external-link:hover {
     text-decoration: underline;

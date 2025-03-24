@@ -341,7 +341,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-photo-gallery" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Photo Gallery</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TP Photo Gallery</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading photo gallery...</p>
               ) : Array.isArray(data["tpo-photo-galleries"]) && data["tpo-photo-galleries"].length > 0 ? (
@@ -384,7 +384,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-activities" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Activities</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Activities</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading activities...</p>
               ) : Array.isArray(data["tpo-activities"]) ? (
@@ -416,7 +416,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-internships" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Internships</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Internships</h2>
               <Table striped bordered hover responsive className="shadow-sm rounded-3">
                 <thead className="table-dark">
                   <tr>
@@ -472,7 +472,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-news" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO News</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP News</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading news...</p>
               ) : Array.isArray(data["tpo-news"]) && data["tpo-news"].length > 0 ? (
@@ -624,7 +624,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-mous" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO MOUs</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP MOUs</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading MOUs...</p>
               ) : Array.isArray(data["tpo-mous"]) ? (
@@ -659,7 +659,7 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Feedback</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
                 <Card.Body className="p-3 p-md-4">
                   <Form onSubmit={handleFeedbackSubmit}>
@@ -763,7 +763,7 @@ const TPOPage = () => {
                 <p className="text-muted text-center">Loading contact details...</p>
               ) : (
                 <>
-                  <h3 className="fw-bold mb-3">TPO Staff</h3>
+                  <h3 className="fw-bold mb-3">TnP Staff</h3>
                   {Array.isArray(data["tpo-staffs"]) && data["tpo-staffs"].length > 0 ? (
                     <Row className="g-3">
                       {data["tpo-staffs"].map((staff, index) => (
@@ -796,7 +796,7 @@ const TPOPage = () => {
                     <p className="text-muted text-center">No staff details available</p>
                   )}
 
-                  <h3 className="fw-bold mb-3 mt-4">TPO Office</h3>
+                  <h3 className="fw-bold mb-3 mt-4">TnP Office</h3>
                   {Array.isArray(data["tpo-offices"]) && data["tpo-offices"].length > 0 ? (
                     data["tpo-offices"].map((office, index) => (
                       <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
