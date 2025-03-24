@@ -81,7 +81,7 @@ const Office = () => {
 
         <Col md={9} xs={12}>
           <div className="main-content">
-            <h3 className="faculty-heading">OFFICE</h3>
+            <h3 className="faculty-heading">Office</h3>
             <div className="members-container">
               {sections.map((section) => (
                 <div key={section.id} className="member-card">

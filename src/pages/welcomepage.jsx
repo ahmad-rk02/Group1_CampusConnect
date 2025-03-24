@@ -1,8 +1,8 @@
 import React from 'react';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import person1Image from '../assets/person1.png'; // Replace with actual image paths
-import person2Image from '../assets/person2.png';
-import person3Image from '../assets/person3.png';
+import dte from '../assets/dte.png';
+import washimkar from '../assets/washimkar.jpg';
 import './welcomepage.css';
 
 function WelcomeSection() {
@@ -49,7 +49,7 @@ function WelcomeSection() {
           <Card className="mb-3 border-0">
             <Row className="g-0 align-items-center">
               <Col xs={4} md={4} className="text-center">
-                <Card.Img src={person2Image} alt="Dr. Vinod Mohitkar" className="img-fluid rounded-circle" />
+                <Card.Img src={dte} alt="Dr. Vinod Mohitkar" className="img-fluid rounded-circle" />
               </Col>
               <Col xs={8} md={8}>
                 <Card.Body>
@@ -63,7 +63,7 @@ function WelcomeSection() {
           <Card className="mb-3 border-0">
             <Row className="g-0 align-items-center">
               <Col xs={4} md={4} className="text-center">
-                <Card.Img src={person3Image} alt="Dr. R. P. Borkar" className="img-fluid rounded-circle" />
+                <Card.Img src={washimkar} alt="Dr. R. P. Borkar" className="img-fluid rounded-circle" />
               </Col>
               <Col xs={8} md={8}>
                 <Card.Body>

@@ -141,9 +141,9 @@
     text-align: justify;
   }
   
-  .info-value.designation {
-    color: #2ecc71;
-    font-weight: 600;
+  span.info-value.designation {
+    color: #000000;
+    font-weight: 300;
   }
   
   .read-more-btn {
