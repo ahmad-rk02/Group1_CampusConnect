@@ -16,8 +16,10 @@ const AdminProfile = () => {
   const [statusLoading, setStatusLoading] = useState(false);
   const [formData, setFormData] = useState({});
   const [grievances, setGrievances] = useState([]);
+  const [filteredGrievances, setFilteredGrievances] = useState([]); // New state for filtered grievances
   const [selectedGrievance, setSelectedGrievance] = useState(null);
   const [statusData, setStatusData] = useState({ status: '', remarks: '' });
+  const [searchCriteria, setSearchCriteria] = useState({ branch: '', grievanceType: '' }); // Search criteria state
   const [updateError, setUpdateError] = useState(null);
   const [statusError, setStatusError] = useState(null);
   const [showUpdateSuccessModal, setShowUpdateSuccessModal] = useState(false);
@@ -47,16 +49,41 @@ const AdminProfile = () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/api/grievances/fetchgrievance`, { params: { commonId: 'all' } });
       setGrievances(response.data);
+      setFilteredGrievances(response.data); // Initially set filtered grievances to all grievances
     } catch (err) {
       console.error('Error fetching grievances:', err);
     }
+  };
+
+  // Handle search input changes
+  const handleSearchChange = (e) => {
+    const { name, value } = e.target;
+    setSearchCriteria((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  // Filter grievances based on search criteria
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const filtered = grievances.filter((grievance) => {
+      const branchMatch = searchCriteria.branch
+        ? grievance.branch.toLowerCase().includes(searchCriteria.branch.toLowerCase())
+        : true;
+      const typeMatch = searchCriteria.grievanceType
+        ? grievance.grievanceType.toLowerCase().includes(searchCriteria.grievanceType.toLowerCase())
+        : true;
+      return branchMatch && typeMatch;
+    });
+    setFilteredGrievances(filtered);
   };
 
   const handleSort = (field) => {
     const order = sortField === field && sortOrder === 'asc' ? 'desc' : 'asc';
     setSortField(field);
     setSortOrder(order);
-    setGrievances([...grievances].sort((a, b) => {
+    setFilteredGrievances([...filteredGrievances].sort((a, b) => {
       if (field === 'branch' || field === 'grievanceType') {
         return order === 'asc' ? a[field].localeCompare(b[field]) : b[field].localeCompare(a[field]);
       }
@@ -106,7 +133,7 @@ const AdminProfile = () => {
       await axios.post(`${API_BASE_URL}/api/grievances/close/${selectedGrievance.ticketId}`, statusData, { headers: { Authorization: `Bearer ${token}` } });
       setShowStatusModal(false);
       setShowStatusSuccessModal(true);
-      fetchGrievances();
+      fetchGrievances(); // Refresh grievances after status update
     } catch (err) {
       setStatusError(err.response?.data?.message || 'Failed to update status');
     } finally {
@@ -133,8 +160,41 @@ const AdminProfile = () => {
               <Card.Text><strong>DTE:</strong> {user.dte}</Card.Text>
               <Card.Text><strong>Committee:</strong> {user.committee}</Card.Text>
 
+              {/* Search Form */}
+              <Form onSubmit={handleSearch} className="mt-4">
+                <Row>
+                  <Col md={5}>
+                    <Form.Group controlId="searchBranch">
+                      <Form.Label>Search by Branch</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="branch"
+                        value={searchCriteria.branch}
+                        onChange={handleSearchChange}
+                        placeholder="Enter branch name"
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={5}>
+                    <Form.Group controlId="searchGrievanceType">
+                      <Form.Label>Search by Grievance Type</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="grievanceType"
+                        value={searchCriteria.grievanceType}
+                        onChange={handleSearchChange}
+                        placeholder="Enter grievance type"
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={2} className="d-flex align-items-end">
+                    <Button variant="primary" type="submit">Search</Button>
+                  </Col>
+                </Row>
+              </Form>
+
               <h5 className="mt-3">Grievances</h5>
-              {grievances.length > 0 ? (
+              {filteredGrievances.length > 0 ? (
                 <Table striped bordered hover responsive>
                   <thead>
                     <tr>
@@ -142,9 +202,13 @@ const AdminProfile = () => {
                       <th>Name</th>
                       <th>Email</th>
                       <th>PRN Number</th>
-                      <th onClick={() => handleSort('branch')} style={{ cursor: 'pointer' }}>Branch {sortField === 'branch' && (sortOrder === 'asc' ? '↑' : '↓')}</th>
+                      <th onClick={() => handleSort('branch')} style={{ cursor: 'pointer' }}>
+                        Branch {sortField === 'branch' && (sortOrder === 'asc' ? '↑' : '↓')}
+                      </th>
                       <th>Semester</th>
-                      <th onClick={() => handleSort('grievanceType')} style={{ cursor: 'pointer' }}>Type {sortField === 'grievanceType' && (sortOrder === 'asc' ? '↑' : '↓')}</th>
+                      <th onClick={() => handleSort('grievanceType')} style={{ cursor: 'pointer' }}>
+                        Type {sortField === 'grievanceType' && (sortOrder === 'asc' ? '↑' : '↓')}
+                      </th>
                       <th>Message</th>
                       <th>Status</th>
                       <th>Remarks</th>
@@ -152,7 +216,7 @@ const AdminProfile = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {grievances.map((grievance) => (
+                    {filteredGrievances.map((grievance) => (
                       <tr key={grievance.ticketId}>
                         <td>{grievance.ticketId}</td>
                         <td>{grievance.fullname}</td>
@@ -170,7 +234,7 @@ const AdminProfile = () => {
                             disabled={grievance.status === 'resolved'}
                             onClick={() => {
                               setSelectedGrievance(grievance);
-                              setStatusData({ status: grievance.status, remarks: grievance.remarks });
+                              setStatusData({ status: grievance.status, remarks: grievance.remarks || '' });
                               setShowStatusModal(true);
                             }}
                           >
