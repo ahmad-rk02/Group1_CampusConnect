@@ -96,8 +96,8 @@ const TPOPage = () => {
 
   const getMediaUrl = (url) => {
     if (!url) return "https://via.placeholder.com/200x200?text=No+Image";
-    return url.startsWith('http://') || url.startsWith('https://') 
-      ? url 
+    return url.startsWith('http://') || url.startsWith('https://')
+      ? url
       : `${STRAPI_MEDIA_BASE_URL}${url}`;
   };
 
@@ -527,39 +527,101 @@ const TPOPage = () => {
               )}
             </section>
 
-            {["tpo-brochures", "tpo-placement-policies", "tpo-nocs"].map((section) => (
-              <section id={section} key={section} className="section-card mb-4 mb-md-5">
-                <h2 className="section-title fw-bold mb-3 mb-md-4">{section.replace(/-/g, " ").toUpperCase()}</h2>
-                {loading ? (
-                  <p className="text-muted text-center">Loading documents...</p>
-                ) : Array.isArray(data[section]) ? (
-                  data[section].length > 0 ? (
-                    <ul className="list-group shadow-sm rounded-3 document-list">
-                      {data[section].map((item, index) => (
-                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                          {item.pdf?.url || item.image?.url ? (
-                            <a
-                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary fw-medium"
-                            >
-                              {item.title || "Document"}
-                            </a>
-                          ) : (
-                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-muted text-center">No documents available</p>
-                  )
+            <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP BROCHURES</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-brochures']) ? (
+                data['tpo-brochures'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-brochures'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 ) : (
-                  <p className="text-muted text-center">Error: Invalid document data</p>
-                )}
-              </section>
-            ))}
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
+
+            <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP POLICIES</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-placement-policies']) ? (
+                data['tpo-placement-policies'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-placement-policies'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
+
+            <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP NOCS</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-nocs']) ? (
+                data['tpo-nocs'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-nocs'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
 
             <section id="tpo-mous" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P MOUs</h2>
