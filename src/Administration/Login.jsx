@@ -6,12 +6,20 @@ import './Login.css';
 const Login = () => {
     const navigate = useNavigate();
 
-    const handleStudentLogin = () => {
+    // Navigation handlers
+    const handleStudentSignIn = () => {
         navigate('/studentlogin');
     };
-    const handleAdminLogin = () => {
+    const handleStudentSignUp = () => {
+        navigate('/studentsignup');
+    };
+    const handleAdminSignIn = () => {
         navigate('/adminlogin');
     };
+    const handleAdminSignUp = () => {
+        navigate('/signupadmin');
+    };
+
     return (
         <Container fluid className="p-0 w-100">
             <Row className='head-box-loginP'>
@@ -19,7 +27,7 @@ const Login = () => {
                     <h1 className="text-left">ADMINISTRATION</h1>
                 </Col>
             </Row>
-            
+
             <Row className="left-index-loginP">
                 <Col md={2} className='left-sidebar-loginP'>
                     <Card className="left-nav-loginP">
@@ -57,34 +65,45 @@ const Login = () => {
                         </ListGroup>
                     </Card>
                 </Col>
-                <Col >
+                <Col>
                     <div className="login-portal">
-                        <div className='head-right-top-loginP' >
-                            <h3>
-                                Login
-                            </h3>
+                        <div className='head-right-top-loginP'>
+                            <h3>Login</h3>
                         </div>
 
                         {/* Student Login Card */}
                         <Card className="login-card">
                             <Card.Body>
-                                <Card.Title className="mb-3">Login as Student</Card.Title>
-                                <Card.Text>To Access the grievance form for registering complaints.</Card.Text>
-                                <Button onClick={handleStudentLogin}  className='stu-login-btn'>Student Login</Button>
+                                <Card.Title className="mb-3">Student Portal</Card.Title>
+                                <Card.Text>To access the grievance form for registering complaints.</Card.Text>
+                                <div className="d-grid gap-2">
+                                    <Button onClick={handleStudentSignIn} variant="primary" className="mb-2">
+                                        Student Sign In
+                                    </Button>
+                                    <Button onClick={handleStudentSignUp} variant="outline-primary">
+                                        Student Sign Up
+                                    </Button>
+                                </div>
                             </Card.Body>
                         </Card>
 
                         {/* Admin Login Card */}
                         <Card className="login-card">
                             <Card.Body>
-                                <Card.Title className="mb-3">Login as Admin</Card.Title>
-                                <Card.Text>Access grievance made by students for particular issues.</Card.Text>
-                                <Button onClick={handleAdminLogin}>Admin Login</Button>
+                                <Card.Title className="mb-3">Admin Portal</Card.Title>
+                                <Card.Text>Access grievances made by students for particular issues.</Card.Text>
+                                <div className="d-grid gap-2">
+                                    <Button onClick={handleAdminSignIn} variant="primary" className="mb-2">
+                                        Admin Sign In
+                                    </Button>
+                                    <Button onClick={handleAdminSignUp} variant="outline-primary">
+                                        Admin Sign Up
+                                    </Button>
+                                </div>
                             </Card.Body>
                         </Card>
                     </div>
                 </Col>
-
             </Row>
         </Container>
     );

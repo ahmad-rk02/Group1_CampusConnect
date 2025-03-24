@@ -9,6 +9,7 @@ import Gec from '../assets/Gec.png';
 const SignupAdmin = () => {
   const location = useLocation();
   const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     fullname: '',
     email: '',
@@ -19,14 +20,14 @@ const SignupAdmin = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  
-  // New state for modals
   const [showSuccessModal, setShowSuccessModal] = useState(false);
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
+  const [showOTPModal, setShowOTPModal] = useState(false);
+  const [otp, setOtp] = useState('');
+  const [userId, setUserId] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -39,13 +40,6 @@ const SignupAdmin = () => {
   const validateForm = () => {
     let formErrors = {};
     let valid = true;
-
-    for (let field in formData) {
-      if (!formData[field]) {
-        valid = false;
-        formErrors[field] = `${field.charAt(0).toUpperCase() + field.slice(1)} is required`;
-      }
-    }
 
     if (!formData.fullname) {
       valid = false;
@@ -90,6 +84,7 @@ const SignupAdmin = () => {
     setErrors(formErrors);
     return valid;
   };
+
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   const handleSubmit = async (e) => {
@@ -105,56 +100,75 @@ const SignupAdmin = () => {
           password: formData.password,
         });
 
-        console.log('Response:', response.data);
-        setSubmitted(true);
-        setShowSuccessModal(true); // Show success modal
-
-        // Reset the form
-        setFormData({
-          fullname: '',
-          email: '',
-          dte: '',
-          committee: '',
-          password: '',
-          confirmPassword: '',
-        });
-        setErrors({});
-
+        console.log('Signup Response:', response.data);
+        setUserId(response.data.userId);
+        setShowOTPModal(true);
       } catch (error) {
+        console.error('Signup Error:', error);
         if (error.response && error.response.status === 409) {
           setErrorMessage('User already exists. Please try logging in.');
-          setShowErrorModal(true); // Show error modal for existing user
-          // Reset the form
-          setFormData({
-            fullname: '',
-            email: '',
-            dte: '',
-            committee: '',
-            password: '',
-            confirmPassword: '',
-          });
         } else {
-          console.error('There was an error registering the user:', error);
           setErrorMessage('Registration failed. Please try again later.');
-          setShowErrorModal(true); // Show error modal for other errors
         }
+        setShowErrorModal(true);
       }
-    } else {
-      setSubmitted(false);
+    }
+  };
+
+  const handleOTPSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/users/verify-signup-otp`, {
+        email: formData.email,
+        otp,
+      });
+
+      console.log('OTP Verification Response:', response.data);
+      setShowOTPModal(false);
+      setShowSuccessModal(true);
+      setFormData({
+        fullname: '',
+        email: '',
+        dte: '',
+        committee: '',
+        password: '',
+        confirmPassword: '',
+      });
+      setOtp('');
+      setErrors({});
+    } catch (error) {
+      console.error('OTP Verification Error:', error);
+      setErrorMessage('Invalid or expired OTP. Please try again or resend OTP.');
+      setShowErrorModal(true);
+    }
+  };
+
+  const handleResendOTP = async () => {
+    try {
+      const response = await axios.post(`${API_BASE_URL}/api/users/resend-signup-otp`, {
+        email: formData.email,
+      });
+      console.log('Resend OTP Response:', response.data);
+      alert('A new OTP has been sent to your email.');
+      setOtp(''); // Clear the current OTP input
+    } catch (error) {
+      console.error('Resend OTP Error:', error);
+      setErrorMessage('Failed to resend OTP. Please try again.');
+      setShowErrorModal(true);
     }
   };
 
   return (
     <div>
       <Container fluid className="p-0 w-100">
-        <Row className='head-box-Admin-signup'>
+        <Row className="head-box-Admin-signup">
           <Col>
             <h1 className="text-left">ADMINISTRATION</h1>
           </Col>
         </Row>
 
         <Row noGutters className="flex-nowrap left-index-Admin-signup just">
-          <Col md={2} className='left-sidebar-Admin-signup'>
+          <Col md={2} className="left-sidebar-Admin-signup">
             <Card className="left-nav-Admin-signup">
               <ListGroup variant="flush">
                 <ListGroup.Item className="left-nav-row-Admin-signup">
@@ -192,26 +206,18 @@ const SignupAdmin = () => {
           </Col>
 
           <Col>
-            <div>
-              <div className='head-right-top-Admin-signup' style={{ backgroundColor: "#eadbc8" }}>
-                <h3 style={{ color: '#102C57' }}>Admin SignUp</h3>
-              </div>
+            <div className="head-right-top-Admin-signup" style={{ backgroundColor: "#eadbc8" }}>
+              <h3 style={{ color: '#102C57' }}>Admin SignUp</h3>
             </div>
 
-            <div className='form-section-Admin-signup'>
-              <Form onSubmit={handleSubmit} className='whole-form-Admin-signup'>
-                {submitted && (
-                  <Alert variant="success" className='mb-3'>
-                    Signed Up Successfully!
-                  </Alert>
-                )}
-
+            <div className="form-section-Admin-signup">
+              <Form onSubmit={handleSubmit} className="whole-form-Admin-signup">
                 <div className="Admin-signup-logo-container">
                   <img src={Gec} alt="Logo" className="Admin-signup-logo" />
                 </div>
 
                 <Form.Group controlId="formFullName" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Full Name</Form.Label>
+                  <Form.Label className="field-name-Admin-signup">Full Name</Form.Label>
                   <Form.Control
                     type="text"
                     name="fullname"
@@ -224,7 +230,7 @@ const SignupAdmin = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formEmail" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>E-Mail</Form.Label>
+                  <Form.Label className="field-name-Admin-signup">E-Mail</Form.Label>
                   <Form.Control
                     type="email"
                     name="email"
@@ -235,8 +241,22 @@ const SignupAdmin = () => {
                   />
                   {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                 </Form.Group>
+
+                <Form.Group controlId="formDTE" className="mb-3 whole-field-Admin-signup">
+                  <Form.Label className="field-name-Admin-signup">DTE Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="dte"
+                    value={formData.dte}
+                    onChange={handleChange}
+                    placeholder="Enter DTE Number"
+                    className={`input-box-Admin-signup ${errors.dte && 'is-invalid'}`}
+                  />
+                  {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
+                </Form.Group>
+
                 <Form.Group controlId="formCommittee" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Committee</Form.Label>
+                  <Form.Label className="field-name-Admin-signup">Committee</Form.Label>
                   <Form.Select
                     name="committee"
                     value={formData.committee}
@@ -253,21 +273,8 @@ const SignupAdmin = () => {
                   {errors.committee && <div className="invalid-feedback">{errors.committee}</div>}
                 </Form.Group>
 
-                <Form.Group controlId="formDTE" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>DTE Number</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="dte"
-                    value={formData.dte}
-                    onChange={handleChange}
-                    placeholder="Enter DTE Number"
-                    className={`input-box-Admin-signup ${errors.dte && 'is-invalid'}`}
-                  />
-                  {errors.dte && <div className="invalid-feedback">{errors.dte}</div>}
-                </Form.Group>
-
                 <Form.Group controlId="formPassword" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Password</Form.Label>
+                  <Form.Label className="field-name-Admin-signup">Password</Form.Label>
                   <div className="input-group">
                     <Form.Control
                       type={showPassword ? "text" : "password"}
@@ -289,7 +296,7 @@ const SignupAdmin = () => {
                 </Form.Group>
 
                 <Form.Group controlId="formConfirmPassword" className="mb-3 whole-field-Admin-signup">
-                  <Form.Label className='field-name-Admin-signup'>Confirm Password</Form.Label>
+                  <Form.Label className="field-name-Admin-signup">Confirm Password</Form.Label>
                   <div className="input-group">
                     <Form.Control
                       type={showConfirmPassword ? "text" : "password"}
@@ -310,14 +317,12 @@ const SignupAdmin = () => {
                   {errors.confirmPassword && <div className="invalid-feedback">{errors.confirmPassword}</div>}
                 </Form.Group>
 
-                <Button variant="primary" type="submit" className='sub-btn-Admin-signup'>
+                <Button variant="primary" type="submit" className="sub-btn-Admin-signup">
                   Sign Up
                 </Button>
 
-                <div className='to-admin-login'>
-                  <p className='text-Admin-signup'>
-                    Already have an account?
-                  </p>
+                <div className="to-admin-login">
+                  <p className="text-Admin-signup">Already have an account?</p>
                   <Link to="/adminlogin" className="Adminlogin-link-Admin-signup">Login</Link>
                 </div>
               </Form>
@@ -330,7 +335,7 @@ const SignupAdmin = () => {
           show={showSuccessModal}
           onHide={() => {
             setShowSuccessModal(false);
-            navigate('/adminlogin'); // Redirect to admin login after closing
+            navigate('/adminlogin');
           }}
           centered
           className="custom-modal"
@@ -378,6 +383,40 @@ const SignupAdmin = () => {
               Close
             </Button>
           </Modal.Footer>
+        </Modal>
+
+        {/* OTP Modal */}
+        <Modal
+          show={showOTPModal}
+          onHide={() => setShowOTPModal(false)}
+          centered
+          className="custom-modal"
+        >
+          <Modal.Header>
+            <Modal.Title>Verify OTP</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>An OTP has been sent to {formData.email}. Please enter it below:</p>
+            <Form onSubmit={handleOTPSubmit}>
+              <Form.Group>
+                <Form.Control
+                  type="text"
+                  value={otp}
+                  onChange={(e) => setOtp(e.target.value)}
+                  placeholder="Enter 6-digit OTP"
+                  maxLength="6"
+                />
+              </Form.Group>
+              <div className="mt-3">
+                <Button variant="primary" type="submit">
+                  Verify OTP
+                </Button>
+                <Button variant="link" onClick={handleResendOTP} className="ms-3">
+                  Resend OTP
+                </Button>
+              </div>
+            </Form>
+          </Modal.Body>
         </Modal>
       </Container>
     </div>
