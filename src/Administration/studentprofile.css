@@ -1,108 +1,452 @@
- @media (max-width: 480px) {
-   div.profile-container{
-    margin-inline: 5%;
-    margin-bottom: 5%;
-   }
- }
- /* Modal Overlay */
-.modal-backdrop.show {
-  background-color: rgba(0, 0, 0, 0.6);
-}
+ /* studentprofile.css */
 
-/* Modal Content */
-.modal-content {
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.3);
-  animation: fadeIn 0.3s ease-in-out;
-}
-
-/* Modal Header */
-.modal-header {
-  border-bottom: none;
+/* General Container */
+.student-profile-container {
   padding: 20px;
-  text-align: center;
-  background: linear-gradient(135deg, #007bff, #00d4ff);
-  color: white;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-.modal-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* Modal Body */
-.modal-body {
-  padding: 20px;
-  font-size: 1.1rem;
-  color: #333;
-  text-align: center;
-}
-
-/* Modal Footer */
-.modal-footer {
-  border-top: none;
+.student-profile-row {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
 }
 
-.modal-footer button {
-  padding: 10px 20px;
+.student-profile-col {
+  padding: 0;
+}
+
+/* Card Styling */
+.student-profile-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.student-profile-card-body {
+  padding: 25px;
+}
+
+/* Header */
+.student-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.student-profile-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.student-profile-title-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.student-profile-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.student-profile-refresh-btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.student-profile-refresh-btn:hover {
+  background-color: #102C57;
+  color: #fff;
+}
+
+.student-profile-refresh-icon {
+  font-size: 1.2rem;
+}
+
+.student-profile-logout-btn {
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.student-profile-logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Divider */
+.student-profile-divider {
+  margin: 20px 0;
+  border-color: #ecf0f1;
+}
+
+/* Profile Info */
+.student-profile-info {
+  margin-bottom: 20px;
+}
+
+.student-profile-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.student-profile-info-label {
+  font-weight: 600;
+  color: #34495e;
+  min-width: 120px;
+}
+
+.student-profile-info-value {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Actions */
+.student-profile-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.student-profile-update-btn,
+.student-profile-delete-btn,
+.student-profile-grievance-btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.student-profile-update-btn:hover {
+  background-color: #102C57;
+}
+
+.student-profile-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.student-profile-grievance-btn:hover {
+  background-color: #27ae60;
+}
+
+/* Grievances Section */
+.student-grievances-section {
+  margin-top: 20px;
+}
+
+.student-grievances-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.student-grievances-table-container {
+  max-height: 400px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.student-grievances-table {
+  min-width: 800px;
+  table-layout: auto;
+}
+
+.student-grievances-table-header {
+  background: #102C57;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.student-grievances-th {
+  font-weight: 600;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #102C57;
+  color: white;
+}
+
+.student-grievances-th-ticket { min-width: 100px; }
+.student-grievances-th-type { min-width: 120px; }
+.student-grievances-th-message { min-width: 300px; }
+.student-grievances-th-status { min-width: 120px; }
+.student-grievances-th-remarks { min-width: 200px; }
+
+.student-grievances-table-body {
+  font-size: 0.95rem;
+}
+
+.student-grievances-table-row {
+  transition: background 0.2s ease;
+}
+
+.student-grievances-table-row:hover {
+  background: #f5f6fa;
+}
+
+.student-grievances-td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.student-grievances-message-content,
+.student-grievances-remarks-content {
+  max-height: 60px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.student-grievances-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.student-grievances-status-not-resolved {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.student-grievances-status-in-progress {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+.student-grievances-status-resolved {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.student-grievances-empty {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Loading and Error States */
+.student-profile-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.student-profile-loading-spinner {
+  text-align: center;
+}
+
+.student-profile-loading-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+.student-profile-error-container {
+  padding: 20px;
+}
+
+.student-profile-error-alert {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Modals */
+.student-profile-modal,
+.student-grievance-modal,
+.student-success-modal,
+.student-logout-modal {
+  border-radius: 10px;
+}
+
+.student-profile-modal-header,
+.student-grievance-modal-header,
+.student-success-modal-header,
+.student-logout-modal-header {
+  background: #102C57;
+  color: #fff;
+  border-bottom: none;
+}
+
+.student-profile-modal-title,
+.student-grievance-modal-title,
+.student-success-modal-title,
+.student-logout-modal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.student-profile-modal-body,
+.student-grievance-modal-body,
+.student-success-modal-body,
+.student-logout-modal-body {
+  padding: 20px;
+}
+
+.student-profile-update-form,
+.student-grievance-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.student-profile-form-group,
+.student-grievance-form-group {
+  margin-bottom: 0;
+}
+
+.student-profile-form-label,
+.student-grievance-form-label {
   font-size: 1rem;
-  border-radius: 8px;
-  transition: 0.3s ease-in-out;
-  border: none;
+  color: #34495e;
+  font-weight: 500;
 }
 
-.modal-footer button:hover {
-  opacity: 0.8;
+.student-profile-form-control,
+.student-profile-form-select,
+.student-grievance-form-select,
+.student-grievance-form-textarea {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #bdc3c7;
+  transition: border-color 0.3s ease;
 }
 
-/* Button Colors */
-.modal-footer .btn-primary {
-  background-color: #007bff;
+.student-profile-form-control:focus,
+.student-profile-form-select:focus,
+.student-grievance-form-select:focus,
+.student-grievance-form-textarea:focus {
+  border-color: #102C57;
+  box-shadow: none;
 }
 
-.modal-footer .btn-danger {
-  background-color: #dc3545;
+.student-profile-error-alert,
+.student-grievance-error-alert {
+  font-size: 0.9rem;
 }
 
-.modal-footer .btn-secondary {
-  background-color: #6c757d;
+.student-grievance-form-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
 }
 
-/* Responsive Modal */
+.student-profile-modal-footer,
+.student-grievance-modal-footer,
+.student-success-modal-footer,
+.student-logout-modal-footer {
+  border-top: none;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.student-profile-modal-cancel-btn,
+.student-profile-modal-save-btn,
+.student-grievance-form-submit-btn,
+.student-success-modal-ok-btn,
+.student-logout-modal-cancel-btn,
+.student-logout-modal-confirm-btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.student-profile-modal-cancel-btn:hover {
+  background-color: #95a5a6;
+}
+
+.student-profile-modal-save-btn:hover,
+.student-grievance-form-submit-btn:hover,
+.student-success-modal-ok-btn:hover {
+  background-color: #102C57;
+}
+
+.student-logout-modal-confirm-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    margin: auto;
+  .student-profile-container {
+    padding: 15px;
   }
 
-  .modal-title {
+  .student-profile-title-text {
+    font-size: 1.5rem;
+  }
+
+  .student-profile-header-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .student-profile-refresh-btn,
+  .student-profile-logout-btn {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .student-profile-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .student-profile-info-label {
+    min-width: auto;
+    margin-bottom: 5px;
+  }
+
+  .student-profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .student-profile-update-btn,
+  .student-profile-delete-btn,
+  .student-profile-grievance-btn {
+    width: 100%;
+  }
+
+  .student-grievances-title {
     font-size: 1.3rem;
   }
 
-  .modal-body {
-    font-size: 1rem;
+  .student-grievances-table-container {
+    max-height: 300px;
   }
 
-  .modal-footer button {
-    font-size: 0.9rem;
-    padding: 8px 16px;
+  .student-grievances-th,
+  .student-grievances-td {
+    font-size: 0.85rem;
+    padding: 8px;
   }
 }
 
-/* Fade-in Animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.9);
+@media (max-width: 576px) {
+  .student-profile-title-text {
+    font-size: 1.2rem;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .student-grievances-th,
+  .student-grievances-td {
+    font-size: 0.75rem;
   }
 }

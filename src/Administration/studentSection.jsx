@@ -82,7 +82,7 @@ const StudentSection = () => {
 
         <Col md={9} xs={12}>
           <div className="main-content">
-            <h3 className="faculty-heading">STUDENT SECTION</h3>
+            <h3 className="faculty-heading">Student Section</h3>
             <div className="members-container">
               {sections.map((section) => (
                 <div key={section.id} className="member-card">

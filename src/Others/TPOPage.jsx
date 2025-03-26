@@ -110,8 +110,8 @@ const TPOPage = () => {
 
   const getMediaUrl = (url) => {
     if (!url) return "https://via.placeholder.com/200x200?text=No+Image";
-    return url.startsWith('http://') || url.startsWith('https://') 
-      ? url 
+    return url.startsWith('http://') || url.startsWith('https://')
+      ? url
       : `${STRAPI_MEDIA_BASE_URL}${url}`;
   };
 
@@ -398,7 +398,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-photo-gallery" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Photo Gallery</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TP Photo Gallery</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading photo gallery...</p>
               ) : Array.isArray(data["tpo-photo-galleries"]) && data["tpo-photo-galleries"].length > 0 ? (
@@ -441,7 +441,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-activities" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Activities</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Activities</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading activities...</p>
               ) : Array.isArray(data["tpo-activities"]) ? (
@@ -473,7 +473,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-internships" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Internships</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Internships</h2>
               <Table striped bordered hover responsive className="shadow-sm rounded-3">
                 <thead className="table-dark">
                   <tr>
@@ -529,7 +529,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-news" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO News</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP News</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading news...</p>
               ) : Array.isArray(data["tpo-news"]) && data["tpo-news"].length > 0 ? (
@@ -584,42 +584,104 @@ const handleEmployerFeedbackSubmit = async (e) => {
               )}
             </section>
 
-            {["tpo-brochures", "tpo-placement-policies", "tpo-nocs"].map((section) => (
-              <section id={section} key={section} className="section-card mb-4 mb-md-5">
-                <h2 className="section-title fw-bold mb-3 mb-md-4">{section.replace(/-/g, " ").toUpperCase()}</h2>
-                {loading ? (
-                  <p className="text-muted text-center">Loading documents...</p>
-                ) : Array.isArray(data[section]) ? (
-                  data[section].length > 0 ? (
-                    <ul className="list-group shadow-sm rounded-3 document-list">
-                      {data[section].map((item, index) => (
-                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                          {item.pdf?.url || item.image?.url ? (
-                            <a
-                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary fw-medium"
-                            >
-                              {item.title || "Document"}
-                            </a>
-                          ) : (
-                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  ) : (
-                    <p className="text-muted text-center">No documents available</p>
-                  )
+            <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP BROCHURES</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-brochures']) ? (
+                data['tpo-brochures'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-brochures'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
                 ) : (
-                  <p className="text-muted text-center">Error: Invalid document data</p>
-                )}
-              </section>
-            ))}
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
+
+            <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP POLICIES</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-placement-policies']) ? (
+                data['tpo-placement-policies'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-placement-policies'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
+
+            <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP NOCS</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data['tpo-nocs']) ? (
+                data['tpo-nocs'].length > 0 ? (
+                  <ul className="list-group shadow-sm rounded-3 document-list">
+                    {data['tpo-nocs'].map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {item.pdf?.url || item.image?.url ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-muted text-center">No documents available</p>
+                )
+              ) : (
+                <p className="text-muted text-center">Error: Invalid document data</p>
+              )}
+            </section>
 
             <section id="tpo-mous" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO MOUs</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP MOUs</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading MOUs...</p>
               ) : Array.isArray(data["tpo-mous"]) ? (
@@ -655,7 +717,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
 
               {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Feedback</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
                 <Card.Body className="p-3 p-md-4">
                   <Form onSubmit={handleFeedbackSubmit}>
@@ -852,7 +914,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
                 <p className="text-muted text-center">Loading contact details...</p>
               ) : (
                 <>
-                  <h3 className="fw-bold mb-3">TPO Staff</h3>
+                  <h3 className="fw-bold mb-3">TnP Staff</h3>
                   {Array.isArray(data["tpo-staffs"]) && data["tpo-staffs"].length > 0 ? (
                     <Row className="g-3">
                       {data["tpo-staffs"].map((staff, index) => (
@@ -885,7 +947,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
                     <p className="text-muted text-center">No staff details available</p>
                   )}
 
-                  <h3 className="fw-bold mb-3 mt-4">TPO Office</h3>
+                  <h3 className="fw-bold mb-3 mt-4">TnP Office</h3>
                   {Array.isArray(data["tpo-offices"]) && data["tpo-offices"].length > 0 ? (
                     data["tpo-offices"].map((office, index) => (
                       <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
