@@ -45,6 +45,7 @@ function Navbar({ imageSrcPath, navItems }) {
       cse: '/cse',
       instru: '/instru',
       mech: '/mech',
+      entc: '/entc',
       contact: '/contact',
       grievance: '/login'
     };
@@ -81,8 +82,10 @@ function Navbar({ imageSrcPath, navItems }) {
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
         "Electrical Engineering": "/elec",
+        "Electronics & Telecommunication Engineering": "/Entc",
         "Instrumentation Engineering": "/instru",
         "Mechanical Engineering": "/mech",
+        "Civil Engineering": "/cvl",
         "Grievance Form": "/login",
         "Tenders": "/tenders",
         "Girls Hostel": "/girlshostel",

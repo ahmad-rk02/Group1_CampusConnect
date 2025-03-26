@@ -1,4 +1,8 @@
 /* Default Styles (Full Screen) - No Changes */
+.eligibility-col{
+    margin-bottom: 5%;
+}
+
 .head-box-eligibilitycrt {
     background-color: #102c57;
     height: 130px;

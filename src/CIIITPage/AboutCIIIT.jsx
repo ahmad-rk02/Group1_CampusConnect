@@ -3,7 +3,7 @@ import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
 import { Link} from 'react-router-dom';
 import './AboutCIIIT.css'
 import ciiitlogo from '../assets/ciiit-logo.gif';
-import compon from '../assets/compon.png';
+import compon from '../assets/coem.jpg';
 const AboutCIIIT = () => {
   return (
     <div>
@@ -83,7 +83,7 @@ const AboutCIIIT = () => {
         <h2>CENTER FOR INVENTION,<br/>
         INNOVATION,<br/>   
         INCUBATION & TRAINING  (CIIIT)<br/>  
-        CHANDRAPUR-MAHARASTRA</h2>
+        CHANDRAPUR-MAHARASHTRA</h2>
       </div>
       <div className="compon">
         <img

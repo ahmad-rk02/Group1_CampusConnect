@@ -69,6 +69,7 @@
 }
 
 .c-para {
+    text-align: justify;
     width: 900px;
     margin-left: 120px;
     margin-top: 20px;
@@ -88,6 +89,8 @@
 }
 
 .feature-ciiit {
+    width: 83%;
+    text-align: justify;
     margin-left: 120px;
 }
 

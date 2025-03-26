@@ -19,6 +19,8 @@ import CSE from './Departments/Cse/CSE';
 import INSTRU from './Departments/Instrumentation/instru';
 import MECH from './Departments/Mechanical/Mech';
 import Elec from './Departments/Electrical/Elec';
+import Entc from './Departments/ElecNTC/Entc';
+import Cvl from './Departments/Civil/Cvl';
 import Footer from './pages/Footer';
 import Studentlogin from './Administration/Studentlogin';
 import Boyshostel from './hostel/Boyshostel';
@@ -92,7 +94,6 @@ function App() {
     {
       name: "OTHERS",
       subLinks: [
-        "Committees",
         "Training & Placements",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
         "Alumni"
@@ -123,6 +124,8 @@ function App() {
             <Route path="/instru" element={<INSTRU />} />
             <Route path="/mech" element={<MECH />} />
             <Route path="/elec" element={<Elec />} />
+            <Route path="/entc" element={<Entc />} />
+            <Route path="/cvl" element={<Cvl />} />
             <Route path="/studentlogin" element={<Studentlogin />} />
             <Route path="/signupadmin" element={<SignupAdmin />} />
             <Route path="/login" element={<Login />} />

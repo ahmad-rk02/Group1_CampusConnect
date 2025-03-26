@@ -128,6 +128,10 @@
     text-align: justify;
 }
 
+.ciiit-content ul{
+    text-align: justify;
+}
+
 /* Responsive styles for smaller screens */
 @media (max-width: 1200px) {
     .head-box-AbtCiiit h1 {

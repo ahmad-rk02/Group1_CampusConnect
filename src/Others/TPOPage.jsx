@@ -28,6 +28,20 @@ const TPOPage = () => {
   const [feedbackSuccess, setFeedbackSuccess] = useState(false);
   const [showModal, setShowModal] = useState(false); // For popup
 
+  const [employerFeedback, setEmployerFeedback] = useState({
+    name: "",
+    company: "",
+    designation: "",
+    email: "",
+    message: ""
+  });
+  
+  const [employerFeedbackSubmitting, setEmployerFeedbackSubmitting] = useState(false);
+  const [employerFeedbackSuccess, setEmployerFeedbackSuccess] = useState(false);
+  const [employerFeedbackError, setEmployerFeedbackError] = useState(null);
+  const [showEmployerModal, setShowEmployerModal] = useState(false);
+  
+
   useEffect(() => {
     const collectionEndpoints = [
       "placement-records", "training-programs", "tpo-photo-galleries",
@@ -161,6 +175,49 @@ const TPOPage = () => {
   };
 
   const handleCloseModal = () => setShowModal(false);
+
+
+
+// Handle Employer Feedback Input Change
+const handleEmployerFeedbackChange = (e) => {
+  const { name, value } = e.target;
+  setEmployerFeedback((prev) => ({ ...prev, [name]: value }));
+};
+
+// Submit Employer Feedback to Strapi
+const handleEmployerFeedbackSubmit = async (e) => {
+  e.preventDefault();
+  setEmployerFeedbackSubmitting(true);
+  setEmployerFeedbackError(null);
+  setEmployerFeedbackSuccess(false);
+
+  try {
+    const response = await axios.post(`${STRAPI_API_BASE_URL}/api/employer-feedbacks`, {
+      data: {
+        name: employerFeedback.name,
+        company: employerFeedback.company,
+        designation: employerFeedback.designation,
+        email: employerFeedback.email,
+        message: employerFeedback.message
+      }
+    });
+    console.log("Employer feedback submitted successfully:", response.data);
+    setEmployerFeedbackSuccess(true);
+    setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" }); // Reset form
+    setShowModal(true); // Show success popup
+  } catch (error) {
+    console.error("Error submitting employer feedback to Strapi:", error);
+    setEmployerFeedbackError("Failed to submit feedback. Please try again.");
+    setShowModal(true); // Show error popup
+  } finally {
+    setEmployerFeedbackSubmitting(false);
+  }
+};
+
+
+
+
+  
 
   return (
     <Container fluid className="p-0 tpo-container">
@@ -596,6 +653,7 @@ const TPOPage = () => {
               )}
             </section>
 
+              {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
@@ -694,6 +752,99 @@ const TPOPage = () => {
                 </Card.Body>
               </Card>
             </section>
+
+
+            {/* Employer Feedback */}
+            <section id="employer-feedback" className="section-card mb-4 mb-md-5">
+  <h2 className="section-title fw-bold mb-3 mb-md-4">Employer Feedback</h2>
+  <Card className="shadow-sm rounded-3 border-0">
+    <Card.Body className="p-3 p-md-4">
+      <Form onSubmit={handleEmployerFeedbackSubmit}>
+        <Row className="g-3">
+          <Col xs={12} md={6}>
+            <Form.Group controlId="employerName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={employerFeedback.name}
+                onChange={handleEmployerFeedbackChange}
+                placeholder="Enter your name"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={6}>
+            <Form.Group controlId="companyName">
+              <Form.Label>Company Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="company"
+                value={employerFeedback.company}
+                onChange={handleEmployerFeedbackChange}
+                placeholder="Enter company name"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={6}>
+            <Form.Group controlId="designation">
+              <Form.Label>Designation</Form.Label>
+              <Form.Control
+                type="text"
+                name="designation"
+                value={employerFeedback.designation}
+                onChange={handleEmployerFeedbackChange}
+                placeholder="Enter your designation"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12} md={6}>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                name="email"
+                value={employerFeedback.email}
+                onChange={handleEmployerFeedbackChange}
+                placeholder="Enter your email"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12}>
+            <Form.Group controlId="feedbackMessage">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="message"
+                value={employerFeedback.message}
+                onChange={handleEmployerFeedbackChange}
+                placeholder="Enter your feedback"
+                required
+              />
+            </Form.Group>
+          </Col>
+          <Col xs={12}>
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={employerFeedbackSubmitting}
+              className="mt-3 feedback-form"
+            >
+              {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+            </Button>
+          </Col>
+        </Row>
+      </Form>
+    </Card.Body>
+  </Card>
+</section>
+
+
+
 
             <section id="tpo-contact" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Contact</h2>
