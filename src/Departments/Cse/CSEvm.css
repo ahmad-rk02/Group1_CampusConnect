@@ -11,6 +11,15 @@
     align-items: center;
     color: #102C57;
   }
+
+  .second-para-large p{
+    text-align: justify
+    ;
+  }
+
+  .mission-content ul{
+    text-align: justify;
+  }
   
   .cse-intro-box {
     position: relative;
@@ -193,6 +202,7 @@ font-size: 20px;
 
 
 .lab-eq-cs{
+  text-align: justify;
   margin-left: 530px;
   margin-top: -200px;
 }

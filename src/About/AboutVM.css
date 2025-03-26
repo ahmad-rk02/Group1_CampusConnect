@@ -16,6 +16,11 @@
   height: auto;
   display: block;
 }
+
+ul.miss-vm{
+  text-align: justify;
+}
+
 .left-index-vm{
 margin-left: 60px;
 margin-right: 60px;

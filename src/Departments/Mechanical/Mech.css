@@ -45,7 +45,10 @@ div.head-box-Mech.row {
 .left-nav-row-Mech-01 {
   text-align: center;
   font-size: 1.2rem;
-  
+}
+
+.left-nav-row-Mech-01{
+  font-weight: 500;
 }
 
 .left-sidebar-Mech a {

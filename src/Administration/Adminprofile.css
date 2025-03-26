@@ -1,1 +1,504 @@
- 
+ /* Adminprofile.css */
+
+/* General Container */
+.admin-profile-container {
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.admin-profile-row {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-profile-col {
+  padding: 0;
+}
+
+/* Card Styling */
+.admin-profile-card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.admin-profile-card-body {
+  padding: 25px;
+}
+
+/* Header */
+.admin-profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-profile-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.admin-profile-title-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.admin-profile-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-profile-refresh-btn {
+  padding: 6px 12px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.admin-profile-refresh-btn:hover {
+  background-color: #102C57;
+  color: #fff;
+}
+
+.admin-profile-refresh-icon {
+  font-size: 1.2rem;
+}
+
+.admin-profile-logout-btn {
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.admin-profile-logout-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Divider */
+.admin-profile-divider {
+  margin: 20px 0;
+  border-color: #ecf0f1;
+}
+
+/* Profile Info */
+.admin-profile-info {
+  margin-bottom: 20px;
+}
+
+.admin-profile-info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.admin-profile-info-label {
+  font-weight: 600;
+  color: #34495e;
+  min-width: 120px;
+}
+
+.admin-profile-info-value {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Actions */
+.admin-profile-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.admin-profile-update-btn,
+.admin-profile-delete-btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.admin-profile-update-btn:hover {
+  background-color: #102C57;
+}
+
+.admin-profile-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Grievances Section */
+.admin-grievances-section {
+  margin-top: 20px;
+}
+
+.admin-grievances-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.admin-grievances-search {
+  margin-bottom: 20px;
+  max-width: 400px;
+}
+
+.admin-grievances-search-input-group {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.admin-grievances-search-icon {
+  background: #ecf0f1;
+  border: none;
+  color: #7f8c8d;
+}
+
+.admin-grievances-search-input {
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.admin-grievances-table-container {
+  max-height: 400px;
+  overflow-x: auto;
+  overflow-y: auto;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.admin-grievances-table {
+  min-width: 1200px;
+  table-layout: auto;
+}
+
+.admin-grievances-table-header {
+  background: #102C57;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.admin-grievances-th {
+  font-weight: 600;
+  padding: 12px;
+  text-align: center;
+  border-bottom: 2px solid #102C57;
+}
+
+.admin-grievances-th-ticket { min-width: 100px; }
+.admin-grievances-th-name { min-width: 150px; }
+.admin-grievances-th-email { min-width: 200px; }
+.admin-grievances-th-prn { min-width: 120px; }
+.admin-grievances-th-branch { min-width: 120px; }
+.admin-grievances-th-semester { min-width: 80px; }
+.admin-grievances-th-type { min-width: 120px; }
+.admin-grievances-th-message { min-width: 250px; }
+.admin-grievances-th-status { min-width: 120px; }
+.admin-grievances-th-remarks { min-width: 200px; }
+.admin-grievances-th-action { min-width: 100px; }
+
+.admin-grievances-sortable-header {
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-grievances-sortable-header:hover {
+  background: #102C57;
+}
+
+.admin-grievances-table-body {
+  font-size: 0.95rem;
+}
+
+.admin-grievances-table-row {
+  transition: background 0.2s ease;
+}
+
+.admin-grievances-table-row:hover {
+  background: #f5f6fa;
+}
+
+.admin-grievances-td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.admin-grievances-message-content,
+.admin-grievances-remarks-content {
+  max-height: 60px;
+  overflow-y: auto;
+  word-wrap: break-word;
+}
+
+.admin-grievances-status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.admin-grievances-status-not-resolved {
+  background: #e74c3c;
+  color: #fff;
+}
+
+.admin-grievances-status-in-progress {
+  background: #f1c40f;
+  color: #2c3e50;
+}
+
+.admin-grievances-status-resolved {
+  background: #2ecc71;
+  color: #fff;
+}
+
+.admin-grievances-action-btn {
+  padding: 4px 12px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.admin-grievances-action-btn:hover {
+  background-color: #102C57;
+}
+
+.admin-grievances-empty {
+  text-align: center;
+  padding: 20px;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+/* Loading and Error States */
+.admin-profile-loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.admin-profile-loading-spinner {
+  text-align: center;
+}
+
+.admin-profile-loading-text {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #34495e;
+}
+
+.admin-profile-error-container {
+  padding: 20px;
+}
+
+.admin-profile-error-alert {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* Modals */
+.admin-profile-modal,
+.admin-status-modal,
+.admin-success-modal,
+.admin-logout-modal {
+  border-radius: 10px;
+}
+
+.admin-profile-modal-header,
+.admin-status-modal-header,
+.admin-success-modal-header,
+.admin-logout-modal-header {
+  background: #102C57;
+  color: #fff;
+  border-bottom: none;
+}
+
+.admin-profile-modal-title,
+.admin-status-modal-title,
+.admin-success-modal-title,
+.admin-logout-modal-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.admin-profile-modal-body,
+.admin-status-modal-body,
+.admin-success-modal-body,
+.admin-logout-modal-body {
+  padding: 20px;
+}
+
+.admin-profile-update-form,
+.admin-status-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-profile-form-group,
+.admin-status-form-group {
+  margin-bottom: 0;
+}
+
+.admin-profile-form-label,
+.admin-status-form-label {
+  font-size: 1rem;
+  color: #34495e;
+  font-weight: 500;
+}
+
+.admin-profile-form-control,
+.admin-profile-form-select,
+.admin-status-form-select,
+.admin-status-form-textarea {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #bdc3c7;
+  transition: border-color 0.3s ease;
+}
+
+.admin-profile-form-control:focus,
+.admin-profile-form-select:focus,
+.admin-status-form-select:focus,
+.admin-status-form-textarea:focus {
+  border-color: #102C57;
+  box-shadow: none;
+}
+
+.admin-profile-error-alert,
+.admin-status-error-alert {
+  font-size: 0.9rem;
+}
+
+.admin-status-form-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.admin-profile-modal-footer,
+.admin-status-modal-footer,
+.admin-success-modal-footer,
+.admin-logout-modal-footer {
+  border-top: none;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.admin-profile-modal-cancel-btn,
+.admin-profile-modal-save-btn,
+.admin-status-form-submit-btn,
+.admin-success-modal-ok-btn,
+.admin-logout-modal-cancel-btn,
+.admin-logout-modal-confirm-btn {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.admin-profile-modal-cancel-btn:hover {
+  background-color: #95a5a6;
+}
+
+.admin-profile-modal-save-btn:hover,
+.admin-status-form-submit-btn:hover,
+.admin-success-modal-ok-btn:hover {
+  background-color: #102C57;
+}
+
+.admin-logout-modal-confirm-btn:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-profile-container {
+    padding: 15px;
+  }
+
+  .admin-profile-title-text {
+    font-size: 1.5rem;
+  }
+
+  .admin-profile-header-actions {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .admin-profile-refresh-btn,
+  .admin-profile-logout-btn {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .admin-profile-info-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-profile-info-label {
+    min-width: auto;
+    margin-bottom: 5px;
+  }
+
+  .admin-profile-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-profile-update-btn,
+  .admin-profile-delete-btn {
+    width: 100%;
+  }
+
+  .admin-grievances-title {
+    font-size: 1.3rem;
+  }
+
+  .admin-grievances-search {
+    max-width: 100%;
+  }
+
+  .admin-grievances-table-container {
+    max-height: 300px;
+  }
+
+  .admin-grievances-th,
+  .admin-grievances-td {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+
+  .admin-grievances-action-btn {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 576px) {
+  .admin-profile-title-text {
+    font-size: 1.2rem;
+  }
+
+  .admin-grievances-th,
+  .admin-grievances-td {
+    font-size: 0.75rem;
+  }
+}
+

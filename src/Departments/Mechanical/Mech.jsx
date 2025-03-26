@@ -28,7 +28,7 @@ const Mech = () => {
               <div className="left-sidebar-wrapper">
                 <Card className="left-nav-Mech">
                   <ListGroup variant="flush">
-                    <ListGroup.Item className="left-nav-row-Mech-01">
+                    <ListGroup.Item className="left-nav-row-Mech">
                       <Link
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : "/cse"}
@@ -60,7 +60,7 @@ const Mech = () => {
                         Electrical Engineering
                       </Link>
                     </ListGroup.Item>
-                    <ListGroup.Item className="left-nav-row-Mech">
+                    <ListGroup.Item className="left-nav-row-Mech-01">
                       <Link
                         to=""
                         className={location.pathname === "/mech" ? "active-link" : ""}
@@ -70,8 +70,8 @@ const Mech = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Mech">
                       <Link
-                        to="/mech"
-                        className={location.pathname === "/mech" ? "active-link" : ""}
+                        to=""
+                        className={location.pathname === "" ? "active-link" : ""}
                       >
                         Civil Engineering
                       </Link>

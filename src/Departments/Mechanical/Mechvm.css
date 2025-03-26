@@ -141,6 +141,11 @@ text-decoration: underline;
 .mech-mission {
   margin-top: 30px;
 }
+
+.mission-content ul{
+  text-align: justify;
+}
+
 .table-header-mech th {
   background-color: #102c57;
   color: white;
@@ -229,6 +234,7 @@ margin-top: 20px;
 
 
 .lab-eq-mech{
+  text-align: justify;
 margin-left: 290px;
 margin-top:-150px;
 width: 130px;

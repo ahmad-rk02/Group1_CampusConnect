@@ -67,7 +67,7 @@
 .table-n-head-ug{
 margin-top: 50px;
 padding-left: 170px;
-width: max-content;
+width: 100%;
 }
 
 div.head-table-top-ug{
@@ -112,6 +112,7 @@ div.head-table-top-ug{
     height: 65px;
 }
 .para-ug{
+    text-align: justify;
     padding-Bottom: "15px";
      font-Size: 14px;
       font-Weight: "500";
@@ -119,6 +120,7 @@ div.head-table-top-ug{
        width: 80%;
 }
 .para-ugmain{
+    text-align: justify;
      padding-Top: "50px";
       padding-Bottom: "0px";
        font-Size: 14px;

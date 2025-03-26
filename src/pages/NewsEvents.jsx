@@ -22,6 +22,7 @@ const NewsEvents = () => {
                 setEvents(eventsResponse.data.data);
             } catch (error) {
                 console.error("Error fetching data:", error);
+
             }
         };
         fetchData();
@@ -44,11 +45,13 @@ const NewsEvents = () => {
                     news.map((item) => (
                         <div key={item.id} className="news-item">
                             {item.image && (
-                                <img 
-                                    src={`${STRAPI_BASE_URL}${item.image.url}`} 
-                                    alt={item.title} 
-                                    className="news-image" 
-                                />
+          <img 
+          src={`${import.meta.env.VITE_STRAPI_MEDIA_BASE_URL}${item.image.url.startsWith('/') ? item.image.url : `/${item.image.url}`}`} 
+          alt={item.title} 
+          className="news-image" 
+      />
+      
+
                             )}
                             <h3 className="news-title">{item.title}</h3>
                             <p className="news-date">{item.date}</p>
@@ -60,18 +63,18 @@ const NewsEvents = () => {
                                     : "No description available"}
                             </p>
                             {item.description && (
-                                <button 
-                                    onClick={() => toggleExpandNews(item.id)} 
+                                <button
+                                    onClick={() => toggleExpandNews(item.id)}
                                     className="read-more-btn"
                                 >
                                     {expandedNews[item.id] ? "Read Less" : "Read More"}
                                 </button>
                             )}
                             {item.external_url && (
-                                <a 
-                                    href={item.external_url} 
-                                    className="external-link" 
-                                    target="_blank" 
+                                <a
+                                    href={item.external_url}
+                                    className="external-link"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     Click Here
@@ -83,7 +86,7 @@ const NewsEvents = () => {
                     <p className="loading-text">Loading news...</p>
                 )}
             </div>
-            
+
             {/* Events Section */}
             <div className="events-section">
                 <h2 className="section-title">Upcoming Events</h2>
@@ -91,10 +94,10 @@ const NewsEvents = () => {
                     events.map((item) => (
                         <div key={item.id} className="event-item">
                             {item.image && (
-                                <img 
-                                    src={`${STRAPI_BASE_URL}${item.image.url}`} 
-                                    alt={item.title} 
-                                    className="event-image" 
+                                <img
+                                    src={`${STRAPI_BASE_URL}${item.image.url}`}
+                                    alt={item.title}
+                                    className="event-image"
                                 />
                             )}
                             <h3 className="event-title">{item.title}</h3>
@@ -107,18 +110,18 @@ const NewsEvents = () => {
                                     : ""}
                             </p>
                             {item.description && (
-                                <button 
-                                    onClick={() => toggleExpandEvents(item.id)} 
+                                <button
+                                    onClick={() => toggleExpandEvents(item.id)}
                                     className="read-more-btn"
                                 >
                                     {expandedEvents[item.id] ? "Read Less" : "Read More"}
                                 </button>
                             )}
                             {item.external_url && (
-                                <a 
-                                    href={item.external_url} 
-                                    className="external-link" 
-                                    target="_blank" 
+                                <a
+                                    href={item.external_url}
+                                    className="external-link"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     Click Here

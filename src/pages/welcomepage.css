@@ -20,6 +20,10 @@
     color: #555;
     line-height: 1.6;
   }
+
+  p.text-center{
+    text-align: justify;
+  }
   
   /* READ MORE button */
   /* .welcome-section .btn-link {
