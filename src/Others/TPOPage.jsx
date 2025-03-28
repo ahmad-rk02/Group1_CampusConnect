@@ -218,7 +218,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
     <Container fluid className="p-0 tpo-container">
       <Row className="header-design-tech text-white py-3 py-md-4">
         <Col className="header-align-tech d-flex align-items-center justify-content-center justify-content-md-start">
-          <h1 className="display-5 fw-bold mb-0">TRAINING AND PLACEMENT CELL</h1>
+          <h1 className="display-5 fw-bold mb-0">TRAINING & PLACEMENT CELL</h1>
         </Col>
       </Row>
 
@@ -230,17 +230,17 @@ const handleEmployerFeedbackSubmit = async (e) => {
                 { name: "TPO Desk", id: "tpo-desk" },
                 { name: "Placement Records", id: "placement-records" },
                 { name: "Training & Programs", id: "training-programs" },
-                { name: "TPO Photo Gallery", id: "tpo-photo-gallery" },
-                { name: "TPO Activities", id: "tpo-activities" },
-                { name: "TPO Internships", id: "tpo-internships" },
-                { name: "TPO Reports", id: "tpo-reports" },
-                { name: "TPO Brochure", id: "tpo-brochures" },
-                { name: "TPO News", id: "tpo-news" },
-                { name: "TPO MoUs", id: "tpo-mous" },
-                { name: "TPO Placement Policy", id: "tpo-placement-policies" },
-                { name: "TPO NOC", id: "tpo-nocs" },
-                { name: "TPO Feedback", id: "tpo-feedback" },
-                { name: "TPO Contact", id: "tpo-contact" }
+                { name: "T&P Photo Gallery", id: "tpo-photo-gallery" },
+                { name: "T&P Activities", id: "tpo-activities" },
+                { name: "T&P Internships", id: "tpo-internships" },
+                { name: "T&P Reports", id: "tpo-reports" },
+                { name: "T&P Brochure", id: "tpo-brochures" },
+                { name: "T&P News", id: "tpo-news" },
+                { name: "T&P MoUs", id: "tpo-mous" },
+                { name: "T&P Placement Policy", id: "tpo-placement-policies" },
+                { name: "T&P NOC", id: "tpo-nocs" },
+                { name: "T&P Feedback", id: "tpo-feedback" },
+                { name: "T&P Contact", id: "tpo-contact" }
               ].map((item, index) => (
                 <ListGroup.Item
                   key={index}
@@ -393,7 +393,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-photo-gallery" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TP Photo Gallery</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Photo Gallery</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading photo gallery...</p>
               ) : Array.isArray(data["tpo-photo-galleries"]) && data["tpo-photo-galleries"].length > 0 ? (
@@ -436,7 +436,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-activities" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Activities</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Activities</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading activities...</p>
               ) : Array.isArray(data["tpo-activities"]) ? (
@@ -468,7 +468,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-internships" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Internships</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Internships</h2>
               <Table striped bordered hover responsive className="shadow-sm rounded-3">
                 <thead className="table-dark">
                   <tr>
@@ -524,7 +524,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-news" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP News</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P News</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading news...</p>
               ) : Array.isArray(data["tpo-news"]) && data["tpo-news"].length > 0 ? (
@@ -580,7 +580,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP BROCHURES</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Brochures</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading documents...</p>
               ) : Array.isArray(data['tpo-brochures']) ? (
@@ -612,7 +612,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP POLICIES</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Policy</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading documents...</p>
               ) : Array.isArray(data['tpo-placement-policies']) ? (
@@ -644,7 +644,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP NOCS</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P NOCS</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading documents...</p>
               ) : Array.isArray(data['tpo-nocs']) ? (
@@ -676,7 +676,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
             </section>
 
             <section id="tpo-mous" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP MOUs</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P MOUs</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading MOUs...</p>
               ) : Array.isArray(data["tpo-mous"]) ? (
@@ -712,7 +712,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
 
               {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">TnP Feedback</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
                 <Card.Body className="p-3 p-md-4">
                   <Form onSubmit={handleFeedbackSubmit}>

@@ -12,7 +12,7 @@ const PrincipalDesk = () => {
   const [error, setError] = useState(null);
   const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
   useEffect(() => {
-    const fetchPrincipalData = async () => {
+    const fetchPrincipalData = async () => { 
       try {
         const response = await fetch(`${API_BASE_URL}/api/gec-principal`);
         if (!response.ok) {
