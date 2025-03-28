@@ -3,6 +3,7 @@ import { Container, Row, Col, Card, ListGroup, Table, Carousel, Form, Button, Mo
 import axios from "axios";
 import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // For green tick and exclamation mark
 import "./TPOPage.css";
+import { Link } from "react-bootstrap-icons";
 
 // Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
@@ -35,12 +36,10 @@ const TPOPage = () => {
     email: "",
     message: ""
   });
-  
+
   const [employerFeedbackSubmitting, setEmployerFeedbackSubmitting] = useState(false);
-  const [employerFeedbackSuccess, setEmployerFeedbackSuccess] = useState(false);
-  const [employerFeedbackError, setEmployerFeedbackError] = useState(null);
-  const [showEmployerModal, setShowEmployerModal] = useState(false);
-  
+
+
 
   useEffect(() => {
     const collectionEndpoints = [
@@ -178,46 +177,43 @@ const TPOPage = () => {
 
 
 
-// Handle Employer Feedback Input Change
-const handleEmployerFeedbackChange = (e) => {
-  const { name, value } = e.target;
-  setEmployerFeedback((prev) => ({ ...prev, [name]: value }));
-};
+  // Handle Employer Feedback Input Change
+  const handleEmployerFeedbackChange = (e) => {
+    const { name, value } = e.target;
+    setEmployerFeedback((prev) => ({ ...prev, [name]: value }));
+  };
 
-// Submit Employer Feedback to Strapi
-const handleEmployerFeedbackSubmit = async (e) => {
-  e.preventDefault();
-  setEmployerFeedbackSubmitting(true);
-  setEmployerFeedbackError(null);
-  setEmployerFeedbackSuccess(false);
+  // Submit Employer Feedback to Strapi
+  const handleEmployerFeedbackSubmit = async (e) => {
+    e.preventDefault();
+    setEmployerFeedbackSubmitting(true);
+    setFeedbackError(null);
+    setFeedbackSuccess(false);
 
-  try {
-    const response = await axios.post(`${STRAPI_API_BASE_URL}/api/employer-feedbacks`, {
-      data: {
-        name: employerFeedback.name,
-        company: employerFeedback.company,
-        designation: employerFeedback.designation,
-        email: employerFeedback.email,
-        message: employerFeedback.message
-      }
-    });
-    console.log("Employer feedback submitted successfully:", response.data);
-    setEmployerFeedbackSuccess(true);
-    setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" }); // Reset form
-    setShowModal(true); // Show success popup
-  } catch (error) {
-    console.error("Error submitting employer feedback to Strapi:", error);
-    setEmployerFeedbackError("Failed to submit feedback. Please try again.");
-    setShowModal(true); // Show error popup
-  } finally {
-    setEmployerFeedbackSubmitting(false);
-  }
-};
-
-
+    try {
+      const response = await axios.post(`${STRAPI_API_BASE_URL}/api/employer-feedbacks`, {
+        data: {
+          name: employerFeedback.name,
+          company: employerFeedback.company,
+          designation: employerFeedback.designation,
+          email: employerFeedback.email,
+          message: employerFeedback.message
+        }
+      });
+      console.log("Employer feedback submitted successfully:", response.data);
+      setFeedbackSuccess(true);
+      setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" }); // Reset form
+      setShowModal(true); // Show success popup
+    } catch (error) {
+      console.error("Error submitting employer feedback to Strapi:", error);
+      setFeedbackError("Failed to submit feedback. Please try again.");
+      setShowModal(true); // Show error popup
+    } finally {
+      setEmployerFeedbackSubmitting(false);
+    }
+  };
 
 
-  
 
   return (
     <Container fluid className="p-0 tpo-container">
@@ -715,7 +711,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
               )}
             </section>
 
-              {/* Feedback Section */}
+            {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
@@ -799,7 +795,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
                           />
                         </Form.Group>
                       </Col>
-                      <Col xs={12}>
+                      <Col xs={12} className="feedback-buttons">
                         <Button
                           variant="primary"
                           type="submit"
@@ -808,6 +804,16 @@ const handleEmployerFeedbackSubmit = async (e) => {
                         >
                           {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
                         </Button>
+
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          disabled={feedbackSubmitting}
+                          className="mt-3 feedback-form"
+                        >
+                          {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                        </Button>
+
                       </Col>
                     </Row>
                   </Form>
@@ -818,92 +824,102 @@ const handleEmployerFeedbackSubmit = async (e) => {
 
             {/* Employer Feedback */}
             <section id="employer-feedback" className="section-card mb-4 mb-md-5">
-  <h2 className="section-title fw-bold mb-3 mb-md-4">Employer Feedback</h2>
-  <Card className="shadow-sm rounded-3 border-0">
-    <Card.Body className="p-3 p-md-4">
-      <Form onSubmit={handleEmployerFeedbackSubmit}>
-        <Row className="g-3">
-          <Col xs={12} md={6}>
-            <Form.Group controlId="employerName">
-              <Form.Label>Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="name"
-                value={employerFeedback.name}
-                onChange={handleEmployerFeedbackChange}
-                placeholder="Enter your name"
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12} md={6}>
-            <Form.Group controlId="companyName">
-              <Form.Label>Company Name</Form.Label>
-              <Form.Control
-                type="text"
-                name="company"
-                value={employerFeedback.company}
-                onChange={handleEmployerFeedbackChange}
-                placeholder="Enter company name"
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12} md={6}>
-            <Form.Group controlId="designation">
-              <Form.Label>Designation</Form.Label>
-              <Form.Control
-                type="text"
-                name="designation"
-                value={employerFeedback.designation}
-                onChange={handleEmployerFeedbackChange}
-                placeholder="Enter your designation"
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12} md={6}>
-            <Form.Group controlId="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                type="email"
-                name="email"
-                value={employerFeedback.email}
-                onChange={handleEmployerFeedbackChange}
-                placeholder="Enter your email"
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12}>
-            <Form.Group controlId="feedbackMessage">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                name="message"
-                value={employerFeedback.message}
-                onChange={handleEmployerFeedbackChange}
-                placeholder="Enter your feedback"
-                required
-              />
-            </Form.Group>
-          </Col>
-          <Col xs={12}>
-            <Button
-              variant="primary"
-              type="submit"
-              disabled={employerFeedbackSubmitting}
-              className="mt-3 feedback-form"
-            >
-              {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
-            </Button>
-          </Col>
-        </Row>
-      </Form>
-    </Card.Body>
-  </Card>
-</section>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">Employer Feedback</h2>
+              <Card className="shadow-sm rounded-3 border-0">
+                <Card.Body className="p-3 p-md-4">
+                  <Form onSubmit={handleEmployerFeedbackSubmit}>
+                    <Row className="g-3">
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="employerName">
+                          <Form.Label>Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="name"
+                            value={employerFeedback.name}
+                            onChange={handleEmployerFeedbackChange}
+                            placeholder="Enter your name"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="companyName">
+                          <Form.Label>Company Name</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="company"
+                            value={employerFeedback.company}
+                            onChange={handleEmployerFeedbackChange}
+                            placeholder="Enter company name"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="designation">
+                          <Form.Label>Designation</Form.Label>
+                          <Form.Control
+                            type="text"
+                            name="designation"
+                            value={employerFeedback.designation}
+                            onChange={handleEmployerFeedbackChange}
+                            placeholder="Enter your designation"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} md={6}>
+                        <Form.Group controlId="email">
+                          <Form.Label>Email</Form.Label>
+                          <Form.Control
+                            type="email"
+                            name="email"
+                            value={employerFeedback.email}
+                            onChange={handleEmployerFeedbackChange}
+                            placeholder="Enter your email"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12}>
+                        <Form.Group controlId="feedbackMessage">
+                          <Form.Label>Message</Form.Label>
+                          <Form.Control
+                            as="textarea"
+                            rows={3}
+                            name="message"
+                            value={employerFeedback.message}
+                            onChange={handleEmployerFeedbackChange}
+                            placeholder="Enter your feedback"
+                            required
+                          />
+                        </Form.Group>
+                      </Col>
+                      <Col xs={12} className="feedback-buttons">
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          disabled={employerFeedbackSubmitting}
+                          className="mt-3 feedback-form"
+                        >
+                          {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                        </Button>
+
+                        <Button
+                          variant="primary"
+                          type="submit"
+                          disabled={employerFeedbackSubmitting}
+                          className="mt-3 feedback-form"
+                        >
+                          {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                        </Button>
+
+                      </Col>
+                    </Row>
+                  </Form>
+                </Card.Body>
+              </Card>
+            </section>
 
 
 
