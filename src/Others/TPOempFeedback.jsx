@@ -1,21 +1,19 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Table, Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./TPOempFeedback.css";
+import "./TPOEmpFeedback.css";
 
-const TPOempFeedback = () => {
+const TPOEmpFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
     const [filteredFeedbacks, setFilteredFeedbacks] = useState([]);
     const [filters, setFilters] = useState({
         date: "",
         month: "",
         year: "",
-        department: "",
     });
 
     const navigate = useNavigate();
-    const printRef = useRef(); // For printing
 
     useEffect(() => {
         const fetchFeedbacks = async () => {
@@ -25,7 +23,7 @@ const TPOempFeedback = () => {
                 setFeedbacks(sortedFeedbacks);
                 setFilteredFeedbacks(sortedFeedbacks);
             } catch (error) {
-                console.error("Error fetching feedbacks:", error);
+                console.error("Error fetching employer feedbacks:", error);
             }
         };
 
@@ -51,13 +49,9 @@ const TPOempFeedback = () => {
         if (filters.year) {
             filtered = filtered.filter((f) => new Date(f.createdAt).getFullYear().toString() === filters.year);
         }
-        if (filters.department) {
-            filtered = filtered.filter((f) => f.department.toLowerCase() === filters.department.toLowerCase());
-        }
 
         setFilteredFeedbacks(filtered);
     }, [filters, feedbacks]);
-
 
     // Print function
     const handlePrint = () => {
@@ -66,18 +60,16 @@ const TPOempFeedback = () => {
         newWindow.document.write("<html><head><title>Print</title>");
         newWindow.document.write("<style>table { width: 100%; border-collapse: collapse; } th, td { border: 1px solid black; padding: 8px; text-align: left; }</style>");
         newWindow.document.write("</head><body>");
-        newWindow.document.write("<h2>Student Feedbacks</h2>");
+        newWindow.document.write("<h2>Employer Feedbacks</h2>");
         newWindow.document.write(tableContent);
         newWindow.document.write("</body></html>");
         newWindow.document.close();
         newWindow.print();
     };
-    
 
-       
     return (
         <Container className="cont-feed">
-            <h2 className="my-4">Student Feedbacks</h2>
+            <h2 className="my-4">Employer Feedbacks</h2>
 
             {/* Filters */}
             <Form className="mb-3">
@@ -103,49 +95,42 @@ const TPOempFeedback = () => {
                         ))}
                     </Form.Control>
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Select Department</Form.Label>
-                    <Form.Control as="select" name="department" value={filters.department} onChange={handleFilterChange}>
-                        <option value="">All</option>
-                        {[...new Set(feedbacks.map(f => f.department))].map(dept => (
-                            <option key={dept} value={dept}>{dept}</option>
-                        ))}
-                    </Form.Control>
-                </Form.Group>
             </Form>
 
             {/* Feedback Table */}
             <div id="printable-table">
-            <Table striped bordered hover>
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Department</th>
-                        <th>Year</th>
-                        <th>Message</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {filteredFeedbacks.length > 0 ? (
-                        filteredFeedbacks.map((feedback, index) => (
-                            <tr key={feedback.id}>
-                                <td>{index + 1}</td>
-                                <td>{feedback.name}</td>
-                                <td>{feedback.department}</td>
-                                <td>{feedback.year}</td>
-                                <td>{feedback.message}</td>
-                                <td>{new Date(feedback.createdAt).toLocaleDateString()}</td>
-                            </tr>
-                        ))
-                    ) : (
+                <Table striped bordered hover>
+                    <thead>
                         <tr>
-                            <td colSpan="6" className="text-center">No feedbacks found</td>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Company Name</th>
+                            <th>Designation</th>
+                            <th>Message</th>
+                            <th>Email</th>
+                            <th>Date</th>
                         </tr>
-                    )}
-                </tbody>
-            </Table>
+                    </thead>
+                    <tbody>
+                        {filteredFeedbacks.length > 0 ? (
+                            filteredFeedbacks.map((feedback, index) => (
+                                <tr key={feedback.id}>
+                                    <td>{index + 1}</td>
+                                    <td>{feedback.name}</td>
+                                    <td>{feedback.companyName}</td>
+                                    <td>{feedback.designation}</td>
+                                    <td>{feedback.message}</td>
+                                    <td>{feedback.email}</td>
+                                    <td>{new Date(feedback.createdAt).toLocaleDateString()}</td>
+                                </tr>
+                            ))
+                        ) : (
+                            <tr>
+                                <td colSpan="7" className="text-center">No feedbacks found</td>
+                            </tr>
+                        )}
+                    </tbody>
+                </Table>
             </div>
 
             {/* Buttons - Print & Close */}
@@ -153,9 +138,8 @@ const TPOempFeedback = () => {
                 <Button variant="success" onClick={handlePrint} className="prnt-btn">Print</Button>
                 <Button variant="danger" onClick={() => navigate("/TPOPage")} className="cls-btn">Close</Button>
             </div>
-
         </Container>
     );
 };
 
-export default TPOempFeedback;
+export default TPOEmpFeedback;
