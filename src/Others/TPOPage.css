@@ -242,7 +242,9 @@
   
   .feedback-buttons{
     display: flex;
-    width: ;
+    flex-direction: row;
+    width: 40%;
+    margin-inline: 27%;
   }
   
   /* Responsive Design */
