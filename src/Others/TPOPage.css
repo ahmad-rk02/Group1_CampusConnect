@@ -240,6 +240,10 @@
     cursor: not-allowed;
   }
   
+  .feedback-buttons{
+    display: flex;
+    width: ;
+  }
   
   /* Responsive Design */
   @media (min-width: 1200px) {

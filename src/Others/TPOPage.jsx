@@ -37,10 +37,8 @@ const TPOPage = () => {
   });
   
   const [employerFeedbackSubmitting, setEmployerFeedbackSubmitting] = useState(false);
-  const [employerFeedbackSuccess, setEmployerFeedbackSuccess] = useState(false);
-  const [employerFeedbackError, setEmployerFeedbackError] = useState(null);
-  const [showEmployerModal, setShowEmployerModal] = useState(false);
-  
+
+    
 
   useEffect(() => {
     const collectionEndpoints = [
@@ -188,8 +186,8 @@ const handleEmployerFeedbackChange = (e) => {
 const handleEmployerFeedbackSubmit = async (e) => {
   e.preventDefault();
   setEmployerFeedbackSubmitting(true);
-  setEmployerFeedbackError(null);
-  setEmployerFeedbackSuccess(false);
+  setFeedbackError(null);
+  setFeedbackSuccess(false);
 
   try {
     const response = await axios.post(`${STRAPI_API_BASE_URL}/api/employer-feedbacks`, {
@@ -202,20 +200,17 @@ const handleEmployerFeedbackSubmit = async (e) => {
       }
     });
     console.log("Employer feedback submitted successfully:", response.data);
-    setEmployerFeedbackSuccess(true);
+    setFeedbackSuccess(true);
     setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" }); // Reset form
     setShowModal(true); // Show success popup
   } catch (error) {
     console.error("Error submitting employer feedback to Strapi:", error);
-    setEmployerFeedbackError("Failed to submit feedback. Please try again.");
+    setFeedbackError("Failed to submit feedback. Please try again.");
     setShowModal(true); // Show error popup
   } finally {
     setEmployerFeedbackSubmitting(false);
   }
 };
-
-
-
 
   
 
@@ -889,7 +884,7 @@ const handleEmployerFeedbackSubmit = async (e) => {
               />
             </Form.Group>
           </Col>
-          <Col xs={12}>
+          <Col xs={12} className="feedback-buttons">
             <Button
               variant="primary"
               type="submit"
@@ -898,6 +893,16 @@ const handleEmployerFeedbackSubmit = async (e) => {
             >
               {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
             </Button>
+
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={employerFeedbackSubmitting}
+              className="mt-3 feedback-form"
+            >
+              {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+            </Button>
+
           </Col>
         </Row>
       </Form>
