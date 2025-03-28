@@ -1,0 +1,27 @@
+.cont-feed{
+    margin-bottom: 5%;
+}
+
+.cont-feed h2{
+    padding-block: 5px;
+    padding-left: 2%;
+    color: #102c57;
+    font-weight: 700;
+    background-color: #EADBC8;
+}
+
+.below-btns{
+    display: flex;
+    flex-direction: row;
+    margin-top: 7%;
+    width: 20%;
+    margin-inline: 35%;
+}
+
+.prnt-btn, .cls-btn{
+    color: white;
+    background-color: #102c57;
+    padding: 5%;
+    padding-inline: 12%;
+    border: #102c57;
+}

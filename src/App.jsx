@@ -59,6 +59,10 @@ import NewsEvents from "./pages/NewsEvents";
 import PrincipalHods from "./Administration/principalHods";
 import Office from "./Administration/Office";
 import TPOPage from "./Others/TPOPage";
+import TPOstuAdmin from "./Others/TPOstuAdmin";
+import TPOstuFeedback from "./Others/TPOstuFeedback";
+import TPOempAdmin from "./Others/TPOempAdmin";
+import TPOempFeedback from "./Others/TPOempFeedback";
 
 function App() {
   const navItems = [
@@ -160,6 +164,10 @@ function App() {
             <Route path="/studentSection" element={<StudentSection />} />
             <Route path="/office" element={<Office />} />
             <Route path="/tpopage" element={<TPOPage />} />
+            <Route path="/tpostuadmin" element={<TPOstuAdmin />} />
+            <Route path="/tpostufeedback" element={<TPOstuFeedback />} />
+            <Route path="/tpoempadmin" element={<TPOempAdmin />} />
+            <Route path="/tpoempfeedback" element={<TPOempFeedback />} />
           </Routes>
         </div>
       </BrowserRouter>

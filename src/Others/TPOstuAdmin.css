@@ -1,0 +1,17 @@
+.cont-adm{
+    margin-inline: 10%;
+}
+
+.adm-stu-head{
+    color: #102c57;
+    font-weight: 700;
+}
+
+.crd-cont-admin{
+    border: 1px solid #102c57;  
+}
+
+.btn-adm{
+    background-color: #102c57;
+    border-color: #102c57;
+}

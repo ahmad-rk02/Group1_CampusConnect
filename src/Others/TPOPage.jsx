@@ -4,6 +4,9 @@ import axios from "axios";
 import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // For green tick and exclamation mark
 import "./TPOPage.css";
 import { Link } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
+
+
 
 // Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
@@ -15,6 +18,8 @@ const TPOPage = () => {
   const [selectedYear, setSelectedYear] = useState("");
   const [newsOffset, setNewsOffset] = useState(0);
   const NEWS_PER_PAGE = 3;
+
+  const navigate = useNavigate();
 
   // State for feedback form
   const [feedback, setFeedback] = useState({
@@ -807,11 +812,10 @@ const TPOPage = () => {
 
                         <Button
                           variant="primary"
-                          type="submit"
-                          disabled={feedbackSubmitting}
-                          className="mt-3 feedback-form"
+                          className="mt-3 feedback-form ms-2"
+                          onClick={() => navigate("/TPOstuAdmin")}
                         >
-                          {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                          view feedback
                         </Button>
 
                       </Col>
@@ -907,11 +911,10 @@ const TPOPage = () => {
 
                         <Button
                           variant="primary"
-                          type="submit"
-                          disabled={employerFeedbackSubmitting}
-                          className="mt-3 feedback-form"
+                          className="mt-3 feedback-form ms-2"
+                          onClick={() => navigate("/TPOempAdmin")}
                         >
-                          {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
+                          view feedback
                         </Button>
 
                       </Col>

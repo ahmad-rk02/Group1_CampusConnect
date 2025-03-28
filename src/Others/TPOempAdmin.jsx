@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Container, Card, Form, Button, Alert } from "react-bootstrap";
 import axios from "axios";
-import "./TPOstuAdmin.css";
+import "./TPOempAdmin.css";
 import { useNavigate } from "react-router-dom";
 
-const TPOstuAdmin = () => {
+const TPOAdmin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -19,7 +19,7 @@ const TPOstuAdmin = () => {
     // Dummy validation (Replace with actual API call later)
     if (email === "admin@example.com" && password === "password123") {
       alert("Login successful! Redirecting...");
-      navigate("/TPOstuFeedback"); // Redirect to TPOstuFeedback page
+      navigate("/TPOempFeedback"); // Redirect to TPOstuFeedback page
     } else {
       setError("Invalid email or password");
     }
@@ -63,4 +63,4 @@ const TPOstuAdmin = () => {
   );
 };
 
-export default TPOstuAdmin;
+export default TPOAdmin;
