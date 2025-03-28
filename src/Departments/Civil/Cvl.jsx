@@ -1,7 +1,7 @@
 import React from 'react';
 import CvlCarousel from '../../Departments/Civil/CvlCarousel'
 import { Container, Row, Col, Card, ListGroup } from 'react-bootstrap';
-import './cvl.css'
+import './Cvl.css'
 
 import { Link } from 'react-router-dom';
 import Cvlvm from '../../Departments/Civil/Cvlvm';
