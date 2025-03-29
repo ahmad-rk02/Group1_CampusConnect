@@ -72,8 +72,8 @@ const Entc = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-Entc">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="Cvl"
+              className={location.pathname === "Cvl" ? "active-link" : ""}
             >
               Civil Engineering
             </Link>

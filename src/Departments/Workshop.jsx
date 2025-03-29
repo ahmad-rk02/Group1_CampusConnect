@@ -45,40 +45,40 @@ const Workshop = () => {
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ws">
                   <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/Entc"
+                    className={location.pathname === "/Entc" ? "active-link" : ""}
                   >
                     Electronics & Telecommunication Engineering
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ws">
                   <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/instru"
+                    className={location.pathname === "/instru" ? "active-link" : ""}
                   >
                     Instrumentation Engineering
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ws">
                   <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/Elec"
+                    className={location.pathname === "/Elec" ? "active-link" : ""}
                   >
                     Electrical Engineering
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ws">
                   <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/mech"
+                    className={location.pathname === "/mech" ? "active-link" : ""}
                   >
                     Mechanical Engineering
                   </Link>
                 </ListGroup.Item>
                 <ListGroup.Item className="left-nav-row-ws">
                   <Link
-                    to=""
-                    className={location.pathname === "" ? "active-link" : ""}
+                    to="/Cvl"
+                    className={location.pathname === "/Cvl" ? "active-link" : ""}
                   >
                     Civil Engineering
                   </Link>

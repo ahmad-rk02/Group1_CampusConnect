@@ -40,10 +40,10 @@ const Cvl = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-cvl">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/Entc"
+              className={location.pathname === "/Entc" ? "active-link" : ""}
             >
-              cvltronics & Tcvlommunication Engineering
+              Eletronics & Telecommunication Engineering
             </Link>
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-cvl">

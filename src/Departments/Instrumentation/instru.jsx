@@ -39,8 +39,8 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/Entc"
+              className={location.pathname === "/Entc" ? "active-link" : ""}
             >
               Electronics & Telecommunication Engineering
             </Link>
@@ -71,8 +71,8 @@ const instru = () => {
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link
-              to=""
-              className={location.pathname === "" ? "active-link" : ""}
+              to="/Cvl"
+              className={location.pathname === "/Cvl" ? "active-link" : ""}
             >
               Civil Engineering
             </Link>

@@ -38,8 +38,8 @@ const Mech = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Mech">
                       <Link
-                        to=""
-                        className={location.pathname === "" ? "active-link" : ""}
+                        to="/Entc"
+                        className={location.pathname === "/Entc" ? "active-link" : ""}
                       >
                         Electronics & Telecommunication Engineering
                       </Link>
@@ -62,7 +62,7 @@ const Mech = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Mech-01">
                       <Link
-                        to=""
+                        to="/mech"
                         className={location.pathname === "/mech" ? "active-link" : ""}
                       >
                         <b>Mechanical Engineering</b>
@@ -70,8 +70,8 @@ const Mech = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Mech">
                       <Link
-                        to=""
-                        className={location.pathname === "" ? "active-link" : ""}
+                        to="/Cvl"
+                        className={location.pathname === "/Cvl" ? "active-link" : ""}
                       >
                         Civil Engineering
                       </Link>
