@@ -815,7 +815,7 @@ const TPOPage = () => {
                           className="mt-3 feedback-form ms-2"
                           onClick={() => navigate("/TPOstuAdmin")}
                         >
-                          view feedback
+                          View Feedback
                         </Button>
 
                       </Col>
@@ -914,7 +914,7 @@ const TPOPage = () => {
                           className="mt-3 feedback-form ms-2"
                           onClick={() => navigate("/TPOempAdmin")}
                         >
-                          view feedback
+                          View Feedback
                         </Button>
 
                       </Col>
