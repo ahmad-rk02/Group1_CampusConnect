@@ -39,9 +39,16 @@ const TPOEmpFeedback = () => {
     // Apply filters dynamically
     useEffect(() => {
         let filtered = feedbacks;
-
+    
         if (filters.date) {
-            filtered = filtered.filter((f) => new Date(f.createdAt).toISOString().split("T")[0] === filters.date);
+            filtered = filtered.filter((f) => {
+                const feedbackDate = new Date(f.createdAt);
+                const filterDate = new Date(filters.date);
+                
+                return feedbackDate.getFullYear() === filterDate.getFullYear() &&
+                       feedbackDate.getMonth() === filterDate.getMonth() &&
+                       feedbackDate.getDate() === filterDate.getDate();
+            });
         }
         if (filters.month) {
             filtered = filtered.filter((f) => new Date(f.createdAt).getMonth() + 1 === parseInt(filters.month));
@@ -49,7 +56,7 @@ const TPOEmpFeedback = () => {
         if (filters.year) {
             filtered = filtered.filter((f) => new Date(f.createdAt).getFullYear().toString() === filters.year);
         }
-
+    
         setFilteredFeedbacks(filtered);
     }, [filters, feedbacks]);
 
@@ -121,7 +128,7 @@ const TPOEmpFeedback = () => {
                                     <td>{feedback.designation}</td>
                                     <td>{feedback.message}</td>
                                     <td>{feedback.email}</td>
-                                    <td>{new Date(feedback.createdAt).toLocaleDateString()}</td>
+                                    <td>{new Date(feedback.createdAt).toLocaleDateString('en-IN')}</td>
                                 </tr>
                             ))
                         ) : (

@@ -7,8 +7,8 @@ function CarouselPage() {
   const [carouselData, setCarouselData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE_URL = "http://localhost:1337"; // Adjust this for production
-
+  const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL; // Adjust this for production
+   const API_MEDIA_BASE_URL=import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
   useEffect(() => {
     const fetchCarouselData = async () => {
       try {
@@ -40,7 +40,7 @@ function CarouselPage() {
           <Carousel.Item key={item.id}>
             <img
               className="d-block w-100 carousel-image"
-              src={`${API_BASE_URL}${item.image.url}`} // Adjusted to avoid attributes
+              src={`${API_MEDIA_BASE_URL}${item.image.url}`} // Adjusted to avoid attributes
               alt={item.title || "Carousel slide"}
             />
             <div className="carousel-caption">
