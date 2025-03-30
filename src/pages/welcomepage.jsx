@@ -31,7 +31,7 @@ function WelcomeSection() {
               Government College of Engineering, Chandrapur
             </span>
           </h3>
-          <p className="text-center text-md-start">
+          <p className="welcome-para">
             Government College of Engineering Chandrapur is established in 1996 This is the only Government Institute under Gondwana University, Gadchiroli. This Government institute is completely funded by Government of Maharashtra. The Institute is under Director of Technical Education, M.S., Mumbai and is administered through its Regional office at Nagpur. Now a days, due to globalization there is stiff competition at the national & International level as well phenomenal growth in the technology. For this, competent technocrats & engineers are in great demand and to serve this requirement, Government College of Engineering,Chandrapur is taking efforts to produce high quality technocrats.
           </p>
         </Col>
