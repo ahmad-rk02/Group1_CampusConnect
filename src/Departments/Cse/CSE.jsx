@@ -38,7 +38,7 @@ const CSE = () => {
                         to="/cse"
                         className={location.pathname === "/cse" ? "active-link" : ""}
                       >
-                        <b onClick={() => setOpenDropdown(!openDropdown)}>Computer Science & Engineering</b>
+                        <b className="left-nav-row-cse-01" onClick={() => setOpenDropdown(!openDropdown)}>Computer Science & Engineering</b>
                       </Link>
 
                       {

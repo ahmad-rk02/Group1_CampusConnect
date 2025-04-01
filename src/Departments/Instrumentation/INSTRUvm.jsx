@@ -44,7 +44,7 @@ const INSTRUvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="instru-intro">
+      <div className="instru-intro" id='vission-mission-instru'>
         <div className="instru-intro-heading">
           <h3>Instrumentation Engineering</h3>
         </div>
@@ -124,7 +124,7 @@ const INSTRUvm = ({ className }) => {
                     <div className='right-'>
       <div className='infra-instru'>
         <div className='instru-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-instru' >Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
           <div key={lab.id} className='lab-instru'>

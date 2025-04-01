@@ -41,11 +41,13 @@
     margin-bottom: 5px;
   }
   
-  .left-nav-row-Elec,
-  .left-nav-row-Elec-01 {
+  .left-nav-row-Elec{
     text-align: center;
     font-size: 1.2rem;
-    
+  }
+
+  .left-nav-row-Elec-01 {
+    text-align: center;
   }
   
   .left-sidebar-Elec a {
@@ -294,6 +296,11 @@
   {
       margin-inline: 2%;
       padding-inline: 0;
+    }
+
+    .dropdown-Elec-text{
+      font-size: 10px;
+      line-height: 2.5vh;
     }
     
   }

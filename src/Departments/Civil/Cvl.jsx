@@ -5,10 +5,14 @@ import './Cvl.css'
 
 import { Link } from 'react-router-dom';
 import Cvlvm from '../../Departments/Civil/Cvlvm';
+import DropDownCvl from './DropDownCvl';
+import { useState } from 'react';
 
 
 
 const Cvl = () => {
+    const [openDropdown, setOpenDropdown] = useState(false);
+
   return (
     
        <div className='cvl-page-div d-flex flex-column'>
@@ -30,7 +34,7 @@ const Cvl = () => {
     <div className="left-sidebar-wrapper">
       <Card className="left-nav-cvl">
         <ListGroup variant="flush">
-          <ListGroup.Item className="left-nav-row-cvl-01">
+          <ListGroup.Item className="left-nav-row-cvl">
             <Link
               to="/cse"
               className={location.pathname === "/cse" ? "active-link" : "/cse"}
@@ -70,13 +74,23 @@ const Cvl = () => {
               Mechanical Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-cvl">
+          <ListGroup.Item className="left-nav-row-cvl-01">
             <Link
               to="/cvl"
               className={location.pathname === "/cvl" ? "active-link" : ""}
             >
-              <b>Civil Engineering</b>
+              <b className="left-nav-row-cvl-01" onClick={() => setOpenDropdown(!openDropdown)} >Civil Engineering</b>
             </Link>
+
+            {
+                        openDropdown &&
+
+                        <div className={`cvl-dropdown-cvl ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownCvl />
+                        </div>
+
+                      }
+
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-cvl">
             <Link

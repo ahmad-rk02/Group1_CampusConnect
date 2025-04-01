@@ -98,7 +98,7 @@ const CSEvm = ({ className }) => {
                           <div className='right-'>
       <div className='infra-cse'>
         <div className='cse-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-cse'>Laboratories</h3>
         </div>
         <div>
                     <div className='lab-1-cs'> 

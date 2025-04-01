@@ -111,6 +111,21 @@
     border-radius: 16px;
 }
 
+button.dropdown-toggle{
+    width: 100%;
+    background-color: #102c57;
+    border-color: #102c57;
+}
+
+div.dropdown-menu.show{
+    width: 100%;
+}
+
+.dropdown-scroll{
+    margin-block: 5%;
+    margin-inline: 10%;
+}
+
 /* Responsive adjustments using media queries */
 
 @media (max-width: 1200px) {

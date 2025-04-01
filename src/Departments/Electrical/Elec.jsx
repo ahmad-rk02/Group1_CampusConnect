@@ -6,9 +6,13 @@ import './Elec.css'
 import { Link } from 'react-router-dom';
 import Elecvm from '../../Departments/Electrical/Elecvm';
 import ElectFaculty from './ElectFaculty';
+import DropDownElect from './DropDownElect';
+import { useState } from 'react';
 
 
 const Elec = () => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+
   return (
     
        <div className='Elec-page-div d-flex flex-column'>
@@ -30,7 +34,7 @@ const Elec = () => {
     <div className="left-sidebar-wrapper">
       <Card className="left-nav-Elec">
         <ListGroup variant="flush">
-          <ListGroup.Item className="left-nav-row-Elec-01">
+          <ListGroup.Item className="left-nav-row-Elec">
             <Link
               to="/cse"
               className={location.pathname === "/cse" ? "active-link" : "/cse"}
@@ -54,13 +58,23 @@ const Elec = () => {
              Instrumentation Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-Elec">
+          <ListGroup.Item className="left-nav-row-Elec-01">
             <Link
               to="/Elec"
               className={location.pathname === "/Elec" ? "active-link" : ""}
             >
-              <b>Electrical Engineering</b>
+              <b className="left-nav-row-Elec-01" onClick={() => setOpenDropdown(!openDropdown)} >Electrical Engineering</b>
             </Link>
+
+            {
+                        openDropdown &&
+
+                        <div className={`elect-dropdown-elect ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownElect />
+                        </div>
+
+                      }
+
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-Elec">
             <Link

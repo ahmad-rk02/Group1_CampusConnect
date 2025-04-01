@@ -41,11 +41,13 @@ div.head-box-cse.row {
   margin-bottom: 5px;
 }
 
-.left-nav-row-cse,
-.left-nav-row-cse-01 {
+.left-nav-row-cse{
   text-align: center;
   font-size: 1.2rem;
-  
+}
+
+.left-nav-row-cse-01{
+  text-align: center;
 }
 
 .left-sidebar-cse a {
@@ -267,4 +269,9 @@ ul.dropdown-cse-text{
     padding-inline: 0;
   }
   
+  .dropdown-cse-text{
+    font-size: 10px;
+    line-height: 2.5vh;
+  }
+
 }

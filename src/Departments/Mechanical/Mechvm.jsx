@@ -43,7 +43,7 @@ const Mechvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="mech-intro">
+      <div className="mech-intro" id='vission-mission-mech'>
         <div className="mech-intro-heading">
           <h3>Mechanical Engineering</h3>
         </div>
@@ -123,7 +123,7 @@ const Mechvm = ({ className }) => {
                     <div className='right-'>
       <div className='infra-mech'>
         <div className='mech-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-mech' >Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
           <div key={lab.id} className='lab-mech'>

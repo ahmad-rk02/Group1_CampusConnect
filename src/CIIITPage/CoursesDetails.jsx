@@ -20,7 +20,23 @@ import mes1 from '../assets/MES-1.jpg';
 import mes2 from '../assets/MES-2.jpg';
 import am1 from '../assets/AM-1.jpg';
 import am3 from '../assets/AM-3.jpg';
+import { Dropdown, DropdownButton } from "react-bootstrap";
+
 const CoursesDetails = () => {
+  
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  const handleSelect = (eventKey) => {
+    const element = document.getElementById(eventKey);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handleToggle = (isOpen) => {
+    setDropdownOpen(isOpen);
+  };
+
   return (
     <div>
       
@@ -84,10 +100,30 @@ const CoursesDetails = () => {
 
         <Col>
         <div className='ciiit-heading'>
-        <h1>Centers Under CIIIT</h1>
+        <h1>CIIIT Labs</h1>
         </div>
+
+      {/* Dropdown Button */}
+      <DropdownButton
+         id="dropdown-scroll"
+         className={`dropdown-scroll ${dropdownOpen ? 'dropdown-open' : ''}`}
+         title="Go to Section"
+         onSelect={handleSelect}
+         onToggle={handleToggle}
+      >
+        <Dropdown.Item eventKey="section1">Innovation Design and Incubation Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section2">Product Verification Analysis Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section3">Product Lifecycle Management Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section4">Value Engineering and Benchmarking Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section5">Autonomous Connected Electrified (ACE) </Dropdown.Item>
+        <Dropdown.Item eventKey="section6">Mechatronics and IoT Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section7">Digital Manufacturing Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section8">Manufacturing Execution System (MES) Center</Dropdown.Item>
+        <Dropdown.Item eventKey="section9">Advanced Manufacturing Center</Dropdown.Item>
+      </DropdownButton>
+
         <div className='ciiit-hed'> 
-          <h4>01.Innovation Design and Incubation Center </h4>
+          <h4 id="section1" >01.Innovation Design and Incubation Center </h4>
         </div>
         <div className='c-para'>
          <p>Design Engineering (Innovation Design and Incubation Center) facilitates experiential learning pertaining to product design and engineering. Innovation Design and Incubation center provides industry environment with the latest technology tools (such as PTC CREO etc) used by major industries for product design & engineering. This center consists of high-end- industrial workstations, which are loaded with advanced tools used for Product Design and Engineering.</p>
@@ -129,7 +165,7 @@ const CoursesDetails = () => {
 
 
       <div className='ciiit-hed'> 
-          <h4>02.Product Verification Analysis Center</h4>
+          <h4 id="section2" >02.Product Verification Analysis Center</h4>
         </div>
         <div className='c-para'>
          <p>This center facilitates experiental learning pertaining to product validation. Product Verification Analysis Center provides an industry environment with the latest technology tools used by major industries for product validation and optimization of design. This center consist of simulation software technology that enables engineers to validate and optimize their design using virtual prototypes. These technologies help companies to improve quality, save time, and reduce costs associated with design and test of manufactured products. These software's (such as MSC Nastran, Patran etc) are used by leading manufacturers for linear and nonlinear finite element abalysis (FEA), fluid dynamics (CFD), advanced material modeling, acoustics, fluidstructure interaction (FSI), multi-physics, optimization, fatigue and durability, multi-body dynamics, controls, and manufacturing process simulation.</p>
@@ -167,7 +203,7 @@ const CoursesDetails = () => {
       </div>
 
       <div className='ciiit-hed'> 
-          <h4>03.Product Lifecycle Management Center</h4>
+          <h4 id="section3" >03.Product Lifecycle Management Center</h4>
         </div>
         <div className='c-para'>
          <p>
@@ -207,7 +243,7 @@ const CoursesDetails = () => {
       </div>
       
       <div className='ciiit-hed'> 
-          <h4>04.Value Engineering and Benchmarking Center</h4>
+          <h4 id='section4' >04.Value Engineering and Benchmarking Center</h4>
         </div>
         <div className='c-para'>
          <p>
@@ -249,7 +285,7 @@ const CoursesDetails = () => {
       </div>
 
       <div className='ciiit-hed'> 
-      <h4>05.Autonomous Connected Electrified (ACE) </h4>
+      <h4 id='section5' >05.Autonomous Connected Electrified (ACE) </h4>
         </div>
         <div className='c-para'>
          <p>
@@ -290,7 +326,7 @@ const CoursesDetails = () => {
       </div>
 
       <div className='ciiit-hed'> 
-      <h4>06.Mechatronics and IoT Center</h4>
+      <h4 id='section6' >06.Mechatronics and IoT Center</h4>
         </div>
         <div className='c-para'>
          <p>
@@ -334,7 +370,7 @@ Mechatronics is an integration of interdisciplinary technologies mainly mechanic
       </div>
 
       <div className='ciiit-hed'> 
-      <h4>07.Digital Manufacturing Center</h4>
+      <h4 id='section7' >07.Digital Manufacturing Center</h4>
         </div>
         <div className='c-para'>
          <p>
@@ -375,7 +411,7 @@ Mechatronics is an integration of interdisciplinary technologies mainly mechanic
       </div>
 
       <div className='ciiit-hed'> 
-      <h4>08.Manufacturing Execution System (MES) Center
+      <h4 id='section8' >08.Manufacturing Execution System (MES) Center
       </h4>
         </div>
         <div className='c-para'>
@@ -416,7 +452,7 @@ Mechatronics is an integration of interdisciplinary technologies mainly mechanic
       </div>
 
       <div className='ciiit-hed'> 
-      <h4>09.Advanced Manufacturing Center</h4>
+      <h4 id='section9' >09.Advanced Manufacturing Center</h4>
         </div>
         <div className='c-para'>
          <p>

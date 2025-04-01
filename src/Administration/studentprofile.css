@@ -148,7 +148,7 @@
 }
 
 .student-grievances-table-container {
-  max-height: 400px;
+  max-height: 300px;
   overflow-x: auto;
   overflow-y: auto;
   border: 1px solid #ecf0f1;
@@ -448,5 +448,10 @@
   .student-grievances-th,
   .student-grievances-td {
     font-size: 0.75rem;
+  }
+
+  .student-grievances-table-container{
+    max-height: 230px;
+    overflow-y: auto;
   }
 }

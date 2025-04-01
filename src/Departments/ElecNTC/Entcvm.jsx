@@ -41,7 +41,7 @@ const Entcvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="entc-intro">
+      <div className="entc-intro" id='vission-mission-entc' >
         <div className="entc-intro-heading">
           <h3>Electronics & Telecommunication Engineering</h3>
         </div>
@@ -121,7 +121,7 @@ const Entcvm = ({ className }) => {
                     <div className='right-'>
       <div className='infra-entc'>
         <div className='entc-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-entc' >Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
           <div key={lab.id} className='lab-entc'>

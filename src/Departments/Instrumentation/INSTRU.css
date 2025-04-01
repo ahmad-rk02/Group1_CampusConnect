@@ -41,11 +41,13 @@ div.head-box-instru.row {
   margin-bottom: 5px;
 }
 
-.left-nav-row-instru,
-.left-nav-row-instru-01 {
+.left-nav-row-instru{
   text-align: center;
   font-size: 1.2rem;
-  
+}
+
+.left-nav-row-instru-01 {
+  text-align: center;
 }
 
 .left-sidebar-instru a {
