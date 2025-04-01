@@ -16,6 +16,7 @@
   }
   
   .welcome-section p {
+    text-align: justify;
     font-size: 1rem;
     color: #555;
     line-height: 1.6;
@@ -98,6 +99,7 @@
     .welcome-section p {
       font-size: 0.95rem;
       text-align: center;
+      text-align: justify;
     }
   
     .key-people-section h5 {
@@ -117,5 +119,7 @@
     .key-people-section .card .card-text {
       font-size: 0.85rem;
     }
+ 
+    
   }
   
