@@ -41,7 +41,7 @@ const Elecvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="Elec-intro">
+      <div className="Elec-intro" id='vission-mission-elect'>
         <div className="Elec-intro-heading">
           <h3>Electrical Engineering</h3>
         </div>
@@ -122,7 +122,7 @@ const Elecvm = ({ className }) => {
                     <div className='right-'>
       <div className='infra-Elec'>
         <div className='Elec-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-elect' >Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
           <div key={lab.id} className='lab-Elec'>

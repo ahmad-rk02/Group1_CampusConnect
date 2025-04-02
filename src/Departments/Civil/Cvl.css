@@ -41,11 +41,13 @@
     margin-bottom: 5px;
   }
   
-  .left-nav-row-cvl,
-  .left-nav-row-cvl-01 {
+  .left-nav-row-cvl {
     text-align: center;
-    font-size: 1.2rem;
-    
+    font-size: 1.2rem; 
+  }
+
+  .left-nav-row-cvl-01{
+    text-align: center;
   }
   
   .left-sidebar-cvl a {

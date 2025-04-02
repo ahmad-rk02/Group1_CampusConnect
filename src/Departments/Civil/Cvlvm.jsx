@@ -43,7 +43,7 @@ const Cvlvm = ({ className }) => {
 
   return (
     <div className={className}>
-      <div className="cvl-intro">
+      <div className="cvl-intro" id='vission-mission-cvl'>
         <div className="cvl-intro-heading">
           <h3>Civil Engineering</h3>
         </div>
@@ -127,7 +127,7 @@ leadership qualities and teamwork.</li>
                     <div className='right-'>
       <div className='infra-cvl'>
         <div className='cvl-mi-heading'>
-          <h3>Laboratories</h3>
+          <h3 id='laboratories-cvl' >Laboratories</h3>
         </div>
         {displayedLabs.map((lab) => (
           <div key={lab.id} className='lab-cvl'>

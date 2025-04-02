@@ -5,9 +5,13 @@ import './INSTRU.css'
 import InstruFaculty from './InstruFaculty';
 import { Link } from 'react-router-dom';
 import INSTRUvm from '../../Departments/Instrumentation/INSTRUvm';
+import DropDownInstru from './DropDownInstru';
+import { useState } from 'react';
 
 
 const instru = () => {
+  const [openDropdown, setOpenDropdown] = useState(false);
+  
   return (
     
        <div className='instru-page-div d-flex flex-column'>
@@ -29,7 +33,7 @@ const instru = () => {
     <div className="left-sidebar-wrapper">
       <Card className="left-nav-instru">
         <ListGroup variant="flush">
-          <ListGroup.Item className="left-nav-row-instru-01">
+          <ListGroup.Item className="left-nav-row-instru">
             <Link
               to="/cse"
               className={location.pathname === "/cse" ? "active-link" : "/cse"}
@@ -45,13 +49,23 @@ const instru = () => {
               Electronics & Telecommunication Engineering
             </Link>
           </ListGroup.Item>
-          <ListGroup.Item className="left-nav-row-instru">
+          <ListGroup.Item className="left-nav-row-instru-01">
             <Link
               to="/instru"
               className={location.pathname === "/intru" ? "active-link" : ""}
             >
-             <b>Instrumentation Engineering</b> 
+             <b className="left-nav-row-instru-01" onClick={() => setOpenDropdown(!openDropdown)} >Instrumentation Engineering</b> 
             </Link>
+
+            {
+                        openDropdown &&
+
+                        <div className={`instru-dropdown-instru ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownInstru />
+                        </div>
+
+                      }
+
           </ListGroup.Item>
           <ListGroup.Item className="left-nav-row-instru">
             <Link

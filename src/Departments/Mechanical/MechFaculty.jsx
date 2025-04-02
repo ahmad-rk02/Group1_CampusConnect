@@ -54,7 +54,7 @@ const MechFaculty = () => {
   if (error) return <p>Error loading data: {error.message}</p>;
 
   return (
-    <div className="faculty-container-mech">
+    <div className="faculty-container-mech" id="faculty-mech">
       {/* HOD Section */}
       <h3 className="faculty-heading">Head of Department</h3>
       {hod ? (

@@ -6,9 +6,10 @@ function DropDownCse() {
       <div className='dropdown-cse'>
            <ul style={{listStyleType: 'none'}} className='dropdown-cse-text'>
             <li className='vission-mission-cse'><a href='#vission-mission-cse'>Vision & Mission</a></li>
+            <li><a href='#laboratories-cse'>Laboratories</a></li>
             <li><a href='#code-unnati-cse'>Code Unnati</a></li>
-            <li><a href='#cmt-club-cse'>Committees and C
-              lubs</a></li>
+            <li><a href='#cmt-club-cse'>Committees and Clubs</a></li>
+            <li><a href='#faculty-cse'>Faculty Details</a></li>
            </ul>
       </div>
     </div>

@@ -71,7 +71,6 @@
 }
 
 .left-nav-bh {
-  position: -webkit-sticky;
   position: sticky;
   top: 5px;
   background-color: white;
@@ -87,6 +86,26 @@
 
 .left-nav-row-bh-01 {
   font-weight: 700;
+}
+
+.bh-goldenn-1 {
+  background-color: #eadbc8;
+  width: 60%;
+  height: 50px;
+  position: relative;
+  margin-right: 50px;
+  margin-top: -80px;
+  margin-left: 480px;
+
+}
+
+.bh-goldenn-1 h4 {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 10px;
+  color: #102C57;
+  width: 50%;
 }
 
 .boyshostel-text1 {
@@ -193,14 +212,14 @@
 
 }
 
-/* .apply-button-bh:active{
+.apply-button-bh:active{
   background-color: #eadbc8;
   border-color: #102C57;
   border-width: 2px;
   color: #102C57;
   font-size: 16px;
   font-weight: 500;
-} */
+}
 
 
 .EN-button-bh {
@@ -256,7 +275,7 @@
 
 .hostel-info-table-bh th,
 .hostel-info-table-bh td {
-  border: 1px solid #000000;
+  border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
 }

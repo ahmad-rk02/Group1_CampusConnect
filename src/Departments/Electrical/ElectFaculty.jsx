@@ -55,7 +55,7 @@ const ElectFaculty = () => {
   if (error) return <p>Error loading data: {error.message}</p>;
 
   return (
-    <div className="faculty-container-elect">
+    <div className="faculty-container-elect" id="faculty-elect">
       {/* HOD Section */}
       <h3 className="faculty-heading">Head of Department</h3>
       {hod ? (

@@ -5,9 +5,13 @@ import './Mech.css'
 import MechFaculty from './MechFaculty';
 import { Link } from 'react-router-dom';
 import Mechvm from '../../Departments/Mechanical/Mechvm';
+import DropDownMech from './DropDownMech';
+import { useState } from 'react';
 
 
 const Mech = () => {
+   const [openDropdown, setOpenDropdown] = useState(false);
+
   return (
     <div className='instru-page-div d-flex flex-column'>
       <Container fluid className="p-0 w-100 flex-grow-1">
@@ -65,8 +69,18 @@ const Mech = () => {
                         to="/mech"
                         className={location.pathname === "/mech" ? "active-link" : ""}
                       >
-                        <b>Mechanical Engineering</b>
+                        <b className="left-nav-row-Mech-01" onClick={() => setOpenDropdown(!openDropdown)} >Mechanical Engineering</b>
                       </Link>
+
+                      {
+                        openDropdown &&
+
+                        <div className={`mech-dropdown-mech ${openDropdown ? "dropdown-open" : ""}`}>
+                          <DropDownMech />
+                        </div>
+
+                      }
+
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Mech">
                       <Link
