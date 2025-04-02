@@ -10,9 +10,8 @@ const Tenders = () => {
   const [tenders, setTenders] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-    // const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;       //uncomment this before pushing to deployment
-    const API_BASE_URL = "http://localhost:1337";                           //comment this before pushing to deployment
-
+    const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;       //uncomment this before pushing to deployment
+     
   useEffect(() => {
     const fetchTenderData = async () => {
       try {
