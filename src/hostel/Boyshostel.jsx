@@ -10,6 +10,7 @@ const Boyshostel = () => {
   const API_URL = `${import.meta.env.VITE_STRAPI_API_BASE_URL}/api/gec-boys-hostels`;
 
 
+
   useEffect(() => {
     fetch(API_URL)
       .then((response) => response.json())
@@ -49,6 +50,7 @@ const Boyshostel = () => {
       </Row>
 
       {/* Hostel Information */}
+      <div className='Right-row-bh'>
       <Card.Header className="bg-goldenn-1">
         <h4>Hostel Facilities</h4>
       </Card.Header>
@@ -149,6 +151,7 @@ const Boyshostel = () => {
           </tbody>
         </table>
       </Col>
+      </div>
     </Container>
   );
 };
