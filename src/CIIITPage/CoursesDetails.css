@@ -111,33 +111,50 @@
     border-radius: 16px;
 }
 
-button.dropdown-toggle{
-    width: 100%;
-    background-color: #102c57;
-    border-color: #102c57;
-}
-
-div.dropdown-menu.show{
-    width: 100%;
-}
-
-.dropdown-scroll{
-    margin-block: 5%;
-    margin-inline: 10%;
-}
-
-div.dropdown-menu.show{
-    margin-top: 0;
-}
-
-.dropdown-scroll .dropdown-menu {
-    position: static !important; 
-    float: none !important; 
-    width: 100% !important; 
-    margin-top: 0.5rem !important;
-    border: 1px solid rgba(0, 0, 0, 0.15) !important; 
-    box-shadow: none !important; 
+.dropdown-ciiit{
+    margin-top: 3%;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: left;
+    top: 4rem;
+    margin-inline: 15%;
+    width: 80%;
+    background-color: #ffffff;
+    box-shadow: 1px 1px 3px;
+    overflow: hidden;
+    transition: all 0.5s ease; 
+    
   }
+  
+    
+  
+  
+  .dropdown-ciiit-text li {
+    border-bottom: 1px solid #ccc; 
+  }
+
+  .dropdown-ciiit-text a{
+    text-decoration: none;
+    color: #102c57;
+  }
+  
+  ul.dropdown-ciiit-text{
+    padding-inline: 3vh;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  
+  .dropdown-ciiit-text li:last-child {
+    border-bottom: none; 
+  }
+  
+  .dropdown-ciiit-text{
+    font-size: medium;
+    line-height: 5vh;
+  }
+  
+
+
 
 /* Responsive adjustments using media queries */
 
@@ -215,6 +232,8 @@ div.dropdown-menu.show{
         width: 100%;
     }
 
+   
+
     .head-box-coursesdetls{
         width: 100%;
         padding: 0%;
@@ -269,4 +288,14 @@ div.dropdown-menu.show{
     .feature-ciiit{
         margin-inline: 7%;
     }
+
+    .dropdown-ciiit-text a{
+       font-size: 11px;
+      }
+
+      .dropdown-ciiit{
+        width: 100%;
+        margin-inline: 2%;
+        margin-block: 5%;
+      }
 }

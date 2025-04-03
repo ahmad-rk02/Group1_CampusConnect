@@ -297,6 +297,11 @@
       margin-inline: 2%;
       padding-inline: 0;
     }
+
+    .dropdown-cvl-text{
+      font-size: 10px;
+      line-height: 2.5vh;
+    } 
     
   }
   
