@@ -20,23 +20,10 @@ import mes1 from '../assets/MES-1.jpg';
 import mes2 from '../assets/MES-2.jpg';
 import am1 from '../assets/AM-1.jpg';
 import am3 from '../assets/AM-3.jpg';
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import CIIITDropDown from './CIIITDropDown';
 
 const CoursesDetails = () => {
   
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const handleSelect = (eventKey) => {
-    const element = document.getElementById(eventKey);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
-  const handleToggle = (isOpen) => {
-    setDropdownOpen(isOpen);
-  };
-
   return (
     <div>
       
@@ -60,7 +47,7 @@ const CoursesDetails = () => {
 
               <ListGroup.Item className="left-nav-row-AbtCiiit-01">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
-                  Courses Details
+                   CIIIT Labs
                 </Link>
               </ListGroup.Item>
 
@@ -103,25 +90,11 @@ const CoursesDetails = () => {
         <h1>CIIIT Labs</h1>
         </div>
 
-      {/* Dropdown Button */}
-      <DropdownButton
-         id="dropdown-scroll"
-         className={`dropdown-scroll ${dropdownOpen ? 'dropdown-open' : ''}`}
-         title="Go to Section"
-         onSelect={handleSelect}
-         onToggle={handleToggle}
-      >
-        <Dropdown.Item eventKey="section1">Innovation Design and Incubation Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section2">Product Verification Analysis Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section3">Product Lifecycle Management Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section4">Value Engineering and Benchmarking Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section5">Autonomous Connected Electrified (ACE) </Dropdown.Item>
-        <Dropdown.Item eventKey="section6">Mechatronics and IoT Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section7">Digital Manufacturing Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section8">Manufacturing Execution System (MES) Center</Dropdown.Item>
-        <Dropdown.Item eventKey="section9">Advanced Manufacturing Center</Dropdown.Item>
-      </DropdownButton>
-
+        <CIIITDropDown />
+        
+        <div className='ciiit-heading'>
+        <h1>CIIIT course detail</h1>
+        </div>
         <div className='ciiit-hed'> 
           <h4 id="section1" >01.Innovation Design and Incubation Center </h4>
         </div>

@@ -15,6 +15,7 @@
 }
 
   .marquee-container {
+    overflow-x: hidden;
     width: fit-content;
     background-color: #102C57;
     display: flex;
