@@ -10,7 +10,6 @@ import Contact from "./pages/Contact";
 import UG from './Programmes/UG';
 import PG from './Programmes/PG';
 import PhD from './Programmes/PhD';
-import GrievanceForm from './Administration/GrievanceForm';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import "./App.css";
 import AboutInstitute from './About/AboutInstitute';
@@ -120,7 +119,6 @@ function App() {
             <Route path="/ug" element={<UG />} />
             <Route path="/phd" element={<PhD />} />
             <Route path="/pg" element={<PG />} />
-            <Route path="/grievanceform" element={<GrievanceForm />} />
             <Route path="/tenders" element={<Tenders />} />
             <Route path="/committees" element={<Committees />} />
             <Route path="/studentsignup" element={<StudentSignUp />} />

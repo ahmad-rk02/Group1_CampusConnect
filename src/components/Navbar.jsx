@@ -20,10 +20,10 @@ function Navbar({ imageSrcPath, navItems }) {
         const response = await axios.get(STRAPI_API_URL, {
           params: {
             sort: 'createdAt:desc',
-            populate: '*', // Populates all related fields, including the pdf media collection
+            populate: '*',
           },
         });
-        setMarqueeEvents(response.data.data); // Store the fetched events
+        setMarqueeEvents(response.data.data);
       } catch (error) {
         console.error('Error fetching events from Strapi:', error);
       }
@@ -33,8 +33,6 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const handleSearch = (event) => {
     event.preventDefault();
-
-    // Simple search logic
     const lowerQuery = query.toLowerCase();
     const routes = {
       home: '/home',
@@ -114,10 +112,10 @@ function Navbar({ imageSrcPath, navItems }) {
         "Office": "/Office",
         "Training & Placements": "/tpopage"
       };
+      
       if (typeof subLink === "string") {
         const isExternal = routeMap[subLink] && (routeMap[subLink].startsWith("http://") || routeMap[subLink].startsWith("https://"));
         
-        // Handle external links
         if (isExternal) {
           return (
             <li key={subIndex}>
@@ -165,124 +163,122 @@ function Navbar({ imageSrcPath, navItems }) {
     return diffInDays <= 7;
   };
 
-  // Helper function to ensure a valid external URL
   const ensureValidUrl = (url) => {
-    if (!url) return '#'; // Return default if null or undefined
+    if (!url) return '#';
     if (url.startsWith('http://') || url.startsWith('https://')) return url;
-    // If no protocol is specified, assume https
     return `https://${url}`;
   };
 
   return (
-    <div className="main-div" style={{ display: 'block'}}>
-    <nav className="d-flex navbar navbar-expand-xl">
-      <div className="d-flex container-fluid ms-4">
-        <a className="navbar-brand" href="#">
-          <img
-            src={imageSrcPath}
-            width="85"
-            height="100"
-            className="d-inline-block align-center"
-            alt=""
-          />  
-        </a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
-            {navItems.map((item, index) => (
-              <li
-                key={index}
-                className="nav-item flex"
-                onClick={() => setSelectedIndex(index)}
-              >
-                {item.subLinks ? (
-                  <div className="nav-item dropdown">
+    <div className="main-div" style={{ display: 'block' }}>
+      <nav className="d-flex navbar navbar-expand-xl">
+        <div className="d-flex container-fluid ms-4">
+          <a className="navbar-brand" href="#">
+            <img
+              src={imageSrcPath}
+              width="85"
+              height="100"
+              className="d-inline-block align-center"
+              alt=""
+            />  
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="me-auto mb-2 mb-md-1 justify-content-center navbar-nav">
+              {navItems.map((item, index) => (
+                <li
+                  key={index}
+                  className="nav-item flex"
+                  onClick={() => setSelectedIndex(index)}
+                >
+                  {item.subLinks ? (
+                    <div className="nav-item dropdown">
+                      <Link
+                        to={`/${item.name.toLowerCase()}`}
+                        className="nav-link dropdown-toggle"
+                        id={`navbarDropdown${index}`}
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        {item.name}
+                      </Link>
+                      <ul
+                        className="dropdown-menu"
+                        aria-labelledby={`navbarDropdown${index}`}
+                      >
+                        {renderSubLinks(item.subLinks)}
+                      </ul>
+                    </div>
+                  ) : (
                     <Link
                       to={`/${item.name.toLowerCase()}`}
-                      className="nav-link dropdown-toggle"
-                      id={`navbarDropdown${index}`}
-                      role="button"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
+                      className={selectedIndex === index ? "nav-link active fw-bold" : "nav-link"}
                     >
                       {item.name}
                     </Link>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby={`navbarDropdown${index}`}
-                    >
-                      {renderSubLinks(item.subLinks)}
-                    </ul>
-                  </div>
-                ) : (
-                  <Link
-                    to={`/${item.name.toLowerCase()}`}
-                    className={selectedIndex === index ? "nav-link active fw-bold" : "nav-link"}
+                  )}
+                </li>
+              ))}
+            </ul>
+            <form className="d-flex me-3" onSubmit={handleSearch}>
+              <input
+                className="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+              />
+              <button className="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>  
+      </nav>
+
+      <div className="marquee-outer-container">
+        <div className="marquee-container">
+          <div className="marquee-text">
+            {marqueeEvents.map((event, eventIndex) => {
+              let linkUrl = '#';
+              if (event.url) {
+                linkUrl = ensureValidUrl(event.url);
+              } else if (event.pdf && event.pdf.length > 0) {
+                const pdfUrl = event.pdf[0].url;
+                linkUrl = pdfUrl.startsWith('http://') || pdfUrl.startsWith('https://') 
+                  ? pdfUrl 
+                  : `${STRAPI_MEDIA_BASE_URL}${pdfUrl}`;
+              }
+
+              return (
+                <React.Fragment key={eventIndex}>
+                  <a 
+                    className="event-links-nav" 
+                    href={linkUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-          <form className="d-flex me-3" onSubmit={handleSearch}>
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-              value={query}
-              onChange={(event) => setQuery(event.target.value)}
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>  
-
-    </nav>
-
-      <div className="marquee-container">
-        <div className="marquee-text">
-          {marqueeEvents.map((event, eventIndex) => {
-            let linkUrl = '#';
-            if (event.url) {
-              linkUrl = ensureValidUrl(event.url); // Use external URL if provided
-            } else if (event.pdf && event.pdf.length > 0) {
-              // Check if pdf.url is already a full URL
-              const pdfUrl = event.pdf[0].url;
-              linkUrl = pdfUrl.startsWith('http://') || pdfUrl.startsWith('https://') 
-                ? pdfUrl 
-                : `${STRAPI_MEDIA_BASE_URL}${pdfUrl}`;
-            }
-
-            return (
-              <React.Fragment key={eventIndex}>
-                <a 
-                  className="event-links-nav" 
-                  href={linkUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {event.title}
-                </a>
-                {isRecentEvent(event.createdAt) && (
-                  <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
-                )}
-              </React.Fragment>
-            );
-          })}
+                    {event.title}
+                  </a>
+                  {isRecentEvent(event.createdAt) && (
+                    <div className="new-blink-nav-01 badge rounded-pill me-1">NEW</div>
+                  )}
+                </React.Fragment>
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>

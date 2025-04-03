@@ -1,98 +1,141 @@
-/* Base Styles */
+/* Base Container */
+.counter-container {
+    width: 100%;
+    padding: 60px 0;
+}
+
 .wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.icon-style {
-    box-sizing: border-box;
-    text-align: center;
+/* Circular Counter Styles */
+.counter-circle {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border-width: 2px;
-    border-color: #102C57;
-    border-style: solid;
-    margin: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #102C57;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.counter-circle:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.circle-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 200px;
-    height: 220px;
-    transition: transform 0.3s ease-in-out;
-    background-color: #f9f9f9;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
 }
 
-.icon-style:hover {
-    transform: scale(1.1);
-}
-
-.icon-style i {
+.counter-circle i {
     color: #102C57;
-    font-size: 3.5em;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
 }
 
-.cnum {
+.counter-value {
     color: #102C57;
-    font-weight: 600;
-    font-size: 2.5em;
-    margin-top: 10px;
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 5px 0;
+    font-family: 'Arial', sans-serif;
 }
 
-.ctext {
+.counter-label {
     color: #102C57;
-    font-weight: 400;
-    font-size: 1.1em;
-    margin-top: 5px;
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Responsive Styles for Tablet View */
+/* Tablet View */
 @media (max-width: 1024px) {
-    .wrapper {
-        gap: 15px;
-        padding: 10px;
+    .counter-container {
+        padding: 40px 0;
     }
-
-    .icon-style {
-        width: 160px;
+    
+    .counter-circle {
+        width: 180px;
         height: 180px;
     }
-
-    .icon-style i {
-        font-size: 3em;
+    
+    .counter-circle i {
+        font-size: 2.2rem;
     }
-
-    .cnum {
-        font-size: 2em;
+    
+    .counter-value {
+        font-size: 2rem;
     }
-
-    .ctext {
-        font-size: 0.9em;
+    
+    .counter-label {
+        font-size: 0.9rem;
     }
 }
 
-/* Additional Styles for Smaller Devices */
+/* Mobile View */
+@media (max-width: 768px) {
+    .wrapper {
+        gap: 30px;
+    }
+    
+    .counter-circle {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .counter-circle i {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+    }
+    
+    .counter-value {
+        font-size: 1.6rem;
+    }
+    
+    .counter-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Mobile Devices */
 @media (max-width: 480px) {
     .wrapper {
-        gap: 10px;
+        gap: 20px;
     }
-
-    .icon-style {
-        width: 120px;
-        height: 140px;
+    
+    .counter-circle {
+        width: 130px;
+        height: 130px;
     }
-
-    .icon-style i {
-        font-size: 2.5em;
+    
+    .counter-circle i {
+        font-size: 1.5rem;
     }
-
-    .cnum {
-        font-size: 1.5em;
+    
+    .counter-value {
+        font-size: 1.3rem;
     }
-
-    .ctext {
-        font-size: 0.8em;
+    
+    .counter-label {
+        font-size: 0.7rem;
     }
 }
