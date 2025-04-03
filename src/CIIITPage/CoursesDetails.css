@@ -232,6 +232,10 @@
         width: 100%;
     }
 
+    h1.text-left{
+        padding-inline: 0;
+    }
+
     .head-box-coursesdetls{
         width: 100%;
         padding: 0%;
@@ -286,4 +290,14 @@
     .feature-ciiit{
         margin-inline: 7%;
     }
+
+    .dropdown-ciiit-text a{
+       font-size: 11px;
+      }
+
+      .dropdown-ciiit{
+        width: 100%;
+        margin-inline: 2%;
+        margin-block: 5%;
+      }
 }

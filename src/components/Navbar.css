@@ -26,7 +26,7 @@
   
   .marquee-text {
     white-space: nowrap; 
-    overflow: hidden; 
+    overflow-x: hidden; 
     animation: marquee 25s linear infinite; 
     font-size: 17px;
     display: flex; 

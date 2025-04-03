@@ -21,7 +21,7 @@ function Home() {
             <Topcards className="topcards-section" />
             <CIIT className="ciit-section" />
             <ErrorBoundary>
-                <Counter className="counter-section" />
+            <Counter className="counter-section" />
             </ErrorBoundary>
             <Research className="research-section" />
         </div>

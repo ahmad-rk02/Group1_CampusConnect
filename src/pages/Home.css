@@ -127,6 +127,10 @@
     border-radius: 5px;
 }
 
+.counter-section{
+    visibility: visible !important;
+}
+
 /* Keyframes for blinking effect */
 @keyframes blink {
     0% { opacity: 1; }
