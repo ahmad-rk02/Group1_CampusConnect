@@ -397,10 +397,11 @@ font-size: 14px;
   .entc-vision-heading h3,
   .entc-mission-heading h3 {
       font-size: 1rem;
+      font-weight: 700;
   }
 
   
-  .entc-intro-box {
+  entc-intro-box {
     width: 100%;
     margin-left: 0;
     border-width: 3px;
@@ -427,31 +428,31 @@ font-size: 14px;
     font-size: 0.8rem;
   }
   .lab-entc h4{
-    font-size: 11px;
+    font-size: 10px;
 
   }
   .lab-entc{
-    height: 25px;
+    height: 20px;
   }
   
   .lab-img-entc{
-    width: 100px;
-    height: 90px;
+    width: 80px;
+    height: 85px;
     margin-top: 20px;
   }
   .lab-img-entc h5{
-    font-size: 14px;
+    font-size: 10px;
   }
   .lab-eq-entc{
-    margin-left: 109px;
-    margin-top:-100px;
-    width: 100px;
+    margin-left: 90px;
+    margin-top:-80px;
+    width: 90px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
    
   }
   .d-flex p.tick{
-    font-size: 10px;
+    font-size: 8px;
   }
   
 }

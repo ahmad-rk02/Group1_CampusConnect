@@ -112,6 +112,8 @@
 
 /* Responsive Styling */
 @media (max-width: 992px) {
+
+
   .header-align-ai h1 {
     font-size: 2rem;
     margin-top: 4rem;
@@ -119,6 +121,7 @@
   }
 
   .card-content-ai {
+    width: 800px;
     padding-left: 50px;
   }
   .side-heading-bottom-ai {
@@ -128,6 +131,10 @@
   }
   .about-image-ai {
     width: 100%;
+  }
+
+  h2.fw-bold.text{
+    width: 600px;
   }
 }
 

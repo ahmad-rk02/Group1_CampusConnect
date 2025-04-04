@@ -83,7 +83,7 @@ const Workshop = () => {
                     Civil Engineering
                   </Link>
                 </ListGroup.Item>
-                <ListGroup.Item className="left-nav-row-ws">
+                <ListGroup.Item className="left-nav-row-ws-01">
                   <Link
                     to="/workshop"
                     className={location.pathname === "/workshop" ? "active-link" : ""}
@@ -118,7 +118,7 @@ const Workshop = () => {
                       className="ws-image"
                     />
                   </Col>
-                  <Card.Header className="bg-golden-ws w-100">
+                  <Card.Header className="bg-golden-ws w-100 abt-head">
                     <h4>About Workshop</h4>
                   </Card.Header>
 
@@ -135,7 +135,7 @@ const Workshop = () => {
                       To make the students familiar with various manufacturing practices and processes the institute has well equipped workshops. As the saying goes, â€œLearning by doing is the best method of learning and leaves a lasting impression on the young minds of the studentsâ€. The students of the college get the opportunity to work in Machine Shop, Carpentry Shop, Sheet Metal Shop, Welding Shop, Fitting Shop, Moulding Shop and Smithy Shop to get hands-on training. Sincere and persistent efforts by the staff of workshop wing helps students learn by actually doing the various procedures by their own hands. The exposure to design intricacies, manufacturing processes, fabrication techniques and working of machinery and equipment used in manufacturing helps students adapt to the industrial environment, when they come across similar floor situations in the industry.
                     </p>
 
-                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '40px' }}>
+                    <Card.Header className="bg-golden-ws w-100 dept-vis" style={{ marginTop: '40px' }}>
                       <h4>Department Vision</h4>
                     </Card.Header>
 
@@ -143,7 +143,7 @@ const Workshop = () => {
                       To be Excellence in the Tribal Region of the Country, distinguished for its Locally and Globally Relevant Innovative Academic Programs, with Learner Centric Value based Transformative Educationâ€
                     </p>
 
-                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '40px' }}>
+                    <Card.Header className="bg-golden-ws w-100 dept-mis" style={{ marginTop: '40px' }}>
                       <h4>Department Mission</h4>
                     </Card.Header>
 
@@ -158,7 +158,7 @@ const Workshop = () => {
                       </ul>
                     </p>
 
-                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '40px' }}>
+                    <Card.Header className="bg-golden-ws w-100 infra-ws" style={{ marginTop: '40px' }}>
                       <h4>Infrastructure</h4>
                     </Card.Header>
 
@@ -198,7 +198,7 @@ const Workshop = () => {
                       </tbody>
                     </Table>
 
-                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '40px' }}>
+                    <Card.Header className="bg-golden-ws w-100 shp-ws" style={{ marginTop: '40px' }}>
                       <h4>Shop Details</h4>
                     </Card.Header>
 
@@ -430,7 +430,7 @@ const Workshop = () => {
 
                     </div>
 
-                    <Card.Header className="bg-golden-ws w-100" style={{ marginTop: '50px' }}>
+                    <Card.Header className="bg-golden-ws w-100 tnlm-ws" style={{ marginTop: '50px' }}>
                       <h4>Teaching & Learning Material</h4>
                     </Card.Header>
 

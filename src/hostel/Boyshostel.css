@@ -500,7 +500,7 @@
   }
 
   .The-three-buttons-bh{
-    margin-top: 40vw;
+    margin-top: 1vw;
     margin-left: 10vw;
     margin-right: 10vw;
   }
@@ -517,9 +517,10 @@
   }
 
   .about-image-bh {
-    margin-left: 20vw;
+    margin-top: 5%;
+    margin-left: 10vw;
     margin-right: 20vw;
-    width: 90%;
+    width: 80%;
   }
 }
 
