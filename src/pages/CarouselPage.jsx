@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import Carousel from "react-bootstrap/Carousel";
 import "./CarouselPage.css";
 
@@ -7,8 +6,9 @@ function CarouselPage() {
   const [carouselData, setCarouselData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL; // Adjust this for production
-   const API_MEDIA_BASE_URL=import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
+  const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+  const API_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
+
   useEffect(() => {
     const fetchCarouselData = async () => {
       try {
@@ -17,7 +17,6 @@ function CarouselPage() {
           throw new Error("Failed to fetch carousel data");
         }
         const result = await response.json();
-        console.log("API Response:", result); // Log for debugging
         setCarouselData(Array.isArray(result.data) ? result.data : []);
         setLoading(false);
       } catch (err) {
@@ -27,25 +26,25 @@ function CarouselPage() {
     };
 
     fetchCarouselData();
-  }, []);
+  }, [API_BASE_URL]);
 
-
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading) return <div className="gec-carousel-loading">Loading...</div>;
+  if (error) return <div className="gec-carousel-error">Error: {error}</div>;
 
   return (
-    <div className="Carousel-container-4">
-      <Carousel>
+    <div className="gec-carousel-container">
+      <Carousel controls={carouselData.length > 1} indicators={carouselData.length > 1}>
         {carouselData.map((item) => (
-          <Carousel.Item key={item.id}>
+          <Carousel.Item key={item.id} className="gec-carousel-item">
             <img
-              className="d-block w-100 carousel-image"
-              src={`${API_MEDIA_BASE_URL}${item.image.url}`} // Adjusted to avoid attributes
+              className="gec-carousel-image"
+              src={`${API_MEDIA_BASE_URL}${item.image.url}`}
               alt={item.title || "Carousel slide"}
+              loading="lazy"
             />
-            <div className="carousel-caption">
-              <h2>{item.title}</h2>
-              {item.subtitle && <p>{item.subtitle}</p>}
+            <div className="gec-carousel-caption">
+              <h2 className="gec-carousel-title">{item.title}</h2>
+              {item.subtitle && <p className="gec-carousel-subtitle">{item.subtitle}</p>}
             </div>
           </Carousel.Item>
         ))}

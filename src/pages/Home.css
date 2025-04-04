@@ -1,197 +1,195 @@
-/* Basic styling */
-.home-container {
-    overflow-x: hidden;
-}
-
-.section-title {
-    font-size: 1.75rem;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-/* 🔹 News & Events Section */
-.news-events-section {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 50px;
-}
-
-.news-section, .event-section {
-    flex: 1;
-    min-width: 48%;
-    padding: 10px;
-}
-
-/* 🔹 Card Styling */
-.card1 {
-    border-radius: 20px;
-    margin-bottom: 20px;
-    background-color: #eadbc8;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.card1:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.card-img-top {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 20px 20px 0px 0px;
-}
-
-/* 🔹 Improved Text Layout */
-.card-title {
-    padding: 10px;
-}
-
-.card-title, .card-text, .news-btn {
-    color: #102C57;
-}
-
-.card-text-news {
-    height: 10vh;
-    padding: 20px;
-}
-
-/* 🔹 News Button */
-.news-btn {
-    background-color: #102C57;
-    color: white;
-    border: none;
-    height: 40px;
-    width: 60px;
-    border-radius: 5px;
-    margin: 30px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.news-btn:hover {
-    background-color: #081a3a;
-    transform: scale(1.05);
-}
-
-/* 🔹 Load More Button */
-.load-more-btn {
-    background-color: #17a2b8;
-    color: white;
-    border: none;
-    width: 100%;
-    padding: 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-.load-more-btn:hover {
-    background-color: #138496;
-    transform: scale(1.05);
-}
-
-/* 🔹 List Group Styling */
-.list-group {
+/* Base Styles */
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .container1 {
+    padding: 2rem 1rem;
+  }
+  
+  /* Social Icons */
+  .social-icons a {
+    transition: transform 0.3s ease, color 0.3s ease;
+    font-size: 1.2rem;
+  }
+  
+  .social-icons a:hover {
+    transform: translateY(-3px);
+    color: #EADBC8 !important;
+  }
+  
+  /* Quick Links */
+  .list-unstyled li {
+    margin-bottom: 0.5rem;
+    transition: transform 0.2s ease;
+  }
+  
+  .list-unstyled li:hover {
+    transform: translateX(5px);
+  }
+  
+  .list-unstyled a {
+    transition: color 0.2s ease;
+  }
+  
+  .list-unstyled a:hover {
+    color: #EADBC8 !important;
+  }
+  
+  /* Weather Info */
+  .weather-info {
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
-}
-
-.list-group-items {
-    background-color: #eadbc8;
+    padding: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Visitor Counter */
+  .visitor-counter {
+    background: rgba(0, 0, 0, 0.25);
+    margin: 0 auto 1rem;
+    width: fit-content;
+    border-radius: 50px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .visitor-counter:hover {
+    background: rgba(0, 0, 0, 0.4);
+    transform: scale(1.03);
+  }
+  
+  .counter-inner {
     display: flex;
-    justify-content: space-between;
-    padding: 16px;
-}
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .counter-icon {
+    font-size: 1.1rem;
+  }
+  
+  .counter-text {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Copyright */
+  .copyright {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .col-md-4 {
+      margin-bottom: 2rem;
+    }
+    
+    .weather-info div {
+      justify-content: center !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .visitor-counter {
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+    }
+    
+    .copyright {
+      font-size: 0.8rem;
+    }
+  }
 
-.event-link {
-    color: #102C57;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.event-link:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* 🔹 NEW Badge Blinking */
-.new-blink {
-    background-color: red;
-    color: white;
-    animation: blink 0.6s infinite alternate;
-    padding: 5px 10px;
-    font-weight: bold;
+  /* Footer Container */
+.container1 {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Copyright Section */
+  .copyright {
+    background-color: #081a3a;
+    padding: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  
+  /* Visitor Counter */
+  .visitor-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
-}
-
-.counter-section{
-    visibility: visible !important;
-}
-
-/* Keyframes for blinking effect */
-@keyframes blink {
-    0% { opacity: 1; }
-    100% { opacity: 0.5; }
-}
-
-/* 🔹 Responsive Design */
-@media (max-width: 992px) {
-    .news-events-section {
-        flex-direction: column;
-        align-items: center;
+  }
+  
+  /* Weather Info */
+  .weather-info {
+    font-size: 0.9rem;
+  }
+  
+  /* Links */
+  a.text-white:hover {
+    color: #f8f9fa !important;
+    text-decoration: underline !important;
+  }
+  
+  .list-unstyled li {
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 992px) {
+    .col-md-4 {
+      margin-bottom: 1.5rem;
     }
-
-    .card-img-top {
-        height: 180px;
+    
+    .weather-info p {
+      margin-right: 1rem;
+      margin-bottom: 0.5rem;
     }
-
-    .event-section, .news-section {
-        width: 90%;
+  }
+  
+  @media (max-width: 768px) {
+    .container1 {
+      padding: 1.5rem 0.5rem;
     }
-
-    .news-btn {
-        width: 20vw;
+    
+    .visitor-counter {
+      font-size: 1rem;
     }
-}
-
-@media (max-width: 768px) {
-    .event-section, .news-section {
-        width: 90%;
+    
+    .weather-info {
+      font-size: 0.85rem;
     }
-
-    .card-img-top {
-        height: 150px;
+  }
+  
+  @media (max-width: 576px) {
+    .copyright p {
+      font-size: 0.8rem;
     }
-
-    .event-link {
-        font-size: 0.9rem;
+    
+    .col-md-4.text-center img {
+      width: 70px;
+      height: 90px;
     }
-
-    .news-btn {
-        height: 45px;
-        width: 20vw;
+    
+    .weather-info p {
+      margin-right: 0.5rem;
+      font-size: 0.8rem;
     }
-}
-
-@media (max-width: 576px) {
-    .card-img-top {
-        height: 120px;
+    
+    .visitor-counter {
+      font-size: 0.9rem;
     }
-
-    .event-link {
-        font-size: 0.8rem;
-    }
-
-    .news-btn {
-        font-size: 0.8rem;
-        padding: 10px;
-    }
-
-    .new-blink {
-        font-size: 0.7rem;
-        padding: 5px;
-    }
-}
+  }

@@ -20,9 +20,7 @@ function Home() {
             <WelcomeSection className="welcome-section" />
             <Topcards className="topcards-section" />
             <CIIT className="ciit-section" />
-            <ErrorBoundary>
-            <Counter className="counter-section" />
-            </ErrorBoundary>
+                <Counter className="counter-section" />
             <Research className="research-section" />
         </div>
     );

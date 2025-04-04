@@ -5,137 +5,133 @@
 .dropdown-submenu .dropdown-menu {
   top: 0;
   left: 100%;
-  margin-top: -1px; 
-  display: none; 
+  margin-top: -1px;
+  display: none;
 }
 
 .navbar .dropdown-menu .dropdown-item:hover {
-  background-color: #102C57; 
-  color: #fff; 
+  background-color: #102C57;
+  color: #fff;
 }
 
+/* Marquee Container Styles */
+.marquee-outer-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: #102C57;
+}
+
+.marquee-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 30px;
+  overflow: hidden;
+}
+
+.marquee-text {
+  white-space: nowrap;
+  font-size: 17px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding-right: 100%;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-text:hover {
+  animation-play-state: paused;
+}
+
+a.event-links-nav {
+  text-decoration: none;
+  color: #FEFAF6;
+}
+
+a.event-links-nav:hover {
+  text-decoration: underline;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.new-blink-nav-01 {
+  font-size: 12px;
+  display: flex;
+  background-color: #102C57;
+  color: #FEFAF6;
+  justify-content: center;
+  align-items: center;
+  width: 43px;
+  height: 20px;
+  border-radius: 10px;
+  animation: blink1 1s infinite alternate;
+}
+
+@keyframes blink1 {
+  0% {
+    background-color: #102C57;
+    color: #FEFAF6;
+  }
+  100% {
+    background-color: #FEFAF6;
+    color: #102C57;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
   .marquee-container {
-    overflow-x: hidden;
-    width: fit-content;
-    background-color: #102C57;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center; 
-    height: 30px;  
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
   }
-  
-  .marquee-text {
-    white-space: nowrap; 
-    overflow-x: hidden; 
-    animation: marquee 25s linear infinite; 
-    font-size: 17px;
-    display: flex; 
-    gap: 20px; 
-    align-items: center; 
-  }
-  
-  .marquee-text:hover {
-    animation-play-state: paused; 
-  }
-  
-  a.event-links-nav {
-    text-decoration: none;
-    color: #FEFAF6;
-  }
-  
-  a.event-links-nav:hover {
-    text-decoration: underline;
-  }
-  
-  @keyframes marquee {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-  
-  .new-blink-nav-01, .new-blink-nav-02 {
-    font-size: 12px;
-    display: flex; /* Ensure content centers inside */
-    background-color: #102C57;
-    color: #FEFAF6;
-    justify-content: center;
-    align-items: center;
-    width: 43px;
-    height: 20px;
-    border-radius: 10px; /* Add rounded corners for a smoother look */
-  }
-  
-  .new-blink-nav-01 {
-    animation: blink1 1s infinite alternate;
-  }
-  
-  .new-blink-nav-02 {
-    animation: blink2 1s infinite alternate;
-  }
-  
-  @keyframes blink1 {
-    0% {
-      background-color: #102C57;
-      color: #FEFAF6;
-    }
-    100% {
-      background-color: #FEFAF6;
-      color: #102C57;
-    }
-  }
-  
-  @keyframes blink2 {
-    0% {
-      background-color: #FEFAF6;
-      color: #102C57;
-    }
-    100% {
-      background-color: #102C57;
-      color: #FEFAF6;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .dropdown-submenu {
-      position: relative;
-    }
-  
-    .dropdown-submenu .dropdown-menu {
-      position: relative;  /* Change position to relative */
-      top: 0;
-      left: 0;  /* Align it to start below the submenu */
-      margin-top: 5px;
-      display: none;  /* Initially hidden */
-      width: 100%;  /* Ensure it takes up full width */
-    }
-  
-    ul.dropdown-menu.show {
-      display: block;  
-    }
+}
 
-    .dropdown-menu {
-      width: 95%;
-      margin-top: 0;
-      position: static !important;
-      display: none;
-    }
-
-    .dropdown-menu.hide{
-      display: none !important;
-    }
-  
-    .dropdown-menu.show {
-      display: block !important;
-    }
-
-    .dropdown-events-achievements {
-      display: block !important;
-      position: relative !important;
-      top: auto !important;
-      left: auto !important;
-      width: 100%;
-    }
+@media (max-width: 480px) {
+  .dropdown-submenu {
+    position: relative;
   }
+
+  .dropdown-submenu .dropdown-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    margin-top: 5px;
+    display: none;
+    width: 100%;
+  }
+
+  ul.dropdown-menu.show {
+    display: block;
+  }
+
+  .dropdown-menu {
+    width: 95%;
+    margin-top: 0;
+    position: static !important;
+    display: none;
+  }
+
+  .dropdown-menu.hide {
+    display: none !important;
+  }
+
+  .dropdown-menu.show {
+    display: block !important;
+  }
+
+  .dropdown-events-achievements {
+    display: block !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100%;
+  }
+}
