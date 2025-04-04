@@ -63,10 +63,15 @@ const StudentSignUp = () => {
       formErrors.phone = "A valid 10-digit phone number is required";
     }
 
+    const prnPattern = /^\d{4}033700\d{6}$/;
     if (!formData.prnNumber) {
       valid = false;
-      formErrors.prnNumber = "University number (PRN) is required";
+      formErrors.prnNumber = "PRN is required";
+    } else if (!prnPattern.test(formData.prnNumber)) {
+      valid = false;
+      formErrors.prnNumber = "Enter a valid PRN number"; // Generic error
     }
+
 
     if (!formData.semester) {
       valid = false;
