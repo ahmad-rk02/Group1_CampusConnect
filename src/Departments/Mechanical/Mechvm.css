@@ -347,7 +347,6 @@ margin-top: -200px;
   width: 130px;
   margin-right: 10px;
   margin-bottom: 20px;
- 
 }
 }
 
@@ -400,66 +399,64 @@ margin-top: -200px;
 @media (max-width: 576px) {
   .mech-intro-heading h3,
   .mech-vision-heading h3,
-  .mech-mission-heading h3,
-  .mech-infra-head h3,
-  .mech-mi-heading h3 {
+  .mech-mission-heading h3 {
       font-size: 1rem;
       font-weight: 700;
   }
 
+  
+  .mech-intro-box {
+    width: 100%;
+    margin-left: 0;
+    border-width: 3px;
+    padding-left: 5%;
+    padding-right: 5%;
+    align-items: center;
+    justify-content: center;
+  }
 
-.mech-intro-box {
-  width: 100%;
-  margin-left: 0;
-  border-width: 3px;
-  padding-left: 5%;
-  padding-right: 5%;
-  align-items: center;
-  justify-content: center;
-}
+   .first-para-small, .small-intro-heading, div.second-para-large p{
+    width: auto;
+    text-align:justify;
+    padding: auto;
+   }
 
- .first-para-small, .small-intro-heading, div.second-para-large p{
-  width: auto;
-  text-align:justify;
-  padding: auto;
- }
+  .vision-content, .mission-content {
+    width: 100%;
+    text-align: justify;
+    padding: 5px;
+    font-size: 14px;
+  }
 
-.vision-content, .mission-content {
-  width: 100%;
-  text-align: justify;
-  padding: 5px;
-  font-size: 14px;
-}
+  .mech-intro-box:hover::after {
+    font-size: 0.8rem;
+  }
+  .lab-mech h4{
+    font-size: 9px;
 
-.mech-intro-box:hover::after {
-  font-size: 0.8rem;
-}
-.lab-mech h4{
-  font-size: 11px;
-
-}
-.lab-mech{
-  height: 25px;
-}
-
-.lab-img-mech{
-  width: 100px;
-  height: 90px;
-  margin-top: 20px;
-}
-.lab-img-mech h5{
-  font-size: 14px;
-}
-.lab-eq-mech{
-  margin-left: 109px;
-  margin-top:-100px;
-  width: 100px;
-  margin-right: 10px;
-  margin-bottom: 20px;
- 
-}
-.d-flex p.tick{
-  font-size: 10px;
-}
-
+  }
+  .lab-mech{
+    height: 20px;
+  }
+  
+  .lab-img-mech{
+    width: 80px;
+    height: 85px;
+    margin-top: 20px;
+  }
+  .lab-img-mech h5{
+    font-size: 10px;
+  }
+  .lab-eq-mech{
+    margin-left: 90px;
+    margin-top:-80px;
+    width: 90px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+   
+  }
+  .d-flex p.tick{
+    font-size: 8px;
+  }
+  
 }

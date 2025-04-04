@@ -395,15 +395,13 @@ font-size: 14px;
 @media (max-width: 576px) {
   .instru-intro-heading h3,
   .instru-vision-heading h3,
-  .instru-mission-heading h3,
-  .instru-infra-head h3,
-  .instru-mi-heading h3 {
+  .instru-mission-heading h3 {
       font-size: 1rem;
       font-weight: 700;
   }
 
   
-  .instru-intro-box {
+  instru-intro-box {
     width: 100%;
     margin-left: 0;
     border-width: 3px;
@@ -430,31 +428,31 @@ font-size: 14px;
     font-size: 0.8rem;
   }
   .lab-instru h4{
-    font-size: 11px;
+    font-size: 10px;
 
   }
   .lab-instru{
-    height: 25px;
+    height: 20px;
   }
   
   .lab-img-instru{
-    width: 100px;
-    height: 90px;
+    width: 80px;
+    height: 85px;
     margin-top: 20px;
   }
   .lab-img-instru h5{
-    font-size: 14px;
+    font-size: 10px;
   }
   .lab-eq-instru{
-    margin-left: 109px;
-    margin-top:-100px;
-    width: 100px;
+    margin-left: 90px;
+    margin-top:-80px;
+    width: 90px;
     margin-right: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
    
   }
   .d-flex p.tick{
-    font-size: 10px;
+    font-size: 8px;
   }
   
 }

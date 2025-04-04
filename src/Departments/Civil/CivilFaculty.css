@@ -136,7 +136,7 @@
   
   /* Tablet View */
   @media (max-width: 1024px) {
-    .faculty-container {
+    .faculty-container-civil {
       padding: 20px;
       margin-inline: 5%;
     }
@@ -169,7 +169,7 @@
   
   /*Mobile View */
   @media (max-width: 768px) {
-    .faculty-container {
+    .faculty-container-civil {
       padding: 20px;
       margin-inline: 5%;
     }
@@ -214,7 +214,7 @@
       place-items: center;
     }
   
-    .faculty-container {
+    .faculty-container-civil {
       width: 90%;
       padding: 10px;
       margin-inline: 4%;

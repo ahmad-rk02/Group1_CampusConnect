@@ -165,8 +165,22 @@ ul.three-columns{
 /* --- Max width 1024px --- */
 @media (max-width: 1024px) {
   .content-card-ws{
-    margin-inline: 5%;
-    width: 96%;
+    margin-top: 10%;
+    margin-inline: 0%;
+    width: 100%;
+  }
+
+  .left-sidebar-ws{
+    height: 300px;
+  }
+
+  .left-index-ws{
+    margin-inline: 0;
+  }
+
+  .card-content-ws{
+    width: 100%;
+    padding-left: 0;
   }
 
   .ws-imagesss {

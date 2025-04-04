@@ -122,19 +122,20 @@ ul.dropdown-instru-text{
   .head-box-instru
  h1 {
     font-size: 1.8rem;
-    padding-top: 20px;
+    padding-top: 40px;
     padding-left: 20px;
   }
   
   .right-content-instru
  {
+    margin-top: 5%;
     margin-inline: 5%;
     width: 96%;
   }
 
   .left-nav-instru
  {
-    width: 250px;
+    width: 350px;
     margin-left: 20px;
     top: 120px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
