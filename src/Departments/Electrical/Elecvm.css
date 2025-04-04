@@ -395,10 +395,12 @@ font-size: 14px;
 @media (max-width: 576px) {
   .Elec-intro-heading h3,
   .Elec-vision-heading h3,
-  .Elec-mission-heading h3 {
+  .Elec-mission-heading h3,
+  .Elec-infra-head h3,
+  .Elec-mi-heading h3 {
       font-size: 1rem;
+      font-weight: 700;
   }
-
   
   .Elec-intro-box {
     width: 100%;

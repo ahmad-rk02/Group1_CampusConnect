@@ -337,11 +337,17 @@ margin-left: -14em;
 @media (max-width: 576px) {
 
   div.cse-code-unnati{
-    width: 100%;
+    padding-block: 1%;
+    width: 90%;
   }
 
   div.cse-code-unnati h4{
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .code-unnati-wrapper{
+    margin-inline: 5%;
   }
 
   .code-unnati-container,
@@ -379,7 +385,11 @@ margin-left: -14em;
   
   .course-objective-text h2 {
     font-size: 16px;
-    
+  }
+
+  .course-objective-container{
+    margin-inline: 5%;
+    width: 90%;
   }
 
   .course-objective-text  {
@@ -406,6 +416,10 @@ margin-left: -14em;
   .capstone-block ul{
     padding: 0;
   }
+
+  div.right-codeunnati-content-cse{
+    margin-inline: 0;
+  }
 }
 
 @media (max-width: 320px) {
@@ -416,6 +430,10 @@ margin-left: -14em;
 
   .code-unnati-logo {
     margin-bottom: -150px;
+  }
+
+  div.right-codeunnati-content-cse{
+    margin-inline: 10%;
   }
 
   .code-unnati-text h2 {

@@ -1,5 +1,5 @@
-.faculty-container-elect {
-    width: 89%;
+.faculty-container-civil {
+    width: 90%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -214,7 +214,7 @@
       place-items: center;
     }
   
-    .faculty-container-elect {
+    .faculty-container {
       width: 90%;
       padding: 10px;
       margin-inline: 4%;

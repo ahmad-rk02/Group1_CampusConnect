@@ -398,11 +398,14 @@ margin-top: -200px;
 }
 
 @media (max-width: 576px) {
-.mech-intro-heading h3,
-.mech-vision-heading h3,
-.mech-mission-heading h3 {
-    font-size: 1rem;
-}
+  .mech-intro-heading h3,
+  .mech-vision-heading h3,
+  .mech-mission-heading h3,
+  .mech-infra-head h3,
+  .mech-mi-heading h3 {
+      font-size: 1rem;
+      font-weight: 700;
+  }
 
 
 .mech-intro-box {

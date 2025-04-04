@@ -249,6 +249,11 @@
   -text{
       line-height: 3vh;
     }
+
+    div.entc-intro-heading h3{
+     text-align: left;
+     font-weight: 700;
+    }
   }
   
   @media (max-width: 480px) {
@@ -277,7 +282,7 @@
     }
   
     .left-sidebar-Entc
-  {
+    {
       margin-top: 300px;
     }
   

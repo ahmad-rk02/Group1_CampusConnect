@@ -301,6 +301,7 @@ body {
 
  .Acses-cmt{
   display: block;
+  margin-inline: 3%;
  } 
  .Acses-cmt-logo-part{
   width: 100%;

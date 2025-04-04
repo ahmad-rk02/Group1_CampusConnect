@@ -395,8 +395,11 @@ font-size: 14px;
 @media (max-width: 576px) {
   .instru-intro-heading h3,
   .instru-vision-heading h3,
-  .instru-mission-heading h3 {
+  .instru-mission-heading h3,
+  .instru-infra-head h3,
+  .instru-mi-heading h3 {
       font-size: 1rem;
+      font-weight: 700;
   }
 
   

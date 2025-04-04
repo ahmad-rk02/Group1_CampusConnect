@@ -395,8 +395,11 @@ font-size: 14px;
 @media (max-width: 576px) {
   .entc-intro-heading h3,
   .entc-vision-heading h3,
-  .entc-mission-heading h3 {
+  .entc-mission-heading h3,
+  .entc-infra-head h3,
+  .entc-mi-heading h3 {
       font-size: 1rem;
+      font-weight: 700;
   }
 
   
@@ -433,6 +436,7 @@ font-size: 14px;
   .lab-entc{
     height: 25px;
   }
+  
   
   .lab-img-entc{
     width: 100px;

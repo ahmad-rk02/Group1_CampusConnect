@@ -395,8 +395,11 @@ font-size: 14px;
 @media (max-width: 576px) {
   .cvl-intro-heading h3,
   .cvl-vision-heading h3,
-  .cvl-mission-heading h3 {
+  .cvl-mission-heading h3,
+  .cvl-infra-head h3,
+  .cvl-mi-heading h3 {
       font-size: 1rem;
+      font-weight: 700;
   }
 
   
