@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -30,13 +30,30 @@ const StudentSignUp = () => {
   const [showOTPModal, setShowOTPModal] = useState(false);
   const [otp, setOtp] = useState('');
   const [userId, setUserId] = useState(null);
+  const [resendTimer, setResendTimer] = useState(60);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
+    
+    // Special handling for PRN (numbers only, max 16 chars)
+    if (name === 'prnNumber') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      if (numbersOnly.length <= 16) {
+        setFormData(prev => ({ ...prev, [name]: numbersOnly }));
+      }
+      return;
+    }
+    
+    // Special handling for phone (numbers only, max 10 chars)
+    if (name === 'phone') {
+      const numbersOnly = value.replace(/[^0-9]/g, '');
+      if (numbersOnly.length <= 10) {
+        setFormData(prev => ({ ...prev, [name]: numbersOnly }));
+      }
+      return;
+    }
+    
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
@@ -69,9 +86,8 @@ const StudentSignUp = () => {
       formErrors.prnNumber = "PRN is required";
     } else if (!prnPattern.test(formData.prnNumber)) {
       valid = false;
-      formErrors.prnNumber = "Enter a valid PRN number"; // Generic error
+      formErrors.prnNumber = "Enter a valid PRN number"; 
     }
-
 
     if (!formData.semester) {
       valid = false;
@@ -121,6 +137,7 @@ const StudentSignUp = () => {
         console.log('Signup Response:', response.data);
         setUserId(response.data.userId);
         setShowOTPModal(true);
+        setResendTimer(60); // Start the resend timer
       } catch (error) {
         console.error('Signup Error:', error);
         if (error.response && error.response.status === 409) {
@@ -169,14 +186,23 @@ const StudentSignUp = () => {
         email: formData.email,
       });
       console.log('Resend OTP Response:', response.data);
-      alert('A new OTP has been sent to your email.');
-      setOtp(''); // Clear the current OTP input
+      setResendTimer(60); // Reset timer
+      setOtp(''); // Clear current OTP
+      document.getElementById('otp-input-0').focus(); // Focus first input
     } catch (error) {
       console.error('Resend OTP Error:', error);
       setErrorMessage('Failed to resend OTP. Please try again.');
       setShowErrorModal(true);
     }
   };
+
+  // Timer effect
+  useEffect(() => {
+    if (showOTPModal && resendTimer > 0) {
+      const timer = setTimeout(() => setResendTimer(resendTimer - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [showOTPModal, resendTimer]);
 
   return (
     <div>
@@ -438,30 +464,69 @@ const StudentSignUp = () => {
           show={showOTPModal}
           onHide={() => setShowOTPModal(false)}
           centered
-          className="custom-modal"
+          className="otp-modal"
         >
-          <Modal.Header>
-            <Modal.Title>Verify OTP</Modal.Title>
+          <Modal.Header closeButton className="otp-modal-header">
+            <Modal.Title className="otp-modal-title">
+              <div className="otp-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102C57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <h3>Verify Your Email</h3>
+              <p className="otp-instructions">We've sent a 6-digit code to <strong>{formData.email}</strong></p>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <p>An OTP has been sent to {formData.email}. Please enter it below:</p>
+          <Modal.Body className="otp-modal-body">
             <Form onSubmit={handleOTPSubmit}>
-              <Form.Group>
-                <Form.Control
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  placeholder="Enter 6-digit OTP"
-                  maxLength="6"
-                />
-              </Form.Group>
-              <div className="mt-3">
-                <Button variant="primary" type="submit">
-                  Verify OTP
-                </Button>
-                <Button variant="link" onClick={handleResendOTP} className="ms-3">
-                  Resend OTP
-                </Button>
+              <div className="otp-input-container">
+                {[0, 1, 2, 3, 4, 5].map((index) => (
+                  <Form.Control
+                    key={index}
+                    type="text"
+                    maxLength="1"
+                    className="otp-digit-input"
+                    value={otp[index] || ''}
+                    onChange={(e) => {
+                      const newOtp = [...otp];
+                      newOtp[index] = e.target.value.replace(/[^0-9]/g, '');
+                      setOtp(newOtp.join(''));
+                      
+                      // Auto-focus to next input
+                      if (e.target.value && index < 5) {
+                        document.getElementById(`otp-input-${index + 1}`).focus();
+                      }
+                    }}
+                    id={`otp-input-${index}`}
+                    autoFocus={index === 0}
+                  />
+                ))}
+              </div>
+              
+              <div className="otp-timer-container">
+                {resendTimer > 0 ? (
+                  <p className="otp-timer">Resend OTP in {resendTimer} seconds</p>
+                ) : (
+                  <Button 
+                    variant="link" 
+                    onClick={handleResendOTP} 
+                    className="otp-resend-btn"
+                  >
+                    Resend OTP
+                  </Button>
+                )}
+              </div>
+              
+              <Button 
+                type="submit" 
+                className="otp-verify-btn"
+                disabled={otp.length !== 6}
+              >
+                Verify & Continue
+              </Button>
+              
+              <div className="otp-help-text">
+                <p>Didn't receive the code? Check your spam folder or <a href="#" onClick={handleResendOTP}>resend</a></p>
               </div>
             </Form>
           </Modal.Body>

@@ -23,13 +23,14 @@ const LoginForm = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'dte' && /[^0-9]/.test(value)) {
-      setError('DTE Number should contain only numbers.');
-      return;
-    } else {
+    if (name === 'dte') {
+      // Remove any non-alphanumeric characters and convert to uppercase
+      const cleanedValue = value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+      setFormData((prevState) => ({ ...prevState, [name]: cleanedValue }));
       setError('');
+    } else {
+      setFormData((prevState) => ({ ...prevState, [name]: value }));
     }
-    setFormData((prevState) => ({ ...prevState, [name]: value }));
   };
 
   const togglePasswordVisibility = () => {
@@ -39,8 +40,15 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
   
+    // Validate DTE format (DTEYEAR4004)
+    const dtePattern = /^DTE\d{4}4004$/;
+    if (!dtePattern.test(formData.dte)) {
+      setError('Invalid credentials');
+      return;
+    }
+
     if (!formData.dte || !formData.password) {
-      setError('DTE and Password are required.');
+      setError('Both fields are required');
       return;
     }
 
@@ -65,7 +73,7 @@ const LoginForm = () => {
     } catch (error) {
       setModalMessage({ text: 'Login Denied!', icon: faExclamationCircle });
       setShowModal(true);
-      setError(error.response?.data?.message || 'Invalid Credentials');
+      setError('Invalid credentials');
     } finally {
       setIsLoading(false);
     }
@@ -137,7 +145,7 @@ const LoginForm = () => {
                     name="dte"
                     value={formData.dte}
                     onChange={handleChange}
-                    placeholder="DTE number"
+                    placeholder="Enter DTE Number"
                     className="login-input"
                   />
                 </Form.Group>
@@ -192,5 +200,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
- 

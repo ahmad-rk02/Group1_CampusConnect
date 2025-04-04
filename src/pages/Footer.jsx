@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUsers } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Footer.css";
@@ -9,6 +9,7 @@ function Footerend() {
   const [weatherError, setWeatherError] = useState(null);
   const [visitorCount, setVisitorCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const hasIncremented = useRef(false);
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
   // Fetch weather data
@@ -38,8 +39,11 @@ function Footerend() {
   useEffect(() => {
     const updateVisitorCount = async () => {
       try {
-        // Check session storage to prevent duplicate increments
-        if (!sessionStorage.getItem('hasCountedVisitor')) {
+        // Check ref and session storage to prevent duplicate increments
+        if (!hasIncremented.current && !sessionStorage.getItem('hasCountedVisitor')) {
+          hasIncremented.current = true;
+          sessionStorage.setItem('hasCountedVisitor', 'true');
+
           const response = await fetch(`${API_BASE_URL}/api/visitors`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -50,7 +54,6 @@ function Footerend() {
           
           const updatedData = await response.json();
           setVisitorCount(updatedData.count);
-          sessionStorage.setItem('hasCountedVisitor', 'true');
         } else {
           // If already counted, just fetch current count
           const response = await fetch(`${API_BASE_URL}/api/visitors`);
@@ -61,9 +64,14 @@ function Footerend() {
         console.error('Error with visitor count:', error);
         // Fallback to localStorage
         const localCount = localStorage.getItem('visitorCount') || 0;
-        const newCount = parseInt(localCount) + 1;
-        localStorage.setItem('visitorCount', newCount.toString());
-        setVisitorCount(newCount);
+        if (!hasIncremented.current) {
+          const newCount = parseInt(localCount) + 1;
+          localStorage.setItem('visitorCount', newCount.toString());
+          setVisitorCount(newCount);
+          hasIncremented.current = true;
+        } else {
+          setVisitorCount(parseInt(localCount));
+        }
       } finally {
         setIsLoading(false);
       }
