@@ -205,7 +205,7 @@ const SignupAdmin = () => {
             </Card>
           </Col>
 
-          <Col>
+          <Col className='big-div-adm-sup'>
             <div className="head-right-top-Admin-signup" style={{ backgroundColor: "#eadbc8" }}>
               <h3 style={{ color: '#102C57' }}>Admin SignUp</h3>
             </div>

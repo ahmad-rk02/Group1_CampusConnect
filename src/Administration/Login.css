@@ -196,6 +196,20 @@
   }
 }
 
+@media (max-width: 992px){
+  .left-index-loginP{
+    display: flex;
+  }
+
+  .big-div-login{
+    width: 60%;
+    margin-left: 35%;
+    margin-top: -30%;
+  }
+
+ 
+}
+
 /* Responsive Table Adjustments for Small Screens */
 @media screen and (max-width: 768px) {
   -loginP-table {

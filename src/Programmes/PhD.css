@@ -130,7 +130,7 @@
     }
   
     .left-sidebar-phd {
-        width: 100%;
+        width: 40%;
         margin-left: 0;
     }
   
@@ -140,18 +140,20 @@
      /* Stack elements vertically */
      .left-index-phd {
         display: flex;
-        flex-direction: column;
+        margin-inline: 5%;
         padding: 10px;
     }
   
-   
+    .table-wrapper-phd{
+        width: 70%;
+      }
     
   
     /* Full-width for content */
-    .table-n-head {
+    .table-n-head-phd {
         width: 100%;
         padding-left: 0;
-        margin-left: 8px;
+        margin-left: -10px;
     }
     /* Reduce font size and padding for table on small screens */
     .table-header-phd th, .table-body-phd tr td {

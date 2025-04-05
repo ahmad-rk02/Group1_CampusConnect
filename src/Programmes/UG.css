@@ -149,7 +149,8 @@ div.head-table-top-ug{
     }
 
     .left-sidebar-ug {
-        width: 100%;
+        width: 40%;
+        height: 250px;
         margin-left: 0;
     }
 
@@ -159,18 +160,20 @@ div.head-table-top-ug{
      /* Stack elements vertically */
      .left-index-ug {
         display: flex;
-        flex-direction: column;
+        margin-inline: 5%;
         padding: 10px;
     }
 
-   
+    .table-wrapper-ug{
+        width: 70%;
+      }
     
 
     /* Full-width for content */
-    .table-n-head {
-        width: 77%;
+    .table-n-head-ug {
+        width: 100%;
         padding-left: 0;
-        margin-left: -200px;
+        margin-left: -10px;
     }
     /* Reduce font size and padding for table on small screens */
     .table-header-ug th, .table-body-ug tr td {

@@ -106,7 +106,7 @@ const Workshop = () => {
 
 
           {/* Right Content Section */}
-          <Col md={9} className="mt-4 content-card-ws">
+          <Col className="mt-4 content-card-ws">
             {/* About Institute */}
             <Card className="mb-4 w-100 card-content-ws">
               <Card.Body className="bg-white-ws">

@@ -161,6 +161,14 @@
     color: #2980b9;
     text-decoration: underline;
   }
+
+
+  @media (max-width: 992px){
+    div.members-container {
+      display: block; 
+      gap: 10px;
+    }
+  }
   
   /* Responsive Design */
   @media (max-width: 767px) {

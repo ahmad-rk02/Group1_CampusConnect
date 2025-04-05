@@ -213,6 +213,11 @@
   }
 
   .card-content-ai {
-    padding:0 10px;
+    padding-inline: 5%;
+    width: 100%;
+  }
+
+  h2.fw-bold.text{
+    width: 300px;
   }
 }

@@ -65,7 +65,7 @@ const Login = () => {
                         </ListGroup>
                     </Card>
                 </Col>
-                <Col>
+                <Col className='big-div-login'>
                     <div className="login-portal">
                         <div className='head-right-top-loginP'>
                             <h3>Login</h3>

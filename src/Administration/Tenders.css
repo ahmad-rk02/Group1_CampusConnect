@@ -142,6 +142,16 @@ table.tender-table{
  
 }
 
+@media (max-width: 992px){
+    
+        .tender-portal{
+            margin-top:5%;
+            margin-inline: 15%;
+            width: 80%;
+        }
+    
+}
+
 /* Responsive styling for mobile screens */
 @media (max-width: 768px) {
   

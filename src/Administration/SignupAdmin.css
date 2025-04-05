@@ -500,6 +500,54 @@ div.form-section-Admin-signup{
   opacity: 0.9;
 }
 
+@media (max-width: 992px){
+   
+
+  .left-nav-Admin-signup{
+    width: 100%;
+    margin-left: 5%;
+  }
+
+  .left-sidebar-Admin-signup{
+    margin-left: 0;
+    height: 300px;
+  }
+
+  .left-nav-row-Admin-signup
+ {
+    height: 46px;
+    font-size: 14px;
+}
+
+.head-right-top-Admin-signup{
+  margin-left: 0;
+  width: 100%;
+}
+
+form.whole-form-Admin-signup{
+  width: 500px;
+  margin-left: -48%;
+}
+
+.left-nav-row-Admin-signup-01 a{
+  font-size: 14px;
+}
+
+.left-nav-row-Admin-signup a{
+  font-size: 14px;
+}
+
+.left-nav-row-Admin-signup-01 {
+  font-weight: 700;
+  height: 46px;
+  font-size: 14px;
+}
+
+  .big-div-adm-sup{
+    width: 60%;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .custom-modal .modal-content {
