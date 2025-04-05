@@ -1,186 +1,204 @@
-/* Main Container */
 .student-forgot-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #ffffff;
-  padding: 20px;
-}
-
-/* Form Container */
-.student-form-container {
-  background: #f9f9f9;
-  padding: 30px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
-  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+
+.student-form-container {
+  margin-bottom: 1.5rem;
 }
 
 .student-form-container h2 {
-  margin-bottom: 20px;
-  color: #333;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #102C57;
+  font-size: 1.5rem;
 }
 
-/* Input Fields */
+.student-form-container p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
 .student-input-field {
   width: 100%;
-  padding: 12px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
+  padding: 12px 15px;
+  margin: 0.5rem 0;
+  border: 1px solid #ddd;
   border-radius: 6px;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
+  font-size: 1rem;
+  transition: border-color 0.3s;
 }
 
 .student-input-field:focus {
-  border-color: #007bff;
+  border-color: #102C57;
   outline: none;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 2px rgba(16, 44, 87, 0.2);
 }
 
-/* Password Field Container */
+.student-submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #102C57;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: background-color 0.3s;
+}
+
+.student-submit-button:hover {
+  background-color: #0a1f3d;
+}
+
+.student-submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.student-otp-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+  gap: 0.5rem;
+}
+
+.student-otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 1.2rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.student-otp-input:focus {
+  border-color: #102C57;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(16, 44, 87, 0.2);
+}
+
+.student-otp-footer {
+  text-align: center;
+  margin: 1rem 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.student-resend-button {
+  background: none;
+  border: none;
+  color: #102C57;
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+.student-resend-button:hover {
+  color: #0a1f3d;
+}
+
+.student-resend-button:disabled {
+  color: #cccccc;
+  cursor: not-allowed;
+}
+
 .student-password-field-container {
   position: relative;
+  margin: 0.5rem 0;
 }
 
 .student-toggle-password-button {
   position: absolute;
-  right: 10px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  background: transparent;
+  background: none;
   border: none;
   cursor: pointer;
-  font-size: 16px;
-  color: #555;
+  color: #666;
+  transition: color 0.3s;
 }
 
 .student-toggle-password-button:hover {
-  color: #007bff;
+  color: #333;
 }
 
-/* Submit Buttons */
-.student-submit-button {
-  width: 100%;
-  padding: 12px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-
-.student-submit-button:hover {
-  background-color: #0056b3;
-}
-
-/* Toggle Button */
-.student-toggle-button {
-  margin-top: 20px;
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 14px;
-  cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out;
-}
-
-.student-toggle-button:hover {
-  background-color: #218838;
-}
-
-/* Modals Overlay */
-.student-modals-overlay {
+.student-modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
-/* Modals Content */
-.student-modals-content {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  text-align: center;
+.student-modal-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  max-width: 300px;
   width: 90%;
-  max-width: 350px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  position: relative;
-  animation: fadeIn 0.3s ease-in-out;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.student-modal-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-/* Modals Icon */
-.student-modals-icon {
-  font-size: 50px;
-  margin-bottom: 10px;
-}
-
-.student-modals-icon.success {
+.student-modal-icon.success {
   color: #28a745;
 }
 
-.student-modals-icon.error {
+.student-modal-icon.error {
   color: #dc3545;
 }
 
-/* Modals Message */
-.student-modals-message {
-  font-size: 16px;
+.student-modal-message {
+  margin-bottom: 1.5rem;
   color: #333;
-  margin-bottom: 15px;
+  line-height: 1.5;
 }
 
-/* Close Button */
-.student-close-modals {
-  background-color: #dc3545;
+.student-close-modal {
+  padding: 8px 16px;
+  background-color: #102C57;
   color: white;
   border: none;
-  padding: 10px 20px;
-  font-size: 14px;
+  border-radius: 4px;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s;
 }
 
-.student-close-modals:hover {
-  background-color: #c82333;
+.student-close-modal:hover {
+  background-color: #0a1f3d;
 }
 
-/* Responsive Design */
-@media (max-width: 600px) {
-  .student-form-container {
-    padding: 20px;
+@media (max-width: 480px) {
+  .student-forgot-container {
+    padding: 1.5rem;
+    margin: 1rem auto;
   }
-
-  .student-submit-button,
-  .student-toggle-button {
-    font-size: 14px;
-    padding: 10px;
+  
+  .student-otp-input {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }

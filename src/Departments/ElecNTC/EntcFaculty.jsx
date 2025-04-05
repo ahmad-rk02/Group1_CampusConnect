@@ -18,9 +18,9 @@ const FacultyList = () => {
       try {
         const [res1, res2, res3, res4] = await Promise.all([
           axios.get(`${API_BASE_URL}/api/entc-hod?populate=*`),
-          axios.get(`${API_BASE_URL}/api/cse-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/api/cse-non-teaching-faculties?populate=*`),
-          axios.get(`${API_BASE_URL}/api/cse-visiting-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/entc-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/entc-non-teaching-faculties?populate=*`),
+          axios.get(`${API_BASE_URL}/api/entc-visiting-faculties?populate=*`),
         ]);
 
         setHod(res1.data.data);
