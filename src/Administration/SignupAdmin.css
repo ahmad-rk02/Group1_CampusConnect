@@ -527,6 +527,7 @@ div.form-section-Admin-signup{
 form.whole-form-Admin-signup{
   width: 500px;
   margin-left: -48%;
+  margin-bottom: 0;
 }
 
 .left-nav-row-Admin-signup-01 a{
