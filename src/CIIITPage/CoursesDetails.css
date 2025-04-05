@@ -198,6 +198,25 @@
     }
 }
 
+@media (max-width: 992px){
+    .main-box-cd{
+        width: 100%;
+    }
+
+   .dropdown-ciiit-text li{
+    height: 40px;
+   }
+
+   .feature-ciiit{
+    width: 65%;
+   }
+
+   div.c-para p{
+    width: 65%;
+     margin-inline: 20%;
+   }
+}
+
 @media (max-width: 768px) {
     .head-box-coursesdetls h1 {
         font-size: 30px;

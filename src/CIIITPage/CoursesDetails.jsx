@@ -85,7 +85,7 @@ const CoursesDetails = () => {
           </Card>
         </Col>
 
-        <Col>
+        <Col className='main-box-cd'>
         <div className='ciiit-heading'>
         <h1>CIIIT Labs</h1>
         </div>
