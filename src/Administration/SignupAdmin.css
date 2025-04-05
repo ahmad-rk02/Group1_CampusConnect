@@ -588,3 +588,143 @@ form.whole-form-Admin-signup{
     padding: 5px 10px;
   }
 }
+
+/* OTP Modal Styling */
+.otp-modal .modal-content {
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.otp-modal-header {
+  border-bottom: none;
+  padding: 25px 25px 10px;
+  background-color: #f8f9fa;
+}
+
+.otp-modal-title {
+  text-align: center;
+  width: 100%;
+}
+
+.otp-icon-container {
+  background-color: #e6f0ff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+}
+
+.otp-modal-title h3 {
+  color: #102C57;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.otp-instructions {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+.otp-modal-body {
+  padding: 20px 30px 30px;
+}
+
+.otp-input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+  gap: 10px;
+}
+
+.otp-digit-input {
+  width: 45px !important;
+  height: 60px !important;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  color: #102C57;
+  transition: all 0.3s ease;
+}
+
+.otp-digit-input:focus {
+  border-color: #102C57 !important;
+  box-shadow: 0 0 0 0.2rem rgba(16, 44, 87, 0.25) !important;
+}
+
+.otp-timer-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.otp-timer {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.otp-resend-btn {
+  color: #102C57 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  padding: 0;
+}
+
+.otp-resend-btn:hover {
+  text-decoration: underline !important;
+}
+
+.otp-verify-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #102C57;
+  border: none;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+.otp-verify-btn:disabled {
+  background-color: #6c757d;
+  opacity: 0.7;
+}
+
+.otp-help-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.otp-help-text a {
+  color: #102C57;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.otp-help-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments for OTP modal */
+@media (max-width: 576px) {
+  .otp-digit-input {
+    width: 40px !important;
+    height: 50px !important;
+    font-size: 20px;
+  }
+  
+  .otp-modal-header {
+    padding: 15px 15px 5px;
+  }
+  
+  .otp-modal-body {
+    padding: 15px 20px 20px;
+  }
+}

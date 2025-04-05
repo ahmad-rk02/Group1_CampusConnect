@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, ListGroup, Form, Button, Alert, Modal } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -26,8 +26,9 @@ const SignupAdmin = () => {
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [showOTPModal, setShowOTPModal] = useState(false);
-  const [otp, setOtp] = useState('');
+  const [otp, setOtp] = useState(['', '', '', '', '', '']);
   const [userId, setUserId] = useState(null);
+  const [resendTimer, setResendTimer] = useState(60);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,12 +53,13 @@ const SignupAdmin = () => {
       formErrors.email = "A valid email is required";
     }
 
+    const dtePattern = /^DTE\d{4}4004$/;
     if (!formData.dte) {
       valid = false;
       formErrors.dte = "DTE Number is required";
-    } else if (isNaN(formData.dte) || formData.dte <= 0) {
+    } else if (!dtePattern.test(formData.dte)) {
       valid = false;
-      formErrors.dte = "DTE Number must be a positive number";
+      formErrors.dte = "Enter valid DTE Number";
     }
 
     if (!formData.committee) {
@@ -65,12 +67,13 @@ const SignupAdmin = () => {
       formErrors.committee = "Committee selection is required";
     }
 
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
     if (!formData.password) {
       valid = false;
       formErrors.password = "Password is required";
-    } else if (formData.password.length < 8) {
+    } else if (!passwordPattern.test(formData.password)) {
       valid = false;
-      formErrors.password = "Password must be at least 8 characters long";
+      formErrors.password = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character.";
     }
 
     if (!formData.confirmPassword) {
@@ -103,6 +106,7 @@ const SignupAdmin = () => {
         console.log('Signup Response:', response.data);
         setUserId(response.data.userId);
         setShowOTPModal(true);
+        setResendTimer(60); // Start the resend timer
       } catch (error) {
         console.error('Signup Error:', error);
         if (error.response && error.response.status === 409) {
@@ -115,12 +119,30 @@ const SignupAdmin = () => {
     }
   };
 
+  const handleOTPChange = (index, value) => {
+    const newOtp = [...otp];
+    newOtp[index] = value.replace(/[^0-9]/g, '');
+    setOtp(newOtp);
+    
+    // Auto-focus to next input
+    if (value && index < 5) {
+      document.getElementById(`otp-input-${index + 1}`).focus();
+    }
+  };
+
   const handleOTPSubmit = async (e) => {
     e.preventDefault();
+    const otpString = otp.join('');
+    if (otpString.length !== 6) {
+      setErrorMessage('Please enter a complete 6-digit OTP');
+      setShowErrorModal(true);
+      return;
+    }
+
     try {
       const response = await axios.post(`${API_BASE_URL}/api/users/verify-signup-otp`, {
         email: formData.email,
-        otp,
+        otp: otpString,
       });
 
       console.log('OTP Verification Response:', response.data);
@@ -134,7 +156,7 @@ const SignupAdmin = () => {
         password: '',
         confirmPassword: '',
       });
-      setOtp('');
+      setOtp(['', '', '', '', '', '']);
       setErrors({});
     } catch (error) {
       console.error('OTP Verification Error:', error);
@@ -149,14 +171,23 @@ const SignupAdmin = () => {
         email: formData.email,
       });
       console.log('Resend OTP Response:', response.data);
-      alert('A new OTP has been sent to your email.');
-      setOtp(''); // Clear the current OTP input
+      setResendTimer(60); // Reset timer
+      setOtp(['', '', '', '', '', '']); // Clear current OTP
+      document.getElementById('otp-input-0').focus(); // Focus first input
     } catch (error) {
       console.error('Resend OTP Error:', error);
       setErrorMessage('Failed to resend OTP. Please try again.');
       setShowErrorModal(true);
     }
   };
+
+  // Timer effect
+  useEffect(() => {
+    if (showOTPModal && resendTimer > 0) {
+      const timer = setTimeout(() => setResendTimer(resendTimer - 1), 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [showOTPModal, resendTimer]);
 
   return (
     <div>
@@ -390,30 +421,60 @@ const SignupAdmin = () => {
           show={showOTPModal}
           onHide={() => setShowOTPModal(false)}
           centered
-          className="custom-modal"
+          className="otp-modal"
         >
-          <Modal.Header>
-            <Modal.Title>Verify OTP</Modal.Title>
+          <Modal.Header closeButton className="otp-modal-header">
+            <Modal.Title className="otp-modal-title">
+              <div className="otp-icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#102C57" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <h3>Verify Your Email</h3>
+              <p className="otp-instructions">We've sent a 6-digit code to <strong>{formData.email}</strong></p>
+            </Modal.Title>
           </Modal.Header>
-          <Modal.Body>
-            <p>An OTP has been sent to {formData.email}. Please enter it below:</p>
+          <Modal.Body className="otp-modal-body">
             <Form onSubmit={handleOTPSubmit}>
-              <Form.Group>
-                <Form.Control
-                  type="text"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value)}
-                  placeholder="Enter 6-digit OTP"
-                  maxLength="6"
-                />
-              </Form.Group>
-              <div className="mt-3">
-                <Button variant="primary" type="submit">
-                  Verify OTP
-                </Button>
-                <Button variant="link" onClick={handleResendOTP} className="ms-3">
-                  Resend OTP
-                </Button>
+              <div className="otp-input-container">
+                {[0, 1, 2, 3, 4, 5].map((index) => (
+                  <Form.Control
+                    key={index}
+                    type="text"
+                    maxLength="1"
+                    className="otp-digit-input"
+                    value={otp[index]}
+                    onChange={(e) => handleOTPChange(index, e.target.value)}
+                    id={`otp-input-${index}`}
+                    autoFocus={index === 0}
+                  />
+                ))}
+              </div>
+              
+              <div className="otp-timer-container">
+                {resendTimer > 0 ? (
+                  <p className="otp-timer">Resend OTP in {resendTimer} seconds</p>
+                ) : (
+                  <Button 
+                    variant="link" 
+                    onClick={handleResendOTP} 
+                    className="otp-resend-btn"
+                  >
+                    Resend OTP
+                  </Button>
+                )}
+              </div>
+              
+              <Button 
+                type="submit" 
+                className="otp-verify-btn"
+                disabled={otp.join('').length !== 6}
+              >
+                Verify & Continue
+              </Button>
+              
+              <div className="otp-help-text">
+                <p>Didn't receive the code? Check your spam folder or <a href="#" onClick={handleResendOTP}>resend</a></p>
               </div>
             </Form>
           </Modal.Body>
