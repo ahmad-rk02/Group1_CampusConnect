@@ -8,8 +8,7 @@ const Committees = () => {
   const [committeeData, setCommitteeData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL; // Uncomment for deployment
-
+  const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
 
   const location = useLocation();
 
@@ -21,8 +20,15 @@ const Committees = () => {
           throw new Error("Failed to fetch committee data");
         }
         const result = await response.json();
-        console.log("API Response:", result); // Log the response to debug
-        setCommitteeData(Array.isArray(result.data) ? result.data : []);
+        const sortedData = Array.isArray(result.data)
+          ? result.data.sort((a, b) => {
+              const dateA = new Date(a.committee_date);
+              const dateB = new Date(b.committee_date);
+              return dateB - dateA;
+            })
+          : [];
+
+        setCommitteeData(sortedData);
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -103,6 +109,7 @@ const Committees = () => {
             </Card>
           </Col>
 
+          {/* Main Content */}
           <Col md={9} xs={12} className="committee-div">
             <div className="head-right-top-committee-clg">
               <h3 style={{ color: "#102C57", backgroundColor: "rgb(234,219,200)", padding: "10px" }}>

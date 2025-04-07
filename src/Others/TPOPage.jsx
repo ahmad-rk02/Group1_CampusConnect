@@ -321,7 +321,12 @@ const TPOPage = () => {
                     data["placement-records"].length > 0 ? (
                       data["placement-records"]
                         .filter(record => record && record.year)
-                        .sort((a, b) => (b.year || "").localeCompare(a.year || ""))
+                        .sort((a, b) => {
+                          // Extract the numeric year from both records
+                          const yearA = parseInt(a.year.match(/\d{4}/)?.[0]) || 0;
+                          const yearB = parseInt(b.year.match(/\d{4}/)?.[0]) || 0;
+                          return yearB - yearA; // Descending order
+                        })
                         .map((record, index) => (
                           <tr key={record.id || index}>
                             <td>{index + 1}</td>
@@ -356,6 +361,7 @@ const TPOPage = () => {
                 </tbody>
               </Table>
             </section>
+
 
             <section id="training-programs" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">Training and Programs</h2>
@@ -441,6 +447,8 @@ const TPOPage = () => {
               )}
             </section>
 
+
+
             <section id="tpo-activities" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Activities</h2>
               {loading ? (
@@ -448,22 +456,32 @@ const TPOPage = () => {
               ) : Array.isArray(data["tpo-activities"]) ? (
                 data["tpo-activities"].length > 0 ? (
                   <ul className="list-group shadow-sm rounded-3 activity-list">
-                    {data["tpo-activities"].map((activity, index) => (
-                      <li key={activity.id || index} className="list-group-item py-2 py-md-3">
-                        {activity.pdf?.url ? (
-                          <a
-                            href={getMediaUrl(activity.pdf.url)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary fw-medium"
-                          >
-                            {activity.title || "Activity"}
-                          </a>
-                        ) : (
-                          <span className="text-muted">{activity.title || "Activity"} (No PDF available)</span>
-                        )}
-                      </li>
-                    ))}
+                    {data["tpo-activities"]
+                      .filter(activity => activity?.title)
+                      .sort((a, b) => {
+                        // Extract the starting year from the title (e.g. "2021" from "2021-2022")
+                        const getYear = (title) => {
+                          const match = title?.match(/\b(\d{4})-\d{4}\b/);
+                          return match ? parseInt(match[1]) : 0;
+                        };
+                        return getYear(b.title) - getYear(a.title); // Descending order
+                      })
+                      .map((activity, index) => (
+                        <li key={activity.id || index} className="list-group-item py-2 py-md-3">
+                          {activity.pdf?.url ? (
+                            <a
+                              href={getMediaUrl(activity.pdf.url)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary fw-medium"
+                            >
+                              {activity.title || "Activity"}
+                            </a>
+                          ) : (
+                            <span className="text-muted">{activity.title || "Activity"} (No PDF available)</span>
+                          )}
+                        </li>
+                      ))}
                   </ul>
                 ) : (
                   <p className="text-muted text-center">No activities available</p>
@@ -585,6 +603,7 @@ const TPOPage = () => {
               )}
             </section>
 
+
             <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Brochures</h2>
               {loading ? (
@@ -592,22 +611,39 @@ const TPOPage = () => {
               ) : Array.isArray(data['tpo-brochures']) ? (
                 data['tpo-brochures'].length > 0 ? (
                   <ul className="list-group shadow-sm rounded-3 document-list">
-                    {data['tpo-brochures'].map((item, index) => (
-                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                        {item.pdf?.url || item.image?.url ? (
-                          <a
-                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary fw-medium"
-                          >
-                            {item.title || "Document"}
-                          </a>
-                        ) : (
-                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                        )}
-                      </li>
-                    ))}
+                    {data['tpo-brochures']
+                      .filter(item => item?.title)
+                      .sort((a, b) => {
+                        const extractStartYear = title => {
+                          // Matches: 2020-2021 or 2022-23 or 21-22
+                          const match = title.match(/(\d{4})[-–](\d{2,4})/) || title.match(/(\d{2})[-–](\d{2})/);
+                          if (match) {
+                            let year = match[1];
+                            if (year.length === 2) {
+                              year = parseInt(year) >= 50 ? `19${year}` : `20${year}`;
+                            }
+                            return parseInt(year);
+                          }
+                          return 0;
+                        };
+                        return extractStartYear(b.title) - extractStartYear(a.title);
+                      })
+                      .map((item, index) => (
+                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                          {item.pdf?.url || item.image?.url ? (
+                            <a
+                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary fw-medium"
+                            >
+                              {item.title || "Document"}
+                            </a>
+                          ) : (
+                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                          )}
+                        </li>
+                      ))}
                   </ul>
                 ) : (
                   <p className="text-muted text-center">No documents available</p>
@@ -617,6 +653,9 @@ const TPOPage = () => {
               )}
             </section>
 
+
+
+
             <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Policy</h2>
               {loading ? (
@@ -624,22 +663,24 @@ const TPOPage = () => {
               ) : Array.isArray(data['tpo-placement-policies']) ? (
                 data['tpo-placement-policies'].length > 0 ? (
                   <ul className="list-group shadow-sm rounded-3 document-list">
-                    {data['tpo-placement-policies'].map((item, index) => (
-                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                        {item.pdf?.url || item.image?.url ? (
-                          <a
-                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-primary fw-medium"
-                          >
-                            {item.title || "Document"}
-                          </a>
-                        ) : (
-                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                        )}
-                      </li>
-                    ))}
+                    {data['tpo-placement-policies']
+                      .sort((a, b) => (b.title || "").localeCompare(a.title || "")) // Descending
+                      .map((item, index) => (
+                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                          {item.pdf?.url || item.image?.url ? (
+                            <a
+                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-primary fw-medium"
+                            >
+                              {item.title || "Document"}
+                            </a>
+                          ) : (
+                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                          )}
+                        </li>
+                      ))}
                   </ul>
                 ) : (
                   <p className="text-muted text-center">No documents available</p>
@@ -648,6 +689,7 @@ const TPOPage = () => {
                 <p className="text-muted text-center">Error: Invalid document data</p>
               )}
             </section>
+
 
             <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P NOCS</h2>
@@ -698,7 +740,13 @@ const TPOPage = () => {
                     <tbody>
                       {data["tpo-mous"]
                         .filter(mou => mou && mou.date)
-                        .sort((a, b) => new Date(b.date) - new Date(a.date))
+                        .sort((a, b) => {
+                          const parseDate = (str) => {
+                            const [day, month, year] = str.split('/');
+                            return new Date(`${year}-${month}-${day}`);
+                          };
+                          return parseDate(b.date) - parseDate(a.date);
+                        })
                         .map((mou, index) => (
                           <tr key={mou.id || index}>
                             <td>{index + 1}</td>
@@ -716,9 +764,10 @@ const TPOPage = () => {
               )}
             </section>
 
+
             {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Feedback</h2>
+              <h2 className="section-title fw-bold mb-3 mb-md-4">Student Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
                 <Card.Body className="p-3 p-md-4">
                   <Form onSubmit={handleFeedbackSubmit}>
@@ -933,7 +982,7 @@ const TPOPage = () => {
                 <p className="text-muted text-center">Loading contact details...</p>
               ) : (
                 <>
-                  <h3 className="fw-bold mb-3">TnP Staff</h3>
+                  <h3 className="fw-bold mb-3">T&P Staff</h3>
                   {Array.isArray(data["tpo-staffs"]) && data["tpo-staffs"].length > 0 ? (
                     <Row className="g-3">
                       {data["tpo-staffs"].map((staff, index) => (
@@ -966,7 +1015,7 @@ const TPOPage = () => {
                     <p className="text-muted text-center">No staff details available</p>
                   )}
 
-                  <h3 className="fw-bold mb-3 mt-4">TnP Office</h3>
+                  <h3 className="fw-bold mb-3 mt-4">T&P Office</h3>
                   {Array.isArray(data["tpo-offices"]) && data["tpo-offices"].length > 0 ? (
                     data["tpo-offices"].map((office, index) => (
                       <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
