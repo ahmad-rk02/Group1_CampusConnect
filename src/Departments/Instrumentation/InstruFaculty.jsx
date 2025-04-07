@@ -1,10 +1,8 @@
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./InstruFaculty.css";
 
 const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-
 
 const InstruFaculty = () => {
   const [hod, setHod] = useState(null);
@@ -47,6 +45,16 @@ const InstruFaculty = () => {
     return "placeholder.jpg";
   };
 
+  const downloadAttachment = (attachment) => {
+    if (attachment?.url) {
+      const url = attachment.url.startsWith("http") 
+        ? attachment.url 
+        : `${API_BASE_URL}${attachment.url}`;
+      console.log("Downloading:", url);
+      window.open(url, "_blank");
+    }
+  };
+
   const toggleExpand = (id) => {
     setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
   };
@@ -67,15 +75,27 @@ const InstruFaculty = () => {
             <h3>{hod.designation || "N/A"}</h3>
             <h3>{hod.qualification || "N/A"}</h3>
             <h3>{hod.experience || "N/A"} years</h3>
-            <a href={`mailto:${hod.email}`} className="faculty-email">{hod.email || "N/A"}</a>
+            <div style={{ display: 'block' }}>
+              <a href={`mailto:${hod.email}`} className="faculty-email">{hod.email || "N/A"}</a>
+            </div>
+            {hod.attachment && (
+              <div style={{ display: 'block', marginTop: '0.5rem' }}>
+                <button
+                  onClick={() => downloadAttachment(hod.attachment)}
+                  className="attachment-btn"
+                >
+                  Download CV/Resume
+                </button>
+              </div>
+            )}
             <h3>
               {expanded[hod.id] || !hod.details || hod.details.length <= 100
-                ? hod.details || "N/A"
+                ? hod.details
                 : `${hod.details.substring(0, 100)}...`}
             </h3>
             {hod.details && hod.details.length > 100 && (
               <button onClick={() => toggleExpand(hod.id)} className="read-more-btn">
-                {expanded[hod.id] ? "Read Less" : "Read More"}
+                {expanded[hod.id] ? "	Read Less" : "Read More"}
               </button>
             )}
           </div>
@@ -95,10 +115,22 @@ const InstruFaculty = () => {
             <h3>{member.designation}</h3>
             <h3>{member.qualification}</h3>
             <h3>{member.experience} years</h3>
-            <a href={`mailto:${member.email}`} className="faculty-email">{member.email}</a>
+            <div style={{ display: 'block' }}>
+              <a href={`mailto:${member.email}`} className="faculty-email">{member.email}</a>
+            </div>
+            {member.attachment && (
+              <div style={{ display: 'block', marginTop: '0.5rem' }}>
+                <button
+                  onClick={() => downloadAttachment(member.attachment)}
+                  className="attachment-btn"
+                >
+                  Download CV/Resume
+                </button>
+              </div>
+            )}
             <h3>
               {expanded[member.id] || !member.details || member.details.length <= 100
-                ? member.details || "N/A"
+                ? member.details
                 : `${member.details.substring(0, 100)}...`}
             </h3>
             {member.details && member.details.length > 100 && (
@@ -121,7 +153,19 @@ const InstruFaculty = () => {
             <h3>{member.designation}</h3>
             <h3>{member.qualification}</h3>
             <h3>{member.experience} years</h3>
-            <a href={`mailto:${member.email}`} className="faculty-email">{member.email}</a>
+            <div style={{ display: 'block' }}>
+              <a href={`mailto:${member.email}`} className="faculty-email">{member.email}</a>
+            </div>
+            {member.attachment && (
+              <div style={{ display: 'block', marginTop: '0.5rem' }}>
+                <button
+                  onClick={() => downloadAttachment(member.attachment)}
+                  className="attachment-btn"
+                >
+                  Download CV/Resume
+                </button>
+              </div>
+            )}
           </div>
         </div>
       ))}
@@ -134,6 +178,7 @@ const InstruFaculty = () => {
             <tr>
               <th>Name</th>
               <th>Designation</th>
+              <th>Attachment</th>
             </tr>
           </thead>
           <tbody>
@@ -141,6 +186,18 @@ const InstruFaculty = () => {
               <tr key={faculty.id}>
                 <td>{faculty.name}</td>
                 <td>{faculty.designation}</td>
+                <td>
+                  {faculty.attachment ? (
+                    <button
+                      onClick={() => downloadAttachment(faculty.attachment)}
+                      className="table-attachment-btn"
+                    >
+                      Download
+                    </button>
+                  ) : (
+                    <span className="no-attachment">N/A</span>
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>

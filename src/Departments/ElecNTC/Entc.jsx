@@ -6,7 +6,7 @@ import DropDownEntc from './DropDownEntc';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Entcvm from '../../Departments/ElecNTC/Entcvm';
-
+import EntcFaculty from '../../Departments/ElecNTC/EntcFaculty'
 
 
 const Entc = () => {
@@ -86,8 +86,8 @@ const Entc = () => {
                     </ListGroup.Item>
                     <ListGroup.Item className="left-nav-row-Entc">
                       <Link
-                        to="Cvl"
-                        className={location.pathname === "Cvl" ? "active-link" : ""}
+                        to="/Cvl"
+                        className={location.pathname === "/Cvl" ? "active-link" : ""}
                       >
                         Civil Engineering
                       </Link>
@@ -112,7 +112,9 @@ const Entc = () => {
             <div >
               <Entcvm className='right-content-Entc' />
             </div>
-
+            <div >
+              <EntcFaculty className='right-content-Entc' />
+            </div>
 
 
           </Col>

@@ -248,4 +248,48 @@
       font-size: 0.8rem;
     }
   }
-  
+    /* Attachment Button Styling */
+.attachment-btn {
+  background-color: #102C57;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.attachment-btn:hover {
+  background-color: #0a1f3d;
+  transform: translateY(-2px);
+}
+
+.attachment-btn:active {
+  transform: translateY(0);
+}
+
+/* Attachment icon (optional) */
+.attachment-btn::before {
+  content: "📄";
+  font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .attachment-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .attachment-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+}
