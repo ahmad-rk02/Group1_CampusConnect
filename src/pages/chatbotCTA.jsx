@@ -1,8 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./chatbotCTA.css";
 
 function ChatbotCTA() {
     const [isChatbotOpen, setIsChatbotOpen] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768); // Adjust threshold if needed
+        };
+        checkMobile();
+        window.addEventListener("resize", checkMobile);
+        return () => window.removeEventListener("resize", checkMobile);
+    }, []);
 
     const toggleChatbot = () => {
         setIsChatbotOpen(!isChatbotOpen);
@@ -17,7 +27,7 @@ function ChatbotCTA() {
 
             {/* Chatbot Popup */}
             {isChatbotOpen && (
-                <div className="chatbot-container">
+                <div className={`chatbot-container ${isMobile ? "chatbot-fullscreen" : ""}`}>
                     <div className="chatbot-header">
                         <span>Chatbot</span>
                         <button className="close-btn" onClick={toggleChatbot}>&times;</button>
