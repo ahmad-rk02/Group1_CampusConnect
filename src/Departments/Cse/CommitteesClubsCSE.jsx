@@ -7,6 +7,8 @@ import NSDCeleb from '../../assets/NSDCeleb.jpg';
 import IHAGCOEC from '../../assets/IHAGCOEC.jpg';
 import BlindCoding from '../../assets/BlindCoding.jpg';
 import TreePlantation from '../../assets/TreePlantation.jpg';
+import { Link } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const CommitteesAndClubs = () => {
     return (
@@ -115,7 +117,8 @@ const CommitteesAndClubs = () => {
                 </div>
                 {/* Single "Know More" Button Below Events */}
                 <div className="know_more_container">
-                    <button className="know_more_btn">Know More</button>
+                    {/* <button className="know_more_btn">Know More</button> */}
+                    <a className="know_more_btn" href="https://acses.vercel.app/">Know More</a>
                 </div>
             </div>
 
