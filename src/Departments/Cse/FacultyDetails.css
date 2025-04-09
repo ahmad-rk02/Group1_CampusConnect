@@ -92,9 +92,10 @@
   display: inline-block;
 }
 
-.read-more-btn:hover {
+button.read-more-btn:hover {
+  background-color: white;
   text-decoration: underline;
-  color: #d3dae3;
+  color: #007bff;
 }
 
 /* Faculty Bio */

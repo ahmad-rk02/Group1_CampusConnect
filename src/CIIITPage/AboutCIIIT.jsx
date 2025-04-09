@@ -12,7 +12,7 @@ const AboutCIIIT = () => {
       <Container fluid className="p-0-w-100">
       <Row className='head-box-AbtCiiit'>
         <Col>
-          <h1 className="text-left">CIIIT - Center for Invention Innovation Incubation & Training</h1>
+          <h1 className="text-left head-ciiit">CIIIT - Center for Invention Innovation Incubation & Training</h1>
         </Col>
       </Row>
 
@@ -29,7 +29,7 @@ const AboutCIIIT = () => {
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
-                  Courses Details
+                  CIIIT Labs
                 </Link>
               </ListGroup.Item>
 

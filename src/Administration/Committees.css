@@ -162,11 +162,11 @@
         padding: 0;
     }   
 
-    .head-box-committee-clg h1{
+    .head-box-committee-clg h1.text-left{
         font-size: 24px;
-        margin: 0;
+        margin-inline: 5%;
         padding-inline: 17%;
-        padding-top: 10%;
+        margin-top: 13%;
         width: fit-content;
        }
 
@@ -174,7 +174,14 @@
         margin-inline: 7%;
     }
 
+    .left-nav-committee-clg{
+        margin-inline: 18.5%;
+        margin-top: 6%;
+    }
+
     .committee-div{
+        margin-top: 4%;
+        margin-left: 0;
         width: 100%;
     }
 

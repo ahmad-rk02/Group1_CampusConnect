@@ -27,7 +27,7 @@ const CIIITBrochure = () => {
 
               <ListGroup.Item className="left-nav-row-AbtCiiit">
                 <Link to="/coursesdetails" className={location.pathname === "/coursesdetails" ? "active-link" : ""}>
-                  Courses Details
+                  CIIIT Labs
                 </Link>
               </ListGroup.Item>
 

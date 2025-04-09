@@ -237,16 +237,22 @@
     margin-inline: 3%;
   }
 
-  h1.text-left{
+  .head-box-loginP .text-left{
     font-size: 24px;
-    margin-top: 10%;
-    padding-inline: 15%;
+    margin-top: 14%;
+    padding-inline: 23%;
     margin-inline: 0;
   }
 
+  div.big-div-login{
+    margin-left: 0;
+    width: 100%;
+    margin-top: 5%;
+  }
+
   .left-nav-loginP{
-    margin-inline: 7%;
-    margin-top: 7%;
+    margin-inline:20%;
+    margin-top: 10%;
   }
 
   -loginP-table {

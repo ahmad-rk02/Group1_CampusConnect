@@ -240,9 +240,12 @@ ul.dropdown-cse-text{
     height: 80px;
   }
 
-  .head-box-cse h1 {
-    font-size: 1.2rem;
+  .head-box-cse h1.text-left {
+    width: fit-content;
+    font-size: 24px;
     margin-bottom: 7%;
+    margin-top: 13%;
+    padding-inline: 5%;
   }
   
   .right-codeunnati-content-cse,

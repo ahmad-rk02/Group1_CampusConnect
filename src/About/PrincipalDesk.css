@@ -169,10 +169,10 @@
     align-items: center;
   }  
  
-  .header-align-pd h1 {
+  .header-align-pd h1.text-left {
     width: fit-content;
-    font-size: 1.5rem;
-    margin-inline: 30%;
+    font-size: 24px;
+    margin-inline: 6%;
   }
 
   .left-index-pd{
@@ -186,7 +186,7 @@
 
   .left-nav-pd{
     width: 100%;
-    margin-inline: 7%;
+    margin-inline: 20%;
   }
 
   .bg-golden-pd.card-header{

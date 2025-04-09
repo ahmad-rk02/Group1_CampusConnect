@@ -272,6 +272,7 @@ div.table-n-head-PG{
 .table-wrapper-PG{
   height: fit-content;
   overflow-x: auto;
+  width: 100%;
 }
 
   /* Adjust table and content spacing */

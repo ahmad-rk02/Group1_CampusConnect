@@ -15,10 +15,12 @@
     padding: 0;
   }
   
-  .head-box-Elec h1 {
-    color: white;
-    font-size: 2rem;
-    margin: 0;
+  .head-box-Elec h1.text-left {
+    width: fit-content;
+    font-size: 24px;
+    margin-bottom: 7%;
+    margin-top: 19%;
+    padding-inline: 5%;
   }
   
   /* Right Content Section */

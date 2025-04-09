@@ -265,7 +265,7 @@
 
     .left-nav-coursesdetls{
         width: 250px;
-        margin-inline: 20%;
+        margin-inline: 35%;
     }
 
     .left-index-coursesdetls{
@@ -284,6 +284,10 @@
     .ciiit-hed {
         width: 100%;
         margin-left: 0;
+    }
+
+    h1.head-ciiit{
+        padding-inline: 5%;
     }
 
     .ciiit-hed h4{

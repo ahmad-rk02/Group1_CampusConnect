@@ -277,7 +277,8 @@ ul.three-columns{
 
   .header-align-ws h1.text-left {
     font-size: 24px;
-    margin-inline: 10%;
+    margin-inline: 3%;
+    padding-inline: 3%;
   }
 
   .content-card-ws{

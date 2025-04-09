@@ -157,10 +157,10 @@ color: black;
     align-items: center;
   }  
  
-  .header-align-vm h1 {
+  .header-align-vm h1.text-left {
     width: fit-content;
-    font-size: 1.5rem;
-    margin-inline: 30%;
+    font-size: 24px;
+    margin-inline: 6%;
   }
 
   .left-index-vm{
@@ -168,7 +168,7 @@ color: black;
   }
   .left-nav-vm{
     width: 58%;
-    margin-inline: 14%;
+    margin-inline: 22%;
   }
 
   .content-card-vm{
