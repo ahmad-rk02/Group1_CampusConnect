@@ -22,12 +22,21 @@ const ForgetAdmin = () => {
   const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+  // Countdown timer for OTP resend
   useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
       return () => clearTimeout(timer);
     }
   }, [countdown]);
+
+  // Trigger OTP verification when all 6 digits are entered
+  useEffect(() => {
+    const fullOtp = otp.join('');
+    if (fullOtp.length === 6) {
+      handleVerifyOTP();
+    }
+  }, [otp]);
 
   const showModalPopup = (message, type) => {
     setModalMessage(message);
@@ -38,7 +47,7 @@ const ForgetAdmin = () => {
       setTimeout(() => {
         setShowModal(false);
         if (message === 'Password reset successfully!') {
-          navigate('/adminlogin'); 
+          navigate('/adminlogin');
         }
       }, 3000);
     }
@@ -50,7 +59,7 @@ const ForgetAdmin = () => {
       showModalPopup('Please enter your email', 'error');
       return;
     }
-    
+
     setIsLoading(true);
     try {
       const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
@@ -66,7 +75,7 @@ const ForgetAdmin = () => {
 
   const handleOtpChange = (index, value) => {
     if (!/^\d*$/.test(value)) return; // Only allow numbers
-    
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
@@ -74,11 +83,6 @@ const ForgetAdmin = () => {
     // Auto focus to next input
     if (value && index < 5) {
       otpInputRefs.current[index + 1].focus();
-    }
-
-    // Submit if last digit is entered
-    if (index === 5 && value) {
-      handleVerifyOTP();
     }
   };
 
@@ -97,9 +101,9 @@ const ForgetAdmin = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/users/verify-otp`, { 
-        email, 
-        otp: fullOtp 
+      const response = await axios.post(`${API_BASE_URL}/api/users/verify-otp`, {
+        email,
+        otp: fullOtp,
       });
       showModalPopup(response.data.message || 'OTP verified successfully', 'success');
       setStep(3);
@@ -120,7 +124,7 @@ const ForgetAdmin = () => {
       showModalPopup('Password must be at least 8 characters', 'error');
       return;
     }
-    
+
     if (newPassword !== confirmPassword) {
       showModalPopup('Passwords do not match!', 'error');
       return;
@@ -128,9 +132,9 @@ const ForgetAdmin = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/users/reset-password`, { 
-        email, 
-        newPassword 
+      const response = await axios.post(`${API_BASE_URL}/api/users/reset-password`, {
+        email,
+        newPassword,
       });
       showModalPopup(response.data.message || 'Password reset successfully!', 'success');
     } catch (error) {
@@ -142,7 +146,7 @@ const ForgetAdmin = () => {
 
   const resendOTP = async () => {
     if (countdown > 0) return;
-    
+
     setIsLoading(true);
     try {
       const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
@@ -170,11 +174,7 @@ const ForgetAdmin = () => {
               required
               className="admin-input-field"
             />
-            <button 
-              type="submit" 
-              className="admin-submit-button"
-              disabled={isLoading}
-            >
+            <button type="submit" className="admin-submit-button" disabled={isLoading}>
               {isLoading ? 'Sending...' : 'Send OTP'}
             </button>
           </form>
@@ -202,10 +202,13 @@ const ForgetAdmin = () => {
           </div>
           <div className="admin-otp-footer">
             {countdown > 0 ? (
-              <span>Resend OTP in {Math.floor(countdown / 60)}:{String(countdown % 60).padStart(2, '0')}</span>
+              <span>
+                Resend OTP in {Math.floor(countdown / 60)}:
+                {String(countdown % 60).padStart(2, '0')}
+              </span>
             ) : (
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="admin-resend-button"
                 onClick={resendOTP}
                 disabled={isLoading}
@@ -214,8 +217,8 @@ const ForgetAdmin = () => {
               </button>
             )}
           </div>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="admin-submit-button"
             onClick={handleVerifyOTP}
             disabled={isLoading || otp.join('').length !== 6}
@@ -239,9 +242,9 @@ const ForgetAdmin = () => {
                 minLength="8"
                 className="admin-input-field"
               />
-              <button 
-                type="button" 
-                onClick={() => setShowNewPassword(!showNewPassword)} 
+              <button
+                type="button"
+                onClick={() => setShowNewPassword(!showNewPassword)}
                 className="admin-toggle-password-button"
               >
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
@@ -257,16 +260,16 @@ const ForgetAdmin = () => {
                 minLength="8"
                 className="admin-input-field"
               />
-              <button 
-                type="button" 
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="admin-toggle-password-button"
               >
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="admin-submit-button"
               disabled={isLoading || !newPassword || !confirmPassword}
             >
@@ -283,8 +286,8 @@ const ForgetAdmin = () => {
               {modalType === 'success' ? '✅' : '❌'}
             </div>
             <p className="admin-modal-message">{modalMessage}</p>
-            <button 
-              className="admin-close-modal" 
+            <button
+              className="admin-close-modal"
               onClick={() => setShowModal(false)}
               disabled={modalType === 'success'}
             >

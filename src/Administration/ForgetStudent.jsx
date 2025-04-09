@@ -22,12 +22,21 @@ const ForgetStudent = () => {
   const navigate = useNavigate();
   const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+  // Countdown timer for OTP resend
   useEffect(() => {
     if (countdown > 0) {
       const timer = setTimeout(() => setCountdown(countdown - 1), 1000);
       return () => clearTimeout(timer);
     }
   }, [countdown]);
+
+  // Trigger OTP verification when all 6 digits are entered
+  useEffect(() => {
+    const fullOtp = otp.join('');
+    if (fullOtp.length === 6) {
+      handleVerifyOTP();
+    }
+  }, [otp]);
 
   const showModalPopup = (message, type) => {
     setModalMessage(message);
@@ -38,7 +47,7 @@ const ForgetStudent = () => {
       setTimeout(() => {
         setShowModal(false);
         if (message === 'Password reset successfully!') {
-          navigate('/studentlogin'); 
+          navigate('/studentlogin');
         }
       }, 3000);
     }
@@ -50,7 +59,7 @@ const ForgetStudent = () => {
       showModalPopup('Please enter your email', 'error');
       return;
     }
-    
+
     setIsLoading(true);
     try {
       const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
@@ -66,7 +75,7 @@ const ForgetStudent = () => {
 
   const handleOtpChange = (index, value) => {
     if (!/^\d*$/.test(value)) return; // Only allow numbers
-    
+
     const newOtp = [...otp];
     newOtp[index] = value;
     setOtp(newOtp);
@@ -74,11 +83,6 @@ const ForgetStudent = () => {
     // Auto focus to next input
     if (value && index < 5) {
       otpInputRefs.current[index + 1].focus();
-    }
-
-    // Submit if last digit is entered
-    if (index === 5 && value) {
-      handleVerifyOTP();
     }
   };
 
@@ -97,9 +101,9 @@ const ForgetStudent = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/users/verify-otp`, { 
-        email, 
-        otp: fullOtp 
+      const response = await axios.post(`${API_BASE_URL}/api/users/verify-otp`, {
+        email,
+        otp: fullOtp,
       });
       showModalPopup(response.data.message || 'OTP verified successfully', 'success');
       setStep(3);
@@ -120,7 +124,7 @@ const ForgetStudent = () => {
       showModalPopup('Password must be at least 8 characters', 'error');
       return;
     }
-    
+
     if (newPassword !== confirmPassword) {
       showModalPopup('Passwords do not match!', 'error');
       return;
@@ -128,9 +132,9 @@ const ForgetStudent = () => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${API_BASE_URL}/api/users/reset-password`, { 
-        email, 
-        newPassword 
+      const response = await axios.post(`${API_BASE_URL}/api/users/reset-password`, {
+        email,
+        newPassword,
       });
       showModalPopup(response.data.message || 'Password reset successfully!', 'success');
     } catch (error) {
@@ -142,7 +146,7 @@ const ForgetStudent = () => {
 
   const resendOTP = async () => {
     if (countdown > 0) return;
-    
+
     setIsLoading(true);
     try {
       const response = await axios.post(`${API_BASE_URL}/api/users/send-otp`, { email });
@@ -170,11 +174,7 @@ const ForgetStudent = () => {
               required
               className="student-input-field"
             />
-            <button 
-              type="submit" 
-              className="student-submit-button"
-              disabled={isLoading}
-            >
+            <button type="submit" className="student-submit-button" disabled={isLoading}>
               {isLoading ? 'Sending...' : 'Send OTP'}
             </button>
           </form>
@@ -202,10 +202,13 @@ const ForgetStudent = () => {
           </div>
           <div className="student-otp-footer">
             {countdown > 0 ? (
-              <span>Resend OTP in {Math.floor(countdown / 60)}:{String(countdown % 60).padStart(2, '0')}</span>
+              <span>
+                Resend OTP in {Math.floor(countdown / 60)}:
+                {String(countdown % 60).padStart(2, '0')}
+              </span>
             ) : (
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="student-resend-button"
                 onClick={resendOTP}
                 disabled={isLoading}
@@ -214,8 +217,8 @@ const ForgetStudent = () => {
               </button>
             )}
           </div>
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="student-submit-button"
             onClick={handleVerifyOTP}
             disabled={isLoading || otp.join('').length !== 6}
@@ -239,9 +242,9 @@ const ForgetStudent = () => {
                 minLength="8"
                 className="student-input-field"
               />
-              <button 
-                type="button" 
-                onClick={() => setShowNewPassword(!showNewPassword)} 
+              <button
+                type="button"
+                onClick={() => setShowNewPassword(!showNewPassword)}
                 className="student-toggle-password-button"
               >
                 <FontAwesomeIcon icon={showNewPassword ? faEye : faEyeSlash} />
@@ -257,16 +260,16 @@ const ForgetStudent = () => {
                 minLength="8"
                 className="student-input-field"
               />
-              <button 
-                type="button" 
-                onClick={() => setShowConfirmPassword(!showConfirmPassword)} 
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 className="student-toggle-password-button"
               >
                 <FontAwesomeIcon icon={showConfirmPassword ? faEye : faEyeSlash} />
               </button>
             </div>
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="student-submit-button"
               disabled={isLoading || !newPassword || !confirmPassword}
             >
@@ -279,13 +282,13 @@ const ForgetStudent = () => {
       {showModal && (
         <div className="student-modal-overlay" onClick={() => setShowModal(false)}>
           <div className="student-modal-content" onClick={(e) => e.stopPropagation()}>
-            <FontAwesomeIcon 
-              icon={modalType === 'error' ? faTimesCircle : faCheckCircle} 
-              className={`student-modal-icon ${modalType}`} 
+            <FontAwesomeIcon
+              icon={modalType === 'error' ? faTimesCircle : faCheckCircle}
+              className={`student-modal-icon ${modalType}`}
             />
             <p className="student-modal-message">{modalMessage}</p>
-            <button 
-              className="student-close-modal" 
+            <button
+              className="student-close-modal"
               onClick={() => setShowModal(false)}
               disabled={modalType === 'success'}
             >
