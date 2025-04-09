@@ -43,6 +43,13 @@
   @media (max-width: 480px){
     .left-nav-tender{
       margin-top: 8%;
+      margin-inline: 28%;
+    }
+
+   .head-box-tender h1.text-left {
+      padding-inline: 5%;
+      margin-block: 0%;
+      font-size: 15px;
     }
 
     .faculty-info{

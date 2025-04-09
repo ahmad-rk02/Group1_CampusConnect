@@ -62,6 +62,7 @@ import TPOstuAdmin from "./Others/TPOstuAdmin";
 import TPOstuFeedback from "./Others/TPOstuFeedback";
 import TPOempAdmin from "./Others/TPOempAdmin";
 import TPOempFeedback from "./Others/TPOempFeedback";
+import ScienceHumanity from "./Others/ScienceHumanity";
 
 function App() {
   const navItems = [
@@ -82,7 +83,7 @@ function App() {
       name: "PROGRAMMES",
       subLinks: ["UG (B.Tech)", "PG (M.Tech)", "Ph.D"]
     },
-    { name: "CIIIT", subLinks: ["About CIIIT", "Courses Details", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"] },
+    { name: "CIIIT", subLinks: ["About CIIIT", "CIIIT Labs", "Eligibility Criteria", "Admission Form", "CIIIT Brochure", "CIIIT Leaflet", "CIIIT Contact"] },
     {
       name: "PAYMENTS",
       subLinks: [
@@ -98,6 +99,7 @@ function App() {
       name: "OTHERS",
       subLinks: [
         "Training & Placements",
+        "Science & Humanities",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
         "Alumni"
       ]
@@ -166,6 +168,7 @@ function App() {
             <Route path="/tpostufeedback" element={<TPOstuFeedback />} />
             <Route path="/tpoempadmin" element={<TPOempAdmin />} />
             <Route path="/tpoempfeedback" element={<TPOempFeedback />} />
+            <Route path="/sciencehumanity" element={<ScienceHumanity />} />
           </Routes>
         </div>
       </BrowserRouter>

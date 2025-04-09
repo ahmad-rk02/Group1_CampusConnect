@@ -307,10 +307,13 @@
 
     .left-nav-AbtCiiit{
         width: 250px;
-        margin-inline: 20%;
+        margin-inline: 35%;
     }
 
-    
+    h1.head-ciiit{
+        padding-inline: 5%;
+    }
+
     .ciiit-heading {
         margin: 5px auto;
         width: calc(100% - 10px);

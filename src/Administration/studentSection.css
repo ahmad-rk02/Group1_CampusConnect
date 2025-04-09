@@ -192,6 +192,10 @@
       margin-left: 0;
     }
 
+    .head-box-tender h1.text-left{
+      margin-top: 7%;
+    }
+
     .member-card {
       padding: 0.75rem;
     }

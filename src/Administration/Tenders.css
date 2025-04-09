@@ -191,18 +191,6 @@ body{
     margin: 0;
     padding: 0;
 }    
- 
-.head-box-tender h1{
- margin: 0;
- margin-left: 0;
- padding-inline: 17%;
- padding-top: 10%;
- width: fit-content;
-}
-
-.head-box-tender h1.text-left{
-    margin: 0;
-}
 
 .left-sidebar-tender{
     width: 60%;
@@ -214,12 +202,21 @@ body{
     margin-inline: 18.5%;
   }
 
-  .head-box-tender h1 {
-    font-size: 24px;
-    margin-left: 10px;
-  }
-  .right-top-text-tender{
+  .tender-portal{
     width: 100%;
+    margin-inline: 2%;
+  }
+
+  div.head-box-tender h1.text-left {
+    font-size: 24px;
+    margin-inline: 5%;
+    padding-inline: 17%;
+    margin-top: 13%;
+    width: fit-content;
+  }
+
+  .right-top-text-tender {
+    width: 90%;
     margin: 20px;
  }
  

@@ -27,10 +27,10 @@ const StudentSection = () => {
             designation: item.designation?.[0]?.children?.[0]?.text || "N/A",
             title: item.title || "N/A",
             contact: item.contact || "N/A",
-            image: imgUrl 
-              ? (imgUrl.startsWith('http://') || imgUrl.startsWith('https://') 
-                  ? imgUrl 
-                  : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`) 
+            image: imgUrl
+              ? (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')
+                ? imgUrl
+                : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`)
               : null,
           };
         });
@@ -50,7 +50,7 @@ const StudentSection = () => {
     <Container fluid className="p-0 w-100">
       <Row className="head-box-tender">
         <Col>
-          <h1 className="text-left">STUDENT SECTION</h1>
+          <h1 className="text-left">Student Section</h1>
         </Col>
       </Row>
 

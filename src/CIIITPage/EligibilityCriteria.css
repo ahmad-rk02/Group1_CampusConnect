@@ -195,6 +195,7 @@
 
     .left-nav-eligibilitycrt{
         width: 250px;
+        margin-inline: 11%;
     }
 
     .left-index-eligibilitycrt{
@@ -236,6 +237,10 @@
     .ciiit-cdetail-gh th, .ciiit-cdetail-gh td {
         text-align: justify;
         padding: 6px; 
+    }
+
+    h1.head-ciiit{
+        padding-inline: 5%;
     }
 
     .ciiit-cdetail-gh th {

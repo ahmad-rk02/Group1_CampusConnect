@@ -104,13 +104,14 @@ function Navbar({ imageSrcPath, navItems }) {
         "CIIIT Brochure": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Brochure.pdf",
         "CIIIT Contact": "/ciiitcontact",
         "CIIIT Leaflet": "https://www.gcoec.ac.in/gcoec/PDF/CIIIT-Leaflet.pdf",
-        "Courses Details": "/coursesdetails",
+        "CIIIT Labs": "/coursesdetails",
         "Eligibility Criteria": "/eligibilitycriteria",
         "News & Events": "/newsevents",
         "Principal & HOD": "/principalHods",
         "Student Section": "/studentSection",
         "Office": "/Office",
-        "Training & Placements": "/tpopage"
+        "Training & Placements": "/tpopage",
+        "Science & Humanities": "/sciencehumanity"
       };
       
       if (typeof subLink === "string") {
