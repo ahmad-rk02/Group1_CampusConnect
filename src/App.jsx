@@ -73,7 +73,7 @@ function App() {
     },
     {
       name: "DEPARTMENTS",
-      subLinks: ["Computer Science & Engineering", "Electronics & Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Workshop"]
+      subLinks: ["Computer Science & Engineering", "Electronics and Telecommunication Engineering", "Instrumentation Engineering", "Electrical Engineering", "Mechanical Engineering", "Civil Engineering", "Workshop"]
     },
     {
       name: "ADMINISTRATION",

@@ -175,7 +175,7 @@
 
   .left-nav-ai{
     width: 100%;
-    margin-inline: 20%;
+    margin-inline: 7%;
   }
 
   a.active-link{
@@ -218,6 +218,6 @@
   }
 
   h2.fw-bold.text{
-    width: 300px;
+    width: 30px;
   }
 }
