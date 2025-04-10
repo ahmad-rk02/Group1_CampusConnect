@@ -43,7 +43,7 @@ const Tenders = () => {
     <Container fluid className="p-0 w-100">
       <Row className='head-box-tender'>
         <Col>
-          <h1 className="text-left">ADMINISTRATION</h1>
+          <h1 className="text-left">TENDERS</h1>
         </Col>
       </Row>
 

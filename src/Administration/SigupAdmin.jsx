@@ -194,7 +194,7 @@ const SignupAdmin = () => {
       <Container fluid className="p-0 w-100">
         <Row className="head-box-Admin-signup">
           <Col>
-            <h1 className="text-left">ADMINISTRATION</h1>
+            <h1 className="text-left">ADMIN SIGN UP</h1>
           </Col>
         </Row>
 

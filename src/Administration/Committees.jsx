@@ -48,7 +48,7 @@ const Committees = () => {
         {/* Header Section */}
         <Row className="head-box-committee-clg">
           <Col>
-            <h1 className="text-left">ADMINISTRATION</h1>
+            <h1 className="text-left">COMMITTEES</h1>
           </Col>
         </Row>
 

@@ -209,7 +209,7 @@ const StudentSignUp = () => {
       <Container fluid className="p-0 w-1000 m-100">
         <Row className="head-box-grivnce">
           <Col>
-            <h1 className="text-left">ADMINISTRATION</h1>
+            <h1 className="text-left">STUDENT SIGN UP</h1>
           </Col>
         </Row>
 

@@ -24,7 +24,7 @@ const Login = () => {
         <Container fluid className="p-0 w-100">
             <Row className='head-box-loginP'>
                 <Col>
-                    <h1 className="text-left">ADMINISTRATION</h1>
+                    <h1 className="text-left">LOGIN</h1>
                 </Col>
             </Row>
 
