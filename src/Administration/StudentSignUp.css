@@ -792,6 +792,16 @@
       height: 50px !important;
       font-size: 20px;
     }
+
+    .head-box-grivnce h1{
+        padding-inline: 25%;
+    }
+
+    div.left-nav-grivnce{
+        width: 110%;
+        margin-top: 0%;
+        margin-inline: 30%;
+      }
     
     .otp-modal-header {
       padding: 15px 15px 5px;

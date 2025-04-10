@@ -50,7 +50,7 @@ const StudentSection = () => {
     <Container fluid className="p-0 w-100">
       <Row className="head-box-tender">
         <Col>
-          <h1 className="text-left">Student Section</h1>
+          <h1 className="text-left">STUDENT SECTION</h1>
         </Col>
       </Row>
 

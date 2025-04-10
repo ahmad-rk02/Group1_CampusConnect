@@ -84,7 +84,7 @@ const FacultyList = () => {
                 </button>
               </div>
             )}
-            <h3>
+            <h3 className="read-more-text">
               {expanded[hod.id] || !hod.details || hod.details.length <= 100
                 ? hod.details
                 : `${hod.details.substring(0, 100)}...`}
@@ -121,7 +121,7 @@ const FacultyList = () => {
                 </button>
               </div>
             )}
-            <h3>
+            <h3 className="read-more-text">
               {expanded[member.id] || !member.details || member.details.length <= 100
                 ? member.details
                 : `${member.details.substring(0, 100)}...`}

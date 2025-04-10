@@ -80,6 +80,10 @@
   color: #0e61dd;
 }
 
+.read-more-text{
+  text-align: justify;
+}
+
 /* Read More Button */
 .read-more-btn {
   color: #007bff;
