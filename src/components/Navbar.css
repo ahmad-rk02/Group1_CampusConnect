@@ -108,9 +108,7 @@ a.event-links-nav:hover {
     width: 100%;
   }
 
-  .dropdown-item{
-    white-space: normal;     
-    word-wrap: break-word; 
+  .dropdown-item{ 
     letter-spacing: -0.5px;
   }
 

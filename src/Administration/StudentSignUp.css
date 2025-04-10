@@ -798,8 +798,9 @@
     }
 
     div.left-nav-grivnce{
+        width: 110%;
         margin-top: 0%;
-        margin-inline: 35%;
+        margin-inline: 30%;
       }
     
     .otp-modal-header {
