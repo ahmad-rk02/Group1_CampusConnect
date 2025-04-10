@@ -76,9 +76,9 @@ const PrincipalHods = () => {
 
   return (
     <Container fluid className="p-0 w-100">
-      <Row className="head-box-tender">
+      <Row className="head-box-tender hod-prncipal-head-box">
         <Col>
-          <h1 className="text-left">Principal, Coordinator & HODs</h1>
+          <h1 className="text-left">PRINCIPAL, COORDINATOR & HODs</h1>
         </Col>
       </Row>
 

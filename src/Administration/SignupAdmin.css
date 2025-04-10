@@ -720,6 +720,11 @@ form.whole-form-Admin-signup{
     height: 50px !important;
     font-size: 20px;
   }
+
+  .whole-form-Admin-signup{
+    width: 80%;
+    margin-inline: 5%;
+  }
   
   .otp-modal-header {
     padding: 15px 15px 5px;

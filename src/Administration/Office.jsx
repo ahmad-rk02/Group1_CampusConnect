@@ -49,7 +49,7 @@ const Office = () => {
     <Container fluid className="p-0 w-100">
       <Row className="head-box-tender">
         <Col>
-          <h1 className="text-left">Office</h1>
+          <h1 className="text-left">OFFICE</h1>
         </Col>
       </Row>
 
