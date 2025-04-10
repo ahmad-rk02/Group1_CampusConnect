@@ -82,7 +82,7 @@ function Navbar({ imageSrcPath, navItems }) {
         "PG (M.Tech)": "/pg",
         "Computer Science & Engineering": "/cse",
         "Electrical Engineering": "/elec",
-        "Electronics & Telecommunication Engineering": "/Entc",
+        "Electronics and Telecommunication Engineering": "/Entc",
         "Instrumentation Engineering": "/instru",
         "Mechanical Engineering": "/mech",
         "Civil Engineering": "/cvl",

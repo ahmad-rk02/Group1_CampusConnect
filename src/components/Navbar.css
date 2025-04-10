@@ -108,8 +108,8 @@ a.event-links-nav:hover {
     width: 100%;
   }
 
-  .dropdown-item{ 
-    letter-spacing: -0.5px;
+  a.dropdown-item{  
+    text-wrap: wrap;
   }
 
   ul.dropdown-menu.show {
