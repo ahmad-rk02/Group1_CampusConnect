@@ -83,7 +83,7 @@ const LoginForm = () => {
     <Container fluid className="p-0 w-100">
       <Row className='head-box-loginA'>
         <Col>
-          <h1 className="text-left">ADMIN LOGIN</h1>
+          <h1 className="text-left">LOGIN - ADMIN</h1>
         </Col>
       </Row>
 

@@ -13,7 +13,8 @@ const Girlshostel = () => {
     fetch(API_URL)
       .then((response) => response.json())
       .then((data) => {
-        setCommitteeMembers(data.data); 
+        const sortedData = data.data.sort((a, b) => a.sr_no - b.sr_no);
+        setCommitteeMembers(sortedData); 
         setLoading(false);
       })
       .catch((error) => {
