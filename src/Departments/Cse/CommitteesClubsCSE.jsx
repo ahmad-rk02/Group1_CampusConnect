@@ -19,7 +19,7 @@ const CommitteesAndClubs = () => {
 
             {/* ACSES Section */}
             <div className="Acses-cmt">
-                
+
                 <div className="Acses-cmt-logo-part">
                     <img
                         src={acseslogo}
@@ -117,9 +117,16 @@ const CommitteesAndClubs = () => {
                 </div>
                 {/* Single "Know More" Button Below Events */}
                 <div className="know_more_container">
-                    {/* <button className="know_more_btn">Know More</button> */}
-                    <a className="know_more_btn" href="https://acses.vercel.app/">Know More</a>
+                    <a
+                        className="know_more_btn"
+                        href="https://acses.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Know More
+                    </a>
                 </div>
+
             </div>
 
 
