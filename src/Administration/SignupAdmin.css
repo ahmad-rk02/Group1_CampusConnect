@@ -721,9 +721,31 @@ form.whole-form-Admin-signup{
     font-size: 20px;
   }
 
-  .whole-form-Admin-signup{
-    width: 80%;
+  .head-box-Admin-signup h1.text-left{
+    padding-inline: 23%;
+  }
+
+  .left-index-Admin-signup{
     margin-inline: 5%;
+  }
+
+  div.left-nav-Admin-signup{
+    width: 100%;
+    margin-top: 8%;
+    margin-inline: 25%;
+  }
+
+  .big-div-adm-sup{
+    width: 100%;
+  }
+
+  div.form-section-Admin-signup{
+    width: 100%;
+  }
+
+  form.whole-form-Admin-signup{
+    width: 100%;
+    margin-inline: 0%;
   }
   
   .otp-modal-header {

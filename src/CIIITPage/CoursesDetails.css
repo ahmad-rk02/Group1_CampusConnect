@@ -295,7 +295,7 @@
         font-size: 15px;
     }
 
-    .c-para p{
+    div.c-para p{
         font-size: 14px;
         text-align: justify;
         width: 90%;
@@ -309,6 +309,7 @@
 
     .feature-ciiit{
         margin-inline: 7%;
+        width: 80%;
     }
 
     .dropdown-ciiit-text a{
