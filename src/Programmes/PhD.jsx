@@ -20,7 +20,7 @@ const PhD = () => {
         {/* Header Section */}
         <Row  className='head-box-phd'>
           <Col>
-            <h1 className="text-left">PROGRAMMES</h1>
+            <h1 className="text-left">Ph.D</h1>
           </Col>
         </Row>
 

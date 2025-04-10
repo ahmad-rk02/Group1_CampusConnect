@@ -12,7 +12,7 @@ const AboutCIIIT = () => {
       <Container fluid className="p-0-w-100">
       <Row className='head-box-AbtCiiit'>
         <Col>
-          <h1 className="text-left head-ciiit">CIIIT - Center for Invention Innovation Incubation & Training</h1>
+          <h1 className="text-left head-ciiit">ABOUT CIIIT</h1>
         </Col>
       </Row>
 

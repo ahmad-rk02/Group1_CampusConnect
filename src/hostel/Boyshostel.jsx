@@ -29,7 +29,7 @@ const Boyshostel = () => {
       {/* Header Section */}
       <Row className='head-box-bh'>
         <Col>
-          <h1 className="text-left-bh">HOSTEL</h1>
+          <h1 className="text-left-bh">BOYS HOSTEL</h1>
         </Col>
       </Row>
 

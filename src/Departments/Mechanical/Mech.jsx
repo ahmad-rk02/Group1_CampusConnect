@@ -19,7 +19,7 @@ const Mech = () => {
 
 
         <Row className='head-box-Mech'>
-          <h1 className="text-left">DEPARTMENTS</h1>
+          <h1 className="text-left">MECHANICAL ENGINEERING</h1>
         </Row>
 
         <Row>

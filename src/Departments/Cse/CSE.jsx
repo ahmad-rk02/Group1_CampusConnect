@@ -20,7 +20,7 @@ const CSE = () => {
       <Container fluid className="p-0 w-100 flex-grow-1">
 
         <Row className='head-box-cse'>
-          <h1 className="text-left">DEPARTMENTS</h1>
+          <h1 className="text-left">COMPUTER SCIENCE & ENGINEERING</h1>
         </Row>
 
         <Row>

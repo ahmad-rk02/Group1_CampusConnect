@@ -10,7 +10,7 @@ const EligibilityCriteria = () => {
       <Container fluid className="p-0 w-100">
       <Row className='head-box-eligibilitycrt'>
         <Col>
-          <h1 className="text-left head-ciiit">CIIIT - Center for Invention Innovation Incubation & Training</h1>
+          <h1 className="text-left head-ciiit">ELIGIBILITY CRITERIA</h1>
         </Col>
       </Row>
 

@@ -551,8 +551,9 @@
   } 
 
   .head-box-gh h1 {
-    font-size: 25px;
-    margin-left: 25px;
+    width: fit-content;
+    font-size: 24px;
+    padding-inline: 20%;
     margin-top: 70px;
   }
 

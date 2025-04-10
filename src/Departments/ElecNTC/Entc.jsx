@@ -21,7 +21,7 @@ const Entc = () => {
 
 
         <Row className='head-box-Entc'>
-          <h1 className="text-left">DEPARTMENTS</h1>
+          <h1 className="text-left">ELECTRONICS & TELECOMMUNICATION ENGINEERING</h1>
         </Row>
 
         <Row>

@@ -21,7 +21,7 @@ const Workshop = () => {
         {/* Header Section */}
         <Row className="header-design-ws text-white">
           <Col className="header-align-ws">
-            <h1 className="text-left ">DEPARTMENTS</h1>
+            <h1 className="text-left ">WORKSHOP</h1>
           </Col>
         </Row>
 

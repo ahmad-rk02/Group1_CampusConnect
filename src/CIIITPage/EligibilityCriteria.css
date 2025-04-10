@@ -240,7 +240,10 @@
     }
 
     h1.head-ciiit{
+        width: 100%;
+        margin-inline: 15%;
         padding-inline: 5%;
+        margin-top: 25%;
     }
 
     .ciiit-cdetail-gh th {

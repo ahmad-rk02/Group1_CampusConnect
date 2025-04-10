@@ -22,7 +22,7 @@ const UG = () => {
         {/* Header Section */}
         <Row className='head-box-ug'>
           <Col>
-            <h1 className="text-left">PROGRAMMES</h1>
+            <h1 className="text-left">UG (B.Tech)</h1>
           </Col>
         </Row>
 

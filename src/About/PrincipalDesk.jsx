@@ -44,7 +44,7 @@ const PrincipalDesk = () => {
         {/* Header Section */}
         <Row className="header-design-pd text-white">
           <Col className="header-align-pd">
-            <h1 className="text-left ">ABOUT US</h1>
+            <h1 className="text-left ">PRINCIPAL'S DESK</h1>
           </Col>
         </Row>
 

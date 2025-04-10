@@ -12,7 +12,7 @@ const AboutInstitute = () => {
         {/* Header Section */}
         <Row className="header-design-ai text-white">
           <Col className="header-align-ai">
-            <h1 className="text-left ">ABOUT US</h1>
+            <h1 className="text-left ">ABOUT INSTITUTE</h1>
           </Col>
         </Row>
 

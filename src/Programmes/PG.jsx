@@ -19,7 +19,7 @@ const PG = () => {
       {/* Header Section */}
       <Row  className='head-box-PG' >
         <Col>
-          <h1 className="text-left">PROGRAMMES</h1>
+          <h1 className="text-left">PG (B.Tech)</h1>
         </Col>
       </Row>
 

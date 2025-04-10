@@ -21,7 +21,7 @@ const Cvl = () => {
 
 
         <Row className='head-box-cvl'>
-          <h1 className="text-left">DEPARTMENTS</h1>
+          <h1 className="text-left">CIVIL ENGINEERING</h1>
         </Row>
 
         <Row>

@@ -176,6 +176,7 @@
   .left-nav-ai{
     width: 100%;
     margin-inline: 7%;
+    margin-top: 5%;
   }
 
   a.active-link{
@@ -189,9 +190,10 @@
   }
 
   .header-align-ai h1.text-left {
-    width: fit-content;
     font-size: 24px;
-    margin-inline: 6%;
+    margin-inline: 2%;
+    width: 100%;
+    margin-top: 23%;
   }
 
   .bg-golden-ai.card-header h4{

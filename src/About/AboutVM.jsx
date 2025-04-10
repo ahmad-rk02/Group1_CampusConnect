@@ -12,7 +12,7 @@ const AboutVM = () => {
       {/* Header Section */}
       <Row className="header-design-vm text-white">
         <Col className="header-align-vm">
-          <h1 className="text-left">ABOUT US</h1>
+          <h1 className="text-left">ABOUT VISSION & MISSION</h1>
         </Col>
       </Row>
 

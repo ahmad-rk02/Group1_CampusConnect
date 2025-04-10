@@ -158,9 +158,10 @@ color: black;
   }  
  
   .header-align-vm h1.text-left {
-    width: fit-content;
     font-size: 24px;
-    margin-inline: 6%;
+    margin-inline: 2%;
+    width: 100%;
+    margin-top: 13%;
   }
 
   .left-index-vm{

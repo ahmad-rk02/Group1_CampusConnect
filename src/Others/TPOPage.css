@@ -373,8 +373,8 @@
   
   @media (max-width: 575px) {
     /* Small Phones */
-    .header-align-tech h1 {
-      font-size: 1.25rem;
+    .header-align-tech h1.display-5 {
+      font-size: 24px;
     }
   
     .section-title {

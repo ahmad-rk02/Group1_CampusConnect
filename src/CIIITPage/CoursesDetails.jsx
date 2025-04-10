@@ -30,7 +30,7 @@ const CoursesDetails = () => {
       <Container fluid className="p-0 w-100">
       <Row className='head-box-coursesdetls'>
         <Col>
-          <h1 className="text-left head-ciiit">CIIIT - Center for Invention Innovation Incubation & Training</h1>
+          <h1 className="text-left head-ciiit">CIIIT LABS</h1>
         </Col>
       </Row>
 
