@@ -158,7 +158,7 @@ function App() {
             <Route path="/welcomepage" element={<WelcomeSection />} />
             <Route path="/studentgrievancedisplay" element={<StudentProfile />} />
             <Route path="/admingrievancedisplay" element={<AdminDashboard />} />
-            <Route path="/chatbotCTA" element={<chatbotCTA />} />
+            <Route path="/chatbotCTA" element={<ChatbotCTA />} />
             <Route path="/newsevents" element={<NewsEvents />} />
             <Route path="/principalHods" element={<PrincipalHods />} />
             <Route path="/studentSection" element={<StudentSection />} />
