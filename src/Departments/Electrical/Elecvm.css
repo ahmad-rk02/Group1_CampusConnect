@@ -270,6 +270,10 @@ font-size: 14px;
 .but-toggle-button:hover {
   background-color: #030f1b; /* Darker blue on hover */
 }
+.d-flex p.tick{
+  font-size: 14px;
+  word-spacing: 0%;
+}
 
 @media (max-width: 1200px) {
   .Elec-intro-heading, .Elec-vision-heading, .Elec-mission-heading {

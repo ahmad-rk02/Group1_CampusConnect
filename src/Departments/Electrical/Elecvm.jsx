@@ -28,7 +28,7 @@ const Elecvm = ({ className }) => {
   const labs = [
     { id: 1, name: 'Electrical Instrumentation Lab', img: lab1, equipment: 'Various measuring bridges, power supply, Insulation Tester' },
     { id: 2, name: 'Electrical Machines Lab', img: lab2, equipment: 'Various AC/DC motor- generator sets,1/3 phase load bank Electrical machine trainer' },
-    { id: 3, name: 'High Voltage Lab', img: lab3, equipment: 'AC Power frequency HV testing transformer,Capacitance and Tan-Delta Measurement,Dielectric BDV Test Set' },
+    { id: 3, name: 'High Voltage Lab', img: lab3, equipment: 'AC Power frequency Hv testing transformer,    Capacitance and Tan-Delta Measurement, Dielectric BDV Test Set' },
     { id: 4, name: 'Analog Electronics Lab', img: lab4, equipment: 'DSO, Function generator, Bread Board' },
     { id: 5, name: 'Computer Lab', img: lab5, equipment: 'MATLAB SIMULINK software 5 users, ETAP 10 users networking license' },
     { id: 6, name: 'Basic Electrical Engg Lab', img: lab6, equipment: 'Autotransformer (1/3 phase), Transformer,Variable inductor' },

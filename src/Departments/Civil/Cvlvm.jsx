@@ -135,8 +135,9 @@ leadership qualities and teamwork.</li>
             <img src={lab.img} alt={lab.name} className='lab-img-cvl' />
             <div className='lab-eq-cvl'>
               <h5>Equipment:</h5>
-              <p className='tick'>{lab.equipment}</p>
-            </div>
+              
+              <p className='tick'>{lab.equipment}</p></div>
+            
           </div>
         ))}
         <button className='but-toggle-button' onClick={() => setShowFirstSet(!showFirstSet)}>
