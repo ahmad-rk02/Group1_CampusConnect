@@ -436,15 +436,15 @@ font-size: 14px;
   }
   
   .lab-img-instru{
-    width: 80px;
-    height: 85px;
+    width: 70px;
+    height: 75px;
     margin-top: 20px;
   }
   .lab-img-instru h5{
     font-size: 10px;
   }
   .lab-eq-instru{
-    margin-left: 90px;
+    margin-left: 75px;
     margin-top:-80px;
     width: 90px;
     margin-right: 10px;
@@ -452,7 +452,7 @@ font-size: 14px;
    
   }
   .d-flex p.tick{
-    font-size: 8px;
+    font-size: 7px;
   }
   
 }
