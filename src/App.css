@@ -38,23 +38,6 @@ body{
   padding: 10px 20px;
 }
 
-
-
-
- 
-
-/* @media (max-width: 767.98px) {
-  .dropdown-submenu .dropdown-menu {
-    left: 0;
-    top: 0;
-    position: static;
-    width: 100%; 
-  }
-
-  .dropdown-menu .dropdown-item {
-    width: 100%;   
-  }
-} */
 @media (max-width: 768px) {
   .navbar-nav .dropdown-menu {
     width: 100%;

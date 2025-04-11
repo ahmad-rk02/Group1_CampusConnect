@@ -97,7 +97,7 @@ function Navbar({ imageSrcPath, navItems }) {
         "Hostel Fee": "https://www.onlinesbi.sbi/sbicollect/icollecthome.htm?corpID=2976360",
         "Payment by the Student": "https://eazypay.icicibank.com/eazypayLink?P1=mBO7cjSAmo9OXu/JIqWW9w=",
         "Payment for Testing and Consultancy": "https://eazypay.icicibank.com/eazypayLink?P1=QgBSGQ03E9jZBrZgASNtLQ=",
-        "Payment for Ex Student Verification": "https://eazypay.icicibank.com/eazypayLink?P1=0Mu4L8f1DKJifFJeYNOYWA=",
+        "Payment for Ex-Student Verification": "https://eazypay.icicibank.com/eazypayLink?P1=0Mu4L8f1DKJifFJeYNOYWA=",
         "Alumni": "https://alumni-gcoec.vercel.app/",
         "About CIIIT": "/aboutciiit",
         "Admission Form": "https://www.gcoec.ac.in/gcoec/PDF/Adm-CIIIT-Form.pdf",
