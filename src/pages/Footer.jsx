@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUsers } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaUsers, FaGithub } from 'react-icons/fa';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Footer.css";
 import Gec from '../assets/Gec.png';
@@ -51,7 +51,7 @@ function Footerend() {
           });
 
           if (!response.ok) throw new Error('Failed to update visitor count');
-          
+
           const updatedData = await response.json();
           setVisitorCount(updatedData.count);
         } else {
@@ -117,10 +117,10 @@ function Footerend() {
             <p className="mb-1 text-white">Website: <a href="https://www.gcoec.ac.in" className="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">www.gcoec.ac.in</a></p>
             <p className="mb-1 text-white">Email: <a href="mailto:office.gcoecchandrapur@dtemaharashtra.gov.in" className="text-white text-decoration-none">office.gcoecchandrapur@dtemaharashtra.gov.in</a></p>
             <div className="mt-3">
-              <a href="#" className="me-3 text-white"><FaFacebook /></a>
-              <a href="https://x.com/Ahmadra21747195" className="me-3 text-white"><FaTwitter /></a>
               <a href="https://www.instagram.com/akhan__2002/" className="me-3 text-white"><FaInstagram /></a>
+              <a href="https://x.com/Ahmadra21747195" className="me-3 text-white"><FaTwitter /></a>
               <a href="https://www.linkedin.com/in/ahmad-raza-khan1/" className="me-3 text-white"><FaLinkedin /></a>
+              <a href="https://github.com/ahmad-rk02" className="me-3 text-white"><FaGithub /></a>
             </div>
           </div>
 
@@ -131,48 +131,48 @@ function Footerend() {
                 <h5>Quick Links</h5>
                 <ul className="list-unstyled text-white">
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://alumni-gcoec.vercel.app/')}
                     >
                       Alumni
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/PDF/NBA/GCOEC%20NBA%20ME%20and%20IE%2011-11-2022-12-25-26.pdf')}
                     >
                       NBA Documents
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/PDF/EOA%20REPORT%202023-24%20R.PDF')}
                     >
                       AICTE EOA
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/PDF/2022/NIRF-Data-2023.pdf')}
                     >
                       NIRF
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://dte.maharashtra.gov.in/')}
                     >
                       DTE
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://rdtenagpur.org.in/')}
                     >
                       RO, Nagpur
@@ -184,40 +184,40 @@ function Footerend() {
                 <h5>Quick Links</h5>
                 <ul className="list-unstyled text-white">
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/app_documents/GEC%20Brochure%20_2020-21.pdf')}
                     >
                       Info Brochure
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/PDF/2022/Audit-Report-2021.PDF')}
                     >
                       Audit Report
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.gcoec.ac.in/gcoec/PDF/Procurement/Impact_analysis_PROCUREMENT_UNDER_TEQIP.pdf')}
                     >
                       TEQIP
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('/Group1_CampusConnect/boyshostel')}
                     >
                       Facilities
                     </button>
                   </li>
                   <li>
-                    <button 
-                      className="btn btn-link text-white p-0 text-decoration-none" 
+                    <button
+                      className="btn btn-link text-white p-0 text-decoration-none"
                       onClick={() => openExternalLink('https://www.aicte-india.org/')}
                     >
                       AICTE
