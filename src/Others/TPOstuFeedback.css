@@ -1,27 +1,84 @@
-.cont-feed{
-    margin-bottom: 5%;
+/* Container Fixes */
+.cont-feed {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 1rem;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
-.cont-feed h2{
+/* Heading */
+.cont-feed h2 {
     padding-block: 5px;
     padding-left: 2%;
     color: #102c57;
     font-weight: 700;
     background-color: #EADBC8;
+    border-radius: 5px;
+    text-align: center;
 }
 
-.below-btns{
+/* Make table scrollable on mobile */
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* Center button group */
+.btn-group-wrap {
     display: flex;
-    flex-direction: row;
-    margin-top: 7%;
-    width: 20%;
-    margin-inline: 35%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
 }
 
-.prnt-btn, .cls-btn{
+/* Button Styling */
+.prnt-btn,
+.cls-btn {
     color: white;
     background-color: #102c57;
-    padding: 5%;
-    padding-inline: 12%;
-    border: #102c57;
+    padding: 10px 24px;
+    border: none;
+    border-radius: 5px;
+    min-width: 120px;
+    transition: background-color 0.3s;
+    text-align: center;
+}
+
+.prnt-btn:hover,
+.cls-btn:hover {
+    background-color: #0b1c3e;
+}
+
+/* Mobile-specific Fixes */
+@media (max-width: 576px) {
+    .cont-feed {
+        padding: 1rem;
+    }
+
+    .cont-feed h2 {
+        font-size: 1.25rem;
+    }
+
+    .btn-group-wrap {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .prnt-btn,
+    .cls-btn {
+        width: 90%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+
+    .table-responsive {
+        margin-top: 1rem;
+    }
+
+    table {
+        font-size: 0.9rem;
+    }
 }
