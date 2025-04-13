@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./TPOEmpFeedback.css"; // Ensure to adjust your styles
+import "./TPOempFeedback.css"; // Ensure to adjust your styles
 
 const TPOEmpFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
