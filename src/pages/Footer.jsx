@@ -117,10 +117,10 @@ function Footerend() {
             <p className="mb-1 text-white">Website: <a href="https://www.gcoec.ac.in" className="text-white text-decoration-none" target="_blank" rel="noopener noreferrer">www.gcoec.ac.in</a></p>
             <p className="mb-1 text-white">Email: <a href="mailto:office.gcoecchandrapur@dtemaharashtra.gov.in" className="text-white text-decoration-none">office.gcoecchandrapur@dtemaharashtra.gov.in</a></p>
             <div className="mt-3">
-              <a href="#" className="me-3 text-white"><FaFacebook /></a>
+              <a href="https://x.com/Ahmadra21747195" className="me-3 text-white"><FaFacebook /></a>
               <a href="#" className="me-3 text-white"><FaTwitter /></a>
-              <a href="#" className="me-3 text-white"><FaInstagram /></a>
-              <a href="#" className="me-3 text-white"><FaLinkedin /></a>
+              <a href="https://www.instagram.com/akhan__2002/" className="me-3 text-white"><FaInstagram /></a>
+              <a href="https://www.linkedin.com/in/ahmad-raza-khan1/" className="me-3 text-white"><FaLinkedin /></a>
             </div>
           </div>
 
