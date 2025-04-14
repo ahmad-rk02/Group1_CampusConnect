@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Table, Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "./TPOempFeedback.css"; // Ensure to adjust your styles
+import "./TPOEmpFeedback.css";
 
 const TPOEmpFeedback = () => {
     const [feedbacks, setFeedbacks] = useState([]);
@@ -21,7 +21,7 @@ const TPOEmpFeedback = () => {
                 const response = await axios.get(`${import.meta.env.VITE_STRAPI_API_BASE_URL}/api/employer-feedbacks`);
                 const sortedFeedbacks = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
                 setFeedbacks(sortedFeedbacks);
-                setFilteredFeedbacks(sortedFeedbacks);
+                setFilteredFeedbacks(sortedFeedbacks.slice(0, 5)); // Initially load 5 entries
             } catch (error) {
                 console.error("Error fetching employer feedbacks:", error);
             }
@@ -42,10 +42,11 @@ const TPOEmpFeedback = () => {
             filtered = filtered.filter((f) => {
                 const feedbackDate = new Date(f.createdAt);
                 const filterDate = new Date(filters.date);
-
-                return feedbackDate.getFullYear() === filterDate.getFullYear() &&
-                       feedbackDate.getMonth() === filterDate.getMonth() &&
-                       feedbackDate.getDate() === filterDate.getDate();
+                return (
+                    feedbackDate.getFullYear() === filterDate.getFullYear() &&
+                    feedbackDate.getMonth() === filterDate.getMonth() &&
+                    feedbackDate.getDate() === filterDate.getDate()
+                );
             });
         }
         if (filters.month) {
@@ -55,7 +56,7 @@ const TPOEmpFeedback = () => {
             filtered = filtered.filter((f) => new Date(f.createdAt).getFullYear().toString() === filters.year);
         }
 
-        setFilteredFeedbacks(filtered);
+        setFilteredFeedbacks(filtered.slice(0, 5)); // Ensure filters respect 5-entry limit
     }, [filters, feedbacks]);
 
     const handlePrint = () => {
@@ -88,7 +89,7 @@ const TPOEmpFeedback = () => {
                             <option value="">All</option>
                             {[...Array(12)].map((_, i) => (
                                 <option key={i + 1} value={i + 1}>
-                                    {new Date(2024, i, 1).toLocaleString('default', { month: 'long' })}
+                                    {new Date(2024, i, 1).toLocaleString("default", { month: "long" })}
                                 </option>
                             ))}
                         </Form.Control>
@@ -97,7 +98,7 @@ const TPOEmpFeedback = () => {
                         <Form.Label>Select Year</Form.Label>
                         <Form.Control as="select" name="year" value={filters.year} onChange={handleFilterChange}>
                             <option value="">All</option>
-                            {[...new Set(feedbacks.map(f => new Date(f.createdAt).getFullYear()))].map(year => (
+                            {[...new Set(feedbacks.map((f) => new Date(f.createdAt).getFullYear()))].map((year) => (
                                 <option key={year} value={year}>{year}</option>
                             ))}
                         </Form.Control>
@@ -129,12 +130,14 @@ const TPOEmpFeedback = () => {
                                     <td>{feedback.designation}</td>
                                     <td>{feedback.message}</td>
                                     <td>{feedback.email}</td>
-                                    <td>{new Date(feedback.createdAt).toLocaleDateString('en-IN')}</td>
+                                    <td>{new Date(feedback.createdAt).toLocaleDateString("en-IN")}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="7" className="text-center">No feedbacks found</td>
+                                <td colSpan="7" className="text-center">
+                                    No feedbacks found
+                                </td>
                             </tr>
                         )}
                     </tbody>
@@ -143,8 +146,12 @@ const TPOEmpFeedback = () => {
 
             {/* Buttons - Print & Close */}
             <div className="d-flex justify-content-between mt-3">
-                <Button variant="success" onClick={handlePrint} className="prnt-btn">Print</Button>
-                <Button variant="danger" onClick={() => navigate("/TPOPage")} className="cls-btn">Close</Button>
+                <Button variant="success" onClick={handlePrint} className="prnt-btn">
+                    Print
+                </Button>
+                <Button variant="danger" onClick={() => navigate("/TPOPage")} className="cls-btn">
+                    Close
+                </Button>
             </div>
         </Container>
     );
