@@ -1,0 +1,45 @@
+/* Container styles */
+.emp-cont {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa; /* Optional: light background for contrast */
+  }
+  
+  /* Heading styles */
+  .emp-heading {
+    color: #102c57;
+    font-weight: 700;
+    font-size: 1.5rem;
+  }
+  
+  /* Card styles */
+  .emp-card {
+    border: 1px solid #102c57;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Button styles */
+  .emp-btn {
+    background-color: #102c57;
+    border-color: #102c57;
+    font-weight: 600;
+  }
+  
+  .emp-btn:hover {
+    background-color: #0d2347;
+    border-color: #0d2347;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 576px) {
+    .emp-heading {
+      font-size: 1.3rem;
+    }
+  
+    .emp-card {
+      padding: 20px 15px;
+    }
+  }
+  
