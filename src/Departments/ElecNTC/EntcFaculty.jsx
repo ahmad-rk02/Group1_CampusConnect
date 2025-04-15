@@ -139,7 +139,7 @@ const EntcFaculty = () => {
       <h3 className="faculty-heading">Non-Teaching Faculty</h3>
       {nonTeachingFaculties.map((member) => (
         <div key={member.id} className="faculty-card">
-          <img src={getImageUrl(member.photo?.[0])} alt={member.name} className="faculty-photo" />
+          <img src={getImageUrl(member.photo?.[0] || member.photo)} alt={member.name} className="faculty-photo" />
           <div className="faculty-info">
             <h2>{member.name}</h2>
             <h3>{member.designation}</h3>
