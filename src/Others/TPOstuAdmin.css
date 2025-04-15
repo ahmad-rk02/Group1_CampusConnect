@@ -1,17 +1,45 @@
-.cont-adm{
-    margin-inline: 10%;
-}
-
-.adm-stu-head{
+/* Container that centers vertically and adds responsive padding */
+.cont-adm {
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f8f9fa; /* optional background for contrast */
+  }
+  
+  /* Heading style */
+  .adm-stu-head {
     color: #102c57;
     font-weight: 700;
-}
-
-.crd-cont-admin{
-    border: 1px solid #102c57;  
-}
-
-.btn-adm{
+    font-size: 1.5rem;
+  }
+  
+  /* Card style */
+  .crd-cont-admin {
+    border: 1px solid #102c57;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Button styling */
+  .btn-adm {
     background-color: #102c57;
     border-color: #102c57;
-}
+    font-weight: 600;
+  }
+  
+  .btn-adm:hover {
+    background-color: #0d2347;
+    border-color: #0d2347;
+  }
+  
+  /* Responsive typography adjustments */
+  @media (max-width: 576px) {
+    .adm-stu-head {
+      font-size: 1.3rem;
+    }
+  
+    .crd-cont-admin {
+      padding: 20px 15px;
+    }
+  }
+  

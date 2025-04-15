@@ -1020,7 +1020,7 @@ const TPOPage = () => {
                     data["tpo-offices"].map((office, index) => (
                       <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
                         <Card.Body className="p-3">
-                          <Card.Title className="fw-bold">{office.office_name || "N/A"}</Card.Title>
+                          {/* <Card.Title className="fw-bold">{office.office_name || "N/A"}</Card.Title> */}
                           <p>{office.room_details || "N/A"}</p>
                           <p>{office.institute_name || "N/A"}</p>
                           <p>

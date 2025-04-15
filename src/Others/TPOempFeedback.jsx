@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Table, Form, Button } from "react-bootstrap";
+import { Container, Table, Form, Button, Row, Col } from "react-bootstrap";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./TPOempFeedback.css";
@@ -21,7 +21,7 @@ const TPOEmpFeedback = () => {
                 const response = await axios.get(`${import.meta.env.VITE_STRAPI_API_BASE_URL}/api/employer-feedbacks`);
                 const sortedFeedbacks = response.data.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
                 setFeedbacks(sortedFeedbacks);
-                setFilteredFeedbacks(sortedFeedbacks);
+                setFilteredFeedbacks(sortedFeedbacks.slice(0, 5)); // Initially load 5 entries
             } catch (error) {
                 console.error("Error fetching employer feedbacks:", error);
             }
@@ -30,24 +30,23 @@ const TPOEmpFeedback = () => {
         fetchFeedbacks();
     }, []);
 
-    // Handle filter changes
     const handleFilterChange = (e) => {
         const { name, value } = e.target;
         setFilters((prev) => ({ ...prev, [name]: value }));
     };
 
-    // Apply filters dynamically
     useEffect(() => {
         let filtered = feedbacks;
-    
+
         if (filters.date) {
             filtered = filtered.filter((f) => {
                 const feedbackDate = new Date(f.createdAt);
                 const filterDate = new Date(filters.date);
-                
-                return feedbackDate.getFullYear() === filterDate.getFullYear() &&
-                       feedbackDate.getMonth() === filterDate.getMonth() &&
-                       feedbackDate.getDate() === filterDate.getDate();
+                return (
+                    feedbackDate.getFullYear() === filterDate.getFullYear() &&
+                    feedbackDate.getMonth() === filterDate.getMonth() &&
+                    feedbackDate.getDate() === filterDate.getDate()
+                );
             });
         }
         if (filters.month) {
@@ -56,11 +55,10 @@ const TPOEmpFeedback = () => {
         if (filters.year) {
             filtered = filtered.filter((f) => new Date(f.createdAt).getFullYear().toString() === filters.year);
         }
-    
-        setFilteredFeedbacks(filtered);
+
+        setFilteredFeedbacks(filtered.slice(0, 5)); // Ensure filters respect 5-entry limit
     }, [filters, feedbacks]);
 
-    // Print function
     const handlePrint = () => {
         const tableContent = document.getElementById("printable-table").innerHTML;
         const newWindow = window.open("", "", "width=800,height=600");
@@ -79,33 +77,37 @@ const TPOEmpFeedback = () => {
             <h2 className="my-4">Employer Feedbacks</h2>
 
             {/* Filters */}
-            <Form className="mb-3">
-                <Form.Group>
-                    <Form.Label>Select Date</Form.Label>
-                    <Form.Control type="date" name="date" value={filters.date} onChange={handleFilterChange} />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Select Month</Form.Label>
-                    <Form.Control as="select" name="month" value={filters.month} onChange={handleFilterChange}>
-                        <option value="">All</option>
-                        {[...Array(12)].map((_, i) => (
-                            <option key={i + 1} value={i + 1}>{new Date(2024, i, 1).toLocaleString('default', { month: 'long' })}</option>
-                        ))}
-                    </Form.Control>
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Select Year</Form.Label>
-                    <Form.Control as="select" name="year" value={filters.year} onChange={handleFilterChange}>
-                        <option value="">All</option>
-                        {[...new Set(feedbacks.map(f => new Date(f.createdAt).getFullYear()))].map(year => (
-                            <option key={year} value={year}>{year}</option>
-                        ))}
-                    </Form.Control>
-                </Form.Group>
+            <Form className="mb-4">
+                <Row>
+                    <Col xs={12} md={6} lg={3} className="mb-3">
+                        <Form.Label>Select Date</Form.Label>
+                        <Form.Control type="date" name="date" value={filters.date} onChange={handleFilterChange} />
+                    </Col>
+                    <Col xs={12} md={6} lg={3} className="mb-3">
+                        <Form.Label>Select Month</Form.Label>
+                        <Form.Control as="select" name="month" value={filters.month} onChange={handleFilterChange}>
+                            <option value="">All</option>
+                            {[...Array(12)].map((_, i) => (
+                                <option key={i + 1} value={i + 1}>
+                                    {new Date(2024, i, 1).toLocaleString("default", { month: "long" })}
+                                </option>
+                            ))}
+                        </Form.Control>
+                    </Col>
+                    <Col xs={12} md={6} lg={3} className="mb-3">
+                        <Form.Label>Select Year</Form.Label>
+                        <Form.Control as="select" name="year" value={filters.year} onChange={handleFilterChange}>
+                            <option value="">All</option>
+                            {[...new Set(feedbacks.map((f) => new Date(f.createdAt).getFullYear()))].map((year) => (
+                                <option key={year} value={year}>{year}</option>
+                            ))}
+                        </Form.Control>
+                    </Col>
+                </Row>
             </Form>
 
             {/* Feedback Table */}
-            <div id="printable-table">
+            <div id="printable-table" className="table-responsive">
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -128,12 +130,14 @@ const TPOEmpFeedback = () => {
                                     <td>{feedback.designation}</td>
                                     <td>{feedback.message}</td>
                                     <td>{feedback.email}</td>
-                                    <td>{new Date(feedback.createdAt).toLocaleDateString('en-IN')}</td>
+                                    <td>{new Date(feedback.createdAt).toLocaleDateString("en-IN")}</td>
                                 </tr>
                             ))
                         ) : (
                             <tr>
-                                <td colSpan="7" className="text-center">No feedbacks found</td>
+                                <td colSpan="7" className="text-center">
+                                    No feedbacks found
+                                </td>
                             </tr>
                         )}
                     </tbody>
@@ -141,9 +145,13 @@ const TPOEmpFeedback = () => {
             </div>
 
             {/* Buttons - Print & Close */}
-            <div className="d-flex justify-content-between mt-3 below-btns">
-                <Button variant="success" onClick={handlePrint} className="prnt-btn">Print</Button>
-                <Button variant="danger" onClick={() => navigate("/TPOPage")} className="cls-btn">Close</Button>
+            <div className="d-flex justify-content-between mt-3">
+                <Button variant="success" onClick={handlePrint} className="prnt-btn">
+                    Print
+                </Button>
+                <Button variant="danger" onClick={() => navigate("/TPOPage")} className="cls-btn">
+                    Close
+                </Button>
             </div>
         </Container>
     );
