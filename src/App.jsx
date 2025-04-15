@@ -63,7 +63,7 @@ import TPOstuFeedback from "./Others/TPOstuFeedback";
 import TPOempAdmin from "./Others/TPOempAdmin";
 import TPOempFeedback from "./Others/TPOempFeedback";
 import ScienceHumanity from "./Others/ScienceHumanity";
-
+import ScrollToTopButton from "./components/ScrollToTopButton";
 function App() {
   const navItems = [
     { name: "HOME" },
@@ -173,6 +173,7 @@ function App() {
         </div>
       </BrowserRouter>
       <ChatbotCTA />
+      <ScrollToTopButton />
       <Footer />
     </>
   );

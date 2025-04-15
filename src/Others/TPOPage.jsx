@@ -119,12 +119,12 @@ const TPOPage = () => {
       : `${STRAPI_MEDIA_BASE_URL}${url}`;
   };
 
- 
+
 
   const handlePrevNews = () => {
     setNewsOffset((prev) => Math.max(prev - 1, 0));
   };
-  
+
   const handleNextNews = () => {
     const totalNews = data["tpo-news"]?.length || 0;
     setNewsOffset((prev) => Math.min(prev + 1, totalNews - 1));
@@ -550,72 +550,72 @@ const TPOPage = () => {
             </section>
 
             <section id="tpo-news" className="section-card mb-4 mb-md-5">
-  <h2 className="section-title fw-bold mb-3 mb-md-4">T&P News</h2>
-  {loading ? (
-    <p className="text-muted text-center">Loading news...</p>
-  ) : Array.isArray(data["tpo-news"]) && data["tpo-news"].length > 0 ? (
-    <div className="news-slider-container">
-      <div className="news-slider-wrapper">
-        <button
-          className="news-arrow prev-arrow"
-          onClick={handlePrevNews}
-          disabled={newsOffset === 0}
-          aria-label="Previous news"
-        >
-          ←
-        </button>
-        
-        <div className="news-slider-content">
-          {data["tpo-news"]
-            .slice(newsOffset, newsOffset + 1)
-            .map((news, index) => (
-              <div className="news-card-container" key={news.id || index}>
-                <Card className="shadow-sm rounded-3 h-100 news-card">
-                  {news.image?.url && (
-                    <Card.Img
-                      variant="top"
-                      src={getMediaUrl(news.image.url)}
-                      alt={news.title || "News image"}
-                      className="news-img"
-                    />
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P News</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading news...</p>
+              ) : Array.isArray(data["tpo-news"]) && data["tpo-news"].length > 0 ? (
+                <div className="news-slider-container">
+                  <div className="news-slider-wrapper">
+                    <button
+                      className="news-arrow prev-arrow"
+                      onClick={handlePrevNews}
+                      disabled={newsOffset === 0}
+                      aria-label="Previous news"
+                    >
+                      ←
+                    </button>
+
+                    <div className="news-slider-content">
+                      {data["tpo-news"]
+                        .slice(newsOffset, newsOffset + 1)
+                        .map((news, index) => (
+                          <div className="news-card-container" key={news.id || index}>
+                            <Card className="shadow-sm rounded-3 h-100 news-card">
+                              {news.image?.url && (
+                                <Card.Img
+                                  variant="top"
+                                  src={getMediaUrl(news.image.url)}
+                                  alt={news.title || "News image"}
+                                  className="news-img"
+                                />
+                              )}
+                              <Card.Body>
+                                <Card.Title className="fw-bold mb-2 mb-md-3">
+                                  {news.title || "No Title"}
+                                </Card.Title>
+                                {renderDescription(news.description)}
+                              </Card.Body>
+                            </Card>
+                          </div>
+                        ))}
+                    </div>
+
+                    <button
+                      className="news-arrow next-arrow"
+                      onClick={handleNextNews}
+                      disabled={newsOffset + 1 >= data["tpo-news"].length}
+                      aria-label="Next news"
+                    >
+                      →
+                    </button>
+                  </div>
+
+                  {data["tpo-news"].length > 1 && (
+                    <div className="news-dots">
+                      {data["tpo-news"].map((_, index) => (
+                        <span
+                          key={index}
+                          className={`dot ${index === newsOffset ? 'active' : ''}`}
+                          onClick={() => setNewsOffset(index)}
+                        />
+                      ))}
+                    </div>
                   )}
-                  <Card.Body>
-                    <Card.Title className="fw-bold mb-2 mb-md-3">
-                      {news.title || "No Title"}
-                    </Card.Title>
-                    {renderDescription(news.description)}
-                  </Card.Body>
-                </Card>
-              </div>
-            ))}
-        </div>
-        
-        <button
-          className="news-arrow next-arrow"
-          onClick={handleNextNews}
-          disabled={newsOffset + 1 >= data["tpo-news"].length}
-          aria-label="Next news"
-        >
-          →
-        </button>
-      </div>
-      
-      {data["tpo-news"].length > 1 && (
-        <div className="news-dots">
-          {data["tpo-news"].map((_, index) => (
-            <span
-              key={index}
-              className={`dot ${index === newsOffset ? 'active' : ''}`}
-              onClick={() => setNewsOffset(index)}
-            />
-          ))}
-        </div>
-      )}
-    </div>
-  ) : (
-    <p className="text-muted text-center">No news available</p>
-  )}
-</section>
+                </div>
+              ) : (
+                <p className="text-muted text-center">No news available</p>
+              )}
+            </section>
 
 
             <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
