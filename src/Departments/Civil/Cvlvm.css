@@ -270,6 +270,10 @@ font-size: 14px;
 .but-toggle-button:hover {
   background-color: #030f1b; /* Darker blue on hover */
 }
+.d-flex p.tick{
+  font-size: 14px;
+  word-spacing: 0%;
+}
 
 @media (max-width: 1200px) {
   .cvl-intro-heading, .cvl-vision-heading, .cvl-mission-heading {
@@ -387,8 +391,10 @@ font-size: 14px;
    
   }
   .d-flex p.tick{
-    font-size: 10px;
+    font-size: 40px;
+
   }
+  
   
 }
 
