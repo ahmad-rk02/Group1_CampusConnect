@@ -11,7 +11,6 @@ function Navbar({ imageSrcPath, navItems }) {
 
   // Use environment variables from .env
   const STRAPI_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-  const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
   const STRAPI_API_URL = `${STRAPI_BASE_URL}/api/gec-announcement-bars`;
 
   useEffect(() => {
@@ -166,8 +165,7 @@ function Navbar({ imageSrcPath, navItems }) {
 
   const ensureValidUrl = (url) => {
     if (!url) return '#';
-    if (url.startsWith('http://') || url.startsWith('https://')) return url;
-    return `https://${url}`;
+    return url; // Assume Cloudinary URLs are absolute
   };
 
   return (
@@ -257,10 +255,7 @@ function Navbar({ imageSrcPath, navItems }) {
               if (event.url) {
                 linkUrl = ensureValidUrl(event.url);
               } else if (event.pdf && event.pdf.length > 0) {
-                const pdfUrl = event.pdf[0].url;
-                linkUrl = pdfUrl.startsWith('http://') || pdfUrl.startsWith('https://') 
-                  ? pdfUrl 
-                  : `${STRAPI_MEDIA_BASE_URL}${pdfUrl}`;
+                linkUrl = ensureValidUrl(event.pdf[0].url); // Use Cloudinary URL directly
               }
 
               return (

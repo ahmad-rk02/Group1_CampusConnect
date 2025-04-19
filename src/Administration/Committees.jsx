@@ -135,13 +135,14 @@ const Committees = () => {
                       <td className="name-of-committees">{committee.committee_name || "N/A"}</td>
                       <td>{committee.committee_date || "N/A"}</td>
                       <td className="table-row-committee-clg">
-                        {committee.official_circular && committee.official_circular.url ? (
+                        {committee.official_circular?.url ? (
                           <a
-                            href={`${API_BASE_URL}${committee.official_circular.url}`}
+                            href={committee.official_circular.url} // Direct Cloudinary URL
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="document-link"
                           >
-                            Circular
+                            <i className="bi bi-file-earmark-pdf"></i> Circular
                           </a>
                         ) : (
                           "N/A"

@@ -7,7 +7,6 @@ function CarouselPage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-  const API_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
   useEffect(() => {
     const fetchCarouselData = async () => {
@@ -17,17 +16,7 @@ function CarouselPage() {
           throw new Error("Failed to fetch carousel data");
         }
         const result = await response.json();
-        console.log("Strapi API Response:", result); // Debug log
-        // Ensure result.data is an array and map to a clean format
-        const data = Array.isArray(result.data)
-          ? result.data.map((item) => ({
-              id: item.id,
-              title: item.attributes?.title || "",
-              subtitle: item.attributes?.subtitle || "",
-              image: item.attributes?.image?.data?.attributes || null, // Handle nested Strapi image structure
-            }))
-          : [];
-        setCarouselData(data);
+        setCarouselData(Array.isArray(result.data) ? result.data : []);
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -40,27 +29,20 @@ function CarouselPage() {
 
   if (loading) return <div className="gec-carousel-loading">Loading...</div>;
   if (error) return <div className="gec-carousel-error">Error: {error}</div>;
-  if (carouselData.length === 0) return <div className="gec-carousel-error">No carousel data available</div>;
 
   return (
     <div className="gec-carousel-container">
       <Carousel controls={carouselData.length > 1} indicators={carouselData.length > 1}>
         {carouselData.map((item) => (
           <Carousel.Item key={item.id} className="gec-carousel-item">
-            {item.image ? (
-              <img
-                className="gec-carousel-image"
-                src={`${API_MEDIA_BASE_URL}${item.image.url}`}
-                alt={item.title || "Carousel slide"}
-                loading="lazy"
-              />
-            ) : (
-              <div className="gec-carousel-placeholder">
-                <span>No image available</span>
-              </div>
-            )}
+            <img
+              className="gec-carousel-image"
+              src={item.image.url} // Directly using the image URL from your JSON
+              alt={item.title || "Carousel slide"}
+              loading="lazy"
+            />
             <div className="gec-carousel-caption">
-              <h2 className="gec-carousel-title">{item.title || "No Title"}</h2>
+              <h2 className="gec-carousel-title">{item.title}</h2>
               {item.subtitle && <p className="gec-carousel-subtitle">{item.subtitle}</p>}
             </div>
           </Carousel.Item>

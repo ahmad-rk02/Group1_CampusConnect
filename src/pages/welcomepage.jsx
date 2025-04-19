@@ -14,7 +14,7 @@ function WelcomeSection() {
             id: person.id,
             name: person.name,
             designation: person.designation,
-            imageUrl: person.image?.url ? `${import.meta.env.VITE_STRAPI_MEDIA_BASE_URL}${person.image.url}` : ''
+            imageUrl: person.image?.url || '' // Remove the URL prefixing
           })));
         }
       })

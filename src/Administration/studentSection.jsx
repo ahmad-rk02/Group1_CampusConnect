@@ -7,7 +7,6 @@ import "./studentSection.css";
 
 // Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
 const StudentSection = () => {
   const [sections, setSections] = useState([]);
@@ -18,7 +17,6 @@ const StudentSection = () => {
       .get(`${STRAPI_API_BASE_URL}/api/student-sections?populate=*`)
       .then((response) => {
         const fetchedData = response.data.data.map((item) => {
-          const imgUrl = item.photo?.url;
           return {
             id: item.id,
             name: item.name || "N/A",
@@ -27,11 +25,7 @@ const StudentSection = () => {
             designation: item.designation?.[0]?.children?.[0]?.text || "N/A",
             title: item.title || "N/A",
             contact: item.contact || "N/A",
-            image: imgUrl
-              ? (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')
-                ? imgUrl
-                : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`)
-              : null,
+            image: item.photo?.url || null,
           };
         });
         setSections(fetchedData);

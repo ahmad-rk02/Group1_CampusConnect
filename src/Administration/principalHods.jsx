@@ -5,9 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 import './principalHods.css';
 
-// Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
 const PrincipalHods = () => {
   const [principal, setPrincipal] = useState(null);
@@ -60,10 +58,7 @@ const PrincipalHods = () => {
       if (!photoData || !photoData.url) {
         return "/placeholder.jpg"; // Use a default placeholder image
       }
-      const imgUrl = photoData.url;
-      return imgUrl.startsWith('http://') || imgUrl.startsWith('https://') 
-        ? imgUrl 
-        : `${STRAPI_MEDIA_BASE_URL}${imgUrl}`;
+      return photoData.url; // Directly use the Cloudinary URL
     } catch (error) {
       console.error(`Error processing photo for ${memberName}:`, error);
       return "/placeholder.jpg";
