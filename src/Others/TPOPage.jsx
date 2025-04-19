@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, ListGroup, Table, Carousel, Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
-import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa"; // For green tick and exclamation mark
+import { FaCheckCircle, FaExclamationCircle } from "react-icons/fa";
 import "./TPOPage.css";
-import { Link } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
-
-
 
 // Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
@@ -32,7 +29,7 @@ const TPOPage = () => {
   const [feedbackSubmitting, setFeedbackSubmitting] = useState(false);
   const [feedbackError, setFeedbackError] = useState(null);
   const [feedbackSuccess, setFeedbackSuccess] = useState(false);
-  const [showModal, setShowModal] = useState(false); // For popup
+  const [showModal, setShowModal] = useState(false);
 
   const [employerFeedback, setEmployerFeedback] = useState({
     name: "",
@@ -41,10 +38,7 @@ const TPOPage = () => {
     email: "",
     message: ""
   });
-
   const [employerFeedbackSubmitting, setEmployerFeedbackSubmitting] = useState(false);
-
-
 
   useEffect(() => {
     const collectionEndpoints = [
@@ -56,17 +50,34 @@ const TPOPage = () => {
     const fetchData = async () => {
       try {
         const results = await Promise.all([
-          axios.get(`${STRAPI_API_BASE_URL}/api/tpo-desk?populate=*`).then((res) => ({
-            "tpo-desk": res.data.data
-          })),
+          axios
+            .get(`${STRAPI_API_BASE_URL}/api/tpo-desk?populate=*`)
+            .then((res) => {
+              console.log("Raw tpo-desk response:", res.data);
+              const tpoDeskData = res.data.data?.attributes || res.data.data || null;
+              console.log("Processed tpo-desk data:", tpoDeskData);
+              return { "tpo-desk": tpoDeskData };
+            })
+            .catch((err) => {
+              console.error("Error fetching tpo-desk:", err);
+              return { "tpo-desk": null };
+            }),
           ...collectionEndpoints.map(async (endpoint) => {
-            const response = await axios.get(`${STRAPI_API_BASE_URL}/api/${endpoint}?populate=*`);
-            const items = response.data.data || [];
-            console.log(`Data for ${endpoint}:`, items);
-            return { [endpoint]: items };
+            try {
+              const response = await axios.get(`${STRAPI_API_BASE_URL}/api/${endpoint}?populate=*`);
+              const items = Array.isArray(response.data.data)
+                ? response.data.data.map((item) => item.attributes || item)
+                : [];
+              console.log(`Data for ${endpoint}:`, items);
+              return { [endpoint]: items };
+            } catch (err) {
+              console.error(`Error fetching ${endpoint}:`, err);
+              return { [endpoint]: [] };
+            }
           })
         ]);
         const fetchedData = Object.assign({}, ...results);
+        console.log("Final fetched data:", fetchedData);
         setData(fetchedData);
       } catch (error) {
         console.error("Error fetching data from Strapi:", error);
@@ -93,10 +104,10 @@ const TPOPage = () => {
   };
 
   const renderDescription = (description) => {
-    if (!description) return "No description available";
-    if (!Array.isArray(description)) return "Invalid description format";
+    if (!description) return <Card.Text className="text-muted text-justify">No description available</Card.Text>;
+    if (!Array.isArray(description)) return <Card.Text className="text-muted text-justify">Invalid description format</Card.Text>;
     return description.map((paragraph, index) => {
-      if (!paragraph.children || !Array.isArray(paragraph.children)) {
+      if (!paragraph?.children || !Array.isArray(paragraph.children)) {
         return (
           <Card.Text key={index} className="text-muted text-justify">
             No description available
@@ -113,13 +124,9 @@ const TPOPage = () => {
   };
 
   const getMediaUrl = (url) => {
-    if (!url) return "https://via.placeholder.com/200x200?text=No+Image";
-    return url.startsWith('http://') || url.startsWith('https://')
-      ? url
-      : `${STRAPI_MEDIA_BASE_URL}${url}`;
+    if (!url) return "N/A";
+    return url.startsWith("http://") || url.startsWith("https://") ? url : `${STRAPI_MEDIA_BASE_URL}${url}`;
   };
-
-
 
   const handlePrevNews = () => {
     setNewsOffset((prev) => Math.max(prev - 1, 0));
@@ -130,26 +137,22 @@ const TPOPage = () => {
     setNewsOffset((prev) => Math.min(prev + 1, totalNews - 1));
   };
 
-  // Handle feedback input changes
   const handleFeedbackChange = (e) => {
     const { name, value } = e.target;
     setFeedback((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Validate PRN (16 digits)
   const validatePRN = (prn) => {
     const prnRegex = /^\d{16}$/;
     return prnRegex.test(prn);
   };
 
-  // Submit feedback to Strapi
   const handleFeedbackSubmit = async (e) => {
     e.preventDefault();
     setFeedbackSubmitting(true);
     setFeedbackError(null);
     setFeedbackSuccess(false);
 
-    // Validate PRN
     if (!validatePRN(feedback.prn)) {
       setFeedbackError("PRN must be exactly 16 digits.");
       setFeedbackSubmitting(false);
@@ -169,28 +172,22 @@ const TPOPage = () => {
       });
       console.log("Feedback submitted successfully:", response.data);
       setFeedbackSuccess(true);
-      setFeedback({ name: "", department: "", year: "", prn: "", message: "" }); // Reset form
-      setShowModal(true); // Show success popup
+      setFeedback({ name: "", department: "", year: "", prn: "", message: "" });
+      setShowModal(true);
     } catch (error) {
       console.error("Error submitting feedback to Strapi:", error);
       setFeedbackError("Failed to submit feedback. Please try again.");
-      setShowModal(true); // Show error popup
+      setShowModal(true);
     } finally {
       setFeedbackSubmitting(false);
     }
   };
 
-  const handleCloseModal = () => setShowModal(false);
-
-
-
-  // Handle Employer Feedback Input Change
   const handleEmployerFeedbackChange = (e) => {
     const { name, value } = e.target;
     setEmployerFeedback((prev) => ({ ...prev, [name]: value }));
   };
 
-  // Submit Employer Feedback to Strapi
   const handleEmployerFeedbackSubmit = async (e) => {
     e.preventDefault();
     setEmployerFeedbackSubmitting(true);
@@ -209,18 +206,18 @@ const TPOPage = () => {
       });
       console.log("Employer feedback submitted successfully:", response.data);
       setFeedbackSuccess(true);
-      setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" }); // Reset form
-      setShowModal(true); // Show success popup
+      setEmployerFeedback({ name: "", company: "", designation: "", email: "", message: "" });
+      setShowModal(true);
     } catch (error) {
       console.error("Error submitting employer feedback to Strapi:", error);
       setFeedbackError("Failed to submit feedback. Please try again.");
-      setShowModal(true); // Show error popup
+      setShowModal(true);
     } finally {
       setEmployerFeedbackSubmitting(false);
     }
   };
 
-
+  const handleCloseModal = () => setShowModal(false);
 
   return (
     <Container fluid className="p-0 tpo-container">
@@ -232,7 +229,7 @@ const TPOPage = () => {
 
       <Row className="g-0">
         <Col xs={12} md={3} className="left-sidebar p-2 p-md-3">
-          <Card className="left-nav ">
+          <Card className="left-nav">
             <ListGroup variant="flush">
               {[
                 { name: "TPO Desk", id: "tpo-desk" },
@@ -248,6 +245,7 @@ const TPOPage = () => {
                 { name: "T&P Placement Policy", id: "tpo-placement-policies" },
                 { name: "T&P NOC", id: "tpo-nocs" },
                 { name: "T&P Feedback", id: "tpo-feedback" },
+                { name: "Employer Feedback", id: "employer-feedback" },
                 { name: "T&P Contact", id: "tpo-contact" }
               ].map((item, index) => (
                 <ListGroup.Item
@@ -267,15 +265,19 @@ const TPOPage = () => {
           <div className="content-wrapper">
             <section id="tpo-desk" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Desk</h2>
-              {data["tpo-desk"] && (
+              {data["tpo-desk"] ? (
                 <Card className="shadow-sm rounded-3 border-0">
                   <Row className="g-0 flex-column flex-md-row">
                     <Col xs={12} md={4} className="d-flex align-items-center justify-content-center p-3">
-                      <Card.Img
-                        src={getMediaUrl(data["tpo-desk"]?.photo?.url)}
-                        alt="TPO Photo"
-                        className="img-fluid profile-img full-size-img"
-                      />
+                      {getMediaUrl(data["tpo-desk"]?.photo?.url) !== "N/A" ? (
+                        <Card.Img
+                          src={getMediaUrl(data["tpo-desk"]?.photo?.url)}
+                          alt="TPO Photo"
+                          className="img-fluid profile-img full-size-img"
+                        />
+                      ) : (
+                        <p className="text-muted">N/A</p>
+                      )}
                     </Col>
                     <Col xs={12} md={8}>
                       <Card.Body className="p-3 p-md-4">
@@ -300,6 +302,8 @@ const TPOPage = () => {
                     </Col>
                   </Row>
                 </Card>
+              ) : (
+                <p className="text-muted text-center">No TPO desk data available</p>
               )}
             </section>
 
@@ -319,51 +323,43 @@ const TPOPage = () => {
                     <tr>
                       <td colSpan="4" className="text-center">Loading placement records...</td>
                     </tr>
-                  ) : Array.isArray(data["placement-records"]) ? (
-                    data["placement-records"].length > 0 ? (
-                      data["placement-records"]
-                        .filter(record => record && record.year)
-                        .sort((a, b) => {
-                          // Extract the numeric year from both records
-                          const yearA = parseInt(a.year.match(/\d{4}/)?.[0]) || 0;
-                          const yearB = parseInt(b.year.match(/\d{4}/)?.[0]) || 0;
-                          return yearB - yearA; // Descending order
-                        })
-                        .map((record, index) => (
-                          <tr key={record.id || index}>
-                            <td>{index + 1}</td>
-                            <td>{record.year || "N/A"}</td>
-                            <td>{record.no_of_students_placed || "N/A"}</td>
-                            <td>
-                              {record.pdf?.url ? (
-                                <a
-                                  href={getMediaUrl(record.pdf.url)}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="btn btn-sm btn-outline-primary"
-                                >
-                                  View PDF
-                                </a>
-                              ) : (
-                                "N/A"
-                              )}
-                            </td>
-                          </tr>
-                        ))
-                    ) : (
-                      <tr>
-                        <td colSpan="4" className="text-center">No placement records available</td>
-                      </tr>
-                    )
+                  ) : Array.isArray(data["placement-records"]) && data["placement-records"].length > 0 ? (
+                    data["placement-records"]
+                      .filter((record) => record?.year)
+                      .sort((a, b) => {
+                        const yearA = parseInt(a.year.match(/\d{4}/)?.[0]) || 0;
+                        const yearB = parseInt(b.year.match(/\d{4}/)?.[0]) || 0;
+                        return yearB - yearA;
+                      })
+                      .map((record, index) => (
+                        <tr key={record.id || index}>
+                          <td>{index + 1}</td>
+                          <td>{record.year || "N/A"}</td>
+                          <td>{record.no_of_students_placed || "N/A"}</td>
+                          <td>
+                            {getMediaUrl(record.pdf?.url) !== "N/A" ? (
+                              <a
+                                href={getMediaUrl(record.pdf?.url)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-sm btn-outline-primary"
+                              >
+                                View PDF
+                              </a>
+                            ) : (
+                              "N/A"
+                            )}
+                          </td>
+                        </tr>
+                      ))
                   ) : (
                     <tr>
-                      <td colSpan="4" className="text-center">Error: Invalid placement records data</td>
+                      <td colSpan="4" className="text-center">No placement records available</td>
                     </tr>
                   )}
                 </tbody>
               </Table>
             </section>
-
 
             <section id="training-programs" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">Training and Programs</h2>
@@ -383,10 +379,10 @@ const TPOPage = () => {
                     </tr>
                   ) : Array.isArray(data["training-programs"]) && data["training-programs"].length > 0 ? (
                     data["training-programs"]
-                      .filter(record => record && record.academic_year)
+                      .filter((record) => record?.academic_year)
                       .sort((a, b) => {
-                        const yearA = a.academic_year.match(/\d{4}/) ? parseInt(a.academic_year.match(/\d{4}/)[0]) : 0;
-                        const yearB = b.academic_year.match(/\d{4}/) ? parseInt(b.academic_year.match(/\d{4}/)[0]) : 0;
+                        const yearA = parseInt(a.academic_year.match(/\d{4}/)?.[0]) || 0;
+                        const yearB = parseInt(b.academic_year.match(/\d{4}/)?.[0]) || 0;
                         return yearB - yearA;
                       })
                       .map((record, index) => (
@@ -432,15 +428,49 @@ const TPOPage = () => {
                     {data["tpo-photo-galleries"]
                       .filter((photo) => !selectedYear || photo.year === selectedYear)
                       .flatMap((photo) =>
-                        photo.image.map((img, index) => (
-                          <Carousel.Item key={`${photo.id}-${index}`}>
-                            <img
-                              className="d-block w-100 carousel-img"
-                              src={getMediaUrl(img.url)}
-                              alt={img.caption || `Photo ${index + 1}`}
-                            />
-                          </Carousel.Item>
-                        ))
+                        Array.isArray(photo.image?.data) && photo.image.data.length > 0
+                          ? photo.image.data.map((img, index) => (
+                              <Carousel.Item key={`${photo.id}-${index}`}>
+                                {getMediaUrl(img.attributes?.url) !== "N/A" ? (
+                                  <img
+                                    className="d-block w-100 carousel-img"
+                                    src={getMediaUrl(img.attributes?.url)}
+                                    alt={img.attributes?.caption || `Photo ${index + 1}`}
+                                  />
+                                ) : (
+                                  <div className="d-block w-100 carousel-img text-center">
+                                    <p className="text-muted">N/A</p>
+                                  </div>
+                                )}
+                              </Carousel.Item>
+                            ))
+                          : []
+                      ).length > 0 ? (
+                        data["tpo-photo-galleries"]
+                          .filter((photo) => !selectedYear || photo.year === selectedYear)
+                          .flatMap((photo) =>
+                            Array.isArray(photo.image?.data) && photo.image.data.length > 0
+                              ? photo.image.data.map((img, index) => (
+                                  <Carousel.Item key={`${photo.id}-${index}`}>
+                                    {getMediaUrl(img.attributes?.url) !== "N/A" ? (
+                                      <img
+                                        className="d-block w-100 carousel-img"
+                                        src={getMediaUrl(img.attributes?.url)}
+                                        alt={img.attributes?.caption || `Photo ${index + 1}`}
+                                      />
+                                    ) : (
+                                      <div className="d-block w-100 carousel-img text-center">
+                                        <p className="text-muted">N/A</p>
+                                      </div>
+                                    )}
+                                  </Carousel.Item>
+                                ))
+                              : []
+                          )
+                      ) : (
+                        <div className="text-center p-3">
+                          <p className="text-muted">No images available for this year</p>
+                        </div>
                       )}
                   </Carousel>
                 </>
@@ -449,47 +479,40 @@ const TPOPage = () => {
               )}
             </section>
 
-
-
             <section id="tpo-activities" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Activities</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading activities...</p>
-              ) : Array.isArray(data["tpo-activities"]) ? (
-                data["tpo-activities"].length > 0 ? (
-                  <ul className="list-group shadow-sm rounded-3 activity-list">
-                    {data["tpo-activities"]
-                      .filter(activity => activity?.title)
-                      .sort((a, b) => {
-                        // Extract the starting year from the title (e.g. "2021" from "2021-2022")
-                        const getYear = (title) => {
-                          const match = title?.match(/\b(\d{4})-\d{4}\b/);
-                          return match ? parseInt(match[1]) : 0;
-                        };
-                        return getYear(b.title) - getYear(a.title); // Descending order
-                      })
-                      .map((activity, index) => (
-                        <li key={activity.id || index} className="list-group-item py-2 py-md-3">
-                          {activity.pdf?.url ? (
-                            <a
-                              href={getMediaUrl(activity.pdf.url)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary fw-medium"
-                            >
-                              {activity.title || "Activity"}
-                            </a>
-                          ) : (
-                            <span className="text-muted">{activity.title || "Activity"} (No PDF available)</span>
-                          )}
-                        </li>
-                      ))}
-                  </ul>
-                ) : (
-                  <p className="text-muted text-center">No activities available</p>
-                )
+              ) : Array.isArray(data["tpo-activities"]) && data["tpo-activities"].length > 0 ? (
+                <ul className="list-group shadow-sm rounded-3 activity-list">
+                  {data["tpo-activities"]
+                    .filter((activity) => activity?.title)
+                    .sort((a, b) => {
+                      const getYear = (title) => {
+                        const match = title?.match(/\b(\d{4})-\d{4}\b/);
+                        return match ? parseInt(match[1]) : 0;
+                      };
+                      return getYear(b.title) - getYear(a.title);
+                    })
+                    .map((activity, index) => (
+                      <li key={activity.id || index} className="list-group-item py-2 py-md-3">
+                        {getMediaUrl(activity.pdf?.url) !== "N/A" ? (
+                          <a
+                            href={getMediaUrl(activity.pdf?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {activity.title || "Activity"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{activity.title || "Activity"} (No PDF available)</span>
+                        )}
+                      </li>
+                    ))}
+                </ul>
               ) : (
-                <p className="text-muted text-center">Error: Invalid activities data</p>
+                <p className="text-muted text-center">No activities available</p>
               )}
             </section>
 
@@ -509,40 +532,34 @@ const TPOPage = () => {
                     <tr>
                       <td colSpan="4" className="text-center">Loading internships...</td>
                     </tr>
-                  ) : Array.isArray(data["tpo-internships"]) ? (
-                    data["tpo-internships"].length > 0 ? (
-                      data["tpo-internships"]
-                        .filter(intern => intern && intern.students_completed)
-                        .sort((a, b) => (b.students_completed || 0) - (a.students_completed || 0))
-                        .map((intern, index) => (
-                          <tr key={intern.id || index}>
-                            <td>{index + 1}</td>
-                            <td>{intern.department || "N/A"}</td>
-                            <td>{intern.students_completed || "N/A"}</td>
-                            <td>
-                              {intern.pdf?.url ? (
-                                <a
-                                  href={getMediaUrl(intern.pdf.url)}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="btn btn-sm btn-outline-primary"
-                                >
-                                  View PDF
-                                </a>
-                              ) : (
-                                "N/A"
-                              )}
-                            </td>
-                          </tr>
-                        ))
-                    ) : (
-                      <tr>
-                        <td colSpan="4" className="text-center">No internships available</td>
-                      </tr>
-                    )
+                  ) : Array.isArray(data["tpo-internships"]) && data["tpo-internships"].length > 0 ? (
+                    data["tpo-internships"]
+                      .filter((intern) => intern?.students_completed)
+                      .sort((a, b) => (b.students_completed || 0) - (a.students_completed || 0))
+                      .map((intern, index) => (
+                        <tr key={intern.id || index}>
+                          <td>{index + 1}</td>
+                          <td>{intern.department || "N/A"}</td>
+                          <td>{intern.students_completed || "N/A"}</td>
+                          <td>
+                            {getMediaUrl(intern.pdf?.url) !== "N/A" ? (
+                              <a
+                                href={getMediaUrl(intern.pdf?.url)}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-sm btn-outline-primary"
+                              >
+                                View PDF
+                              </a>
+                            ) : (
+                              "N/A"
+                            )}
+                          </td>
+                        </tr>
+                      ))
                   ) : (
                     <tr>
-                      <td colSpan="4" className="text-center">Error: Invalid internships data</td>
+                      <td colSpan="4" className="text-center">No internships available</td>
                     </tr>
                   )}
                 </tbody>
@@ -571,13 +588,17 @@ const TPOPage = () => {
                         .map((news, index) => (
                           <div className="news-card-container" key={news.id || index}>
                             <Card className="shadow-sm rounded-3 h-100 news-card">
-                              {news.image?.url && (
+                              {getMediaUrl(news.image?.url) !== "N/A" ? (
                                 <Card.Img
                                   variant="top"
-                                  src={getMediaUrl(news.image.url)}
+                                  src={getMediaUrl(news.image?.url)}
                                   alt={news.title || "News image"}
                                   className="news-img"
                                 />
+                              ) : (
+                                <div className="text-center p-3">
+                                  <p className="text-muted">N/A</p>
+                                </div>
                               )}
                               <Card.Body>
                                 <Card.Title className="fw-bold mb-2 mb-md-3">
@@ -605,7 +626,7 @@ const TPOPage = () => {
                       {data["tpo-news"].map((_, index) => (
                         <span
                           key={index}
-                          className={`dot ${index === newsOffset ? 'active' : ''}`}
+                          className={`dot ${index === newsOffset ? "active" : ""}`}
                           onClick={() => setNewsOffset(index)}
                         />
                       ))}
@@ -617,104 +638,31 @@ const TPOPage = () => {
               )}
             </section>
 
-
             <section id="tpo-brochures" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Brochures</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading documents...</p>
-              ) : Array.isArray(data['tpo-brochures']) ? (
-                data['tpo-brochures'].length > 0 ? (
-                  <ul className="list-group shadow-sm rounded-3 document-list">
-                    {data['tpo-brochures']
-                      .filter(item => item?.title)
-                      .sort((a, b) => {
-                        const extractStartYear = title => {
-                          // Matches: 2020-2021 or 2022-23 or 21-22
-                          const match = title.match(/(\d{4})[-–](\d{2,4})/) || title.match(/(\d{2})[-–](\d{2})/);
-                          if (match) {
-                            let year = match[1];
-                            if (year.length === 2) {
-                              year = parseInt(year) >= 50 ? `19${year}` : `20${year}`;
-                            }
-                            return parseInt(year);
+              ) : Array.isArray(data["tpo-brochures"]) && data["tpo-brochures"].length > 0 ? (
+                <ul className="list-group shadow-sm rounded-3 document-list">
+                  {data["tpo-brochures"]
+                    .filter((item) => item?.title)
+                    .sort((a, b) => {
+                      const extractStartYear = (title) => {
+                        const match = title.match(/(\d{4})[-–](\d{2,4})/) || title.match(/(\d{2})[-–](\d{2})/);
+                        if (match) {
+                          let year = match[1];
+                          if (year.length === 2) {
+                            year = parseInt(year) >= 50 ? `19${year}` : `20${year}`;
                           }
-                          return 0;
-                        };
-                        return extractStartYear(b.title) - extractStartYear(a.title);
-                      })
-                      .map((item, index) => (
-                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                          {item.pdf?.url || item.image?.url ? (
-                            <a
-                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary fw-medium"
-                            >
-                              {item.title || "Document"}
-                            </a>
-                          ) : (
-                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                          )}
-                        </li>
-                      ))}
-                  </ul>
-                ) : (
-                  <p className="text-muted text-center">No documents available</p>
-                )
-              ) : (
-                <p className="text-muted text-center">Error: Invalid document data</p>
-              )}
-            </section>
-
-
-
-
-            <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Policy</h2>
-              {loading ? (
-                <p className="text-muted text-center">Loading documents...</p>
-              ) : Array.isArray(data['tpo-placement-policies']) ? (
-                data['tpo-placement-policies'].length > 0 ? (
-                  <ul className="list-group shadow-sm rounded-3 document-list">
-                    {data['tpo-placement-policies']
-                      .sort((a, b) => (b.title || "").localeCompare(a.title || "")) // Descending
-                      .map((item, index) => (
-                        <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                          {item.pdf?.url || item.image?.url ? (
-                            <a
-                              href={getMediaUrl(item.pdf?.url || item.image?.url)}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-primary fw-medium"
-                            >
-                              {item.title || "Document"}
-                            </a>
-                          ) : (
-                            <span className="text-muted">{item.title || "Document"} (No file available)</span>
-                          )}
-                        </li>
-                      ))}
-                  </ul>
-                ) : (
-                  <p className="text-muted text-center">No documents available</p>
-                )
-              ) : (
-                <p className="text-muted text-center">Error: Invalid document data</p>
-              )}
-            </section>
-
-
-            <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
-              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P NOCS</h2>
-              {loading ? (
-                <p className="text-muted text-center">Loading documents...</p>
-              ) : Array.isArray(data['tpo-nocs']) ? (
-                data['tpo-nocs'].length > 0 ? (
-                  <ul className="list-group shadow-sm rounded-3 document-list">
-                    {data['tpo-nocs'].map((item, index) => (
+                          return parseInt(year);
+                        }
+                        return 0;
+                      };
+                      return extractStartYear(b.title) - extractStartYear(a.title);
+                    })
+                    .map((item, index) => (
                       <li key={item.id || index} className="list-group-item py-2 py-md-3">
-                        {item.pdf?.url || item.image?.url ? (
+                        {getMediaUrl(item.pdf?.url || item.image?.url) !== "N/A" ? (
                           <a
                             href={getMediaUrl(item.pdf?.url || item.image?.url)}
                             target="_blank"
@@ -728,12 +676,70 @@ const TPOPage = () => {
                         )}
                       </li>
                     ))}
-                  </ul>
-                ) : (
-                  <p className="text-muted text-center">No documents available</p>
-                )
+                </ul>
               ) : (
-                <p className="text-muted text-center">Error: Invalid document data</p>
+                <p className="text-muted text-center">No documents available</p>
+              )}
+            </section>
+
+            <section id="tpo-placement-policies" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P Policy</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data["tpo-placement-policies"]) && data["tpo-placement-policies"].length > 0 ? (
+                <ul className="list-group shadow-sm rounded-3 document-list">
+                  {data["tpo-placement-policies"]
+                    .filter((item) => item?.title)
+                    .sort((a, b) => (b.title || "").localeCompare(a.title || ""))
+                    .map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {getMediaUrl(item.pdf?.url || item.image?.url) !== "N/A" ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                </ul>
+              ) : (
+                <p className="text-muted text-center">No documents available</p>
+              )}
+            </section>
+
+            <section id="tpo-nocs" className="section-card mb-4 mb-md-5">
+              <h2 className="section-title fw-bold mb-3 mb-md-4">T&P NOCs</h2>
+              {loading ? (
+                <p className="text-muted text-center">Loading documents...</p>
+              ) : Array.isArray(data["tpo-nocs"]) && data["tpo-nocs"].length > 0 ? (
+                <ul className="list-group shadow-sm rounded-3 document-list">
+                  {data["tpo-nocs"]
+                    .filter((item) => item?.title)
+                    .map((item, index) => (
+                      <li key={item.id || index} className="list-group-item py-2 py-md-3">
+                        {getMediaUrl(item.pdf?.url || item.image?.url) !== "N/A" ? (
+                          <a
+                            href={getMediaUrl(item.pdf?.url || item.image?.url)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-primary fw-medium"
+                          >
+                            {item.title || "Document"}
+                          </a>
+                        ) : (
+                          <span className="text-muted">{item.title || "Document"} (No file available)</span>
+                        )}
+                      </li>
+                    ))}
+                </ul>
+              ) : (
+                <p className="text-muted text-center">No documents available</p>
               )}
             </section>
 
@@ -741,45 +747,40 @@ const TPOPage = () => {
               <h2 className="section-title fw-bold mb-3 mb-md-4">T&P MOUs</h2>
               {loading ? (
                 <p className="text-muted text-center">Loading MOUs...</p>
-              ) : Array.isArray(data["tpo-mous"]) ? (
-                data["tpo-mous"].length > 0 ? (
-                  <Table striped bordered hover responsive className="shadow-sm rounded-3">
-                    <thead className="table-dark">
-                      <tr>
-                        <th>S.No.</th>
-                        <th>Name of Industry</th>
-                        <th>Date of Signing MoU</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {data["tpo-mous"]
-                        .filter(mou => mou && mou.date)
-                        .sort((a, b) => {
-                          const parseDate = (str) => {
-                            const [day, month, year] = str.split('/');
-                            return new Date(`${year}-${month}-${day}`);
-                          };
-                          return parseDate(b.date) - parseDate(a.date);
-                        })
-                        .map((mou, index) => (
-                          <tr key={mou.id || index}>
-                            <td>{index + 1}</td>
-                            <td>{mou.name || "N/A"}</td>
-                            <td>{mou.date || "N/A"}</td>
-                          </tr>
-                        ))}
-                    </tbody>
-                  </Table>
-                ) : (
-                  <p className="text-muted text-center">No MOUs available</p>
-                )
+              ) : Array.isArray(data["tpo-mous"]) && data["tpo-mous"].length > 0 ? (
+                <Table striped bordered hover responsive className="shadow-sm rounded-3">
+                  <thead className="table-dark">
+                    <tr>
+                      <th>S.No.</th>
+                      <th>Name of Industry</th>
+                      <th>Date of Signing MoU</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data["tpo-mous"]
+                      .filter((mou) => mou?.date)
+                      .sort((a, b) => {
+                        const parseDate = (str) => {
+                          if (!str) return new Date(0);
+                          const [day, month, year] = str.split("/");
+                          return new Date(`${year}-${month}-${day}`);
+                        };
+                        return parseDate(b.date) - parseDate(a.date);
+                      })
+                      .map((mou, index) => (
+                        <tr key={mou.id || index}>
+                          <td>{index + 1}</td>
+                          <td>{mou.name || "N/A"}</td>
+                          <td>{mou.date || "N/A"}</td>
+                        </tr>
+                      ))}
+                  </tbody>
+                </Table>
               ) : (
-                <p className="text-muted text-center">Error: Invalid MOUs data</p>
+                <p className="text-muted text-center">No MOUs available</p>
               )}
             </section>
 
-
-            {/* Feedback Section */}
             <section id="tpo-feedback" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">Student Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
@@ -872,7 +873,6 @@ const TPOPage = () => {
                         >
                           {feedbackSubmitting ? "Submitting..." : "Submit Feedback"}
                         </Button>
-
                         <Button
                           variant="primary"
                           className="mt-3 feedback-form ms-2"
@@ -880,7 +880,6 @@ const TPOPage = () => {
                         >
                           View Feedback
                         </Button>
-
                       </Col>
                     </Row>
                   </Form>
@@ -888,8 +887,6 @@ const TPOPage = () => {
               </Card>
             </section>
 
-
-            {/* Employer Feedback */}
             <section id="employer-feedback" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">Employer Feedback</h2>
               <Card className="shadow-sm rounded-3 border-0">
@@ -971,7 +968,6 @@ const TPOPage = () => {
                         >
                           {employerFeedbackSubmitting ? "Submitting..." : "Submit Feedback"}
                         </Button>
-
                         <Button
                           variant="primary"
                           className="mt-3 feedback-form ms-2"
@@ -979,16 +975,12 @@ const TPOPage = () => {
                         >
                           View Feedback
                         </Button>
-
                       </Col>
                     </Row>
                   </Form>
                 </Card.Body>
               </Card>
             </section>
-
-
-
 
             <section id="tpo-contact" className="section-card mb-4 mb-md-5">
               <h2 className="section-title fw-bold mb-3 mb-md-4">TPO Contact</h2>
@@ -1034,7 +1026,6 @@ const TPOPage = () => {
                     data["tpo-offices"].map((office, index) => (
                       <Card key={office.id || index} className="shadow-sm rounded-3 border-0">
                         <Card.Body className="p-3">
-                          {/* <Card.Title className="fw-bold">{office.office_name || "N/A"}</Card.Title> */}
                           <p>{office.room_details || "N/A"}</p>
                           <p>{office.institute_name || "N/A"}</p>
                           <p>
@@ -1059,7 +1050,7 @@ const TPOPage = () => {
                           <p>
                             <strong>Website:</strong>{" "}
                             <a
-                              href={office.website ? office.website : "#"}
+                              href={office.website || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
                               className="text-primary"
@@ -1080,7 +1071,6 @@ const TPOPage = () => {
         </Col>
       </Row>
 
-      {/* Success/Error Modal */}
       <Modal show={showModal} onHide={handleCloseModal} centered>
         <Modal.Body className="text-center">
           {feedbackSuccess ? (
@@ -1092,7 +1082,7 @@ const TPOPage = () => {
           ) : (
             <>
               <FaExclamationCircle size={50} color="red" className="mb-3" />
-              <h5>Not Successfully Submitted</h5>
+              <h5>Submission Failed</h5>
               <p>{feedbackError}</p>
             </>
           )}
