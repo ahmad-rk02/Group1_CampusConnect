@@ -1,9 +1,7 @@
-
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import "./PrincipalDesk.css";
-import principaldesk from "../assets/principaldesk.jpg";
 
 const PrincipalDesk = () => {
   const location = useLocation();
@@ -11,10 +9,12 @@ const PrincipalDesk = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
+
   useEffect(() => {
     const fetchPrincipalData = async () => { 
       try {
-        const response = await fetch(`${API_BASE_URL}/api/gec-principal`);
+        // Make sure to populate the photo field
+        const response = await fetch(`${API_BASE_URL}/api/gec-principal?populate=*`);
         if (!response.ok) {
           throw new Error("Failed to fetch principal data");
         }
@@ -100,11 +100,13 @@ const PrincipalDesk = () => {
               <Card.Body className="bg-white-pd">
                 <Row className="right-row">
                   <Col md={12} className="p-0 text-center mb-3">
-                    <img
-                      src={principaldesk}
-                      alt="PrincipalDesk"
-                      className="about-image-pd"
-                    />
+                    {principalData?.photo?.url && (
+                      <img
+                        src={principalData.photo.url}
+                        alt={`Dr. ${principalData.name}`}
+                        className="about-image-pd"
+                      />
+                    )}
                   </Col>
 
                   <Col md={12} className="right-para-principal-desk">

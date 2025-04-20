@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 
 // Use environment variables from .env
 const STRAPI_API_BASE_URL = import.meta.env.VITE_STRAPI_API_BASE_URL;
-const STRAPI_MEDIA_BASE_URL = import.meta.env.VITE_STRAPI_MEDIA_BASE_URL;
 
 const TPOPage = () => {
   const [data, setData] = useState({});
@@ -125,7 +124,8 @@ const TPOPage = () => {
 
   const getMediaUrl = (url) => {
     if (!url) return "N/A";
-    return url.startsWith("http://") || url.startsWith("https://") ? url : `${STRAPI_MEDIA_BASE_URL}${url}`;
+    // Assume Cloudinary URLs are absolute; return as-is
+    return url;
   };
 
   const handlePrevNews = () => {

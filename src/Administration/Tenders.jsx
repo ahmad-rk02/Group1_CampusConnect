@@ -101,11 +101,12 @@ const Tenders = () => {
                         {tender.circular?.map((doc) => (
                           <a
                             key={doc.id}
-                            href={`${API_BASE_URL}${doc.url}`}
+                            href={doc.url} // Directly use Cloudinary URL
                             target="_blank"
                             rel="noopener noreferrer"
+                            className="document-link"
                           >
-                            {doc.name}
+                            <i className="bi bi-file-earmark-pdf"></i> {doc.name}
                           </a>
                         ))}
                       </td>
