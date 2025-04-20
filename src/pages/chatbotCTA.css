@@ -1,8 +1,8 @@
 /* Sticky Chatbot Button */
 .chatbot-cta {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 18px;
+    right: 65px;
     background-color: #007bff;
     color: white;
     padding: 12px 22px;

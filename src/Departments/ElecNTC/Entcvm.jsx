@@ -26,8 +26,8 @@ const Entcvm = ({ className }) => {
     const [showFirstSet, setShowFirstSet] = useState(true);
   
   const labs = [
-    { id: 1, name: 'entctrical Instrumentation Lab', img: lab1, equipment: 'Various measuring bridges, power supply, Insulation Tester' },
-    { id: 2, name: 'entctrical Machines Lab', img: lab2, equipment: 'Various AC/DC motor- generator sets,1/3 phase load bank entctrical machine trainer' },
+    { id: 1, name: 'Electrical Instrumentation Lab', img: lab1, equipment: 'Various measuring bridges, power supply, Insulation Tester' },
+    { id: 2, name: 'Electrical Machines Lab', img: lab2, equipment: 'Various AC/DC motor- generator sets,1/3 phase load bank entctrical machine trainer' },
     { id: 3, name: 'High Voltage Lab', img: lab3, equipment: 'AC Power frequency HV testing transformer,Capacitance and Tan-Delta Measurement,Dientctric BDV Test Set' },
     { id: 4, name: 'Analog entctronics Lab', img: lab4, equipment: 'DSO, Function generator, Bread Board' },
     { id: 5, name: 'Computer Lab', img: lab5, equipment: 'MATLAB SIMULINK software 5 users, ETAP 10 users networking license' },
