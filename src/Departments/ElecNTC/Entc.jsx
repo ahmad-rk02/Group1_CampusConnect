@@ -47,7 +47,7 @@ const Entc = () => {
                         to="/Entc"
                         className={location.pathname === "/Entc" ? "active-link" : ""}
                       >
-                        <b className="left-nav-row-entc-01" onClick={() => setOpenDropdown(!openDropdown)} >Entctronics & Telecommunication Engineering</b>
+                        <b className="left-nav-row-entc-01" onClick={() => setOpenDropdown(!openDropdown)} >Electronics & Telecommunication Engineering</b>
                       </Link>
 
                       {
