@@ -101,7 +101,9 @@ function App() {
         "Training & Placements",
         "Science & Humanities",
         { name: "Events & Achievements", subLinks: ["News & Events", "TechnoUtsav", "Abhirang"] },
-        "Alumni"
+        "Alumni",
+        "Gondwana University",
+        { name: "Scholarship", subLinks: ["MahaDBT", "NSP"] }
       ]
     },
     { name: "CONTACT" }

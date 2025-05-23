@@ -110,7 +110,10 @@ function Navbar({ imageSrcPath, navItems }) {
         "Student Section": "/studentSection",
         "Office": "/Office",
         "Training & Placements": "/tpopage",
-        "Science & Humanities": "/sciencehumanity"
+        "Science & Humanities": "/sciencehumanity",
+        "Gondwana University": "https://gug.digitaluniversity.ac/results",
+        "NSP": "https://scholarships.gov.in/",
+        "MahaDBT": "https://mahadbt.maharashtra.gov.in/Login/Login"
       };
       
       if (typeof subLink === "string") {
